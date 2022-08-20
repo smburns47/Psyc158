@@ -227,7 +227,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter-4.ipynb"
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-4.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -288,7 +288,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/smburns47/Psyc158"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -305,7 +305,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-4.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-4.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -598,22 +598,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 5 × 2</caption>
-<thead>
-	<tr><th scope=col>x1</th><th scope=col>x2</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>18</td></tr>
-	<tr><td>2</td><td>21</td></tr>
-	<tr><td>3</td><td>20</td></tr>
-	<tr><td>4</td><td>23</td></tr>
-	<tr><td>5</td><td>20</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe. This function also gives the variables names; let’s rewrite the code above to give <code class="docutils literal notranslate"><span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span></code> more meaningful variable names.</p>
 <div class="cell docutils container">
@@ -622,22 +606,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 5 × 2</caption>
-<thead>
-	<tr><th scope=col>user_id</th><th scope=col>age</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>18</td></tr>
-	<tr><td>2</td><td>21</td></tr>
-	<tr><td>3</td><td>20</td></tr>
-	<tr><td>4</td><td>23</td></tr>
-	<tr><td>5</td><td>20</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Using this approach, you can form a dataframe out of any set of variables - well, almost. Try out the code below, and see if you can find why it causes an error. What can we do to fix it?</p>
 <div class="cell docutils container">
@@ -645,16 +613,6 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">)</span>
 <span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">):</span> <span class="n">arguments</span> <span class="n">imply</span> <span class="n">differing</span> <span class="n">number</span> <span class="n">of</span> <span class="n">rows</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">stop</span><span class="p">(</span><span class="n">gettextf</span><span class="p">(</span><span class="s2">&quot;arguments imply differing number of rows: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">paste</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">nrows</span><span class="p">),</span> <span class="n">collapse</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="p">)),</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">NA</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1001,8 +959,8 @@ title="Print to PDF"
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "smburns47/Psyc158",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

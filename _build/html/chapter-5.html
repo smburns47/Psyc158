@@ -229,7 +229,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter-5.ipynb"
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-5.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -290,7 +290,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/smburns47/Psyc158"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -307,7 +307,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-5.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-5.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -654,67 +654,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
-	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmpXueVdI/downloaded_packages
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggstance
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘ggstance’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:ggplot2’:
-
-    geom_errorbarh, GeomErrorbarh
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: scales
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘scales’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:readr’:
-
-    col_factor
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggridges
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New to ggformula?  Try the tutorials: 
-	learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
-	learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">75</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">15</span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
-<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
-<span class=" -Color -Color-Red">chr</span>  (1): Condition
-<span class=" -Color -Color-Green">dbl</span> (14): Cond, Age, Wt, Wt2, BMI, BMI2, Fat, Fat2, WHR, WHR2, Syst, Syst2, ...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
-<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mindsetmatters</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_3_0.png" src="_images/chapter-5_3_0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> takes two arguments. The first is a formula; notice that the variable we want to display, <code class="docutils literal notranslate"><span class="pre">Wt</span></code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for a graph (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> from geometry class). So in R, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the first argument in <code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> is the formula <code class="docutils literal notranslate"> <span class="pre">~</span> <span class="pre">Wt</span></code>, which tells R “plot the variable Wt on the x-axis.”</p>
@@ -726,9 +671,6 @@ title="Print to PDF"
 <span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mindsetmatters</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_5_0.png" src="_images/chapter-5_5_0.png" />
 </div>
 </div>
 <p>Because the variable on the x-axis is often measured on a continuous scale, the bars in the histograms usually represent a range of values, called bins. We’ll illustrate this idea of bins by creating a simple outcome variable called <code class="docutils literal notranslate"><span class="pre">outcome</span></code>, and displaying it on a histogram.</p>
@@ -748,9 +690,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_9_0.png" src="_images/chapter-5_9_0.png" />
-</div>
 </div>
 <p>Now we only have one bin per data value. However, since there are exactly one of each type of value, this histogram looks like a rectangle. To help distinguish things more, we can change the colors of the histogram, adding in the arguments <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. What do you think each of these arguments does?</p>
 <div class="cell docutils container">
@@ -758,9 +697,6 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_11_0.png" src="_images/chapter-5_11_0.png" />
 </div>
 </div>
 <p>In chapter 8, we’ll talk much more about how to tweak the details of our data visualizations.</p>
@@ -776,9 +712,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_13_0.png" src="_images/chapter-5_13_0.png" />
-</div>
 </div>
 <p>If you look closely at the x-axis, you’ll see that the bin for 3 actually goes from 2.5 to 3.5. Because of this, there are new two values that fall in the 2.5-3.5 bin: 3 and 3.2.</p>
 </section>
@@ -792,9 +725,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_16_0.png" src="_images/chapter-5_16_0.png" />
-</div>
 </div>
 <p>If everything worked right, the general shape of this plot should match the one above. The only difference is, the tallest bin now shows a density of 0.333 instead of 2, since 2 values out of 6 means 33% of the sample is in that bin.</p>
 <p>In the window below, write some code to make a density plot of the <code class="docutils literal notranslate"><span class="pre">Age</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> data.</p>
@@ -802,15 +732,6 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Finish the code below to make a density plot of Age in mindsetmatters</span>
 <span class="nf">gf_dhistogram</span><span class="p">(</span><span class="c1">#set formula here, #set dataframe here, #set bin and color options here)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">end</span> <span class="n">of</span> <span class="nb">input</span>
-<span class="mi">2</span><span class="p">:</span> <span class="n">gf_dhistogram</span><span class="p">(</span><span class="c1">#set formula here, #set dataframe here, #set bin and color options here)</span>
-<span class="mi">3</span><span class="p">:</span> 
-  <span class="o">^</span>
-<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
@@ -1154,8 +1075,8 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "smburns47/Psyc158",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
