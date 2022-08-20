@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+root: intro
+format: jb-book
+parts:
+- caption: Unit 1 Describing Data
+  chapters:
+  - file: chapter-1
+  - file: chapter-2
+  - file: chapter-3
+  - file: chapter-4
+  - file: chapter-5
+- caption: Unit 2 - Modeling Data
+  chapters:
+  - file: chapter-6
+- caption: Unit 3 - Evaluating Models
+  chapters:
+  - file: chapter-7

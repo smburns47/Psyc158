@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 6 - Variation in Multiple Variables &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 7 - Principles of Data Visualization" href="chapter-7.html" />
+    <link rel="prev" title="Chapter 5 - Describing Data" href="chapter-5.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1.html">
+   Chapter 1 - Intro to Doing Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2.html">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3.html">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4.html">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter-6.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-6.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-6.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explanation">
+   6.1 Explanation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explaning-one-variable-with-another">
+   6.2 Explaning one variable with another
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outcomes-and-explanatory-variables">
+   6.3 Outcomes and explanatory variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#point-and-jitter-plots">
+   6.4 Point and jitter plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantitative-explanatory-variables">
+   6.5 Quantitative explanatory variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#putting-multiple-plots-together">
+   6.6 Putting multiple plots together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab">
+   Lab
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 6 - Variation in Multiple Variables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explanation">
+   6.1 Explanation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explaning-one-variable-with-another">
+   6.2 Explaning one variable with another
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outcomes-and-explanatory-variables">
+   6.3 Outcomes and explanatory variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#point-and-jitter-plots">
+   6.4 Point and jitter plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantitative-explanatory-variables">
+   6.5 Quantitative explanatory variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#putting-multiple-plots-together">
+   6.6 Putting multiple plots together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab">
+   Lab
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-variation-in-multiple-variables">
+<h1>Chapter 6 - Variation in Multiple Variables<a class="headerlink" href="#chapter-6-variation-in-multiple-variables" title="Permalink to this headline">#</a></h1>
+<section id="explanation">
+<h2>6.1 Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">#</a></h2>
+<p>Examining distributions of single variables is always an important starting place. But as data analysts, our interests usually go beyond exploring patterns of variation in a single variable. We want to know patterns among multiple variables. Did something else cause the variable we care about? Are there other similar variables? In this section we begin thinking about what it means when multiple variable.</p>
+<p>We can start with an intuitive definition of “explain”: if knowing someone’s score on one variable helps you make a slightly better guess about that person’s score on another variable, then we can say that the first variable explains some variation in the second variable.</p>
+<p>For example, if we knew someone’s sex, could that help us make a better prediction of their height? You probably already have a sense that human males are taller, on average, than females. If we knew that someone was male, even without meeting them, we would predict that they would be taller than if we knew they were female.</p>
+<p>This is what we mean when we say sex <em>explains</em> some of the variation in height. It doesn’t explain all the variation because some females are taller than some males. But it does explain some of the variation.</p>
+<p>Explaining variation could help us in three ways:</p>
+<ol class="simple">
+<li><p>it helps us understand what causes the variation in a variable</p></li>
+<li><p>it helps us predict future observations</p></li>
+<li><p>or, it helps us change the system we are studying to produce different outcomes</p></li>
+</ol>
+<p>It’s important to emphasize here that when we say one variable A “explains” another variable B, we don’t always mean that A <em>causes</em> B. Correlation does not imply causation! It just means that knowing the value of some observation on A improves our guess on what B is. This could be because of causation, but it could also be a host of many different relationships (maybe B causes A instead, or a separate variable C causes both of them!). Whenever we use the word “explain” in this course, make sure you’re not assuming that a causal relationship is involved.</p>
+<p>In this chapter we develop some informal methods for representing and exploring relationships among variables. We start by graphing relationships between two variables, looking for evidence that one variable explains variation in another, and representing these relationships with word equations. (In the next chapters we will introduce more quantitative methods for explaining variation using the concept of statistical model.)</p>
+</section>
+<section id="explaning-one-variable-with-another">
+<h2>6.2 Explaning one variable with another<a class="headerlink" href="#explaning-one-variable-with-another" title="Permalink to this headline">#</a></h2>
+<p>Let’s start by loading a simple dataset that plots the length of fingers from a sample of students in a stats class, along with some other demographic info.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;fingers.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">157</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">16</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
+<span class=" -Color -Color-Red">chr</span>  (5): Sex, RaceEthnic, Job, MathAnxious, Interest
+<span class=" -Color -Color-Green">dbl</span> (11): FamilyMembers, SSLast, Year, GradePredict, Thumb, Index, Middle, R...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write code to draw a histogram of the variable <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>, which corresponds to each person’s thumb length. We’ll use <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code>, so feel free to play around with features like labels, colors, bin number, etc. The documentation of all the arguments <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> can take is <a class="reference external" href="https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_histogram">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggstance
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘ggstance’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:ggplot2’:
+
+    geom_errorbarh, GeomErrorbarh
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: scales
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘scales’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:readr’:
+
+    col_factor
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggridges
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New to ggformula?  Try the tutorials: 
+	learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
+	learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
+</pre></div>
+</div>
+<img alt="_images/chapter-6_4_9.png" src="_images/chapter-6_4_9.png" />
+</div>
+</div>
+<p>Quickly evaluating the distribution, it looks like most of the thumbs run between 40 and 80 mm long; the center of the distribution is somewhere around 60 mm; and the distribution is kind of normal-shaped, with most of the observations clustered around the middle, then just a few observations in the outer tails.</p>
+<p>Let’s say we want to check some other variable to see if it explains the variation we see in thumb length. A starting place is to think about other variables that, if we knew someone’s score on that variable, would help us make a better guess about their thumb length. Below is a list of some of the variables in <code class="docutils literal notranslate"><span class="pre">fingers</span></code> and descriptions of how they were coded. Which of these variables might be related to thumb length?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sex</span></code>: 1=female, 2=male, 3=prefer not to answer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RaceEthnic</span></code>: 1=White, 2=African-American, 3=Asian, 4=Latino, 5=Other</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Year</span></code>: Year in college; 1=First, 2=Second, 3=Third, 4=Fourth, 5=Other</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MathAnxious</span></code>: Agreement with the statement, “In general, I tend to feel very anxious about mathematics.” 2=strongly agree, 1=agree, 0=neither agree not disagree, -1=disagree, -2=strongly disagree</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradePredict</span></code>: Anticipated course grade;	4.0=A, 3.7=A-, 3.3=B+, 3.0=B, 2.7=B-, 2.3=C+, 2.0=C, 1.7=C-, 1.3=Below C-</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ring</span></code>: Length in mm from tip of ring finger to the crease between the ring finger and palm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Height</span></code>: Height in inches</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Weight</span></code>: Weight in pounds</p></li>
+</ul>
+<p>One variable that might explain the variation in thumb length is <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. You might intuitively sense that male and female thumb lengths would differ, or vary. But then again, even among a bunch of females, their thumb lengths vary too.</p>
+<p>In our basic histogram right now, we can’t see the effect of <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. We don’t know which data points correspond to female, male, or other participants. But we can change this histogram to visualize the relationship between <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and <code class="docutils literal notranslate"><span class="pre">Sex</span></code> in a few ways. One way is by coloring or filling in the data in the histogram by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, assigning females one color and males another.</p>
+<p>To do this we use the <code class="docutils literal notranslate"><span class="pre">fill</span> <span class="pre">=</span></code> argument, but instead of putting in a color we put a tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>) and then the name of a variable: <code class="docutils literal notranslate"><span class="pre">fill</span> <span class="pre">=</span> <span class="pre">~</span> <span class="pre">Sex</span></code>. Remember that a <code class="docutils literal notranslate"><span class="pre">~</span></code> in functions like this is like saying “vary by”, or “is explained by”, followed by the variable you care about.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_6_0.png" src="_images/chapter-6_6_0.png" />
+</div>
+</div>
+<p>Whenever you color data with another variable in <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code>, it uses default colors and there isn’t an easy way to set multiple colors, even though sometimes you might want to. In this case, we can use another handy function, <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code>, that will take an already-built histogram and make some changes to it. For example, here’s the R code to change the colors of this histogram.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># graphics plots can be saved as objects; when you do, they won&#39;t automatically print to the console</span>
+<span class="n">thumb_by_sex</span> <span class="o">&lt;-</span> <span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="n">thumb_by_sex</span><span class="p">,</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;purple&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_8_0.png" src="_images/chapter-6_8_0.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code> takes a histogram object as a first argument, and then another function as a second argument that we want to apply to that histogram. In this case, we used the graphic function <code class="docutils literal notranslate"><span class="pre">scale_fill_manual()</span></code> which allows us to manually define the colors we want for each unique value in <code class="docutils literal notranslate"><span class="pre">Sex</span></code> (make sure to use no more and no fewer colors than values to be colored!)</p>
+<p>Now is also a time we can introduce a really powerful R functionality that most other coding languages don’t have. Notice above how, in order to use <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code>, we had to build an object first containing the base histogram. Ultimately we did two things to this histogram - build it, and refine the colors. That’s not too onerous, but it can get annoying to type and tougher to read if there are many changes you want to make to an object in a step-by-step way, and thus you have to keep redefining an object. Enter the “pipe” operator, which is three symbols together that look like this: <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code>. The pipe lets you take the output of one function and immediately pass it as an argument in another function, without having to save it to an object first. Below is how we would build the exact same colored histogram as above, but using a pipe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;purple&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_10_0.png" src="_images/chapter-6_10_0.png" />
+</div>
+</div>
+<p>Notice the two changes we made: 1) there is a pipe after the initial histogram command, which is saying “take the results of this and pass it to the following function”; 2) on the next line, <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code> is missing its first argument, replaced by a dot, because it is implied by what the pipe is giving it.</p>
+<div class="alert alert-block alert-info">
+<b>Note</b>: %>% passes an object on the left hand side as an argument of the function on the righthand side. We are using a "." to show you where that argument is being passed to. However, in its the first argument, R actually lets you leave it out entirely and type as if there's no first argument in the second function at all. However, for learning purposes we'll leave it in here. If you want to pass it as a second or later argument, you do have to include a "." in that argument spot.
+</div><p>Another way to examine the male and female data is to split the histogram we made into two different pictures: one for females and another for males. We can chain on (using <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code>) the command <code class="docutils literal notranslate"><span class="pre">gf_facet_grid()</span></code> after <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code>. This will put the separate histograms of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> for females and for males in a grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">gf_facet_grid</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_14_0.png" src="_images/chapter-6_14_0.png" />
+</div>
+</div>
+<p>Using either the colored histogram or the separate histograms, does it seem like thumb length varies as a function of sex?</p>
+<p>Remember that putting something after the <code class="docutils literal notranslate"><span class="pre">~</span></code> means something gets changed on the x-axis. <code class="docutils literal notranslate"><span class="pre">gf_facet_grid()</span></code> works the same way. Putting the variable <code class="docutils literal notranslate"><span class="pre">Sex</span></code> after the <code class="docutils literal notranslate"><span class="pre">~</span></code> puts these two graphs in a row along the x-axis. Putting <code class="docutils literal notranslate"><span class="pre">Sex</span></code> <em>before</em> the <code class="docutils literal notranslate"><span class="pre">~</span></code> puts these two graphs in a column along the y-axis. The only difference is we have to include a period after the <code class="docutils literal notranslate"><span class="pre">~</span></code>, because this function always expects something after the <code class="docutils literal notranslate"><span class="pre">~</span></code> but we don’t have any variable we want to plot along the x-axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">gf_facet_grid</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">Sex</span> <span class="o">~</span> <span class="n">.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_16_0.png" src="_images/chapter-6_16_0.png" />
+</div>
+</div>
+<p>This is more helpful than side-by-side because it’s easier to compare where the distributions are along the same <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> axis. It seems that the distribution of thumb lengths for males is shifted higher relative to the female distribution.</p>
+<p>Also, it is immediately apparent that there are fewer males than females. This is when a measure like density (rather than count) comes in handy - it lets you see the distribution relative to itself rather than the range of values somewhere else.</p>
+<p>Adjust the following code to re-create these histograms as density histograms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modify this code to create density histograms</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span>
+<span class="nf">gf_facet_grid</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">Sex</span> <span class="o">~</span> <span class="n">.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_18_0.png" src="_images/chapter-6_18_0.png" />
+</div>
+</div>
+<p>Another way of thinking about <code class="docutils literal notranslate"><span class="pre">Sex</span></code> explaining variation in <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> is to say that <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> is really made up of two different distributions, one for males and one for females. Although the shape of these two histograms are roughly normal, the average male thumb is bigger than the average female thumb. It almost seems like the whole male distribution is shifted higher along the x-axis. The center of the distribution is different across the two groups.</p>
+<p>This isn’t to say that just because we know someone’s sex we definitely know their thumb length. After all, there are both males and females with longer thumbs and both males and females with shorter thumbs. This variation among members of the same group is called <strong>within-group variation</strong>. When we combine all the thumbs together in a single histogram, we are able to see how spread-out the overall distribution is. This gives us an idea of the total variation. When we divide the distribution up and look separately at the two histograms, we can see the within-group variation.</p>
+<p>Besides finding a difference in group means, botice that these group-specific histograms tend to have less variation than the single histogram. It’s as if some of the variation in <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> has been accounted for by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. Because we can only see the within-group variation after we divide the distribution up by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, another name for within-group variation is “leftover variation.”</p>
+<p>Even though there is still a lot of variation in thumb length left over after taking out the role of <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, it is still true that if we know someone’s sex we can be a little better at predicting their thumb length. A little better may not be great, but it is better than nothing.</p>
+<p>Now, remember any other variable you thought might be related to <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>. Make a grid of histograms to investigate the association of that variable with thumb length. (Make sure to use a categorical variable.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code here to plot histograms of thumb and another variable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are a few example histograms you could have made. The gray histograms on the left make a grid of thumb length based on year in college. The colorful histograms are based on Race/Ethnicity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">gf_facet_grid</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">Year</span> <span class="o">~</span> <span class="n">.</span><span class="p">)</span> 
+
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">RaceEthnic</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">gf_facet_grid</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">RaceEthnic</span> <span class="o">~</span> <span class="n">.</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_22_0.png" src="_images/chapter-6_22_0.png" />
+<img alt="_images/chapter-6_22_1.png" src="_images/chapter-6_22_1.png" />
+</div>
+</div>
+<p>Of the two variables used to create the faceted histograms above (year in college and race/ethnicity), which do you think does a better job predicting thumb length?</p>
+</section>
+<section id="outcomes-and-explanatory-variables">
+<h2>6.3 Outcomes and explanatory variables<a class="headerlink" href="#outcomes-and-explanatory-variables" title="Permalink to this headline">#</a></h2>
+<p>We now have a sense of what it means to explain variation in one variable by variation in another. In the previous section, for example, we saw that variation in thumb length could be explained, in part, by variation in sex. In this section we want to begin developing a language for describing the variables that play different roles in these relationships — relationships in which one variable explains variation in another.</p>
+<p>Up to this point, we have distinguished between qualitative variables and quantitative variables. But our desire to explain variation in one variable with variation in another variable leads us to make another distinction, that is, between an outcome variable and an explanatory variable.</p>
+<p>The <strong>outcome variable</strong> is the variable whose variation we are trying to explain. It is the “target” thing we are trying to understand. In this course, the tools and methods we use will focus on a single outcome variable at one time.</p>
+<p>The <strong>explanatory variables</strong> are the variables we use to explain variation in the outcome variable. Although we will initially consider only one explanatory variable at a time, later in this course we will allow for the possibility of using multiple explanatory variables at a time.</p>
+<p>You may or may not have heard the terms “outcome variable” and “explanatory variable” before. We will use these terms throughout, but if you’ve taken statistics before, or read any research reports, you will no doubt have encountered a number of different terms used to represent the same distinction. Some of these are presented in the table below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Outcome variable</p></th>
+<th class="text-align:center head"><p>Explanatory variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Dependent variable (DV)</p></td>
+<td class="text-align:center"><p>Independent variable (IV)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Predicted variable</p></td>
+<td class="text-align:center"><p>Predictor variable</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Response variable</p></td>
+<td class="text-align:center"><p>Treatment variable</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Output variable</p></td>
+<td class="text-align:center"><p>Experimental variable</p></td>
+</tr>
+</tbody>
+</table>
+<p>It is important to figure out whether a variable is quantitative or qualitative. But it is equally important to figure out whether a variable is an outcome or explanatory variable. Making this latter distinction requires a greater understanding of the context that the data pertain to, and the purpose for collecting the data. Let’s think about a situation and try to figure out what the outcome variable might be.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">MindsetMatters</span></code> data frame, we have the results of an experiment where a researcher informed a randomly chosen group of housekeepers (41 of them) that the work they do satisfies the Surgeon General’s recommendations for an active lifestyle (which is true). They were also given examples to illustrate why their work is considered good exercise. The other 34 housekeepers were told nothing.</p>
+<p>Whether an individual housekeeper was informed or not was recorded in the variable called <code class="docutils literal notranslate"><span class="pre">Condition</span></code> (either Informed or Uninformed). The researcher also recorded each housekeeper’s weight after four weeks in a variable called <code class="docutils literal notranslate"><span class="pre">Wt2</span></code>. Let’s make a new variable called <code class="docutils literal notranslate"><span class="pre">WtLoss</span></code> that codes whether someone decreased in weight. Then the first six rows of the data frame for these two variables are shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#39;mindsetmatters.csv&#39;</span><span class="p">)</span>
+<span class="n">mindsetmatters</span><span class="o">$</span><span class="n">WtLost</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Wt</span> <span class="o">-</span> <span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Wt2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="m">0</span> 
+<span class="nf">head</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Condition</span><span class="p">,</span> <span class="n">WtLost</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">75</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">15</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
+<span class=" -Color -Color-Red">chr</span>  (1): Condition
+<span class=" -Color -Color-Green">dbl</span> (14): Cond, Age, Wt, Wt2, BMI, BMI2, Fat, Fat2, WHR, WHR2, Syst, Syst2, ...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 6 × 2</caption>
+<thead>
+	<tr><th scope=col>Condition</th><th scope=col>WtLost</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;lgl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>Uninformed</td><td> TRUE</td></tr>
+	<tr><td>Uninformed</td><td>FALSE</td></tr>
+	<tr><td>Uninformed</td><td> TRUE</td></tr>
+	<tr><td>Uninformed</td><td>FALSE</td></tr>
+	<tr><td>Uninformed</td><td>FALSE</td></tr>
+	<tr><td>Uninformed</td><td> TRUE</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Which of these is the explanatory variable, and which is the outcome?</p>
+<p>Because these are both categorical variables, it’s not possible to make a nice normal distribution histogram like we saw above. Instead, here’s a bar graph to visualize the distribution of <code class="docutils literal notranslate"><span class="pre">WtLost</span></code> (using a function <code class="docutils literal notranslate"><span class="pre">gf_bar()</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_bar</span><span class="p">(</span><span class="o">~</span> <span class="n">WtLost</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mindsetmatters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_27_0.png" src="_images/chapter-6_27_0.png" />
+</div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">gf_facet_grid()</span></code> with any plot, not just histograms. Try creating a bar graph of <code class="docutils literal notranslate"><span class="pre">WtLost</span></code> (like the one above), but chain on a facet grid to compare the outcome across conditions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a bar graph of WtLost, then use gf_facet_grid() to compare the outcome across groups of Condition</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So far we have considered both numerical (e.g., <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>) and categorical (e.g., <code class="docutils literal notranslate"><span class="pre">WtLost</span></code>) outcomes. We have also looked at some categorical explanatory variables (e.g., <code class="docutils literal notranslate"><span class="pre">Sex</span></code> and <code class="docutils literal notranslate"><span class="pre">Condition</span></code>). But we haven’t yet looked at any examples of quantitative explanatory variables.</p>
+<p>There isn’t any reason to think that we couldn’t. Perhaps a quantitative variable like age or initial weight might help us predict how much weight a housekeeper will lose. We’ll come back around to the idea of a quantitative explanatory variable later.</p>
+</section>
+<section id="point-and-jitter-plots">
+<h2>6.4 Point and jitter plots<a class="headerlink" href="#point-and-jitter-plots" title="Permalink to this headline">#</a></h2>
+<p>We have learned how to make visualizations of outcome variables as a function of explanatory variables (e.g., histograms and bar graphs in a facet grid). We will learn a few more visualizations in this section.</p>
+<p>A <strong>scatterplot</strong> is a common way to show the relationship between an outcome variable and an explanatory variable. A scatterplot will show each data point as a dot on a graph, so that you can keep track of within-group variation at the same time. A scatterplot in <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> can be made with the function <code class="docutils literal notranslate"><span class="pre">gf_point()</span></code>. Let’s try using <code class="docutils literal notranslate"><span class="pre">gf_point()</span></code> to examine <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> lengths by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_32_0.png" src="_images/chapter-6_32_0.png" />
+</div>
+</div>
+<p>This is the first time we’re including both the explanatory variable and the outcome variable in the same function call, on either side of the <code class="docutils literal notranslate"><span class="pre">~</span></code> symbol. This results in a plot that, instead of making two separate histograms of the outcome variable for each explanatory variable, makes points in a 2-D that shows the value of each observation on each variable.</p>
+<p>You can change the color of the points with the argument <code class="docutils literal notranslate"><span class="pre">color</span></code> (much like we did before) and the size of the points with <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_34_0.png" src="_images/chapter-6_34_0.png" />
+</div>
+</div>
+<p>Sometimes with scatterplots like this, it’s difficult to make out all the points because they overlap each other so closely. This is particularly a problem when you have two variables of categorical or ordinal data that can’t have more than a few values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Can you tell how many people have each explanatory/outcome pairing?</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_36_0.png" src="_images/chapter-6_36_0.png" />
+</div>
+</div>
+<p>We can <strong>jitter</strong> these points, or spread them out a little bit, so that you can see all the individual points better. We’ll use the function <code class="docutils literal notranslate"><span class="pre">gf_jitter()</span></code> to create a jitter plot depicting <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> length by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. This function is just like making a <code class="docutils literal notranslate"><span class="pre">gf_point()</span></code> plot, except that the points will be a little jittered both vertically and horizontally.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_38_0.png" src="_images/chapter-6_38_0.png" />
+</div>
+</div>
+<p>But now they’re <em>too</em> jittered though - it’s hard to tell which points should correspond to each ordinal value. We can use the <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> arguments to change how the points get jittered. Height and width can be set to values between 0 and 1, which corresponds to the proportion of one unit in the variable value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_40_0.png" src="_images/chapter-6_40_0.png" />
+</div>
+</div>
+<p>Much easier to see! In a jitter plot, a point being more to the left or right within the group doesn’t mean anything. The jitter is some random repositioning so the points do not overlap too much and obscure how many data points have that value.</p>
+<p>Just like a scatterplot, in a jitter plot you can change the size of the points by including the argument <code class="docutils literal notranslate"><span class="pre">size</span></code>. You can also change the transparency of the points using the argument <code class="docutils literal notranslate"><span class="pre">alpha</span></code>. <code class="docutils literal notranslate"><span class="pre">alpha</span></code> can take values from 0 (more transparent) to 1 (more opaque). This is another way of showing how many points are at one place - the darker the color, the more observations there.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_42_0.png" src="_images/chapter-6_42_0.png" />
+</div>
+</div>
+<p>Try making jitter plots for a few of the variables from the  <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataframe. Play around with some of the arguments such as <code class="docutils literal notranslate"><span class="pre">height</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, and <code class="docutils literal notranslate"><span class="pre">alpha</span></code> (<a class="reference external" href="https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_jitter">here</a> are the possible arguments). Try making a jitter plot one way, then switching which variable is on the x-axis and which on the y-axis. Does it work both ways?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Play around with gf_jitter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There isn’t any restriction on what kind of variable you can put in the x- or y-axis for a jitter plot. You can put an outcome or explanatory variable in either position. You can also put a categorical or quantitative variable in either position. For example, in this jitter plot, we have put <code class="docutils literal notranslate"><span class="pre">Sex</span></code> on the y-axis and <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> length on the x-axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">Sex</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_46_0.png" src="_images/chapter-6_46_0.png" />
+</div>
+</div>
+<p>Even though you can put the outcome variable anywhere, it is more common to put the outcome variable on the y-axis. We will follow that convention in our jitter plots because it conforms with what people expect, and thus makes them easier to interpret.</p>
+</section>
+<section id="quantitative-explanatory-variables">
+<h2>6.5 Quantitative explanatory variables<a class="headerlink" href="#quantitative-explanatory-variables" title="Permalink to this headline">#</a></h2>
+<p>Up to this point we have been using categorical predictor variables. How do we show variation between quantitative explanatory and quantitative outcome variables? There’s no unique “bins” of data to put the explanatory data into for making a boxplot.</p>
+<p>You might think the best option is to create those bins, and turn the quantitative variable into a categorical one by, say, grouping everyone taller than the median height value into one bin and everyone shorter than the median into another. Or making three groups the same way by making bins for “short,” “medium,” and “tall.”</p>
+<p>This is called <strong>dichotomozing</strong>, but it is actually bad practice for the majority of use cases. When we do this, we are throwing away some of the information we have in our data. We know exactly how many inches tall each person is - why not use that information instead of just categorizing people as either tall or short?</p>
+<p>Let’s try another approach, a scatterplot of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> length by <code class="docutils literal notranslate"><span class="pre">Height</span></code>. Try using <code class="docutils literal notranslate"><span class="pre">gf_point()</span></code> with <code class="docutils literal notranslate"><span class="pre">Height</span></code> on the x-axis. Remember: when making plots, the convention is to put the outcome variable on the y-axis, the explanatory variable on the x-axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_49_0.png" src="_images/chapter-6_49_0.png" />
+</div>
+</div>
+<p>You can see the dots scattered around, but on a general upward trend. If you were to visualize a distribution on thumb for each general value of height, you would see that the distribution is slowly moving larger. A student who is taller also tends to have a longer thumb, but there’s not an exact relationship.</p>
+<p>So, just as when we measured explained the variance of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> with a categorical variable, there appears to be some variation in <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> that is explained by <code class="docutils literal notranslate"><span class="pre">Height</span></code>, but there is also variation left over after we have taken out the variation due to <code class="docutils literal notranslate"><span class="pre">Height</span></code>. I.e., there is variation on <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> at one value of <code class="docutils literal notranslate"><span class="pre">Height</span></code>.</p>
+</section>
+<section id="putting-multiple-plots-together">
+<h2>6.6 Putting multiple plots together<a class="headerlink" href="#putting-multiple-plots-together" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">gf_point()</span></code> and <code class="docutils literal notranslate"><span class="pre">gf_jitter()</span></code> are useful. They emphasize that data are made up of individual numbers, and yet they help us to notice clusters of those individual points. There are times, however, when we want to transcend the individual data points and focus only on where the clusters are.</p>
+<p><strong>Boxplots</strong> are helpful in this regard, and are especially useful for comparing the features of the distribution of an outcome variable across different levels of a categorical explanatory variable.</p>
+<p>Here’s how we would create a boxplot of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> length broken down by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_52_0.png" src="_images/chapter-6_52_0.png" />
+</div>
+</div>
+<p>In making boxplots we can play with the arguments <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code> much like we did before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_54_0.png" src="_images/chapter-6_54_0.png" />
+</div>
+</div>
+<p>Boxplots visually tell us the quantiles of the data. The rectangle at the center of the boxplot shows us where the middle 50% of the data points fall on the scale of the outcome variable. The thick line inside the box is the median. There are also lines, called whiskers, above and below the box. Another name for boxplot is box-and-whisker plot. The points that appear past the whiskers are considered outliers by this function (anything that is greater than 75%ile + 1.5*IQR, or less than 25%ile + 1.5*IQR). This isn’t the only way to define an outlier, but is a pretty common one. The length of the whiskers depicts the max and min of the data range - when there are outliers, the end of the whisker depicts the max or min value that is not considered an outlier.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>, we chain on multiple functions to put multiple types of plots in the same image. It’s like adding a layer of one plot on top of a layer of the first one below it. When chaining between multiple <code class="docutils literal notranslate"><span class="pre">gg_forumla</span></code> plots, the later functions “inherits” the same variables and data so we don’t need to type those in again. Handy!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">gf_jitter</span><span class="p">(</span><span class="n">.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_56_0.png" src="_images/chapter-6_56_0.png" />
+</div>
+</div>
+<p>In this situation where we are looking at the variation in <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> length by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, the boxes are in different vertical positions. The male box is higher than the female box. How do you think we should interpret the placement of the boxes?</p>
+<p>Instead of an explanatory variable like <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, let’s try one that is unlikely to help us explain the variation in thumb length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modify this boxplot to look at Thumb length varying by Job instead of Sex</span>
+<span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span> <span class="o">%&gt;%</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">.</span><span class="m">5</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chapter-6_58_0.png" src="_images/chapter-6_58_0.png" />
+</div>
+</div>
+<p>Notice that in this boxplot, the boxes are at approximately the same vertical position and are about the same size. The one exception is the box for the full-time level of <code class="docutils literal notranslate"><span class="pre">Job</span></code>. The full-time box only includes one student, so, we wouldn’t want to draw any conclusions about the relationship between working full time and thumb length. Most of the students in the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> data frame either work part-time or not at all. The thumbs of students with no job are not much longer or shorter than thumbs of students with part-time jobs. But within each group, their thumb lengths vary a lot. There are long-thumbed and short-thumbed students with part-time jobs and with no jobs.</p>
+<p>In summary, visualization helps see variation in data, and patterns of co-variation <em>between</em> variables reveals how they are related to each other. Below is are tables of all the visualization methods we learned in this chapter. It would be very helpful to keep this in your R cheatsheet to refer to whenever you need!</p>
+<p><strong>Visualizations for one variable</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Variable</p></th>
+<th class="text-align:center head"><p>Visualization type</p></th>
+<th class="text-align:center head"><p>R code (<code class="docutils literal notranslate"><span class="pre">gg_formula</span></code> package)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Categorical</p></td>
+<td class="text-align:center"><p>Bar graph</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_bar()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Quantitative</p></td>
+<td class="text-align:center"><p>Histogram</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>Boxplot</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_boxplot()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visualizations for two variables</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Outcome variable</p></th>
+<th class="text-align:center head"><p>Explanatory variable</p></th>
+<th class="text-align:center head"><p>Visualization type</p></th>
+<th class="text-align:center head"><p>R code (<code class="docutils literal notranslate"><span class="pre">gg_formula</span></code> package)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Categorical</p></td>
+<td class="text-align:center"><p>Categorical</p></td>
+<td class="text-align:center"><p>Faceted bar graph</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_bar()</span> <span class="pre">%&gt;%</span> <span class="pre">gf_facet_grid(.)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Quantitative</p></td>
+<td class="text-align:center"><p>Categorical</p></td>
+<td class="text-align:center"><p>Faceted histogram</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_histogram()</span> <span class="pre">%&gt;%</span> <span class="pre">gf_facet_grid(.)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>Boxplot</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_boxplot()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>Jitter plot</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_jitter()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Categorical</p></td>
+<td class="text-align:center"><p>Quantitative</p></td>
+<td class="text-align:center"><p>Same as above, axes flipped</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Quantitative</p></td>
+<td class="text-align:center"><p>Quantitative</p></td>
+<td class="text-align:center"><p>Scatterplot</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">gf_point()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Explain what “explain” means</p></li>
+<li><p>Change plots with faceting and colors</p></li>
+<li><p>Make the correct type of plot for each type of quantitative/categorical variable display</p></li>
+</ul>
+</section>
+<section id="chapter-quiz">
+<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="lab">
+<h2>Lab<a class="headerlink" href="#lab" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Add a third variable by varying data size/color in a scatter plot</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter-5.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 5 - Describing Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter-7.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 7 - Principles of Data Visualization</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

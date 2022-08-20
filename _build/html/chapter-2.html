@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 2 - Statistical Reasoning &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 3 - What are Data" href="chapter-3.html" />
+    <link rel="prev" title="Chapter 1 - Intro to Doing Statistics" href="chapter-1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1.html">
+   Chapter 1 - Intro to Doing Statistics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3.html">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4.html">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6.html">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapter-2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapter-2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1 Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-statistics-do-for-us">
+   2.2 What can statistics do for us?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe">
+     Describe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decide">
+     Decide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predict">
+     Predict
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-big-ideas-of-statistics">
+   2.3 The big ideas of statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-from-data">
+     Learning from data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operationalization">
+     Operationalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregation">
+     Aggregation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uncertainty">
+     Uncertainty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampling-from-a-population">
+     Sampling from a population
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-solving-computational-thinking">
+   2.4 Problem-solving &amp; computational thinking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-control-flow">
+   2.5 Coding control flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-else-and-else-if">
+     “If”, “Else”, and “Else If”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     For loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     While loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 2 - Statistical Reasoning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1 Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-statistics-do-for-us">
+   2.2 What can statistics do for us?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe">
+     Describe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decide">
+     Decide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predict">
+     Predict
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-big-ideas-of-statistics">
+   2.3 The big ideas of statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-from-data">
+     Learning from data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operationalization">
+     Operationalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregation">
+     Aggregation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uncertainty">
+     Uncertainty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampling-from-a-population">
+     Sampling from a population
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-solving-computational-thinking">
+   2.4 Problem-solving &amp; computational thinking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-control-flow">
+   2.5 Coding control flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-else-and-else-if">
+     “If”, “Else”, and “Else If”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     For loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     While loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-statistical-reasoning">
+<h1>Chapter 2 - Statistical Reasoning<a class="headerlink" href="#chapter-2-statistical-reasoning" title="Permalink to this headline">#</a></h1>
+<p><em>“Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write.” - H.G. Wells</em></p>
+<section id="introduction">
+<h2>2.1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Life is messy and complex - things like people, animals, weather, even microscopic bacteria can vary between each other in a multitude of ways, for a multitude of reasons. How do we make sense of this complexity and still describe our world in reasonably accurate ways? Statistics is the discipline that helps us with this - it is how we turn variation in the world into variation in <em><strong>data</strong></em>, and how we analyze that data in order to give us answers about the essential structure or function of the world.</p>
+<div class="alert alert-block alert-info">
+<b>Data</b>: (Plural, singular datum.) The quantities, characters, or symbols on which mathematical operations can be computed.
+</div>
+<p>The foundations of statistics come primarily from mathematics, but also from computer science, psychology, and other fields of study. From this interdisciplinary crucible, statistics has emerged as not just a collection of facts or equations. Statistics is a way of <em>thinking</em>, distinct from other forms of thinking that are less likely to describe the world accurately. In particular, statistics can answer the sorts of questions where human intuition fails.</p>
+<p>For example, in recent years most Americans have reported that they think violent crime was worse compared to the previous year (<a class="reference external" href="https://www.pewresearch.org/fact-tank/2020/11/20/facts-about-crime-in-the-u-s/">Pew Research Center</a>). However, a statistical analysis of the actual crime data shows that in fact violent crime has steadily decreased since the 1990’s. Intuition fails us because we rely upon best guesses (which psychologists refer to as <em>heuristics</em>) that can often get it wrong. In this case, humans often judge the prevalence of some event (like violent crime) using an availability heuristic – that is, how easily can we think of an example of violent crime. For this reason, our judgments of increasing crime rates may be more reflective of increasing news coverage, in spite of an actual decrease in the rate of crime. Statistical thinking provides us with the tools to more accurately understand the world and overcome the biases of human judgment.</p>
+<img src="ch1-pew.png"  width="750"></section>
+<section id="what-can-statistics-do-for-us">
+<h2>2.2 What can statistics do for us?<a class="headerlink" href="#what-can-statistics-do-for-us" title="Permalink to this headline">#</a></h2>
+<p>There are three major things we can do with statistics:</p>
+<ul class="simple">
+<li><p><strong>Describe</strong>: The world is complex and we often need to describe it in a simplified way that we can understand.</p></li>
+<li><p><strong>Decide</strong>: We often need to make decisions based on data, usually in the face of uncertainty.</p></li>
+<li><p><strong>Predict</strong>: We often wish to make predictions about new situations based on our knowledge of previous situations.</p></li>
+</ul>
+<p>Let’s look at an example of each of these use cases in action.</p>
+<section id="describe">
+<h3>Describe<a class="headerlink" href="#describe" title="Permalink to this headline">#</a></h3>
+<p>How do we know what’s healthy to eat? There are many different sources of guidance; government dietary guidelines, diet books, and bloggers, just to name a few. Let’s focus in on a specific question: Is saturated fat in our diet a bad thing?</p>
+<p>One way that we might answer this question is common sense. If we eat fat, then it’s going to turn straight into fat in our bodies, right? And we have all seen photos of arteries clogged with fat, so eating fat is going to clog our arteries, right?</p>
+<p>Another way that we might answer this question is to look at actual data on the subject. One large-scale study, called the PURE study, examined diets and health outcomes (including death) in more than 135,000 people from 18 different countries. In one of the analyses of this dataset (published in The Lancet in 2017; <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28864332/">Dehghan et al. (2017)</a>), the PURE investigators reported how intake of various classes of macronutrients (including saturated fats and carbohydrates) was related to the likelihood of dying during the time that people were followed. The plot below displays some of the data from the study (extracted from the paper), showing the relationship between the intake of both saturated fats and carbohydrates and the risk of dying from any cause.</p>
+<img src="ch1-satfats.png"  width="400">
+<p><em>A plot of data from the PURE study, showing the relationship between death from any cause and the relative intake of saturated fats and carbohydrates.</em></p>
+<p>Don’t worry if this plot is hard to read at this time - you’ll get there! For now, notice the ten points where the lines run through. To obtain the numbers represented by these points, the researchers split the group of 135,335 study participants (which we call the <em><strong>sample</strong></em>; Chapter 6) into 5 groups (<em><strong>quintiles</strong></em>; Chapter 5) based on how much they ate each type of nutrient (carbohydrates and saturated fats). The first quintile group contains the 20% of people with the lowest intake, and the 5th quintile contains the 20% with the highest intake. The researchers then computed how often people in each of those groups died during the time the study was conducted. The figure expresses this in terms of the relative risk of dying in comparison to the lowest quintile: If this number is greater than one, it means that people in the group are more likely to die than are people in the lowest quintile, whereas if it’s less than one, it means that people in the group are less likely to die. The figure is pretty clear: People who ate more saturated fat were less likely to die during the study. The opposite is seen for carbohydrates; the more carbs a person ate, the more likely they were to die during the study.</p>
+<p>This example shows how we can use statistics to describe a complex dataset in terms of a much simpler set of numbers. It would be very hard to tell whether carbs or saturdated fat were worse for you by looking at the whole dataset at once (135,335 points of data!). But by using statistics, we can <em>aggregate</em> and <em>compare</em> sets of information to make the takeaway lesson easier to see.</p>
+</section>
+<section id="decide">
+<h3>Decide<a class="headerlink" href="#decide" title="Permalink to this headline">#</a></h3>
+<p>The numbers in this figure seem to show that deaths decrease with saturated fat and increase with carbohydrate intake. But we also know that there is a lot of uncertainty in these data; there are some people who died early even though they ate a low-carb diet, and some people who ate a ton of carbs but lived to a ripe old age. Given this variability, we want to decide whether the patterns that we see in the data are large enough that we wouldn’t expect them to occur randomly if there was not truly a connection between diet and longevity. Statistics provide us with the tools to make these kinds of decisions, and often people from the outside view this as the main purpose of statistics. But as we will see throughout the course, this need for black-and-white decisions based on fuzzy evidence has often led researchers astray. Thus, there are also methods within statistics to tell us how confident we can be with our conclusions.</p>
+</section>
+<section id="predict">
+<h3>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">#</a></h3>
+<p>These data help us explain how diet is related to longevity for people in the PURE study, but we might also want to make predictions about other people <em>not</em> included in the dataset, or outcomes that haven’t happened yet. For example, a life insurance company might want to use data about a particular person’s intake of fat and carbohydrate to predict how long they are likely to live. An important aspect of prediction is that it requires us to generalize from the data we already have to some other situation, often in the future; if our conclusions were limited to the specific people in the study at a particular time, then the study would not be very useful. In general, researchers must assume that their particular sample is representative of a larger population, which requires that they obtain the sample in a way that provides an unbiased picture of the population. If, say, the PURE study had recruited all of its participants from religious sects that practice vegetarianism, then we probably wouldn’t want to generalize the results to people who follow different dietary standards. But if this dataset included a good number of people that follow a diversity of diets, these results can probably help us make predictions about other people as well.</p>
+</section>
+</section>
+<section id="the-big-ideas-of-statistics">
+<h2>2.3 The big ideas of statistics<a class="headerlink" href="#the-big-ideas-of-statistics" title="Permalink to this headline">#</a></h2>
+<p>Since statistics is a way of thinking, there are some basic ideas that are important to remember for doing statistics well.</p>
+<section id="learning-from-data">
+<h3>Learning from data<a class="headerlink" href="#learning-from-data" title="Permalink to this headline">#</a></h3>
+<p>At its core, statistics is the pursuit of knowledge via data. In any situation, we start with a set of ideas or hypotheses about what might be the case. In the PURE study, the researchers may have started out with the expectation that eating more fat would lead to higher death rates, given the prevailing negative dogma about saturated fats. But this hypothesis is not where the researchers stopped - they collected data to test it. In the end, the patterns in the data revealed a different reality. Data thus can help us solidify our beliefs, update them, or even inspire new ideas. It is the central currency of doing a science like psychology.</p>
+</section>
+<section id="operationalization">
+<h3>Operationalization<a class="headerlink" href="#operationalization" title="Permalink to this headline">#</a></h3>
+<p>Think of the statement “dogs are good pets.” On the surface, it seems like a pretty simple, straight-forward claim. But now think of what it would take to support this statement with evidence. What counts in the category “dogs?” What actions or qualities are relavent to being evaluated as a good pet? And what even does “good” mean? I.e., if they make you smile sometimes, is that good? Are they still good pets if every other animal makes you smile all the time?</p>
+<p>Assigning concrete meaning to abstract or vague concepts like this is called <strong>operationalization,</strong> and is required for statistics to work. In order to do any computations on data, you need to be able to break a hypothesis down in smaller conceptual units and define what those mean in easy-to-understand ways. This enables you to 1) define what set of data to use (e.g., what counts as a “dog” and what doggy actions are relevant to you); 2) choose what kind of analysis to do on the data; and 3) evaluate how important your analysis is for understanding the topic as a whole.</p>
+</section>
+<section id="aggregation">
+<h3>Aggregation<a class="headerlink" href="#aggregation" title="Permalink to this headline">#</a></h3>
+<p>Another way to think of statistics is as “the science of throwing away data”. In the example of the PURE study above, we took more than 100,000 numbers and condensed them into ten. It is this kind of aggregation that is one of the most important concepts in statistics. When it was first advanced, this was revolutionary: If we throw out all of the details about every one of the participants, then how can we be sure that we aren’t missing something important? As we will see, statistics provides us ways to characterize the aggregates of data in a way that still preserves information about the total. However, it’s also important to keep in mind that aggregation can go too far, and later we will encounter cases where a summary can provide a very misleading picture of the data being summarized.</p>
+</section>
+<section id="uncertainty">
+<h3>Uncertainty<a class="headerlink" href="#uncertainty" title="Permalink to this headline">#</a></h3>
+<p>The world is an uncertain place. We now know that cigarette smoking causes lung cancer, but this causation is probabilistic: A 68-year-old man who smoked two packs a day for the past 50 years and continues to smoke has a 15% (1 out of 7) risk of getting lung cancer, which is much higher than the chance of lung cancer in a nonsmoker. However, it also means that there will be many people who smoke their entire lives and never get lung cancer. Furthermore, it’s possible that even when all measurable variables are the same, e.g., this man has a genetically identical twin brother who smokes the exact same amount and has the exact same lifestyle, one of them might get cancer while the other does not. Statistics provides us with the tools to characterize uncertainty, to make decisions under uncertainty, and to make predictions whose uncertainty we can quantify.</p>
+<p>One often sees journalists write that scientific researchers have “proven” some hypothesis. But statistical analysis can never “prove” a hypothesis, in the sense of demonstrating that it must be true (as one would in a logical or mathematical proof). Statistics can provide us with evidence, but it’s always tentative and subject to the uncertainty that is always present in the real world.</p>
+</section>
+<section id="sampling-from-a-population">
+<h3>Sampling from a population<a class="headerlink" href="#sampling-from-a-population" title="Permalink to this headline">#</a></h3>
+<p>The concept of aggregation implies that we can make useful insights by collapsing across data – but how much data do we need? The idea of sampling says that we can summarize an entire population based on just a small number of samples from the population, as long as those samples are obtained in the right way. For example, the PURE study enrolled a sample of about 135,000 people, but its goal was to provide insights about the billions of humans who make up the population from which those people were sampled. As we already discussed above, the way that the study sample is obtained is critical, as it determines how broadly we can generalize the results. Another fundamental insight about sampling is that while larger samples are always better (in terms of their ability to accurately represent the entire population), there are diminishing returns as the sample gets larger.</p>
+</section>
+</section>
+<section id="problem-solving-computational-thinking">
+<h2>2.4 Problem-solving &amp; computational thinking<a class="headerlink" href="#problem-solving-computational-thinking" title="Permalink to this headline">#</a></h2>
+<p>When you practice the statistical way of thinking, you also exercise your problem-solving brain muscles. Statistics requires you to be able to take a research question, break it down into logical steps, and decide how to do each of those steps with computation and numbers. Doing this is also called “computational thinking.” While statistics isn’t unique in requiring this skill, it goes a long way towards understanding how to do research analysis start to finish, and understanding how to write the code that will execute all that for you!</p>
+<p>This may sound straightforward at first, but practicing it even with simple processes at first will give you the skills to tackle more complex problems. For example, take the act of making ice cubes. It’s sound easy, right?</p>
+<ol class="simple">
+<li><p>Put a tray of water in the freezer</p></li>
+</ol>
+<p>It sounds very simple to humans, but imagine you’re talking to an alien that doesn’t know what any of those things are. You need to define all the steps for them. What are a freezer and tray? How does water get into the tray to start? Computers are like this too, and you need to be very explicit with them.</p>
+</section>
+<section id="coding-control-flow">
+<h2>2.5 Coding control flow<a class="headerlink" href="#coding-control-flow" title="Permalink to this headline">#</a></h2>
+<p>This brings us to another concept in R programming that we should cover before we get too much further into learning statistics - control flow. This refers to telling a programming language, like R, in what order you want it to evaluate code commands in. Usually in R we don’t actually need to explicit use control flow like this, because many functions we use will do it for us. However, breaking down analysis problems often involves thinking about the control flow of your analysis code, so we want you to be familiar with this way of doing things.</p>
+<p>So far we haven’t written much more than a few lines of code at a time, but what happens when you write code that are many lines long? How is it all executed? By default, R reads your code from the top of a file to the bottom. Each line of code happens one at a time, in order. But sometimes you want R to do things multiple times, or you want it to do different things depending on some condition. For example, say you were writing a program that would cook chicken:</p>
+<ol class="simple">
+<li><p>Add heat to pan</p></li>
+<li><p>Add chicken breast</p></li>
+<li><p>Check chicken doneness once a minute</p></li>
+<li><p>Once chicken is done, turn off heat</p></li>
+<li><p>If bland, add salt to chicken</p></li>
+</ol>
+<p>To do the above with code, you need to <em>control</em> what steps R executes, and when to execute them. These two concepts <strong>conditional statements</strong> and <strong>loops</strong>, and by including some specific syntax, you can tell R when want code to be treated in a special way like this.</p>
+<section id="if-else-and-else-if">
+<h3>“If”, “Else”, and “Else If”<a class="headerlink" href="#if-else-and-else-if" title="Permalink to this headline">#</a></h3>
+<p>The most basic control flow statement in R is the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement checks whether some logical expression is true or false and executes a specified block of code if the logical expression is true.</p>
+<p>In R, an if statement starts with if, followed by a logical expression in parentheses, followed by the code to execute when the if statement is true in curly braces. Before running the below code, read the comments and see if you can predict what will be returned by the code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">10</span>         <span class="c1"># Assign some variables</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">5</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>      <span class="c1"># The keyword &quot;if&quot; starts an if statement; # A logical expression follows the &quot;if&quot;</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    <span class="c1"># Curly brace &quot;{&quot; start a chunk of code that you want to execute, only if the logical         </span>
+<span class="p">}</span>               <span class="c1"># expression is true. Afterwards, close the conditional block with a &quot;}&quot; brace.  </span>
+                <span class="c1"># The chunk of code within the &quot;{}&quot; braces should be indented, for readibility. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case the logical expression was true - x was greater than y - so the print(x) statement was executed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">If</span></code> statements are often accompanied by <code class="docutils literal notranslate"><span class="pre">else</span></code> statements. <code class="docutils literal notranslate"><span class="pre">Else</span></code> statements come after <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and allow you to execute code in the event that the logical expression of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is false.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">&lt;-</span> <span class="m">25</span>         <span class="c1"># Reassign variable y to make it larger than x</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>    <span class="c1"># The original if statement</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>        <span class="c1"># With a new else statement added</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 25
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is a false statement so the code in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block is skipped and the code in the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is executed instead. Were <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> true, the code in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block would be executed and the <code class="docutils literal notranslate"><span class="pre">else</span></code> block would be ignored.</p>
+<p>Notice that there is no logical statement in parentheses after the <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword. Why do you think that is? Try debugging the code below to make it work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try writing your own if/else statement with a different arithmatic equation, using the above format as a guide</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">12</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">15</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>    
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span> <span class="nf">else </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>        <span class="c1"># What&#39;s wrong with this line?</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span> <span class="n">unexpected</span> <span class="s1">&#39;{&#39;</span>
+<span class="mi">6</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">7</span><span class="p">:</span> <span class="p">}</span> <span class="k">else</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="o">^</span>
+<span class="ne">Traceback</span>:
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code> statements require a logical statement that is only true or false. There can be no other option. Thus, if <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is not true and the <code class="docutils literal notranslate"><span class="pre">if</span></code> block of code doesn’t run, the only other option can false, which is when the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement kicks in. Because of that, no logical statement is needed after <code class="docutils literal notranslate"><span class="pre">else</span></code> - if R gets to that keyword before executing any other block, it knows to execute this one.</p>
+<p>But what about when you have more than two options you want R to be able to do? I.e., maybe you want to print both x and y if they equal each other? You can extend this basic <code class="docutils literal notranslate"><span class="pre">if/else</span></code> construct to perform multiple logical checks in a row by adding one or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statements between the opening <code class="docutils literal notranslate"><span class="pre">if</span></code> and the closing <code class="docutils literal notranslate"><span class="pre">else</span></code>. Each <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statement performs another logical check and executes its code <code class="docutils literal notranslate"><span class="pre">if</span></code> the check is true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">25</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">10</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>                     
+    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;x and y are equal&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>                         
+    <span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> is evaluating a new logical statement, it does need to have that logical statement included after the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> key phrase. You can include as many <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> blocks as you want, just remember that they are evaluated in order.</p>
+</section>
+<section id="for-loops">
+<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are a programming construct that let you go through each item in a sequence of many items, and then perform some operation on each one. For instance, you could use a for loop to go through all the values in a set of numbers and check whether each conforms to some logical expression, or to print each value to the console.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>     <span class="c1"># A function that creates a set of numbers, from 1 to 10 counting by 1</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">item</span> <span class="n">in</span> <span class="n">my_sequence</span><span class="p">)</span> <span class="p">{</span>     <span class="c1"># Create a new for loop over the specified items</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>                 <span class="c1"># Code to execute</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 0
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> keyword is also followed by some command in a set of parentheses. This time, that command also uses the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword. This keyword essentially tells R that you want to consider one thing (<code class="docutils literal notranslate"><span class="pre">item</span></code>) at a time, and each thing comes from some larger set (<code class="docutils literal notranslate"><span class="pre">my_sequence</span></code>).</p>
+<p>For loops and conditional statements can be combined. For example, think about how you can add an <code class="docutils literal notranslate"><span class="pre">if</span></code> block within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop block to only print out every item greater that 5:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">item</span> <span class="n">in</span> <span class="n">my_sequence</span><span class="p">)</span> <span class="p">{</span>     
+    <span class="c1">#add an if statement here {</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops support a couple of keywords that help control the flow within the loop: <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">next</span></code> keyword causes a for loop to skip to the next iteration of the loop, and ignore any part of the loop block below it. For example, to print only every item greater than 5 in a different way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">item</span> <span class="n">in</span> <span class="n">my_sequence</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">item</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">){</span>        <span class="c1"># This if statement skips items less than 5</span>
+        <span class="n">next</span>
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword halts the execution of the loop entirely, without executing any code withing the loop block below it or doing any more loops. Use <code class="docutils literal notranslate"><span class="pre">break</span></code> to “break out” of a loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">item</span> <span class="n">in</span> <span class="n">my_sequence</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">item</span> <span class="o">&gt;</span> <span class="m">5</span><span class="p">){</span>        <span class="c1"># Break out of the loop if item exceeds 5</span>
+        <span class="n">break</span>
+    <span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop above, substituting the <code class="docutils literal notranslate"><span class="pre">next</span></code> keyword for <code class="docutils literal notranslate"><span class="pre">break</span></code> would actually result in the exact same output but the code would take longer to run because it would still go through each item (each new interation of the “loop”) instead of breaking out of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop early. It is best to break out of loops early if possible to reduce how long it takes your code to run, especially when you have much longer code files than we’re working with here.</p>
+</section>
+<section id="while-loops">
+<h3>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops are similar to <code class="docutils literal notranslate"><span class="pre">for</span></code> loops in that they allow you to execute code over and over again. <code class="docutils literal notranslate"><span class="pre">for</span></code> loops execute their contents, at most, a number of iterations equal to the length of the sequence you are looping over. <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">loops</span></code>, on the other hand, keep executing their contents as long as a certain logical expression you supply remains true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">hour</span> <span class="o">&lt;-</span> <span class="m">1</span>
+
+<span class="c1">#Study until 5 o&#39;clock</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">)</span> <span class="p">{</span>     <span class="c1"># Execute the contents as long as hour &lt; end_time</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Studying...&quot;</span><span class="p">)</span>
+    <span class="n">hour</span> <span class="o">&lt;-</span> <span class="n">hour</span> <span class="o">+</span> <span class="m">1</span>    <span class="c1"># Increment hour by 1 each time the loop executes</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Done!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Studying...&quot;
+[1] 2
+[1] &quot;Studying...&quot;
+[1] 3
+[1] &quot;Studying...&quot;
+[1] 4
+[1] &quot;Studying...&quot;
+[1] 5
+[1] &quot;Done!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why wasn’t “Done!” printed until the end in the code above?</p>
+<p>Remember that a loop will only loop over code that is contained within the “{}” brackets of the code block!</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops can get you into trouble because they keep executing until the logical statement provided is false. If you supply a logical statement that will never become false and don’t provide a way to break out of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, it will run forever. For instance, if the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop above didn’t include the command to increment the value of <code class="docutils literal notranslate"><span class="pre">hour</span></code> by 1, the logical statement would never become false and the code would run forever. You’d never stop studying! Infinite while loops are a common cause of program hangs and crashes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements work inside <code class="docutils literal notranslate"><span class="pre">while</span></code> loops just like they do in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. You can use the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to escape a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop even if the logical expression you supplied is true. Consider the following while loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">hour</span> <span class="o">&lt;-</span> <span class="m">1</span>                 
+
+<span class="nf">while </span><span class="p">(</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>            <span class="c1"># This logical expression is always true!</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Studying...&quot;</span><span class="p">)</span>
+    <span class="n">hour</span> <span class="o">&lt;-</span> <span class="n">hour</span> <span class="o">-</span> <span class="m">1</span>    <span class="c1"># We made a bug here - subtracting 1 means hour will never increase above end_time</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
+    <span class="n">break</span>                 <span class="c1"># But we immediately break out of the loop</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Without the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement above, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop would have run forever. It is important to make sure that <code class="docutils literal notranslate"><span class="pre">while</span></code> loops contain a logical expression that will eventually be false or a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement that will eventually be executed to avoid infinite loops.</p>
+<p>Although you can use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to do anything a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can do, it is best to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops whenever you want to perform an operation a specific number of times. <code class="docutils literal notranslate"><span class="pre">while</span></code> loops should be reserved for cases where you don’t know how many times you need to execute the loop.</p>
+<p>Chapter summary</p>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Explain the difference between using statistical reasoning and using intuition</p></li>
+<li><p>Come up with different describe, decide, and predict use cases for data</p></li>
+<li><p>Summarize the major ideas in statistics and what they mean</p></li>
+<li><p>Code with if/else, for, and while control blocks in R</p></li>
+</ul>
+</section>
+</section>
+<section id="chapter-quiz">
+<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>If treating each step of the chicken recipe like code, indicate whether or not each step needs some control flow added, and what kind of control block you would add.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Add heat to pan</p></li>
+<li><p>Add chicken breast</p></li>
+<li><p>Check chicken doneness once a minute</p></li>
+<li><p>Once chicken is done, turn off heat</p></li>
+<li><p>If bland, add salt to chicken</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter-1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 1 - Intro to Doing Statistics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter-3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 3 - What are Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
