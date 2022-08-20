@@ -639,7 +639,7 @@ title="Print to PDF"
 <section id="histograms">
 <h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h3>
 <p>When first learning about distributions, it can help to visualize them. Plotting the distribution of your data each time you start a new data project can also be helpful to start understanding your dataset as a whole. Below are some examples of what distributions can look like:</p>
-<img src="ch5-distributions.png"  width="800">
+<a class="reference internal image-reference" href="_images/ch5-distributions.png"><img alt="write alt description" class="align-center" src="_images/ch5-distributions.png" style="width: 800px;" /></a>
 <p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): the age of a sample of housekeepers measured in years; the thumb length of a sample of students measured in millimeters; the life expectancy of the citizens of countries measured in years; and the population of countries measured in millions. The y-axis represents the <em>frequency</em> of some score or range of scores in a sample. So, in the first histogram (in the color coral), the height of the bars does not represent how old a housekeeper is, but instead represents the number of housekeepers in this sample who were within a certain age band.</p>
 <p>There are lots of ways to make histograms in R. We will use the package <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>  to make our visualizations. It is a large and flexible package, so it can be good to read through a guide to <a class="reference external" href="http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html">everything you can do with it</a> for help or inspiration. <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> is a weird name, but that’s what the authors of this package called it. Because of that, many of the <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> commands are going to start with <code class="docutils literal notranslate"><span class="pre">gf_</span></code>; the <code class="docutils literal notranslate"><span class="pre">g</span></code> stands for “graphical” and the <code class="docutils literal notranslate"><span class="pre">f</span></code> stands for “formula”.</p>
 <p>We will start by making a histogram with the <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> function. Here is how to make a basic histogram of <code class="docutils literal notranslate"><span class="pre">Wt</span></code> from the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> data frame.</p>
@@ -656,7 +656,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
-	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmpGu8UTz/downloaded_packages
+	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmpXueVdI/downloaded_packages
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
@@ -840,9 +840,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-5_21_0.png" src="_images/chapter-5_21_0.png" />
-</div>
 </div>
 <p>Usually, distributions are kind of lumpy and jagged, so many of these features should be thought of with the word “roughly” in front of them. So even if a distribution doesn’t have exactly the same number of observations across all possible scores—but has roughly the same number—we could still call that distribution uniform. If you look at the density plot above, you might see some extra lumpiness along the sides of the bell curve. Some people might think this is a bimodal distribution. But statisticians would consider it roughly unimodal and roughly normal because the lumps are quite small compared to the main peak.</p>
 <p>If a distribution is unimodal, it is often quite useful to notice where the center of the distribution lies. If lots of observations are clustered around the middle, then the value of that middle could be a handy summary of the sample of scores, letting you make statements such as, “Most of the data in this sample is around this middle value.”</p>
@@ -864,8 +861,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">85.2</div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>, rather obviously, computes the sum of a vector, while <code class="docutils literal notranslate"><span class="pre">length()</span></code> returns the length of a vector. Although it’s pretty easy to calculate the mean like this, we can do it in an even easier way. Since the mean is such a common metric to compute, R also provides us with the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> function. Simply pass a vector to this fuction to return the mean. Try it in the code block below.</p>
 <div class="cell docutils container">
@@ -877,8 +872,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">TRUE</div></div>
 </div>
 </section>
 <section id="median">
@@ -914,8 +907,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">86</div></div>
 </div>
 </section>
 <section id="mode">
@@ -929,9 +920,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">3.66666666666667</div><div class="output text_html">4</div><img alt="_images/chapter-5_34_2.png" src="_images/chapter-5_34_2.png" />
-</div>
 </div>
 <p>You may have tried to use a function like <code class="docutils literal notranslate"><span class="pre">mode()</span></code> in the code block above to calculate the mode of the dataframe <code class="docutils literal notranslate"><span class="pre">weird_dist</span></code>. However, in R <code class="docutils literal notranslate"><span class="pre">mode()</span></code> is already taken up by a different function - it returns the data mode of a vector. Given that the mode is the most frequent data value in a distribution, we can use the <code class="docutils literal notranslate"><span class="pre">count()</span></code> function from <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> instead to list the number of data points with each unique value, and identify the mode that way:</p>
 <div class="cell docutils container">
@@ -941,22 +929,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 5 × 2</caption>
-<thead>
-	<tr><th scope=col>data_pts</th><th scope=col>n</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>1</td></tr>
-	<tr><td>2</td><td>2</td></tr>
-	<tr><td>3</td><td>3</td></tr>
-	<tr><td>4</td><td>4</td></tr>
-	<tr><td>5</td><td>5</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Because the mode can be far away from the middle of the value range in distributions like this, it may be better to think of the mode as more of a measure of “typicality” rather than a measure of “central tendency.”</p>
 </section>
@@ -996,14 +968,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>76</li><li>93</li></ol>
-</div></div>
 </div>
 <p>Although the range is the simplest way to quantify the notion of variability, it’s one of the worst. Recall from our discussion of the mean that we want our summary measure to be robust (meaning it isn’t affected by outliers very much). If the dataset has one or two extreme values in it, we’d like our statistics not to be unduly influenced by these cases. If we look once again at our toy example of a data set containing a very extreme outlier, <code class="docutils literal notranslate"><span class="pre">dist2</span> <span class="pre">&lt;-</span> <span class="pre">c(10,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">9,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">100)</span></code>, it is clear that the range is not robust, since this has a range of 92. but if the outlier were removed, we would have a range of only 4.</p>
 </section>
@@ -1021,8 +985,6 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><strong>50%:</strong> 38</div><div class="output text_html">38</div></div>
 </div>
 <div class="alert alert-block alert-info">
 <b>Note</b>: summary functions like quantile() and median() are some of those functions that break with NA values. To make it skip over them, add the argument "na.rm=TRUE". This turns a setting "should I remove NA values?" to TRUE.
@@ -1033,14 +995,6 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>25%</dt><dd>29</dd><dt>50%</dt><dd>38</dd><dt>75%</dt><dd>45</dd></dl>
-</div></div>
 </div>
 <p>Since the IQR is the 75th quartile minus the 25th quartile, our IQR is 45-29 = 16. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
 <div class="cell docutils container">
@@ -1049,8 +1003,6 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">16</div></div>
 </div>
 <p>The simplest way to think about IQR is that it contains the “middle half” of the data. That is, one quarter of the data falls below the 25th quartile, one quarter of the data is above the 75th quartile, leaving the “middle half” of the data lying in between the two. The IQR is the range covered by that middle half.</p>
 </section>
@@ -1072,8 +1024,6 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">9.2</div></div>
 </div>
 <p>We repeat this process for every item in <code class="docutils literal notranslate"><span class="pre">test_scores</span></code>. To make things easier, we’ve already done it for you and put it into a table:</p>
 <table class="colwidths-auto table">
@@ -1130,8 +1080,6 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">5.76</div></div>
 </div>
 </section>
 <section id="variance">
@@ -1151,8 +1099,6 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">119.164938911514</div></div>
 </div>
 <p>Now, what does the variance actually <em>mean</em>? Descriptive statistics are supposed to describe things, after all, and right now the variance is kind of a gibberish number. Unfortunately, the reason why we haven’t given you the human-friendly interpretation of the variance is that there really isn’t one. This is the most serious problem with the variance. Although it has some elegant mathematical properties that suggest that it really is a fundamental quantity for expressing variation, it’s completely useless if you want to communicate with an actual human… variances are uninterpretable in terms of the original variable! All the numbers have been squared, and they don’t have units anymore. What counts as low or high variance? What does it mean for Age to vary at a quantity of 119? These questions don’t have good answers. However, because it is so ubiquitous in statistics at large, we still need to know how to calculate it. Basically, just know that higher variance means more data spread.</p>
 </section>

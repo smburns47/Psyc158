@@ -818,14 +818,6 @@ This would create a vector like:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li></ol>
-</div></div>
 </div>
 <p>Notice that when you do a calculation with a vector, you’ll get a vector of numbers as the answer, not just a single number.</p>
 <p>After you multiply <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> by 100, what will happen if you return <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>? Will you get the original vector (1,2,3,4,5), or one that has the hundreds (100,200,300,400,500)? Try running this code to see what happens.</p>
@@ -879,11 +871,6 @@ This would create a vector like:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> num [1:9] 2 1 1 1 1 2 1 1 1
-</pre></div>
-</div>
-</div>
 </div>
 <p>If the 1s and 2s in the handedness variable were numbers, we could add them up using the code <code class="docutils literal notranslate"><span class="pre">sum(handedness)</span></code>. But if we tell R that handedness is a factor, it will assume the 1s and 2s refer to categories, and so it won’t be willing to add them up.</p>
 <p>We can also turn a factor back into a numeric variable by using the <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> function.</p>
@@ -905,14 +892,6 @@ This would create a vector like:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>FALSE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li></ol>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,12 +903,6 @@ This would create a vector like:</p>
 <span class="c1">#a variable to represent whether someone uses both left or both right hands and feet</span>
 <span class="n">hand_foot_alignment</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">=</span> <span class="n">footedness</span>
 <span class="n">hand_foot_alignment</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">hand_foot_alignment</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">=</span> <span class="n">footedness</span><span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;&lt;-&lt;-&quot;</span>
-<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
@@ -954,7 +927,7 @@ This would create a vector like:</p>
 <p><strong>Face validity</strong> - Does the measurement make sense on its face? If I were to tell you that I was going to measure a person’s blood pressure by looking at the color of their tongue, you would probably think that this was not a valid measure on its face. On the other hand, using a blood pressure cuff would have face validity. This is usually a first reality check before we dive into more complicated aspects of validity.</p>
 <p><strong>Construct validity</strong> - Is the measurement related to other measurements in an appropriate way? This is often subdivided into two aspects. <strong>Convergent validity</strong> means that the measurement should be closely related to other measures that are thought to reflect the same construct. Let’s say that I am interested in measuring how extroverted a person is using either a questionnaire or an interview. Convergent validity would be demonstrated if both of these different measurements are closely related to one another. On the other hand, measurements thought to reflect different constructs should be unrelated, known as <strong>divergent validity</strong>. If my theory of personality says that extraversion and conscientiousness are two distinct constructs, then I should also see that my measurements of extraversion are unrelated to measurements of conscientiousness.</p>
 <p><strong>Predictive validity</strong> - If our measurements are truly valid, then they should also be predictive of other outcomes. For example, let’s say that we think that the psychological trait of sensation seeking (the desire for new experiences) is related to risk taking in the real world. To test for predictive validity of a measurement of sensation seeking, we would test how well scores on the test predict scores on a different survey that measures real-world risk taking.</p>
-<img src="ch3-relyvalid.png"  width="600">
+<a class="reference internal image-reference" href="_images/ch3-relyvalid.png"><img alt="write alt description" class="align-center" src="_images/ch3-relyvalid.png" style="width: 600px;" /></a>
 <p><em>Figure 2.1: A figure demonstrating the distinction between reliability and validity, using shots at a bullseye. Reliability refers to the consistency of location of shots, and validity refers to the accuracy of the shots with respect to the center of the bullseye.</em></p>
 </section>
 </section>

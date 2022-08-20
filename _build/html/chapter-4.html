@@ -684,8 +684,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">'/Users/shannonburns/Desktop/Pomona/Classes/Stats'</div></div>
 </div>
 <p>Because this book is hosted on a website, the above code should show you the directory where these web files are stored. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different.</p>
 <p>We’ve stored the <code class="docutils literal notranslate"><span class="pre">mindsetmatters.csv</span></code> file in the same directory as this code, so R will be able load it if you simply use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> from the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package. Try it out below - the only argument you need for the function is the name of the file, in quotes.</p>
@@ -695,88 +693,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">75</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">15</span>
-<span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
-<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
-<span class=" -Color -Color-Red">chr</span>  (1): Condition
-<span class=" -Color -Color-Green">dbl</span> (14): Cond, Age, Wt, Wt2, BMI, BMI2, Fat, Fat2, WHR, WHR2, Syst, Syst2, ...
-
-<span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
-<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
-</pre></div>
-</div>
-<div class="output text_html"><table class="dataframe">
-<caption>A spec_tbl_df: 75 × 15</caption>
-<thead>
-	<tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th><th scope=col>Condition</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0</td><td>43</td><td>137</td><td>137.4</td><td>25.1</td><td>25.1</td><td>31.9</td><td>32.8</td><td>0.79</td><td>0.79</td><td>124</td><td>118</td><td> 70</td><td> 73</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>42</td><td>150</td><td>147.0</td><td>29.3</td><td>28.7</td><td>35.5</td><td>  NA</td><td>0.81</td><td>0.81</td><td>119</td><td>112</td><td> 80</td><td> 68</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>41</td><td>124</td><td>124.8</td><td>26.9</td><td>27.0</td><td>35.1</td><td>  NA</td><td>0.84</td><td>0.84</td><td>108</td><td>107</td><td> 59</td><td> 65</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>40</td><td>173</td><td>171.4</td><td>32.8</td><td>32.4</td><td>41.9</td><td>42.4</td><td>1.00</td><td>1.00</td><td>116</td><td>126</td><td> 71</td><td> 79</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>33</td><td>163</td><td>160.2</td><td>37.9</td><td>37.2</td><td>41.7</td><td>  NA</td><td>0.86</td><td>0.84</td><td>113</td><td>114</td><td> 73</td><td> 78</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>24</td><td> 90</td><td> 91.8</td><td>16.5</td><td>16.8</td><td>  NA</td><td>  NA</td><td>0.73</td><td>0.73</td><td> NA</td><td> NA</td><td> 78</td><td> 76</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>46</td><td>150</td><td>149.8</td><td>27.5</td><td>27.4</td><td>36.1</td><td>37.3</td><td>0.90</td><td>0.90</td><td>119</td><td>115</td><td> 75</td><td> 77</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>21</td><td>156</td><td>154.4</td><td>25.9</td><td>25.7</td><td>36.4</td><td>  NA</td><td>0.78</td><td>0.78</td><td>116</td><td>135</td><td> 67</td><td> 65</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>29</td><td>141</td><td>140.4</td><td>27.5</td><td>27.4</td><td>  NA</td><td>  NA</td><td>0.87</td><td>0.85</td><td>110</td><td>115</td><td> 73</td><td> 74</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>19</td><td>123</td><td>124.2</td><td>19.6</td><td>19.7</td><td>26.6</td><td>  NA</td><td>0.69</td><td>0.69</td><td>113</td><td>117</td><td> 75</td><td> 72</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>41</td><td>160</td><td>156.0</td><td>25.7</td><td>25.2</td><td>36.9</td><td>38.5</td><td>0.85</td><td>0.85</td><td>103</td><td>115</td><td> 70</td><td> 67</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>33</td><td>130</td><td>133.6</td><td>23.8</td><td>24.4</td><td>34.8</td><td>35.0</td><td>0.95</td><td>1.00</td><td>102</td><td> 97</td><td> 56</td><td> 48</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>44</td><td>161</td><td>161.5</td><td>33.0</td><td>33.2</td><td>40.8</td><td>41.2</td><td>0.88</td><td>0.90</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>48</td><td>118</td><td>118.5</td><td>21.2</td><td>21.3</td><td>26.3</td><td>25.4</td><td>0.91</td><td>0.91</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>38</td><td>134</td><td>136.6</td><td>23.0</td><td>23.4</td><td>28.7</td><td>29.3</td><td>0.86</td><td>0.86</td><td>130</td><td>116</td><td> 76</td><td> 72</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>42</td><td>167</td><td>168.8</td><td>28.3</td><td>28.5</td><td>38.9</td><td>  NA</td><td>0.90</td><td>0.85</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>38</td><td>167</td><td>166.8</td><td>24.3</td><td>24.3</td><td>39.8</td><td>  NA</td><td>0.85</td><td>  NA</td><td>138</td><td>128</td><td> NA</td><td> 74</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>46</td><td>164</td><td>163.8</td><td>30.1</td><td>30.0</td><td>40.2</td><td>39.0</td><td>0.81</td><td>0.83</td><td>166</td><td>155</td><td>112</td><td>105</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>45</td><td>182</td><td>180.0</td><td>33.8</td><td>33.5</td><td>  NA</td><td>45.6</td><td>0.85</td><td>0.88</td><td>145</td><td>141</td><td> 96</td><td> 84</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>35</td><td>136</td><td>135.8</td><td>23.3</td><td>23.3</td><td>34.5</td><td>33.9</td><td>0.86</td><td>0.84</td><td>130</td><td>106</td><td> 79</td><td> 74</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>30</td><td>145</td><td>150.0</td><td>26.1</td><td>27.0</td><td>34.5</td><td>35.4</td><td>0.81</td><td>0.83</td><td>115</td><td>118</td><td> 76</td><td> 79</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>38</td><td>183</td><td>186.4</td><td>34.6</td><td>35.2</td><td>44.2</td><td>42.8</td><td>  NA</td><td>  NA</td><td>115</td><td>125</td><td> 70</td><td> 72</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>41</td><td>142</td><td>141.0</td><td>26.3</td><td>26.2</td><td>34.2</td><td>35.2</td><td>0.88</td><td>0.87</td><td>147</td><td>114</td><td> 82</td><td> 80</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>54</td><td>144</td><td>140.8</td><td>28.0</td><td>27.5</td><td>36.8</td><td>37.9</td><td>0.88</td><td>0.88</td><td>144</td><td>119</td><td> 90</td><td> 76</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>65</td><td>187</td><td>186.2</td><td>34.2</td><td>34.1</td><td>47.3</td><td>  NA</td><td>0.89</td><td>  NA</td><td>176</td><td>188</td><td>106</td><td> 83</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>58</td><td>156</td><td>154.4</td><td>29.4</td><td>29.2</td><td>39.1</td><td>37.6</td><td>0.89</td><td>0.89</td><td>126</td><td>116</td><td> 81</td><td> 71</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>29</td><td>145</td><td>140.4</td><td>25.6</td><td>24.9</td><td>31.0</td><td>33.0</td><td>0.84</td><td>0.84</td><td>146</td><td>145</td><td> 87</td><td> 80</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>45</td><td>162</td><td>161.8</td><td>30.5</td><td>30.6</td><td>40.9</td><td>  NA</td><td>0.88</td><td>0.88</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>57</td><td>168</td><td>168.6</td><td>28.9</td><td>  NA</td><td>41.2</td><td>  NA</td><td>0.91</td><td>  NA</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>61</td><td>155</td><td>152.2</td><td>25.8</td><td>25.3</td><td>38.0</td><td>  NA</td><td>0.87</td><td>  NA</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Uninformed</td></tr>
-	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
-	<tr><td>1</td><td>29</td><td>172</td><td>166.4</td><td>27.4</td><td>26.5</td><td>38.8</td><td>37.3</td><td>0.88</td><td>0.83</td><td>128</td><td>100</td><td>115</td><td> 60</td><td>Informed</td></tr>
-	<tr><td>1</td><td>31</td><td>156</td><td>153.0</td><td>28.0</td><td>27.5</td><td>38.1</td><td>37.5</td><td>0.88</td><td>0.86</td><td>104</td><td> 93</td><td> 65</td><td> 62</td><td>Informed</td></tr>
-	<tr><td>1</td><td>34</td><td>163</td><td>161.4</td><td>26.0</td><td>25.6</td><td>38.6</td><td>  NA</td><td>0.83</td><td>0.82</td><td>115</td><td>122</td><td> 63</td><td> 64</td><td>Informed</td></tr>
-	<tr><td>1</td><td>26</td><td>123</td><td>119.2</td><td>23.2</td><td>22.5</td><td>24.5</td><td>24.1</td><td>0.82</td><td>0.80</td><td>113</td><td>115</td><td> 74</td><td> 89</td><td>Informed</td></tr>
-	<tr><td>1</td><td>37</td><td>126</td><td>121.6</td><td>26.7</td><td>25.9</td><td>28.2</td><td>27.7</td><td>0.89</td><td>0.85</td><td>112</td><td>112</td><td> 69</td><td> 77</td><td>Informed</td></tr>
-	<tr><td>1</td><td>28</td><td>143</td><td>136.4</td><td>25.3</td><td>24.2</td><td>31.8</td><td>  NA</td><td>0.78</td><td>0.74</td><td>125</td><td>130</td><td> 79</td><td> 78</td><td>Informed</td></tr>
-	<tr><td>1</td><td>44</td><td>154</td><td>151.8</td><td>27.2</td><td>26.9</td><td>38.3</td><td>  NA</td><td>0.85</td><td>0.82</td><td>124</td><td>127</td><td> 90</td><td> 95</td><td>Informed</td></tr>
-	<tr><td>1</td><td>26</td><td>131</td><td>128.6</td><td>22.6</td><td>22.1</td><td>25.3</td><td>  NA</td><td>0.84</td><td>  NA</td><td>104</td><td>101</td><td> 59</td><td> 63</td><td>Informed</td></tr>
-	<tr><td>1</td><td>29</td><td>158</td><td>157.4</td><td>25.1</td><td>25.0</td><td>34.2</td><td>36.4</td><td>0.75</td><td>0.75</td><td>115</td><td>118</td><td> 68</td><td> 73</td><td>Informed</td></tr>
-	<tr><td>1</td><td>47</td><td>159</td><td>155.8</td><td>27.3</td><td>26.7</td><td>39.2</td><td>40.4</td><td>0.88</td><td>0.90</td><td> NA</td><td> NA</td><td> NA</td><td> NA</td><td>Informed</td></tr>
-	<tr><td>1</td><td>27</td><td>128</td><td>127.4</td><td>23.2</td><td>23.4</td><td>28.8</td><td>29.1</td><td>0.80</td><td>0.80</td><td>206</td><td>190</td><td>131</td><td>124</td><td>Informed</td></tr>
-	<tr><td>1</td><td>42</td><td>161</td><td>157.0</td><td>29.0</td><td>28.3</td><td>39.8</td><td>39.7</td><td>0.92</td><td>0.95</td><td>134</td><td>124</td><td> 83</td><td> 71</td><td>Informed</td></tr>
-	<tr><td>1</td><td>39</td><td>154</td><td>149.4</td><td>26.4</td><td>25.6</td><td>38.1</td><td>36.3</td><td>0.81</td><td>0.81</td><td>139</td><td>126</td><td> 84</td><td> 89</td><td>Informed</td></tr>
-	<tr><td>1</td><td>27</td><td>148</td><td>146.2</td><td>24.6</td><td>24.3</td><td>31.7</td><td>32.1</td><td>0.78</td><td>0.75</td><td>125</td><td>125</td><td> 67</td><td> 78</td><td>Informed</td></tr>
-	<tr><td>1</td><td>NA</td><td>142</td><td>143.0</td><td>  NA</td><td>  NA</td><td>  NA</td><td>  NA</td><td>  NA</td><td>  NA</td><td>120</td><td>116</td><td> 78</td><td> 74</td><td>Informed</td></tr>
-	<tr><td>1</td><td>27</td><td>140</td><td>138.2</td><td>22.7</td><td>22.6</td><td>33.1</td><td>32.1</td><td>0.83</td><td>0.80</td><td>117</td><td>120</td><td> 76</td><td> 72</td><td>Informed</td></tr>
-	<tr><td>1</td><td>48</td><td>120</td><td>115.8</td><td>23.0</td><td>22.2</td><td>27.8</td><td>27.0</td><td>0.72</td><td>0.69</td><td>142</td><td>112</td><td> 86</td><td> 75</td><td>Informed</td></tr>
-	<tr><td>1</td><td>39</td><td>189</td><td>183.2</td><td>34.6</td><td>34.4</td><td>47.0</td><td>46.7</td><td>0.80</td><td>0.77</td><td>185</td><td>154</td><td> 99</td><td>102</td><td>Informed</td></tr>
-	<tr><td>1</td><td>55</td><td>140</td><td>138.8</td><td>26.8</td><td>26.7</td><td>35.2</td><td>35.0</td><td>0.86</td><td>0.82</td><td>171</td><td>147</td><td> 76</td><td> 74</td><td>Informed</td></tr>
-	<tr><td>1</td><td>26</td><td>115</td><td>115.0</td><td>22.1</td><td>22.1</td><td>25.7</td><td>26.6</td><td>0.84</td><td>0.82</td><td>128</td><td>117</td><td> 74</td><td> 80</td><td>Informed</td></tr>
-	<tr><td>1</td><td>29</td><td>184</td><td>182.8</td><td>35.9</td><td>35.7</td><td>44.4</td><td>45.0</td><td>0.89</td><td>0.89</td><td>120</td><td>124</td><td> 75</td><td> 70</td><td>Informed</td></tr>
-	<tr><td>1</td><td>27</td><td>130</td><td>125.6</td><td>27.1</td><td>26.2</td><td>38.9</td><td>36.7</td><td>0.87</td><td>0.85</td><td>127</td><td>106</td><td> 87</td><td> 70</td><td>Informed</td></tr>
-	<tr><td>1</td><td>33</td><td>125</td><td>125.6</td><td>22.6</td><td>22.6</td><td>30.3</td><td>29.3</td><td>0.89</td><td>0.85</td><td>111</td><td> 91</td><td> 76</td><td> 69</td><td>Informed</td></tr>
-	<tr><td>1</td><td>29</td><td>157</td><td>157.0</td><td>27.8</td><td>27.8</td><td>39.2</td><td>39.1</td><td>0.76</td><td>0.76</td><td>136</td><td>122</td><td> 75</td><td> 74</td><td>Informed</td></tr>
-	<tr><td>1</td><td>33</td><td>173</td><td>168.6</td><td>31.6</td><td>30.8</td><td>44.0</td><td>42.6</td><td>0.88</td><td>0.89</td><td>111</td><td>114</td><td> 66</td><td> 75</td><td>Informed</td></tr>
-	<tr><td>1</td><td>31</td><td>142</td><td>142.8</td><td>24.3</td><td>24.5</td><td>32.2</td><td>33.0</td><td>0.78</td><td>0.76</td><td>133</td><td>110</td><td>112</td><td> 66</td><td>Informed</td></tr>
-	<tr><td>1</td><td>24</td><td>117</td><td>115.6</td><td>22.5</td><td>22.2</td><td>27.7</td><td>27.0</td><td>0.77</td><td>0.79</td><td>110</td><td>109</td><td> 76</td><td> 76</td><td>Informed</td></tr>
-	<tr><td>1</td><td>22</td><td>127</td><td>124.6</td><td>25.6</td><td>25.2</td><td>34.6</td><td>31.6</td><td>0.74</td><td>0.73</td><td>110</td><td>103</td><td> 65</td><td> 69</td><td>Informed</td></tr>
-	<tr><td>1</td><td>23</td><td>161</td><td>161.4</td><td>26.8</td><td>26.9</td><td>38.1</td><td>37.1</td><td>0.90</td><td>0.86</td><td>126</td><td>101</td><td> 74</td><td> 64</td><td>Informed</td></tr>
-	<tr><td>1</td><td>38</td><td>137</td><td>133.2</td><td>24.2</td><td>23.6</td><td>29.2</td><td>27.6</td><td>0.80</td><td>0.81</td><td>107</td><td>126</td><td> 65</td><td> 68</td><td>Informed</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;datasets/mindsetmatters.csv&quot;)</span></code>.</p>
 </section>
@@ -793,55 +709,6 @@ title="Print to PDF"
 
 <span class="c1"># check the data type of this object</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">75</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">15</span>
-<span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
-<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
-<span class=" -Color -Color-Red">chr</span>  (1): Condition
-<span class=" -Color -Color-Green">dbl</span> (14): Cond, Age, Wt, Wt2, BMI, BMI2, Fat, Fat2, WHR, WHR2, Syst, Syst2, ...
-
-<span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
-<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spec_tbl_df [75 × 15] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
- $ Cond     : num [1:75] 0 0 0 0 0 0 0 0 0 0 ...
- $ Age      : num [1:75] 43 42 41 40 33 24 46 21 29 19 ...
- $ Wt       : num [1:75] 137 150 124 173 163 90 150 156 141 123 ...
- $ Wt2      : num [1:75] 137 147 125 171 160 ...
- $ BMI      : num [1:75] 25.1 29.3 26.9 32.8 37.9 16.5 27.5 25.9 27.5 19.6 ...
- $ BMI2     : num [1:75] 25.1 28.7 27 32.4 37.2 16.8 27.4 25.7 27.4 19.7 ...
- $ Fat      : num [1:75] 31.9 35.5 35.1 41.9 41.7 NA 36.1 36.4 NA 26.6 ...
- $ Fat2     : num [1:75] 32.8 NA NA 42.4 NA NA 37.3 NA NA NA ...
- $ WHR      : num [1:75] 0.79 0.81 0.84 1 0.86 0.73 0.9 0.78 0.87 0.69 ...
- $ WHR2     : num [1:75] 0.79 0.81 0.84 1 0.84 0.73 0.9 0.78 0.85 0.69 ...
- $ Syst     : num [1:75] 124 119 108 116 113 NA 119 116 110 113 ...
- $ Syst2    : num [1:75] 118 112 107 126 114 NA 115 135 115 117 ...
- $ Diast    : num [1:75] 70 80 59 71 73 78 75 67 73 75 ...
- $ Diast2   : num [1:75] 73 68 65 79 78 76 77 65 74 72 ...
- $ Condition: chr [1:75] &quot;Uninformed&quot; &quot;Uninformed&quot; &quot;Uninformed&quot; &quot;Uninformed&quot; ...
- - attr(*, &quot;spec&quot;)=
-  .. cols(
-  ..   Cond = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Age = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Wt = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Wt2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   BMI = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   BMI2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Fat = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Fat2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   WHR = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   WHR2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Syst = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Syst2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Diast = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Diast2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Condition = <span class=" -Color -Color-Red">col_character()</span>
-  .. )
- - attr(*, &quot;problems&quot;)=&lt;externalptr&gt; 
 </pre></div>
 </div>
 </div>
@@ -867,14 +734,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>43</li><li>42</li><li>41</li><li>40</li><li>33</li><li>24</li><li>46</li><li>21</li><li>29</li><li>19</li><li>41</li><li>33</li><li>44</li><li>48</li><li>38</li><li>42</li><li>38</li><li>46</li><li>45</li><li>35</li><li>30</li><li>38</li><li>41</li><li>54</li><li>65</li><li>58</li><li>29</li><li>45</li><li>57</li><li>61</li><li>38</li><li>53</li><li>45</li><li>62</li><li>48</li><li>50</li><li>40</li><li>32</li><li>54</li><li>24</li><li>24</li><li>52</li><li>34</li><li>28</li><li>31</li><li>29</li><li>31</li><li>34</li><li>26</li><li>37</li><li>28</li><li>44</li><li>26</li><li>29</li><li>47</li><li>27</li><li>42</li><li>39</li><li>27</li><li>&lt;NA&gt;</li><li>27</li><li>48</li><li>39</li><li>55</li><li>26</li><li>29</li><li>27</li><li>33</li><li>29</li><li>33</li><li>31</li><li>24</li><li>22</li><li>23</li><li>38</li></ol>
-</div></div>
 </div>
 <p>When R is asked to print out a single variable (such as <code class="docutils literal notranslate"><span class="pre">Age</span></code>), R prints out each person’s value on the variable all in a row. You can then work with this variable as if it were a single vector, like we used in the previous chapter. Try “aging up” everyone’s age by adding two years to the <code class="docutils literal notranslate"><span class="pre">Age</span></code> variable. (Remember that adding a constant to a vector adds that value to every item in the vector).</p>
 <div class="cell docutils container">
@@ -913,78 +772,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A tibble: 75 × 2</caption>
-<thead>
-	<tr><th scope=col>BMI</th><th scope=col>Fat</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>25.1</td><td>31.9</td></tr>
-	<tr><td>29.3</td><td>35.5</td></tr>
-	<tr><td>26.9</td><td>35.1</td></tr>
-	<tr><td>32.8</td><td>41.9</td></tr>
-	<tr><td>37.9</td><td>41.7</td></tr>
-	<tr><td>16.5</td><td>  NA</td></tr>
-	<tr><td>27.5</td><td>36.1</td></tr>
-	<tr><td>25.9</td><td>36.4</td></tr>
-	<tr><td>27.5</td><td>  NA</td></tr>
-	<tr><td>19.6</td><td>26.6</td></tr>
-	<tr><td>25.7</td><td>36.9</td></tr>
-	<tr><td>23.8</td><td>34.8</td></tr>
-	<tr><td>33.0</td><td>40.8</td></tr>
-	<tr><td>21.2</td><td>26.3</td></tr>
-	<tr><td>23.0</td><td>28.7</td></tr>
-	<tr><td>28.3</td><td>38.9</td></tr>
-	<tr><td>24.3</td><td>39.8</td></tr>
-	<tr><td>30.1</td><td>40.2</td></tr>
-	<tr><td>33.8</td><td>  NA</td></tr>
-	<tr><td>23.3</td><td>34.5</td></tr>
-	<tr><td>26.1</td><td>34.5</td></tr>
-	<tr><td>34.6</td><td>44.2</td></tr>
-	<tr><td>26.3</td><td>34.2</td></tr>
-	<tr><td>28.0</td><td>36.8</td></tr>
-	<tr><td>34.2</td><td>47.3</td></tr>
-	<tr><td>29.4</td><td>39.1</td></tr>
-	<tr><td>25.6</td><td>31.0</td></tr>
-	<tr><td>30.5</td><td>40.9</td></tr>
-	<tr><td>28.9</td><td>41.2</td></tr>
-	<tr><td>25.8</td><td>38.0</td></tr>
-	<tr><td>⋮</td><td>⋮</td></tr>
-	<tr><td>27.4</td><td>38.8</td></tr>
-	<tr><td>28.0</td><td>38.1</td></tr>
-	<tr><td>26.0</td><td>38.6</td></tr>
-	<tr><td>23.2</td><td>24.5</td></tr>
-	<tr><td>26.7</td><td>28.2</td></tr>
-	<tr><td>25.3</td><td>31.8</td></tr>
-	<tr><td>27.2</td><td>38.3</td></tr>
-	<tr><td>22.6</td><td>25.3</td></tr>
-	<tr><td>25.1</td><td>34.2</td></tr>
-	<tr><td>27.3</td><td>39.2</td></tr>
-	<tr><td>23.2</td><td>28.8</td></tr>
-	<tr><td>29.0</td><td>39.8</td></tr>
-	<tr><td>26.4</td><td>38.1</td></tr>
-	<tr><td>24.6</td><td>31.7</td></tr>
-	<tr><td>  NA</td><td>  NA</td></tr>
-	<tr><td>22.7</td><td>33.1</td></tr>
-	<tr><td>23.0</td><td>27.8</td></tr>
-	<tr><td>34.6</td><td>47.0</td></tr>
-	<tr><td>26.8</td><td>35.2</td></tr>
-	<tr><td>22.1</td><td>25.7</td></tr>
-	<tr><td>35.9</td><td>44.4</td></tr>
-	<tr><td>27.1</td><td>38.9</td></tr>
-	<tr><td>22.6</td><td>30.3</td></tr>
-	<tr><td>27.8</td><td>39.2</td></tr>
-	<tr><td>31.6</td><td>44.0</td></tr>
-	<tr><td>24.3</td><td>32.2</td></tr>
-	<tr><td>22.5</td><td>27.7</td></tr>
-	<tr><td>25.6</td><td>34.6</td></tr>
-	<tr><td>26.8</td><td>38.1</td></tr>
-	<tr><td>24.2</td><td>29.2</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>You may need to scroll the output up and down to see it all. It’s quite a lot because the function <code class="docutils literal notranslate"><span class="pre">select()</span></code> will print out all the values of the selected variables. What the <code class="docutils literal notranslate"><span class="pre">select()</span></code> function actually does is return a new data frame with the selected subset of columns.</p>
 <p>If you want to look at just a few rows of a few variables, we can combine <code class="docutils literal notranslate"><span class="pre">head()</span></code> and <code class="docutils literal notranslate"><span class="pre">select()</span></code> together in a nested function.</p>
@@ -1003,172 +790,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in `select()`:
-! Can&#39;t subset columns past the end.
-ℹ Location 43 doesn&#39;t exist.
-ℹ There are only 15 columns.
-Traceback:
-
-1. select(mindsetmatters, 43)
-2. select.data.frame(mindsetmatters, 43)
-3. tidyselect_fix_call(tidyselect::eval_select(expr(c(...)), .data), 
- .     call = error_call)
-4. withCallingHandlers(expr, error = function(cnd) {
- .     cnd$call &lt;- call
- .     cnd$parent &lt;- NULL
- .     cnd_signal(cnd)
- . })
-5. tidyselect::eval_select(expr(c(...)), .data)
-6. eval_select_impl(data, names(data), as_quosure(expr, env), include = include, 
- .     exclude = exclude, strict = strict, name_spec = name_spec, 
- .     allow_rename = allow_rename, error_call = error_call, )
-7. with_subscript_errors(vars_select_eval(vars, expr, strict = strict, 
- .     data = x, name_spec = name_spec, uniquely_named = uniquely_named, 
- .     allow_rename = allow_rename, type = type, error_call = error_call), 
- .     type = type)
-8. tryCatch(with_entraced_errors(expr), vctrs_error_subscript = function(cnd) {
- .     cnd$subscript_action &lt;- subscript_action(type)
- .     cnd$subscript_elt &lt;- &quot;column&quot;
- .     cnd_signal(cnd)
- . })
-9. tryCatchList(expr, classes, parentenv, handlers)
-10. tryCatchOne(expr, names, parentenv, handlers[[1L]])
-11. value[[3L]](cond)
-12. cnd_signal(cnd)
-13. signal_abort(cnd)
-14. signalCondition(cnd)
-15. (function (cnd) 
-  . {
-  .     cnd$call &lt;- call
-  .     cnd$parent &lt;- NULL
-  .     cnd_signal(cnd)
-  . })(structure(list(message = &quot;&quot;, trace = structure(list(call = list(
-  .     IRkernel::main(), kernel$run(), handle_shell(), executor$execute(msg), 
-  .     tryCatch(evaluate(request$content$code, envir = .GlobalEnv, 
-  .         output_handler = oh, stop_on_error = 1L), interrupt = function(cond) {
-  .         log_debug(&quot;Interrupt during execution&quot;)
-  .         interrupted &lt;&lt;- TRUE
-  .     }, error = .self$handle_error), tryCatchList(expr, classes, 
-  .         parentenv, handlers), tryCatchOne(tryCatchList(expr, 
-  .         names[-nh], parentenv, handlers[-nh]), names[nh], parentenv, 
-  .         handlers[[nh]]), doTryCatch(return(expr), name, parentenv, 
-  .         handler), tryCatchList(expr, names[-nh], parentenv, handlers[-nh]), 
-  .     tryCatchOne(expr, names, parentenv, handlers[[1L]]), doTryCatch(return(expr), 
-  .         name, parentenv, handler), evaluate(request$content$code, 
-  .         envir = .GlobalEnv, output_handler = oh, stop_on_error = 1L), 
-  .     evaluate_call(expr, parsed$src[[i]], envir = envir, enclos = enclos, 
-  .         debug = debug, last = i == length(out), use_try = stop_on_error != 
-  .             2L, keep_warning = keep_warning, keep_message = keep_message, 
-  .         output_handler = output_handler, include_timing = include_timing), 
-  .     timing_fn(handle(ev &lt;- withCallingHandlers(withVisible(eval_with_user_handlers(expr, 
-  .         envir, enclos, user_handlers)), warning = wHandler, error = eHandler, 
-  .         message = mHandler))), handle(ev &lt;- withCallingHandlers(withVisible(eval_with_user_handlers(expr, 
-  .         envir, enclos, user_handlers)), warning = wHandler, error = eHandler, 
-  .         message = mHandler)), try(f, silent = TRUE), tryCatch(expr, 
-  .         error = function(e) {
-  .             call &lt;- conditionCall(e)
-  .             if (!is.null(call)) {
-  .                 if (identical(call[[1L]], quote(doTryCatch))) 
-  .                   call &lt;- sys.call(-4L)
-  .                 dcall &lt;- deparse(call, nlines = 1L)
-  .                 prefix &lt;- paste(&quot;Error in&quot;, dcall, &quot;: &quot;)
-  .                 LONG &lt;- 75L
-  .                 sm &lt;- strsplit(conditionMessage(e), &quot;\n&quot;)[[1L]]
-  .                 w &lt;- 14L + nchar(dcall, type = &quot;w&quot;) + nchar(sm[1L], 
-  .                   type = &quot;w&quot;)
-  .                 if (is.na(w)) 
-  .                   w &lt;- 14L + nchar(dcall, type = &quot;b&quot;) + nchar(sm[1L], 
-  .                     type = &quot;b&quot;)
-  .                 if (w &gt; LONG) 
-  .                   prefix &lt;- paste0(prefix, &quot;\n  &quot;)
-  .             }
-  .             else prefix &lt;- &quot;Error : &quot;
-  .             msg &lt;- paste0(prefix, conditionMessage(e), &quot;\n&quot;)
-  .             .Internal(seterrmessage(msg[1L]))
-  .             if (!silent &amp;&amp; isTRUE(getOption(&quot;show.error.messages&quot;))) {
-  .                 cat(msg, file = outFile)
-  .                 .Internal(printDeferredWarnings())
-  .             }
-  .             invisible(structure(msg, class = &quot;try-error&quot;, condition = e))
-  .         }), tryCatchList(expr, classes, parentenv, handlers), 
-  .     tryCatchOne(expr, names, parentenv, handlers[[1L]]), doTryCatch(return(expr), 
-  .         name, parentenv, handler), withCallingHandlers(withVisible(eval_with_user_handlers(expr, 
-  .         envir, enclos, user_handlers)), warning = wHandler, error = eHandler, 
-  .         message = mHandler), withVisible(eval_with_user_handlers(expr, 
-  .         envir, enclos, user_handlers)), eval_with_user_handlers(expr, 
-  .         envir, enclos, user_handlers), eval(expr, envir, enclos), 
-  .     eval(expr, envir, enclos), select(mindsetmatters, 43), select.data.frame(mindsetmatters, 
-  .         43), tidyselect_fix_call(tidyselect::eval_select(expr(c(...)), 
-  .         .data), call = error_call), withCallingHandlers(expr, 
-  .         error = function(cnd) {
-  .             cnd$call &lt;- call
-  .             cnd$parent &lt;- NULL
-  .             cnd_signal(cnd)
-  .         }), tidyselect::eval_select(expr(c(...)), .data), eval_select_impl(data, 
-  .         names(data), as_quosure(expr, env), include = include, 
-  .         exclude = exclude, strict = strict, name_spec = name_spec, 
-  .         allow_rename = allow_rename, error_call = error_call, 
-  .         ), with_subscript_errors(vars_select_eval(vars, expr, 
-  .         strict = strict, data = x, name_spec = name_spec, uniquely_named = uniquely_named, 
-  .         allow_rename = allow_rename, type = type, error_call = error_call), 
-  .         type = type), tryCatch(with_entraced_errors(expr), vctrs_error_subscript = function(cnd) {
-  .         cnd$subscript_action &lt;- subscript_action(type)
-  .         cnd$subscript_elt &lt;- &quot;column&quot;
-  .         cnd_signal(cnd)
-  .     }), tryCatchList(expr, classes, parentenv, handlers), tryCatchOne(expr, 
-  .         names, parentenv, handlers[[1L]]), doTryCatch(return(expr), 
-  .         name, parentenv, handler), with_entraced_errors(expr), 
-  .     try_fetch(expr, simpleError = function(cnd) {
-  .         abort(conditionMessage(cnd), call = conditionCall(cnd))
-  .     }), withCallingHandlers(expr, simpleError = function(cnd) {
-  .         {
-  .             .__handler_frame__. &lt;- TRUE
-  .             .__setup_frame__. &lt;- frame
-  .         }
-  .         out &lt;- handlers[[1L]](cnd)
-  .         if (!inherits(out, &quot;rlang_zap&quot;)) 
-  .             throw(out)
-  .     }), vars_select_eval(vars, expr, strict = strict, data = x, 
-  .         name_spec = name_spec, uniquely_named = uniquely_named, 
-  .         allow_rename = allow_rename, type = type, error_call = error_call), 
-  .     loc_validate(pos, vars, call = error_call), vctrs::vec_as_location(pos, 
-  .         n = length(vars)), `&lt;fn&gt;`(), stop_subscript_oob(i = i, 
-  .         subscript_type = subscript_type, size = size, subscript_action = subscript_action, 
-  .         subscript_arg = subscript_arg, call = call), stop_subscript(class = &quot;vctrs_error_subscript_oob&quot;, 
-  .         i = i, subscript_type = subscript_type, ..., call = call), 
-  .     abort(class = c(class, &quot;vctrs_error_subscript&quot;), i = i, ..., 
-  .         call = vctrs_error_call(call))), parent = c(0L, 1L, 2L, 
-  . 3L, 4L, 5L, 6L, 7L, 6L, 9L, 10L, 4L, 12L, 13L, 13L, 15L, 16L, 
-  . 17L, 18L, 19L, 13L, 13L, 13L, 23L, 24L, 0L, 0L, 27L, 28L, 27L, 
-  . 30L, 31L, 32L, 33L, 34L, 35L, 32L, 37L, 38L, 31L, 40L, 41L, 42L, 
-  . 43L, 44L, 45L), visible = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, 
-  . TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, 
-  . TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, 
-  . TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, 
-  . TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE), namespace = c(&quot;IRkernel&quot;, 
-  . NA, &quot;IRkernel&quot;, NA, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, 
-  . &quot;base&quot;, &quot;evaluate&quot;, &quot;evaluate&quot;, &quot;evaluate&quot;, &quot;evaluate&quot;, &quot;base&quot;, 
-  . &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;evaluate&quot;, &quot;base&quot;, 
-  . &quot;base&quot;, &quot;dplyr&quot;, &quot;dplyr&quot;, &quot;dplyr&quot;, &quot;base&quot;, &quot;tidyselect&quot;, &quot;tidyselect&quot;, 
-  . &quot;tidyselect&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;base&quot;, &quot;tidyselect&quot;, &quot;rlang&quot;, 
-  . &quot;base&quot;, &quot;tidyselect&quot;, &quot;tidyselect&quot;, &quot;vctrs&quot;, &quot;vctrs&quot;, &quot;vctrs&quot;, 
-  . &quot;vctrs&quot;, &quot;rlang&quot;), scope = c(&quot;::&quot;, NA, &quot;local&quot;, NA, &quot;::&quot;, &quot;local&quot;, 
-  . &quot;local&quot;, &quot;local&quot;, &quot;local&quot;, &quot;local&quot;, &quot;local&quot;, &quot;::&quot;, &quot;:::&quot;, &quot;local&quot;, 
-  . &quot;local&quot;, &quot;::&quot;, &quot;::&quot;, &quot;local&quot;, &quot;local&quot;, &quot;local&quot;, &quot;::&quot;, &quot;::&quot;, &quot;:::&quot;, 
-  . &quot;::&quot;, &quot;::&quot;, &quot;::&quot;, &quot;:::&quot;, &quot;:::&quot;, &quot;::&quot;, &quot;::&quot;, &quot;:::&quot;, &quot;:::&quot;, &quot;::&quot;, 
-  . &quot;local&quot;, &quot;local&quot;, &quot;local&quot;, &quot;:::&quot;, &quot;::&quot;, &quot;::&quot;, &quot;:::&quot;, &quot;:::&quot;, &quot;::&quot;, 
-  . &quot;local&quot;, &quot;:::&quot;, &quot;:::&quot;, &quot;::&quot;)), row.names = c(NA, -46L), version = 2L, class = c(&quot;rlang_trace&quot;, 
-  . &quot;rlib_trace&quot;, &quot;tbl&quot;, &quot;data.frame&quot;)), parent = NULL, i = structure(43L, .Names = &quot;&quot;), 
-  .     subscript_type = &quot;numeric&quot;, size = 15L, subscript_action = &quot;subset&quot;, 
-  .     subscript_arg = &quot;pos&quot;, call = loc_validate(pos, vars, call = error_call), 
-  .     subscript_elt = &quot;column&quot;), class = c(&quot;vctrs_error_subscript_oob&quot;, 
-  . &quot;vctrs_error_subscript&quot;, &quot;rlang_error&quot;, &quot;error&quot;, &quot;condition&quot;)))
-16. cnd_signal(cnd)
-17. signal_abort(cnd)
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">select()</span></code> only works on <em>variables</em> (or columns of the data frame). In this case, since you gave it the number 43 for the second argument, it thought you were asking for the 43rd column - but there aren’t 43 columns in this dataset!</p>
 <p>To get a subset of observations (or rows of the data frame) we use a different function: <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. This function filters the dataframe to show only those observations (rows) that match some criteria. For example, here is the code that will return only the observations where the age is 43:</p>
@@ -1178,18 +799,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A spec_tbl_df: 1 × 15</caption>
-<thead>
-	<tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th><th scope=col>Condition</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0</td><td>43</td><td>137</td><td>137.4</td><td>25.1</td><td>25.1</td><td>31.9</td><td>32.8</td><td>0.79</td><td>0.79</td><td>124</td><td>118</td><td>70</td><td>73</td><td>Uninformed</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, like <code class="docutils literal notranslate"><span class="pre">select()</span></code>, returns a dataframe. In this case, the data frame only has one row because only one person is exactly 43 years old.</p>
 <div class="cell docutils container">
@@ -1225,15 +834,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1] 22.7 24.1 25.3 25.4 26.4 26.6 27.0 27.0 27.6 27.7 28.0 28.9 29.1 29.3 29.3
-[16] 30.5 31.6 32.1 32.1 32.1 32.8 32.9 33.0 33.0 33.6 33.9 35.0 35.0 35.2 35.4
-[31] 36.3 36.4 36.7 37.1 37.3 37.3 37.5 37.6 37.9 38.5 39.0 39.1 39.7 39.9 40.4
-[46] 40.4 41.1 41.2 42.4 42.6 42.8 44.1 44.7 45.0 45.6 46.7   NA   NA   NA   NA
-[61]   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA   NA
-</pre></div>
-</div>
-</div>
 </div>
 <p>Based on this, we can easily see some missing data in this variable. We can also count how many observations have this value:</p>
 <div class="cell docutils container">
@@ -1243,66 +843,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A spec_tbl_df: 49 × 2</caption>
-<thead>
-	<tr><th scope=col>Fat2</th><th scope=col>n</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>22.7</td><td> 1</td></tr>
-	<tr><td>24.1</td><td> 1</td></tr>
-	<tr><td>25.3</td><td> 1</td></tr>
-	<tr><td>25.4</td><td> 1</td></tr>
-	<tr><td>26.4</td><td> 1</td></tr>
-	<tr><td>26.6</td><td> 1</td></tr>
-	<tr><td>27.0</td><td> 2</td></tr>
-	<tr><td>27.6</td><td> 1</td></tr>
-	<tr><td>27.7</td><td> 1</td></tr>
-	<tr><td>28.0</td><td> 1</td></tr>
-	<tr><td>28.9</td><td> 1</td></tr>
-	<tr><td>29.1</td><td> 1</td></tr>
-	<tr><td>29.3</td><td> 2</td></tr>
-	<tr><td>30.5</td><td> 1</td></tr>
-	<tr><td>31.6</td><td> 1</td></tr>
-	<tr><td>32.1</td><td> 3</td></tr>
-	<tr><td>32.8</td><td> 1</td></tr>
-	<tr><td>32.9</td><td> 1</td></tr>
-	<tr><td>33.0</td><td> 2</td></tr>
-	<tr><td>33.6</td><td> 1</td></tr>
-	<tr><td>33.9</td><td> 1</td></tr>
-	<tr><td>35.0</td><td> 2</td></tr>
-	<tr><td>35.2</td><td> 1</td></tr>
-	<tr><td>35.4</td><td> 1</td></tr>
-	<tr><td>36.3</td><td> 1</td></tr>
-	<tr><td>36.4</td><td> 1</td></tr>
-	<tr><td>36.7</td><td> 1</td></tr>
-	<tr><td>37.1</td><td> 1</td></tr>
-	<tr><td>37.3</td><td> 2</td></tr>
-	<tr><td>37.5</td><td> 1</td></tr>
-	<tr><td>37.6</td><td> 1</td></tr>
-	<tr><td>37.9</td><td> 1</td></tr>
-	<tr><td>38.5</td><td> 1</td></tr>
-	<tr><td>39.0</td><td> 1</td></tr>
-	<tr><td>39.1</td><td> 1</td></tr>
-	<tr><td>39.7</td><td> 1</td></tr>
-	<tr><td>39.9</td><td> 1</td></tr>
-	<tr><td>40.4</td><td> 2</td></tr>
-	<tr><td>41.1</td><td> 1</td></tr>
-	<tr><td>41.2</td><td> 1</td></tr>
-	<tr><td>42.4</td><td> 1</td></tr>
-	<tr><td>42.6</td><td> 1</td></tr>
-	<tr><td>42.8</td><td> 1</td></tr>
-	<tr><td>44.1</td><td> 1</td></tr>
-	<tr><td>44.7</td><td> 1</td></tr>
-	<tr><td>45.0</td><td> 1</td></tr>
-	<tr><td>45.6</td><td> 1</td></tr>
-	<tr><td>46.7</td><td> 1</td></tr>
-	<tr><td>  NA</td><td>19</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>In this dataframe, <code class="docutils literal notranslate"><span class="pre">Fat</span></code> is the percentage of a participant’s body fat at the beginning of the study, and <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> is the percentage at the end of the study. Use the code window below to explore whether there are any missing values for <code class="docutils literal notranslate"><span class="pre">Fat</span></code>. Why do you think <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> has more missing values?</p>
 <div class="cell docutils container">
@@ -1356,38 +896,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A tibble: 6 × 15</caption>
-<thead>
-	<tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th><th scope=col>Condition</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0</td><td>43</td><td>137</td><td>137.4</td><td>25.1</td><td>25.1</td><td>31.9</td><td>32.8</td><td>0.79</td><td>0.79</td><td>124</td><td>118</td><td>70</td><td>73</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>42</td><td>150</td><td>147.0</td><td>29.3</td><td>28.7</td><td>35.5</td><td>  NA</td><td>0.81</td><td>0.81</td><td>119</td><td>112</td><td>80</td><td>68</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>41</td><td>124</td><td>124.8</td><td>26.9</td><td>27.0</td><td>35.1</td><td>  NA</td><td>0.84</td><td>0.84</td><td>108</td><td>107</td><td>59</td><td>65</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>40</td><td>173</td><td>171.4</td><td>32.8</td><td>32.4</td><td>41.9</td><td>42.4</td><td>1.00</td><td>1.00</td><td>116</td><td>126</td><td>71</td><td>79</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>33</td><td>163</td><td>160.2</td><td>37.9</td><td>37.2</td><td>41.7</td><td>  NA</td><td>0.86</td><td>0.84</td><td>113</td><td>114</td><td>73</td><td>78</td><td>Uninformed</td></tr>
-	<tr><td>0</td><td>24</td><td> 90</td><td> 91.8</td><td>16.5</td><td>16.8</td><td>  NA</td><td>  NA</td><td>0.73</td><td>0.73</td><td> NA</td><td> NA</td><td>78</td><td>76</td><td>Uninformed</td></tr>
-</tbody>
-</table>
-</div><div class="output text_html"><table class="dataframe">
-<caption>A tibble: 6 × 16</caption>
-<thead>
-	<tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th><th scope=col>Condition</th><th scope=col>Ht</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0</td><td>43</td><td>137</td><td>137.4</td><td>25.1</td><td>25.1</td><td>31.9</td><td>32.8</td><td>0.79</td><td>0.79</td><td>124</td><td>118</td><td>70</td><td>73</td><td>Uninformed</td><td>5.458167</td></tr>
-	<tr><td>0</td><td>42</td><td>150</td><td>147.0</td><td>29.3</td><td>28.7</td><td>35.5</td><td>  NA</td><td>0.81</td><td>0.81</td><td>119</td><td>112</td><td>80</td><td>68</td><td>Uninformed</td><td>5.119454</td></tr>
-	<tr><td>0</td><td>41</td><td>124</td><td>124.8</td><td>26.9</td><td>27.0</td><td>35.1</td><td>  NA</td><td>0.84</td><td>0.84</td><td>108</td><td>107</td><td>59</td><td>65</td><td>Uninformed</td><td>4.609665</td></tr>
-	<tr><td>0</td><td>40</td><td>173</td><td>171.4</td><td>32.8</td><td>32.4</td><td>41.9</td><td>42.4</td><td>1.00</td><td>1.00</td><td>116</td><td>126</td><td>71</td><td>79</td><td>Uninformed</td><td>5.274390</td></tr>
-	<tr><td>0</td><td>33</td><td>163</td><td>160.2</td><td>37.9</td><td>37.2</td><td>41.7</td><td>  NA</td><td>0.86</td><td>0.84</td><td>113</td><td>114</td><td>73</td><td>78</td><td>Uninformed</td><td>4.300792</td></tr>
-	<tr><td>0</td><td>24</td><td> 90</td><td> 91.8</td><td>16.5</td><td>16.8</td><td>  NA</td><td>  NA</td><td>0.73</td><td>0.73</td><td> NA</td><td> NA</td><td>78</td><td>76</td><td>Uninformed</td><td>5.454545</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Whenever you make new variables, or even do anything else in R, it’s a good idea to check to make sure R did what you intended it to do. You can use the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function for this.</p>
 <p>Sometimes you also might want to create a new variable that represents the data in a different way. For example, maybe in one analysis we want to look at only housekeepers that are at least 40 years old. You can make a new boolean variable that is <code class="docutils literal notranslate"><span class="pre">true</span></code> for everyone at least 40 years old, and <code class="docutils literal notranslate"><span class="pre">false</span></code> for everyone younger.</p>
@@ -1399,23 +907,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A tibble: 6 × 17</caption>
-<thead>
-	<tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th><th scope=col>Condition</th><th scope=col>Ht</th><th scope=col>Older</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;lgl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0</td><td>43</td><td>137</td><td>137.4</td><td>25.1</td><td>25.1</td><td>31.9</td><td>32.8</td><td>0.79</td><td>0.79</td><td>124</td><td>118</td><td>70</td><td>73</td><td>Uninformed</td><td>5.458167</td><td> TRUE</td></tr>
-	<tr><td>0</td><td>42</td><td>150</td><td>147.0</td><td>29.3</td><td>28.7</td><td>35.5</td><td>  NA</td><td>0.81</td><td>0.81</td><td>119</td><td>112</td><td>80</td><td>68</td><td>Uninformed</td><td>5.119454</td><td> TRUE</td></tr>
-	<tr><td>0</td><td>41</td><td>124</td><td>124.8</td><td>26.9</td><td>27.0</td><td>35.1</td><td>  NA</td><td>0.84</td><td>0.84</td><td>108</td><td>107</td><td>59</td><td>65</td><td>Uninformed</td><td>4.609665</td><td> TRUE</td></tr>
-	<tr><td>0</td><td>40</td><td>173</td><td>171.4</td><td>32.8</td><td>32.4</td><td>41.9</td><td>42.4</td><td>1.00</td><td>1.00</td><td>116</td><td>126</td><td>71</td><td>79</td><td>Uninformed</td><td>5.274390</td><td> TRUE</td></tr>
-	<tr><td>0</td><td>33</td><td>163</td><td>160.2</td><td>37.9</td><td>37.2</td><td>41.7</td><td>  NA</td><td>0.86</td><td>0.84</td><td>113</td><td>114</td><td>73</td><td>78</td><td>Uninformed</td><td>4.300792</td><td>FALSE</td></tr>
-	<tr><td>0</td><td>24</td><td> 90</td><td> 91.8</td><td>16.5</td><td>16.8</td><td>  NA</td><td>  NA</td><td>0.73</td><td>0.73</td><td> NA</td><td> NA</td><td>78</td><td>76</td><td>Uninformed</td><td>5.454545</td><td>FALSE</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1425,20 +916,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A spec_tbl_df: 3 × 2</caption>
-<thead>
-	<tr><th scope=col>Older</th><th scope=col>n</th></tr>
-	<tr><th scope=col>&lt;lgl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>FALSE</td><td>43</td></tr>
-	<tr><td> TRUE</td><td>31</td></tr>
-	<tr><td>   NA</td><td> 1</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1463,23 +940,6 @@ Traceback:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A tibble: 6 × 16</caption>
-<thead>
-	<tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th><th scope=col>Condition</th><th scope=col>Ht</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0</td><td>43</td><td>137</td><td>137.4</td><td>25.1</td><td>25.1</td><td>31.9</td><td>32.8</td><td>0.79</td><td>0.79</td><td>124</td><td>118</td><td>70</td><td>73</td><td>Uninformed</td><td>5.458167</td></tr>
-	<tr><td>0</td><td>42</td><td>150</td><td>147.0</td><td>29.3</td><td>28.7</td><td>35.5</td><td>  NA</td><td>0.81</td><td>0.81</td><td>119</td><td>112</td><td>80</td><td>68</td><td>Uninformed</td><td>5.119454</td></tr>
-	<tr><td>0</td><td>41</td><td>124</td><td>124.8</td><td>26.9</td><td>27.0</td><td>35.1</td><td>  NA</td><td>0.84</td><td>0.84</td><td>108</td><td>107</td><td>59</td><td>65</td><td>Uninformed</td><td>4.609665</td></tr>
-	<tr><td>0</td><td>40</td><td>173</td><td>171.4</td><td>32.8</td><td>32.4</td><td>41.9</td><td>42.4</td><td>1.00</td><td>1.00</td><td>116</td><td>126</td><td>71</td><td>79</td><td>Uninformed</td><td>5.274390</td></tr>
-	<tr><td>0</td><td>33</td><td>163</td><td>160.2</td><td>37.9</td><td>37.2</td><td>41.7</td><td>  NA</td><td>0.86</td><td>0.84</td><td>113</td><td>114</td><td>73</td><td>78</td><td>Uninformed</td><td>4.300792</td></tr>
-	<tr><td>0</td><td>24</td><td> 90</td><td> 91.8</td><td>16.5</td><td>16.8</td><td>  NA</td><td>  NA</td><td>0.73</td><td>0.73</td><td> NA</td><td> NA</td><td>78</td><td>76</td><td>Uninformed</td><td>5.454545</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">mutate()</span></code> – like all of the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions – strictly operates on dataframes. It’s not set up to work with lists, matrices, vectors, or other data structures. Thus this code is changing a dataset (“mutating” it) to have a new variable. The first argument is the dataframe to mutate, and the second argument is called a “name-value pair”. <code class="docutils literal notranslate"><span class="pre">Ht</span></code> is not a pre-defined argument in the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function, but is a “name” you are choosing to which you assign a new “value.”</p>
 </section>
@@ -1496,47 +956,6 @@ Traceback:
 
 <span class="c1">#Identify the data type of Cond again. Did it change?</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spec_tbl_df [75 × 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
- $ Cond     : num [1:75] 0 0 0 0 0 0 0 0 0 0 ...
- $ Age      : num [1:75] 43 42 41 40 33 24 46 21 29 19 ...
- $ Wt       : num [1:75] 137 150 124 173 163 90 150 156 141 123 ...
- $ Wt2      : num [1:75] 137 147 125 171 160 ...
- $ BMI      : num [1:75] 25.1 29.3 26.9 32.8 37.9 16.5 27.5 25.9 27.5 19.6 ...
- $ BMI2     : num [1:75] 25.1 28.7 27 32.4 37.2 16.8 27.4 25.7 27.4 19.7 ...
- $ Fat      : num [1:75] 31.9 35.5 35.1 41.9 41.7 NA 36.1 36.4 NA 26.6 ...
- $ Fat2     : num [1:75] 32.8 NA NA 42.4 NA NA 37.3 NA NA NA ...
- $ WHR      : num [1:75] 0.79 0.81 0.84 1 0.86 0.73 0.9 0.78 0.87 0.69 ...
- $ WHR2     : num [1:75] 0.79 0.81 0.84 1 0.84 0.73 0.9 0.78 0.85 0.69 ...
- $ Syst     : num [1:75] 124 119 108 116 113 NA 119 116 110 113 ...
- $ Syst2    : num [1:75] 118 112 107 126 114 NA 115 135 115 117 ...
- $ Diast    : num [1:75] 70 80 59 71 73 78 75 67 73 75 ...
- $ Diast2   : num [1:75] 73 68 65 79 78 76 77 65 74 72 ...
- $ Condition: chr [1:75] &quot;Uninformed&quot; &quot;Uninformed&quot; &quot;Uninformed&quot; &quot;Uninformed&quot; ...
- $ Ht       : num [1:75] 5.46 5.12 4.61 5.27 4.3 ...
- $ Older    : logi [1:75] TRUE TRUE TRUE TRUE FALSE FALSE ...
- - attr(*, &quot;spec&quot;)=
-  .. cols(
-  ..   Cond = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Age = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Wt = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Wt2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   BMI = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   BMI2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Fat = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Fat2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   WHR = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   WHR2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Syst = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Syst2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Diast = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Diast2 = <span class=" -Color -Color-Green">col_double()</span>,
-  ..   Condition = <span class=" -Color -Color-Red">col_character()</span>
-  .. )
- - attr(*, &quot;problems&quot;)=&lt;externalptr&gt; 
 </pre></div>
 </div>
 </div>
