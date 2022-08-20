@@ -52,3 +52,5 @@ library(readr)
 
 #now, try re-running the code from above. What happens now?
 read_csv("mindsetmatters.csv")
+
+

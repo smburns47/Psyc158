@@ -17,19 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1, 
-          xlab = "Interest in Statistics", ylab = "Math Anxiety", title = #YOUR CODE HERE)
+library(readr)
+library(ggformula)
+
+fingers <- read_csv('fingers.csv')
 ------------------
 
-Error in parse(text = x, srcfile = src): <text>:3:0: unexpected end of input
-1: gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1, 
-2:           xlab = "Interest in Statistics", ylab = "Math Anxiety", title = #YOUR CODE HERE)
-  ^
+Error in library(readr): there is no package called ‘readr’
 Traceback:
 
-ERROR: Error in parse(text = x, srcfile = src): <text>:3:0: unexpected end of input
-1: gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1, 
-2:           xlab = "Interest in Statistics", ylab = "Math Anxiety", title = #YOUR CODE HERE)
-  ^
+1. library(readr)
+ERROR: Error in library(readr): there is no package called ‘readr’
 
 

@@ -603,50 +603,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggstance
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘ggstance’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:ggplot2’:
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in library(readr): there is no package called ‘readr’
+Traceback:
 
-    geom_errorbarh, GeomErrorbarh
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: scales
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘scales’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:readr’:
-
-    col_factor
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggridges
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New to ggformula?  Try the tutorials: 
-	learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
-	learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">157</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">16</span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">──</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">────────────────────────────────────────────────────────</span>
-<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
-<span class=" -Color -Color-Red">chr</span>  (5): Sex, RaceEthnic, Job, MathAnxious, Interest
-<span class=" -Color -Color-Green">dbl</span> (11): FamilyMembers, SSLast, Year, GradePredict, Thumb, Index, Middle, R...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">ℹ</span> Use `spec()` to retrieve the full column specification for this data.
-<span class=" -Color -Color-Cyan">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+1. library(readr)
 </pre></div>
 </div>
 </div>
@@ -685,9 +645,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_9_0.png" src="_images/chapter-7_9_0.png" />
-</div>
 </div>
 <p>That’s for making the raw data most evident. You also want your broader message to stand out - again, think about <em>why</em> you’re showing people this graph. Are they understanding what you want them to understand? In the plot above, even if you changed it to a jitter plot, changed the point transparency, etc., it might still be hard to see from a glance where the central tendency of each group is, or which group is which. People can probably figure it out by looking harder, but in the real world we want things to be as cognitively easy for our readers as possible.</p>
 <p>Thus, it’s good to choose plot styles and elements that highlight your main message. For this plot, we might be trying to say “male students have generally longer middle fingers than female students.” This has two important pieces to communicate - the central tendency of a group, and the distinctness of the groups. It’s a good rule of thumb that, when you have more than one group of data in a plot, that you change the color of the data to correspond to each group. In addition, if the central tendency is the main summary statistic you care about, choose a plot type that highlights that (such as a violin plot or a boxplot).</p>
@@ -698,9 +655,6 @@ title="Print to PDF"
 <span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> 
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_11_0.png" src="_images/chapter-7_11_0.png" />
 </div>
 </div>
 </section>
@@ -737,9 +691,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_15_0.png" src="_images/chapter-7_15_0.png" />
-</div>
 </div>
 <p>Plotting these data with zero in the y-axis wastes a lot of space in the figure, given that someone’s finger length is very unlikely to be so short. By including zero, we are also squishing down the variance within <code class="docutils literal notranslate"><span class="pre">Middle</span></code> to make it look like <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> explains more of it than we’d otherwise think. To make the problem even more evident, let’s expand both the y-axis and x-axis to go from 0-200.</p>
 <div class="cell docutils container">
@@ -748,9 +699,6 @@ title="Print to PDF"
     <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">200</span><span class="p">),</span> <span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">200</span><span class="p">)))</span> 
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_17_0.png" src="_images/chapter-7_17_0.png" />
 </div>
 </div>
 <p>We don’t have much ability at all to see the variation in the data here, and there’s a lot of wasted space around the data points.</p>
@@ -765,22 +713,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
-
-    filter, lag
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union
-</pre></div>
-</div>
-<img alt="_images/chapter-7_19_3.png" src="_images/chapter-7_19_3.png" />
-</div>
 </div>
 <p>Based on the size of the bars, it looks like there are a fairly similar number of students with each ethnicity. However, we can make it look like there are many more Asian students than White students by changing the y-axis:</p>
 <div class="cell docutils container">
@@ -790,9 +722,6 @@ title="Print to PDF"
     <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">48</span><span class="p">,</span> <span class="m">56</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_21_0.png" src="_images/chapter-7_21_0.png" />
 </div>
 </div>
 <p>Of course, if we look at the y-axis values the actual difference in numbers doesn’t change. But it’s difficult to override our initial reaction to seeing differently-sized bars, so the first impression of this graph is “there are many more Asian students than White.”</p>
@@ -807,9 +736,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_24_0.png" src="_images/chapter-7_24_0.png" />
-</div>
 </div>
 <p>In this graph, without knowing much about the study the data came from, can you be sure what “Interest” means? Even if you know this is a study of students in a statistics class, is it interest in the course? This less? Taking this survey?</p>
 <p>If you’re writing a research paper with this data, someone could read the text elsewhere in your paper to know what the variable names mean, but why make them work so hard and risk them not understanding? It’s important to label the axes in your plots with readable names that communicate important information about the variable by just looking at the image.</p>
@@ -820,9 +746,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_26_0.png" src="_images/chapter-7_26_0.png" />
-</div>
 </div>
 <p>We could also choose to update the y-axis: Someone can probably figure out what <code class="docutils literal notranslate"><span class="pre">MathAnxious</span></code> means, but it’s not a word itself so it’s not very professional.</p>
 <div class="cell docutils container">
@@ -832,24 +755,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/chapter-7_28_0.png" src="_images/chapter-7_28_0.png" />
-</div>
 </div>
 <p>There’s also an argument for <code class="docutils literal notranslate"><span class="pre">title</span></code> to name the overall graph. Use it in the code below to give this graph a name of whatever you want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> 
           <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Interest in Statistics&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Math Anxiety&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="c1">#YOUR CODE HERE)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">end</span> <span class="n">of</span> <span class="nb">input</span>
-<span class="mi">1</span><span class="p">:</span> <span class="n">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> 
-<span class="mi">2</span><span class="p">:</span>           <span class="n">xlab</span> <span class="o">=</span> <span class="s2">&quot;Interest in Statistics&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s2">&quot;Math Anxiety&quot;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="c1">#YOUR CODE HERE)</span>
-  <span class="o">^</span>
-<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
