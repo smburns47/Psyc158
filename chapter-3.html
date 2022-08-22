@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 3 - What are Data &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 4 - Organizing Data" href="chapter-4.html" />
+    <link rel="prev" title="Chapter 2 - Statistical Reasoning" href="chapter-2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 1 Describing Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1.html">
+   Chapter 1 - Intro to Doing Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2.html">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4.html">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 2 - Modeling Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6.html">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 3 - Evaluating Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/smburns47/Psyc158"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-3.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-data-in-r">
+   3.1 Representing data in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   3.2 Data types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qualitative-data">
+     Qualitative data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numeric-data">
+     Numeric data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-data">
+     Boolean data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scales-of-measurement">
+   3.3 Scales of measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-data">
+   3.4 Converting data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-makes-good-data">
+   3.5 What makes good data?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measurement-error">
+     Measurement error
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reliability">
+     Reliability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validity">
+     Validity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 3 - What are Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-data-in-r">
+   3.1 Representing data in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   3.2 Data types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qualitative-data">
+     Qualitative data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numeric-data">
+     Numeric data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-data">
+     Boolean data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scales-of-measurement">
+   3.3 Scales of measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-data">
+   3.4 Converting data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-makes-good-data">
+   3.5 What makes good data?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measurement-error">
+     Measurement error
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reliability">
+     Reliability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validity">
+     Validity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-what-are-data">
+<h1>Chapter 3 - What are Data<a class="headerlink" href="#chapter-3-what-are-data" title="Permalink to this headline">#</a></h1>
+<p>Although we can apply statistical techniques to any bunch of numbers, and sometimes we do just make up numbers to analyze (more about that later), we generally want to analyze numbers that represent something about the world. These numbers we refer to as <strong>data</strong>.</p>
+<p>The first important point about data is that data are – meaning that the word “data” is plural. You might also wonder how to pronounce “data” – some people say “DAY-tah”, some say “DAH-tah.” Some people even use both interchangeably, within the same lecture! (Of course not your instructor though… certainly not.)</p>
+<section id="representing-data-in-r">
+<h2>3.1 Representing data in R<a class="headerlink" href="#representing-data-in-r" title="Permalink to this headline">#</a></h2>
+<p>We’ve used R objects so far to store a single number or message. But in statistics we are dealing more than one — and sometimes many — numbers. An R object can also store a whole set of numbers. This set together is called a <strong>vector</strong>. You can think of a vector as a list of numbers (or values).</p>
+<p>The R function <code class="docutils literal notranslate"><span class="pre">c()</span></code> can be used to combine a list of individual values into a vector. You could think of the “c” as standing for “combine.” In the following code we have created two vectors (we just named them <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> and <code class="docutils literal notranslate"><span class="pre">my_vector2</span></code>) and put a list of values into each vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is the code to create two vectors my_vector and my_vector2. We just made up those names.</span>
+
+<span class="c1"># Run the code and see what happens</span>
+<span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">my_vector2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
+
+<span class="c1"># Now write some code to return these two vectors in the R console. Run the code and see what happens.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There may be times when you just want to know one of the values in a vector, not all of the values. We can <strong>index</strong> a position in the vector by using brackets with a number in it like this: <code class="docutils literal notranslate"><span class="pre">[1]</span></code>. So if we wanted to print out the contents of the first position in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>, we could write <code class="docutils literal notranslate"><span class="pre">my_vector[1]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write code to get the 4th value in my_vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many functions will take in a vector as the input. For example, try using <code class="docutils literal notranslate"><span class="pre">sum()</span></code> to total up the five values saved in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+
+<span class="c1"># Use sum() to total up the values in my_vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-types">
+<h2>3.2 Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
+<section id="qualitative-data">
+<h3>Qualitative data<a class="headerlink" href="#qualitative-data" title="Permalink to this headline">#</a></h3>
+<p>Data are composed of <strong>variables</strong>. Variables are measurements that, across many values, will vary in some way. For example, human intelligence is a variable because, across many people, we would likely measure different intelligence scores. The values of intelligence would vary person to person. In contrast, human species is <em>not</em> a variable, since by definition all humans are <em>homo sapien.</em> There’s no variation data-point to data-point.</p>
+<p>There are different types of variables. Some are <strong>qualitative</strong>, meaning that they describe a quality rather than a numeric quantity. For example, say we ran a survey in class that asked “What is your favorite food?” Some of the answers may be: blueberries, chocolate, tamales, pasta, and pizza. Those data are not intrinsically numerical; there’s nothing to indicate quantity or numerical relations among them.</p>
+<p>In R, there are also different types of objects we can rely on to represent different data types. We can represent qualitative data like words or letters with the <strong>character value type</strong>. Remember at the beginning of Chapter 1 when you printed out <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world!&quot;</span></code>? By putting those words within a set of quotation marks, we created a character-type object. If we forget the quotes, R will think that a word is a name of an object instead of a character value. Note that numbers can also be turned into character values - for example, when 20 is in quotation marks like this – “20” – it will be treated as a character value, even though it includes a number. R doesn’t care whether you use single quotes, ‘like this’, or double quotes, ”like that”. We’ll mostly use double quotes for consistency.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of a character value</span>
+<span class="n">my_character</span> <span class="o">&lt;-</span> <span class="s">&quot;I am a character.&quot;</span>
+<span class="n">my_character</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also put character objects into a vector, to represent a set of qualitative data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">many_hellos</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="s">&quot;hola&quot;</span><span class="p">,</span> <span class="s">&quot;bonjour&quot;</span><span class="p">,</span> <span class="s">&quot;ni hao&quot;</span><span class="p">,</span> <span class="s">&quot;merhaba&quot;</span><span class="p">)</span>
+
+<span class="c1"># Write code to print out the 5th way of saying hello in this vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numeric-data">
+<h3>Numeric data<a class="headerlink" href="#numeric-data" title="Permalink to this headline">#</a></h3>
+<p>More commonly in statistics we will work with <strong>quantitative</strong> data, meaning data that are numerical. It is often easier to work with quantitative over qualitative data - this let’s us do more mathematical computations like finding the mean. For example, here Table 2.1 shows the results from the same food survey, but presented in a different way:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Food choice</p></th>
+<th class="text-align:center head"><p>Number of students</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>blueberries</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>chocolate</p></td>
+<td class="text-align:center"><p>8</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>tamales</p></td>
+<td class="text-align:center"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>pasta</p></td>
+<td class="text-align:center"><p>6</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>pizza</p></td>
+<td class="text-align:center"><p>10</p></td>
+</tr>
+</tbody>
+</table>
+<p>The students’ answers were qualitative, but we generated a quantitative summary of them by counting how many students gave each response.</p>
+<p>In R, when the program sees typed numbers, it will usually assume you’re talking about a <strong>numeric value type</strong>. However, don’t assume that if <em>you</em> see numbers in some data, that the variable is definitely quantitative. A researcher might choose to use numbers as a sort of code or label, in place of the full qualitative description. For example, if they recorded what hand every student in a class used to write with, they could save the variable as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">handedness_word</span> <span class="pre">&lt;-</span> <span class="pre">c(&quot;left&quot;,&quot;right&quot;,&quot;right&quot;,&quot;right&quot;,&quot;right&quot;,&quot;left&quot;,&quot;right&quot;,&quot;right&quot;,&quot;right&quot;)</span></code></p>
+<p>That’s a lot of typing though. Instead, they could choose to assign “right” the value of 1, and “left” the value of 2.
+This would create a vector like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">handedness_label</span> <span class="pre">&lt;-</span> <span class="pre">c(2,1,1,1,1,2,1,1,1)</span></code></p>
+<p>Much shorter to write!</p>
+</section>
+<section id="boolean-data">
+<h3>Boolean data<a class="headerlink" href="#boolean-data" title="Permalink to this headline">#</a></h3>
+<p>Boolean values (also called “logical values”) are either True or False - they represent the truth of a state of reality, like when we were using if/else last chapter. Maybe we have a statement such as: “10 is greater than 5”. We can ask R to evaluate this and return the answer <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>. We can do that by using logical operators like <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">==</span></code>. The double <code class="docutils literal notranslate"><span class="pre">==</span></code> sign checks if two values are equal. There is even a logical operator to check whether values are not equal: <code class="docutils literal notranslate"><span class="pre">!=</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">!=</span> <span class="pre">3</span></code> is a True statement. Essentially, a boolean represents the answer to a true/false statement. Below is a table of the logic operators in R that you can use for making logic statements.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Symbol</p></th>
+<th class="text-align:left head"><p>Example use</p></th>
+<th class="text-align:left head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>&lt;</p></td>
+<td class="text-align:left"><p>A &lt; B</p></td>
+<td class="text-align:left"><p>A is less than B</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>&gt;</p></td>
+<td class="text-align:left"><p>A &gt; B</p></td>
+<td class="text-align:left"><p>A is greater than B</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>==</p></td>
+<td class="text-align:left"><p>A == B</p></td>
+<td class="text-align:left"><p>A is equal to B</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>&lt;=</p></td>
+<td class="text-align:left"><p>A &lt;= B</p></td>
+<td class="text-align:left"><p>A is less than or equal to B</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>&gt;=</p></td>
+<td class="text-align:left"><p>A &gt;= B</p></td>
+<td class="text-align:left"><p>A is greater than or equal to B</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>!=</p></td>
+<td class="text-align:left"><p>A != B</p></td>
+<td class="text-align:left"><p>A is not equal to B</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>%in%</p></td>
+<td class="text-align:left"><p>A %in% c(B1, B2, B3)</p></td>
+<td class="text-align:left"><p>A is in the set [B1, B2, B3]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>&amp;</p></td>
+<td class="text-align:left"><p>A == B &amp; C == D</p></td>
+<td class="text-align:left"><p>A equals B AND C equals D (both statements are true)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>|</p></td>
+<td class="text-align:left"><p>A == B | C == D</p></td>
+<td class="text-align:left"><p>A equals B OR C equals D (either statement is true)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read this code and predict what value will come out of the R console. Then run the code and see if you were right.</span>
+
+<span class="n">A</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">B</span> <span class="o">&lt;-</span> <span class="m">5</span>
+
+<span class="n">comparison</span> <span class="o">&lt;-</span> <span class="n">A</span> <span class="o">&gt;</span> <span class="n">B</span>
+
+<span class="n">comparison</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lots of things can be turned into boolean data if you think about it. For example, The researcher above could choose to represent handedness as a boolean, by conceptualizing the variable as “this person is right-handed.”</p>
+<p><code class="docutils literal notranslate"><span class="pre">handedness_bool</span> <span class="pre">&lt;-</span> <span class="pre">c(false,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">false,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">true).</span></code></p>
+<p>In R, we will avoid using the single equal sign, <code class="docutils literal notranslate"><span class="pre">=</span></code>. If you want to know whether A is equal to B, use the double equal sign, <code class="docutils literal notranslate"><span class="pre">==</span></code>. The single equal sign is sometimes used instead of the assignment operator, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>, but in more niche cases that you’ll learn later. Use the arrow <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> to assign values to an R object, and <code class="docutils literal notranslate"><span class="pre">==</span></code> to ask whether two values are equal.</p>
+<p>Before creating an object, it’s good to think about what type the value should be. I.e., think about what operations you plan to do on the object, and thus what type the value needs to be for that operation to make sense. However, sometimes you forget what type an object was that you created a while ago, or you will receive some data from someone else with pre-defined objects. If you ever need to find out the type of an object, you can simply use the command <code class="docutils literal notranslate"><span class="pre">str([OBJECT_NAME])</span></code>. Str is short for “structure.” It will print out the type of the object as well as its value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use str() to print out the type of each object below</span>
+<span class="n">object1</span> <span class="o">&lt;-</span> <span class="s">&quot;What am I?&quot;</span>
+<span class="n">object2</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
+<span class="n">object3</span> <span class="o">&lt;-</span> <span class="m">30</span>
+
+<span class="c1">#Write your code below this line</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<b>Note</b>: There are technically subtypes of values within the umbrella of numeric (double, integer, etc.) that refer to how the number is stored in computer memory. You don't need to know the difference for this course, just remember that when R returns one of these for a value type, it's a sort of number.   
+</div></section>
+</section>
+<section id="scales-of-measurement">
+<h2>3.3 Scales of measurement<a class="headerlink" href="#scales-of-measurement" title="Permalink to this headline">#</a></h2>
+<p>Among quantitative data, the numbers a variable can take can be related to each other in different ways. What exactly the numbers mean determines what kind, or what <strong>scale</strong> of measurement the variable is in.</p>
+<p>A <strong>categorical</strong> variable (also called a nominal variable) is one like the example above, when we first assigned numeric labels to each food choice. In a nominal variable, each value of the variable represents something different, but the numbers simply serve as qualitative labels. Their actual values don’t mean anything for how you should sort them. As another example, we might ask people for their political party affiliation, and then code those as numbers: 1 = “Republican”, 2 = “Democrat”, 3 = “Libertarian”, and so on. The different numbers do not have any ordered relationship with one another - they’re just another way of writing a qualitative label.</p>
+<p>An <strong>ordinal</strong> variable has values where the magnitude matters for ordering the values. For example, we might ask a person with chronic pain to complete a form assessing how bad their pain is, using a 1-7 numeric scale. Note that while the person is presumably feeling more pain on a day when they report a 6 versus a day when they report a 3, it wouldn’t make sense to say that their pain is twice as bad on the former versus the latter day - there isn’t a unit of measurement available, only a sense of one option being stronger than another. The ordering gives us information about relative magnitude, but the differences between values are not necessarily equal in magnitude.</p>
+<p>An <strong>interval</strong> variable has all of the features of an ordinal scale, but in addition the distance between units on the measurement scale are measurable and consistent. A standard example is physical temperature measured in Celsius or Fahrenheit; the physical difference between 10 and 20 degrees is the same as the physical difference between 90 and 100 degrees.</p>
+</section>
+<section id="converting-data">
+<h2>3.4 Converting data<a class="headerlink" href="#converting-data" title="Permalink to this headline">#</a></h2>
+<p>Sometimes you will have data in one format that you would prefer to have in another - e.g., you have a variable for someone’s zip code, but R is trying to evaluate that data type as quantitative instead of categorical. That doesn’t make sense - Pomona’s zip code 91711 isn’t quantitatively comparable to Harvard’s 01434, it’s just using numbers to denote a category (Pomona is of course comparable and better than Harvard in other ways!). How though would you convince R to treat these numbers as a categorical variable?</p>
+<p>Luckily, you don’t need to rewrite the whole zipcode data vector with quotations manually. You can use a function to classify the vector of numbers as a categorical variable. The function that converts numerical data to categorical is <code class="docutils literal notranslate"><span class="pre">factor()</span></code>. Try it out below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">zipcodes</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span> <span class="m">01002</span><span class="p">,</span> <span class="m">19081</span><span class="p">,</span> <span class="m">91711</span><span class="p">,</span> <span class="m">02481</span><span class="p">,</span> <span class="m">04011</span><span class="p">,</span> <span class="m">21402</span><span class="p">,</span> <span class="m">91711</span><span class="p">,</span> <span class="m">55057</span><span class="p">,</span> <span class="m">05753</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span>
+
+<span class="c1"># Use the factor() function on handedness_label, assign it to handedness_factor, and then return the type </span>
+<span class="c1"># of that new object</span>
+<span class="n">zipcodes_factor</span> <span class="o">&lt;-</span> <span class="c1">#replace this comment with your code</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes_factor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also turn a factor back into a numeric variable by using the <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> function. This is useful in the case where a dataset has numbers that accidentally get saved as character types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_numeric</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">handedness_factor</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">handedness_numeric</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we code the values of a variable using numbers, it is always important to keep in mind what the numbers mean. The value 2 has a very different meaning if it represents the handedness of a person (e.g., left) than if it represents their height in inches (very short!). When we use statistical software to analyze data, the software processes the numbers. But the software doesn’t know what the numbers actually mean. Only you know that.</p>
+<p>We can also convert the actual <em>values</em> of data within variables. One might do this if we decided the numbers in the zipcode variable were too ambiguous, and we instead wanted to label the names of their towns. The <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function has some additional arguments you can add to relabel the values in a variable that you want to convert to a factor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4 places, coded by zipcode</span>
+<span class="n">places_num</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span> <span class="m">01002</span><span class="p">,</span> <span class="m">19081</span><span class="p">,</span> <span class="m">91711</span><span class="p">)</span>
+<span class="n">places_factor</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">places_num</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span> <span class="m">01002</span><span class="p">,</span> <span class="m">19081</span><span class="p">,</span> <span class="m">91711</span><span class="p">),</span> 
+                        <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;williams&quot;</span><span class="p">,</span> <span class="s">&quot;amherst&quot;</span><span class="p">,</span> <span class="s">&quot;swarthmore&quot;</span><span class="p">,</span> <span class="s">&quot;pomona&quot;</span><span class="p">)))</span>
+<span class="c1"># if your command is too wide, hit return after a comma to make it wrap around on a new line, indented</span>
+
+<span class="n">places_factor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This looks complicated. But you can think of the input to the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function as having three parts: the variable to recode, the existing values (levels), and the new labels. This seems like we have to write out every new label for every data point included in the vector, but this is only because we have all unique values in <code class="docutils literal notranslate"><span class="pre">places_num</span></code>. If there were any repeated zipcodes, you only have to include it once in the <code class="docutils literal notranslate"><span class="pre">levels</span></code> argument, because R <code class="docutils literal notranslate"><span class="pre">factor()</span></code> will always assign the matching new label to any data point with that zipcode.</p>
+<p>You can also change the values of numeric variables. For example, you have water depth data measured in inches, but you’d prefer to see it in feet. In this case, you will need to transform each value in vector holding that data.</p>
+<p>You don’t have to manually retype the vector to do this either. Vectors in R work like vectors in linear algebra. So, if you have a constant value you want to modify a vector by, you can simply use the mathematical operation between that value and the vector object. E.g., in the example above, you could write <code class="docutils literal notranslate"><span class="pre">water_depth</span> <span class="pre">/</span> <span class="pre">12</span></code> to convert every water depth measurement from inches to feet. When you use an operation between a vector and a single value, R will apply that value to every item in the vector individually.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+
+<span class="c1"># write code to multiply each number in my_vector by 100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that when you do a calculation with a vector, you’ll get a vector of numbers as the answer, not just a single number.</p>
+<p>After you multiply <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> by 100, what will happen if you return <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>? Will you get the original vector (1,2,3,4,5), or one that has the hundreds (100,200,300,400,500)? Try running this code to see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the code below to see what happens</span>
+<span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">my_vector</span> <span class="o">*</span> <span class="m">100</span>
+
+<span class="c1"># This will return my_vector</span>
+<span class="n">my_vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember, R will do the calculations, but if you want something saved, you have to assign it somewhere. Try writing some code to compute <code class="docutils literal notranslate"><span class="pre">my_vector</span> <span class="pre">*</span> <span class="pre">100</span></code> and then assign the result back into <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>. If you do this, it will replace the old contents of <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> with the new contents (i.e., the product of <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> and 100). (Hint: you can use objects in the same command where you redefine their values).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This creates `my_vector` and stores 1, 2, 3, 4, 5 in it</span>
+<span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+
+<span class="c1"># Now write code to save `my_vector * 100` back into `my_vector`</span>
+<span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="c1">#replace this comment with your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes you will need to do something more complicated. Instead of modifying each value in a vector by the same amount, you want to make a different modification. E.g., say you want to know how much each person improved their SAT scores with practice, but you only have their first and last scores saved as data. Everyone improves as different rates, so you can’t add the same score to each person. Instead, you could do <code class="docutils literal notranslate"><span class="pre">end_score</span> <span class="pre">-</span> <span class="pre">beginning_score</span></code>. If both <code class="docutils literal notranslate"><span class="pre">end_score</span></code> and <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> are vectors of the same length, R will apply the operation to each item <em>pairwise</em>: the first item of <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> will be subtracted from the first item of <code class="docutils literal notranslate"><span class="pre">end_score</span></code>, the second from the second, third from the third, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1400</span><span class="p">,</span> <span class="m">1450</span><span class="p">,</span> <span class="m">1500</span><span class="p">,</span> <span class="m">1200</span><span class="p">,</span> <span class="m">1150</span><span class="p">,</span> <span class="m">1600</span><span class="p">)</span>
+<span class="n">beginning_score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1350</span><span class="p">,</span> <span class="m">1400</span><span class="p">,</span> <span class="m">1400</span><span class="p">,</span> <span class="m">1200</span><span class="p">,</span> <span class="m">1100</span><span class="p">,</span> <span class="m">1400</span><span class="p">)</span>
+
+<span class="c1">#write code that will subtract beginning_score from end_score, and return the resulting vector</span>
+<span class="n">change_score</span> <span class="o">&lt;-</span> <span class="c1">#write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Changing numeric data from one unit to another isn’t the only way you can convert data. You can even convert to different data types! Returning to the handedness example above, let’s say we have data stored as</p>
+<p><code class="docutils literal notranslate"><span class="pre">handedness</span> <span class="pre">&lt;-</span> <span class="pre">c(2,1,1,1,1,2,1,1,1)</span></code></p>
+<p>R will see numbers in that vector and by default assume these data are quantitative. However you can use a function to classify the vector of numbers as a categorical label variable instead. The function that converts numerical data to categorical is <code class="docutils literal notranslate"><span class="pre">factor()</span></code>. Try it out below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">handedness</span><span class="p">)</span>
+
+<span class="c1"># Use the factor() function on handedness_label, assign it to handedness_factor, and then return the type </span>
+<span class="c1"># of that new object</span>
+<span class="n">handedness_factor</span> <span class="o">&lt;-</span> <span class="c1">#replace this comment with your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the 1s and 2s in the handedness variable were numbers, we could add them up using the code <code class="docutils literal notranslate"><span class="pre">sum(handedness)</span></code>. But if we tell R that handedness is a factor, it will assume the 1s and 2s refer to categories, and so it won’t be willing to add them up.</p>
+<p>We can also turn a factor back into a numeric variable by using the <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_numeric</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">handedness_factor</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">handedness_numeric</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also create Boolean vectors by subjecting a whole vector to a comparison. Since a comparison is an operation, R will apply it to every item in the handedness vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_bool</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">==</span> <span class="m">1</span>
+
+<span class="c1"># This code returns both vectors</span>
+<span class="n">handedness_bool</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do you expect from this code? Run the code to see what happens. Then, fix the bug and run again.</span>
+
+<span class="n">handedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="n">footedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+
+<span class="c1">#a variable to represent whether someone uses both left or both right hands and feet</span>
+<span class="n">hand_foot_alignment</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">=</span> <span class="n">footedness</span>
+<span class="n">hand_foot_alignment</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-makes-good-data">
+<h2>3.5 What makes good data?<a class="headerlink" href="#what-makes-good-data" title="Permalink to this headline">#</a></h2>
+<p>Data are meant to be a clear, quantitative representation of some quality in the world. However, in many fields such as psychology, the thing that we are measuring is not a physical feature, but instead an unobservable theoretical concept, which we usually refer to as a <strong>construct</strong>. For example, let’s say that we want to test how well you understand the distinction between categorical, ordinal, and interval variables. The professor could give you a pop quiz that would ask you several questions about these concepts and count how many you got right. This would be one way to try and measure the construct that is your knowledge. However, constructs are difficult to measure well. There are several things that can get in the way of good measurement:</p>
+<section id="measurement-error">
+<h3>Measurement error<a class="headerlink" href="#measurement-error" title="Permalink to this headline">#</a></h3>
+<p>It is usually impossible to measure a construct without some amount of error. In the example above, you might know the answer, but you might mis-read the question and get it wrong. In other cases, there is error intrinsic to the thing being measured, such as when we measure how long it takes a person to respond on a simple reaction time test, which will vary from trial to trial for many reasons. We generally want our <em><strong>measurement error</strong></em> to be as low as possible, which we can achieve either by improving the quality of the measurement (for example, using a better timer to measure reaction time), or by averaging over a larger number of indvidiual measurements.</p>
+</section>
+<section id="reliability">
+<h3>Reliability<a class="headerlink" href="#reliability" title="Permalink to this headline">#</a></h3>
+<p><strong>Reliability</strong> refers to the consistency of our measurements. One common form of reliability, known as <strong>test-retest reliability</strong>, measures how well the measurements agree if the same measurement is performed twice. For example, someone might give you a questionnaire about your attitude towards statistics today, repeat this same questionnaire tomorrow, and compare your answers on the two days; if the questionnaire is a good measurement of your true attitude, we would hope that they would be very similar to one another, unless something happened in between the two tests that should have changed your view of statistics (like reading this book!).</p>
+<p>Another way to assess reliability comes in cases where the data include subjective judgments. For example, let’s say that a researcher wants to determine whether a treatment changes how well an autistic child interacts with other children, which is measured by having experts watch the child and rate their interactions with the other children. In this case we would like to make sure that the answers don’t depend on the individual rater — that is, we would like for there to be high <strong>inter-rater reliability</strong>. This can be assessed by having more than one rater perform the rating, and then comparing their ratings to make sure that they agree well with one another.</p>
+<p>Reliability is important if we want to compare one measurement to another, because the relationship between two different variables can’t be any stronger than the relationship between either of the variables and itself (i.e., its reliability). This means that an unreliable measure can never have a strong statistical relationship with any other measure. For this reason, researchers developing a new measurement (such as a new survey) will often go to great lengths to establish and improve its reliability.</p>
+</section>
+<section id="validity">
+<h3>Validity<a class="headerlink" href="#validity" title="Permalink to this headline">#</a></h3>
+<p>Reliability is important, but on its own it’s not enough: After all, I could create a perfectly reliable measurement on a personality test by re-coding every answer using the same number, regardless of how the person actually answers. We want our measurements to also be <strong>valid</strong> — that is, we want to make sure that we are actually measuring the construct that we think we are measuring. There are many different types of validity that are commonly discussed; we will focus on three of them.</p>
+<p><strong>Face validity</strong> - Does the measurement make sense on its face? If I were to tell you that I was going to measure a person’s blood pressure by looking at the color of their tongue, you would probably think that this was not a valid measure on its face. On the other hand, using a blood pressure cuff would have face validity. This is usually a first reality check before we dive into more complicated aspects of validity.</p>
+<p><strong>Construct validity</strong> - Is the measurement related to other measurements in an appropriate way? This is often subdivided into two aspects. <strong>Convergent validity</strong> means that the measurement should be closely related to other measures that are thought to reflect the same construct. Let’s say that I am interested in measuring how extroverted a person is using either a questionnaire or an interview. Convergent validity would be demonstrated if both of these different measurements are closely related to one another. On the other hand, measurements thought to reflect different constructs should be unrelated, known as <strong>divergent validity</strong>. If my theory of personality says that extraversion and conscientiousness are two distinct constructs, then I should also see that my measurements of extraversion are unrelated to measurements of conscientiousness.</p>
+<p><strong>Predictive validity</strong> - If our measurements are truly valid, then they should also be predictive of other outcomes. For example, let’s say that we think that the psychological trait of sensation seeking (the desire for new experiences) is related to risk taking in the real world. To test for predictive validity of a measurement of sensation seeking, we would test how well scores on the test predict scores on a different survey that measures real-world risk taking.</p>
+<img src="images/ch3-relyvalid.png" width="600">
+<p><em>Figure 2.1: A figure demonstrating the distinction between reliability and validity, using shots at a bullseye. Reliability refers to the consistency of location of shots, and validity refers to the accuracy of the shots with respect to the center of the bullseye.</em></p>
+</section>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Define a variable</p></li>
+<li><p>Make a vector in R</p></li>
+<li><p>Describe the difference between qualitative and quantitative data</p></li>
+<li><p>recode vectors in R as numeric or categorical</p></li>
+<li><p>Explain the difference between categorical, ordinal, and interval data</p></li>
+<li><p>Do basic math operations on vectors</p></li>
+</ul>
+</section>
+<section id="chapter-quiz">
+<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Consider a vector of data, <code class="docutils literal notranslate"><span class="pre">sex</span> <span class="pre">&lt;-</span> <span class="pre">(0,1,0,1,1,1,0,0)</span></code>. What do you think the numbers here mean? Do they represent quantitative data, or categorical? Would it be valid to take the sum of this vector? How would we figure out if this vector is the same as one written more verbosely, like sex2 &lt;- (“female”, “male”, “female”, “male”, “male”, “male”, “female”, “female”)? How would you convert sex2 into a boolean?</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter-2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 2 - Statistical Reasoning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter-4.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 4 - Organizing Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

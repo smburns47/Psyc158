@@ -1,0 +1,1024 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 4 - Organizing Data &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 5 - Describing Data" href="chapter-5.html" />
+    <link rel="prev" title="Chapter 3 - What are Data" href="chapter-3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 1 Describing Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-1.html">
+   Chapter 1 - Intro to Doing Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2.html">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3.html">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 2 - Modeling Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6.html">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 3 - Evaluating Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/smburns47/Psyc158"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-4.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-structure-of-data">
+   4.1 The structure of data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-dataframe">
+   4.2 Creating a dataframe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-vectors">
+     Combining vectors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-existing-data">
+     Importing existing data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looking-at-data">
+   4.3 Looking at data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-variables">
+   4.4 Accessing variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-data">
+   4.5 Subsetting data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulating-data">
+   4.6 Manipulating data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifying-missing-data">
+     Identifying missing data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-data">
+     Filtering data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-new-variables">
+     Creating new variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recoding-variables">
+     Recoding variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 4 - Organizing Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-structure-of-data">
+   4.1 The structure of data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-dataframe">
+   4.2 Creating a dataframe
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-vectors">
+     Combining vectors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-existing-data">
+     Importing existing data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#looking-at-data">
+   4.3 Looking at data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-variables">
+   4.4 Accessing variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-data">
+   4.5 Subsetting data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulating-data">
+   4.6 Manipulating data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifying-missing-data">
+     Identifying missing data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-data">
+     Filtering data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-new-variables">
+     Creating new variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recoding-variables">
+     Recoding variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-quiz">
+   Chapter quiz
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-organizing-data">
+<h1>Chapter 4 - Organizing Data<a class="headerlink" href="#chapter-4-organizing-data" title="Permalink to this headline">#</a></h1>
+<section id="the-structure-of-data">
+<h2>4.1 The structure of data<a class="headerlink" href="#the-structure-of-data" title="Permalink to this headline">#</a></h2>
+<p>Data can come to us in many forms. If you collect data yourself, you may start out with numbers written on scraps of paper. Or you may get a computer file filled with numbers and words of various sorts, representing many variables at once.</p>
+<p>So far we have worked with one variable at a time, which is easy to visualize and understand simply by printing its vector. However, most real-world data has many variables stored at once. To manage this, it is necessary to organize and format data so that they are easy to analyze using statistical software. There is no one way to organize data, but there is a way that is most common, and that is what we recommend you use.</p>
+<p>This common way is called a <strong>dataframe</strong>. Under this framework, data are stored into rectangular tables, with rows and columns. What goes on each row and column follows two principles:</p>
+<ul class="simple">
+<li><p>Each column is a variable</p></li>
+<li><p>Each row is an observation (or, we have been calling it a case or an object to which a measure is attached)</p></li>
+<li><p>The first row contains the names of all the variables</p></li>
+<li><p>The data within a dataframe are from the same dataset</p></li>
+</ul>
+<p>Rectangular tables of this sort are represented in R using new data type - conveniently, called a dataframe. The columns are the variables; this is where the results of measures are kept. The rows are the cases sampled. Each value of different variables that are on the same row belong to the same observation (e.g., the same person, zip code, habitat, etc.) Data frames provide a way to save information such as column headings (i.e., variable names) in the same table as the actual data values.</p>
+<p>Principle 4 above simply states that the types of observations that form the rows cannot be mixed within a single table. So, for example, you wouldn’t have rows of college students intermixed with rows of cars or countries or couples. If you have a mix of observation types (e.g., students, families, countries), they each go in a different dataframe.</p>
+</section>
+<section id="creating-a-dataframe">
+<h2>4.2 Creating a dataframe<a class="headerlink" href="#creating-a-dataframe" title="Permalink to this headline">#</a></h2>
+<section id="combining-vectors">
+<h3>Combining vectors<a class="headerlink" href="#combining-vectors" title="Permalink to this headline">#</a></h3>
+<p>Let’s say we have two vectors, <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&lt;-</span> <span class="pre">c(1,2,3,4,5)</span></code> and <code class="docutils literal notranslate"><span class="pre">x2</span> <span class="pre">&lt;-</span> <span class="pre">c(18,21,20,23,20)</span></code>. We can combine these together into a dataframe using the <code class="docutils literal notranslate"><span class="pre">data.frame()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">20</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe. This function also gives the variables names; let’s rewrite the code above to give <code class="docutils literal notranslate"><span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span></code> more meaningful variable names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data.frame</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this approach, you can form a dataframe out of any set of variables - well, almost. Try out the code below, and see if you can find why it causes an error. What can we do to fix it?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since a dataframe is a rectangle, in order for vectors to be combinable, they need to be the same lengths.</p>
+</section>
+<section id="importing-existing-data">
+<h3>Importing existing data<a class="headerlink" href="#importing-existing-data" title="Permalink to this headline">#</a></h3>
+<p>The vast majority of the time in data analysis, you are not manually creating vectors and dataframes. Instead, you are importing an existing file of data. So for the rest of this chapter we’re going to practice working with and understanding an example dataset from a study by Crum &amp; Langer (2007) called <a class="reference external" href="https://search.r-project.org/CRAN/refmans/Lock5Data/html/MindsetMatters.html">Mindset Matters</a>, on how the placebo effect works with exercise. In this study, 75 hotel housekeepers were either told that their daily work accounted for all the daily exercise they need, or were told nothing.</p>
+<p>You may have experience opening datasets in programs like Excel with an .xlsx extension. The extension tells you what kind of file format it is - .xlsx, for example, is an excel file. There are many file formats data can be saved in that are more or less easy to open in various software. Our Mindset Matters data is saved as a .csv, meaning a “comma-separated value” format, as this is really easy for computers programs to parse. If you were to open this file in a basic text editor program, you’d see rows are separated on different lines, and columns are separated by commas. In R, the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package can understand this format and create a rectangle dataframe for us.</p>
+<p><code class="docutils literal notranslate"><span class="pre">readr</span></code> is not a default package in R - it has to be downloaded the first time you use it, and then loaded every time you start a new R session. Edit the code below to install the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package and load it into your R environment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># finish the code below to install readr</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;   &quot;</span><span class="p">)</span>
+
+<span class="c1">#finish the code below to load readr</span>
+<span class="nf">library</span><span class="p">(</span>    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before we can load our data, R has to know where on your computer it is located. By default, it only looks in what is called your <strong>working directory</strong> - a specific folder on your computer where your code also lives. You can use the function <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> to learn what your current working directory is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">getwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because this book is hosted on a website, the above code should show you the directory where these web files are stored. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different.</p>
+<p>We’ve stored the <code class="docutils literal notranslate"><span class="pre">mindsetmatters.csv</span></code> file in the same directory as this code, so R will be able load it if you simply use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> from the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package. Try it out below - the only argument you need for the function is the name of the file, in quotes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;mindsetmatters.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;datasets/mindsetmatters.csv&quot;)</span></code>.</p>
+</section>
+</section>
+<section id="looking-at-data">
+<h2>4.3 Looking at data<a class="headerlink" href="#looking-at-data" title="Permalink to this headline">#</a></h2>
+<p>The first thing to do when opening a dataset for the first time is to understand it - what each variable is, how many data points, what the variable data types are, etc.</p>
+<p>After you run the code above, you should see a big print out of the whole dataframe. You might be thinking to yourself, “Wow, that’s a lot to take in!” In fact, this would be considered a small dataset! Real data can have hundreds or thousands of datapoints stored together, with hundreds or thousands of variables recorded. It can get unweildy to look at a whole dataset at once. Thus its usually best to look at a summary of the data in a dataframe, or a sampling of it.</p>
+<p>We can use certain functions to do this summarizing for us. But first, we have to make sure we save our dataframe so we can keep using it over and over. Remember that we have a new data type, dataframe, which means it can be saved as an object itself. In the code below, read the dataframe into an object called <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the dataframe into an object called mindsetmatters</span>
+<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="c1"># your code here</span>
+
+<span class="c1"># check the data type of this object</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A cool thing about the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function is that, when you’re working with a complex object like a dataframe that contains many values, it’ll tell you the type of the object as a whole as well as the type of every variable within it. Look at the output above - what data type is the variable “Age”? Can you find where it tells you the size of the dataframe?</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">str()</span></code> lets you summarize the information within a dataframe without opening the whole thing to view. Another way to do it, if you want to see how the dataframe is arranged, is to use the function <code class="docutils literal notranslate"><span class="pre">head()</span></code>. This will show you just the first 6 lines of the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#run this code to see the head of the dataframe</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-variables">
+<h2>4.4 Accessing variables<a class="headerlink" href="#accessing-variables" title="Permalink to this headline">#</a></h2>
+<p>Oftentimes we want to reference a specific variable within a dataframe. So long as a datafile was saved with the first line having the names of each variable, we can access it using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol in R. If you want to specify the <code class="docutils literal notranslate"><span class="pre">Age</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataframe, for example, you would write <code class="docutils literal notranslate"><span class="pre">mindsetmatters$Age</span></code>.</p>
+<p>Try using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol to print out just the variable <code class="docutils literal notranslate"><span class="pre">Age</span></code> from <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the $ sign to print out the contents of the Age variable in the mindsetmatters dataframe</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When R is asked to print out a single variable (such as <code class="docutils literal notranslate"><span class="pre">Age</span></code>), R prints out each person’s value on the variable all in a row. You can then work with this variable as if it were a single vector, like we used in the previous chapter. Try “aging up” everyone’s age by adding two years to the <code class="docutils literal notranslate"><span class="pre">Age</span></code> variable. (Remember that adding a constant to a vector adds that value to every item in the vector).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add two years to the value of everyone&#39;s age in the variable Age, and print out the result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usually you want to access variables this way - it has more meaning to humans reading code. But just so you know, you can also access variables using index notation with <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets. However, a dataframe has two dimensions (rows and columns), so to access data using this we have to give a number value for both which row we want, and which column we want. E.g., <code class="docutils literal notranslate"><span class="pre">[row_num,</span> <span class="pre">col_num]</span></code>.</p>
+<p>If we want to print out the entirety of the third row from mindsetmatters, we’d use <code class="docutils literal notranslate"><span class="pre">mindsetmatters[3,]</span></code>. Leaving nothing after the comma for column number allows R to return every value in the third row regardless of column. Likewise, returning the entirety of the third <em>column</em> from mindsetmatters would look like <code class="docutils literal notranslate"><span class="pre">mindsetmatters[,3]</span></code>. Try it out in the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write code to return the 10th row of mindsetmatters</span>
+
+<span class="c1">#Write code to return the 5th column of mindsetmatters</span>
+
+<span class="c1">#What do you think this code will return?</span>
+<span class="n">mindsetmatters</span><span class="p">[</span><span class="m">10</span><span class="p">,</span><span class="m">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="subsetting-data">
+<h2>4.5 Subsetting data<a class="headerlink" href="#subsetting-data" title="Permalink to this headline">#</a></h2>
+<p>Sometimes you want to focus on a subset of your variables in a data frame. For example, you might care about just the variables <code class="docutils literal notranslate"><span class="pre">Age</span></code> and <code class="docutils literal notranslate"><span class="pre">Wt</span></code> in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataframe. The output would be easier to read if it only included these variables and not all the others.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">select()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package to look at just a subset of variables. <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> is a very commonly-used package that makes working with dataframes easy (click <a class="reference external" href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">here</a> for a cheat sheet of many <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions). When using <code class="docutils literal notranslate"><span class="pre">select()</span></code>, we first need to tell R which dataframe, then which variables to select from that dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1">#Make a prediction, what do you think this code will do? </span>
+<span class="nf">select</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">BMI</span><span class="p">,</span> <span class="n">Fat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may need to scroll the output up and down to see it all. It’s quite a lot because the function <code class="docutils literal notranslate"><span class="pre">select()</span></code> will print out all the values of the selected variables. What the <code class="docutils literal notranslate"><span class="pre">select()</span></code> function actually does is return a new data frame with the selected subset of columns.</p>
+<p>If you want to look at just a few rows of a few variables, we can combine <code class="docutils literal notranslate"><span class="pre">head()</span></code> and <code class="docutils literal notranslate"><span class="pre">select()</span></code> together in a nested function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">BMI</span><span class="p">,</span> <span class="n">Fat</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nesting functions allows us to do multiple operations on one line. Nested functions always evaluate from the inside out - <code class="docutils literal notranslate"><span class="pre">head()</span></code> is applied to the result of <code class="docutils literal notranslate"><span class="pre">select()</span></code>. In this case, a new dataframe is made by <code class="docutils literal notranslate"><span class="pre">select()</span></code>, and then <code class="docutils literal notranslate"><span class="pre">head()</span></code> returns the first six lines of it. Technically, you can nest as many functions as you want! But it does get harder to read the deeper you go, so beware what your future self will appreciate when reading the code again later.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">select()</span></code> function lets us look at a subset of variables. But sometimes you might want to look at a subset of observations. Notice the first person in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataframe has an age of 43. Are they the only person of that age? What happens if we put 43 as an argument in <code class="docutils literal notranslate"><span class="pre">select()</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="m">43</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">select()</span></code> only works on <em>variables</em> (or columns of the data frame). In this case, since you gave it the number 43 for the second argument, it thought you were asking for the 43rd column - but there aren’t 43 columns in this dataset!</p>
+<p>To get a subset of observations (or rows of the data frame) we use a different function: <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. This function filters the dataframe to show only those observations (rows) that match some criteria. For example, here is the code that will return only the observations where the age is 43:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Age</span><span class="o">==</span><span class="m">43</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, like <code class="docutils literal notranslate"><span class="pre">select()</span></code>, returns a dataframe. In this case, the data frame only has one row because only one person is exactly 43 years old.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#How would you use filter() to return a dataframe of everyone who is *at least* 43 years old?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One challenge for students is to keep track of the difference between an observation (e.g., housekeepers, represented in rows), a variable (e.g., <code class="docutils literal notranslate"><span class="pre">Age</span></code> or <code class="docutils literal notranslate"><span class="pre">Wt</span></code>, represented in columns), and the values a variable can take (e.g., 43, represented in cells). It is helpful to imagine the rows and columns of a data frame when you read about observations and variables, respectively. If the data are in a dataframe format like this (also known as “tidy”), the rows will always be observations and the columns, variables.</p>
+<p>In this course we will be providing most of the data you analyze in a tidy format. However, the world is not always tidy. One day, in the wild world outside of this course, you may have to transform a non-tidy data set into a tidy one.</p>
+</section>
+<section id="manipulating-data">
+<h2>4.6 Manipulating data<a class="headerlink" href="#manipulating-data" title="Permalink to this headline">#</a></h2>
+<p>Once data are in a tidy format, we can use R commands to manipulate the data in various ways. Let’s look at a few common things you might need to do before analyzing your data:</p>
+<ul class="simple">
+<li><p>Identifying Missing Data</p></li>
+<li><p>Filtering Data</p></li>
+<li><p>Creating New Variables</p></li>
+<li><p>Recoding Variables</p></li>
+</ul>
+<section id="identifying-missing-data">
+<h3>Identifying missing data<a class="headerlink" href="#identifying-missing-data" title="Permalink to this headline">#</a></h3>
+<p>Sometimes (in fact, usually) we end up with some missing data in our data set. People don’t always answer every question on a survey, someone didn’t show up to their third doctor’s appointment, etc. R represents missing data with the value NA (not available). It will also recode a blank cell in a file as NA. If your data set represents missing data in some other way (e.g., some people put the value -999), you should recode the values as NA when working in R.</p>
+<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataframe. First, we’ll reshuffle the order of rows in the dataframe based on <code class="docutils literal notranslate"><span class="pre">Fat2</span></code>, so we can better see the missing data. To do this, we’ll use the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function from <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># we&#39;ve already loaded dplyr into R in a previous line of this chapter, so we don&#39;t need to</span>
+<span class="c1"># do it again</span>
+
+<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Fat2</span><span class="p">)</span> <span class="c1">#remember variable names are case sensitive!</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Fat2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Based on this, we can easily see some missing data in this variable. We can also count how many observations have this value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># the function count() in dplyr will count how many observations in a dataframe have a specific value</span>
+<span class="nf">count</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Fat2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this dataframe, <code class="docutils literal notranslate"><span class="pre">Fat</span></code> is the percentage of a participant’s body fat at the beginning of the study, and <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> is the percentage at the end of the study. Use the code window below to explore whether there are any missing values for <code class="docutils literal notranslate"><span class="pre">Fat</span></code>. Why do you think <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> has more missing values?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that you can find missing data, the big question is - what to do about it? There is a whole area of study in quantitative psychology on what to do with missing data. This is an advanced topic, so we won’t get into it in this course. Instead, in future lessons we’ll tell you what actions to take for missing data, but just know that there are different opinions out there about what the <em>best</em> actions are.</p>
+</section>
+<section id="filtering-data">
+<h3>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">#</a></h3>
+<p>One of these options is to remove all the observations from a dataset that are missing data on a variable you care about. We can use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function, introduced previously, to remove observations with missing data from a data frame. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Fat2</span> <span class="o">!=</span> <span class="s">&quot;NA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you remember what the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator does? This code returns a dataframe that includes only cases for which the variable <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> is <em>not</em> equal to NA. Note that the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function filters in, not out (i.e., keeps).</p>
+<p>As with anything in R, your filtered dataframe is only temporary unless you save it to an R object. So save the data with no missing <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> values in a new data frame called <code class="docutils literal notranslate"><span class="pre">mindsetmatters_subset</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write code here to make your new dataframe mindsetmatters_subset without any NA in Fat2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do you think would happen if we saved <code class="docutils literal notranslate"><span class="pre">filter(mindsetmatters,</span> <span class="pre">Fat2</span> <span class="pre">!=</span> <span class="pre">&quot;NA&quot;)</span></code> to <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>? If we save the filtered data to the same dataframe name, it will overwrite the original dataframe. Doing this would mean we can no longer access the data we filtered out. This process is called <strong>destructive editing</strong>. In general, we don’t want to do this - we don’t want to permanently erase any data. Thus if you’re manipulating data in a dataframe, it’s usually best to save the manipulated data as a new object. That way you can always access the original data again if needed.</p>
+</section>
+<section id="creating-new-variables">
+<h3>Creating new variables<a class="headerlink" href="#creating-new-variables" title="Permalink to this headline">#</a></h3>
+<p>Often we use multiple measures of a single attribute because no single measure would be adequate. For instance, it would be difficult to measure school achievement with a grade score from just your English class. However, if you do have multiple measures, you probably will want to combine them into a single variable. In the case of school achievement, a good summary measure might be the average grade earned across all of a student’s courses.</p>
+<p>It is quite common to create new variables that mutate values from other variables. For example, in <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>, we have a measurement for both someone’s weight (<code class="docutils literal notranslate"><span class="pre">Wt</span></code>)  and their BMI score (<code class="docutils literal notranslate"><span class="pre">BMI</span></code>).   We don’t know their height, but BMI is a function of weight / height. So, we could divide <code class="docutils literal notranslate"><span class="pre">Wt</span></code> by <code class="docutils literal notranslate"><span class="pre">BMI</span></code> to make a new variable <code class="docutils literal notranslate"><span class="pre">Ht</span></code>.</p>
+<p>Making a new variable is easy. Simply assign the computed vector to a new variable naming using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol after the dataframe name. E.g., <code class="docutils literal notranslate"><span class="pre">mindsetmatters$Ht</span> <span class="pre">&lt;-</span> <span class="pre">mindsetmatters$Wt</span> <span class="pre">/</span> <span class="pre">mindsetmatters$BMI</span></code>. If the variable <code class="docutils literal notranslate"><span class="pre">Ht</span></code> already exists in the dataframe, R will overwrite it with these new values. If it doesn’t, R will create a new variable and append it as a new column to the end of <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#make a new dataframe separate from the original</span>
+<span class="n">mindsetmatters2</span> <span class="o">&lt;-</span> <span class="n">mindsetmatters</span>
+
+<span class="c1">#Look at all the variables in mindsetmatters</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">)</span>
+
+<span class="c1"># Create a new variable in mindsetmatters2 called Ht from Wt and BMI</span>
+<span class="n">mindsetmatters2</span><span class="o">$</span><span class="n">Ht</span> <span class="o">&lt;-</span> <span class="n">mindsetmatters2</span><span class="o">$</span><span class="n">Wt</span> <span class="o">/</span> <span class="n">mindsetmatters2</span><span class="o">$</span><span class="n">BMI</span>
+
+<span class="c1">#Look at the updated dataframe, and find where the new variable went</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Whenever you make new variables, or even do anything else in R, it’s a good idea to check to make sure R did what you intended it to do. You can use the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function for this.</p>
+<p>Sometimes you also might want to create a new variable that represents the data in a different way. For example, maybe in one analysis we want to look at only housekeepers that are at least 40 years old. You can make a new boolean variable that is <code class="docutils literal notranslate"><span class="pre">true</span></code> for everyone at least 40 years old, and <code class="docutils literal notranslate"><span class="pre">false</span></code> for everyone younger.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># making a new boolean variable to mark who is at least 40 years old</span>
+<span class="n">mindsetmatters2</span><span class="o">$</span><span class="n">Older</span> <span class="o">&lt;-</span> <span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span> <span class="o">&gt;=</span> <span class="m">40</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use count() to find out how many people are at least 40 years old </span>
+
+<span class="c1"># Why are there three possible data values in the output, instead of just true and false?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some more code below, using filter(), to make a minsetmatters_subset dataframe of only</span>
+<span class="c1"># participants who are at least 40 years old. Does the size of this dataframe match what you </span>
+<span class="c1"># expect from the code above?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another way of creating variables, but using a function instead of the <code class="docutils literal notranslate"><span class="pre">$</span></code> operator, is the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package. When you use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code>, you need typically to specify 3 things:</p>
+<ul class="simple">
+<li><p>the dataframe you want to modify</p></li>
+<li><p>the name of the new variable that you’ll create</p></li>
+<li><p>the value you will assign to the new variable</p></li>
+</ul>
+<p>Here is code that will make the same <code class="docutils literal notranslate"><span class="pre">Ht</span></code> variable we created earlier:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mindsetmatters2</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Ht</span> <span class="o">=</span> <span class="n">Wt</span><span class="o">/</span><span class="n">BMI</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mutate()</span></code> – like all of the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions – strictly operates on dataframes. It’s not set up to work with lists, matrices, vectors, or other data structures. Thus this code is changing a dataset (“mutating” it) to have a new variable. The first argument is the dataframe to mutate, and the second argument is called a “name-value pair”. <code class="docutils literal notranslate"><span class="pre">Ht</span></code> is not a pre-defined argument in the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function, but is a “name” you are choosing to which you assign a new “value.”</p>
+</section>
+<section id="recoding-variables">
+<h3>Recoding variables<a class="headerlink" href="#recoding-variables" title="Permalink to this headline">#</a></h3>
+<p>There are some instances where you may want to change the way a variable is coded. For instance, the variable <code class="docutils literal notranslate"><span class="pre">Cond</span></code> is coded 1 for if a housekeeper was in the experimental condition (told that they are getting enough exercise), or the control condition (not told anything). Recall the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function we learned last chapter, and turn this variable into a factor in <code class="docutils literal notranslate"><span class="pre">mindsetmatters2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Identify the data type of Cond</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
+
+<span class="c1">#Recode Cond into a factor, and save it over the original Cond variable</span>
+
+
+<span class="c1">#Identify the data type of Cond again. Did it change?</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that some functions take multiple arguments (such as the dataframe and the variable name), or one argument (just the variable, accessed with <code class="docutils literal notranslate"><span class="pre">$</span></code>). This means you’ll have to remember how functions work, or keep a cheatsheet you can refer back to.</p>
+<p>What if you don’t want to change only the data type, but also the values in a variable? We learned last chapter that the function <code class="docutils literal notranslate"><span class="pre">factor()</span></code> can do this with its <code class="docutils literal notranslate"><span class="pre">levels</span></code> and <code class="docutils literal notranslate"><span class="pre">labels</span></code> arguments. Another way to do it is using the function <code class="docutils literal notranslate"><span class="pre">recode()</span></code> like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">recode(mindsetmatters2$Cond,</span> <span class="pre">&quot;1&quot;=&quot;exp&quot;,</span> <span class="pre">&quot;0&quot;=&quot;control&quot;)</span></code></p>
+<p>In R, there are often multiple ways to do the same thing! In the <code class="docutils literal notranslate"><span class="pre">recode()</span></code> function, you need to put the old value in quotes; the new variable could be in quotes (if a character value) or not (if numerical). This function also uses the <code class="docutils literal notranslate"><span class="pre">=</span></code> assignment operator instead of <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>. This is just for telling R a momentary command inside an argument - you’re not permanently assigning 1 to have the value of “exp”. Keep using <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> for assigning objects that stick around.</p>
+<p>As always, whenever we do anything, we might want to save it. Try saving the recoded version of <code class="docutils literal notranslate"><span class="pre">Cond</span></code> as <code class="docutils literal notranslate"><span class="pre">CondRecode</span></code>, a new variable in <code class="docutils literal notranslate"><span class="pre">mindsetmatters2</span></code>. Print a few observations of <code class="docutils literal notranslate"><span class="pre">Cond</span></code> and <code class="docutils literal notranslate"><span class="pre">CondRecode</span></code> to check that your recode worked.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the recoded version of `Cond` to `CondRecode`</span>
+<span class="n">mindsetmatters2</span><span class="o">$</span><span class="n">CondRecode</span> <span class="o">&lt;-</span> <span class="nf">recode</span><span class="p">(</span>     <span class="p">)</span>
+
+<span class="c1"># Write code to print the first 6 observations of `Cond` and `CondRecode` only</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>load a dataset into R</p></li>
+<li><p>Explain what the rows and columns of a dataframe mean</p></li>
+<li><p>Access particular variables in a dataframe</p></li>
+<li><p>Use select() and filter() to subset a dataframe</p></li>
+<li><p>Identify missing data</p></li>
+<li><p>Create and add a new variable to a dataframe</p></li>
+<li><p>Recode a variable</p></li>
+<li><p>Explain why we don’t want to do destructive editing</p></li>
+</ul>
+</section>
+<section id="chapter-quiz">
+<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
+<p>Questions from 2.7 coursekata</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="chapter-3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 3 - What are Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="chapter-5.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 5 - Describing Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
