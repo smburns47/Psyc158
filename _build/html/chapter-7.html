@@ -577,16 +577,15 @@ title="Print to PDF"
 <section id="the-importance-of-good-visualization">
 <h2>7.1 The importance of good visualization<a class="headerlink" href="#the-importance-of-good-visualization" title="Permalink to this headline">#</a></h2>
 <p>Here’s a historic example of just how important it can be to visualize your data well. On January 28, 1986, the Space Shuttle Challenger exploded 73 seconds after takeoff, killing all 7 of the astronauts on board. As when any such disaster occurs, there was an official investigation into the cause of the accident, which found that an O-ring connecting two sections of the solid rocket booster leaked, resulting in failure of the joint and explosion of the large liquid fuel tank.</p>
-<a class="reference internal image-reference" href="_images/ch7-challenger.png"><img alt="write alt description" class="align-center" src="_images/ch7-challenger.png" style="width: 400px;" /></a>
+<img src="images/ch7-challenger.png" width="400">
 <p>The investigation found that many aspects of the NASA decision making process were flawed, and focused in particular on a meeting between NASA staff and engineers from Morton Thiokol, a contractor who built the solid rocket boosters. These engineers were particularly concerned because the temperatures were forecast to be very cold on the morning of the launch, and they had data from previous launches showing that performance of the O-rings was compromised at lower temperatures. In a meeting on the evening before the launch, the engineers presented their data to the NASA managers, but were unable to convince them to postpone the launch. Their evidence was a set of hand-written slides showing numbers from various past launches.</p>
 <p>The visualization expert Edward Tufte has argued that with a proper presentation of all of the data, the engineers could have been much more persuasive. In particular, they could have shown a figure like the one below, which highlights two important facts. First, it shows that the amount of O-ring damage (defined by the amount of erosion and soot found outside the rings after the solid rocket boosters were retrieved from the ocean in previous flights) was closely related to the temperature at takeoff. Second, it shows that the range of forecasted temperatures for the morning of January 28 (shown in the red shaded area) was well outside of the range of all previous launches. While we can’t know for sure, it seems at least plausible that this could have been more persuasive.</p>
-<a class="reference internal image-reference" href="_images/ch7-challengerdamage.png"><img alt="write alt description" class="align-center" src="_images/ch7-challengerdamage.png" style="width: 750px;" /></a>
-</section>
+<img src="images/ch7-challengerdamage.png" width="750"></section>
 <section id="anatomy-of-a-plot">
 <h2>7.2 Anatomy of a plot<a class="headerlink" href="#anatomy-of-a-plot" title="Permalink to this headline">#</a></h2>
 <p>The goal of plotting data is to present a summary of a dataset in a two-dimensional (or occasionally three-dimensional) presentation. We refer to the dimensions as axes – the horizontal axis is called the X-axis and the vertical axis is called the Y-axis. We can arrange the data along the axes in a way that highlights the data values. These values may be either continuous or categorical.</p>
 <p>There are many different types of plots that we can use, which have different advantages and disadvantages. Let’s say that we are interested in characterizing the difference in height between men and women in the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset. The figure below shows four different ways to plot these data - some of these we discussed in the last chapter, and one is new.</p>
-<a class="reference internal image-reference" href="_images/ch7-plottypes.png"><img alt="write alt description" class="align-center" src="_images/ch7-plottypes.png" style="width: 550px;" /></a>
+<img src="images/ch7-plottypes.png" width="550">
 <p>Now we will begin to discuss <em>why</em> we should choose to use some of these over others.</p>
 <p>The bar graph in panel A shows the difference in means, but doesn’t show us how much spread there is in the data around these means – and as we will see later, knowing this is essential to determine whether we think the difference between the groups is large enough to be important.</p>
 <p>The second panel B shows the bars with all of the data points overlaid - this makes it a bit clearer that the distributions of height for men and women are overlapping, but it’s still hard to see due to the large number of data points focused on one spot.</p>
@@ -626,7 +625,7 @@ title="Print to PDF"
 <section id="rule-1-show-the-data-and-make-them-stand-out">
 <h3>Rule 1 - Show the data and make them stand out<a class="headerlink" href="#rule-1-show-the-data-and-make-them-stand-out" title="Permalink to this headline">#</a></h3>
 <p>Let’s say that you performed a study that examined the relationship between dental health and time spent flossing, and you would like to visualize the data. The figure below shows four possible presentations of these data.</p>
-<a class="reference internal image-reference" href="_images/ch7-dental.png"><img alt="write alt description" class="align-center" src="_images/ch7-dental.png" style="width: 550px;" /></a>
+<img src="images/ch7-dental.png" width="550">
 <p>In panel A, we don’t actually show the data, just a line expressing the relationship between the data. This line implies an explanatory relationship. It says that, for observations that have more flossing, we would expect better dental health. However, this plot is clearly not optimal, because we can’t actually see what the underlying data look like. We don’t know if this relationship line actually reflects the dataset.</p>
 <p>Panels B-D show three possible outcomes from plotting the actual data, where each plot shows a different way that the data might have looked. If we saw the plot in Panel B, we would probably be suspicious – rarely would real data follow such a precise pattern. The data in Panel C, on the other hand, look like real data – they show a general trend, but they are messy, as data in the world usually are. The data in Panel D show us that the apparent relationship between the two variables is solely caused by one individual, who we would refer to as an outlier because they fall so far outside of the pattern of the rest of the group. It should be clear that we probably don’t want to conclude very much from a relationship that is driven by one data point. This figure highlights why it is always important to look at the raw data before putting too much faith in any summary of the data.</p>
 <p>Below is a scatterplot of <code class="docutils literal notranslate"><span class="pre">Middle</span></code> varying by <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. The density of the distributions is pretty tight, so with this code it is hard to see all the datapoints. Make at least one change to the plot so that it is easier to see the data points.</p>
@@ -656,8 +655,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[data/ink-ratio = \frac{ink-used-on-data}{total-ink-used}\]</div>
 <p>Because we now do all our statistics with code, “ink” is maybe an anachronism - it could be better to say “pixels” now. But regardless, the point of this is to minimize visual clutter and let the data show through. For example, take the two presentations of the dental health data below. Both panels show the same data, but panel A is much easier to apprehend, because of its relatively higher data/ink ratio.</p>
-<a class="reference internal image-reference" href="_images/ch7-inkratio.png"><img alt="write alt description" class="align-center" src="_images/ch7-inkratio.png" style="width: 750px;" /></a>
-</section>
+<img src="images/ch7-inkratio.png" width="750"></section>
 <section id="rule-3-avoid-chart-junk">
 <h3>Rule 3 - Avoid chart junk<a class="headerlink" href="#rule-3-avoid-chart-junk" title="Permalink to this headline">#</a></h3>
 <p>It’s especially common to see presentations of data in the popular media that are adorned with lots of visual elements that are thematically related to the content but unrelated to the actual data. This is known as chart junk. It may seem like a cool thing to add, but it should be avoided at all costs.</p>
@@ -667,12 +665,11 @@ title="Print to PDF"
 <li><p>it has a distracting background texture</p></li>
 <li><p>it uses three-dimensional bars, which distort the data</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/ch7-chartjunk.png"><img alt="write alt description" class="align-center" src="_images/ch7-chartjunk.png" style="width: 550px;" /></a>
-</section>
+<img src="images/ch7-chartjunk.png" width="550"></section>
 <section id="rule-4-avoid-distorting-the-data">
 <h3>Rule 4 - Avoid distorting the data<a class="headerlink" href="#rule-4-avoid-distorting-the-data" title="Permalink to this headline">#</a></h3>
 <p>It’s often possible to use visualization to distort the message of a dataset. A very common one is use of different axis scaling to either exaggerate or hide a pattern of data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In the below figure, we can see these data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The same data can tell two very different stories!</p>
-<a class="reference internal image-reference" href="_images/ch7-crime.png"><img alt="write alt description" class="align-center" src="_images/ch7-crime.png" style="width: 700px;" /></a>
+<img src="images/ch7-crime.png" width="700">
 <p><em>data obtained <a class="reference external" href="https://www.ucrdatatool.gov/Search/Crime/State/RunCrimeStatebyState.cfm">here</a></em></p>
 <p>One of the major controversies in statistical data visualization is how to choose the Y axis, and in particular whether it should always include zero. In his famous book “How to lie with statistics”, Darrell Huff argued strongly that one should always include the zero point in the Y axis. On the other hand, Edward Tufte has argued against this. He asserts that one should not spend a lot of empty vertical space trying to reach down to the zero point at the cost of hiding what is going on in the data line itself.</p>
 <p>There are certainly cases where using the zero point makes no sense at all. Let’s plot the <code class="docutils literal notranslate"><span class="pre">Middle</span></code> and <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> variables from the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset in a scatterplot, with and without zero in the Y axis. We’ll use the <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code> function again to refine the default scatterplot we make, but this time the second argument will be <code class="docutils literal notranslate"><span class="pre">coord_cartesian()</span></code> that gets applied to the plot, to explicitly define the axis limits.</p>
@@ -781,7 +778,7 @@ title="Print to PDF"
 <h3>Colorblindness<a class="headerlink" href="#colorblindness" title="Permalink to this headline">#</a></h3>
 <p>Humans have both perceptual and cognitive features that can make some visualizations very difficult to understand. It’s always important to keep these in mind when building a visualization.</p>
 <p>One important perceptual limitation that many people (8% of men and 0.5% of women) have is color blindness. This can make it very difficult to perceive the information in a figure where there is only color contrast between the elements but no brightness contrast. It is always helpful to use graph elements that differ substantially in brightness and/or texture, in addition to color. There are also “colorblind-friendly” palettes available for use with many visualization tools.</p>
-<a class="reference internal image-reference" href="_images/ch7-colorblind.jpg"><img alt="write alt description" class="align-center" src="_images/ch7-colorblind.jpg" style="width: 650px;" /></a>
+<img src="images/ch7-colorblind.jpg" width="650">
 <p><em>What various colors look like to individuals with the two most common types of color blindness - it’s good to choose contrasting colors that look different to everyone</em></p>
 <p>Remember when we changed the colors of our histogram with <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code>?</p>
 <div class="cell docutils container">
@@ -793,10 +790,10 @@ title="Print to PDF"
 </div>
 </div>
 <p>The coloring function we applied to the histogram, <code class="docutils literal notranslate"><span class="pre">scale_fill_manual()</span></code> (or <code class="docutils literal notranslate"><span class="pre">scale_color_manual()</span></code> for outlines), isn’t the only coloring function. The “manual” part of the name refers to the fact that you choose colors by their name (“purple” or “orange”), but it’s restricted to just a few colors. There are a great many color packages that people have created to provide extra palettes to work with. Here are some gradients of example palettes:</p>
-<a class="reference internal image-reference" href="_images/ch7-colors.png"><img alt="write alt description" class="align-center" src="_images/ch7-colors.png" style="width: 500px;" /></a>
+<img src="images/ch7-colors.png" width="500">
 <p>The “rainbow” and “heat” color palettes are less perceptually uniform compared to the other color scales. If you were to make them grayscale, there would be several points along the gradient that are brighter than other points, rather than making a smooth transition from bright to dark to correspond with the hue transition.</p>
 <p>One of the most common alternative coloring packages is called <code class="docutils literal notranslate"><span class="pre">viridis</span></code>. It has been optimized to be perceptually uniform and play friendly with color blindness. The whole package comes with four different color sets:</p>
-<a class="reference internal image-reference" href="_images/ch7-viridis.png"><img alt="write alt description" class="align-center" src="_images/ch7-viridis.png" style="width: 500px;" /></a>
+<img src="images/ch7-viridis.png" width="500">
 <p>When you install this package and load it into your library, it gives you access to some key functions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scale_color_viridis()</span></code>: Change the color of points, lines and texts</p></li>
@@ -853,7 +850,7 @@ title="Print to PDF"
 </div>
 <p>To know what the colors will look like ahead of time, you can paste the first 6 digits of the hex code into an online color picker tool <a class="reference external" href="https://wtools.io/color-picker">like this</a>.</p>
 <p>For those intrepid designers who want even more color choices, the package <code class="docutils literal notranslate"><span class="pre">RColorBrewer</span></code> has many options:</p>
-<a class="reference internal image-reference" href="_images/ch7-colorbrewer.png"><img alt="write alt description" class="align-center" src="_images/ch7-colorbrewer.png" style="width: 400px;" /></a>
+<img src="images/ch7-colorbrewer.png" width="400">
 <p>The package contains 3 types of color palettes: sequential, qualitative, and diverging. Sequential palettes (first group in the image above) are suited to ordered data that progress from low to high (gradient). Qualitative palettes (second group of colors) are best suited to represent nominal or categorical data. They don’t imply magnitude differences between groups. Diverging palettes (third group of colors) put equal emphasis on mid-range critical values and extremes at both ends of the data range.</p>
 <p><code class="docutils literal notranslate"><span class="pre">RColorBrewer</span></code> gives you the functions <code class="docutils literal notranslate"><span class="pre">scale_color_brewer()</span></code> and <code class="docutils literal notranslate"><span class="pre">scale_fill_brewer()</span></code> to include in <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code>. In addition, there are three helper functions to assist you in choosing your colors:</p>
 <ul class="simple">
@@ -865,10 +862,10 @@ title="Print to PDF"
 <section id="perceptual-simplicity">
 <h3>Perceptual simplicity<a class="headerlink" href="#perceptual-simplicity" title="Permalink to this headline">#</a></h3>
 <p>Even for people with perfect color vision, there are perceptual limitations that can make some plots ineffective. This is one reason why statisticians never use pie charts: It can be very difficult for humans to accurately perceive differences in the volume of shapes. The pie chart below (presenting the same data on religious affiliation that we showed above) shows how tricky this can be.</p>
-<a class="reference internal image-reference" href="_images/ch7-piechart.png"><img alt="write alt description" class="align-center" src="_images/ch7-piechart.png" style="width: 500px;" /></a>
+<img src="images/ch7-piechart.png" width="500">
 <p>This plot is terrible for several reasons. First, it requires distinguishing a large number of colors from very small patches at the bottom of the figure. Second, the 3D perspective distorts the relative numbers, such that the pie wedge for Catholic appears much larger than the pie wedge for None, when in fact the number for None is slightly larger (22.8 vs 20.8 percent). Third, by separating the legend from the graphic, it requires the viewer to hold information in their working memory in order to map between the graphic and legend and to conduct many “table look-ups” in order to continuously match the legend labels to the visualization. And finally, it uses text that is far too small, making it impossible to read without zooming in.</p>
 <p>Plotting the data using a more reasonable approach, we can see the pattern much more clearly. This plot may not look as flashy as the pie chart generated using Excel, but it’s a much more effective and accurate representation of the data.</p>
-<a class="reference internal image-reference" href="_images/ch7-religionbars.png"><img alt="write alt description" class="align-center" src="_images/ch7-religionbars.png" style="width: 800px;" /></a>
+<img src="images/ch7-religionbars.png" width="800">
 <p><em>Data obtained from <a class="reference external" href="http://www.pewforum.org/religious-landscape-study/">here</a></em></p>
 <p>This plot allows the viewer to make comparisons based on the the length of the bars along a common scale (the y-axis). Humans tend to be more accurate when decoding differences based on these perceptual elements than based on area or color.</p>
 </section>

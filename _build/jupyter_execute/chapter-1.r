@@ -1,5 +1,3 @@
-print("server is ready")
-
 #execute your first bit of R code
 
 print("Hello world!")
