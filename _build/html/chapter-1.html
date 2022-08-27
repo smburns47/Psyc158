@@ -557,7 +557,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Congrats, you are officially coding! Printing out the words “Hello world!” is the traditional first coding task when learning any computer language. Now, “language” is something to pay attention to here - think of coding as learning how to say things in a different way. While in English, you might tell someone “Print the sentence ‘hello world!’”, a computer needs you to speak to it in its own language for it to understand what you want. The fundamentals of this chapter will help you learn the “vocabulary” of the language that is R, so that you can represent English concepts in ways that the computer understands.</p>
-<p>In a bit we’ll cover the vocabularly you used above (the “print” word, parenteses, quotation marks, etc.) Let’s go back to something you already know how to write that a computer can understand - arithmatic.</p>
+<p>In a bit we’ll cover the vocabularly you used above (the “print” word, parenteses, quotation marks, etc.) Let’s go back to something you already know how to write that a computer can understand - arithmetic.</p>
 <p>Try running the code in the window below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,7 +639,7 @@ title="Print to PDF"
 </div></section>
 <section id="functions">
 <h2>1.6 Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
-<p>So far you know about operators, like doing arithmatic or assigning values to objects. All of these operators tell the computer to do “a thing” (add numbers, create an object, etc.)</p>
+<p>So far you know about operators, like doing arithmetic or assigning values to objects. All of these operators tell the computer to do “a thing” (add numbers, create an object, etc.)</p>
 <p>Oftentimes, we want the computer to do more complex things than there are operator symbols for. For this case, we use what’s called a <strong>function</strong>. Functions will still do an operation, but are not limited to what individual symbols mean (in fact, operators are just special kinds of a functions). In thinking about the grammar of a coding language, objects are like nouns and functions are like verbs.</p>
 <p>We used a function at the very beginning of this chapter: <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">world!&quot;)</span></code>.</p>
 <p>Functions have three basic parts. The first part is the name of the function (e.g., <code class="docutils literal notranslate"><span class="pre">print</span></code>). The second part is the input to the function, which goes inside a pair of parentheses. We call these inputs <strong>arguments</strong>. Arguments are whatever objects or values you want to do operations with. Lastly, the <strong>output</strong> of a function is whatever result comes out of the operation.</p>
@@ -687,11 +687,17 @@ title="Print to PDF"
 </section>
 <section id="packages">
 <h2>1.8 Packages<a class="headerlink" href="#packages" title="Permalink to this headline">#</a></h2>
-<p>When you first install R on your computer, it comes with many base functions like <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. However, the R coding community is always creating new functions to download, kind of like you download DLC content to expand what you can do in a video game. In R, these collections of functions for download are called <strong>packages</strong>. Much of what you will do in this course uses base functions that come pre-installed, but sometimes you will have to install and load new packages. If you try to use functions from these packages without installing them first, R won’t know what you’re trying to do and will report an error.</p>
+<p>When you first install R on your computer, it comes with many base functions like <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. However, the R coding community is always creating new functions to download, kind of like when you download DLC content to expand what you can do in a video game. In R, these collections of functions for download are called <strong>packages</strong>. Much of what you will do in this course uses base functions that come pre-installed, but sometimes you will have to install and load new packages. If you try to use functions from these packages without installing them first, R won’t know what you’re trying to do and will report an error.</p>
 <p>For example, try to run the code below. What happens?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;mindsetmatters.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;mindsetmatters.csv&quot;</span><span class="p">):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;read_csv&quot;</span>
+<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
@@ -706,7 +712,7 @@ title="Print to PDF"
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
 
 <span class="c1">#now, try re-running the code from above. What happens now?</span>
-<span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;mindsetmatters.csv&quot;</span><span class="p">)</span>
+<span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

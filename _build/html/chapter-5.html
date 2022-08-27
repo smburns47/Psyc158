@@ -490,11 +490,6 @@ title="Print to PDF"
    Chapter summary
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -610,11 +605,6 @@ title="Print to PDF"
    Chapter summary
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -646,18 +636,20 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
-<span class="c1">#don&#39;t need to install readr, since we&#39;ve already done that in a previous chapter</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="c1">#If this were our own computer, we wouldn&#39;t need to install readr since we&#39;d already done that in a previous chapter</span>
+<span class="c1">#But on a web browser like this we&#39;re using a new server each time, like a fresh computer</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;mindsetmatters.csv&quot;</span><span class="p">)</span>
+<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mindsetmatters</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mindsetmatters</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -668,7 +660,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Change the plotted variable to Age</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mindsetmatters</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mindsetmatters</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -677,7 +669,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="o">=</span><span class="n">outcome</span><span class="p">)</span> <span class="c1">#gf_histogram only works on dataframe objects, not vectors</span>
+<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">)</span> <span class="c1">#gf_histogram only works on dataframe objects, not vectors</span>
 <span class="c1">#Write some code below here to plot a histogram of the variable &quot;outcome&quot; in the dataframe &quot;tiny_data&quot;</span>
 </pre></div>
 </div>
@@ -686,7 +678,7 @@ title="Print to PDF"
 <p>This histogram shows gaps between the bars because by default <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> sets up 30 bins, even though we only have five possible numbers in our variable. If we change the number of bins to 5, then we’ll get rid of the gaps between the bars. To do this, we add in a new argument that gf_histogram can accept: <code class="docutils literal notranslate"><span class="pre">bins</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -694,7 +686,7 @@ title="Print to PDF"
 <p>Now we only have one bin per data value. However, since there are exactly one of each type of value, this histogram looks like a rectangle. To help distinguish things more, we can change the colors of the histogram, adding in the arguments <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. What do you think each of these arguments does?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bin</span> <span class="n">s</span> <span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -704,11 +696,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the same code as before but we added in another outcome value, 3.2</span>
-<span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">3.2</span><span class="p">)</span>
-<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="o">=</span><span class="n">outcome</span><span class="p">)</span>
+<span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">3.2</span><span class="p">)</span>
+<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">)</span>
 
 <span class="c1"># This makes a histogram with 5 bins</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -721,7 +713,7 @@ title="Print to PDF"
 <p>The function <code class="docutils literal notranslate"><span class="pre">gf_dhistogram</span></code> will plot a density plot (note the d before the word histogram, to distinguish it from the regular histogram function).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -755,9 +747,9 @@ title="Print to PDF"
 <p>You will often see distributions that match a particular shape and skewness. These special distribution types have names. For instance, the <strong>normal</strong> distribution is symmetric and unimodal, looking like a bell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">normal_data</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">1000</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="c1">#rnorm is a function that generates in a normal distribution;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">normal_data</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">1000</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="c1">#rnorm is a function that generates in a normal distribution;</span>
 <span class="c1"># we&#39;ll talk about simulating data like this in a later chapter</span>
-<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span><span class="o">=</span><span class="n">normal_data</span><span class="p">))</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span> <span class="o">=</span> <span class="n">normal_data</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -836,8 +828,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Visualize a weird distribution. Where is the mean versus the median versus the mode?</span>
-<span class="n">weird_dist</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
-<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">weird_dist</span><span class="p">)</span>
+<span class="n">weird_dist</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">weird_dist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -901,8 +893,8 @@ provides you with a way of calculating quantiles, using the (surprise, surprise)
 use it to calculate the median of <code class="docutils literal notranslate"><span class="pre">Age</span></code> in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">probs</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">median</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">median</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -912,7 +904,7 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </div><p>Not surprisingly, The 50% quartile and the median agree. Now, we can actually input lots of quantiles at once, by specifying a vector for the probs argument. So lets do that, and get the 25th and 75th percentile:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.75</span><span class="p">),</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.75</span><span class="p">),</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -920,7 +912,7 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 <p>Since the IQR is the 75th quartile minus the 25th quartile, our IQR is 45-29 = 16. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">IQR</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">IQR</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1008,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code class="docutils literal notranslate"><span class="pre">var()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">mindsjnetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">mindsjnetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1033,7 +1025,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the standard deviation of mindsetmatters$Age using sd(), and verify that it produces the same result </span>
 <span class="c1"># as the square root of var()</span>
-<span class="n">age_var</span> <span class="o">&lt;-</span> <span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">age_var</span> <span class="o">&lt;-</span> <span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">age_sd</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span> <span class="c1">#type your code here )</span>
 <span class="nf">sqrt</span><span class="p">(</span><span class="n">age_var</span><span class="p">)</span> <span class="o">==</span> <span class="n">age_sd</span>
 </pre></div>
@@ -1065,9 +1057,6 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <li><p>Describe the differences between mean, median, and mode</p></li>
 <li><p>Describe the differences between range, interquartile range, mean absolute deviation, variance, and standard deviation</p></li>
 </ul>
-</section>
-<section id="chapter-quiz">
-<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 

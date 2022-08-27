@@ -42,7 +42,7 @@ all_steps
 Sum(1,2)
 
 
-read_csv("mindsetmatters.csv")
+read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv")
 
 #readr is a package that makes it easy to load datasets into R. Step 1, download it (this can take a few moments)
 install.packages("readr")
@@ -51,6 +51,4 @@ install.packages("readr")
 library(readr)
 
 #now, try re-running the code from above. What happens now?
-read_csv("mindsetmatters.csv")
-
-
+read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv")

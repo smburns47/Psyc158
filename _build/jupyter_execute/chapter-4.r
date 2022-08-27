@@ -1,22 +1,22 @@
 x1 <- c(1,2,3,4,5)
 x2 <- c(18,21,20,23,20)
-data.frame(x1=x1, x2=x2)
+data.frame(x1 = x1, x2 = x2)
 
-data.frame(user_id=x1, age=x2)
+data.frame(user_id = x1, age = x2)
 
 x1 <- c(1,2,3,4,5)
 x2 <- c(18,21,20,23)
-data.frame(x1=x1, x2=x2)
+data.frame(x1 = x1, x2 = x2)
 
 # finish the code below to install readr
-install.packages("   ")
+install.packages("readr")
 
 #finish the code below to load readr
-library(    )
+library(readr)
 
 getwd()
 
-read_csv("mindsetmatters.csv")
+read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv")
 
 # read the dataframe into an object called mindsetmatters
 mindsetmatters <- # your code here
@@ -50,7 +50,7 @@ head(select(mindsetmatters, BMI, Fat))
 
 select(mindsetmatters, 43)
 
-filter(mindsetmatters, Age==43)
+filter(mindsetmatters, Age == 43)
 
 #How would you use filter() to return a dataframe of everyone who is *at least* 43 years old?
 

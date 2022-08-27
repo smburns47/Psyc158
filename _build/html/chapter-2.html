@@ -479,8 +479,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
   </a>
  </li>
 </ul>
@@ -589,8 +589,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
   </a>
  </li>
 </ul>
@@ -632,7 +632,7 @@ title="Print to PDF"
 <p>Another way that we might answer this question is to look at actual data on the subject. One large-scale study, called the PURE study, examined diets and health outcomes (including death) in more than 135,000 people from 18 different countries. In one of the analyses of this dataset (published in The Lancet in 2017; <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28864332/">Dehghan et al. (2017)</a>), the PURE investigators reported how intake of various classes of macronutrients (including saturated fats and carbohydrates) was related to the likelihood of dying during the time that people were followed. The plot below displays some of the data from the study (extracted from the paper), showing the relationship between the intake of both saturated fats and carbohydrates and the risk of dying from any cause.</p>
 <img src="images/ch2-satfats.png" width="400">
 <p><em>A plot of data from the PURE study, showing the relationship between death from any cause and the relative intake of saturated fats and carbohydrates.</em></p>
-<p>Don’t worry if this plot is hard to read at this time - you’ll get there! For now, notice the ten points where the lines run through. To obtain the numbers represented by these points, the researchers split the group of 135,335 study participants (which we call the <em><strong>sample</strong></em>; Chapter 6) into 5 groups (<em><strong>quintiles</strong></em>; Chapter 5) based on how much they ate each type of nutrient (carbohydrates and saturated fats). The first quintile group contains the 20% of people with the lowest intake, and the 5th quintile contains the 20% with the highest intake. The researchers then computed how often people in each of those groups died during the time the study was conducted. The figure expresses this in terms of the relative risk of dying in comparison to the lowest quintile: If this number is greater than one, it means that people in the group are more likely to die than are people in the lowest quintile, whereas if it’s less than one, it means that people in the group are less likely to die. The figure is pretty clear: People who ate more saturated fat were less likely to die during the study. The opposite is seen for carbohydrates; the more carbs a person ate, the more likely they were to die during the study.</p>
+<p>Don’t worry if this plot is hard to read at this time - you’ll get there! For now, notice the ten points where the lines run through. To obtain the numbers represented by these points, the researchers split the group of 135,335 study participants (which we call the <em><strong>sample</strong></em>) into 5 groups based on how much they ate each type of nutrient (carbohydrates and saturated fats). The first group contains the 20% of people with the lowest intake, and the 5th group contains the 20% with the highest intake. The researchers then computed how often people in each of those groups died during the time the study was conducted. The figure expresses this in terms of the relative risk of dying in comparison to the lowest group: If this number is greater than one, it means that people in the group are more likely to die than are people in the lowest group, whereas if it’s less than one, it means that people in the group are less likely to die. The figure is pretty clear: People who ate more saturated fat were less likely to die during the study. The opposite is seen for carbohydrates; the more carbs a person ate, the more likely they were to die during the study.</p>
 <p>This example shows how we can use statistics to describe a complex dataset in terms of a much simpler set of numbers. It would be very hard to tell whether carbs or saturdated fat were worse for you by looking at the whole dataset at once (135,335 points of data!). But by using statistics, we can <em>aggregate</em> and <em>compare</em> sets of information to make the takeaway lesson easier to see.</p>
 </section>
 <section id="decide">
@@ -859,7 +859,10 @@ title="Print to PDF"
 </div>
 <p>Without the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement above, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop would have run forever. It is important to make sure that <code class="docutils literal notranslate"><span class="pre">while</span></code> loops contain a logical expression that will eventually be false or a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement that will eventually be executed to avoid infinite loops.</p>
 <p>Although you can use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to do anything a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can do, it is best to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops whenever you want to perform an operation a specific number of times. <code class="docutils literal notranslate"><span class="pre">while</span></code> loops should be reserved for cases where you don’t know how many times you need to execute the loop.</p>
-<p>Chapter summary</p>
+</section>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Explain the difference between using statistical reasoning and using intuition</p></li>
@@ -867,20 +870,6 @@ title="Print to PDF"
 <li><p>Summarize the major ideas in statistics and what they mean</p></li>
 <li><p>Code with if/else, for, and while control blocks in R</p></li>
 </ul>
-</section>
-</section>
-<section id="chapter-quiz">
-<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>If treating each step of the chicken recipe like code, indicate whether or not each step needs some control flow added, and what kind of control block you would add.</p></li>
-</ul>
-<ol class="simple">
-<li><p>Add heat to pan</p></li>
-<li><p>Add chicken breast</p></li>
-<li><p>Check chicken doneness once a minute</p></li>
-<li><p>Once chicken is done, turn off heat</p></li>
-<li><p>If bland, add salt to chicken</p></li>
-</ol>
 </section>
 </section>
 

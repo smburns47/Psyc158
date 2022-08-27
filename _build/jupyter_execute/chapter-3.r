@@ -79,22 +79,6 @@ my_vector <- c(1,2,3,4,5)
 my_vector <- #replace this comment with your code
 
 
-end_score <- c(1400, 1450, 1500, 1200, 1150, 1600)
-beginning_score <- c(1350, 1400, 1400, 1200, 1100, 1400)
-
-#write code that will subtract beginning_score from end_score, and return the resulting vector
-change_score <- #write your code here
-
-handedness <- c(2,1,1,1,1,2,1,1,1)
-str(handedness)
-
-# Use the factor() function on handedness_label, assign it to handedness_factor, and then return the type 
-# of that new object
-handedness_factor <- #replace this comment with your code
-
-handedness_numeric <- as.numeric(handedness_factor)
-str(handedness_numeric)
-
 handedness_bool <- handedness == 1
 
 # This code returns both vectors
@@ -110,3 +94,8 @@ footedness <- c(2,1,1,1,1,1,1,2,1)
 hand_foot_alignment <- handedness = footedness
 hand_foot_alignment
 
+end_score <- c(1400, 1450, 1500, 1200, 1150, 1600)
+beginning_score <- c(1350, 1400, 1400, 1200, 1100, 1400)
+
+#write code that will subtract beginning_score from end_score, and return the resulting vector
+change_score <- #write your code here

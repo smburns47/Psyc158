@@ -456,11 +456,6 @@ title="Print to PDF"
    Chapter summary
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -542,11 +537,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-summary">
    Chapter summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
   </a>
  </li>
 </ul>
@@ -830,43 +820,6 @@ This would create a vector like:</p>
 </div>
 </div>
 </div>
-<p>Sometimes you will need to do something more complicated. Instead of modifying each value in a vector by the same amount, you want to make a different modification. E.g., say you want to know how much each person improved their SAT scores with practice, but you only have their first and last scores saved as data. Everyone improves as different rates, so you can’t add the same score to each person. Instead, you could do <code class="docutils literal notranslate"><span class="pre">end_score</span> <span class="pre">-</span> <span class="pre">beginning_score</span></code>. If both <code class="docutils literal notranslate"><span class="pre">end_score</span></code> and <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> are vectors of the same length, R will apply the operation to each item <em>pairwise</em>: the first item of <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> will be subtracted from the first item of <code class="docutils literal notranslate"><span class="pre">end_score</span></code>, the second from the second, third from the third, and so on.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1400</span><span class="p">,</span> <span class="m">1450</span><span class="p">,</span> <span class="m">1500</span><span class="p">,</span> <span class="m">1200</span><span class="p">,</span> <span class="m">1150</span><span class="p">,</span> <span class="m">1600</span><span class="p">)</span>
-<span class="n">beginning_score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1350</span><span class="p">,</span> <span class="m">1400</span><span class="p">,</span> <span class="m">1400</span><span class="p">,</span> <span class="m">1200</span><span class="p">,</span> <span class="m">1100</span><span class="p">,</span> <span class="m">1400</span><span class="p">)</span>
-
-<span class="c1">#write code that will subtract beginning_score from end_score, and return the resulting vector</span>
-<span class="n">change_score</span> <span class="o">&lt;-</span> <span class="c1">#write your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Changing numeric data from one unit to another isn’t the only way you can convert data. You can even convert to different data types! Returning to the handedness example above, let’s say we have data stored as</p>
-<p><code class="docutils literal notranslate"><span class="pre">handedness</span> <span class="pre">&lt;-</span> <span class="pre">c(2,1,1,1,1,2,1,1,1)</span></code></p>
-<p>R will see numbers in that vector and by default assume these data are quantitative. However you can use a function to classify the vector of numbers as a categorical label variable instead. The function that converts numerical data to categorical is <code class="docutils literal notranslate"><span class="pre">factor()</span></code>. Try it out below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">handedness</span><span class="p">)</span>
-
-<span class="c1"># Use the factor() function on handedness_label, assign it to handedness_factor, and then return the type </span>
-<span class="c1"># of that new object</span>
-<span class="n">handedness_factor</span> <span class="o">&lt;-</span> <span class="c1">#replace this comment with your code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>If the 1s and 2s in the handedness variable were numbers, we could add them up using the code <code class="docutils literal notranslate"><span class="pre">sum(handedness)</span></code>. But if we tell R that handedness is a factor, it will assume the 1s and 2s refer to categories, and so it won’t be willing to add them up.</p>
-<p>We can also turn a factor back into a numeric variable by using the <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_numeric</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">handedness_factor</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">handedness_numeric</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>We can also create Boolean vectors by subjecting a whole vector to a comparison. Since a comparison is an operation, R will apply it to every item in the handedness vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,6 +845,18 @@ This would create a vector like:</p>
 </div>
 </div>
 </div>
+<p>Sometimes you will need to do something more complicated. Instead of modifying each value in a vector by the same amount, you want to make a different modification. E.g., say you want to know how much each person improved their SAT scores with practice, but you only have their first and last scores saved as data. Everyone improves at different rates, so you can’t add the same score to each person. Instead, you could do <code class="docutils literal notranslate"><span class="pre">end_score</span> <span class="pre">-</span> <span class="pre">beginning_score</span></code>. If both <code class="docutils literal notranslate"><span class="pre">end_score</span></code> and <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> are vectors of the same length, R will apply the operation to each item <em>pairwise</em>: the first item of <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> will be subtracted from the first item of <code class="docutils literal notranslate"><span class="pre">end_score</span></code>, the second from the second, third from the third, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1400</span><span class="p">,</span> <span class="m">1450</span><span class="p">,</span> <span class="m">1500</span><span class="p">,</span> <span class="m">1200</span><span class="p">,</span> <span class="m">1150</span><span class="p">,</span> <span class="m">1600</span><span class="p">)</span>
+<span class="n">beginning_score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1350</span><span class="p">,</span> <span class="m">1400</span><span class="p">,</span> <span class="m">1400</span><span class="p">,</span> <span class="m">1200</span><span class="p">,</span> <span class="m">1100</span><span class="p">,</span> <span class="m">1400</span><span class="p">)</span>
+
+<span class="c1">#write code that will subtract beginning_score from end_score, and return the resulting vector</span>
+<span class="n">change_score</span> <span class="o">&lt;-</span> <span class="c1">#write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="what-makes-good-data">
 <h2>3.5 What makes good data?<a class="headerlink" href="#what-makes-good-data" title="Permalink to this headline">#</a></h2>
@@ -908,12 +873,12 @@ This would create a vector like:</p>
 </section>
 <section id="validity">
 <h3>Validity<a class="headerlink" href="#validity" title="Permalink to this headline">#</a></h3>
-<p>Reliability is important, but on its own it’s not enough: After all, I could create a perfectly reliable measurement on a personality test by re-coding every answer using the same number, regardless of how the person actually answers. We want our measurements to also be <strong>valid</strong> — that is, we want to make sure that we are actually measuring the construct that we think we are measuring. There are many different types of validity that are commonly discussed; we will focus on three of them.</p>
+<p>Reliability is important, but on its own it’s not enough: After all, I could create a perfectly reliable measurement on a personality test by re-coding every answer using the same number, regardless of how the person actually answers. We want our measurements to also be <strong>valid</strong> — that is, we want to make sure that we are actually measuring the construct that we think we are measuring. There are many different types of validity that are commonly discussed; we will focus on four of them.</p>
 <p><strong>Face validity</strong> - Does the measurement make sense on its face? If I were to tell you that I was going to measure a person’s blood pressure by looking at the color of their tongue, you would probably think that this was not a valid measure on its face. On the other hand, using a blood pressure cuff would have face validity. This is usually a first reality check before we dive into more complicated aspects of validity.</p>
 <p><strong>Construct validity</strong> - Is the measurement related to other measurements in an appropriate way? This is often subdivided into two aspects. <strong>Convergent validity</strong> means that the measurement should be closely related to other measures that are thought to reflect the same construct. Let’s say that I am interested in measuring how extroverted a person is using either a questionnaire or an interview. Convergent validity would be demonstrated if both of these different measurements are closely related to one another. On the other hand, measurements thought to reflect different constructs should be unrelated, known as <strong>divergent validity</strong>. If my theory of personality says that extraversion and conscientiousness are two distinct constructs, then I should also see that my measurements of extraversion are unrelated to measurements of conscientiousness.</p>
 <p><strong>Predictive validity</strong> - If our measurements are truly valid, then they should also be predictive of other outcomes. For example, let’s say that we think that the psychological trait of sensation seeking (the desire for new experiences) is related to risk taking in the real world. To test for predictive validity of a measurement of sensation seeking, we would test how well scores on the test predict scores on a different survey that measures real-world risk taking.</p>
 <img src="images/ch3-relyvalid.png" width="600">
-<p><em>Figure 2.1: A figure demonstrating the distinction between reliability and validity, using shots at a bullseye. Reliability refers to the consistency of location of shots, and validity refers to the accuracy of the shots with respect to the center of the bullseye.</em></p>
+<p><em>A figure demonstrating the distinction between reliability and validity, using shots at a bullseye. Reliability refers to the consistency of location of shots, and validity refers to the accuracy of the shots with respect to the center of the bullseye.</em></p>
 </section>
 </section>
 <section id="chapter-summary">
@@ -926,13 +891,9 @@ This would create a vector like:</p>
 <li><p>recode vectors in R as numeric or categorical</p></li>
 <li><p>Explain the difference between categorical, ordinal, and interval data</p></li>
 <li><p>Do basic math operations on vectors</p></li>
+<li><p>Talk about in what ways data can be more or less reliable</p></li>
+<li><p>Define the four types of validity</p></li>
 </ul>
-</section>
-<section id="chapter-quiz">
-<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Consider a vector of data, <code class="docutils literal notranslate"><span class="pre">sex</span> <span class="pre">&lt;-</span> <span class="pre">(0,1,0,1,1,1,0,0)</span></code>. What do you think the numbers here mean? Do they represent quantitative data, or categorical? Would it be valid to take the sum of this vector? How would we figure out if this vector is the same as one written more verbosely, like sex2 &lt;- (“female”, “male”, “female”, “male”, “male”, “male”, “female”, “female”)? How would you convert sex2 into a boolean?</p></li>
-</ol>
 </section>
 </section>
 

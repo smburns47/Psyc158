@@ -594,7 +594,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">20</span><span class="p">)</span>
-<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -602,7 +602,7 @@ title="Print to PDF"
 <p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe. This function also gives the variables names; let’s rewrite the code above to give <code class="docutils literal notranslate"><span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span></code> more meaningful variable names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data.frame</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data.frame</span><span class="p">(</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +612,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">)</span>
-<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -627,10 +627,45 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># finish the code below to install readr</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;   &quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
 
 <span class="c1">#finish the code below to load readr</span>
-<span class="nf">library</span><span class="p">(</span>    <span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>also installing the dependencies ‘bit’, ‘purrr’, ‘magrittr’, ‘bit64’, ‘tidyselect’, ‘tibble’, ‘vroom’, ‘tzdb’
+
+
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘bit’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘magrittr’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘tzdb’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘purrr’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘bit64’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘tibble’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘tidyselect’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘vroom’ had non-zero exit status”
+Warning message in install.packages(&quot;readr&quot;):
+“installation of package ‘readr’ had non-zero exit status”
+Updating HTML index of packages in &#39;.Library&#39;
+
+Making &#39;packages.html&#39; ...
+ done
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in library(readr): there is no package called ‘readr’
+Traceback:
+
+1. library(readr)
 </pre></div>
 </div>
 </div>
@@ -643,16 +678,22 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Because this book is hosted on a website, the above code should show you the directory where these web files are stored. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different.</p>
-<p>We’ve stored the <code class="docutils literal notranslate"><span class="pre">mindsetmatters.csv</span></code> file in the same directory as this code, so R will be able load it if you simply use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> from the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package. Try it out below - the only argument you need for the function is the name of the file, in quotes.</p>
+<p>Because this book is hosted on a website, the above code should show you the directory where these web files are stored on the web server. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different. The function <code class="docutils literal notranslate"><span class="pre">setwd()</span></code> will point R to a different directory.</p>
+<p>We’ve stored the <code class="docutils literal notranslate"><span class="pre">mindsetmatters.csv</span></code> on another website, so R will be able load it if you use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> from the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package and give it the web destination. Try it out below - the only argument you need for the function is the name of the file, in quotes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;mindsetmatters.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;read_csv&quot;</span>
+<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
 </div>
-<p>If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;datasets/mindsetmatters.csv&quot;)</span></code>.</p>
+<p>If it lived on your own computer in within the working directory, it would be even simpler to write: <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;mindsetmatters.csv&quot;).</span></code> If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include the relative path to that file that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;datasets/mindsetmatters.csv&quot;)</span></code>.</p>
 </section>
 </section>
 <section id="looking-at-data">
@@ -753,7 +794,7 @@ title="Print to PDF"
 <p>To get a subset of observations (or rows of the data frame) we use a different function: <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. This function filters the dataframe to show only those observations (rows) that match some criteria. For example, here is the code that will return only the observations where the age is 43:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Age</span><span class="o">==</span><span class="m">43</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Age</span> <span class="o">==</span> <span class="m">43</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
