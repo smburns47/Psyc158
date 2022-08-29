@@ -578,12 +578,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Many functions will take in a vector as the input. For example, try using <code class="docutils literal notranslate"><span class="pre">sum()</span></code> to total up the five values saved in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>.</p>
+<p>Many functions will take in a vector as the input. For example, try using <code class="docutils literal notranslate"><span class="pre">max()</span></code> to find the largest number in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">14</span><span class="p">,</span><span class="m">22</span><span class="p">,</span><span class="m">31</span><span class="p">,</span><span class="m">24</span><span class="p">,</span><span class="m">15</span><span class="p">)</span>
 
-<span class="c1"># Use sum() to total up the values in my_vector</span>
+<span class="c1"># Use max() to find the largest value in my_vector</span>
 </pre></div>
 </div>
 </div>
@@ -595,7 +595,7 @@ title="Print to PDF"
 <h3>Qualitative data<a class="headerlink" href="#qualitative-data" title="Permalink to this headline">#</a></h3>
 <p>Data are composed of <strong>variables</strong>. Variables are measurements that, across many values, will vary in some way. For example, human intelligence is a variable because, across many people, we would likely measure different intelligence scores. The values of intelligence would vary person to person. In contrast, human species is <em>not</em> a variable, since by definition all humans are <em>homo sapien.</em> There’s no variation data-point to data-point.</p>
 <p>There are different types of variables. Some are <strong>qualitative</strong>, meaning that they describe a quality rather than a numeric quantity. For example, say we ran a survey in class that asked “What is your favorite food?” Some of the answers may be: blueberries, chocolate, tamales, pasta, and pizza. Those data are not intrinsically numerical; there’s nothing to indicate quantity or numerical relations among them.</p>
-<p>In R, there are also different types of objects we can rely on to represent different data types. We can represent qualitative data like words or letters with the <strong>character value type</strong>. Remember at the beginning of Chapter 1 when you printed out <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world!&quot;</span></code>? By putting those words within a set of quotation marks, we created a character-type object. If we forget the quotes, R will think that a word is a name of an object instead of a character value. Note that numbers can also be turned into character values - for example, when 20 is in quotation marks like this – “20” – it will be treated as a character value, even though it includes a number. R doesn’t care whether you use single quotes, ‘like this’, or double quotes, ”like that”. We’ll mostly use double quotes for consistency.</p>
+<p>In R, there are also different types of objects we can rely on to represent different data types. We can represent qualitative data like words or letters with the <strong>character value type</strong>. Remember at the beginning of Chapter 1 when you printed out <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world!&quot;</span></code>? By putting those words within a set of quotation marks, we created a character-type object. This is also known in other programming languages as a “string”. If we forget the quotes, R will think that a word is a name of an object instead of a character value. Note that numbers can also be turned into character values - for example, when 20 is in quotation marks like this – “20” – it will be treated as a character value, even though it includes a number. R doesn’t care whether you use single quotes, ‘like this’, or double quotes, ”like that”. We’ll mostly use double quotes for consistency.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of a character value</span>
@@ -700,7 +700,9 @@ This would create a vector like:</p>
 </tr>
 </tbody>
 </table>
-<div class="cell docutils container">
+<div class="alert alert-block alert-info">
+<b>Note</b>: "%in%" is NOT the same as the "in" statement used in for loops. That one helps R go through each item in a sequence; %in% is used in conditional statements that check whether a value matches ANY item in the sequence.
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read this code and predict what value will come out of the R console. Then run the code and see if you were right.</span>
 

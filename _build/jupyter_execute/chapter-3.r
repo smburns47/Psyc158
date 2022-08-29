@@ -10,9 +10,9 @@ my_vector2 <- c(10,10,10,10,10)
 # Write code to get the 4th value in my_vector
 
 
-my_vector <- c(1,2,3,4,5)
+my_vector <- c(14,22,31,24,15)
 
-# Use sum() to total up the values in my_vector
+# Use max() to find the largest value in my_vector
 
 
 #example of a character value

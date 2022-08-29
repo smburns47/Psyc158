@@ -1,8 +1,10 @@
+install.packages("readr")
 library(readr)
-fingers <- read_csv("fingers.csv")
+fingers <- read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv")
 
+install.packages("ggformula")
 library(ggformula)
-gf_histogram(~ Thumb, data=fingers)
+gf_histogram(~ Thumb, data = fingers)
 
 gf_histogram(~ Thumb, data = fingers, fill = ~ Sex)
 
@@ -49,7 +51,7 @@ gf_point(Thumb ~ Sex, data = fingers, color = "orange", size = 5)
 
 
 #Can you tell how many people have each explanatory/outcome pairing?
-gf_point(MathAnxious ~ Interest, data=fingers, color = "blue")
+gf_point(MathAnxious ~ Interest, data = fingers, color = "blue")
 
 gf_jitter(MathAnxious ~ Interest, data = fingers, color = "blue") 
 
@@ -63,7 +65,7 @@ gf_jitter(MathAnxious ~ Interest, data = fingers, color = "blue", size = 3, alph
 gf_jitter(Sex ~ Thumb, data = fingers, color = "orange", size = 3, height = 0.2) 
 
 
-gf_point(Thumb ~ Height, data=fingers)
+gf_point(Thumb ~ Height, data = fingers)
 
 gf_boxplot(Thumb ~ Sex, data = fingers)
 

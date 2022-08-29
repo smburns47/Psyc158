@@ -544,7 +544,7 @@ title="Print to PDF"
 <h2>1.3 Getting started in R<a class="headerlink" href="#getting-started-in-r" title="Permalink to this headline">#</a></h2>
 <p>Let’s get started with learning some R right now! For example, here’s a bit of R code. Read the code in the window below. Before you “run” it (make it do something), what do you think it will do?</p>
 <div class="alert alert-block alert-info">
-<b>Note</b>: First press the "Live Code" button at the top of this page (hover over the Rocketship icon) to load all the code windows in the chapter. Then, the first time you press "Run" within a code window it could take up to 1-2 minutes to connect to the server, so please be patient. 
+<b>Note</b>: To run code in a Google Colab notebook like this, hover over a code cell, and press the play button that appears on the left. 
 </div>
 <p>Press the “Run” button and see what happens:</p>
 <div class="cell docutils container">
@@ -643,6 +643,9 @@ title="Print to PDF"
 <p>Oftentimes, we want the computer to do more complex things than there are operator symbols for. For this case, we use what’s called a <strong>function</strong>. Functions will still do an operation, but are not limited to what individual symbols mean (in fact, operators are just special kinds of a functions). In thinking about the grammar of a coding language, objects are like nouns and functions are like verbs.</p>
 <p>We used a function at the very beginning of this chapter: <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">world!&quot;)</span></code>.</p>
 <p>Functions have three basic parts. The first part is the name of the function (e.g., <code class="docutils literal notranslate"><span class="pre">print</span></code>). The second part is the input to the function, which goes inside a pair of parentheses. We call these inputs <strong>arguments</strong>. Arguments are whatever objects or values you want to do operations with. Lastly, the <strong>output</strong> of a function is whatever result comes out of the operation.</p>
+<div class="alert alert-block alert-info">
+<b>Note</b>: In R, you can work with natural language by putting words or sentences between a pair of quotation marks "". Everything between the marks is called a string. We'll talk more about different data types in Chapter 3.
+</div>
 <p>Sometimes a function takes only one argument (e.g., <code class="docutils literal notranslate"><span class="pre">print(&quot;my</span> <span class="pre">message&quot;)</span></code>. Sometimes, a function can take two or more, which are separated by commas (e.g., <code class="docutils literal notranslate"><span class="pre">sum(1,2,3)</span></code>). Each function is unique in what it does, and in what arguments it requires to do its operation. As we move through the course, you will learn some important functions, as well as how to look up other less common ones.</p>
 <p>Here we’ve put some instructions (as comments) into the code window. Write your code as a new line under each comment. See if your code works by clicking ‘Run’.</p>
 <div class="cell docutils container">
@@ -692,12 +695,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;mindsetmatters.csv&quot;</span><span class="p">):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;read_csv&quot;</span>
-<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>

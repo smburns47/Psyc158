@@ -81,3 +81,18 @@ while (hour < x) {            # This logical expression is always true!
     print(hour)
     break                 # But we immediately break out of the loop
 }
+
+#function to convert Fahrenheit to Celsius:
+fahrenheit_to_celsius <- function(temp_F) {
+  temp_C <- (temp_F - 32) * (5 / 9)
+  return(temp_C)
+}
+
+#what's freezing temp in Celsius?
+fahrenheit_to_celsius(32)
+
+#use the function with today's temperature in F to find out what it is in C
+
+
+# complete the function below to convert Celsius to Fahrenheit 
+celsius_to_fahrenheit <- #your code here

@@ -462,8 +462,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if-else-and-else-if">
-     “If”, “Else”, and “Else If”
+    <a class="reference internal nav-link" href="#conditional-statements">
+     Conditional statements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -477,6 +477,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-your-own-functions">
+   2.6 Writing your own functions
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-summary">
@@ -572,8 +577,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if-else-and-else-if">
-     “If”, “Else”, and “Else If”
+    <a class="reference internal nav-link" href="#conditional-statements">
+     Conditional statements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -587,6 +592,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-your-own-functions">
+   2.6 Writing your own functions
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-summary">
@@ -691,8 +701,8 @@ title="Print to PDF"
 <li><p>If bland, add salt to chicken</p></li>
 </ol>
 <p>To do the above with code, you need to <em>control</em> what steps R executes, and when to execute them. These two concepts <strong>conditional statements</strong> and <strong>loops</strong>, and by including some specific syntax, you can tell R when want code to be treated in a special way like this.</p>
-<section id="if-else-and-else-if">
-<h3>“If”, “Else”, and “Else If”<a class="headerlink" href="#if-else-and-else-if" title="Permalink to this headline">#</a></h3>
+<section id="conditional-statements">
+<h3>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h3>
 <div class="alert alert-block alert-info">
 <b>Note</b>: Remember that, in order to run code in this page, you first need to hover over the rocketship at the top, click "Live Code", and then wait a few minutes for the server to load the first time you "Run" a code block.
 </div>
@@ -762,7 +772,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> is evaluating a new logical statement, it does need to have that logical statement included after the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> key phrase. You can include as many <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> blocks as you want, just remember that they are evaluated in order.</p>
-</section>
+<div class="alert alert-block alert-info">
+<b>Note</b>: If you want to check if some value A is equal to some value B, in R you need to use two equal signs (like ==). This works both for comparing numbers as well as checking if two strings are the same. In the next chapter we'll go over more options for writing conditional/logic statements.
+</div></section>
 <section id="for-loops">
 <h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are a programming construct that let you go through each item in a sequence of many items, and then perform some operation on each one. For instance, you could use a for loop to go through all the values in a set of numbers and check whether each conforms to some logical expression, or to print each value to the console.</p>
@@ -861,6 +873,39 @@ title="Print to PDF"
 <p>Although you can use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to do anything a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can do, it is best to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops whenever you want to perform an operation a specific number of times. <code class="docutils literal notranslate"><span class="pre">while</span></code> loops should be reserved for cases where you don’t know how many times you need to execute the loop.</p>
 </section>
 </section>
+<section id="writing-your-own-functions">
+<h2>2.6 Writing your own functions<a class="headerlink" href="#writing-your-own-functions" title="Permalink to this headline">#</a></h2>
+<p>Thinking programmatically and breaking down a problem into smaller steps is also a skill you will need for whenever you create your own functions. This is helpful for the situations where you can’t find a function to do something you want, but you need to do something repeatedly that would otherwise require copy-pasting long blocks of code over and over. Instead of doing that, it is better to create your own functions which can then be used elsewhere in the code with the same format <code class="docutils literal notranslate"><span class="pre">functionname()</span></code> as you have been using pre-defined functions already.</p>
+<p>A function definition requires three pieces of information: the function name, the argument(s) to give it, and a block of code that is executed whenever your function is called. For example, here is a function that will convert temperature readings in Fahrenheit to Celsius:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#function to convert Fahrenheit to Celsius:</span>
+<span class="n">fahrenheit_to_celsius</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">temp_F</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">temp_C</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">temp_F</span> <span class="o">-</span> <span class="m">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="m">5</span> <span class="o">/</span> <span class="m">9</span><span class="p">)</span>
+  <span class="nf">return</span><span class="p">(</span><span class="n">temp_C</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">#what&#39;s freezing temp in Celsius?</span>
+<span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">32</span><span class="p">)</span>
+
+<span class="c1">#use the function with today&#39;s temperature in F to find out what it is in C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a new function, <code class="docutils literal notranslate"><span class="pre">fahrenheit_to_celsius</span></code>, by assigning it to the output of function that makes functions (helpfully, called <code class="docutils literal notranslate"><span class="pre">function()</span></code>. The list of arguments to the function-making function are the arguments you would pass to your own function when using it. Next, the body of the function – the statements that are executed when it runs – is contained within curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. The statements in the body are indented by two spaces, which makes the code easier to read. Lastly, the final line of the function body has the function <code class="docutils literal notranslate"><span class="pre">return()</span></code>, which tells R what value should be returned by your function.</p>
+<p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. They are not defined outside the function block, and thus don’t exist outside the function block - this is known as <strong>variable scope</strong>.</p>
+<p>Try defining your own function to convert Celsius temperatures the other way into Fahrenheit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete the function below to convert Celsius to Fahrenheit </span>
+<span class="n">celsius_to_fahrenheit</span> <span class="o">&lt;-</span> <span class="c1">#your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When doing basic statistics and data analysis, we don’t often need to define our own functions because the things we’re trying to do are common enough that other people have written those functions already, and we can simply download and import them. However, this is a good skill to know for whenever you start doing unique analyses that are cutting edge. In addition, even in the case where you use typical data analysis steps, if you find yourself repeating the same steps over and over you can write functions that will execute <em>sets of other functions</em>, which will save you a lot of time when writing code.</p>
+</section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
@@ -869,6 +914,7 @@ title="Print to PDF"
 <li><p>Come up with different describe, decide, and predict use cases for data</p></li>
 <li><p>Summarize the major ideas in statistics and what they mean</p></li>
 <li><p>Code with if/else, for, and while control blocks in R</p></li>
+<li><p>Write your own R function</p></li>
 </ul>
 </section>
 </section>
