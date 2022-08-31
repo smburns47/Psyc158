@@ -7,13 +7,46 @@ my_vector2 <- c(10,10,10,10,10)
 # Now write some code to return these two vectors in the R console. Run the code and see what happens.
 
 
-# Write code to get the 4th value in my_vector
-
-
 my_vector <- c(14,22,31,24,15)
 
 # Use max() to find the largest value in my_vector
 
+
+# Write code to get the 4th value in my_vector
+
+
+# This code returns both the 2nd and 4th value in my_vector
+my_vector[c(2,4)]
+
+# This code returns the 1st through the 4th values in my_vector
+my_vector[1:4]
+
+# This code returns my_vector, but without the 3rd item
+my_vector[-3]
+
+# Try using both the colon method and the negative indexing method to return the vector (2,3,4,5) using my_vector
+
+
+my_sequence <- c(2,4,6,8,10)         
+
+for (item in my_sequence) {     # for loop over the specified items
+    print(item)                 # Print the value of each item
+}
+
+my_sequence <- c(2,4,6,8,10)         
+
+for (position in 1:length(my_sequence)) {     # for loop over the position number of each item,
+    print(position)                           # from the first item up to the max length of my_sequence
+}
+
+# Using indexing, how would you make this code print out (2,4,6,8,10) while still using positions 
+# in the for loop?
+
+my_sequence <- c(2,4,6,8,10)         
+
+for (position in 1:length(my_sequence)) {     
+    print(position)                           # Make a change to this line to print out the value of my_sequence 
+}                                             # at this position using indexing
 
 #example of a character value
 my_character <- "I am a character."
@@ -85,13 +118,12 @@ handedness_bool <- handedness == 1
 handedness_bool
 
 
-# What do you expect from this code? Run the code to see what happens. Then, fix the bug and run again.
+# What do you expect from this code? Make a guess first, then run the code to see what happens. 
 
 handedness <- c(2,1,1,1,1,2,1,1,1)
 footedness <- c(2,1,1,1,1,1,1,2,1)
 
-#a variable to represent whether someone uses both left or both right hands and feet
-hand_foot_alignment <- handedness = footedness
+hand_foot_alignment <- handedness == footedness
 hand_foot_alignment
 
 end_score <- c(1400, 1450, 1500, 1200, 1150, 1600)

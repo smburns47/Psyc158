@@ -570,7 +570,17 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>There may be times when you just want to know one of the values in a vector, not all of the values. We can <strong>index</strong> a position in the vector by using brackets with a number in it like this: <code class="docutils literal notranslate"><span class="pre">[1]</span></code>. So if we wanted to print out the contents of the first position in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>, we could write <code class="docutils literal notranslate"><span class="pre">my_vector[1]</span></code>.</p>
+<p>Many functions will take in a vector as the input. For example, try using <code class="docutils literal notranslate"><span class="pre">max()</span></code> to find the largest number in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">14</span><span class="p">,</span><span class="m">22</span><span class="p">,</span><span class="m">31</span><span class="p">,</span><span class="m">24</span><span class="p">,</span><span class="m">15</span><span class="p">)</span>
+
+<span class="c1"># Use max() to find the largest value in my_vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There may be times when you just want to know a subset of the values in a vector, not all of the values. We can <strong>index</strong> a position in the vector by using brackets with a number in it like this: <code class="docutils literal notranslate"><span class="pre">[1]</span></code>. So if we wanted to print out the contents of the first position in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>, we could write <code class="docutils literal notranslate"><span class="pre">my_vector[1]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write code to get the 4th value in my_vector</span>
@@ -578,12 +588,88 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Many functions will take in a vector as the input. For example, try using <code class="docutils literal notranslate"><span class="pre">max()</span></code> to find the largest number in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>.</p>
+<p>We’re not limited to indexing only one position at a time, either. We can also pass a vector of <em>index positions</em> inside the brackets to return only those positions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">14</span><span class="p">,</span><span class="m">22</span><span class="p">,</span><span class="m">31</span><span class="p">,</span><span class="m">24</span><span class="p">,</span><span class="m">15</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns both the 2nd and 4th value in my_vector</span>
+<span class="n">my_vector</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And if we want to return a whole chunk of the vector (say, the 1st through the 4th position), we don’t have to type out <code class="docutils literal notranslate"><span class="pre">c(1,2,3,4)</span></code> within the brackets. The <code class="docutils literal notranslate"><span class="pre">:</span></code> operator works like the word “through”, such that the code <code class="docutils literal notranslate"><span class="pre">1:4</span></code> means “every value from the 1st to the 4th, inclusive”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns the 1st through the 4th values in my_vector</span>
+<span class="n">my_vector</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, what if we want to return every item in a vector <em>except</em> a particular one? Then we get to use what’s called <strong>negative indexing</strong>! Simply put a negative sign in front of an index position, and that will <em>remove</em> the item at that position from the output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns my_vector, but without the 3rd item</span>
+<span class="n">my_vector</span><span class="p">[</span><span class="m">-3</span><span class="p">]</span>
 
-<span class="c1"># Use max() to find the largest value in my_vector</span>
+<span class="c1"># Try using both the colon method and the negative indexing method to return the vector (2,3,4,5) using my_vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops become very useful when we want to <strong>iterate</strong> through a vector (do something with each vector item). For instance, last chapter we created a vector of numbers, and then printed each item:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>         
+
+<span class="nf">for </span><span class="p">(</span><span class="n">item</span> <span class="n">in</span> <span class="n">my_sequence</span><span class="p">)</span> <span class="p">{</span>     <span class="c1"># for loop over the specified items</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>                 <span class="c1"># Print the value of each item</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 2
+[1] 4
+[1] 6
+[1] 8
+[1] 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the command in the set of parentheses looks like <code class="docutils literal notranslate"><span class="pre">(X</span> <span class="pre">in</span> <span class="pre">SOME_VECTOR)</span></code>, this is saying that the loop will take each <em>value</em> of each item for that iteration of the loop. However, you can also lean on the function <code class="docutils literal notranslate"><span class="pre">length()</span></code> to go through each <em>position</em> of each item:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>         
+
+<span class="nf">for </span><span class="p">(</span><span class="n">position</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">))</span> <span class="p">{</span>     <span class="c1"># for loop over the position number of each item,</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>                           <span class="c1"># from the first item up to the max length of my_sequence</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of the object <code class="docutils literal notranslate"><span class="pre">position</span></code> taking on the value of each item in <code class="docutils literal notranslate"><span class="pre">my_sequence</span></code>, it is now taking a numeric value in the sequence 1 through the length of <code class="docutils literal notranslate"><span class="pre">my_sequence</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using indexing, how would you make this code print out (2,4,6,8,10) while still using positions </span>
+<span class="c1"># in the for loop?</span>
+
+<span class="n">my_sequence</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>         
+
+<span class="nf">for </span><span class="p">(</span><span class="n">position</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">))</span> <span class="p">{</span>     
+    <span class="nf">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>                           <span class="c1"># Make a change to this line to print out the value of my_sequence </span>
+<span class="p">}</span>                                             <span class="c1"># at this position using indexing</span>
 </pre></div>
 </div>
 </div>
@@ -653,7 +739,7 @@ This would create a vector like:</p>
 </section>
 <section id="boolean-data">
 <h3>Boolean data<a class="headerlink" href="#boolean-data" title="Permalink to this headline">#</a></h3>
-<p>Boolean values (also called “logical values”) are either True or False - they represent the truth of a state of reality, like when we were using if/else last chapter. Maybe we have a statement such as: “10 is greater than 5”. We can ask R to evaluate this and return the answer <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>. We can do that by using logical operators like <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">==</span></code>. The double <code class="docutils literal notranslate"><span class="pre">==</span></code> sign checks if two values are equal. There is even a logical operator to check whether values are not equal: <code class="docutils literal notranslate"><span class="pre">!=</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">!=</span> <span class="pre">3</span></code> is a True statement. Essentially, a boolean represents the answer to a true/false statement. Below is a table of the logic operators in R that you can use for making logic statements.</p>
+<p><strong>Boolean values</strong> (also called “logical values”) are either True or False - they represent the truth of a state of reality, like when we were using if/else last chapter. Maybe we have a statement such as: “10 is greater than 5”. We can ask R to evaluate this and return the answer <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>. We can do that by using logical operators like <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">==</span></code>. The double <code class="docutils literal notranslate"><span class="pre">==</span></code> sign checks if two values are equal. There is even a logical operator to check whether values are not equal: <code class="docutils literal notranslate"><span class="pre">!=</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">!=</span> <span class="pre">3</span></code> is a True statement. Essentially, a boolean represents the answer to a true/false statement. Below is a table of the logic operators in R that you can use for making logic statements.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Symbol</p></th>
@@ -784,7 +870,8 @@ This would create a vector like:</p>
 </div>
 </div>
 </div>
-<p>This looks complicated. But you can think of the input to the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function as having three parts: the variable to recode, the existing values (levels), and the new labels. This seems like we have to write out every new label for every data point included in the vector, but this is only because we have all unique values in <code class="docutils literal notranslate"><span class="pre">places_num</span></code>. If there were any repeated zipcodes, you only have to include it once in the <code class="docutils literal notranslate"><span class="pre">levels</span></code> argument, because R <code class="docutils literal notranslate"><span class="pre">factor()</span></code> will always assign the matching new label to any data point with that zipcode.</p>
+<p>This looks complicated - why are there now <code class="docutils literal notranslate"><span class="pre">=</span></code> signs and other words in our function? At this point we’ll introduce to you the concept of <em>named</em> arguments. A function like <code class="docutils literal notranslate"><span class="pre">factor()</span></code> can be run with just one argument, the vector to factorize, <em>or</em> it can take additional ones. It’s flexible like that. But if you’re giving it new arguments, you have to tell the function what that new argument is supposed to represent. That’s where you get to using the argument’s name (<code class="docutils literal notranslate"><span class="pre">levels</span></code> or <code class="docutils literal notranslate"><span class="pre">labels</span></code> in this example), and using the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign to tell the function what the value of that specific argument should be.</p>
+<p>Here you can think of the input to the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function as having three parts: the variable to recode, the existing values (<code class="docutils literal notranslate"><span class="pre">levels</span></code>), and the <code class="docutils literal notranslate"><span class="pre">labels</span></code> to recode the values as. This seems like we have to write out every new label for every data point included in the vector, but this is only because we have all unique values in <code class="docutils literal notranslate"><span class="pre">places_num</span></code>. If there were any repeated zipcodes, you only have to include it once in the <code class="docutils literal notranslate"><span class="pre">levels</span></code> argument, because R <code class="docutils literal notranslate"><span class="pre">factor()</span></code> will always assign the matching new label to any data point with that zipcode.</p>
 <p>You can also change the values of numeric variables. For example, you have water depth data measured in inches, but you’d prefer to see it in feet. In this case, you will need to transform each value in vector holding that data.</p>
 <p>You don’t have to manually retype the vector to do this either. Vectors in R work like vectors in linear algebra. So, if you have a constant value you want to modify a vector by, you can simply use the mathematical operation between that value and the vector object. E.g., in the example above, you could write <code class="docutils literal notranslate"><span class="pre">water_depth</span> <span class="pre">/</span> <span class="pre">12</span></code> to convert every water depth measurement from inches to feet. When you use an operation between a vector and a single value, R will apply that value to every item in the vector individually.</p>
 <div class="cell docutils container">
@@ -822,7 +909,7 @@ This would create a vector like:</p>
 </div>
 </div>
 </div>
-<p>We can also create Boolean vectors by subjecting a whole vector to a comparison. Since a comparison is an operation, R will apply it to every item in the handedness vector.</p>
+<p>We can also create Boolean vectors by subjecting a whole vector to a logical statement. Since a logical statement is an operation, R will apply it to every item in the handedness vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_bool</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">==</span> <span class="m">1</span>
@@ -835,13 +922,12 @@ This would create a vector like:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do you expect from this code? Run the code to see what happens. Then, fix the bug and run again.</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do you expect from this code? Make a guess first, then run the code to see what happens. </span>
 
 <span class="n">handedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 <span class="n">footedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 
-<span class="c1">#a variable to represent whether someone uses both left or both right hands and feet</span>
-<span class="n">hand_foot_alignment</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">=</span> <span class="n">footedness</span>
+<span class="n">hand_foot_alignment</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">==</span> <span class="n">footedness</span>
 <span class="n">hand_foot_alignment</span>
 </pre></div>
 </div>
@@ -865,7 +951,7 @@ This would create a vector like:</p>
 <p>Data are meant to be a clear, quantitative representation of some quality in the world. However, in many fields such as psychology, the thing that we are measuring is not a physical feature, but instead an unobservable theoretical concept, which we usually refer to as a <strong>construct</strong>. For example, let’s say that we want to test how well you understand the distinction between categorical, ordinal, and interval variables. The professor could give you a pop quiz that would ask you several questions about these concepts and count how many you got right. This would be one way to try and measure the construct that is your knowledge. However, constructs are difficult to measure well. There are several things that can get in the way of good measurement:</p>
 <section id="measurement-error">
 <h3>Measurement error<a class="headerlink" href="#measurement-error" title="Permalink to this headline">#</a></h3>
-<p>It is usually impossible to measure a construct without some amount of error. In the example above, you might know the answer, but you might mis-read the question and get it wrong. In other cases, there is error intrinsic to the thing being measured, such as when we measure how long it takes a person to respond on a simple reaction time test, which will vary from trial to trial for many reasons. We generally want our <em><strong>measurement error</strong></em> to be as low as possible, which we can achieve either by improving the quality of the measurement (for example, using a better timer to measure reaction time), or by averaging over a larger number of indvidiual measurements.</p>
+<p>It is usually impossible to measure a construct without some amount of error. In the example above, you might know the answer, but you might mis-read the question and get it wrong. In other cases, there is error intrinsic to the thing being measured, such as when we measure how long it takes a person to respond on a simple reaction time test, which will vary from trial to trial for many reasons. We generally want our <strong>measurement error</strong> to be as low as possible, which we can achieve either by improving the quality of the measurement (for example, using a better timer to measure reaction time), or by averaging over a larger number of indvidiual measurements.</p>
 </section>
 <section id="reliability">
 <h3>Reliability<a class="headerlink" href="#reliability" title="Permalink to this headline">#</a></h3>
