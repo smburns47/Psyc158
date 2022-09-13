@@ -29,7 +29,7 @@ female,Latino,3,4,3,Part-time Job,Neither Agree nor Disagree,Very Interested,4,4
 female,White,6,5,1,Not Working,Disagree,Somewhat Interested,3.7,54,66,75,68,52,66.5,112
 female,Asian,3,1058,2,Part-time Job,Strongly Disagree,Somewhat Interested,3.7,53,66,73,65,55,65.5,130
 male,Asian,7,7549,1,Not Working,Agree,Somewhat Interested,3,60,74,83,79,64,68.5,193
-male,Asian,5,1,3,Part-time Job,Disagree,No Interest,3.7,47,63,70,65,56,65,138
+male,Asian,NA,1,3,Part-time Job,Disagree,No Interest,3.7,47,63,70,65,56,65,138
 female,Asian,6,7,1,Not Working,Disagree,Very Interested,4,59,72,80,75,58,66.5,127
 female,Other,6,7,2,Part-time Job,Disagree,Very Interested,3.7,64,72,77,69,57,64,170
 female,African American,1,1,2,Part-time Job,Disagree,Somewhat Interested,3.7,68,76,84,75,61,64.5,120
@@ -59,7 +59,7 @@ female,White,8,NA,2,Not Working,Neither Agree nor Disagree,Somewhat Interested,4
 female,Asian,5,5,3,Not Working,Strongly Agree,Somewhat Interested,3.7,50,70,67,60,49,64,105
 female,Other,6,1,2,Not Working,Agree,Somewhat Interested,3,58.42,66.04,71.12,66.04,50.8,62,109
 female,White,3,NA,3,Not Working,Agree,Somewhat Interested,3.3,50,69,73,70,57,69,145
-female,Asian,2,NA,1,Part-time Job,Strongly Agree,Somewhat Interested,3.7,58,68,71,61,43,63,110
+female,Asian,NA,NA,1,Part-time Job,Strongly Agree,Somewhat Interested,3.7,58,68,71,61,43,63,110
 female,Asian,7,0,2,Part-time Job,Strongly Agree,No Interest,3.3,48,53,63,56,45,64,125
 female,Asian,7,NA,2,Not Working,Agree,Somewhat Interested,3,55,70,76,71,58,62,114
 male,Other,4,7,3,Part-time Job,Disagree,Very Interested,4,70,76,79,75,60,70,180
