@@ -6,9 +6,10 @@ format: jb-book
 parts:
 - caption: Unit 1 Describing Data
   chapters:
-  - url: (https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb)
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
     title: Chapter 1 - Intro to Doing Statistics
-  - file: chapter-2
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb
+    title: Chapter 2 - Statistical Reasoning
   - file: chapter-3
   - file: chapter-4
   - file: chapter-5
