@@ -10,12 +10,47 @@ parts:
     title: Chapter 1 - Intro to Doing Statistics
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb
     title: Chapter 2 - Statistical Reasoning
-  - file: chapter-3
-  - file: chapter-4
-  - file: chapter-5
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb
+    title: Chapter 3 - What are Data
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb
+    title: Chapter 4 - Organizing Data
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb
+    title: Chapter 5 - Describing Data
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb
+    title: Chapter 6 - Variation in Multiple Variables
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb
+    title: Chapter 7 - Principles of Data Visualization
 - caption: Unit 2 - Modeling Data
   chapters:
-  - file: chapter-6
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb
+    title: Chapter 8 - The Data Generation Process
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb
+    title: Chapter 9 - Statistical Models
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb
+    title: Chapter 10 - Quantifying Model Error
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb
+    title: Chapter 11 - Adding an Explanatory Variable
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb
+    title: Chapter 12 - Quantitative Predictor Models
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb
+    title: Chapter 13 - Multivariable Models
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb
+    title: Chapter 14 - Nonlinear Models
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb
+    title: Chapter 15 - Models with Categorical Outcomes
 - caption: Unit 3 - Evaluating Models
   chapters:
-  - file: chapter-7
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb
+    title: Chapter 16 - Estimating Populations
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb
+    title: Chapter 17 - Significance Testing
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb
+    title: Chapter 18 - Significance Testing with Whole Models
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb
+    title: Chapter 19 - Evaluating Effect Sizes
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb
+    title: Chapter 20 - Sources of Model Bias
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb
+    title: Chapter 21 - Bayesian Statistics
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb
+    title: Chapter 22 - Lying with Statistics
