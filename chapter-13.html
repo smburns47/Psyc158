@@ -1,0 +1,1132 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 13 - Multivariable Models &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 1 Describing Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2.html">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3.html">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4.html">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 2 - Modeling Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6.html">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 3 - Evaluating Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-13.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/smburns47/Psyc158"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-13.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-13.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-multiple-predictors">
+   13.1 Using multiple predictors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-multivariable-models">
+   13.2 Visualizing multivariable models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-a-multivariable-model">
+   13.3 Specifying a multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fitting-a-multivariable-model">
+   13.4 Fitting a multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-the-parameter-estimates-in-a-multivariable-model">
+   13.5 Interpreting the parameter estimates in a multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-error-in-the-multivariable-model">
+   13.6 Understanding error in the multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-non-independent-predictors">
+   13.7 Interpreting non-independent predictors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictors-of-different-data-types">
+   13.8 Predictors of different data types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#categorical-predictors">
+     Categorical predictors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordinal-predictors">
+     Ordinal predictors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixed-set-of-predictors">
+     Mixed set of predictors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beyond-two-predictors">
+   13.9 Beyond two predictors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controlling-for-confounding-variables">
+   13.10 Controlling for confounding variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#historical-note-anova-test">
+   13.11 Historical note - ANOVA test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 13 - Multivariable Models</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-multiple-predictors">
+   13.1 Using multiple predictors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-multivariable-models">
+   13.2 Visualizing multivariable models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-a-multivariable-model">
+   13.3 Specifying a multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fitting-a-multivariable-model">
+   13.4 Fitting a multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-the-parameter-estimates-in-a-multivariable-model">
+   13.5 Interpreting the parameter estimates in a multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-error-in-the-multivariable-model">
+   13.6 Understanding error in the multivariable model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-non-independent-predictors">
+   13.7 Interpreting non-independent predictors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictors-of-different-data-types">
+   13.8 Predictors of different data types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#categorical-predictors">
+     Categorical predictors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ordinal-predictors">
+     Ordinal predictors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixed-set-of-predictors">
+     Mixed set of predictors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beyond-two-predictors">
+   13.9 Beyond two predictors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controlling-for-confounding-variables">
+   13.10 Controlling for confounding variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#historical-note-anova-test">
+   13.11 Historical note - ANOVA test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+<span class="n">GSS</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-13-multivariable-models">
+<h1>Chapter 13 - Multivariable Models<a class="headerlink" href="#chapter-13-multivariable-models" title="Permalink to this headline">#</a></h1>
+<section id="using-multiple-predictors">
+<h2>13.1 Using multiple predictors<a class="headerlink" href="#using-multiple-predictors" title="Permalink to this headline">#</a></h2>
+<p>You have now learned to specify models with single explanatory variables, either categorical or continous. We saw how adding variables like this can improve prediction accuracy beyond that of the empty model, getting us closer to understanding the underlying data generation process.</p>
+<p>It stands to reason that if one explanatory variable can help us, maybe more than one can help us even more. Afterall, most real world processes aren’t so simple as being created by one input, and in our models in the previous chapter it looked like there was still plenty of unexplained variance to account for. So let’s start building even more complex models, with multiple variables - <strong>multivariable models</strong> or <strong>multiple regression</strong>.</p>
+<p>First, we’ll introduce a new dataset <code class="docutils literal notranslate"><span class="pre">GSS</span></code>. This is a subset of the <a class="reference external" href="https://gss.norc.org/">General Social Survey</a>, a US-wide yearly survey administered by the University of Chicago to assess national demographics and attitudes. We’ll check out the variables that are included in this data file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">GSS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quite a lot! These variables and data values are named descriptively so we can tell what they represent. We can see that there are a number of details about a person (their education, home situation, etc.) as well as what they think about various policy issues (marijuana, transportation, etc.)</p>
+<p>Let’s say we want to predict how many years of education someone is likely to have attained (<code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code>). Stop and think for a second what variables are likely to explain variance in number of years of schooling someone did?</p>
+<p>One factor might be how many years of schooling the person’s father had. After all, people’s value of and readiness for higher education can be influenced by how much their parents valued or emphasized education while growing up.</p>
+<p>Another factor might be number of brothers and sisters. Children in large families sometimes need to take time to help care for their siblings, which sacrifices time for school.</p>
+<p>Both of these are potential explanatory variables for number of years of schooling. Complete the code below to make two different models, one with each of these variables. For ease of visualizing, we will make a smaller subset of this data with dplyr’s <code class="docutils literal notranslate"><span class="pre">sample_n()</span></code> function and we will also remove datapoints with <code class="docutils literal notranslate"><span class="pre">NA</span></code> on any of the three variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span> <span class="c1">#args are dataframe to sample from, and number of observations to sample</span>
+
+<span class="c1">#removing NA observations</span>
+<span class="c1">#does it make sense what this filtering code is doing? Check out chapter 4 for a refresher</span>
+<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="p">)</span> <span class="o">&amp;</span> 
+                    <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">highest_year_school_completed_father</span><span class="p">)</span> <span class="o">&amp;</span>
+                    <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">number_of_brothers_and_sisters</span><span class="p">))</span>
+
+<span class="c1">#Make a model that predicts highest years of schooling from father&#39;s years of education.</span>
+<span class="c1">#Look at the variable list above to get exact variable names and use GSS_subset as the data.</span>
+<span class="n">father_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="c1">#FINISH CODE HERE, data = GSS_subset)</span>
+    
+<span class="c1">#Make a model that predicts highest years of schooling from number of siblings    </span>
+<span class="n">sibling_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="c1">#FINISH CODE HERE, data = GSS_subset)</span>
+
+<span class="c1">#Plotting father model</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">gf_lm</span><span class="p">()</span>    
+    
+<span class="c1">#Plotting sibling_model    </span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">gf_lm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both single-predictor models appear to explain some of the variation in education; knowing how many years someone’s father was in school helps us to make a better prediction of their own time in school, as does knowing how many siblings they have. Neither model, however, explains all the variation in education. There is still plenty of unexplained error.</p>
+<p>We could just choose the single-predictor model that works best. Write some code to make the ANOVA tables from these two models to see which one explains the most variation in years of education.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate the ANOVA tables for both father_model and sibling_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The better model would be based on father’s education. Compared with the empty model, <code class="docutils literal notranslate"><span class="pre">father_model</span></code> resulted in a PRE (Proportional Reduction in Error) of 0.2897 compared with a PRE of 0.1209 for <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code>. More error would be reduced because the predictions from <code class="docutils literal notranslate"><span class="pre">father_model</span></code> are more accurate.</p>
+<p>But is it possible that we could get an even higher PRE by including <em>both</em> predictors in the model? Another way of asking this question is: could some of the error leftover after fitting <code class="docutils literal notranslate"><span class="pre">father_model</span></code> be further reduced by adding <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> into the same model? Or, if we knew both how much schooling someone’s father had and how many siblings they have, could we make a better prediction of their own education than if we only knew one or the other explanatory variable?</p>
+<p>We could represent this idea like this:</p>
+<div class="math notranslate nohighlight">
+\[{Education} = {Father's Education} + {Siblings} + {Error}\]</div>
+</section>
+<section id="visualizing-multivariable-models">
+<h2>13.2 Visualizing multivariable models<a class="headerlink" href="#visualizing-multivariable-models" title="Permalink to this headline">#</a></h2>
+<p>Let’s explore this idea with some visualizations. We will start with a graph of <code class="docutils literal notranslate"><span class="pre">father_model</span></code>, plotting <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> by <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>. We will then explore some ways we could visualize the effect of <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> <em>above and beyond</em> that of <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plotting father model</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adding more variables to this graph can be tricky. It’s two-dimensional, so it only have axes for two variables - one predictor and one outcome. One approach to adding a third variable is to assign different colors to points representing people with different number of siblings. You can do this by adding <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> <span class="pre">~number_of_brothers_and_sisters</span></code> to the scatter plot. (Remember that the <code class="docutils literal notranslate"><span class="pre">~</span></code> tilde tells R that color should <em>vary</em> by <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>) Try it in the code block below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add in the color argument to the gf_jitter() function</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> 
+          <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adding the regression line makes it easier to see the error (or residuals) leftover from the <code class="docutils literal notranslate"><span class="pre">father_model</span></code>. Notice that more of the light-colored dots (people with a lot of siblings) are mostly below the regression line (i.e., with negative residuals from <code class="docutils literal notranslate"><span class="pre">father_model</span></code>) while the darker dots (people with fewer siblings) are mostly above the line (positive residuals). This indicates that people with fewer siblings generally have more years of education than what <code class="docutils literal notranslate"><span class="pre">father_model</span></code> would predict, while people with more siblings generally have fewer years of education.</p>
+<p>If that’s a little tough to see, another way of plotting this is to calculate the <em>residuals</em> from <code class="docutils literal notranslate"><span class="pre">father_model</span></code>, and make a separate scatter plot with those values to see how they relate to <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Save the residuals of father_model to a residual variable</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">father_resid</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+
+<span class="c1">#plotting these residuals against number of siblings</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">father_resid</span> <span class="o">~</span> <span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> 
+          <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this plot, we can see <code class="docutils literal notranslate"><span class="pre">father_model</span></code> tends to undershoot the prediction of education years (positive residual value) when someone has fewer siblings, and overshoots the prediction (negative residual value) when someone has many siblings.</p>
+<p>These patterns are a clue that adding <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> into <code class="docutils literal notranslate"><span class="pre">father_model</span></code> will explain additional variation in  <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> above and beyond that explained by just their father’s education alone.</p>
+</section>
+<section id="specifying-a-multivariable-model">
+<h2>13.3 Specifying a multivariable model<a class="headerlink" href="#specifying-a-multivariable-model" title="Permalink to this headline">#</a></h2>
+<p>We can see from visualizations of the data that a model that includes both <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> might help us make better predictions of <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> than would a model including only one of these variables.</p>
+<p>In the case of a one-variable model, we learned how to write an equation that represents this statistical model:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = b_0 + b_1X_i + e_i \]</div>
+<p>This says that there is some parameter, the intercept, to which we can add the value of the predictor variable (multiplied by a coefficient to represent the size of its effect) in order to make predictions about the value of Y. These components of the model are combined <em>linearly</em> - they’re added together. That’s where the name “general <em>linear</em> model” comes from.</p>
+<p>If we want to add in another variable, we essentially want to add in the effect it has for predicting Y. That’s what makes the general linear model framework really powerful - we can just add this new variable as a new component in the model! Building on the notation we used for the one-variable model, we will specify the two-variable model like this:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + e_i \]</div>
+<p>Although it may look more complicated, on closer examination you can see that it is similar to the single-variable model in most ways. Y<sub>i</sub> still represents the outcome variable, and e<sub>i</sub> at the end still represents each data point’s error from the model prediction. And, it still follows the basic structure: DATA = MODEL + ERROR.</p>
+<p>Let’s unpack the MODEL part of the equation just a little. Whereas previously we had only one X in the model, we now have two (X<sub>1i</sub> and X<sub>2i</sub>). Each X represents a predictor variable. Because it varies across observations it has the subscript i. To distinguish one X from the other, we label one with the subscript 1, the other with 2. In our case the first of these will represent <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>, the second,  <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>, though which X we assign to which variable doesn’t really matter (just make sure you <em>remember</em> which you assigned to which).</p>
+<p>Notice, also, that with the additional X<sub>2i</sub> we also add a new coefficient or parameter estimate: b<sub>2</sub>. We said before that the empty model is a one-parameter model because we are estimating only one parameter, b<sub>0</sub>. A single-predictor model (e.g., <code class="docutils literal notranslate"><span class="pre">father_model</span></code>) is a two-parameter model: it has both b<sub>0</sub> and b<sub>1</sub>. This multivariable model is a three-parameter model: b<sub>0</sub>, b<sub>1</sub>, and b<sub>2</sub>.</p>
+</section>
+<section id="fitting-a-multivariable-model">
+<h2>13.4 Fitting a multivariable model<a class="headerlink" href="#fitting-a-multivariable-model" title="Permalink to this headline">#</a></h2>
+<p>Having specified the skeletal structure of the model, we next want to fit the model, which means finding the best fitting parameter estimates (i.e., the values of b<sub>0</sub>, b<sub>1</sub>, and b<sub>2</sub>). By “best fitting” we mean the parameter estimates that reduce error as much as possible around the model predictions.</p>
+<p>Although there are several mathematical ways to do this, you can imagine the computer trying every possible combination of three numbers to find the set that results in the lowest Sum of Squares (SS) Error.</p>
+<p>To specify the formula to give R to use, remember that the formula dictates the kind of relationship all the variables have. Since we’re thinking <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> varies as a function of both <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>, our formula looks like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span> <span class="pre">~</span> <span class="pre">highest_year_school_completed_father</span> <span class="pre">+</span> <span class="pre">number_of_brothers_and_sisters</span></code></p>
+<p>Use this formula to fit the model with <code class="docutils literal notranslate"><span class="pre">lm()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># use lm() to find the best fitting coefficients for our multivariate model and output the coefficient values</span>
+<span class="n">full_model</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In some ways, this output looks familiar to us. Let’s try to figure out what these parameter estimates mean. First off, there are now three coefficients. This makes sense, because we already know to expect a value for b<sub>0</sub>, b<sub>1</sub>, and b<sub>2</sub>. We can also see which variable each coefficients corresponds to, since R labels them for us. Using this output, we can write our best fitting model in GLM notation as:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980X_{2i} \]</div>
+</section>
+<section id="interpreting-the-parameter-estimates-in-a-multivariable-model">
+<h2>13.5 Interpreting the parameter estimates in a multivariable model<a class="headerlink" href="#interpreting-the-parameter-estimates-in-a-multivariable-model" title="Permalink to this headline">#</a></h2>
+<p>We use the parameter estimates to make predictions in the same way as we did before, but this time we adjust our prediction based on two variables: how much education their father received, and the number of siblings they have. Now let’s try to understand how the variables in the multivariate model are coded in order to generate predictions.</p>
+<p>The equation form of the statistical model generates a prediction of someone’s years of education by starting with the intercept (b<sub>0</sub>, which is 10.3742), then adding 0.3424 years for each year of their father’s education, and subtracting 0.1980 for each additional sibling they have. This means that for someone who’s father received no formal schooling and who had no siblings (X<sub>1</sub>=0 and X<sub>2</sub>=0), we’d predict that they’d get to about the 10th grade. For every year their father had schooling, we’d predict an additional third of a year, but for every additional sibling they had, we’d predict a fifth of a year less.</p>
+<p>How should we talk about the <em>meaning</em> of these parameters then, to describe these predictions? To build this understanding, let’s do some funky visualizations for a second. First, write code to save our multivariable model as <code class="docutils literal notranslate"><span class="pre">full_model</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the multivariable model here</span>
+<span class="n">full_model</span> <span class="o">&lt;-</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now save the predictions from this model to <code class="docutils literal notranslate"><span class="pre">GSS_subset</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">education_predicted</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now the funky part. We will plot these predictions against <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>, but ONLY for datapoints that had 0 or 7 siblings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subsetsubset</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">number_of_brothers_and_sisters</span> <span class="o">==</span> <span class="m">0</span> <span class="o">|</span>
+                      <span class="n">number_of_brothers_and_sisters</span> <span class="o">==</span> <span class="m">7</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">education_predicted</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
+          <span class="n">data</span> <span class="o">=</span> <span class="n">subsetsubset</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>There’s not a lot of data left here, but from what there is, it kind of looks like these points are arranged on two separate diagonal lines. The picture below has these lines superimposed on the graph:</p>
+<img src="images/ch13-predictorlevels.png" width="500"><p>This implies that we can actually write two <em>separate</em> equation models for people who have no siblings, and people who have 7 siblings. If we start with the fitted <code class="docutils literal notranslate"><span class="pre">full_model</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980X_{2i} \]</div>
+<p>For someone with no siblings, we’d use 0 as the value of X<sub>2i</sub>, which would look like:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980*0 \]</div>
+<p>multiplying the b<sub>2</sub> coefficient by 0 makes it drop out of the equation, so the model for someone with no siblings is:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i}\]</div>
+<p>For people with 7 siblings however, the second model term does not drop out:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980*7 \]</div>
+<p>-0.1980 times 7 is -1.386, so this equation could also be written as:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 1.386 \]</div>
+<p>We could combine this value with the intercept (10.3742 - 1.386) to make a model for someone with 7 siblings:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 8.9882 + 0.3424X_{1i}\]</div>
+<p>Both of these equations – one for 0 siblings and the other for 7 siblings – represent straight lines. Both have a slope and an intercept. These two lines have the same slopes (which is why they appear parallel) but different y-intercepts (10.3742 versus 8.9882). These different intercepts were calculated by b<sub>0</sub> + b<sub>2</sub>X<sub>2i</sub>, inserting either 0 or 7 as the value of X<sub>2i</sub>. Thus, even though the multivariable model just looks like one long equation, it contains within it <em>separate</em> regression equations for <em>each</em> value of sibling number.</p>
+<p>To interpret b<sub>1</sub> then, it is the effect of X<sub>1</sub> <em>when X<sub>2</sub> is held constant.</em></p>
+<p>Because the order of variables in the multivariable equation doesn’t actually matter, we can interpret b<sub>2</sub> the same way. It is the effect of X<sub>2</sub> <em>when X<sub>1</sub> is held constant.</em></p>
+<p>In statistics we often use the phrase “over and above” to describe this. b<sub>1</sub> is the effect of X<sub>1i</sub> over and above the effect of X<sub>2i</sub>. b<sub>2</sub> is the effect of X<sub>2</sub> over and above the effect of X<sub>1</sub>.</p>
+<p>b<sub>0</sub> is still the intercept (when both X<sub>1</sub> and X<sub>2</sub> are 0).</p>
+<p>Because of the partial prediction nature of these parameters - b<sub>1</sub> representing the effect of X<sub>1</sub> when X<sub>2</sub> is held constant - we call these <strong>partial regression coefficients</strong>. It only makes sense to interpret them in the context of the other coefficients.</p>
+</section>
+<section id="understanding-error-in-the-multivariable-model">
+<h2>13.6 Understanding error in the multivariable model<a class="headerlink" href="#understanding-error-in-the-multivariable-model" title="Permalink to this headline">#</a></h2>
+<p>In most respects, concepts developed for the single-predictor models will apply to the multi-predictor models. In all cases, the model generates a predicted value on the outcome variable for each observation in the data frame. Subtracting the model prediction from the observed value will give us a residual, which tells us how far off the model prediction is (positive or negative) for each observation.</p>
+<p>If we square and then total up all the residuals we will get the SS<sub>Error</sub> for the model, which gives us a sense of how well the model fits the data. Using this SS<sub>Error</sub>, we can then compare the multi-predictor model to other models, starting with the empty model. To assess how well a model fits the data we will continually ask: How much does one model reduce error over another?</p>
+<p>To begin to answer this question, let’s start by comparing the sum of squared error from our new model to the error from the empty model.</p>
+<p>We previously used the <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> package/function to generate ANOVA tables that contain the SSs useful for comparing models. In the code block below, add code to generate the <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> output for <code class="docutils literal notranslate"><span class="pre">full_model</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate the ANOVA table for full_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may notice right away that this ANOVA table has more rows than the one for either <code class="docutils literal notranslate"><span class="pre">father_model</span></code> or <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code> that we saw earlier. Don’t worry about these new rows for now – just look for SS Total, SS Error, and SS Model; these have the same meaning as in the single-predictor models.</p>
+<p>As before, SS<sub>Total</sub> = SS<sub>Model</sub> + SS<sub>Error</sub>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">182.376</span> <span class="o">+</span> <span class="m">388.286</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>SS<sub>Total</sub> (the bottom row of the ANOVA table) tells us how much total variation, measured in sum of squares, there is in the outcome variable. You can see that SS<sub>Total</sub> is 570.662. SS<sub>Total</sub> is all about the outcome variable, in this case <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code>. It is based on squaring and then summing residuals from the empty model. No matter which predictor variables you add to your model, SS<sub>Total</sub>, the last row in the ANOVA table, is always the same as long as the outcome variable is the same. The empty model of an outcome variable does not depend on any predictor variables.</p>
+<p>SS<sub>Error</sub> is the generic name we give to the sum of the squared residuals leftover after fitting a complex model (by “complex” we just mean a model that is more complex than the empty model). Because SS<sub>Total</sub> = SS<sub>Model</sub> + SS<sub>Error</sub>, the lower SS<sub>Error</sub> is, the higher SS<sub>Model</sub> will be, meaning that more of the variation has been explained by the model, which is the same as saying that more of the error has been reduced by the model. We can apply the concepts of SS<sub>Model</sub> and SS<sub>Error</sub> to any model, from those with just a single predictor all the way to those with many predictors.</p>
+</section>
+<section id="interpreting-non-independent-predictors">
+<h2>13.7 Interpreting non-independent predictors<a class="headerlink" href="#interpreting-non-independent-predictors" title="Permalink to this headline">#</a></h2>
+<p>Earlier we fit the coefficients of the full multivariable model as:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980X_{2i} \]</div>
+<p>How do the actual values of these coefficients compare to those generated by one-predictor models?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">father_model</span>
+<span class="n">sibling_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This does not give us the same coefficient values as the full multivariable model. <code class="docutils literal notranslate"><span class="pre">father_model</span></code> has an intercept b<sub>0</sub> value of 9.2011, <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code> has an intercept of 15.095, and the multivariable model calculated 10.3742. There are also differences in the coefficient for the effect of father’s education and number of siblings, as well. Why is that, when we’re using the same variables to build the model?</p>
+<p>This phenomenon happens because of <em>independence</em> of the two predictor variables. Or rather, the fact that they are <em>not</em> independent from each other. These two variables themselves are related to each other, as we can see in this scatter plot of father’s education and number of siblings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_school_completed_father</span> <span class="o">~</span> <span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> 
+          <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also see this by investigating the correlation between the variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_brothers_and_sisters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to this, fathers with less education tend to have more children. In other words, there is less unique information expressed by these separate variables - if you already know how many years of education someone’s father has, you’re likely to make better guesses about the number of siblings they have by using that information than just guessing randomly.</p>
+<p>This means that the utility of adding the second variable <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> to the multivariable model doesn’t explain as much variance in <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> as we might initially think. Given that <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> have overlapping information, some of the variance in <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> that <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> can explain is <em>already</em> explained by <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>. We can see this fact when we create an ANOVA table for the multivariable model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">supernova</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>PRE on on the Model line is 0.3196, indicating that the full model explains 31.96% of the variance in <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code>. Before, we calculated PRE of just <code class="docutils literal notranslate"><span class="pre">father_model</span></code> as 0.2897 and PRE of just <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code> as 0.1209. 0.3196 is less than 0.2897 + 0.1209. The two variables don’t explain completely separate amounts of variance in the outcome variable.</p>
+<p>Venn diagrams are a useful way to help us understand sums of squares for multivariable models. The empty model of  <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code>can be represented by a single circle, shown at the left in the figure below. This is the SS<sub>Total</sub>. When we add a predictor variable into the model (e.g.,<code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>, as shown on the right), it reduces some of that total error. This reduction in error (i.e., SS<sub>Model</sub>) is represented by the overlap between the two circles, shown with horizontal stripes.</p>
+<img src="images/ch13-fatherSS.png" width="800">
+<p>Now let’s visualize what happens when we add <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> to the model. Adding this variable reduces more error, beyond that already reduced by <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>.</p>
+<img src="images/ch13-multivariableSS.png" width="800">
+<p>As SS<sub>Model</sub> gets larger, SS<sub>Error</sub> gets smaller. SS<sub>Model</sub>, the amount of variation explained by the model (represented as the three regions with stripes), is larger for the multivariable model than for the single-predictor model and SS<sub>Error</sub> is smaller.</p>
+<p>In the Venn diagram below, we have labeled the three regions of the area with horizontal stripes as A, B, and C. SS<sub>Model</sub>, the error reduced by the multivariable model, is represented by the combined area of regions A, B, and C. Some of the error is uniquely reduced by <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> (region A), some uniquely reduced by <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> (region C), and some reduced by both (region B)!</p>
+<img src="images/ch13-partitionedSS.png" width="500">
+<p>Region B exists because father’s education and number of siblings are related. Parameter estimates in the model thus have to be adjusted to account for this fact and enable correct calculation of Y. Also, the sum of squares must be adjusted. The SS<sub>Model</sub> for the multivariate model cannot be found by simply adding together the SS<sub>Model</sub> numbers that result from fitting from the two single-predictor models separately (<code class="docutils literal notranslate"><span class="pre">father_model</span></code> and <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code>). If you added them separately you would be counting region B twice, and thus would overestimate SS<sub>Model</sub> for the multivariable model. For the same reason, we need to look at PRE for the full model to judge how much total variation in <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> we can account for with both <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> together.</p>
+</section>
+<section id="predictors-of-different-data-types">
+<h2>13.8 Predictors of different data types<a class="headerlink" href="#predictors-of-different-data-types" title="Permalink to this headline">#</a></h2>
+<p>The multivariate model we built above is constructed with two continuous variables, <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>. But when using the general linear model, we aren’t limited to just this data type. It’s flexible that way.</p>
+<section id="categorical-predictors">
+<h3>Categorical predictors<a class="headerlink" href="#categorical-predictors" title="Permalink to this headline">#</a></h3>
+<p>Let’s say we instead want to model <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with the variables <code class="docutils literal notranslate"><span class="pre">respondents_sex</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code>. Use <code class="docutils literal notranslate"><span class="pre">str()</span></code> to check out the data types of these variables in particular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#resetting GSS_subset, since we deleted some rows earlier</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span> 
+
+<span class="c1">#check variable type of respondents_sex</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">respondents_sex</span><span class="p">)</span>
+
+<span class="c1">#check variable type of born_in_us</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This reveals that they are both character variables instead of numeric. Now use <code class="docutils literal notranslate"><span class="pre">table()</span></code> to see how many unique levels of each variable there are, in <code class="docutils literal notranslate"><span class="pre">GSS_subset</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#table of respondents_sex values</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">respondents_sex</span><span class="p">)</span>
+
+<span class="c1">#table of born_in_us values</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us that there are two levels to each variable, and that there are no missing values in <code class="docutils literal notranslate"><span class="pre">respondents_sex</span></code> (51 + 49 = 100) but there is one missing value in <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code> (14 + 85 = 99). Note that while we manually filtered out missing data from the analysis earlier in this chapter, we don’t <em>actually</em> have to do that when using lm() - it’ll leave out missing values automatically. It’s one of those R functions that can handle NAs. But if you want to save predictions and residuals to the same data frame, it’ll only make predictions/residuals for the existing data. This means that the vector produced by <code class="docutils literal notranslate"><span class="pre">predict()</span></code> or <code class="docutils literal notranslate"><span class="pre">resid()</span></code> may be shorter than the data frame, and you’ll need to filter the data frame to be the same length if you want to save those vectors as variables in the data frame.</p>
+<p>Now use the code box below to make a multivariable model with both <code class="docutils literal notranslate"><span class="pre">respondents_sex</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code> predicting <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write some code that will output the results of a model with two categorical predictors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is still a model with three parameters - b<sub>0</sub>, b<sub>1</sub>, and b<sub>2</sub> - so the output of the model still gives you three coefficient estimates. You just have to be careful about interpreting the <em>meaning</em> of these coefficients given that you’re now using categorical variables as predictors.</p>
+<p>As we covered in chapter 11, when you include a categorical variable with two levels in a statistical model, R will automatically recode this variable as 0 and 1, and choose one level to be the reference group. The same happens in the multivariable case, for both predictors. You can predict values of <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> by plugging either 0 or 1 into the X values of the equation. Thus the effect of b<sub>1</sub> is the change in predicted Y due to the one-unit increase in X<sub>1</sub> (going from the reference group to the non-reference group) when holding X<sub>2</sub> constant, and the effect of b<sub>2</sub> is the change in predicted Y due to the one-unit increase in X<sub>2</sub> when holding X<sub>1</sub> constant. b<sub>0</sub> is the predicted value of Y when both predictor variables are set to 0.</p>
+<p>You may have wondered by now, why we’ve only worked with categorical predictor variables that have two levels - <code class="docutils literal notranslate"><span class="pre">Sex</span></code> in the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, <code class="docutils literal notranslate"><span class="pre">respondents_sex</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code> here, etc. What happens when you want to use a categorical predictor variable with more than two levels? R automatically recodes two-level categorical variables into 0 and 1 when using them as predictor variables, so what does it do with more than two levels?</p>
+<p>The answer is that R actually makes this case into a multivariable model - even when the formula we use only specifies one input variable. Let’s test this out by predicting <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with only the variable <code class="docutils literal notranslate"><span class="pre">race_of_respondent</span></code> in order to ask if there are differences in this sample’s average education level between different racial groups.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">table()</span></code> again with <code class="docutils literal notranslate"><span class="pre">GSS_subset</span></code> to see how many levels this variable has:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#table of race_of_respondent values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are 70 white participants, 20 black participants, and 10 participants of different racial groups that the survey administrators classified as “Other”. Thus this variable can take on three values - White, Black, or Other. We can’t represent this with just 0s and 1s since there are three unique values… or can we?</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to predict <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with <code class="docutils literal notranslate"><span class="pre">race_of_respondent</span></code> and see what happens:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#model predicting education years with race of respondent</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There’s only one input variable, but we still get three parameter estimates!</p>
+<p>This is because R still wants to stick with dummy-coding categorical variables - giving levels either the value of 0 or 1. This helps the math work out. But in order to use only 0s and 1s for a variable with three levels, it needs to split this information across two different Boolean variables. Thus this model turns into the form:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + e_i \]</div>
+<p>Where X<sub>1</sub> is whether or not someone is in the “Other” race category (1 for yes, 0 for no), and X<sub>2</sub> is whether or not someone is in the “White” race category (1 for yes, 0 for no). “Black” is being used as the reference group for both, since it is first in the alphabet (and you can verify this by looking at the names of the coefficients output by the model).</p>
+<p>In this case, the meaning of b<sub>1</sub> is the change in predicted Y due to being in the category “Other” compared to the reference group, and b<sub>2</sub> is the change in predicted Y due to being in the category “White” compared to the reference group. b<sub>0</sub> is the predicted level of education for someone in the category “Black” (since that means X<sub>1</sub> and X<sub>2</sub> are both 0, or someone is neither Other or White).</p>
+<p>Again, you don’t need to do the dummy-coding yourself - R will automatically set up the model for you this way when you pass it categorical variables as predictors. Just make sure your predictor data types truly are categorical (as the character or factor data type) when you want it to behave this way.</p>
+<p>When the model is automatically built out of a multi-level single variable like <code class="docutils literal notranslate"><span class="pre">race_of_respondent</span></code>, it’s not possible for a datapoint to have an X<sub>1</sub> of 1 <em>and</em> an X<sub>2</sub> of 1. That would mean they are both “Other” and “White”, and this variable is set up such that someone can only be one category. But you could imagine allowing participants to select multiple cateogries for themselves, in which case you could have a value of 1 on multiple categorical variables.</p>
+</section>
+<section id="ordinal-predictors">
+<h3>Ordinal predictors<a class="headerlink" href="#ordinal-predictors" title="Permalink to this headline">#</a></h3>
+<p>We haven’t talked much about ordinal data in a while, but it is a common way of representing variables - Likert scales (e.g, ratings from 1 to 5) are used very frequently in psychology. In this very dataset there are multiple instances of ordinal variables.</p>
+<p>For the purposes of regression, they’re a bit of a hybrid between categorical predictors and continuous predictors. They’re ordered, such that a one-unit increase in this variable means you’re getting “bigger” or “larger” on the variable, like with a continuous variable. But there’s only a few response options, so predicting an outcome value for X = 4.3 doesn’t make sense when participants only have the option of responding 1, 2, 3, 4, or 5 (i.e., 4.3 is not a real possible input).</p>
+<p>So how should you interpret the value of a coefficient when using an ordinal variable as a predictor? The answer is maybe unsatisfactory, but it depends on how you <em>want</em> to interpret it. In other words, do you care about the effect of having a particular value on the scale? Or do you care about the effect of just moving up on the scale, no matter the specific scale value?</p>
+<p>In the first case, modeling it as a categorical variable makes the most sense. Let’s do this in the case of predicting the number of children someone has based on how happy they say they are, and include a boxplot to help with visualizing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#number_of_children was saves as a character type because one response option is &quot;8 or more&quot; - </span>
+<span class="c1">#always check your data types before modeling!</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_children</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_children</span><span class="p">)</span>
+
+<span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">general_happiness</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">general_happiness</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="o">~</span><span class="n">general_happiness</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">general_happiness</span></code> has 3 levels, “Very happy”, “Pretty happy”, and “Not too happy”. Thus when modeling it as a categorical variable, there are 3 parameter estimates - one for the intercept, one for Pretty happy vs. Not too happy, and one for Very happy vs. Not too happy (Not too happy is being used as the reference group).</p>
+<p>Each of these parameters gives you the power to see what is the effect of being in one level of the ordinal variable vs. the reference level. Based on this, it looks like people who are both pretty happy and very happy tend to have fewer children than people who are not too happy. However, doing it this way doesn’t preserve any information about the order of the levels. Any of them could be used as a reference group, and it’s hard to figure out if there’s a general trend upward or downward just based on the coefficients. In other words, there’s no statistical comparison between the levels of pretty happy and very happy.</p>
+<p>Alternatively, we could recode <code class="docutils literal notranslate"><span class="pre">general_happiness</span></code> into numeric labels and use that as a singular predictor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#converting general_happiness to new labels, and as numeric</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">happiness_num</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">recode</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">general_happiness</span><span class="p">,</span> <span class="s">&quot;Not too happy&quot;</span> <span class="o">=</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
+                                  <span class="s">&quot;Pretty happy&quot;</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> 
+                                  <span class="s">&quot;Very happy&quot;</span> <span class="o">=</span> <span class="s">&quot;2&quot;</span><span class="p">))</span>
+
+<span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">happiness_num</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">happiness_num</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now there are just two coefficients, the intercept b<sub>0</sub> and the effect of a one-unit increase on <code class="docutils literal notranslate"><span class="pre">happiness_num</span></code> b<sub>1</sub>. This has the advantage of a more parsimonious model, and allows you to describe how predictions of Y change as you move up the ordinal scale. However, this means the effect is interpreted to be the <em>same</em> between each level of the predictor, and enables you to make predictions for values between possible responses (e.g., X = 1.5) which doesn’t make sense. When modeled this way, it looks like there isn’t much of an effect at all of happiness on how many children people have.</p>
+<p>There’s also a difference in proportional reduction of error between these different model versions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">categ_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">general_happiness</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="n">continuous_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">happiness_num</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+
+<span class="nf">supernova</span><span class="p">(</span><span class="n">categ_model</span><span class="p">)</span>
+<span class="nf">supernova</span><span class="p">(</span><span class="n">continuous_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This implies that maybe the effect of happiness on number of children isn’t consistent between levels, and we should treat this variable as categorical. But maybe you have other reasons for modeling it as continous anyways (e.g., you have a different dataset where someone could rate their happiness level on a continuous scale between 1 and 100 and you want to know how this model would work in that dataset).</p>
+<p>Whichever method you choose for ordinal predictors will depend on how you want to use your statistical model. But it will have consequences on how you interpret the coefficients and how well you make predictions, so think deeply about your reasons before you start modeling. In general, analysts tend to treat ordinal variables with 5+ levels as continuous, and ordinal variables with 4 or fewer levels as categorical. But there are also exceptions, and this is something that most analysts don’t actually put a lot of thought into. Try to be better than that!</p>
+</section>
+<section id="mixed-set-of-predictors">
+<h3>Mixed set of predictors<a class="headerlink" href="#mixed-set-of-predictors" title="Permalink to this headline">#</a></h3>
+<p>Due to the flexibility of the general linear model, it is also possible to combine categorical and continuous predictors into one model. Let’s predict <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span> <span class="o">+</span> <span class="n">born_in_us</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">GSS_subset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We still get fitted parameter estimates, just as we have been doing all throughout this chapter. In this case, remember to interpret them in the context of each other’s variable types. b<sub>1</sub> is the change in prediction of someone’s years of education due to a one-unit increase in their father’s education level, over and above the effect of being born in the US. b<sub>2</sub> is the change in prediction of someone’s years of education due to being born in the US vs. not, over and above the effect of father’s education. b<sub>0</sub> is someone’s expected education when both X<sub>1</sub>=0 (their father had no years of formal education) and X<sub>2</sub>=0 (they were not born in the US).</p>
+</section>
+</section>
+<section id="beyond-two-predictors">
+<h2>13.9 Beyond two predictors<a class="headerlink" href="#beyond-two-predictors" title="Permalink to this headline">#</a></h2>
+<p>Since the general linear model allows us to account for an additional predictor via addition, it assuredly allows us to add even more than two.</p>
+<p>When prediction is our main goal, adding as many predictors as possible can be helpful. In general, the more parameters we add to a model, the less leftover error there is after subtracting out the model. Because we have said, many times, that the goal of the statistician is to reduce error, this seems like a good thing. And it is, but only to a point.</p>
+<p>Let’s do a little thought experiment. You know already that the three-parameter model <code class="docutils literal notranslate"><span class="pre">full_model</span></code> explained more variation than either of the two-parameter models <code class="docutils literal notranslate"><span class="pre">father_model</span></code> or <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code>. Something with four parameters would explain more than the three-parameter model. And so on. What would happen if we kept adding variables until there were as many predictors as datapoints?</p>
+<p>In this case, the model error would be reduced to 0. Why? Because each person would have their own parameter in the model. If each person had their own parameter, then the predicted score for that person would just be the person’s actual score. And there would be no residual between the predicted and actual score. The problem with this is that even though the model fits our <em>current</em> data perfectly, it would not fit if we were to choose another sample. Getting better at making in-sample predictions, but getting worse at making out-of-sample predictions, is called <strong>overfitting</strong>.</p>
+<img src="images/ch13-overfitting.png" width="500">
+<p>Although we can improve model fit by adding parameters to a model, there is always a trade-off involved between reducing error (by adding more parameters to a model) on one hand, and increasing the intelligibility, simplicity, and elegance of a model on the other.</p>
+<p>This is a limitation of PRE as a measure of our success. If we get a PRE of .40, for example, that would be quite an accomplishment if we had only added a single parameter to the model. But if we had achieved that level by adding 30 parameters to the model, it’s just not as impressive.</p>
+<p>There is a quote attributed to Einstein that sums up things pretty well: “Everything should be made as simple as possible, but not simpler.” A certain amount of complexity is required in our models just because of complexity in the world. But if we can simplify our model so as to help us make sense of complexity, and make predictions that are “good enough,” that is a good thing.</p>
+</section>
+<section id="controlling-for-confounding-variables">
+<h2>13.10 Controlling for confounding variables<a class="headerlink" href="#controlling-for-confounding-variables" title="Permalink to this headline">#</a></h2>
+<p>When one’s goal is to make accurate predictions about an outcome variable, adding multiple predictors to a regression equation buys us more variance explained and reduces error. In this case it doesn’t really matter how much variance each predictor individually accounts for, you’re just interested in the explanatory power of the entire model. This is a common goal in data applications like business analytics or machine learning.</p>
+<p>But as psychologists, often we are curious about <em>specific</em> predictors and how they relate to an outcome variable. I.e, we want to know how one’s parents’ education level relates to a person’s own education level. This doesn’t imply that we think <em>only</em> parental education influences own education - we can recognize the whole system is complex. But we want to characterize that particular relationship and understand that specific part of the data generation process.</p>
+<p>Under this goal multiple regression is still done, but with specific reasons. In the prediction use case, you add as many predictors as you reasonably can to the model to try to maximize both your in-sample and out-of-sample prediction accuracy. In the use case for understanding specific predictors, you want to make sure that there aren’t other variables that better explain any association you find between your predictor of interest and your outcome. As we saw previously, predictors that are correlated with each other share some variance in the outcome variable. So if you think some variable X is associated with an outcome Y, you want to make sure this association isn’t just because of some other variable C that causes both X and Y. In this case, C is what’s known as a <strong>confound</strong> - a variable not of interest, but which is a part of the data generation process and influences how you can interpret the effect of X on Y.</p>
+<p>In ideal situations, we can deal with this via our research methodology. Say we want to know whether father’s education is associated with own education, but we’re worried that a third variable of <em>mother’s</em> education might better explain both. Maybe father’s education is only related to own education because mothers of a certain education tend to marry people of the same level, but mothers have a stronger influence on one’s own education than fathers do. To best deal with this, we’d want to randomly assign mothers of different education levels to each family to grow up with in order to break the association between mothers’ and fathers’ education, allowing both to explain unique amounts of variance in the outcome variable of one’s own education.</p>
+<p>But it’s not always possible or ethical to do random assignment. In that case, our back up plan is to use <strong>statistical control</strong>. This is the process of including possible confound variables in the regression model so that they have a chance to explain some of the variance in the outcome variable. This way, you can interpret the coefficient of the variable you <em>actually</em> care about as its unique contribution to the outcome variable, controlling for the influence of the confound.</p>
+<p>Consider this in the graph below. In the left panel, it looks like there is an association between X and Y. Color of the dots represents C. We suspect that C is correlated with both X and Y and might cause both of them. Thus before we can be sure there truly is an association between X and Y, we need to <em>control for</em> C (look at the association between X and Y at each level of C separately; when C is held constant). The colored lines in the middle panel show what the regression line between X and Y looks like at each level of C. In this hypothetical example, when taking C into account, the relationship between X and Y disappears. They only seemed related at first because C was the cause of both of them.</p>
+<img src="images/ch13-confound.png" width="850">
+<p>Let’s try this out ourselves in <code class="docutils literal notranslate"><span class="pre">GSS_subset</span></code>. First, we’ll take a look again at the results of a model just predicting own education with father’s education:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">father_model</span>
+<span class="nf">supernova</span><span class="p">(</span><span class="n">father_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It looks like father’s education explains 34.48% of the variance in own education, such that for every 1-year increase in father’s education, there is an expected 0.3882 year-increase in own education. But could mother’s education explain this association? First we can check whether it is related to father’s education and to a participants’ own education, each separately:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span> 
+   <span class="n">use</span><span class="o">=</span><span class="s">&quot;complete.obs&quot;</span><span class="p">)</span> <span class="c1">#dealing with NAs</span>
+<span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span> 
+   <span class="n">use</span><span class="o">=</span><span class="s">&quot;complete.obs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mother’s education is quite correlated with both, so there’s a real possibility that it actually accounts for the relationship between father’s education and own education! Perhaps the variance that father’s education explains is <em>actually</em> explained by mother’s education. So, let’s build a model to examine the effect of father’s education, <em>controlling for</em> mother’s education:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">bothparents_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span> <span class="o">+</span> 
+                       <span class="n">highest_year_school_completed_mother</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">GSS_subset</span><span class="p">)</span>
+
+<span class="n">bothparents_model</span>
+<span class="nf">supernova</span><span class="p">(</span><span class="n">bothparents_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The coefficient for the effect of father’s education decreased in this multivariable model compared to <code class="docutils literal notranslate"><span class="pre">father_model</span></code>, because mother’s education explained some of the variance father’s education was previously explaining. But there’s still plenty of unique variance accounted for by father’s education, so it has its own unique effect! In fact, it looks like mother’s education has very little of it’s own unique effect - most of the reason it is correlated with someone’s own education is because it is also correlated with father’s education. Visualized as a Venn diagram, this situation might look something like this:</p>
+<img src="images/ch13-fathermotherSS.png" width="500">
+<p>Statistical control is a powerful tool, but with great power comes great responsibility. There a couple of ways adding control variables without much thought can actually create problems for your interpretation of a particular variable of interest. At the end of chapter 14 we’ll cover how to do this responsibly.</p>
+<p><strong>2022 NOTE TO SELF: Add explaination of good and bad predictors, how to do partial residual plot for visualizing effect of interest controlling for others</strong></p>
+</section>
+<section id="historical-note-anova-test">
+<h2>13.11 Historical note - ANOVA test<a class="headerlink" href="#historical-note-anova-test" title="Permalink to this headline">#</a></h2>
+<p>Just as t-tests were traditionally used to do similar things to the empty model and two-group model, another historical class of statistical tests is called <strong>ANOVAs</strong>. This is actually where the ANOVA name comes from for the table we’ve been using.</p>
+<p>ANOVAs work by comparing the amount of variance <em>within</em> a group of data points to the amount of variance <em>between</em> different groups of data points. In the example we worked with earlier for predicting <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with <code class="docutils literal notranslate"><span class="pre">race_of_respondent</span></code>, an ANOVA test would compare the differences in education among people within each racial group to the differences in education among people of different racial groups. It then asks how statistically likely it is that data of different groups actually come from the same distribution. These are typically done with categorical predictor variables, but some versions include a mixed-predictor approach. Below is a summary of each common type of ANOVA:</p>
+<ul class="simple">
+<li><p>One-way ANOVA: this type of test looks at values of an outcome variable within and between different levels of one explanatory variable. This can be applied to a predictor variable with two groups, three groups, eight groups, etc. An example would be investigating if there are GPA differences among 3 different majors (chemistry, psychology, and music).</p></li>
+<li><p>ANCOVA: This stands for ANalysis of COVAriance. The foundation of this test is a one-way ANOVA, but a continuous control variable is included (e.g., differences in GPA among different majors, controlling for how often students study).</p></li>
+</ul>
+<p>For both of these tests, we can use a version of the general linear model instead. For a one-way ANOVA, we can fit a regression with the formula <code class="docutils literal notranslate"><span class="pre">GPA</span> <span class="pre">~</span> <span class="pre">major</span></code> and let R create dichotomous variables for each level of the variable. This would make a statistical equation of the form: Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>X<sub>1i</sub> + b<sub>2</sub>X<sub>2i</sub> + e<sub>i</sub>, where X<sub>1</sub> is whether or not someone is a psychology major, X<sub>2</sub> is whether or not someone is a music major, b<sub>0</sub> is the mean of chemistry majors, b<sub>1</sub> is the difference in means between chemistry majors and psych majors, and b<sub>2</sub> is the difference in means between chemistry majors and music majors.</p>
+<p>For an ANCOVA, we can fit the same formula above but with studying as an additional predictor variable: <code class="docutils literal notranslate"><span class="pre">GPA</span> <span class="pre">~</span> <span class="pre">major</span> <span class="pre">+</span> <span class="pre">studytime</span></code>. This would make a statistical equation of the form: Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>X<sub>1i</sub> + b<sub>2</sub>X<sub>2i</sub> + b<sub>3</sub>X<sub>3i</sub> + e<sub>i</sub>, where the additional X<sub>3</sub> is how much time someone studies and b<sub>3</sub> is the increase in GPA due to a 1-unit increase in study time, over and above the effect of major.</p>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Specify the equation form of a multivariable model and fit it in R</p></li>
+<li><p>Interpret the meaning of each parameter estimate in the fitted multivariable model</p></li>
+<li><p>Describe how correlated predictors share amounts of error they can explain</p></li>
+<li><p>Build multivariable models out of different predictor data types</p></li>
+<li><p>Control for confound variables</p></li>
+<li><p>Identify which form of the GLM to use when you see a one-way ANOVA or ANCOVA</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

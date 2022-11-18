@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 9 - Statistical Models &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 1 Describing Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2.html">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3.html">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4.html">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 2 - Modeling Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6.html">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 3 - Evaluating Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-9.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/smburns47/Psyc158"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-9.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-9.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-populations-to-samples">
+   9.1 From populations to samples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sampling-process">
+   9.2 The sampling process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#form-of-a-statistical-model">
+   9.3 Form of a statistical model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modeling-a-distribution-with-a-single-number">
+   9.4 Modeling a distribution with a single number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-mean-as-a-model">
+   9.5 The mean as a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatically-building-a-model">
+   9.6 Automatically building a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thinking-about-error">
+   9.7 Thinking about error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-mathematical-notation-of-a-model">
+   9.8 More on mathematical notation of a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-for-the-general-linear-model">
+   9.9 Notation for the General Linear Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics-and-parameters">
+   9.10 Statistics and parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 9 - Statistical Models</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-populations-to-samples">
+   9.1 From populations to samples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sampling-process">
+   9.2 The sampling process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#form-of-a-statistical-model">
+   9.3 Form of a statistical model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modeling-a-distribution-with-a-single-number">
+   9.4 Modeling a distribution with a single number
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-mean-as-a-model">
+   9.5 The mean as a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatically-building-a-model">
+   9.6 Automatically building a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thinking-about-error">
+   9.7 Thinking about error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-on-mathematical-notation-of-a-model">
+   9.8 More on mathematical notation of a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-for-the-general-linear-model">
+   9.9 Notation for the General Linear Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics-and-parameters">
+   9.10 Statistics and parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This chapter uses the package ggformula, which takes a few minutes to download on Google Colab. </span>
+<span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-9-statistical-models">
+<h1>Chapter 9 - Statistical Models<a class="headerlink" href="#chapter-9-statistical-models" title="Permalink to this headline">#</a></h1>
+<p>In the prior chapter we learned about deterministic models, where we know how variables are related; and we learned about probability models, where we know the full population of data that we can do probability calculations on.</p>
+<p>Next is statistical models, where we don’t have either. We have <em>some</em> data, and maybe we have <em>some</em> idea about what variables are important, so we try to build a simplified model based on this limited viewpoint we have.</p>
+<img src="images/ch9-probvsstats.png" width="700">
+<p><em><a class="reference external" href="https://towardsdatascience.com/probability-vs-statistics-for-data-science-and-machine-learning-84f00bf67ce1#:~:text=Probability%20and%20Statistics,-Probability%20is%20the&amp;text=One%20typically%20learn%20probability%20before,enhance%20one%27s%20appreciation%20of%20probability.">Image source</a></em></p>
+<section id="from-populations-to-samples">
+<h2>9.1 From populations to samples<a class="headerlink" href="#from-populations-to-samples" title="Permalink to this headline">#</a></h2>
+<p>The “<em>some</em> data” part of the sentence above is really important for distinguishing statistical models from probability models. In the previous chapter we discussed how knowing a probability model allows us to predict outcomes of future events. Even in cases where we don’t know the data generation process, we can still create an accurate probability model if we know the entire <strong>population</strong> of outcomes - AKA, all possible outcomes. For example, if we wanted to know the probability that someone in the US had COVID-19 right now, and if we were able to test every individual in the country right this moment, we’d be able to count how many people were covid-positive out of the entire group and calulate probability that way. The population is all possible people in the group we want to understand, so if we have data from that entire group, we can calculate summaries and probabilities really easily.</p>
+<p>However, it is almost always impractical, or straight up impossible, to collect data from the entire population you care about. If a psychologist cares about a general question like “the way humans think,” there’s no way they can test every human on the planet in order to generate an accurate distribution of the population data. This is why you can never <em>prove</em> something in statistics - you never definitively know all the possibilities.</p>
+<p>Instead, one of the foundational ideas in statistics is that we can make guesses about the features of an entire population based on a smaller <strong>sample</strong> of individuals from that population.</p>
+</section>
+<section id="the-sampling-process">
+<h2>9.2 The sampling process<a class="headerlink" href="#the-sampling-process" title="Permalink to this headline">#</a></h2>
+<p>Anyone living in the United States will be familiar with the concept of sampling from the political polls that have become a central part of our electoral process. In some cases, these polls can be incredibly accurate at predicting the outcomes of elections. The best known example comes from the 2008 and 2012 US Presidential elections, when the pollster Nate Silver correctly predicted electoral outcomes for 49/50 states in 2008 and for all 50 states in 2012. Silver did this by combining data from 21 different polls, each of which included data from about 1000 likely voters. If we consider the population of interest during an election to be all the votes of people who cast a vote, then in this case the intentions of that 1000-person sample very closely matched the overall voting behavior of the entire electorate. Yet, the 2016 US Presidential election was noteworthy for how <em>badly</em> polls predicted the outcome (Clinton was strongly favored to win by many polling samples, but the electorate behaved differently). This illustrates the extreme importance of picking a sample that is <strong>representative</strong> of your population of interest.</p>
+<p>Since you don’t know the population distribution (which is the whole reason we’re sampling data in the first place), it can be hard to know how representative a sample is. Over time, statisticians have figured out that the best way to pick a sample that most closely resembles the shape, center, and variability of the target population is to draw a <strong>random sample,</strong> where every member of the population has an equal chance of getting picked for the sample. This is also usually impractical, though. For a psychologist, it’s not as easy to contact, recruit, or even know about some people in the population compared to others (indeed, the data in psychology results are often based on an over-representation of US psychology students, since universities require their psych majors to participate in studies!). For an ecologist, it is much easier to access animals that live in one site nearby, versus the same species that lives in a remote canyon. You can probably think of examples in other fields of study that make it hard to sample every member of the population at equal likelihood.</p>
+<p>Instead, there are a variety of more practical sampling methods that are easier to do, and which one <em>hopes</em> is mostly similar to what a random sample looks like. The most common type is that described above, where the sample is comprised of datapoints that were the easiest to obtain. This is called <strong>convenience sampling.</strong> The samples are chosen in a way that is convenient to the researcher. In real life, most studies are convenience samples of one form or another. This sometimes does a good job of creating a random sample, but can instead create a <strong>biased sample</strong> if there’s some reason for why the sample is easier to collect that also affects the variables being studied. E.g., can you think of any way psychology students might differ from students of other majors? There are other types too that are less common that you may learn about in other classes (.e.g, stratified sampling, snowball sampling, etc.). Whatever sampling method you use, the most important thing to keep in mind is how likely it is to create a representative sample, and what factors to watch out for that might contribute to bias.</p>
+<p>In addition, it is important to know the difference between <strong>sampling with replacement</strong> and <strong>sampling without replacement.</strong> With replacement means that, after picking a data point out of the entire population for inclusion in the sample, you record its value and then put it back “into the bag” of the population, so that it has a chance of being selected again. Without replacement is the opposite - once a data point is recorded, it can’t be selected again. In real world data collection, you almost always use sampling without replacement because you want to collect as much unique information in your data as possible. I.e., once someone has participated in your study, you don’t let them participate again. However, for some theoretical or simulating procedures, sampling with replacement is an underlying assumption.</p>
+</section>
+<section id="form-of-a-statistical-model">
+<h2>9.3 Form of a statistical model<a class="headerlink" href="#form-of-a-statistical-model" title="Permalink to this headline">#</a></h2>
+<p>The other important ingredient for understanding statistical models is that we have <em>some</em> idea about the data generation process that would produce our population of interest, so we try to describe that. Recall at the beginning of the last chapter where we talked about the form of a deterministic model like gravity:</p>
+<div class="math notranslate nohighlight">
+\[gravitational force = G\frac{m_1*m_2}{r^2}\]</div>
+<p>We used an equation to denote which variables contribute to gravitational force and how they relate to each other. With statistical models, even though we usually aren’t able to be as exact or sophisticated with guessing the data generation process, we still use equations to express how we think some variables interact to produce an outcome variable.</p>
+<p>For example, in chapter 6 we introduced how some variables can <em>explain</em> variation in other variables. If someone’s sex explains some variation in the length of their thumb, we could write that into an equation as:</p>
+<div class="math notranslate nohighlight">
+\[ Thumb_i = Sex_i \]</div>
+<p>where Thumb<sub>i</sub> is the ith person’s value on <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and Sex<sub>i</sub> is the ith person’s value on <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. By convention, the outcome variable <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> is written on the left of the equal sign and the explanatory variable <code class="docutils literal notranslate"><span class="pre">Sex</span></code> is written to the right.</p>
+<p>Note that on first look, this model isn’t very good. If something as simple as gravity needs a more complex formula to model it, there’s likely many more things we would need to add to this model to predict values of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> perfectly. But as a famous saying goes, “all models are wrong; some are useful.” This is our initial guess about what the data generation process is for <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>. Knowing someone’s sex, we get a little bit better at guessing their thumb length than if we didn’t know their sex. Our goal as analysts and psychological theorists more generally is to create a model that is at least a little more helpful than guessing blindly.</p>
+</section>
+<section id="modeling-a-distribution-with-a-single-number">
+<h2>9.4 Modeling a distribution with a single number<a class="headerlink" href="#modeling-a-distribution-with-a-single-number" title="Permalink to this headline">#</a></h2>
+<p>At its most basic level, a statistical model can be thought of as an equation that produces a predicted score for each observation in a distribution. The simplest models we could consider generate the same predicted score for every observation in a distribution — a single number to characterize a whole distribution.</p>
+<p>Does this sound familiar? If you had to pick one number to represent an entire distribution, how would you pick it? Put another way - how were we previously summarizing distributions of variables?</p>
+<p>Depending on how a variable is measured (e.g., quantitative or categorical), and on the shape of its distribution, we will use different procedures for choosing one number as a model. For a quantitative variable whose distribution is roughly normal, a number right in the middle (the mean) might be the best-fitting model. Remember, we aren’t saying that such a simple model is a good model — just that it’s better than nothing! If a distribution is skewed left or right, the best model might be the median instead. For a categorical variable, the best model is generally the category that is most frequent (the mode).</p>
+<p>Let’s zero in on just distributions of quantitative variables for now. Take a look at the two distributions below for variables 1 and 2.</p>
+<img src="images/ch9-2dist.png" width="700">
+<p>A single number, even a well-chosen number, is not a very good model. It may be a better model for variable 1 than variable 2 above, but it’s still not very good at predicting what any one value on the distribution will be. Most scores are not the same as the number we choose as the model.</p>
+<p>This is where the “error” term of a model comes in: once we choose a number to model a distribution, we can think of the variation around that number as error. It is the stuff we’re missing that would be needed to adjust what we’re predicting into what the actual value is. As we can see above, a one-number model for a distribution with less spread seems to have less error, and thus a better fit, than a one-number model for a distribution with more spread. The reason for this is that the error around the model is greater for the distribution with more spread.</p>
+</section>
+<section id="the-mean-as-a-model">
+<h2>9.5 The mean as a model<a class="headerlink" href="#the-mean-as-a-model" title="Permalink to this headline">#</a></h2>
+<p>The simple model we have started with — using the mean to model the distribution of a quantitative variable — is sometimes called the <strong>empty model</strong> or <strong>null model</strong>. Note that it’s empty because it doesn’t have any explanatory variables in it yet. As an equation, it looks like:</p>
+<div class="math notranslate nohighlight">
+\[ Outcome_i = Mean(Outcome) \]</div>
+<p>Our empty model always predicts the same outcome value because it always uses the same value as an input (the mean of the outcome variable’s distribution). If the mean is our model, then fitting the model to data simply means calculating the mean of the distribution.</p>
+<p>Let’s think this through in the context of students’ thumb lengths. We will use a tiny dataset, which we’ll put in a data frame called <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+<span class="n">thumb</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">56</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">68</span><span class="p">)</span>
+
+<span class="n">tiny_fingers</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">thumb</span><span class="p">)</span>
+<span class="n">tiny_fingers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can make a distribution of the variable <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> using <code class="docutils literal notranslate"><span class="pre">gf_histogram</span></code> from the package <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>. We can also add a visual line to denote where the mean is, using the function <code class="docutils literal notranslate"><span class="pre">gf_vline</span></code> to add a layer to this plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1">#pipe the base histogram into a layer that adds the mean line</span>
+  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">thumb</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that our model is not the actual <code class="docutils literal notranslate"><span class="pre">thumb</span></code> values in <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code>, but our guess at what they will be. In this case, we’re always guessing the mean (the blue line). Always guessing the same number for every data point is easy, but later you will learn to fit more complex models to your data.</p>
+</section>
+<section id="automatically-building-a-model">
+<h2>9.6 Automatically building a model<a class="headerlink" href="#automatically-building-a-model" title="Permalink to this headline">#</a></h2>
+<p>In the example above, we chose our model ahead of time: Thumb = 62. But usually you don’t know what exact numbers to use in the equation of a statistical model. In R, there is a function you can use to automatically build a model that will be the best description of your data, given a model format that you specify.</p>
+<p>The R function we are going to use is <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, which stands for “linear model.” (We’ll say more about why it’s called that in a later chapter.) For <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to work, you need to pass it a <strong>formula</strong>, rather than an equation.</p>
+<p>What’s the difference? Remember when we were graphing things with <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>, we needed to give the function a formula to tell R which variable should be on the y-axis and which should be on the x-axis: e.g., <code class="docutils literal notranslate"><span class="pre">Thumb</span> <span class="pre">~</span> <span class="pre">Sex</span></code>. Because we’re using a ~ instead of a = here, this is not the same thing as saying “The value of Thumb is exactly proportional to the value of Sex.” Instead, it is saying a more general statement “Thumb <em>varies by</em> Sex.” Passing a formula like this to <code class="docutils literal notranslate"><span class="pre">lm()</span></code> tells the function to build an exact statistical equation that would best fit the type of relationship the formula describes.</p>
+<p>For an empty model, we don’t have any variables to use as explanatory variables. We just want R to find the best-fitting single-number summary of the outcome variable. In this case, the formula would look like <code class="docutils literal notranslate"><span class="pre">Thumb</span> <span class="pre">~</span> <span class="pre">NULL</span></code>. “NULL” is a special value in R (like TRUE or FALSE) that tells the computer to treat that spot as empty. You can see now why this is known as an empty model! The second argument <code class="docutils literal notranslate"><span class="pre">lm()</span></code> needs is a dataset to fit the model to.</p>
+<p>Here’s the code we use to fit the empty model, followed by the output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output of this command may seem a little strange right now with words like “Coefficients” and “Intercept.” We’ll cover what those mean a little later. But it does give you back the mean of the distribution (62), as expected. Thus, this function finds the best-fitting number to use as our model, given a more general formula we specified. To then make a more specific statistical model in equation format, we’d simply slot that value in on the right side of the equation:</p>
+<div class="math notranslate nohighlight">
+\[ Thumb_i = 62 \]</div>
+<p>Automatically finding a solution to which number best represents the distribution of the outcome variable is called “fitting the model”. It will be helpful to save the results of this fitted model in an R object. Here’s code that uses <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to fit the empty model, then saves the results in an R object called <code class="docutils literal notranslate"><span class="pre">tiny_empty_model</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_empty_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to see what the model estimates are after running this code, you can just type the name of the object you saved the model to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_empty_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that you have fit the empty model to the tiny set of data, try using <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to fit the empty model to the full <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># modify this to fit the empty model of Thumb</span>
+<span class="n">empty_model</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+
+<span class="c1"># this prints the best-fitting number</span>
+<span class="n">empty_model</span>
+
+<span class="c1"># make a histogram of Thumb and draw the line for the mean</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="c1">#YOUR CODE HERE) %&gt;% </span>
+  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="c1">#YOUR CODE HERE)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="thinking-about-error">
+<h2>9.7 Thinking about error<a class="headerlink" href="#thinking-about-error" title="Permalink to this headline">#</a></h2>
+<p>Using our tiny data set, we found the mean thumb length to be 62mm. Sticking that value into the equation of a statistical model, if we were predicting what a seventh observation might be, we’d go with 62mm. But if we take the mean and look backwards at the data we have already collected, we could also generate a “predicted” thumb length for each of the data points we already have. This prediction answers the question: what would our model have predicted this thumb length to be if we hadn’t collected the data?</p>
+<p>There’s an R function that will actually do this for you. Here’s how we can use it to generate the predicted thumb lengths for each of the six students in the tiny dataset. Remember, we already fit the model and saved the results in  tiny_empty_model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">predict</span><span class="p">(</span><span class="n">tiny_empty_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why would we want to create predicted thumb lengths for these six students when we already know their actual thumb lengths? We will go into this a lot more in the next chapter, but for now, the reason is so we can get a sense of how <em>wrong</em> our automatically generated statistical model is. The value of everyone’s thumb lengths isn’t actually 62, so we want to know how far each of our data points are from the prediction that our model would have made. It gives us a rough idea of how well our model fits our current data and how big the <strong>error</strong> is.</p>
+<p>In order to use these predicted scores as a way of seeing error, we first need to save the prediction for each student in the dataset. When there is only one prediction for everyone, as with the empty model, and when there are only six data points, as in our tiny data set, it seems like overkill to save the predictions but just go with it for now. Later you will see how useful it is to save the individual predicted scores. For example, if we save the predicted score for each student in a new variable called <code class="docutils literal notranslate"><span class="pre">predicted</span></code>, we can then subtract each student’s actual thumb length from their predicted thumb length, resulting in a deviation from the prediction.</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">predict()</span></code> and save the predicted thumb lengths for each of the six students as a new variable in the <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code>  dataset. Then, print the new contents of <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># modify this to save the predictions from the tiny_empty_model</span>
+<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">predicted</span> <span class="o">&lt;-</span>
+
+<span class="c1"># this prints tiny_fingers</span>
+<span class="n">tiny_fingers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have developed the idea of a general statistical model to take the form <code class="docutils literal notranslate"><span class="pre">DATA</span> <span class="pre">=</span> <span class="pre">MODEL</span></code>. However, since all models are wrong, plugging in a value (like the mean) for the MODEL spot will not perfectly calculate what the value should be in the DATA spot. To do a better job at guessing DATA we’d probably need to add more stuff to the model side of the equation. However, right now we don’t know anything else besides the mean of DATA. So in order to recognize how unperfect our model is, we can rewrite the equation as:</p>
+<div class="math notranslate nohighlight">
+\[ data_i = mean(data) + error_i \]</div>
+<p>Even if we don’t know what causes error in a model, so long as we recognize how much it is (how much the model misses the mark for each value of data), we can technically recompute each actual data value perfectly.</p>
+<p>Therefore, we can calculate error in our data set by just shuffling this equation around to get the formula:</p>
+<div class="math notranslate nohighlight">
+\[ error_i = data_i - mean(data) \]</div>
+<p>Using this equation, if someone has a thumb length larger than the mean (e.g., 68), then their error is +6. If they have a thumb length lower than the mean (e.g., 61) then we can calculate their error as -1.</p>
+<p>We generally call this calculated error the <strong>residual</strong> - the difference between our model’s prediction and an actual observed score. The word residual should evoke the stuff that remains because the residual is the leftover quantity from our data once we take out the variance explained by our model.</p>
+<p>To find these errors (or residuals) in an empty model you can just subtract the mean from each data point. In R we could just run this code to get the residuals:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">thumb</span> <span class="o">-</span> <span class="n">tiny_fingers</span><span class="o">$</span><span class="n">predicted</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The numbers in the output indicate, for each student in the data frame, what their residual is after subtracting out the model (which is the mean in this case).</p>
+<p>Modify the following code to save these residuals in a new variable in <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code> called <code class="docutils literal notranslate"><span class="pre">residual</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># modify this to save the residuals from the tiny_empty_model</span>
+<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">residual</span> <span class="o">&lt;-</span>
+
+<span class="c1"># this prints TinyFingers</span>
+<span class="n">tiny_fingers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These residuals (or “leftovers”) are so important in modeling that there is an even easier way to get them in R. Again, we will use the results of our model fit, which we saved in the R object <code class="docutils literal notranslate"><span class="pre">tiny_empty_model</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">resid</span><span class="p">(</span><span class="n">tiny_empty_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we get the same numbers. But instead of passing the data and the model’s predictions as arguments, we just tell R which model to get the residuals from.</p>
+<p>Modify the following code to save the residuals that we get using the <code class="docutils literal notranslate"><span class="pre">resid()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code> data frame. Give the resulting variable a new name <code class="docutils literal notranslate"><span class="pre">easy_residual</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># modify this to save the residuals from the tiny_empty_model (calculate them the easy way)</span>
+<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">easy_residual</span> <span class="o">&lt;-</span>
+
+<span class="c1"># this prints TinyFingers</span>
+<span class="n">tiny_fingers</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the variables <code class="docutils literal notranslate"><span class="pre">residual</span></code> and <code class="docutils literal notranslate"><span class="pre">easy_residual</span></code> should be identical. You only used different methods to get the same residuals.</p>
+<p>Here we’ve plotted histograms of the three variables <code class="docutils literal notranslate"><span class="pre">thumb</span></code>, <code class="docutils literal notranslate"><span class="pre">predicted</span></code>, and <code class="docutils literal notranslate"><span class="pre">residual</span></code>.</p>
+<img src="images/ch9-3dist.png" width="1000">
+<p>The distributions of the data and the residuals have the same shape. But the numbers on the x-axis differ across the two distributions. The distribution of <code class="docutils literal notranslate"><span class="pre">thumb</span></code> is centered at the mean (62), whereas the distribution of <code class="docutils literal notranslate"><span class="pre">residual</span></code> is centered at 0. Data that are smaller than the mean (such as a thumb length of 58) have negative residuals (-4) but data that are larger than the mean (such as 73) have positive residuals (11). The residuals (or error) around the mean always sum to 0. Therefore, the mean of the errors will also always be 0, because 0 divided by n equals 0.</p>
+<p>Now that you have looked in detail at the tiny set of data, explore the predictions and residuals from the <code class="docutils literal notranslate"><span class="pre">empty_model</span></code> fit earlier from the full set of <code class="docutils literal notranslate"><span class="pre">fingers</span></code> data. Add them as new variables (<code class="docutils literal notranslate"><span class="pre">Predicted</span></code> and <code class="docutils literal notranslate"><span class="pre">Residual</span></code>) to the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># this code from before fits the empty model for Fingers</span>
+<span class="n">Empty.model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+
+<span class="c1"># generate predictions from the Empty.model</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Predicted</span> <span class="o">&lt;-</span>
+
+<span class="c1"># generate residuals from the Empty.model</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Residual</span> <span class="o">&lt;-</span>
+
+<span class="c1"># this prints out 10 lines of Fingers</span>
+<span class="nf">head</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">Predicted</span><span class="p">,</span> <span class="n">Residual</span><span class="p">),</span> <span class="m">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then make histograms of the variables <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>, <code class="docutils literal notranslate"><span class="pre">Predicted</span></code>, and <code class="docutils literal notranslate"><span class="pre">Residual</span></code>. Which two histograms will have a similar shape?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a histogram for Thumb</span>
+<span class="nf">gf_histogram</span><span class="p">(</span>  <span class="p">)</span>
+
+<span class="c1"># make a histogram for Predicted</span>
+<span class="c1"># leave the gf_lims() part -- it makes the graph easier to read</span>
+<span class="nf">gf_histogram</span><span class="p">(</span>  <span class="p">)</span> <span class="o">%&gt;%</span>
+<span class="nf">gf_lims</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">range</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">))</span>
+
+<span class="c1"># make a histogram for Residual</span>
+<span class="nf">gf_histogram</span><span class="p">(</span>  <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-on-mathematical-notation-of-a-model">
+<h2>9.8 More on mathematical notation of a model<a class="headerlink" href="#more-on-mathematical-notation-of-a-model" title="Permalink to this headline">#</a></h2>
+<p>The way we’ve used so far for writing a statistical model, outcome<sub>i</sub> = model + error<sub>i</sub>, uses mathematical structure to show how to calculate some value i based on a model and that item’s residual. Let’s now go all the way to writing out a model in formal mathematical notation, without using words:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = \bar{Y} + e_i \]</div>
+<p>Here, “e<sub>i</sub>” stands for the ith error or residual. And as you may recall from chapter 5, putting a line above Y in this equation, making it “Y-bar”, indicates the mean value of Y. Thus this equation means “the ith value of Y is equal to the mean of Y plus the ith residual.”</p>
+<p>Another way you could write this is:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = \hat{Y}_i + e_i \]</div>
+<p>The Y<sub>i</sub> with an arrow on top, pronounced “Y-hat”, means “the <em>predicted</em> value of Y<sub>i</sub>.” So, this equation simply states that each value of Y<sub>i</sub> can be calculated as the sum of its predicted value based on the model, and its deviation from that predicted value.</p>
+<p>In our tiny dataset, for example, student 1 had a thumb length of 56. So, Y<sub>1</sub> = 56. Under our simple model we used the mean as the predicted value for all students, so Y^<sub>1</sub> = Y¯ = 62. Therefore, e<sub>1</sub> would have to be -6 to make the equation true — the exact value of the residual we calculated for student 1.</p>
+<p>As we develop more complex models, we still will end up with a single predicted value of Y^<sub>i</sub> for each score based on our model. But we will predict this value using more than just the mean.</p>
+</section>
+<section id="notation-for-the-general-linear-model">
+<h2>9.9 Notation for the General Linear Model<a class="headerlink" href="#notation-for-the-general-linear-model" title="Permalink to this headline">#</a></h2>
+<p>Finally, we will complicate things a little more and introduce one more form of our DATA = MODEL + ERROR formulation called the General Linear Model (GLM) notation:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = b_0 + e_i \]</div>
+<p>This is a more abstract version of the equation above; we have substituted b<sub>0</sub> (we read this as “b sub 0”) for the mean, Y¯. Don’t be concerned if it doesn’t make complete sense why we’re replacing perfectly useful words with mathematical symbols. This is one of those things that will take time to understand. The main thing to know for now is that b<sub>0</sub> can represent the mean, but it doesn’t have to.</p>
+<p>For our simple model (the empty model) it does represents the mean. But for other models, and other situations, it can represent other values. For example, if our outcome variable were categorical, the interpretation of b<sub>0</sub> would need to be adjusted to be the mode, which is the best single predictor of the next observation’s value on a categorical variable.</p>
+<p>Indeed, this flexibility is what makes the General Linear Model general. Whenever you see a GLM model statement, you should think carefully about what, in the particular situation, each symbol represents.</p>
+</section>
+<section id="statistics-and-parameters">
+<h2>9.10 Statistics and parameters<a class="headerlink" href="#statistics-and-parameters" title="Permalink to this headline">#</a></h2>
+<p>Now is a good time to remember that our goal in exploring distributions of data is to find out about the data generation process. Our goal in constructing statistical models is the same: we estimate models based on data samples in order to make inferences about what the underlying data generation process might be.</p>
+<p>However as we’ve talked about, we have a two-pronged issue to content with when using statistical models. Not only do we not know the exact data generation process (all the inputs and their relationships on the model side of the equation), we don’t even know the whole population of data we’re trying to understand. We only have a subset, a sample of it. Like when we simulated data last chapter, sometimes a sample can be a good approximation of the distribution in the population, but frequently the forces of randomness mean it differs somewhat.</p>
+<p>With our data, we can calculate the exact mean of the distribution, and the exact size of the errors. When we do this, we are calculating a <strong>statistic</strong>. A statistic is anything you can compute to summarize something about your data; the mean is one example of a statistic, the standard deviation is another.</p>
+<p>But we can’t calculate the mean of the <em>population</em>; the population distribution is unknown. Instead we use the mean we calculate from our data as an <em>estimate</em> of the mean of the population.</p>
+<p>The mean of the population is an example of what’s called a <strong>parameter</strong>. A parameter is a number that summarizes something about a population. Whereas statistics are computed, parameters are estimated (since the population distribution is unknown). We use statistics as estimates because we don’t generally know what the true parameter is.</p>
+<p>Notation is one way we keep our thinking straight about what we are trying to calculate, and what the results of our calculations mean. Because the distinction between statistics (or estimates) and parameters is so critical, we use different notation to distinguish them.</p>
+<p>If we want to represent the mean calculated from data, we typically use the notation Y¯ (or sometimes other letters, like X¯). To represent the mean of the <em>population</em>, the parameter we are trying to estimate, we typically use the Greek letter <strong>μ</strong> (pronounced “mew”).</p>
+<p>The same distinction shows up in the notation of the General Linear Model. The empty model we have discussed so far, which is calculated from data, is written like this (as you know):</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = b_0 + e_i \]</div>
+<p>The model of the data generation process that we are <em>trying to estimate</em> when we fit the empty model is represented like this:</p>
+<div class="math notranslate nohighlight">
+\[ Y_i = \beta_0 + \epsilon_i \]</div>
+<p>Note that in this model of the population we have replaced the estimators b<sub>0</sub> and e<sub>i</sub> with the Greek letters β<sub>0</sub> (pronounced “beta sub 0”) and ε<sub>i</sub> (pronounced “epsilon sub i”). b<sub>0</sub> is an <em>estimate</em> for β<sub>0</sub>, which represents the mean of the population; and e<sub>i</sub> is an <em>estimate</em> of ε<sub>i</sub>.</p>
+<p>The differences in notation may seem subtle and nitpicky. But it is really, really important in statistics to distinguish between your <em>data sample</em> and <em>the population it is trying to estimate</em>, and keep those separate in your mind. As a general rule, whenever you see Greek letters you can be pretty sure we are talking about parameters of the population. Latin letters are generally used to represent estimates calculated from data.</p>
+<p>Let’s go back to using <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to fit a model to the values <code class="docutils literal notranslate"><span class="pre">thumb</span></code> in <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_fingers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When a model is fit, it calculates <strong>coefficients</strong>, or numbers that should be used in a statistical model equation. In the empty model with one coefficient, this is the number that should be used as the value of b<sub>0</sub> for our data. That number, in turn, is our <em>estimate</em> of the <em>parameter</em> β<sub>0</sub>.</p>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Describe the difference between a population and a sample</p></li>
+<li><p>Describe the difference between probability models and statistical models</p></li>
+<li><p>Write a statistical model in GLM notation</p></li>
+<li><p>Automatically generate a statistical model in R using lm()</p></li>
+<li><p>Define what a residual is</p></li>
+<li><p>Describe the difference between a statistic and a parameter</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

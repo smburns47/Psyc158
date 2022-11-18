@@ -120,8 +120,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="chapter-1.html">
-   Chapter 1 - Intro to Doing Statistics
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
   </a>
  </li>
  <li class="toctree-l1">
@@ -457,13 +457,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
+  <a class="reference internal nav-link" href="#saving-data">
+   4.7 Saving data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
   </a>
  </li>
 </ul>
@@ -550,13 +550,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
+  <a class="reference internal nav-link" href="#saving-data">
+   4.7 Saving data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
   </a>
  </li>
 </ul>
@@ -594,15 +594,15 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">20</span><span class="p">)</span>
-<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe. This function also gives the variables names; let’s rewrite the code above to give <code class="docutils literal notranslate"><span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span></code> more meaningful variable names.</p>
+<p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe. This function also gives the variables names based on what the vectors were named; let’s rewrite the code above to give <code class="docutils literal notranslate"><span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">x2</span></code> more meaningful variable names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data.frame</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data.frame</span><span class="p">(</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +612,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">)</span>
-<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">x2</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">x1</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -622,7 +622,7 @@ title="Print to PDF"
 <section id="importing-existing-data">
 <h3>Importing existing data<a class="headerlink" href="#importing-existing-data" title="Permalink to this headline">#</a></h3>
 <p>The vast majority of the time in data analysis, you are not manually creating vectors and dataframes. Instead, you are importing an existing file of data. So for the rest of this chapter we’re going to practice working with and understanding an example dataset from a study by Crum &amp; Langer (2007) called <a class="reference external" href="https://search.r-project.org/CRAN/refmans/Lock5Data/html/MindsetMatters.html">Mindset Matters</a>, on how the placebo effect works with exercise. In this study, 75 hotel housekeepers were either told that their daily work accounted for all the daily exercise they need, or were told nothing.</p>
-<p>You may have experience opening datasets in programs like Excel with an .xlsx extension. The extension tells you what kind of file format it is - .xlsx, for example, is an excel file. There are many file formats data can be saved in that are more or less easy to open in various software. Our Mindset Matters data is saved as a .csv, meaning a “comma-separated value” format, as this is really easy for computers programs to parse. If you were to open this file in a basic text editor program, you’d see rows are separated on different lines, and columns are separated by commas. In R, the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package can understand this format and create a rectangle dataframe for us.</p>
+<p>You may have experience opening datasets in programs like Excel with an .xlsx extension. The extension tells you what kind of file format it is - .xlsx, for example, is an excel file. There are many file formats data can be saved in that are more or less easy to open in various software. Our Mindset Matters data is saved as a .csv, meaning a “comma-separated value” format, as this is really easy for computer programs to parse. If you were to open this file in a basic text editor program, you’d see rows are separated on different lines, and columns are separated by commas. In R, the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package can understand this format and create a rectangle dataframe for us.</p>
 <p><code class="docutils literal notranslate"><span class="pre">readr</span></code> is not a default package in R - it has to be downloaded the first time you use it, and then loaded every time you start a new R session. Edit the code below to install the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package and load it into your R environment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,12 +630,12 @@ title="Print to PDF"
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;   &quot;</span><span class="p">)</span>
 
 <span class="c1">#finish the code below to load readr</span>
-<span class="nf">library</span><span class="p">(</span>    <span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span>   <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Before we can load our data, R has to know where on your computer it is located. By default, it only looks in what is called your <strong>working directory</strong> - a specific folder on your computer where your code also lives. You can use the function <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> to learn what your current working directory is.</p>
+<p>Before we can load our data, R has to know where on your computer it is located. By default, it only looks in what is called your <strong>working directory</strong> - a specific folder on your computer that R treats as its “home base,” per se. You can use the function <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> to learn what your current working directory is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">getwd</span><span class="p">()</span>
@@ -643,16 +643,16 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Because this book is hosted on a website, the above code should show you the directory where these web files are stored. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different.</p>
-<p>We’ve stored the <code class="docutils literal notranslate"><span class="pre">mindsetmatters.csv</span></code> file in the same directory as this code, so R will be able load it if you simply use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> from the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package. Try it out below - the only argument you need for the function is the name of the file, in quotes.</p>
+<p>Because this book is hosted on a website, the above code should show you the directory where these web files are stored on the web server. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different. The function <code class="docutils literal notranslate"><span class="pre">setwd()</span></code> will point R to a different directory.</p>
+<p>We’ve stored the <code class="docutils literal notranslate"><span class="pre">mindsetmatters.csv</span></code> on another website, so R will be able load it if you use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> from the <code class="docutils literal notranslate"><span class="pre">readr</span></code> package and give it the web destination. Try it out below - the only argument you need for the function is the name of the file, in quotes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;mindsetmatters.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;datasets/mindsetmatters.csv&quot;)</span></code>.</p>
+<p>If it lived on your own computer within the working directory, it would be even simpler to write: <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;mindsetmatters.csv&quot;).</span></code> If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include the relative path to that file that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read_csv(&quot;datasets/mindsetmatters.csv&quot;)</span></code>.</p>
 </section>
 </section>
 <section id="looking-at-data">
@@ -681,6 +681,25 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Next you probably want to know how big your dataset is - how many observations and how many variables you are working with. The height and width of a dataframe are known as <strong>dimensions</strong>, and the function <code class="docutils literal notranslate"><span class="pre">dim()</span></code> will tell you the size of each of them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first dimension always corresponds to the number of rows, and the second dimension to the number of columns.</p>
+<p>You can also use code to find the size of specific dimensions of the dataframe. Since observations are rows and variables are columns, you can use specific functions to count how many rows and columns a data frame has. In R, these functions are nrow() (for number of rows) and ncol() (for number of columns).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">)</span>
+
+<span class="c1">#use ncol() to output the number of variables in mindsetmatters</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="accessing-variables">
 <h2>4.4 Accessing variables<a class="headerlink" href="#accessing-variables" title="Permalink to this headline">#</a></h2>
@@ -701,7 +720,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Usually you want to access variables this way - it has more meaning to humans reading code. But just so you know, you can also access variables using index notation with <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets. However, a dataframe has two dimensions (rows and columns), so to access data using this we have to give a number value for both which row we want, and which column we want. E.g., <code class="docutils literal notranslate"><span class="pre">[row_num,</span> <span class="pre">col_num]</span></code>.</p>
+<p>Usually you want to access variables this way - it has more meaning to humans reading code. But just so you know, you can also access variables using index notation with <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets. However, since we know a dataframe has two dimensions (rows and columns), we can also access data using indexing by providing a number value for both which row we want, and which column we want. Recall that rows are always the first dimension and columns are always the second, so we type our indexing like <code class="docutils literal notranslate"><span class="pre">[row_num,</span> <span class="pre">col_num]</span></code>.</p>
 <p>If we want to print out the entirety of the third row from mindsetmatters, we’d use <code class="docutils literal notranslate"><span class="pre">mindsetmatters[3,]</span></code>. Leaving nothing after the comma for column number allows R to return every value in the third row regardless of column. Likewise, returning the entirety of the third <em>column</em> from mindsetmatters would look like <code class="docutils literal notranslate"><span class="pre">mindsetmatters[,3]</span></code>. Try it out in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,7 +772,7 @@ title="Print to PDF"
 <p>To get a subset of observations (or rows of the data frame) we use a different function: <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. This function filters the dataframe to show only those observations (rows) that match some criteria. For example, here is the code that will return only the observations where the age is 43:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Age</span><span class="o">==</span><span class="m">43</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Age</span> <span class="o">==</span> <span class="m">43</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -773,31 +792,28 @@ title="Print to PDF"
 <h2>4.6 Manipulating data<a class="headerlink" href="#manipulating-data" title="Permalink to this headline">#</a></h2>
 <p>Once data are in a tidy format, we can use R commands to manipulate the data in various ways. Let’s look at a few common things you might need to do before analyzing your data:</p>
 <ul class="simple">
-<li><p>Identifying Missing Data</p></li>
-<li><p>Filtering Data</p></li>
-<li><p>Creating New Variables</p></li>
-<li><p>Recoding Variables</p></li>
+<li><p>identifying missing data</p></li>
+<li><p>filtering data</p></li>
+<li><p>creating new variables</p></li>
+<li><p>recoding variables</p></li>
 </ul>
 <section id="identifying-missing-data">
 <h3>Identifying missing data<a class="headerlink" href="#identifying-missing-data" title="Permalink to this headline">#</a></h3>
 <p>Sometimes (in fact, usually) we end up with some missing data in our data set. People don’t always answer every question on a survey, someone didn’t show up to their third doctor’s appointment, etc. R represents missing data with the value NA (not available). It will also recode a blank cell in a file as NA. If your data set represents missing data in some other way (e.g., some people put the value -999), you should recode the values as NA when working in R.</p>
-<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataframe. First, we’ll reshuffle the order of rows in the dataframe based on <code class="docutils literal notranslate"><span class="pre">Fat2</span></code>, so we can better see the missing data. To do this, we’ll use the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function from <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>.</p>
+<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">Fat2</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataframe. First, a function called <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> can be used to tell you whether a datapoint is NA or not (it will out <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> or <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>). If we apply that to an entire vector, it will return a vector of falses and trues corresponding to what indices in the vector have an NA value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># we&#39;ve already loaded dplyr into R in a previous line of this chapter, so we don&#39;t need to</span>
-<span class="c1"># do it again</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using is.na() on the Fat2 variable to see where NA values might be</span>
 
-<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Fat2</span><span class="p">)</span> <span class="c1">#remember variable names are case sensitive!</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Fat2</span><span class="p">)</span>
+<span class="nf">is.na</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Fat2</span><span class="p">)</span> <span class="c1">#remember variable names are case sensitive!</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Based on this, we can easily see some missing data in this variable. We can also count how many observations have this value:</p>
+<p>Based on this, we can easily see some missing data in this variable - there are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> results to the question “is this datapoint NA.” We can also count how many observations have this value by summing this boolean vector (remember, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is also represented as 1 in R, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> as 0).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># the function count() in dplyr will count how many observations in a dataframe have a specific value</span>
-<span class="nf">count</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="p">,</span> <span class="n">Fat2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Fat2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -831,13 +847,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>What do you think would happen if we saved <code class="docutils literal notranslate"><span class="pre">filter(mindsetmatters,</span> <span class="pre">Fat2</span> <span class="pre">!=</span> <span class="pre">&quot;NA&quot;)</span></code> to <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>? If we save the filtered data to the same dataframe name, it will overwrite the original dataframe. Doing this would mean we can no longer access the data we filtered out. This process is called <strong>destructive editing</strong>. In general, we don’t want to do this - we don’t want to permanently erase any data. Thus if you’re manipulating data in a dataframe, it’s usually best to save the manipulated data as a new object. That way you can always access the original data again if needed.</p>
+<p>What do you think would happen if we saved <code class="docutils literal notranslate"><span class="pre">filter(mindsetmatters,</span> <span class="pre">Fat2</span> <span class="pre">!=</span> <span class="pre">&quot;NA&quot;)</span></code> to <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>? If we save the filtered data to the same dataframe name, it will overwrite the original dataframe. Doing this would mean we can no longer access the data we filtered out, and we’d have to reload the data file to get it back. This process is called <strong>destructive editing</strong>. In general, we don’t want to do this - we don’t want to permanently erase any data. Thus if you’re manipulating data in a dataframe, it’s usually best to save the manipulated data as a new object. That way you can always access the original data again if needed. <em>Definitely</em> don’t save manipulated dataframes as a csv that replaces the original file you loaded the data from.</p>
 </section>
 <section id="creating-new-variables">
 <h3>Creating new variables<a class="headerlink" href="#creating-new-variables" title="Permalink to this headline">#</a></h3>
 <p>Often we use multiple measures of a single attribute because no single measure would be adequate. For instance, it would be difficult to measure school achievement with a grade score from just your English class. However, if you do have multiple measures, you probably will want to combine them into a single variable. In the case of school achievement, a good summary measure might be the average grade earned across all of a student’s courses.</p>
 <p>It is quite common to create new variables that mutate values from other variables. For example, in <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>, we have a measurement for both someone’s weight (<code class="docutils literal notranslate"><span class="pre">Wt</span></code>)  and their BMI score (<code class="docutils literal notranslate"><span class="pre">BMI</span></code>).   We don’t know their height, but BMI is a function of weight / height. So, we could divide <code class="docutils literal notranslate"><span class="pre">Wt</span></code> by <code class="docutils literal notranslate"><span class="pre">BMI</span></code> to make a new variable <code class="docutils literal notranslate"><span class="pre">Ht</span></code>.</p>
-<p>Making a new variable is easy. Simply assign the computed vector to a new variable naming using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol after the dataframe name. E.g., <code class="docutils literal notranslate"><span class="pre">mindsetmatters$Ht</span> <span class="pre">&lt;-</span> <span class="pre">mindsetmatters$Wt</span> <span class="pre">/</span> <span class="pre">mindsetmatters$BMI</span></code>. If the variable <code class="docutils literal notranslate"><span class="pre">Ht</span></code> already exists in the dataframe, R will overwrite it with these new values. If it doesn’t, R will create a new variable and append it as a new column to the end of <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>.</p>
+<p>Making a new variable is easy. Simply assign the computed vector to a new variable name using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol after the dataframe name. E.g., <code class="docutils literal notranslate"><span class="pre">mindsetmatters$Ht</span> <span class="pre">&lt;-</span> <span class="pre">mindsetmatters$Wt</span> <span class="pre">/</span> <span class="pre">mindsetmatters$BMI</span></code>. If the variable <code class="docutils literal notranslate"><span class="pre">Ht</span></code> already exists in the dataframe, R will overwrite it with these new values. If it doesn’t, R will create a new variable and append it as a new column to the end of <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#make a new dataframe separate from the original</span>
@@ -862,15 +878,6 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># making a new boolean variable to mark who is at least 40 years old</span>
 <span class="n">mindsetmatters2</span><span class="o">$</span><span class="n">Older</span> <span class="o">&lt;-</span> <span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span> <span class="o">&gt;=</span> <span class="m">40</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use count() to find out how many people are at least 40 years old </span>
-
-<span class="c1"># Why are there three possible data values in the output, instead of just true and false?</span>
 </pre></div>
 </div>
 </div>
@@ -935,6 +942,21 @@ title="Print to PDF"
 </div>
 </section>
 </section>
+<section id="saving-data">
+<h2>4.7 Saving data<a class="headerlink" href="#saving-data" title="Permalink to this headline">#</a></h2>
+<p>The majority of data projects you will ever work on will involve some data manipulation steps like this. We often do this to fix problems with raw data files or arrange things in a way that we have an easier time later in analysis. This whole process is called <strong>data cleaning</strong>. While we are only spending one chapter dedicated to this in this course, you will actually find (maybe to some disappointment) that the majority of time you spend on a data file is cleaning, rather than analyzing. Once you get comfortable with statistics, analysis can be as simple as a few lines of code. But data cleaning can involve many steps and a lot of time figuring out what cleaning steps you even need to take!</p>
+<p>This is why it is very helpful to save the results of your cleaning after you’re done. You don’t want to have to go through all that again if you decide later on you want to do a different kind of data analysis.</p>
+<p>Much as we used <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> to read in data files to R, we can use <code class="docutils literal notranslate"><span class="pre">write_csv()</span></code> from the same <code class="docutils literal notranslate"><span class="pre">readr</span></code> package to save .csv files of our cleaned data. In its most basic use, it only needs two arguments: the data frame object you wish to save, and a string of the file name you wish to save it as (.csv extension must be included). So if we were to save the results of <code class="docutils literal notranslate"><span class="pre">mindsetmatters2</span></code>, we would simply type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#saving a data frame into a csv file</span>
+<span class="nf">write_csv</span><span class="p">(</span><span class="n">mindsetmatters2</span><span class="p">,</span> <span class="s">&quot;mindsetmatters2.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This would create a “mindsetmatters2.csv” file in the current working directory.</p>
+</section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
@@ -946,12 +968,8 @@ title="Print to PDF"
 <li><p>Identify missing data</p></li>
 <li><p>Create and add a new variable to a dataframe</p></li>
 <li><p>Recode a variable</p></li>
-<li><p>Explain why we don’t want to do destructive editing</p></li>
+<li><p>Save a dataframe to a new file</p></li>
 </ul>
-</section>
-<section id="chapter-quiz">
-<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
-<p>Questions from 2.7 coursekata</p>
 </section>
 </section>
 

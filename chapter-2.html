@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Chapter 3 - What are Data" href="chapter-3.html" />
-    <link rel="prev" title="Chapter 1 - Intro to Doing Statistics" href="chapter-1.html" />
+    <link rel="prev" title="Pomona College Psych 158 Online Textbook" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,8 +120,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="chapter-1.html">
-   Chapter 1 - Intro to Doing Statistics
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -462,8 +462,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if-else-and-else-if">
-     “If”, “Else”, and “Else If”
+    <a class="reference internal nav-link" href="#conditional-statements">
+     Conditional statements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -479,8 +479,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
+  <a class="reference internal nav-link" href="#writing-your-own-functions">
+   2.6 Writing your own functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
   </a>
  </li>
 </ul>
@@ -572,8 +577,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#if-else-and-else-if">
-     “If”, “Else”, and “Else If”
+    <a class="reference internal nav-link" href="#conditional-statements">
+     Conditional statements
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -589,8 +594,13 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
+  <a class="reference internal nav-link" href="#writing-your-own-functions">
+   2.6 Writing your own functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
   </a>
  </li>
 </ul>
@@ -632,7 +642,7 @@ title="Print to PDF"
 <p>Another way that we might answer this question is to look at actual data on the subject. One large-scale study, called the PURE study, examined diets and health outcomes (including death) in more than 135,000 people from 18 different countries. In one of the analyses of this dataset (published in The Lancet in 2017; <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28864332/">Dehghan et al. (2017)</a>), the PURE investigators reported how intake of various classes of macronutrients (including saturated fats and carbohydrates) was related to the likelihood of dying during the time that people were followed. The plot below displays some of the data from the study (extracted from the paper), showing the relationship between the intake of both saturated fats and carbohydrates and the risk of dying from any cause.</p>
 <img src="images/ch2-satfats.png" width="400">
 <p><em>A plot of data from the PURE study, showing the relationship between death from any cause and the relative intake of saturated fats and carbohydrates.</em></p>
-<p>Don’t worry if this plot is hard to read at this time - you’ll get there! For now, notice the ten points where the lines run through. To obtain the numbers represented by these points, the researchers split the group of 135,335 study participants (which we call the <em><strong>sample</strong></em>; Chapter 6) into 5 groups (<em><strong>quintiles</strong></em>; Chapter 5) based on how much they ate each type of nutrient (carbohydrates and saturated fats). The first quintile group contains the 20% of people with the lowest intake, and the 5th quintile contains the 20% with the highest intake. The researchers then computed how often people in each of those groups died during the time the study was conducted. The figure expresses this in terms of the relative risk of dying in comparison to the lowest quintile: If this number is greater than one, it means that people in the group are more likely to die than are people in the lowest quintile, whereas if it’s less than one, it means that people in the group are less likely to die. The figure is pretty clear: People who ate more saturated fat were less likely to die during the study. The opposite is seen for carbohydrates; the more carbs a person ate, the more likely they were to die during the study.</p>
+<p>Don’t worry if this plot is hard to read at this time - you’ll get there! For now, notice the ten points where the lines run through. To obtain the numbers represented by these points, the researchers split the group of 135,335 study participants (which we call the <em><strong>sample</strong></em>) into 5 groups based on how much they ate each type of nutrient (carbohydrates and saturated fats). The first group contains the 20% of people with the lowest intake, and the 5th group contains the 20% with the highest intake. The researchers then computed how often people in each of those groups died during the time the study was conducted. The figure expresses this in terms of the relative risk of dying in comparison to the lowest group: If this number is greater than one, it means that people in the group are more likely to die than are people in the lowest group, whereas if it’s less than one, it means that people in the group are less likely to die. The figure is pretty clear: People who ate more saturated fat were less likely to die during the study. The opposite is seen for carbohydrates; the more carbs a person ate, the more likely they were to die during the study.</p>
 <p>This example shows how we can use statistics to describe a complex dataset in terms of a much simpler set of numbers. It would be very hard to tell whether carbs or saturdated fat were worse for you by looking at the whole dataset at once (135,335 points of data!). But by using statistics, we can <em>aggregate</em> and <em>compare</em> sets of information to make the takeaway lesson easier to see.</p>
 </section>
 <section id="decide">
@@ -691,13 +701,13 @@ title="Print to PDF"
 <li><p>If bland, add salt to chicken</p></li>
 </ol>
 <p>To do the above with code, you need to <em>control</em> what steps R executes, and when to execute them. These two concepts <strong>conditional statements</strong> and <strong>loops</strong>, and by including some specific syntax, you can tell R when want code to be treated in a special way like this.</p>
-<section id="if-else-and-else-if">
-<h3>“If”, “Else”, and “Else If”<a class="headerlink" href="#if-else-and-else-if" title="Permalink to this headline">#</a></h3>
+<section id="conditional-statements">
+<h3>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h3>
 <div class="alert alert-block alert-info">
 <b>Note</b>: Remember that, in order to run code in this page, you first need to hover over the rocketship at the top, click "Live Code", and then wait a few minutes for the server to load the first time you "Run" a code block.
 </div>
-<p>The most basic control flow statement in R is the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement checks whether some logical expression is true or false and executes a specified block of code if the logical expression is true.</p>
-<p>In R, an if statement starts with if, followed by a logical expression in parentheses, followed by the code to execute when the if statement is true in curly braces. Before running the below code, read the comments and see if you can predict what will be returned by the code.</p>
+<p>The most basic control flow statement in R is the “if” statement. An if statement checks whether some logical expression is true or false and executes a specified block of code if the logical expression is true.</p>
+<p>In R, an if statement starts with <code class="docutils literal notranslate"><span class="pre">if</span></code>, followed by a logical expression in parentheses, followed by the code to execute when the if statement is true in curly braces. Before running the below code, read the comments and see if you can predict what will be returned by the code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">10</span>         <span class="c1"># Assign some variables</span>
@@ -712,10 +722,11 @@ title="Print to PDF"
 </div>
 </div>
 <p>In this case the logical expression was true - x was greater than y - so the print(x) statement was executed.</p>
-<p><code class="docutils literal notranslate"><span class="pre">If</span></code> statements are often accompanied by <code class="docutils literal notranslate"><span class="pre">else</span></code> statements. <code class="docutils literal notranslate"><span class="pre">Else</span></code> statements come after <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and allow you to execute code in the event that the logical expression of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is false.</p>
+<p>If statements are often accompanied by “else” statements. Else statements come after if statements and allow you to execute code in the event that the logical expression of an if statement is false.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">&lt;-</span> <span class="m">25</span>         <span class="c1"># Reassign variable y to make it larger than x</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">25</span>         <span class="c1"># Reassign variable y to make it larger than x</span>
 
 <span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>    <span class="c1"># The original if statement</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -743,12 +754,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">if</span></code> statements require a logical statement that is only true or false. There can be no other option. Thus, if <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is not true and the <code class="docutils literal notranslate"><span class="pre">if</span></code> block of code doesn’t run, the only other option can false, which is when the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement kicks in. Because of that, no logical statement is needed after <code class="docutils literal notranslate"><span class="pre">else</span></code> - if R gets to that keyword before executing any other block, it knows to execute this one.</p>
-<p>But what about when you have more than two options you want R to be able to do? I.e., maybe you want to print both x and y if they equal each other? You can extend this basic <code class="docutils literal notranslate"><span class="pre">if/else</span></code> construct to perform multiple logical checks in a row by adding one or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statements between the opening <code class="docutils literal notranslate"><span class="pre">if</span></code> and the closing <code class="docutils literal notranslate"><span class="pre">else</span></code>. Each <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statement performs another logical check and executes its code <code class="docutils literal notranslate"><span class="pre">if</span></code> the check is true.</p>
+<p>If statements require a logical statement that is only true or false. There can be no other option. Thus, if <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is not true and the <code class="docutils literal notranslate"><span class="pre">if</span></code> block of code doesn’t run, the only other option can false, which is when the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement kicks in. Because of that, no logical statement is needed after <code class="docutils literal notranslate"><span class="pre">else</span></code> - if R gets to that keyword before executing any other block, it knows to execute this one.</p>
+<p>But what about when you have more than two options you want R to be able to do? I.e., maybe you want to print both x and y if they equal each other? You can extend this basic if/else construct to perform multiple logical checks in a row by adding one or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statements between the opening <code class="docutils literal notranslate"><span class="pre">if</span></code> and the closing <code class="docutils literal notranslate"><span class="pre">else</span></code>. Each <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statement performs another logical check and executes its code if the check is true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">25</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">25</span>
 
 <span class="nf">if </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>                     
     <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -762,10 +773,12 @@ title="Print to PDF"
 </div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> is evaluating a new logical statement, it does need to have that logical statement included after the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> key phrase. You can include as many <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> blocks as you want, just remember that they are evaluated in order.</p>
-</section>
+<div class="alert alert-block alert-info">
+<b>Note</b>: If you want to check if some value A is equal to some value B, in R you need to use two equal signs (like ==). This works both for comparing numbers as well as checking if two strings are the same. In the next chapter we'll go over more options for writing conditional/logic statements.
+</div></section>
 <section id="for-loops">
 <h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are a programming construct that let you go through each item in a sequence of many items, and then perform some operation on each one. For instance, you could use a for loop to go through all the values in a set of numbers and check whether each conforms to some logical expression, or to print each value to the console.</p>
+<p>For loops are a programming construct that let you go through each item in a sequence of many items, and then perform some operation on each one. For instance, you could use a for loop to go through all the values in a set of numbers and check whether each conforms to some logical expression, or to print each value to the console.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>     <span class="c1"># A function that creates a set of numbers, from 1 to 10 counting by 1</span>
@@ -790,7 +803,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops support a couple of keywords that help control the flow within the loop: <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<p>For loops support a couple of keywords that help control the flow within the loop: <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">next</span></code> keyword causes a for loop to skip to the next iteration of the loop, and ignore any part of the loop block below it. For example, to print only every item greater than 5 in a different way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -817,11 +830,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>In the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop above, substituting the <code class="docutils literal notranslate"><span class="pre">next</span></code> keyword for <code class="docutils literal notranslate"><span class="pre">break</span></code> would actually result in the exact same output but the code would take longer to run because it would still go through each item (each new interation of the “loop”) instead of breaking out of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop early. It is best to break out of loops early if possible to reduce how long it takes your code to run, especially when you have much longer code files than we’re working with here.</p>
+<p>In the for loop above, substituting the <code class="docutils literal notranslate"><span class="pre">next</span></code> keyword for <code class="docutils literal notranslate"><span class="pre">break</span></code> would actually result in the exact same output but the code would take longer to run because it would still go through each item (each new interation of the “loop”) instead of breaking out of the for loop early. It is best to break out of loops early if possible to reduce how long it takes your code to run, especially when you have much longer code files than we’re working with here.</p>
 </section>
 <section id="while-loops">
 <h3>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops are similar to <code class="docutils literal notranslate"><span class="pre">for</span></code> loops in that they allow you to execute code over and over again. <code class="docutils literal notranslate"><span class="pre">for</span></code> loops execute their contents, at most, a number of iterations equal to the length of the sequence you are looping over. <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">loops</span></code>, on the other hand, keep executing their contents as long as a certain logical expression you supply remains true.</p>
+<p>While loops are similar to for loops in that they allow you to execute code over and over again. For loops execute their contents, at most, a number of iterations equal to the length of the sequence you are looping over. While loops, on the other hand, keep executing their contents as long as a certain logical expression you supply remains true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span> <span class="o">&lt;-</span> <span class="m">5</span>
@@ -840,14 +853,14 @@ title="Print to PDF"
 </div>
 <p>Why wasn’t “Done!” printed until the end in the code above?</p>
 <p>Remember that a loop will only loop over code that is contained within the “{}” brackets of the code block!</p>
-<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops can get you into trouble because they keep executing until the logical statement provided is false. If you supply a logical statement that will never become false and don’t provide a way to break out of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, it will run forever. For instance, if the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop above didn’t include the command to increment the value of <code class="docutils literal notranslate"><span class="pre">hour</span></code> by 1, the logical statement would never become false and the code would run forever. You’d never stop studying! Infinite while loops are a common cause of program hangs and crashes.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements work inside <code class="docutils literal notranslate"><span class="pre">while</span></code> loops just like they do in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops. You can use the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to escape a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop even if the logical expression you supplied is true. Consider the following while loop:</p>
+<p>While loops can get you into trouble because they keep executing until the logical statement provided is false. If you supply a logical statement that will never become false and don’t provide a way to break out of the while loop, it will run forever. For instance, if the while loop above didn’t include the command to increment the value of <code class="docutils literal notranslate"><span class="pre">hour</span></code> by 1, the logical statement would never become false and the code would run forever. You’d never stop studying! Infinite while loops are a common cause of program hangs and crashes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">next</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements work inside while loops just like they do in for loops. You can use the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to escape a while loop even if the logical expression you supplied is true. Consider the following while loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span> <span class="o">&lt;-</span> <span class="m">5</span>
 <span class="n">hour</span> <span class="o">&lt;-</span> <span class="m">1</span>                 
 
-<span class="nf">while </span><span class="p">(</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>            <span class="c1"># This logical expression is always true!</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">)</span> <span class="p">{</span>            <span class="c1"># This logical expression is always true!</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">&quot;Studying...&quot;</span><span class="p">)</span>
     <span class="n">hour</span> <span class="o">&lt;-</span> <span class="n">hour</span> <span class="o">-</span> <span class="m">1</span>    <span class="c1"># We made a bug here - subtracting 1 means hour will never increase above end_time</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
@@ -857,30 +870,53 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Without the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement above, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop would have run forever. It is important to make sure that <code class="docutils literal notranslate"><span class="pre">while</span></code> loops contain a logical expression that will eventually be false or a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement that will eventually be executed to avoid infinite loops.</p>
-<p>Although you can use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to do anything a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can do, it is best to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops whenever you want to perform an operation a specific number of times. <code class="docutils literal notranslate"><span class="pre">while</span></code> loops should be reserved for cases where you don’t know how many times you need to execute the loop.</p>
-<p>Chapter summary</p>
+<p>Without the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement above, the while loop would have run forever. It is important to make sure that while loops contain a logical expression that will eventually be false or a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement that will eventually be executed to avoid infinite loops.</p>
+<p>Although you can use a while loop to do anything a for loop can do, it is best to use for loops whenever you want to perform an operation a specific number of times. While loops should be reserved for cases where you don’t know how many times you need to execute the loop.</p>
+</section>
+</section>
+<section id="writing-your-own-functions">
+<h2>2.6 Writing your own functions<a class="headerlink" href="#writing-your-own-functions" title="Permalink to this headline">#</a></h2>
+<p>Thinking programmatically and breaking down a problem into smaller steps is also a skill you will need for whenever you create your own functions. This is helpful for the situations where you can’t find a function to do something you want, but you need to do something repeatedly that would otherwise require copy-pasting long blocks of code over and over. Instead of doing that, it is better to create your own functions which can then be used elsewhere in the code with the same format <code class="docutils literal notranslate"><span class="pre">functionname()</span></code> as you have been using pre-defined functions already.</p>
+<p>A function definition requires three pieces of information: the function name, the argument(s) to give it, and a block of code that is executed whenever your function is called. For example, here is a function that will convert temperature readings in Fahrenheit to Celsius:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#function to convert Fahrenheit to Celsius:</span>
+<span class="n">fahrenheit_to_celsius</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">temp_F</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">temp_C</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">temp_F</span> <span class="o">-</span> <span class="m">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="m">5</span> <span class="o">/</span> <span class="m">9</span><span class="p">)</span>
+  <span class="nf">return</span><span class="p">(</span><span class="n">temp_C</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">#what&#39;s freezing temp in Celsius?</span>
+<span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">32</span><span class="p">)</span>
+
+<span class="c1">#use the function with today&#39;s temperature in F to find out what it is in C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a new function, <code class="docutils literal notranslate"><span class="pre">fahrenheit_to_celsius</span></code>, by assigning it to the output of a function that makes functions (helpfully, called <code class="docutils literal notranslate"><span class="pre">function()</span></code>). The list of arguments to the function-making function are the arguments you would pass to your own function when using it. Next, the body of the function – the statements that are executed when it runs – is contained within curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. The statements in the body are indented by two spaces, which makes the code easier to read. Lastly, the final line of the function body has the function <code class="docutils literal notranslate"><span class="pre">return()</span></code>, which tells R what value should be returned by your function.</p>
+<p>When we call the function, the values we pass to it are assigned to objects so that we can use them inside the function. Those objects are not defined <em>outside</em> the function block, and thus don’t exist outside the function block - this is known as <strong>variable scope</strong>.</p>
+<p>Try defining your own function to convert Celsius temperatures the other way into Fahrenheit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete the function below to convert Celsius to Fahrenheit </span>
+<span class="n">celsius_to_fahrenheit</span> <span class="o">&lt;-</span> <span class="c1">#your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When doing basic statistics and data analysis, we don’t often need to define our own functions because the things we’re trying to do are common enough that other people have written those functions already, and we can simply download and import them. However, this is a good skill to know for whenever you start doing unique analyses that are cutting edge. In addition, even in the case where you use typical data analysis steps, if you find yourself repeating the same steps over and over you can write functions that will execute <em>sets of other functions</em>, which will save you a lot of time when writing code.</p>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Explain the difference between using statistical reasoning and using intuition</p></li>
 <li><p>Come up with different describe, decide, and predict use cases for data</p></li>
 <li><p>Summarize the major ideas in statistics and what they mean</p></li>
 <li><p>Code with if/else, for, and while control blocks in R</p></li>
+<li><p>Write your own R function</p></li>
 </ul>
-</section>
-</section>
-<section id="chapter-quiz">
-<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>If treating each step of the chicken recipe like code, indicate whether or not each step needs some control flow added, and what kind of control block you would add.</p></li>
-</ul>
-<ol class="simple">
-<li><p>Add heat to pan</p></li>
-<li><p>Add chicken breast</p></li>
-<li><p>Check chicken doneness once a minute</p></li>
-<li><p>Once chicken is done, turn off heat</p></li>
-<li><p>If bland, add salt to chicken</p></li>
-</ol>
 </section>
 </section>
 
@@ -911,11 +947,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chapter-1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter 1 - Intro to Doing Statistics</p>
+            <p class="prev-next-title">Pomona College Psych 158 Online Textbook</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="chapter-3.html" title="next page">
