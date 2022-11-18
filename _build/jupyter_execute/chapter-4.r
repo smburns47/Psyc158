@@ -1,12 +1,12 @@
 x1 <- c(1,2,3,4,5)
 x2 <- c(18,21,20,23,20)
-data.frame(x1 = x1, x2 = x2)
+data.frame(x1, x2)
 
 data.frame(user_id = x1, age = x2)
 
 x1 <- c(1,2,3,4,5)
 x2 <- c(18,21,20,23)
-data.frame(x1 = x1, x2 = x2)
+data.frame(user_id = x1, age = x2)
 
 # finish the code below to install readr
 install.packages("   ")
@@ -26,6 +26,13 @@ str(mindsetmatters)
 
 #run this code to see the head of the dataframe
 head(mindsetmatters)
+
+dim(mindsetmatters)
+
+nrow(mindsetmatters)
+
+#use ncol() to output the number of variables in mindsetmatters
+
 
 # Use the $ sign to print out the contents of the Age variable in the mindsetmatters dataframe
 
@@ -55,14 +62,11 @@ filter(mindsetmatters, Age == 43)
 #How would you use filter() to return a dataframe of everyone who is *at least* 43 years old?
 
 
-# we've already loaded dplyr into R in a previous line of this chapter, so we don't need to
-# do it again
+# Using is.na() on the Fat2 variable to see where NA values might be
 
-mindsetmatters <- arrange(mindsetmatters, Fat2) #remember variable names are case sensitive!
-print(mindsetmatters$Fat2)
+is.na(mindsetmatters$Fat2) #remember variable names are case sensitive!
 
-# the function count() in dplyr will count how many observations in a dataframe have a specific value
-count(mindsetmatters, Fat2)
+sum(is.na(mindsetmatters$Fat2))
 
 #Write your code here
 
@@ -88,10 +92,6 @@ head(mindsetmatters2)
 mindsetmatters2$Older <- mindsetmatters$Age >= 40
 head(mindsetmatters2)
 
-# Use count() to find out how many people are at least 40 years old 
-
-# Why are there three possible data values in the output, instead of just true and false?
-
 # Write some more code below, using filter(), to make a minsetmatters_subset dataframe of only
 # participants who are at least 40 years old. Does the size of this dataframe match what you 
 # expect from the code above?
@@ -115,3 +115,6 @@ mindsetmatters2$CondRecode <- recode(     )
 # Write code to print the first 6 observations of `Cond` and `CondRecode` only
 
 
+
+#saving a data frame into a csv file
+write_csv(mindsetmatters2, "mindsetmatters2.csv")

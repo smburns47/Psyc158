@@ -6,7 +6,7 @@ format: jb-book
 parts:
 - caption: Unit 1 Describing Data
   chapters:
-  - file: chapter-1
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
   - file: chapter-2
   - file: chapter-3
   - file: chapter-4

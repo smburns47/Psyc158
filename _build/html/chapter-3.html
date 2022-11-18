@@ -120,8 +120,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="chapter-1.html">
-   Chapter 1 - Intro to Doing Statistics
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
   </a>
  </li>
  <li class="toctree-l1">
@@ -555,7 +555,7 @@ title="Print to PDF"
 <p>The first important point about data is that data are – meaning that the word “data” is plural. You might also wonder how to pronounce “data” – some people say “DAY-tah”, some say “DAH-tah.” Some people even use both interchangeably, within the same lecture! (Of course not your instructor though… certainly not.)</p>
 <section id="representing-data-in-r">
 <h2>3.1 Representing data in R<a class="headerlink" href="#representing-data-in-r" title="Permalink to this headline">#</a></h2>
-<p>We’ve used R objects so far to store a single number or message. But in statistics we are dealing more than one — and sometimes many — numbers. An R object can also store a whole set of numbers. This set together is called a <strong>vector</strong>. You can think of a vector as a list of numbers (or values).</p>
+<p>We’ve used R objects so far to store a single number or message. But in statistics we are dealing with more than one — and sometimes many — numbers. An R object can also store a whole set of numbers. This set together is called a <strong>vector</strong>. You can think of a vector as a list of numbers (or values).</p>
 <p>The R function <code class="docutils literal notranslate"><span class="pre">c()</span></code> can be used to combine a list of individual values into a vector. You could think of the “c” as standing for “combine.” In the following code we have created two vectors (we just named them <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> and <code class="docutils literal notranslate"><span class="pre">my_vector2</span></code>) and put a list of values into each vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +612,8 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns my_vector, but without the 3rd item</span>
 <span class="n">my_vector</span><span class="p">[</span><span class="m">-3</span><span class="p">]</span>
 
-<span class="c1"># Try using both the colon method and the negative indexing method to return the vector (2,3,4,5) using my_vector</span>
+<span class="c1"># Try using both the colon method and the negative indexing method as different ways to return </span>
+<span class="c1"># the vector (2,3,4,5) using my_vector</span>
 </pre></div>
 </div>
 </div>
@@ -628,17 +629,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 2
-[1] 4
-[1] 6
-[1] 8
-[1] 10
-</pre></div>
 </div>
-</div>
-</div>
-<p>When the command in the set of parentheses looks like <code class="docutils literal notranslate"><span class="pre">(X</span> <span class="pre">in</span> <span class="pre">SOME_VECTOR)</span></code>, this is saying that the loop will take each <em>value</em> of each item for that iteration of the loop. However, you can also lean on the function <code class="docutils literal notranslate"><span class="pre">length()</span></code> to go through each <em>position</em> of each item:</p>
+<p>When the command in the set of parentheses looks like <code class="docutils literal notranslate"><span class="pre">(X</span> <span class="pre">in</span> <span class="pre">SOME_VECTOR)</span></code>, this is saying that X will take on the <em>value</em> of a specific item in SOME_VECTOR for that iteration of the loop. However, you can also lean on the function <code class="docutils literal notranslate"><span class="pre">length()</span></code> to go through each <em>position</em> of each item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>         
@@ -646,15 +638,6 @@ title="Print to PDF"
 <span class="nf">for </span><span class="p">(</span><span class="n">position</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">))</span> <span class="p">{</span>     <span class="c1"># for loop over the position number of each item,</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>                           <span class="c1"># from the first item up to the max length of my_sequence</span>
 <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
 </pre></div>
 </div>
 </div>
@@ -788,7 +771,9 @@ This would create a vector like:</p>
 </table>
 <div class="alert alert-block alert-info">
 <b>Note</b>: "%in%" is NOT the same as the "in" statement used in for loops. That one helps R go through each item in a sequence; %in% is used in conditional statements that check whether a value matches ANY item in the sequence.
-</div><div class="cell docutils container">
+</div>
+<p>In R, we will avoid using the single equal sign, <code class="docutils literal notranslate"><span class="pre">=</span></code>. If you want to know whether A is equal to B, use the double equal sign, <code class="docutils literal notranslate"><span class="pre">==</span></code>. The single equal sign is sometimes used instead of the assignment operator, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>, but in more niche cases that you’ll learn later. Use the arrow <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> to assign values to an R object, and <code class="docutils literal notranslate"><span class="pre">==</span></code> to ask whether two values are equal.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read this code and predict what value will come out of the R console. Then run the code and see if you were right.</span>
 
@@ -803,8 +788,7 @@ This would create a vector like:</p>
 </div>
 </div>
 <p>Lots of things can be turned into boolean data if you think about it. For example, The researcher above could choose to represent handedness as a boolean, by conceptualizing the variable as “this person is right-handed.”</p>
-<p><code class="docutils literal notranslate"><span class="pre">handedness_bool</span> <span class="pre">&lt;-</span> <span class="pre">c(false,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">false,</span> <span class="pre">true,</span> <span class="pre">true,</span> <span class="pre">true).</span></code></p>
-<p>In R, we will avoid using the single equal sign, <code class="docutils literal notranslate"><span class="pre">=</span></code>. If you want to know whether A is equal to B, use the double equal sign, <code class="docutils literal notranslate"><span class="pre">==</span></code>. The single equal sign is sometimes used instead of the assignment operator, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>, but in more niche cases that you’ll learn later. Use the arrow <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> to assign values to an R object, and <code class="docutils literal notranslate"><span class="pre">==</span></code> to ask whether two values are equal.</p>
+<p><code class="docutils literal notranslate"><span class="pre">handedness_bool</span> <span class="pre">&lt;-</span> <span class="pre">c(FALSE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">FALSE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE).</span></code></p>
 <p>Before creating an object, it’s good to think about what type the value should be. I.e., think about what operations you plan to do on the object, and thus what type the value needs to be for that operation to make sense. However, sometimes you forget what type an object was that you created a while ago, or you will receive some data from someone else with pre-defined objects. If you ever need to find out the type of an object, you can simply use the command <code class="docutils literal notranslate"><span class="pre">str([OBJECT_NAME])</span></code>. Str is short for “structure.” It will print out the type of the object as well as its value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,22 +810,22 @@ This would create a vector like:</p>
 <h2>3.3 Scales of measurement<a class="headerlink" href="#scales-of-measurement" title="Permalink to this headline">#</a></h2>
 <p>Among quantitative data, the numbers a variable can take can be related to each other in different ways. What exactly the numbers mean determines what kind, or what <strong>scale</strong> of measurement the variable is in.</p>
 <p>A <strong>categorical</strong> variable (also called a nominal variable) is one like the example above, when we first assigned numeric labels to each food choice. In a nominal variable, each value of the variable represents something different, but the numbers simply serve as qualitative labels. Their actual values don’t mean anything for how you should sort them. As another example, we might ask people for their political party affiliation, and then code those as numbers: 1 = “Republican”, 2 = “Democrat”, 3 = “Libertarian”, and so on. The different numbers do not have any ordered relationship with one another - they’re just another way of writing a qualitative label.</p>
-<p>An <strong>ordinal</strong> variable has values where the magnitude matters for ordering the values. For example, we might ask a person with chronic pain to complete a form assessing how bad their pain is, using a 1-7 numeric scale. Note that while the person is presumably feeling more pain on a day when they report a 6 versus a day when they report a 3, it wouldn’t make sense to say that their pain is twice as bad on the former versus the latter day - there isn’t a unit of measurement available, only a sense of one option being stronger than another. The ordering gives us information about relative magnitude, but the differences between values are not necessarily equal in magnitude.</p>
+<p>An <strong>ordinal</strong> variable has values where the magnitude matters only for ordering the values, not for determining how far apart any of the levels are from each other. For example, we might ask a person with chronic pain to complete a form assessing how bad their pain is, using a 1-7 numeric scale. Note that while the person is presumably feeling more pain on a day when they report a 6 versus a day when they report a 3, it wouldn’t make sense to say that their pain is twice as bad on the former versus the latter day - there isn’t a unit of measurement available, only a sense of one option being stronger than another. The ordering gives us information about relative magnitude, but the differences between values are not necessarily equal in magnitude.</p>
 <p>An <strong>interval</strong> variable has all of the features of an ordinal scale, but in addition the distance between units on the measurement scale are measurable and consistent. A standard example is physical temperature measured in Celsius or Fahrenheit; the physical difference between 10 and 20 degrees is the same as the physical difference between 90 and 100 degrees.</p>
 </section>
 <section id="converting-data">
 <h2>3.4 Converting data<a class="headerlink" href="#converting-data" title="Permalink to this headline">#</a></h2>
 <p>Sometimes you will have data in one format that you would prefer to have in another - e.g., you have a variable for someone’s zip code, but R is trying to evaluate that data type as quantitative instead of categorical. That doesn’t make sense - Pomona’s zip code 91711 isn’t quantitatively comparable to Harvard’s 01434, it’s just using numbers to denote a category (Pomona is of course comparable and better than Harvard in other ways!). How though would you convince R to treat these numbers as a categorical variable?</p>
-<p>Luckily, you don’t need to rewrite the whole zipcode data vector with quotations manually. You can use a function to classify the vector of numbers as a categorical variable. The function that converts numerical data to categorical is <code class="docutils literal notranslate"><span class="pre">factor()</span></code>. Try it out below.</p>
+<p>Luckily, you don’t need to rewrite the whole zipcode data vector with quotations manually. You can use a function to classify the vector of numbers as a categorical variable. The function that converts numerical data to categorical is <code class="docutils literal notranslate"><span class="pre">as.character()</span></code>. Try it out below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">zipcodes</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span> <span class="m">01002</span><span class="p">,</span> <span class="m">19081</span><span class="p">,</span> <span class="m">91711</span><span class="p">,</span> <span class="m">02481</span><span class="p">,</span> <span class="m">04011</span><span class="p">,</span> <span class="m">21402</span><span class="p">,</span> <span class="m">91711</span><span class="p">,</span> <span class="m">55057</span><span class="p">,</span> <span class="m">05753</span><span class="p">)</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span>
 
-<span class="c1"># Use the factor() function on handedness_label, assign it to handedness_factor, and then return the type </span>
+<span class="c1"># Use the as.character() function on zipcodes, assign it to zipcodes_char, and then return the type </span>
 <span class="c1"># of that new object</span>
-<span class="n">zipcodes_factor</span> <span class="o">&lt;-</span> <span class="c1">#replace this comment with your code</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes_factor</span><span class="p">)</span>
+<span class="n">zipcodes_char</span> <span class="o">&lt;-</span> <span class="c1">#replace this comment with your code</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes_char</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -849,20 +833,20 @@ This would create a vector like:</p>
 <p>We can also turn a factor back into a numeric variable by using the <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> function. This is useful in the case where a dataset has numbers that accidentally get saved as character types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_numeric</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">handedness_factor</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">handedness_numeric</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">zipcodes_numeric</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">zipcodes_char</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes_numeric</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>When we code the values of a variable using numbers, it is always important to keep in mind what the numbers mean. The value 2 has a very different meaning if it represents the handedness of a person (e.g., left) than if it represents their height in inches (very short!). When we use statistical software to analyze data, the software processes the numbers. But the software doesn’t know what the numbers actually mean. Only you know that.</p>
-<p>We can also convert the actual <em>values</em> of data within variables. One might do this if we decided the numbers in the zipcode variable were too ambiguous, and we instead wanted to label the names of their towns. The <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function has some additional arguments you can add to relabel the values in a variable that you want to convert to a factor:</p>
+<p>We can also convert the actual <em>values</em> of data within variables. One might do this if we decided the numbers in the zipcode variable were too ambiguous, and we instead wanted to label the names of their towns. The <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function has some arguments you can add to relabel the values in a variable that you want to convert to qualitative:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4 places, coded by zipcode</span>
 <span class="n">places_num</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span> <span class="m">01002</span><span class="p">,</span> <span class="m">19081</span><span class="p">,</span> <span class="m">91711</span><span class="p">)</span>
 <span class="n">places_factor</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">places_num</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span> <span class="m">01002</span><span class="p">,</span> <span class="m">19081</span><span class="p">,</span> <span class="m">91711</span><span class="p">),</span> 
-                        <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;williams&quot;</span><span class="p">,</span> <span class="s">&quot;amherst&quot;</span><span class="p">,</span> <span class="s">&quot;swarthmore&quot;</span><span class="p">,</span> <span class="s">&quot;pomona&quot;</span><span class="p">)))</span>
+                        <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;williams&quot;</span><span class="p">,</span> <span class="s">&quot;amherst&quot;</span><span class="p">,</span> <span class="s">&quot;swarthmore&quot;</span><span class="p">,</span> <span class="s">&quot;pomona&quot;</span><span class="p">))</span>
 <span class="c1"># if your command is too wide, hit return after a comma to make it wrap around on a new line, indented</span>
 
 <span class="n">places_factor</span>
@@ -872,8 +856,8 @@ This would create a vector like:</p>
 </div>
 <p>This looks complicated - why are there now <code class="docutils literal notranslate"><span class="pre">=</span></code> signs and other words in our function? At this point we’ll introduce to you the concept of <em>named</em> arguments. A function like <code class="docutils literal notranslate"><span class="pre">factor()</span></code> can be run with just one argument, the vector to factorize, <em>or</em> it can take additional ones. It’s flexible like that. But if you’re giving it new arguments, you have to tell the function what that new argument is supposed to represent. That’s where you get to using the argument’s name (<code class="docutils literal notranslate"><span class="pre">levels</span></code> or <code class="docutils literal notranslate"><span class="pre">labels</span></code> in this example), and using the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign to tell the function what the value of that specific argument should be.</p>
 <p>Here you can think of the input to the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function as having three parts: the variable to recode, the existing values (<code class="docutils literal notranslate"><span class="pre">levels</span></code>), and the <code class="docutils literal notranslate"><span class="pre">labels</span></code> to recode the values as. This seems like we have to write out every new label for every data point included in the vector, but this is only because we have all unique values in <code class="docutils literal notranslate"><span class="pre">places_num</span></code>. If there were any repeated zipcodes, you only have to include it once in the <code class="docutils literal notranslate"><span class="pre">levels</span></code> argument, because R <code class="docutils literal notranslate"><span class="pre">factor()</span></code> will always assign the matching new label to any data point with that zipcode.</p>
-<p>You can also change the values of numeric variables. For example, you have water depth data measured in inches, but you’d prefer to see it in feet. In this case, you will need to transform each value in vector holding that data.</p>
-<p>You don’t have to manually retype the vector to do this either. Vectors in R work like vectors in linear algebra. So, if you have a constant value you want to modify a vector by, you can simply use the mathematical operation between that value and the vector object. E.g., in the example above, you could write <code class="docutils literal notranslate"><span class="pre">water_depth</span> <span class="pre">/</span> <span class="pre">12</span></code> to convert every water depth measurement from inches to feet. When you use an operation between a vector and a single value, R will apply that value to every item in the vector individually.</p>
+<p>You can also change the values of numeric variables. For example, you have water depth data measured in inches, but you’d prefer to see it in feet. In this case, you will need to transform each value in the vector holding that data.</p>
+<p>You don’t have to manually retype the vector to do this either. Vectors in R work like vectors in linear algebra. So, if you have a constant value you want to modify a vector by, you can simply use the mathematical operation between that value and the vector object. E.g., in the example above, you could write <code class="docutils literal notranslate"><span class="pre">water_depth</span> <span class="pre">/</span> <span class="pre">12</span></code> to convert every water depth measurement from inches to feet. When you use an operation between a vector and a single value, R will apply that operation to every item in the vector individually.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
@@ -912,9 +896,9 @@ This would create a vector like:</p>
 <p>We can also create Boolean vectors by subjecting a whole vector to a logical statement. Since a logical statement is an operation, R will apply it to every item in the handedness vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness_bool</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">==</span> <span class="m">1</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="n">handedness_bool</span> <span class="o">&lt;-</span> <span class="n">handedness</span> <span class="o">==</span> <span class="m">1</span>
 
-<span class="c1"># This code returns both vectors</span>
 <span class="n">handedness_bool</span>
 </pre></div>
 </div>

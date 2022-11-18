@@ -1,9 +1,14 @@
+# This chapter uses some packages that take a few minutes to download on Google Colab. 
+# Run this first so it's ready by the time you need it
 install.packages("readr")
 library(readr)
-fingers <- read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv")
-
+install.packages("dplyr")
+library(dplyr)
 install.packages("ggformula")
 library(ggformula)
+
+fingers <- read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv")
+
 gf_histogram(~ Thumb, data = fingers)
 
 gf_histogram(~ Thumb, data = fingers, fill = ~ Sex)
@@ -35,9 +40,9 @@ gf_histogram(~ Thumb, data = fingers) %>%
 gf_dhistogram(~ Thumb, data = fingers, fill = ~ RaceEthnic) %>% 
   gf_facet_grid(., RaceEthnic ~ .) 
 
-library(dplyr)
-mindsetmatters <- read_csv('mindsetmatters.csv')
+mindsetmatters <- read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv")
 mindsetmatters$WtLost <- (mindsetmatters$Wt - mindsetmatters$Wt2) < 0 
+# using select() function loaded from dplyr
 head(select(mindsetmatters, Condition, WtLost))
 
 gf_bar(~ WtLost, data = mindsetmatters)

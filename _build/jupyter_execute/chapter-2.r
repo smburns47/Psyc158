@@ -6,6 +6,7 @@ if (x > y) {      # The keyword "if" starts an if statement; # A logical express
 }               # expression is true. Afterwards, close the conditional block with a "}" brace.  
                 # The chunk of code within the "{}" braces should be indented, for readibility. 
 
+x <- 10
 y <- 25         # Reassign variable y to make it larger than x
 
 if (x > y) {    # The original if statement
@@ -24,8 +25,8 @@ if (x > y) {
     print(y)
 }
 
-x <- 25
-y <- 10
+x <- 10
+y <- 25
 
 if (x > y) {                     
     print(x)
@@ -75,7 +76,7 @@ print("Done!")
 end_time <- 5
 hour <- 1                 
 
-while (hour < x) {            # This logical expression is always true!
+while (hour < end_time) {            # This logical expression is always true!
     print("Studying...")
     hour <- hour - 1    # We made a bug here - subtracting 1 means hour will never increase above end_time
     print(hour)

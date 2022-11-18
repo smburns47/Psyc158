@@ -122,8 +122,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="chapter-1.html">
-   Chapter 1 - Intro to Doing Statistics
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
   </a>
  </li>
  <li class="toctree-l1">
@@ -486,6 +486,28 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reporting-distribution-summaries">
+   5.6 Reporting distribution summaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-tendency">
+     Central tendency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spread">
+     Spread
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Shape
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-summary">
    Chapter summary
   </a>
@@ -601,6 +623,28 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reporting-distribution-summaries">
+   5.6 Reporting distribution summaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-tendency">
+     Central tendency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spread">
+     Spread
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Shape
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chapter-summary">
    Chapter summary
   </a>
@@ -619,7 +663,7 @@ title="Print to PDF"
 <h1>Chapter 5 - Describing Data<a class="headerlink" href="#chapter-5-describing-data" title="Permalink to this headline">#</a></h1>
 <section id="the-concept-of-a-distribution">
 <h2>5.1 The concept of a distribution<a class="headerlink" href="#the-concept-of-a-distribution" title="Permalink to this headline">#</a></h2>
-<p>Assuming we have a tidy data set to work with, the next step in data analysis is to begin looking at the variation in your measures. This leads us to one of the most fundamental concepts in statistics, the concept of <em>distribution</em>.</p>
+<p>Assuming we have a tidy data set to work with, the next step in data analysis is to begin looking at the variation in your measures. This leads us to one of the most fundamental concepts in statistics, the concept of a <strong>distribution</strong>.</p>
 <p>A distribution reflects the specific pattern of variation in a variable or set of variables. It is how the data are divided among different possible values. Thinking about distributions requires you to think abstractly, at a higher level, about your data. You must shift your thinking from a focus on the individual observations in your data set (e.g., the 20 people you have sampled) to a focus on all the observations as a group, and the pattern of how they vary on some variable. The concept of distribution allows us to see the whole as greater than the sum of the parts; the forest, and not just the trees.</p>
 <p>The features of a forest cannot be seen in a single tree. For example, measuring the height of a single tree does not allow you to see characteristics of the distribution of height. You can know the height of that one tree, but not the minimum, maximum, or average height of trees in the forest based on a single measurement. Statistics such as the mean do not themselves constitute a distribution; they are features of a distribution, features that don’t apply to individual trees.</p>
 <p>Note that not just any bunch of numbers can be thought of as a distribution. The numbers must all be measures of the same attribute. So, for example, if you have measures of height and weight on a sample of 20 people, you can’t just lump the height and weight numbers into a single distribution. You can, however, examine the distribution of height and the distribution of weight separately.</p>
@@ -630,14 +674,14 @@ title="Print to PDF"
 <h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h3>
 <p>When first learning about distributions, it can help to visualize them. Plotting the distribution of your data each time you start a new data project can also be helpful to start understanding your dataset as a whole. Below are some examples of what distributions can look like:</p>
 <img src="images/ch5-distributions.png" width="800">
-<p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): the age of a sample of housekeepers measured in years; the thumb length of a sample of students measured in millimeters; the life expectancy of the citizens of countries measured in years; and the population of countries measured in millions. The y-axis represents the <em>frequency</em> of some score or range of scores in a sample. So, in the first histogram (in the color coral), the height of the bars does not represent how old a housekeeper is, but instead represents the number of housekeepers in this sample who were within a certain age band.</p>
+<p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): the age of a sample of housekeepers measured in years; the thumb length of a sample of students measured in millimeters; the life expectancy of the citizens of countries measured in years; and the population of countries measured in millions. The y-axis represents the <em>frequency</em> of some score or range of scores in a sample. So, in the first histogram (in the color coral), the height of the bars does not represent how old a housekeeper is, but instead represents the number of housekeepers in this sample who were of a certain age.</p>
 <p>There are lots of ways to make histograms in R. We will use the package <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>  to make our visualizations. It is a large and flexible package, so it can be good to read through a guide to <a class="reference external" href="http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html">everything you can do with it</a> for help or inspiration. <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> is a weird name, but that’s what the authors of this package called it. Because of that, many of the <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> commands are going to start with <code class="docutils literal notranslate"><span class="pre">gf_</span></code>; the <code class="docutils literal notranslate"><span class="pre">g</span></code> stands for “graphical” and the <code class="docutils literal notranslate"><span class="pre">f</span></code> stands for “formula”.</p>
 <p>We will start by making a histogram with the <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> function. Here is how to make a basic histogram of <code class="docutils literal notranslate"><span class="pre">Wt</span></code> from the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> data frame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
-<span class="c1">#If this were our own computer, we wouldn&#39;t need to install readr since we&#39;d already done that in a previous chapter</span>
+<span class="c1">#If this were our own computer, we wouldn&#39;t need to install since we&#39;d already done that in a previous chapter</span>
 <span class="c1">#But on a web browser like this we&#39;re using a new server each time, like a fresh computer</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
@@ -654,7 +698,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> takes two arguments. The first is a formula; notice that the variable we want to display, <code class="docutils literal notranslate"><span class="pre">Wt</span></code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for a graph (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> from geometry class). So in R, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the first argument in <code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> is the formula <code class="docutils literal notranslate"> <span class="pre">~</span> <span class="pre">Wt</span></code>, which tells R “plot the variable Wt on the x-axis.”</p>
+<p><code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> takes two arguments. The first is a <em>formula</em>; notice that the variable we want to display, <code class="docutils literal notranslate"><span class="pre">Wt</span></code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for graphing a line (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> from geometry class). So in R, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the first argument in <code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> is the formula <code class="docutils literal notranslate"> <span class="pre">~</span> <span class="pre">Wt</span></code>, which tells R “plot the variable Wt on the x-axis.”</p>
 <p>The second argument is <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">mindsetmatters</span></code>, which tells R which dataframe to find <code class="docutils literal notranslate"><span class="pre">Wt</span></code> in.</p>
 <p>Say we wanted to change the histogram to one that plots the variable <code class="docutils literal notranslate"><span class="pre">Age</span></code>. Rewrite the code below to do so.</p>
 <div class="cell docutils container">
@@ -669,7 +713,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">)</span> <span class="c1">#gf_histogram only works on dataframe objects, not vectors</span>
+<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span> <span class="c1">#gf_histogram only works on dataframe objects, not vectors</span>
 <span class="c1">#Write some code below here to plot a histogram of the variable &quot;outcome&quot; in the dataframe &quot;tiny_data&quot;</span>
 </pre></div>
 </div>
@@ -678,7 +722,7 @@ title="Print to PDF"
 <p>This histogram shows gaps between the bars because by default <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> sets up 30 bins, even though we only have five possible numbers in our variable. If we change the number of bins to 5, then we’ll get rid of the gaps between the bars. To do this, we add in a new argument that gf_histogram can accept: <code class="docutils literal notranslate"><span class="pre">bins</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -686,18 +730,18 @@ title="Print to PDF"
 <p>Now we only have one bin per data value. However, since there are exactly one of each type of value, this histogram looks like a rectangle. To help distinguish things more, we can change the colors of the histogram, adding in the arguments <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. What do you think each of these arguments does?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bin</span> <span class="n">s</span> <span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In chapter 8, we’ll talk much more about how to tweak the details of our data visualizations.</p>
+<p>In chapter 7, we’ll talk much more about how to tweak the details of our data visualizations.</p>
 <p>Now try running the following code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the same code as before but we added in another outcome value, 3.2</span>
 <span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">3.2</span><span class="p">)</span>
-<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">)</span>
+<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span>
 
 <span class="c1"># This makes a histogram with 5 bins</span>
 <span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
@@ -705,7 +749,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>If you look closely at the x-axis, you’ll see that the bin for 3 actually goes from 2.5 to 3.5. Because of this, there are new two values that fall in the 2.5-3.5 bin: 3 and 3.2.</p>
+<p>If you look closely at the x-axis, you’ll see that the bin for 3 actually goes from 2.5 to 3.5. Because of this, there are now two values that fall in the 2.5-3.5 bin: 3 and 3.2.</p>
 </section>
 <section id="density-plots">
 <h3>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this headline">#</a></h3>
@@ -747,7 +791,7 @@ title="Print to PDF"
 <p>You will often see distributions that match a particular shape and skewness. These special distribution types have names. For instance, the <strong>normal</strong> distribution is symmetric and unimodal, looking like a bell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">normal_data</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">1000</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="c1">#rnorm is a function that generates in a normal distribution;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">normal_data</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">1000</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="c1">#rnorm is a function that generates data in a normal distribution;</span>
 <span class="c1"># we&#39;ll talk about simulating data like this in a later chapter</span>
 <span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span> <span class="o">=</span> <span class="n">normal_data</span><span class="p">))</span>
 </pre></div>
@@ -759,7 +803,7 @@ title="Print to PDF"
 </section>
 <section id="center">
 <h2>5.4 Center<a class="headerlink" href="#center" title="Permalink to this headline">#</a></h2>
-<p>Speaking of the middle, it’s often useful to be able to have a quantitative number to represent what that middle point is for a distribution. We mentioned in Chapter 2 that one of the big discoveries of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we summarize a dataset and describe its center value. So in most situations, after checking out the shape of the data distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The thre most commonly used measures are the mean, median, and mode.</p>
+<p>Speaking of the middle, it’s often useful to be able to have a quantitative number to represent what that middle point is for a distribution. We mentioned in Chapter 2 that one of the big discoveries of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we summarize a dataset and describe its center value. So in most situations, after checking out the shape of the data distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p>
 <section id="mean">
 <h3>Mean<a class="headerlink" href="#mean" title="Permalink to this headline">#</a></h3>
 <p>The <strong>mean</strong> of a set of observations is just an old-fashioned average: add all of the values up, and then divide by the total number of values. If a student’s five exam scores were 76, 91, 86, 80 and 92, the mean of those scores would be:</p>
@@ -834,11 +878,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>You may have tried to use a function like <code class="docutils literal notranslate"><span class="pre">mode()</span></code> in the code block above to calculate the mode of the dataframe <code class="docutils literal notranslate"><span class="pre">weird_dist</span></code>. However, in R <code class="docutils literal notranslate"><span class="pre">mode()</span></code> is already taken up by a different function - it returns the data mode of a vector. Given that the mode is the most frequent data value in a distribution, we can use the <code class="docutils literal notranslate"><span class="pre">count()</span></code> function from <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> instead to list the number of data points with each unique value, and identify the mode that way:</p>
+<p>You may have tried to use a function like <code class="docutils literal notranslate"><span class="pre">mode()</span></code> in the code block above to calculate the mode of the dataframe <code class="docutils literal notranslate"><span class="pre">weird_dist</span></code>. However, in R <code class="docutils literal notranslate"><span class="pre">mode()</span></code> is already taken up by a different function - it returns the data type of a vector. Given that the mode is the most frequent data value in a distribution, we can use the <code class="docutils literal notranslate"><span class="pre">table()</span></code> function to list the number of data points with each unique value, and identify the mode that way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="nf">count</span><span class="p">(</span><span class="n">weird_dist</span><span class="p">,</span> <span class="n">data_pts</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">weird_dist</span><span class="o">$</span><span class="n">data_pts</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -975,7 +1018,7 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 </tr>
 </tbody>
 </table>
-<p>Now that we have calculated the absolute deviation score for every observation in the dataset, all that we have to do now is calculate the mean of these scores. Let’s do that:</p>
+<p>Now that we have calculated the absolute deviation score for every observation in the dataset, we could sum these up to say “here is the total amount of deviation in this distribution.” That causes problems though if we ever want to compare datasets of different sizes - a variable with 10 items that all vary from the mean by 1 would have a lower total deviation than a variable with 100 items that all vary from the mean by 0.5, even though we would think the latter variable has less spread. This is why we calculate the <em>mean</em> of deviation scores instead. Let’s do that with our test scores data:</p>
 <div class="math notranslate nohighlight">
 \[\frac{9.2 + 5.8 + 0.8 + 5.2 + 7.8}{5} = 5.76\]</div>
 <p>And we’re done. The mean absolute deviation for these five scores is 5.76.</p>
@@ -986,9 +1029,9 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 <p>The last thing we need to talk about is how to calculate MAD in R. We can repeat every step of the calculations above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mean_scores</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>       <span class="c1"># step 1. the mean of the data</span>
-<span class="n">AD</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span> <span class="n">test_scores</span> <span class="o">-</span> <span class="n">mean_scores</span> <span class="p">)</span> <span class="c1"># step 2. the absolute deviations from the mean</span>
-<span class="n">MAD</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">AD</span><span class="p">)</span>                        <span class="c1"># step 3. the mean of the absolute deviations</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mean_score</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>     <span class="c1"># step 1. the mean of the data</span>
+<span class="n">AD</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="n">test_scores</span> <span class="o">-</span> <span class="n">mean_score</span><span class="p">)</span> <span class="c1"># step 2. the absolute deviations from the mean</span>
+<span class="n">MAD</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">AD</span><span class="p">)</span>                     <span class="c1"># step 3. the mean of the absolute deviations</span>
 <span class="n">MAD</span>
 </pre></div>
 </div>
@@ -1000,15 +1043,15 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 <p>Although the mean absolute deviation measure has its uses, it’s not the best measure of variability to use for a variety of mathematical reasons we don’t need to get into. Instead, it’s more common to use <em>squared</em> deviations
 rather than <em>absolute</em> deviations. If we do that, we obtain a measure called the <strong>variance</strong>. We’ve used this word before to talk about the general concept of data varying, but here it is a specific measure with a specific formula. The variance of a data set X is sometimes written as Var(X), but it’s more commonly denoted s<sup>2</sup> (the reason for this will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p>
 <div class="math notranslate nohighlight">
-\[Var(X) = \frac{1}{N-1}\sum_{i=1}^{N}|X_i-\bar{X}|^2\]</div>
+\[Var(X) = \frac{1}{N-1}\sum_{i=1}^{N}(X_i-\bar{X})^2\]</div>
 <p>It is very similar to mean absolute deviation, except for two changes. Can you find in them in the equation?</p>
-<p>The first change is that the absolute deviation term is now squared. This has the effect of “penalizing” data with more variability - data points that are farther away from the mean contribute more to the variance score than data points closer to the mean.</p>
-<p>The second change is that we divide the whole think by N-1, instead of N. This may seem strange: the variance is supposed to be the mean squared deviation, right? So shouldn’t we be dividing by N, the actual number of observations
+<p>The first change is that the absolute deviation term is now a squared term. This gets rid of any negatives signs like the absolute does, but it additionally has the effect of “penalizing” data with more variability - data points that are farther away from the mean contribute more to the variance score than data points closer to the mean.</p>
+<p>The second change is that we divide the whole thing by N-1, instead of N. This may seem strange: the variance is supposed to be the mean squared deviation, right? So shouldn’t we be dividing by N, the actual number of observations
 in the sample? As we’ll discuss in a later chapter, there’s a subtle distinction between “describing some data” and “making guesses about the population from which the data came”. This difference turns into subtle changes for some measures like variance. For now, just take it on faith that we should use N-1 for calculating variance.</p>
 <p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code class="docutils literal notranslate"><span class="pre">var()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">mindsjnetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1019,7 +1062,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <h3>Standard deviation<a class="headerlink" href="#standard-deviation" title="Permalink to this headline">#</a></h3>
 <p>Suppose that you like the idea of using variance because of those nice mathematical properties which you totally trust us are real, but – since you’re a human and not a robot – you’d like to have a measure that is expressed in the same units as the data itself (i.e., years of age, not years-squared). What should you do? The solution to the problem is to take the square root of the variance, known as the <strong>standard deviation,</strong> also called the “root mean squared deviation”, or RMSD. This solves our problem fairly neatly: while nobody has a clue what “a variance of 119.16 age years-squared” really means, it’s much easier to understand “a standard deviation of 10.92 years old”, since it’s expressed in the original units. It is traditional to refer to the standard deviation of a sample of data as <code class="docutils literal notranslate"><span class="pre">s</span></code>, though “sd” and “std dev” are also used at times. Because the standard deviation is equal to the square root of the variance, you probably won’t be surprised to see that the formula is:</p>
 <div class="math notranslate nohighlight">
-\[s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}|X_i-\bar{X}|^2}\]</div>
+\[s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(X_i-\bar{X})^2}\]</div>
 <p>and the R function to calculate it is <code class="docutils literal notranslate"><span class="pre">sd()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1032,7 +1075,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 </div>
 </div>
 </div>
-<p>Interpreting standard deviations is slightly complex. Because the standard deviation is derived from the variance, and the variance is a quantity that has little to no meaning that makes sense to us humans, the standard deviation doesn’t have a simple interpretation. As a consequence, most of us just rely on a simple rule of thumb: in general, you should expect ~68% of the data to fall within 1 standard deviation away from the mean, ~95% of the data to fall within 2 standard deviations, and ~99.7% of the data to fall within 3 standard deviations. This rule tends to work pretty well most of the time, but it’s not exact: it’s actually calculated based on an assumption that the histogram is normally distributed. But even with skewed distributions, this rule is pretty close.</p>
+<p>Besides telling us about a typical amonut of deviation in our data distribution, standard deviation can also tell us how much of the data deviates by that amount. In general, you should expect ~68% of the data to fall within 1 standard deviation away from the mean, ~95% of the data to fall within 2 standard deviations, and ~99.7% of the data to fall within 3 standard deviations. This rule tends to work pretty well most of the time, but it’s not exact: it’s actually calculated based on an assumption that the histogram is normally distributed. But even with skewed distributions, this rule is pretty close.</p>
 </section>
 <section id="which-measure-of-variability-to-use">
 <h3>Which measure of variability to use?<a class="headerlink" href="#which-measure-of-variability-to-use" title="Permalink to this headline">#</a></h3>
@@ -1046,6 +1089,50 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 </ul>
 </section>
 </section>
+<section id="reporting-distribution-summaries">
+<h2>5.6 Reporting distribution summaries<a class="headerlink" href="#reporting-distribution-summaries" title="Permalink to this headline">#</a></h2>
+<p>Shape, spread, and central tendency are the first major statistical tools you’ve officially learned in order to describe sets of data. Congrats, you’re doing statistics! However, there’s not much point to doing all that work if you can’t share the results with other people.</p>
+<p>Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a class="reference external" href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in this chapter:</p>
+<section id="central-tendency">
+<h3>Central tendency<a class="headerlink" href="#central-tendency" title="Permalink to this headline">#</a></h3>
+<p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, as it isn’t used very frequently (if you do need to report it, just write it as <em>mode</em>). Reporting the mean in the body of some text may look like:</p>
+<p>“The pretest score for the group is lower (<em>M</em> = 20.5) than the posttest score (<em>M</em> = 65.3).”</p>
+<p>The full name of the statistics may also be used in describing it in a narrative text. Here is an example statement about the median of two categories:</p>
+<p>“The median study time for the treatment group was 4.5 hours, compared to a median of 2.5 for the control group.”</p>
+<p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the means of both pretest and posttest scores for male and females on an aptitude test. Notice that the statement about the mean being summarized in this particular table is presented in the table title.</p>
+<p><strong>Mean Scores for Pre- and Post-test by Gender</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p></p></th>
+<th class="text-align:center head"><p>Pre-test</p></th>
+<th class="text-align:center head"><p>Post-test</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Female</p></td>
+<td class="text-align:center"><p>45.6</p></td>
+<td class="text-align:center"><p>72.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Male</p></td>
+<td class="text-align:center"><p>50.2</p></td>
+<td class="text-align:center"><p>69.5</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="spread">
+<h3>Spread<a class="headerlink" href="#spread" title="Permalink to this headline">#</a></h3>
+<p>Descriptive statistics of variables involving all scales of measurement (except nominal) often report both measurements on central tendency and spread together. Usually, standard deviation is the spread score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in this chapter (e.g., IQR) or just the word of the measure. The results of a statistical summary may include the following texts about descriptive statistics:</p>
+<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2).”</p>
+<p>When reporting the descriptive statistical summary of many groups, the results may be summarized in a table as well.</p>
+</section>
+<section id="id1">
+<h3>Shape<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Generally distribution shapes aren’t reported (so if we ask you to talk about it in assignments, just use normal English phrasing). Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your estimation of central tendency and spread. So a complete reporting in APA style would look something like:</p>
+<p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
+<p>When describing the results of analyses you do in this course, make sure to use APA style reporting.</p>
+</section>
+</section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
@@ -1056,6 +1143,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <li><p>Visually identify modality and skewness in a distribution</p></li>
 <li><p>Describe the differences between mean, median, and mode</p></li>
 <li><p>Describe the differences between range, interquartile range, mean absolute deviation, variance, and standard deviation</p></li>
+<li><p>Report summaries in APA style</p></li>
 </ul>
 </section>
 </section>

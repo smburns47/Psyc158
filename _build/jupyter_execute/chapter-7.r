@@ -1,7 +1,11 @@
+# This chapter uses some packages that take a few minutes to download on Google Colab. 
+# Run this first so it's ready by the time you need it
+install.packages("readr")
+install.packages("ggformula")
 library(readr)
 library(ggformula)
 
-fingers <- read_csv('fingers.csv')
+fingers <- read_csv("https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv")
 
 #Write your code here for making a boxplot of Thumb ~ RaceEthnic, with varying colors
 
@@ -17,28 +21,29 @@ gf_point(Middle ~ Sex, data = fingers, color = "orange", size = 5)
 gf_point(Middle ~ Sex, data = fingers, color = "orange", size = 5) 
 
 
-gf_point(Middle ~ Thumb, data=fingers) %>% 
-    gf_refine(coord_cartesian(ylim=c(0,140))) #the argument ylim takes a vector defining the min and max of the axis
+gf_point(Middle ~ Thumb, data = fingers) %>% 
+    gf_refine(., coord_cartesian(ylim = c(0,140))) #the argument ylim takes a vector 
+                                                 #defining the min and max of the axis
 
-gf_point(Middle ~ Thumb, data=fingers) %>%
-    gf_refine(coord_cartesian(ylim = c(0, 200), xlim = c(0,200))) 
+gf_point(Middle ~ Thumb, data = fingers) %>%
+    gf_refine(., coord_cartesian(ylim = c(0, 200), xlim = c(0,200))) 
 
+install.packages("dplyr")
 library(dplyr)
 
 filter(fingers, RaceEthnic %in% c("Asian","White")) %>%
-    gf_bar( ~ RaceEthnic, data= .)      #piping the filtered data to an argument in gf_bar that is not first,
-                                        #so need to use a "." to tell the pipe where to put it
+    gf_bar( ~ RaceEthnic, data = .)      #piping the filtered data to the data argument
 
 filter(fingers, RaceEthnic %in% c("Asian","White")) %>%
-    gf_bar( ~ RaceEthnic, data= .) %>%
-    gf_refine(coord_cartesian(ylim = c(48, 56)))
+    gf_bar( ~ RaceEthnic, data = .) %>%
+    gf_refine(., coord_cartesian(ylim = c(48, 56)))
 
 
-gf_jitter(MathAnxious ~ Interest, data=fingers, height=0.1, width=0.1)
+gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1)
 
-gf_jitter(MathAnxious ~ Interest, data=fingers, height=0.1, width=0.1, xlab = "Interest in Statistics")
+gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1, xlab = "Interest in Statistics")
 
-gf_jitter(MathAnxious ~ Interest, data=fingers, height=0.1, width=0.1, 
+gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1, 
           xlab = "Interest in Statistics", ylab = "Math Anxiety")
 
 gf_jitter(MathAnxious ~ Interest, data = fingers, height = 0.1, width = 0.1, 
@@ -57,25 +62,27 @@ gf_jitter(Thumb ~ Sex, data = fingers, width = 0.2, height = 0, color = ~ Sex, a
 gf_histogram(~ Thumb, data = fingers, fill = ~ Sex) %>%
     gf_refine(., scale_fill_manual(values = c("purple", "orange")))
 
-install.packages("viridis") #comment these commands out after the first time you use them so you 
-library(viridis)            #don't have to spend time re-installing after the first use
+install.packages("viridis") 
+library(viridis)            
 
 viridis(5)
 
 gf_histogram(~ Thumb, data = fingers, fill = ~ Sex) %>%
-    gf_refine(., scale_fill_viridis(discrete=TRUE))
+    gf_refine(., scale_fill_viridis(discrete = TRUE))
 
 gf_point(Middle ~ Thumb, data = fingers, color = ~ Thumb, size = 3) %>%
-    gf_refine(., scale_color_viridis(discrete=FALSE)) #FALSE is the default value, so not required to add it here
+    gf_refine(., scale_color_viridis(discrete = FALSE)) #FALSE is the default value, so not required to add it here
 
 gf_point(Middle ~ Thumb, data = fingers, color = ~ Thumb, size = 3) %>%
-    gf_refine(., scale_color_viridis(discrete=FALSE, option="magma"))
+    gf_refine(., scale_color_viridis(discrete = FALSE, option = "magma"))
 
 colorpalette <- viridis(5, option = "plasma")
 print(colorpalette)
 
+#using the 2nd and 4th generated colors
 gf_histogram(~ Thumb, data = fingers, fill = ~ Sex) %>%
-    gf_refine(., scale_fill_manual(values = c(color_choices[2], color_choices[4])))
+    gf_refine(., scale_fill_manual(values = c(colorpalette[2], colorpalette[4])))
 
+#using the 3rd and 5th generated colors
 gf_histogram(~ Thumb, data = fingers, fill = ~ Sex) %>%
-    gf_refine(., scale_fill_manual(values = c(color_choices[3], color_choices[5])))
+    gf_refine(., scale_fill_manual(values = c(colorpalette[3], colorpalette[5])))

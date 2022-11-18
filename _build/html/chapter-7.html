@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Chapter 6 - Variation in Multiple Variables" href="chapter-6.html" />
@@ -121,8 +119,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="chapter-1.html">
-   Chapter 1 - Intro to Doing Statistics
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
   </a>
  </li>
  <li class="toctree-l1">
@@ -457,16 +455,6 @@ title="Print to PDF"
    Chapter summary
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lab">
-   Lab
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -550,16 +538,6 @@ title="Print to PDF"
    Chapter summary
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-quiz">
-   Chapter quiz
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lab">
-   Lab
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -570,7 +548,19 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-principles-of-data-visualization">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This chapter uses some packages that take a few minutes to download on Google Colab. </span>
+<span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-7-principles-of-data-visualization">
 <h1>Chapter 7 - Principles of Data Visualization<a class="headerlink" href="#chapter-7-principles-of-data-visualization" title="Permalink to this headline">#</a></h1>
 <p>So far you’ve learned several ways to visualize data - histograms, scatterplots, boxplots, etc. You’ve also learned how to make changes to those graphs like adjust color, data size, or faceting. Up to this point, you’ve made choices on exactly what to do with those options on your own (maybe according to your preferences, or whatever let you do the assignment most quickly).</p>
 <p>However, visualizations are a powerful way of not just understanding your data yourself, but also communicating about it to other people. Thus there are important principles to follow so that your audience will see the point you intend to make.</p>
@@ -578,8 +568,8 @@ title="Print to PDF"
 <h2>7.1 The importance of good visualization<a class="headerlink" href="#the-importance-of-good-visualization" title="Permalink to this headline">#</a></h2>
 <p>Here’s a historic example of just how important it can be to visualize your data well. On January 28, 1986, the Space Shuttle Challenger exploded 73 seconds after takeoff, killing all 7 of the astronauts on board. As when any such disaster occurs, there was an official investigation into the cause of the accident, which found that an O-ring connecting two sections of the solid rocket booster leaked, resulting in failure of the joint and explosion of the large liquid fuel tank.</p>
 <img src="images/ch7-challenger.png" width="400">
-<p>The investigation found that many aspects of the NASA decision making process were flawed, and focused in particular on a meeting between NASA staff and engineers from Morton Thiokol, a contractor who built the solid rocket boosters. These engineers were particularly concerned because the temperatures were forecast to be very cold on the morning of the launch, and they had data from previous launches showing that performance of the O-rings was compromised at lower temperatures. In a meeting on the evening before the launch, the engineers presented their data to the NASA managers, but were unable to convince them to postpone the launch. Their evidence was a set of hand-written slides showing numbers from various past launches.</p>
-<p>The visualization expert Edward Tufte has argued that with a proper presentation of all of the data, the engineers could have been much more persuasive. In particular, they could have shown a figure like the one below, which highlights two important facts. First, it shows that the amount of O-ring damage (defined by the amount of erosion and soot found outside the rings after the solid rocket boosters were retrieved from the ocean in previous flights) was closely related to the temperature at takeoff. Second, it shows that the range of forecasted temperatures for the morning of January 28 (shown in the red shaded area) was well outside of the range of all previous launches. While we can’t know for sure, it seems at least plausible that this could have been more persuasive.</p>
+<p>The investigation found that many aspects of the NASA decision making process were flawed, and focused in particular on a meeting between NASA staff and engineers from Morton Thiokol, a contractor who built the solid rocket boosters. These engineers were particularly concerned because the temperatures were forecast to be very cold on the morning of the launch, and they had data from previous launches showing that performance of the O-rings was compromised at lower temperatures. In a meeting on the evening before the launch, the engineers presented their data to the NASA managers, but were unable to convince them to postpone the launch. Their evidence was a set of hand-written slides describing outcomes from various past launches.</p>
+<p>The visualization expert Edward Tufte has argued that with a proper presentation of all of the data, the engineers could have been much more persuasive. In particular, they could have shown a figure like the one below, which highlights two important facts. First, it shows that the amount of O-ring damage was closely related to the temperature at takeoff. Second, it shows that the range of forecasted temperatures for the morning of January 28 (shown in the red shaded area) was well outside of the range of all previous launches. While we can’t know for sure, it seems at least plausible that this could have been more persuasive for why cold temperatures would mean likely O-ring failure.</p>
 <img src="images/ch7-challengerdamage.png" width="750"></section>
 <section id="anatomy-of-a-plot">
 <h2>7.2 Anatomy of a plot<a class="headerlink" href="#anatomy-of-a-plot" title="Permalink to this headline">#</a></h2>
@@ -590,14 +580,11 @@ title="Print to PDF"
 <p>The bar graph in panel A shows the difference in means, but doesn’t show us how much spread there is in the data around these means – and as we will see later, knowing this is essential to determine whether we think the difference between the groups is large enough to be important.</p>
 <p>The second panel B shows the bars with all of the data points overlaid - this makes it a bit clearer that the distributions of height for men and women are overlapping, but it’s still hard to see due to the large number of data points focused on one spot.</p>
 <p>In general we prefer using a plotting technique that provides a clearer view of the distribution of the data points. In panel C, we see one example of a <strong>violin plot</strong>, which plots the distribution of data in each condition (after smoothing it out a bit). Obviously, the name of this plot comes from the fact that it sort of resembles a violin shape. The fatter part of the “violin” is where there is more data, the skinnier parts are the tails of the distribution. You can make a plot like this in R using <code class="docutils literal notranslate"><span class="pre">gf_violin()</span></code>.</p>
-<p>Another option is the boxplot shown in panel D, which shows the median (central line), a measure of variability (the width of the box, which is based on a measure called the interquartile range), and any outliers (noted by the points at the ends of the lines). Violin plots and boxplots are both effective ways to communicate the central tendency of each group as well as provide a good feel for the distribution of the data.</p>
+<p>Another option is the boxplot shown in panel D, which shows the median (central line), a measure of variability (the width of the box, which is based on the interquartile range), and any outliers (noted by the points at the ends of the lines). Violin plots and boxplots are both effective ways to communicate the central tendency of each group as well as provide a good feel for the distribution of the data.</p>
 <p>Let’s explore the differences between making a boxplot and a violin plot. In the code window below, write a function that will plot <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> explained by <code class="docutils literal notranslate"><span class="pre">RaceEthnic</span></code> from the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, with colors varying by <code class="docutils literal notranslate"><span class="pre">RaceEthnic</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-
-<span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#39;fingers.csv&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -638,7 +625,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>That’s for making the raw data most evident. You also want your broader message to stand out - again, think about <em>why</em> you’re showing people this graph. Are they understanding what you want them to understand? In the plot above, even if you changed it to a jitter plot, changed the point transparency, etc., it might still be hard to see from a glance where the central tendency of each group is, or which group is which. People can probably figure it out by looking harder, but in the real world we want things to be as cognitively easy for our readers as possible.</p>
-<p>Thus, it’s good to choose plot styles and elements that highlight your main message. For this plot, we might be trying to say “male students have generally longer middle fingers than female students.” This has two important pieces to communicate - the central tendency of a group, and the distinctness of the groups. It’s a good rule of thumb that, when you have more than one group of data in a plot, that you change the color of the data to correspond to each group. In addition, if the central tendency is the main summary statistic you care about, choose a plot type that highlights that (such as a violin plot or a boxplot).</p>
+<p>Thus, it’s good to choose plot styles and elements that highlight your main message. For this plot, we might be trying to say “male students have generally longer middle fingers than female students.” This has two important pieces to communicate - the central tendency of a group, and the distinctness of the groups. It’s a good rule of thumb that, when you have more than one group of data in a plot, you change the color of the data to correspond to each group. In addition, if the central tendency is the main summary statistic you care about, choose a plot type that highlights that (such as a violin plot or a boxplot).</p>
 <p>Below is the same basic scatterplot. Try to switch it to a plot type that better communicates the central tendency, and change the group colors to be different.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,9 +638,7 @@ title="Print to PDF"
 </section>
 <section id="rule-2-maximize-the-data-to-ink-ratio">
 <h3>Rule 2 - Maximize the data to ink ratio<a class="headerlink" href="#rule-2-maximize-the-data-to-ink-ratio" title="Permalink to this headline">#</a></h3>
-<p>Edward Tufte has proposed an idea called the data/ink ratio:</p>
-<div class="math notranslate nohighlight">
-\[data/ink-ratio = \frac{ink-used-on-data}{total-ink-used}\]</div>
+<p>Edward Tufte has proposed an idea called the data/ink ratio, which is the amount of ink used on representing the data vs. the total amount of ink used for the whole plot.</p>
 <p>Because we now do all our statistics with code, “ink” is maybe an anachronism - it could be better to say “pixels” now. But regardless, the point of this is to minimize visual clutter and let the data show through. For example, take the two presentations of the dental health data below. Both panels show the same data, but panel A is much easier to apprehend, because of its relatively higher data/ink ratio.</p>
 <img src="images/ch7-inkratio.png" width="750"></section>
 <section id="rule-3-avoid-chart-junk">
@@ -675,8 +660,9 @@ title="Print to PDF"
 <p>There are certainly cases where using the zero point makes no sense at all. Let’s plot the <code class="docutils literal notranslate"><span class="pre">Middle</span></code> and <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> variables from the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset in a scatterplot, with and without zero in the Y axis. We’ll use the <code class="docutils literal notranslate"><span class="pre">gf_refine()</span></code> function again to refine the default scatterplot we make, but this time the second argument will be <code class="docutils literal notranslate"><span class="pre">coord_cartesian()</span></code> that gets applied to the plot, to explicitly define the axis limits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">140</span><span class="p">)))</span> <span class="c1">#the argument ylim takes a vector defining the min and max of the axis</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">140</span><span class="p">)))</span> <span class="c1">#the argument ylim takes a vector </span>
+                                                 <span class="c1">#defining the min and max of the axis</span>
 </pre></div>
 </div>
 </div>
@@ -684,8 +670,8 @@ title="Print to PDF"
 <p>Plotting these data with zero in the y-axis wastes a lot of space in the figure, given that someone’s finger length is very unlikely to be so short. By including zero, we are also squishing down the variance within <code class="docutils literal notranslate"><span class="pre">Middle</span></code> to make it look like <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> explains more of it than we’d otherwise think. To make the problem even more evident, let’s expand both the y-axis and x-axis to go from 0-200.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">200</span><span class="p">),</span> <span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">200</span><span class="p">)))</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">200</span><span class="p">),</span> <span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">200</span><span class="p">)))</span> 
 </pre></div>
 </div>
 </div>
@@ -694,11 +680,11 @@ title="Print to PDF"
 <p>However, it can be manipulative to go in the other direction, and focus in on the axis scale so much that small differences in values look massive. Let’s take a look at the number of students in the dataset that identify as Asian or White. First we’ll filter down the dataset to focus on just those values in the variable <code class="docutils literal notranslate"><span class="pre">RaceEthnic</span></code>, and then plot them in a bar plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
 <span class="nf">filter</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">RaceEthnic</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Asian&quot;</span><span class="p">,</span><span class="s">&quot;White&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_bar</span><span class="p">(</span> <span class="o">~</span> <span class="n">RaceEthnic</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span> <span class="n">.</span><span class="p">)</span>      <span class="c1">#piping the filtered data to an argument in gf_bar that is not first,</span>
-                                        <span class="c1">#so need to use a &quot;.&quot; to tell the pipe where to put it</span>
+    <span class="nf">gf_bar</span><span class="p">(</span> <span class="o">~</span> <span class="n">RaceEthnic</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">.</span><span class="p">)</span>      <span class="c1">#piping the filtered data to the data argument</span>
 </pre></div>
 </div>
 </div>
@@ -707,13 +693,13 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">RaceEthnic</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Asian&quot;</span><span class="p">,</span><span class="s">&quot;White&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_bar</span><span class="p">(</span> <span class="o">~</span> <span class="n">RaceEthnic</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span> <span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">48</span><span class="p">,</span> <span class="m">56</span><span class="p">)))</span>
+    <span class="nf">gf_bar</span><span class="p">(</span> <span class="o">~</span> <span class="n">RaceEthnic</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">48</span><span class="p">,</span> <span class="m">56</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Of course, if we look at the y-axis values the actual difference in numbers doesn’t change. But it’s difficult to override our initial reaction to seeing differently-sized bars, so the first impression of this graph is “there are many more Asian students than White.”</p>
+<p>Of course, if we look at the y-axis values the actual difference in numbers doesn’t change. But it’s difficult to override our initial reaction to seeing differently-sized bars, so the first impression of this graph is “there are many more Asian students than White.” You can imagine the types of commentary that can be spawned on social media just from a quick glance at a picture.</p>
 <p>To avoid wasting too much white space or misleading your audience by exaggerating differences, a good starting place is to use axis ranges that encompass the full range of your raw data but not much more. Then consider whether a larger range should be used based on what you’re specifically trying to communicate.</p>
 </section>
 <section id="rule-5-readable-data-labels">
@@ -721,17 +707,17 @@ title="Print to PDF"
 <p>Often in datasets you work with, variables will be given shorthand names that make them easier to type in code. If you then use them to make a plot, that variable name will be used as the label on the axis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In this graph, without knowing much about the study the data came from, can you be sure what “Interest” means? Even if you know this is a study of students in a statistics class, is it interest in the course? This less? Taking this survey?</p>
+<p>In this graph, without knowing much about the study the data came from, can you be sure what “Interest” means? Even if you know this is a study of students in a statistics class, is it interest in the course? This lesson? Taking this survey?</p>
 <p>If you’re writing a research paper with this data, someone could read the text elsewhere in your paper to know what the variable names mean, but why make them work so hard and risk them not understanding? It’s important to label the axes in your plots with readable names that communicate important information about the variable by just looking at the image.</p>
 <p>Most <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> functions let you change the axis labels for a plot via the arguments <code class="docutils literal notranslate"><span class="pre">xlab</span></code> and <code class="docutils literal notranslate"><span class="pre">ylab</span></code>. These arguments take a string of text (in quotation marks) as the new axis label. Let’s do that to make the x-axis in the above figure more understandable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Interest in Statistics&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Interest in Statistics&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -739,7 +725,7 @@ title="Print to PDF"
 <p>We could also choose to update the y-axis: Someone can probably figure out what <code class="docutils literal notranslate"><span class="pre">MathAnxious</span></code> means, but it’s not a word itself so it’s not very professional.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">MathAnxious</span> <span class="o">~</span> <span class="n">Interest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> 
           <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;Interest in Statistics&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;Math Anxiety&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -789,7 +775,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The coloring function we applied to the histogram, <code class="docutils literal notranslate"><span class="pre">scale_fill_manual()</span></code> (or <code class="docutils literal notranslate"><span class="pre">scale_color_manual()</span></code> for outlines), isn’t the only coloring function. The “manual” part of the name refers to the fact that you choose colors by their name (“purple” or “orange”), but it’s restricted to just a few colors. There are a great many color packages that people have created to provide extra palettes to work with. Here are some gradients of example palettes:</p>
+<p>The coloring function we applied to the histogram, <code class="docutils literal notranslate"><span class="pre">scale_fill_manual()</span></code> (or <code class="docutils literal notranslate"><span class="pre">scale_color_manual()</span></code> for outlines), isn’t the only coloring function. The “manual” part of the name refers to the fact that you manually choose colors by their name (“purple” or “orange”), but it’s restricted to just a few colors. There are a great many color packages that people have created to provide extra palettes to work with. Here are some gradients of example palettes:</p>
 <img src="images/ch7-colors.png" width="500">
 <p>The “rainbow” and “heat” color palettes are less perceptually uniform compared to the other color scales. If you were to make them grayscale, there would be several points along the gradient that are brighter than other points, rather than making a smooth transition from bright to dark to correspond with the hue transition.</p>
 <p>One of the most common alternative coloring packages is called <code class="docutils literal notranslate"><span class="pre">viridis</span></code>. It has been optimized to be perceptually uniform and play friendly with color blindness. The whole package comes with four different color sets:</p>
@@ -798,13 +784,13 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scale_color_viridis()</span></code>: Change the color of points, lines and texts</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scale_fill_viridis()</span></code>: Change the fill color of areas (box plot, bar plot, etc)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">viridis(n)</span></code>, <code class="docutils literal notranslate"><span class="pre">magma(n)</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno(n)</span></code> and <code class="docutils literal notranslate"><span class="pre">plasma(n)</span></code>: Generate color palettes for base plot, where n is the number of colors to return.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">viridis(n)</span></code>, <code class="docutils literal notranslate"><span class="pre">magma(n)</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno(n)</span></code> and <code class="docutils literal notranslate"><span class="pre">plasma(n)</span></code>: Generate color palettes, where n is the number of colors to return.</p></li>
 </ul>
 <p>Let’s add this package, and then use <code class="docutils literal notranslate"><span class="pre">viridis(5)</span></code> to pick out 5 color values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;viridis&quot;</span><span class="p">)</span> <span class="c1">#comment these commands out after the first time you use them so you </span>
-<span class="nf">library</span><span class="p">(</span><span class="n">viridis</span><span class="p">)</span>            <span class="c1">#don&#39;t have to spend time re-installing after the first use</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;viridis&quot;</span><span class="p">)</span> 
+<span class="nf">library</span><span class="p">(</span><span class="n">viridis</span><span class="p">)</span>            
 
 <span class="nf">viridis</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
 </pre></div>
@@ -816,10 +802,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_viridis</span><span class="p">(</span><span class="n">discrete</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_viridis</span><span class="p">(</span><span class="n">discrete</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
 
 <span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_color_viridis</span><span class="p">(</span><span class="n">discrete</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">))</span> <span class="c1">#FALSE is the default value, so not required to add it here</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_color_viridis</span><span class="p">(</span><span class="n">discrete</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">))</span> <span class="c1">#FALSE is the default value, so not required to add it here</span>
 </pre></div>
 </div>
 </div>
@@ -828,7 +814,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Middle</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_color_viridis</span><span class="p">(</span><span class="n">discrete</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s">&quot;magma&quot;</span><span class="p">))</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_color_viridis</span><span class="p">(</span><span class="n">discrete</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">option</span> <span class="o">=</span> <span class="s">&quot;magma&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -839,11 +825,13 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">colorpalette</span> <span class="o">&lt;-</span> <span class="nf">viridis</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="n">option</span> <span class="o">=</span> <span class="s">&quot;plasma&quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">colorpalette</span><span class="p">)</span>
 
+<span class="c1">#using the 2nd and 4th generated colors</span>
 <span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">color_choices</span><span class="p">[</span><span class="m">2</span><span class="p">],</span> <span class="n">color_choices</span><span class="p">[</span><span class="m">4</span><span class="p">])))</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">colorpalette</span><span class="p">[</span><span class="m">2</span><span class="p">],</span> <span class="n">colorpalette</span><span class="p">[</span><span class="m">4</span><span class="p">])))</span>
 
+<span class="c1">#using the 3rd and 5th generated colors</span>
 <span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">color_choices</span><span class="p">[</span><span class="m">3</span><span class="p">],</span> <span class="n">color_choices</span><span class="p">[</span><span class="m">5</span><span class="p">])))</span>
+    <span class="nf">gf_refine</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">colorpalette</span><span class="p">[</span><span class="m">3</span><span class="p">],</span> <span class="n">colorpalette</span><span class="p">[</span><span class="m">5</span><span class="p">])))</span>
 </pre></div>
 </div>
 </div>
@@ -879,15 +867,6 @@ title="Print to PDF"
 <li><p>Manipulate the color, size, and transparency of data in R plots</p></li>
 <li><p>Change axis labels and titles in R plots</p></li>
 <li><p>Choose plot elements based on how well they communicate your intended message</p></li>
-</ul>
-</section>
-<section id="chapter-quiz">
-<h2>Chapter quiz<a class="headerlink" href="#chapter-quiz" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="lab">
-<h2>Lab<a class="headerlink" href="#lab" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Pick a new function from <a class="reference external" href="http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html">http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html</a> that you haven’t used yet: follow the directions there to make it. The change the attributes to better align with the data viz rules.</p></li>
 </ul>
 </section>
 </section>

@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 18 - Significance Testing with Models &#8212; Pomona Psych 158 Online Textbook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 1 Describing Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
+   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-2.html">
+   Chapter 2 - Statistical Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-3.html">
+   Chapter 3 - What are Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-4.html">
+   Chapter 4 - Organizing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-5.html">
+   Chapter 5 - Describing Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 2 - Modeling Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-6.html">
+   Chapter 6 - Variation in Multiple Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unit 3 - Evaluating Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chapter-7.html">
+   Chapter 7 - Principles of Data Visualization
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-18.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/smburns47/Psyc158"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-18.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/chapter-18.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#significant-models">
+   18.1 Significant models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#null-sampling-distribution-of-r-sup-2-sup">
+   18.2 Null sampling distribution of R
+   <sup>
+    2
+   </sup>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#significance-testing-a-model">
+   18.3 Significance testing a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-f-distribution">
+   18.4 The F distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-different-full-models">
+   18.5 Comparing different full models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importance-of-direct-comparison">
+   18.6 Importance of direct comparison
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-comparisons-problem">
+   18.7 Multiple comparisons problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 18 - Significance Testing with Models</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#significant-models">
+   18.1 Significant models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#null-sampling-distribution-of-r-sup-2-sup">
+   18.2 Null sampling distribution of R
+   <sup>
+    2
+   </sup>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#significance-testing-a-model">
+   18.3 Significance testing a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-f-distribution">
+   18.4 The F distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-different-full-models">
+   18.5 Comparing different full models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importance-of-direct-comparison">
+   18.6 Importance of direct comparison
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-comparisons-problem">
+   18.7 Multiple comparisons problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-summary">
+   Chapter summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+<span class="n">GSS</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">#smaller dataset, more similar in size to most psychology studies</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-18-significance-testing-with-models">
+<h1>Chapter 18 - Significance Testing with Models<a class="headerlink" href="#chapter-18-significance-testing-with-models" title="Permalink to this headline">#</a></h1>
+<section id="significant-models">
+<h2>18.1 Significant models<a class="headerlink" href="#significant-models" title="Permalink to this headline">#</a></h2>
+<p>In the previous chapter we learned how to use the sampling distribution of β to test the null hypothesis. Using permutation testing, we generated a sampling distribution for a world in which β = 0 is true in the data generation process. We used the sampling distribution to calculate the p-value, the probability that the sample b, or a b more extreme than the sample, would have occurred just by chance if the null hypothesis were true. Based on the p-value, and the decision criterion we had set (i.e., α of .05), we decided whether to reject the null hypothesis or not.</p>
+<p>Decisions of statistical significance are made about one statistical estimate at a time. Thus, it is a common tool for psychologists who are interested in questions such as “is <em>this</em> effect a real part of the data generation process?” To answer that question they will build a statistical model with that effect included, calculate a p-value, and then interpret the p-value of that effect in particular.</p>
+<p>But that’s not the only type of research question you might have. Perhaps instead of one particular variable, you’re interested in whether a set of multiple variables together are helpful for making predictions about an outcome. In other words, you want to know if your entire <em>model</em> is significant, not just any one predictor.</p>
+<p>As it turns out, the sampling distribution of β is just one of many sampling distributions we could construct. Using the same approach we developed for one model coefficient, we could make a sampling distribution of any statistic that we can calculate. That includes estimates of whole model error such as PRE.</p>
+<p>At this point, we’re going to switch over to using a different name for PRE that is used more commonly - R<sup>2</sup>. “PRE” is the name used in the <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> package we relied on for learning about error in models, but the concept of what proportion of error a model explains is more commonly discussed and written about as R<sup>2</sup>.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">summary()</span></code> on a model object, we can skip the ANOVA table entirely and find this value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_mother</span> <span class="o">+</span>
+                <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the second to the last line of this output is an entry called “Multiple R-squared: 0.2857”. This stands for the R<sup>2</sup> value in a regression model. It is also possible to get this value directly by saving the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output to its own object, and then finding the <code class="docutils literal notranslate"><span class="pre">$r.squared</span></code> property of the summary object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_summary</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
+<span class="n">model_summary</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can easily verify that this is the same value as PRE is in the ANOVA table for the full model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">supernova</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When assessing statistical models as a whole, rather than individual predictors, the statistic we care about is PRE/R<sup>2</sup>. We don’t care so much how strong any one effect is, but together we want a model that explains at least some proportion of the variation in an outcome variable. In a world where this model is not helpful, it wouldn’t explain any variance - the population R<sup>2</sup> value would be 0. Thus, for significance testing entire models, we need to examine the null sampling distribution of R<sup>2</sup> = 0.</p>
+</section>
+<section id="null-sampling-distribution-of-r-sup-2-sup">
+<h2>18.2 Null sampling distribution of R<sup>2</sup><a class="headerlink" href="#null-sampling-distribution-of-r-sup-2-sup" title="Permalink to this headline">#</a></h2>
+<p>In order to construct a null sampling distribution of R<sup>2</sup>, we first need to understand what would cause a model to have R<sup>2</sup> = 0. The R<sup>2</sup> model reflects the proportion of variation in an outcome variable that a full model explains, relative to the empty model. This score can range from 0 to 1. With R<sup>2</sup> = 1, there would be no error left in a model; the set of explanatory variables the model uses results in perfect predictions about the outcome values.</p>
+<p>The opposite, then, is when R<sup>2</sup> = 0. This would mean the full model explains no additional variation relative to the empty model. It performs exactly how the empty model would for making predictions. What would turn a full model into an empty model?</p>
+<p>Recall the equation for the empty model:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 \]</div>
+<p>The only parameter in the model is b<sub>0</sub>. For a full multivariable model with two predictors, the equation would look like so:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} \]</div>
+<p>In order to make this match the equation of the empty model, we need to cancel out the extra terms. The situation that would create this is if both b<sub>1</sub> and b<sub>2</sub> were 0.</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 + (0)X_{1i} + (0)X_{2i} =\]</div>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 \]</div>
+<p>The null hypothesis for a full model is thus larger than any one parameter. It is the hypothesis that <em>all</em> predictor coefficients are equal to 0. You could write this as:</p>
+<div class="math notranslate nohighlight">
+\[H_0: \beta_1 = \beta_2 = 0 \]</div>
+<p>Or, since the consequence of all coefficients being 0 are that no additional variation is explained beyond the empty model, you can write the null hypothesis as:</p>
+<div class="math notranslate nohighlight">
+\[H_0: R^2 = 0 \]</div>
+<p>To create the null sampling distribution of one coefficient, last chapter we used permutation testing to shuffle the order of one predictor variable. That broke the relationship between the predictor and the outcome, making the true value of that predictor’s coefficient equal to 0. We can use permutation testing for our full model situation as well. Since our null hypothesis is that all predictor coefficients = 0, we simply shuffle every predictor and fit a model with those shuffled predictors. Then we estimate the R<sup>2</sup> value of the permutation test model. Saving this value and repeating many times will let us build a null sampling distribution of R<sup>2</sup>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_R2</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span> 
+                                         <span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">),</span> 
+                                         <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
+                                         <span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">),</span> 
+                                         <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_mother</span> <span class="o">+</span> <span class="n">shuffled_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">null_R2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="p">}</span>
+
+<span class="n">R2_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">null_R2</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">null_R2</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">R2_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Walk yourself through every line of this permutation test code, and make sure you understand what it’s doing and why. We’re shuffling both of the predictors of mother’s and father’s education, using those shuffled predictors to predict the participants’ education level, saving the model R<sup>2</sup>, and repeating that process 1,000 times.</p>
+<p>Then, investigate the shape of the R<sup>2</sup> null sampling distribution. Interestingly, it has a very different shape than the sampling distribution of β. In the figure below we put two example sampling distributions side by side for purposes of comparison.</p>
+<img src="images/ch18-R2b1.png" width="750">
+<p>The sampling distribution of β has two tails because the effect of a predictor could be positive or could be negative. But R<sup>2</sup> is different: the full model can explain none of the error compared to the empty model (0), or up to all of the error from the empty model (1). But it cannot explain less than 0 error. Because R<sup>2</sup> is a proportion, it has a clear lower bound of 0, and a clear upper bound of 1.</p>
+<p>Assuming the null hypothesis is true, the only place an extreme R<sup>2</sup> could fall is in the upper tail of the distribution, which is why there is only one tail. An extreme positive effect of parental education <em>or</em> an extreme negative effect of parental education are both the same to R<sup>2</sup>: both would make a predictive model, and fall in the upper tail of the sampling distribution of R<sup>2</sup>.</p>
+</section>
+<section id="significance-testing-a-model">
+<h2>18.3 Significance testing a model<a class="headerlink" href="#significance-testing-a-model" title="Permalink to this headline">#</a></h2>
+<p>Once we have the null sampling distribution of R<sup>2</sup>, we can compare our estimate of R<sup>2</sup> to it. In this comparison, we ask ourselves - if R<sup>2</sup> = 0 in the population, is it likely or unlikely to produce an estimate of R<sup>2</sup> such as ours?</p>
+<p>In the null distribution of β, we considered something “unlikely” if it was outside the area where 95% of b estimates would fall. In other words, an unlikely b estimate is one that is at least 1.96 standard errors above or below β = 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_b1</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each b1</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span> 
+                                         <span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">),</span> 
+                                         <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_mother</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">null_b1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="p">}</span>
+
+<span class="n">b1_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">null_b1</span><span class="p">)</span>
+
+<span class="c1">#cut-off values for extremeness</span>
+<span class="n">b1s_sd</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span>
+<span class="n">high_cutoff</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span><span class="o">*</span><span class="m">1.96</span>
+<span class="n">low_cutoff</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span><span class="o">*</span><span class="m">-1.96</span>
+
+<span class="c1">#marking something as extreme if it is greater than 1.96*sd or less than -1.96*sd</span>
+<span class="n">b1_df</span><span class="o">$</span><span class="n">extreme</span> <span class="o">&lt;-</span> <span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span> <span class="o">&gt;</span> <span class="n">high_cutoff</span> <span class="o">|</span> <span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span> <span class="o">&lt;</span> <span class="n">low_cutoff</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_b1</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">b1_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span><span class="n">extreme</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are two “zones” of unlikeliness in this distribution, because a b estimate can either be greater than 0 or less than 0. 2.5% of the distribution is in each tail, adding up to the 5% of bs that count as unlikely. To check whether a particular estimate of b is unlikely (and thus significantly different from 0), we’d ask if it’s larger than the 97.5%ile OR less than the 2.5%ile of the distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">simple_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_mother</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="n">b1</span> <span class="o">&lt;-</span> <span class="n">simple_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+
+<span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span> <span class="m">0.025</span><span class="p">)</span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span> <span class="m">0.975</span><span class="p">)</span>
+<span class="n">b1</span>
+<span class="n">b1</span> <span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span> <span class="m">0.975</span><span class="p">)</span> <span class="o">|</span> <span class="n">b1</span> <span class="o">&lt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span> <span class="m">0.025</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the sampling distribution of R<sup>2</sup>, an estimate can only be larger than 0, never less. There is one tail to the distribution. This means that if we were to use the same α criterion for significance as before, α = 0.05, the 5% unlikely estimates will all be in the high tail. Based on this fact, a significant R<sup>2</sup> is one that is larger than the 95%ile of the null sampling distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">full_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_mother</span> <span class="o">+</span>
+                <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">GSS_subset</span><span class="p">)</span>
+<span class="n">R2</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="nf">quantile</span><span class="p">(</span><span class="n">null_R2</span><span class="p">,</span> <span class="m">0.95</span><span class="p">)</span>
+<span class="n">R2</span> 
+<span class="n">R2</span> <span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">null_R2</span><span class="p">,</span> <span class="m">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that a p-value is the probability of getting an estimate that is as extreme or more extreme as the one we got, if the population parameter were 0. To calculate the p-value for a model’s R<sup>2</sup> score, we’d count the proportion of the null sampling distribution that is at least as extreme as our model estimate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_R2</span> <span class="o">&gt;</span> <span class="n">R2</span>
+<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+
+<span class="n">num_more_positive</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_R2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to this, we didn’t simulate any R<sup>2</sup>s from the null distribution that were larger than the R<sup>2</sup> we estimated from the dataset. Its p-value is something less than 1 in a thousand: p &lt; 0.001.</p>
+</section>
+<section id="the-f-distribution">
+<h2>18.4 The F distribution<a class="headerlink" href="#the-f-distribution" title="Permalink to this headline">#</a></h2>
+<p>The shape of this sort of one-tailed distribution is called an <strong>F distribution</strong>. Much in the same way original statisticians had to build a mathematical formula to represent the theoretical shape of a coefficient’s sampling distribution (the t distribution), they also built one for model performance.</p>
+<img src="images/ch18-fdist.png" width="500">
+<p>The shape of an F distribution is controlled by two values: the number of predictor parameters in a model (k) and the degrees of freedom of a model (N-k). k sets where the peak of the distribution is horizontally, while the ratio of k to df sets what proportion of the area is in the major peak versus the tail.</p>
+<p>The width of the null sampling distribution for a b estimate is directly proportional to the sample size N, such that smaller N’s lead to wider distributions. This is because the estimates from smaller sample sizes are less stable, so larger estimates are considered more likely. The same principle applies in the null sampling distribution of R<sup>2</sup>, but it’s not just the sample size that determines this. It’s the degrees of freedom, N-k. A model could be fit in a large dataset, but if a large number of parameters are also fit, the R<sup>2</sup> estimate will be less stable than a model fit with just a couple of parameters. This is because, with many parameters, there are a lot more ways the set of bs can vary! With more ways bs can vary, a wider range of R<sup>2</sup>s are likely.</p>
+<p>With permutation testing, we can calculate a p-value by counting up the proportion of the simulated null sampling distribution that is as extreme or more extreme than an estimated R<sup>2</sup> value. But again, R can also give the exact p-value to us in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output, but using the math of the F distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Don’t be distracted by the p-values for each separate predictor. Right now we’re not interested in how strong each of those effects are individually, just how well they combine to make predictions.</p>
+<p>We now know how to find the model’s R<sup>2</sup> value in this output: it is the number labeled “Multiple R-squared” on the second to the last line. For the p-value of that estimate, look below it at the last line of the output. There will be a number for “F-statistic” that tells you how extreme on the null F distribution this R<sup>2</sup> would fall, along with the two values that determine the shape of the F distribution: the number of predictor coefficients (2; the intercept isn’t counted here) and the degrees of freedom (63). Next to that is a number labeled “p-value.” That is the p-value for the entire model.</p>
+<p>Notice that the p-value in our example is still significant even though one of the predictors in the model is not. The model as a whole is likely to make better predictions than the empty model, even if not all the predictors significantly contribute to those predictions.</p>
+<p>We can use the p-value to decide, based on our stated alpha of .05, whether the observed sample statistic would be unlikely or not if the null hypothesis is true. If we judge it to be unlikely (i.e., p &lt; .05), then we would most likely decide to reject the empty model in favor of this more complex model. But if the p-value is greater than .05, we would probably decide to stick with the empty model for now, pending further evidence. It’s more parsimonious, and an insignificant model would be adding complexity without enough of an improvement in predictions to make that complexity worth it.</p>
+</section>
+<section id="comparing-different-full-models">
+<h2>18.5 Comparing different full models<a class="headerlink" href="#comparing-different-full-models" title="Permalink to this headline">#</a></h2>
+<p>Testing the significance of a model’s R<sup>2</sup> estimate lets you test whether or not the model as a whole is likely to perform similarly to the empty model - whether or not this R<sup>2</sup> estimate likely comes from a world where all the beta estimates are truly 0. It’s a test of whether or not we are confident that this model will perform better than nothing.</p>
+<p>But that’s not the only kind of question we might have about a model. Perhaps instead of a comparison to the empty model, we want to make comparisons between different full models. As an example, maybe we’re using the data in the GSS to help us plan a study of our own that will explore why parental education is related to child education. We’re only going to have enough funding to talk to one parent though, so we want to know if either mother’s or father’s education is a significantly <em>better</em> predictor of child education.</p>
+<p>Can we just make two separate simple linear models and look at the R<sup>2</sup> of each model separately? Do this below and examine the outputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Fit a linear model predicting highest_year_of_school_completed with highest_year_school_completed_mother</span>
+<span class="c1">#in GSS_subset</span>
+<span class="n">mother_model</span> <span class="o">&lt;-</span> 
+
+<span class="c1">#return the summary of that model</span>
+
+<span class="c1">#Fit a linear model predicting highest_year_of_school_completed with highest_year_school_completed_father</span>
+<span class="c1">#in GSS_subset</span>
+<span class="n">father_model</span> <span class="o">&lt;-</span> 
+
+<span class="c1">#return the summary of that model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The R<sup>2</sup> estimate for <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> is 0.223, while the R<sup>2</sup> estimate for <code class="docutils literal notranslate"><span class="pre">father_model</span></code> is 0.290. Both models themselves are significant, so to answer our question about which one explains more variation overall, let’s look at the difference between these values. Just from the raw numbers, it looks like father’s education will explain more variation in child education than mother’s education will. The <em>difference</em> in these R<sup>2</sup> estimates, ΔR<sup>2</sup>, is 0.067 in favor of the father model.</p>
+<p>But both of these R<sup>2</sup> values are point estimates, drawn from the population of possible R<sup>2</sup> values. We know not every sample will have these exact R<sup>2</sup> values. Is it possible that the R<sup>2</sup> for father’s education is larger than the R<sup>2</sup> for mother’s education just by chance? I.e., is the true ΔR<sup>2</sup> in the population actually equal to 0?</p>
+<p>We can develop a null hypothesis about any statistical estimate we want. In this case, the estimate we care about is not the exact R<sup>2</sup> value of the two models, but whether one is significantly larger than the other. Our null hypothesis is:</p>
+<div class="math notranslate nohighlight">
+\[H_0: R^2_1 - R^2_2 = \Delta{R^2} = 0\]</div>
+<p>More complicated estimates like these don’t have a pre-defined shape of the null sampling distibution - original statisticians could only do so much. Because of this, there isn’t a simple way to compute the p-value of ΔR<sup>2</sup>. But this is where permutation testing really shines, and is the sort of case where it is used for real research. If you don’t know the shape of the null sampling distribution ahead of time, you can always generate one with simulations and use that <strong>experimental null</strong> to test the null hypothesis.</p>
+<p>The easiest way to build a null sampling distribution for ΔR<sup>2</sup> is to make both R<sup>2</sup><sub>1</sub> and R<sup>2</sup><sub>2</sub> equal to 0, and find the difference between them. This way any differences found would be the result of both of these estimates varying around 0. Below is some incomplete code for doing this permutation test. Fill in the missing lines in order to generate a null sampling distribution of ΔR<sup>2</sup>. Remember that to do this permutation test, we need to shuffle the predictors, as R<sup>2</sup> = 0 when all b estimates in a model equal 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_deltaR2</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+    <span class="n">mother_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_mother</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">R2_mother</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">mother_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+    <span class="n">father_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">R2_father</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">father_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+    <span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">R2_mother</span> <span class="o">-</span> <span class="n">R2_father</span>
+<span class="p">}</span>
+
+<span class="n">deltaR2_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_deltaR2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">deltaR2_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shape of this distribution is two tailed, because it’s possible to have a ΔR<sup>2</sup> that is either positive or negative - R<sup>2</sup> for <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> might be bigger, or it might be smaller than <code class="docutils literal notranslate"><span class="pre">father_model</span></code>. Because of this the null sampling distribution of ΔR<sup>2</sup> is clearly not an F distribution. But it’s also a much skinnier distribution than the t distribution. We haven’t learned about a specific shape this distribution is expected to look like, but with permutation testing we don’t need that. To find the p-value of our estimated ΔR<sup>2</sup> of 0.067, we just need to find the proportion of the experimental null distribution that is at least as extreme as this number (in both the positive and negative tails).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_deltaR2</span> <span class="o">&gt;</span> <span class="m">0.067</span>
+<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<span class="n">more_negative</span> <span class="o">&lt;-</span> <span class="n">null_deltaR2</span> <span class="o">&lt;</span> <span class="m">-0.067</span>
+<span class="n">num_more_negative</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">num_more_positive</span> <span class="o">+</span> <span class="n">num_more_negative</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You might get a slightly different p-value because of the random samples that ended up in your experimental null distribution. But when running this code to write this chapter, I got p = 0.025. This would indicate than a ΔR<sup>2</sup> = 0.067 only has a 2.5% chance of occurring when the true population ΔR<sup>2</sup> = 0. This is less than our α criterion of 0.05, so we reject the null hypothesis that <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> and <code class="docutils literal notranslate"><span class="pre">father_model</span></code> explain equal amounts of variation. We choose father’s education as the better predictor.</p>
+<p>Lets consider another model comparison case we might care about. Perhaps we aren’t sure whether father’s education is related to child’s education linearly, or nonlinearly. Maybe the difference between a father who graduated high school versus not has a bigger effect on a child’s level of education than the difference between a father with a master’s and a PhD degree. Let’s repeat the same process as above, but comparing R<sup>2</sup> values for the linear vs. nonlinear version of the model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">linear_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
+                   <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="c1">#Converting to log, adding a small value to any 0s so that the log isn&#39;t -Inf</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">nonlinear_father</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span> <span class="o">+</span> <span class="m">0.001</span><span class="p">)</span>
+<span class="n">nonlinear_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">nonlinear_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">nonlinear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The point estimates of each R<sup>2</sup> indicate that the nonlinear model might be better: ΔR<sup>2</sup> = 0.047. But we have to run a null hypothesis test to see how confident we are in that. Complete the code below to run this permutation test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_deltaR2</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_linear</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+    <span class="c1">#Add a small value to any 0s so that the log isn&#39;t -Inf</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_nonlinear</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_linear</span> <span class="o">+</span> <span class="m">0.001</span><span class="p">)</span>
+    <span class="n">linear_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_father_linear</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">R2_linear</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+    <span class="n">nonlinear_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_father_nonlinear</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">R2_nonlinear</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">nonlinear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+    <span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">R2_linear</span> <span class="o">-</span> <span class="n">R2_nonlinear</span>
+<span class="p">}</span>
+
+<span class="n">deltaR2_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_deltaR2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">deltaR2_df</span><span class="p">)</span>
+
+<span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_deltaR2</span> <span class="o">&gt;</span> <span class="m">0.047</span>
+<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<span class="n">more_negative</span> <span class="o">&lt;-</span> <span class="n">null_deltaR2</span> <span class="o">&lt;</span> <span class="m">-0.047</span>
+<span class="n">num_more_negative</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">num_more_positive</span> <span class="o">+</span> <span class="n">num_more_negative</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When I ran this test, my p-value = 0.058. That is not smaller than 0.05, so we fail to reject the null hypothesis. We aren’t confident enough that the linear vs. nonlinear models are different from each other in how much variation they explain. In that case, I would probably go with the linear model, because it is simpler to understand.</p>
+<p>Lastly, maybe we want to know whether adding some new predictors would significantly improve a model compared to a more reduced model. This is like calculating the significance of a model compared to the empty model, except now we’re comparing to a simple, but not empty model. In fact, testing the significance of a model’s R<sup>2</sup> compared to the empty model is just a special case of testing the significance of ΔR<sup>2</sup> - it’s just ΔR<sup>2</sup> in than case is the difference between R<sup>2</sup> and 0. Let’s test whether or not adding <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code> significantly improve the predictions of <code class="docutils literal notranslate"><span class="pre">father_model</span></code>.</p>
+<p>First, we generate point estimates of R<sup>2</sup> for both versions of the model, and compute an estimated ΔR<sup>2</sup>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">simple_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
+                   <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">simple_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="n">full_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span> <span class="o">+</span> 
+                                                     <span class="n">number_of_brothers_and_sisters</span> <span class="o">+</span> 
+                                                     <span class="n">born_in_us</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks like the full model might be 0.044 better, but we have to run the permutation test to be confident!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_deltaR2</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
+                                              <span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span> 
+                                              <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+    <span class="c1">#Have to shuffle all predictors</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_siblings</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> 
+                                              <span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span> 
+                                              <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+    <span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_usborn</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="p">,</span> 
+                                              <span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span> 
+                                              <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+    <span class="n">simple_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">R2_simple</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">simple_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+    <span class="n">full_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">shuffled_father</span> <span class="o">+</span> <span class="n">shuffled_siblings</span> <span class="o">+</span> 
+                                                         <span class="n">shuffled_usborn</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+    <span class="n">R2_full</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+    <span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">R2_full</span> <span class="o">-</span> <span class="n">R2_simple</span>
+<span class="p">}</span>
+
+<span class="n">deltaR2_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_deltaR2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">deltaR2_df</span><span class="p">)</span>
+
+<span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_deltaR2</span> <span class="o">&gt;</span> <span class="m">0.047</span>
+<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<span class="n">more_negative</span> <span class="o">&lt;-</span> <span class="n">null_deltaR2</span> <span class="o">&lt;</span> <span class="m">-0.047</span>
+<span class="n">num_more_negative</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">num_more_positive</span> <span class="o">+</span> <span class="n">num_more_negative</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This distribution is almost entirely one-tailed in the positive direction, because we know adding predictors (even insignificant ones) increases a model’s R<sup>2</sup>. In fact, according to this experimental null distribution, about 20% of the time we’d expect the larger model to outperform the simpler model by a ΔR<sup>2</sup> of at least 0.044 even when the population ΔR<sup>2</sup> is 0 (p = 0.203). ΔR<sup>2</sup> = 0.044 is not a significant change in model performance. The full model is likely significant compared to the empty model, but it is not significantly better than the simple model. In that case we’d probably go with the simple model because it’s easier to understand.</p>
+<p>Comparing different models like this is called <strong>model selection</strong>. It is useful when you want to find out what predictors are better than others, whether a nonlinear model is a better fit to the data than a linear model, and/or whether adding new predictors significantly improves predictions. We can’t look at the raw error estimates from models in order to make these decisions, because those are estimates than might vary sample to sample. But by directly comparing estimates with permutation testing, we can see the expected distribution of estimates under the null hypothesis, and decide whether our estimate is likely to occur in that scenario, or whether a true difference in models probably exists.</p>
+</section>
+<section id="importance-of-direct-comparison">
+<h2>18.6 Importance of direct comparison<a class="headerlink" href="#importance-of-direct-comparison" title="Permalink to this headline">#</a></h2>
+<p>The model selection exercise we did above highlights the importance of statistically comparing models, and not just looking at the difference in point estimates. Each model’s R<sup>2</sup> is an estimate that varies sample to sample, so any difference between them also varies sample to sample and may be 0 in the population.</p>
+<p>Sometimes you will find researchers who do this incorrectly. There is published research out there where the analysts chose a model based on which point estimate was larger, but not by testing the difference in point estimates against a null distribution.</p>
+<p>Another common direct comparison mistake is to say that, because one model was significant and another was not, therefor the models are significantly different from <em>each other</em>. To see why this is wrong, imagine the situation where one model A’s p-value is 0.035, and another model B’s p-value is 0.074. Model A is significant while Model B is not. Seems that would mean Model A is automatically better, right? But what if we told you the R<sup>2</sup> value of Model A was 0.22 and the R<sup>2</sup> value of Model B was 0.17. Thus, ΔR<sup>2</sup> is 0.05. We’ve seen examples already where ΔR<sup>2</sup> = 0.05 is likely to occur when the population ΔR<sup>2</sup> is actually 0. Thus, just because Model A is significantly different from 0 and Model B is not, does not mean that either of those models are significantly better than each other. It could be that Model B had slightly too few data points to find a confidence interval of the coefficients that does not include 0. This is particularly evident if you visualize both models:</p>
+<img src="images/ch18-directcomp.png" width="450">
+<p>Clearly, Model B does not look all that different from Model A. It just so happens that their estimates fall slightly on either side of the α = 0.05 criterion.</p>
+<p>So keep this in mind: if you ever want to make a statement that one thing is significantly better than another thing, you need to directly compare them with a statistical test. If comparing groups, make sure “group” is a variable in one model so that the beta coefficient of group differences can be tested against β = 0. If comparing models, make sure to test the difference in model R<sup>2</sup> scores against a null sampling distribution of ΔR<sup>2</sup> = 0.</p>
+</section>
+<section id="multiple-comparisons-problem">
+<h2>18.7 Multiple comparisons problem<a class="headerlink" href="#multiple-comparisons-problem" title="Permalink to this headline">#</a></h2>
+<p>Another thing to be aware of in model selection is what’s called the <strong>multiple comparisons problem</strong>.</p>
+<p>Imagine you want to select the best model among 4 options, A, B, C, and D. You start out by testing A against B, then against C, and against D. In each of these comparisons, you find that Model A was significantly better because the p-value of ΔR<sup>2</sup> was &lt;0.05 for each comparison (e.g., p = 0.01, p = 0.005, p = 0.04). Sounds great, right?</p>
+<p>But there is a danger to doing multiple comparisons like this. When we do a hypothesis test, we set an α level to define what will count as an “unlikely” sample estimate. It is common to set α = 0.05, such that any estimate in the null sampling distribution that is more extreme than the 0.05 boundary is considered unlikely to be produced by the null sampling distribution.</p>
+<p>But that doesn’t mean the null sampling distribution <em>can’t</em> produce it. It is possible that we reject the null hypothesis when it is in fact true - that we commit a Type I error.</p>
+<p>If we set our Type I error rate at 0.05 (that is, we define 5% of the least likely estimates as unlikely) and we do a lot of hypothesis tests, we will make a Type I error, on average, one out of every 20 times (that is, 5% of the time), rejecting the empty model when, in fact, the empty model is true. Every time we find a statistically significant result, there is a 5% chance that we are incorrectly rejecting the null hypothesis. On the flipside, that means we avoid making a Type I error 95% of the time.</p>
+<p>This is okay if all we care about is a single test. But if we do three tests in sequence as in the example above, we want to achieve a 95% rate of avoiding Type I error across all three tests, not just for each one separately.</p>
+<p>You can think of it like flipping a coin. If you flip a coin once, the probability that it will come up heads is 50%. But if you flip a coin three times, the probability of all three coming up heads is a lot less than 50%. Similarly, if you do a single hypothesis test, the probability of avoiding a Type I error is 95%. But if you do three hypothesis tests, the probability of avoiding a Type I error is a lot less than 95%.</p>
+<p>How much less than 95%? If the probability of one test not being wrong is 95%, the probability that none of the three tests is wrong would be 95%*95%*95%, or 0.857. Therefore, the probability that any one of these three tests is wrong is 1 minus 0.857, or 0.143. This is called the <strong>family-wise error rate</strong>. What this means is that the probability of making a Type I error on any one of the three comparisons is 0.143 (which is a lot higher than 0.05). With every additional hypothesis test we run, the chance increases that we’ve made a Type I error somewhere.</p>
+<p>This isn’t a big deal when you have one hypothesis to test. But in modern scientific research, we are increasingly asking questions that involve many hypothesis tests. E.g., in model selection, where we test many models to see which makes the best predictions; or in cases where there are multiple outcome measures to make predictions about. These scenarios can be found all across the social and life sciences. The more tests that are run, the bigger the Type I error and risk of erroneous conclusions such as <a class="reference external" href="https://www.wired.com/2009/09/fmrisalmon/">finding significant brain activity in a dead salmon</a>.</p>
+<p>To control this family-wise error rate are a suite of methods that do <strong>multiple comparison correction</strong>. Some involve more sophisticated math than others, but all involve adjusting the p-values of a hypothesis test before comparing it to an α criterion for making decisions about significance. This adjustment is dependent on the number of tests we have to run. The simplest multiple comparison correction method is called the Bonferroni adjustment, named after the person who proposed it. In this method, if we want to maintain a 95% chance of not making a Type I error on <em>any</em> of our comparisons, we would simply multiply the p-value of each test times the number of comparisons before comparing it to the alpha criterion.</p>
+<p>In our model selection example above, Model A was better than Models B, C, and D at p = 0.01, p = 0.005, and p = 0.04, respectively. If any of those comparisons had been done alone, we would simply compare those p-values to α = 0.05 and find that Model A is significantly better. But because we did three tests, there is a risk that any one of those tests is an incorrect rejection of the null hypothesis. In order to control that risk with Bonferroni correction and keep the Type I <em>family-wise</em> error rate to 5%, we multiply each of those p-values by the number of tests we ran:</p>
+<ul class="simple">
+<li><p>Model A vs. Model B: p = 0.01 * 3 = 0.03</p></li>
+<li><p>Model A vs. Model C: p = 0.005 * 3 = 0.015</p></li>
+<li><p>Model A vs. Model D: p = 0.04 * 3 = 0.12</p></li>
+</ul>
+<p>After multiple comparison correction, Model A no longer looks significantly better than Model D.</p>
+<p>The Bonferroni adjustment is straightforward, and essentially makes our decision criteria for any one test among the set more stringent. But some think it is overly conservative - in other words, that it’s trying too hard to protect us from making Type I error. The corrected p-value can get very large if the number of simultaneous comparisons gets large. Although this decreases the chance of making a Type I error, it increases the chance of making a Type II error of not detecting a difference when one does exist. We’ve taught you the Bonferroni correction because it is the easiest to use, but other less conservative multiple comparison corrections are more common in research and include <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/post-hoc/tukey-test-honest-significant-difference/">Tukey’s Honestly Significant Difference Test</a> and the <a class="reference external" href="https://www.statisticshowto.com/benjamini-hochberg-procedure/">Benjamini-Hochberg False Discovery Rate</a>.</p>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Find the R<sup>2</sup> estimate in a model output</p></li>
+<li><p>Generate the null sampling distribution of R<sup>2</sup></p></li>
+<li><p>Test the significance of a model</p></li>
+<li><p>Perform model selection among different models</p></li>
+<li><p>Explain the importance of direct comparison</p></li>
+<li><p>Conduct multiple comparison correction</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Shannon Burns<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

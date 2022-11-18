@@ -24,7 +24,8 @@ my_vector[1:4]
 # This code returns my_vector, but without the 3rd item
 my_vector[-3]
 
-# Try using both the colon method and the negative indexing method to return the vector (2,3,4,5) using my_vector
+# Try using both the colon method and the negative indexing method as different ways to return 
+# the vector (2,3,4,5) using my_vector
 
 
 my_sequence <- c(2,4,6,8,10)         
@@ -77,18 +78,18 @@ object3 <- 30
 zipcodes <- c(01267, 01002, 19081, 91711, 02481, 04011, 21402, 91711, 55057, 05753)
 str(zipcodes)
 
-# Use the factor() function on handedness_label, assign it to handedness_factor, and then return the type 
+# Use the as.character() function on zipcodes, assign it to zipcodes_char, and then return the type 
 # of that new object
-zipcodes_factor <- #replace this comment with your code
-str(zipcodes_factor)
+zipcodes_char <- #replace this comment with your code
+str(zipcodes_char)
 
-handedness_numeric <- as.numeric(handedness_factor)
-str(handedness_numeric)
+zipcodes_numeric <- as.numeric(zipcodes_char)
+str(zipcodes_numeric)
 
 # 4 places, coded by zipcode
 places_num <- c(01267, 01002, 19081, 91711)
 places_factor <- factor(places_num, levels = c(01267, 01002, 19081, 91711), 
-                        labels = c("williams", "amherst", "swarthmore", "pomona")))
+                        labels = c("williams", "amherst", "swarthmore", "pomona"))
 # if your command is too wide, hit return after a comma to make it wrap around on a new line, indented
 
 places_factor
@@ -112,9 +113,9 @@ my_vector <- c(1,2,3,4,5)
 my_vector <- #replace this comment with your code
 
 
+handedness <- c(2,1,1,1,1,2,1,1,1)
 handedness_bool <- handedness == 1
 
-# This code returns both vectors
 handedness_bool
 
 
