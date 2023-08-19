@@ -23,9 +23,9 @@ parts:
 - caption: Unit 2 - Modeling Data
   chapters:
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb
-    title: Chapter 8 - The Data Generation Process
+    title: Chapter 8 - Where Data Come From
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb
-    title: Chapter 9 - Statistical Models
+    title: Chapter 9 - Modeling the Data Generation Process
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb
     title: Chapter 10 - Quantifying Model Error
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb
@@ -45,12 +45,14 @@ parts:
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb
     title: Chapter 17 - Significance Testing
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb
-    title: Chapter 18 - Significance Testing with Whole Models
+    title: Chapter 18 - Significance Testing Whole Models
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb
-    title: Chapter 19 - Evaluating Effect Sizes
+    title: Chapter 19 - Effect Sizes & Power
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb
-    title: Chapter 20 - Sources of Model Bias
+    title: Chapter 20 - Alternate Approaches - Traditional Inference Methods
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb
-    title: Chapter 21 - Bayesian Statistics
+    title: Chapter 21 - Alternate Approaches - Bayesian Statistics
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb
-    title: Chapter 22 - Lying with Statistics
+    title: Chapter 22 - Bias due to Improper Model Building
+  - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb
+    title: Chapter 23 - Bias due to Improper Model Selection
