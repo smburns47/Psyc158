@@ -138,7 +138,7 @@ Female,Asian,NA,2,1,Not Working,Disagree,Somewhat Interested,A-,8,50,72,75,71,55
 Male,Asian,NA,2,2,Not Working,Disagree,Very Interested,A,8,55,65,73,65,50,65,Claremont
 Female,Asian,NA,0,1,Not Working,Neither Agree nor Disagree,Somewhat Interested,A-,6,65,80,84,74,64,64,Claremont
 Female,Black,NA,6,2,Part-time Job,Agree,Somewhat Interested,A-,8,70,84,96,79,56,65,Claremont
-Female,Latino,NA,0,7,Part-time Job,Strongly Agree,Somewhat Interested,A-,5,70 mm,90 mm,100mm,75mm,60 mm,64,Claremont
+Female,Latino,NA,0,7,Part-time Job,Strongly Agree,Somewhat Interested,A-,5,70,90,100,75,60,64,Claremont
 Female,Latino,NA,9,3,Part-time Job,Neither Agree nor Disagree,Very Interested,A,7,50,70,75,65,45,66,Claremont
 Male,White,NA,7,3,Not Working,Disagree,Somewhat Interested,A-,7,50,75,80,75,60,72,Claremont
 Male,Asian,NA,0,2,Not Working,Strongly Disagree,Very Interested,A,8,70,75,87,79,61,70.9,Claremont
@@ -146,13 +146,13 @@ Female,Black,NA,8,3,Part-time Job,Agree,Somewhat Interested,A-,9,6,9,9.5,7.8,6,7
 Female,Black,NA,9,2,Not Working,Disagree,Somewhat Interested,A-,7,63,77,79,75,66,68.75,Claremont
 Female,Black,NA,10364850,3,Not Working,Agree,Somewhat Interested,A-,8,70,80,90,80,65,62,Claremont
 Male,Latino,NA,4,2,Part-time Job,Neither Agree nor Disagree,Very Interested,A-,6,63.5,69.85,79.3,71.1,45.72,69,Claremont
-Female,Black,NA,9,2,Part-time Job,Disagree,Somewhat Interested,B,5,60 mm,67 mm,78,71,60,61 inches,Claremont
+Female,Black,NA,9,2,Part-time Job,Disagree,Somewhat Interested,B,5,60,67,78,71,60,61,Claremont
 Female,White,NA,3,3,Part-time Job,Agree,Somewhat Interested,A,8,55,76,78,72,60,67,Claremont
 Female,Black,NA,7,2,Not Working,Disagree,Somewhat Interested,B+,7,65,70,80,72,57,64,Claremont
 Female,White,NA,4,3,Not Working,Neither Agree nor Disagree,Somewhat Interested,A-,10,65,73,84,82,73,69,Claremont
 Female,Asian,NA,6,3,Part-time Job,Disagree,Somewhat Interested,A,7,57,75,80,60,50,68,Claremont
 Female,Latino,NA,0,2,Not Working,Strongly Agree,Very Interested,A,6,50.8,63.5,76.2,63.5,50.8,60,Claremont
-Male,Asian,NA,0,3,Part-time Job,Strongly Agree,Somewhat Interested,A-,6,55,60,80,70,55,68 inches,Claremont
+Male,Asian,NA,0,3,Part-time Job,Strongly Agree,Somewhat Interested,A-,6,55,60,80,70,55,68,Claremont
 Male,Black,NA,8,3,Not Working,Strongly Agree,Somewhat Interested,A-,7,90,80,95,85,75,71,Claremont
 Male,Latino,NA,6,3,Part-time Job,Disagree,Very Interested,B+,4,16,24,32,28,24,66,Claremont
 Male,White,NA,5,3,Not Working,Agree,Somewhat Interested,A-,5,60,80,90,75,60,72,Claremont
