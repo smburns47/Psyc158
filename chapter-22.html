@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 22 - Lying with Statistics &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,59 +61,91 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-22';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -111,378 +154,456 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   Chapter 1 - Intro to Doing Statistics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">
-   Chapter 5 - Describing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">
-   Chapter 8 - The Data Generation Process
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">
-   Chapter 9 - Statistical Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">
-   Chapter 10 - Quantifying Model Error
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">
-   Chapter 11 - Adding an Explanatory Variable
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">
-   Chapter 12 - Quantitative Predictor Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">
-   Chapter 13 - Multivariable Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">
-   Chapter 14 - Nonlinear Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">
-   Chapter 15 - Models with Categorical Outcomes
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">
-   Chapter 16 - Estimating Populations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">
-   Chapter 17 - Significance Testing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">
-   Chapter 18 - Significance Testing with Whole Models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">
-   Chapter 19 - Evaluating Effect Sizes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">
-   Chapter 20 - Sources of Model Bias
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">
-   Chapter 21 - Bayesian Statistics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">
-   Chapter 22 - Lying with Statistics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-22.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-22.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-22.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-22.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-22.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-22.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
       
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
+    </div>
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
 </div>
-
-    </div>
 </div>
+              
+              
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 22 - Lying with Statistics</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 22 - Lying with Statistics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
-  <p>UNDER DEVELOPMENT!!!</p>
-<section class="tex2jax_ignore mathjax_ignore" id="chapter-22-lying-with-statistics">
-<h1>Chapter 22 - Lying with Statistics<a class="headerlink" href="#chapter-22-lying-with-statistics" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>garden of forking paths / p-hacking</p></li>
-<li><p>no correction for multiple comparison</p></li>
-<li><p>HARKing</p></li>
-<li><p>Optional stopping</p></li>
-<li><p>Discretizing / binning</p></li>
-<li><p>Violations of linear model assumptions</p></li>
-<li><p>No direct comparison</p></li>
-<li><p>Small samples</p></li>
-<li><p>Over-reliance on significance testing</p></li>
-<li><p>Correlation vs. causation</p></li>
-<li><p>Misleading visualization</p></li>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-replication-crisis">22.1 The replication crisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-hacking">22.2 P-hacking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harking">22.3 HARKing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives-to-p-hacking-and-harking">22.4 Alternatives to p-hacking and HARKing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-detect-qrps-in-research">22.5 How to detect QRPs in research</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#red-flags-of-p-hacking">Red flags of p-hacking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#green-flags-of-p-hacking">Green flags of p-hacking</a></li>
 </ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sins">22.6 Other sins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Previous: Chapter 21 - Bayesian Statistics</a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-22-lying-with-statistics">
+<h1>Chapter 22 - Lying with Statistics<a class="headerlink" href="#chapter-22-lying-with-statistics" title="Permalink to this heading">#</a></h1>
+<p>We are very nearly done with this course on statistical methods in psychology research. So far you have learned how to read, mutate, summarize, and visualize data. You’ve also learned several ways to model data, making predictions about a variable based on information in other variables. Finally, you’ve learned about both Frequentist and Bayesian approaches to evaluating those models and making inferences about the state of the world based on data.</p>
+<p>All of this empowers you to seek insights from data. However, you also have the power to do dangerous things with data. You’ve learned about how easy bias and misinterpretation are. Given the objective veneer that statistics bring to our arguments, it behooves us to weild these statistics responsibly. In this final chapter, we will learn about the consequences of using statistics <em>badly</em>, and how to look out for these practices in our own and others’ research.</p>
+<section id="the-replication-crisis">
+<h2>22.1 The replication crisis<a class="headerlink" href="#the-replication-crisis" title="Permalink to this heading">#</a></h2>
+<p>Most people think that science is a reliable way to answer questions about the world. When our physician prescribes a treatment, we trust that it has been shown to be effective through research. We have similar faith that the airplanes that we fly in aren’t going to fall from the sky.</p>
+<p>However, there has been an increasing concern that science may not always work as well as we think. In 2004, the renowned psychologist Daryl Bem published a book chapter called “Writing the Empirical Journal Article” in order to give advice to budding scientists on how to publish their research. Bem provided suggestions such as:</p>
+<blockquote>
+<div><p><strong>Which article should you write?</strong> There are two possible articles you can write: (1) the article you planned to write when you designed your study or (2) the article that makes the most sense now that you have seen the results. They are rarely the same, and the correct answer is (2).</p>
+</div></blockquote>
+<p>In another section, he continues:</p>
+<blockquote>
+<div><p><strong>Analyzing data</strong> Examine them from every angle. Analyze the [variable levels] separately. Make up new composite indices. If a datum suggests a new hypothesis, try to find further evidence for it elsewhere in the data. If you see dim traces of interesting patterns, try to reorganize the data to bring them into bolder relief. If there are participants you don’t like, or trials, observers, or interviewers who gave you anomalous results, drop them (temporarily). Go on a fishing expedition for something — anything — interesting.</p>
+</div></blockquote>
+<p>At first blush, this may seem like good advice. Data are just numbers that represent the world, so we should do whatever we can to reveal the message they communicate, right?</p>
+<p>Unfortunately, as we have seen in the prior chapters, there are many ways numbers can lead us astray. Without being careful, the inferences we make about data can be false positives, imprecise, biased, etc. There are many ways to analyze data, and those data analyses can lead to different conclusions. If we have a particular conclusion we <em>want</em> to reveal through data (either about the size of an effect or just a significant finding in general), we can often “massage” the data in a particular way in order to reveal that conclusion. British economist Ronald Coase captured this reality succinctly, when he wrote: “If you torture the data long enough, it will confess to anything.”</p>
+<p>The sort of data manipulation in search of a significant result that Bem described are now known as <strong>Questionable Research Practices (QRPs)</strong>. But in 2004, not many people thought of them that way. They came to the center stage of psychology in 2011 when the same Daryl Bem <a class="reference external" href="https://psycnet.apa.org/doiLanding?doi=10.1037%2Fa0021524">published a paper</a> claiming to have discovered evidence of psychic abilities in his participants. Specifically, he claimed that his participants demonstrated a significant effect of <em>precognition</em>, meaning they were able to predict information in the future at levels significantly above chance.</p>
+<p>This was a shocking claim, and attracted a lot of attention. Upon closer inspection, other researchers <a class="reference external" href="http://www.talyarkoni.org/blog/2011/01/10/the-psychology-of-parapsychology-or-why-good-researchers-publishing-good-articles-in-good-journals-can-still-get-it-totally-wrong/">pointed out</a> that Bem had engaged in the following QRPs:</p>
+<ul class="simple">
+<li><p>The paper published the results of 9 studies, but the sample sizes varied across studies</p></li>
+<li><p>Different studies appear to have been lumped together or split apart</p></li>
+<li><p>The studies allow many different hypotheses, and it’s not clear which were planned in advance</p></li>
+<li><p>Bem used one-tailed tests even when it’s not clear that there was a directional prediction (so α was really 0.1)</p></li>
+<li><p>Most of the p-values are very close to 0.05</p></li>
+<li><p>It’s not clear how many other studies were run but not reported</p></li>
+</ul>
+<p>If the data is re-analyzed with a pre-registered plan, the results didn’t replicate. There was no robust evidence of precognition.</p>
+<p>But how could such a hugely respected scientist get it so wrong? Surely this must be a fluke? A team of researchers (together called the Open Science Collaboration) were perturbed by this turn of events, and set out to find how common these QRPs were across the field. This systematic investigation led to a paper called <a class="reference external" href="https://www.science.org/doi/10.1126/science.aac4716">“Estimating the reproducibility of psychological science”</a>.</p>
+<p>It would not be an exaggeration to say that this paper was Earth-shattering for the field of psychology. The large team of researchers chose 100 well-cited psychology studies and attempted to reproduce the results originally reported in the papers. Whereas 97% of the original papers had reported statistically significant findings, only 37% of these effects were statistically significant in the replications. It seemed like the majority of psychological knowledge was built on nothing but hot air. And although psychology got much of the attention (and criticism), in the ensuing years it also became clear that other fields of research suffered from the same crisis of replicability, such as <a class="reference external" href="https://elifesciences.org/articles/04333">cancer biology</a>, <a class="reference external" href="https://www.nature.com/articles/548485a">chemistry</a>, <a class="reference external" href="https://www.nber.org/system/files/working_papers/w22989/w22989.pdf">economics</a>, and <a class="reference external" href="https://www.nature.com/articles/s41562-018-0399-z">other social sciences</a>.</p>
+<p>Clearly, the traditional way of doing research was failing us. Statistics based on QRPs and the incentives of hunting for anything that was significant lead to a majority of research being unreplicable, which stalls progress and wastes billions of dollars in research funding. It was time for a better way of doing research.</p>
+<p>In the decade since, the field has been evolving. Different statistical standards are being debated, and problematic practices are diminishing. There is still a ways to go to figure out what the best practices are, but in the mean time we have learned which practices are definitely harmful. In this chapter, we will discuss some of these “statistical sins” so that you know to avoid them in your own research, and to be sensitive to their use in research that you review.</p>
+</section>
+<section id="p-hacking">
+<h2>22.2 P-hacking<a class="headerlink" href="#p-hacking" title="Permalink to this heading">#</a></h2>
+<p>The p-value is a core component of null hypothesis significance testing in the Frequentist framework. A p-value is defined as the probability to obtain a result at least as extreme as the observed one if the null hypothesis is true (i.e., if there is no effect). If the p-value is smaller than the α threshold, then the test result is labeled “significant” and the null hypothesis is rejected. Researchers who are interested in showing an effect in their data (e.g., that a new medicine improved the health of patients) are therefore eager to obtain small p-values that allow them to reject the null hypothesis and claim the existence of an effect.</p>
+<p>The first major statistical sin we will discuss is the kind of slicing and dicing of a dataset that Bem recommended in the pursuit of a significant p-value. Collectively, these practices are known as <strong>p-hacking</strong> - hacking into your dataset to find whatever configuration of variables will result in a significant p-value.</p>
+<p>You can do a great many things while p-hacking:</p>
+<ul class="simple">
+<li><p>choosing slightly different predictor/outcome variables</p></li>
+<li><p>transforming variables</p></li>
+<li><p>controlling for other variables</p></li>
+<li><p>removing certain outliers</p></li>
+<li><p>splitting the data into subgroups</p></li>
+</ul>
+<p>Et cetera. No matter the method, the overarching process of p-hacking is that you first check the significance results of a model. If it is not significant, you try a different version of the model, then check the significance again. You keep repeating this process with slightly different versions of the model until you finally arrive at the coveted p &lt; 0.05.</p>
+<p>This is different than the situations in prior chapters where we have fit multiple versions of models. In those cases, we made decisions about the best model to use based on metrics that didn’t have to do with how significant this model was. For checking model assumptions, we looked at things like possible missing variables or heteroscedasticity to tell us if we should fit a different model. For model comparison, we already had two or more models in mind to compare, and looked for statistically significant differences in how much error they explained.</p>
+<p>P-hacking, on the other hand, is when you start with one model, but decide it isn’t good enough because it doesn’t have a significant p-value. Or you fit multiple models, but the one you choose to report is the one with the lowest p-value (without knowing if the models are significantly different from <em>each other</em>). The problem with this is what we first learned about in chapter 17 - Type I error. In the Frequentist approach, if an effect is truly equal to 0 in the population, setting an α level to 0.05 means that there is a 5% chance our analysis in a sample will return a false positive - find a significant effect, when there shouldn’t be one. But if we test many models over and over, the chance that <em>any</em> of them is a false positive starts to accumulate more tha 5%. Even if there is no effect in the population, the probability is very high that at least one hypothesis test will (erroneously) show a significant result, if a sufficiently large number of tests are conducted. Researchers then report this significant result, and claim to have found an effect.</p>
+<p>Below are some simulations that show the effects of p-hacking on the Type I error rate (conducted on <a class="reference external" href="https://shiny.psy.lmu.de/felix/ShinyPHack/">this website</a>). For example, let’s say we measured the same outcome variable in 2 slightly different ways. We could p-hack by fitting a model to each of these 2 different outcomes, and reporting whichever model turned out best. If the true effect was 0, across 1000 samples like this, we’d want only 5% of them to erroneously give us a significant result. But by reporting the best out of the two, this inflates our Type I error by nearly double, to ~9.75%.</p>
+<img src="images/ch22-phack1.png" width="1000">
+<p>Another p-hacking method is to use different outlier removal methods until a significant p-value is found. There are a great many outlier detection methods, as seen among the options in the image below. If we try a different version of our model with each of these methods and report the best one, we get a Type I error rate of ~ 25%.</p>
+<img src="images/ch22-phack2.png" width="1000">
+<p>Subgroup analysis is when you at first find a nonsignificant effect in the full dataset, so you decide to check the effect in specific subgroups of the data. E.g., in just males, or Asian participants, or people over 50, etc. The more subgroups you fit your model in, the more models you are running total, and the higher the Type I error goes.</p>
+<img src="images/ch22-phack3.png" width="1000">
+<p>In practice researchers put a lot of focus on statistical significance as the measure of results quality, so that is the metric that p-hacking games. But even Bayesians are at risk of this practice, despite their forgoing of significance testing. A version of doing this with Bayesian statistics that would also be problematic is slicing up data and fitting different types of models until a certain size effect or Bayes Factor is found.</p>
+</section>
+<section id="harking">
+<h2>22.3 HARKing<a class="headerlink" href="#harking" title="Permalink to this heading">#</a></h2>
+<p>P-hacking wouldn’t be so much of a problem if all the models that were fit were reported, and multiple comparison correction was performed on them. We don’t always know the best model we should be testing, so we might want to compare multiple ones.</p>
+<p>However, besides inflating Type I error, p-hacking is pernicious because it hides the fact that multiple models were ever examined. Usually when p-hacking is done, researchers only report the one significant model they found as if that was the one model they intended to test all along.</p>
+<p>Doing this is called Hypothesizing After Results are Known - <strong>HARKing</strong> for short. It obfiscates the fact that exploratory analysis was done (testing multiple competing versions of models without a clear prior hypothesis), and instead implies that confirmatory analysis was done instead (having a specific hypothesis ahead of time).</p>
+<p>Exploratory analysis is fine to conduct as a starting point, but we shouldn’t stop there in research. If a dataset suggests one particular model is promising, we should replicate that result in another dataset to be sure that it’s robust. We need to do confirmatory research with an <em>a priori</em> hypothesis before we can be truly confident in our results.</p>
+<p>With HARKing, exploratory research is passed off as confirmatory. It’s an attempt to gain the trust (and publication chances) that confirmatory research earns, without doing the work of the confirmatory research. HARKing can involve describing <em>post hoc</em> hypotheses as if they were <em>a priori</em>, and also excluding any <em>a priori</em> hypotheses that were not supported.</p>
+<p>Examples of what HARKing could look like include:</p>
+<ul class="simple">
+<li><p>An author searches through data involving several different variables, finds which ones are significantly related to each other, and then writes a paper as if they had an initial hypothesis about those variables specifically.</p></li>
+<li><p>An author fits a model and finds an effect that is opposite to what they initially expected, so they rewrite the whole paper as if that flipped effect was their initial hypothesis.</p></li>
+<li><p>An author has three main hypotheses that support a theory, but data only supports one of the hypotheses. They write the paper as if that was the only hypothesis they intended to test.</p></li>
+</ul>
+<p>HARKing hurts scientific progress because it keeps us from learning about null results, and it hides p-hacking. We should always be open to adjusting our hypotheses and theories based on data. But we shouldn’t pretend that the updated opinion is what we thought all along. We should discuss how the evidence supports or refutes our real <em>a priori</em> hypotheses no matter what the result is, and we should do the extra step of confirmatory research when we create new hypotheses based on initial data.</p>
+<img src="images/ch22-harking.png" width="400"></section>
+<section id="alternatives-to-p-hacking-and-harking">
+<h2>22.4 Alternatives to p-hacking and HARKing<a class="headerlink" href="#alternatives-to-p-hacking-and-harking" title="Permalink to this heading">#</a></h2>
+<p>P-hacking has become a dirty word in research, and no one wants to admit to intentionally doing it. But we all want our hypotheses to be right and to push the bounds of knowledge. So intentionally or not, we will all be tempted at one time or another to p-hack. Thus, you should get in the habit of good research practices, and put some systems in place to help you stay honest.</p>
+<p>What should you do to avoid p-hacking and HARKing in your own research? There are a number of options:</p>
+<ol class="arabic simple">
+<li><p><strong>Pre-register a specific hypothesis</strong>: In chapter 14 we first encountered the idea of pre-registration. This is when you write down your specific hypothesis, in a place where other people can see it. This holds you accountable for reporting the results of what you initially planned, no matter what those results are. It also forces you to specify a particular model form and variable operationalization ahead of time, so that you’re not tempted to try out different options at the analysis step.</p></li>
+<li><p><strong>Conduct replications</strong>: If you’re unsure of a specific hypothesis at first, it is still okay to do exploratory research! Collect some data, test out a bunch of options, see what works! But you shouldn’t stop there. If you find something promising in the data that you didn’t initially plan, you should conduct confirmatory research in a new sample of data where you try to replicate the results of your first study.</p></li>
+<li><p><strong>Control for multiple comparisons</strong>: If you don’t have the time or funds to collect a whole new dataset but you still want to investigate several different models, you can control the Type I error across all of them by using a more stringest p-value threshold to decide something is significant. Methods we learned about in chapter 18 like Bonferroni correction, Tukey’s Honestly Significant Difference Test, or Benjamini-Hochberg False Discovery Rate are options for controlling Type I error across multiple comparisons.</p></li>
+<li><p><strong>Multiverse analysis</strong>: Another option is to steer away from the idea of significance testing entirely, and report all the effect estimates across all models in a process known as multiverse analysis. Here, you don’t know the specific operationalization of a variable you should use, or which control variables you should include. But if your effect is robust, it should be detectable in some form across all these different versions of the model. So, you fit all the models and report the estimated effect size and confidence interval/posterior interval for all of them, as a way of looking at the full multiverse of possibilities. If your effect is coming through in the majority of these model options, it’s probably a real effect (and the central tendency of all these estimates is probably the real effect size). If your estimates vary wildly or is only present in a couple of model options, it’s likely not a robust effect - it would only be discoverable by p-hacking.</p></li>
+<li><p><strong>Be transparent</strong>: Whatever you choose to do, you should be transparent about it. Write down every decision you make and every outcome that happens, no matter how messy or complicated that process is. In addition, it is good practice to host your study materials, data, and analysis scripts on open science websites like the <a class="reference external" href="https://osf.io/">Open Science Framework</a>, so that other people can check your work and replicate what you’ve done. A lot of folks are nervous about being transparent, because they’re afraid of the world finding out if and when they make a mistake. But if someone <em>did</em> make a mistake in research, wouldn’t you think it was important that we as a community can find it and correct it? Being fully transparent can be scary at first, but we’re doing complicated stuff at the bounds of human knowledge - no one expects you to always be perfect. Ultimately, transparency helps science move forward most productively.</p></li>
+</ol>
+</section>
+<section id="how-to-detect-qrps-in-research">
+<h2>22.5 How to detect QRPs in research<a class="headerlink" href="#how-to-detect-qrps-in-research" title="Permalink to this heading">#</a></h2>
+<p>If it’s important to keep QRPs out of our own research, the flip side is that it is important to detect it when others do it. That way, we know if we can trust their research or if we need to cast a skeptical eye (and maybe perform a replication).</p>
+<p>Sadly, p-hacking and HARKing is so problematic because they are very hard to detect for sure. In one study where just one result is reported, you really have no way of knowing if this was an honest <em>a priori</em> hypothesis or a p-hacking job. <em>Nothing about the study can tell you for sure</em>.</p>
+<section id="red-flags-of-p-hacking">
+<h3>Red flags of p-hacking<a class="headerlink" href="#red-flags-of-p-hacking" title="Permalink to this heading">#</a></h3>
+<p>But there are signs that might make you more or less suspicious. Things that are more likely to happen when p-hacking is in the picture include:</p>
+<ul class="simple">
+<li><p>If multiple results are reported in a paper, most of the p-values are in the range 0.01 &lt; p &lt; 0.05. When p-hacking, the goal is to just get to some result that is p &lt; 0.05. When a true effect is 0, it is easier to find a false positive p=0.04 than p=0.004.</p></li>
+<li><p>If modeling decisions seem weird to you. If a researcher says they are studying the effect of one construct on another, but they model them with operationalizations that are odd choices or not standard without good explanation for why. That may be a sign that they tested the standard versions of the variables first, but found them to be nonsignificant.</p></li>
+<li><p>If effect sizes are unrealistically large. Remember that Cohen’s rules of thumb for effect sizes are that large effects are observable in real life; medium effects are observable in data to a trained eye; and small effects need statistics to detect. If a study reports a large effect size for something that no one seems to have noticed before, that should raise a warning flag that that result might be a false positive.</p></li>
+</ul>
+</section>
+<section id="green-flags-of-p-hacking">
+<h3>Green flags of p-hacking<a class="headerlink" href="#green-flags-of-p-hacking" title="Permalink to this heading">#</a></h3>
+<p>On the other hand, even if someone reports a p=0.04, large effect, or strange version of a model, if they also followed best scientific practices, we can be more confident that those results are reliable. These best practices include:</p>
+<ul class="simple">
+<li><p>They pre-registered an initial hypothesis, and you can see that it was uploaded/dated before the study was conducted.</p></li>
+<li><p>Their reported results are a mix of significant and nonsignificant findings.</p></li>
+<li><p>They have good theoretical justification for their measurement and modeling decisions, or are making decisions based on prior research.</p></li>
+</ul>
+</section>
+</section>
+<section id="other-sins">
+<h2>22.6 Other sins<a class="headerlink" href="#other-sins" title="Permalink to this heading">#</a></h2>
+<p>P-hacking is one way we can end up lying to ourselves and to the public about what conclusions we can safely draw from data. But it’s also important to keep in mind all the other ways we’ve learned about that modeling can be done incorrectly. Even if you define an <em>a priori</em> hypothesis, report all your results, and correct for any multiple comparisons, using your statistics inappropriately will lead to faulty conclusions. In this section, we will summarize the bad statistical practices we have discussed earlier in the course and link to where we explored them in more detail.</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb#scrollTo=7740fe3d">Ch 20, <strong>violating the assumptions of linear models</strong></a>: If the assumptions of the general linear model are violated by the data/modeling procedure, the estimates and/or the standard errors we measure will be biased and we may come to the wrong conclusion about the size/precision of that estimate.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb#scrollTo=9e703d74">Ch 12, <strong>binning/dichotomizing continuous predictors</strong></a>: Mis-specifying the datatype of continuous data can change how much error our model explains and the estimated effect size of the variable.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb#scrollTo=78b523bb">Ch 18, <strong>lack of direct comparison</strong></a>: Estimates of effects, and their associated p-values, are just estimates. Their value is partially determined by sampling error. Thus if the point estimate of one effect is larger than the point estimate of another, that doesn’t necessarily mean those effects are <em>significantly</em> different from each other. Different conditions need to be compared to each other in the same model, and different models need to be compared to each other with model selection procedures.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb#scrollTo=21cc5fb4">Ch 19, <strong>low power</strong></a>: Our power to detect an effect of a particular size as significant is directly proportional to the sample size of study. When research has low power, we commit more Type II errors <em>and</em> the positive predictive value of the entire literature is lower - i.e., a higher proportion of published studies are false positives. But that’s not the only problem with small sample sizes. Even if using Bayesian statistics, small samples mean our posterior beliefs about the true effect size are less precise.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb#scrollTo=06724267">Ch 17, <strong>over-interpreting non-significant results</strong></a>: In Frequentist statistics, we can use significance testing to reject the null hypothesis based on an effect that is significantly different from 0, but we can never support that the true effect is actually 0. If you get a nonsignificant result, you shouldn’t infer that that means the effect does not exist. There simply wasn’t enough evidence to detect it, if it does. If you ever want to build support for a null hypothesis, you should use Bayesian statistics.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb#scrollTo=a333760f">Ch 12, <strong>correlation vs. causation</strong></a>: We walk a slippery slope when talking about the meaning of our statistical analyses. The tools we’ve learned in this class help us <em>explain</em> variation in an outcome variable with information from predictor variables, but that doesn’t mean the predictor variables <em>caused</em> the outcome. At the same time, we often construct our models on what we think the causal structure is in the data generation process, and modeling the incorrect causal structure can result in model bias. If your goal with statistics is to move beyond simply making predictions and get to understanding the data generation process, you should keep the likely causal structure in mind. But the results of the general linear model by itself won’t tell you if that causal idea is real. You’ll have to use more sophisticated statistical tools paired with research design like experimental manipulation or longitudinal changes.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb#scrollTo=0b546bfb">Ch 7, <strong>misleading visualization</strong></a>: Even if we get our modeling process spot on, it is possible to mislead others about what conclusions they should draw about it by using misleading visualizations. Chapter 7 was all about the appropriate ways to visualize our results, and adding to that we should remember to include visualizations of uncertainty into our model reports, such as error bars or confidence bounds.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Explain the process of p-hacking and how it is different than normal model comparison</p></li>
+<li><p>List examples of p-hacking methods</p></li>
+<li><p>Explain why p-hacking is a problem</p></li>
+<li><p>Define HARKing and how it is different from good research practice</p></li>
+<li><p>Explain methods to avoid QRPs in your own work</p></li>
+<li><p>Identify red and green flags of p-hacking in other research</p></li>
+<li><p>Remember other ways we can use statistics badly</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -497,7 +618,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -505,36 +626,97 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-replication-crisis">22.1 The replication crisis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-hacking">22.2 P-hacking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harking">22.3 HARKing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives-to-p-hacking-and-harking">22.4 Alternatives to p-hacking and HARKing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-detect-qrps-in-research">22.5 How to detect QRPs in research</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#red-flags-of-p-hacking">Red flags of p-hacking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#green-flags-of-p-hacking">Green flags of p-hacking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sins">22.6 Other sins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 11 - Adding an Explanatory Variable &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-11';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,429 +156,306 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-11.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-11.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-11.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-11.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-11.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#explaining-variation">
-   11.1 Explaining variation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-an-explanatory-variable-to-the-model">
-   11.2 Adding an explanatory variable to the model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-the-model-form">
-   11.3 Specifying the model form
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fitting-the-one-variable-model">
-   11.4 Fitting the one-variable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generating-predictions-from-the-model">
-   11.5 Generating predictions from the model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quantifying-model-fit">
-   11.6 Quantifying model fit
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#improvement-over-empty-model">
-   11.8 Improvement over empty model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-historical-note-the-t-test">
-   11.9 A historical note - the t-test
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-sample-t-test">
-     One-sample t-test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#independent-samples-t-test">
-     Independent samples t-test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 11 - Adding an Explanatory Variable</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#explaining-variation">
-   11.1 Explaining variation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-an-explanatory-variable-to-the-model">
-   11.2 Adding an explanatory variable to the model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-the-model-form">
-   11.3 Specifying the model form
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fitting-the-one-variable-model">
-   11.4 Fitting the one-variable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generating-predictions-from-the-model">
-   11.5 Generating predictions from the model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quantifying-model-fit">
-   11.6 Quantifying model fit
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#improvement-over-empty-model">
-   11.8 Improvement over empty model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-historical-note-the-t-test">
-   11.9 A historical note - the t-test
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-sample-t-test">
-     One-sample t-test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#independent-samples-t-test">
-     Independent samples t-test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 11 - Adding an Explanatory Variable</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-variation">11.1 Explaining variation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-an-explanatory-variable-to-the-model">11.2 Adding an explanatory variable to the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-the-model-form">11.3 Specifying the model form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-one-variable-model">11.4 Fitting the one-variable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-predictions-from-the-model">11.5 Generating predictions from the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-model-fit">11.6 Quantifying model fit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-over-empty-model">11.8 Improvement over empty model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-historical-note-the-t-test">11.9 A historical note - the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One-sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples t-test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Previous: Chapter 10 - Quantifying Model Error</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
@@ -547,11 +467,11 @@ title="Print to PDF"
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-11-adding-an-explanatory-variable">
-<h1>Chapter 11 - Adding an Explanatory Variable<a class="headerlink" href="#chapter-11-adding-an-explanatory-variable" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 11 - Adding an Explanatory Variable<a class="headerlink" href="#chapter-11-adding-an-explanatory-variable" title="Permalink to this heading">#</a></h1>
 <p>As we discussed previously, in the absence of other information about the objects being studied, the mean of our sample is the best single-number estimate we have of the actual mean of the population. It is equally likely to be too high as it is too low for any one data point (the typical variation around the mean is the same on the left side as it is on the right). Because it is our best guess of what the population parameter is, it is the best predictor we have of the value of a subsequent observation. While it will almost certainly be wrong, the mean will do a better job than any other single number.</p>
 <p>However, we don’t have to be limited to <em>just</em> a single number. In this chapter we’ll learn how to add more pieces to a statistical model to do a better job.</p>
 <section id="explaining-variation">
-<h2>11.1 Explaining variation<a class="headerlink" href="#explaining-variation" title="Permalink to this headline">#</a></h2>
+<h2>11.1 Explaining variation<a class="headerlink" href="#explaining-variation" title="Permalink to this heading">#</a></h2>
 <p>We started with the empty model in order to get some important ideas across, but certainly that’s not where we want to end up. It is time we start building models that include explanatory variables. We will still use the empty model, but only as a reference point.</p>
 <p>Let’s quickly review what we mean by explaining variation. Earlier in the course, we developed an intuitive idea of explanation by comparing the distribution of one variable across two different groups. So, for example, we looked at the distribution of thumb length broken down by sex, which we can see in the two density histograms below.</p>
 <img src="images/ch11-variation.png" width="650">
@@ -560,7 +480,7 @@ title="Print to PDF"
 <p>It seems, then, that if we were to use a statistical model to make predictions about a person’s thumb length, somehow incorporating information about their sex would be helpful - our predictions would be more accurate on average, and there would be less overall error in the model.</p>
 </section>
 <section id="adding-an-explanatory-variable-to-the-model">
-<h2>11.2 Adding an explanatory variable to the model<a class="headerlink" href="#adding-an-explanatory-variable-to-the-model" title="Permalink to this headline">#</a></h2>
+<h2>11.2 Adding an explanatory variable to the model<a class="headerlink" href="#adding-an-explanatory-variable-to-the-model" title="Permalink to this heading">#</a></h2>
 <p>In the previous chapters we introduced the idea of a statistical model as an equation that is meant to represent our best guess of the data generation process. This model generates a predicted score for each observation. We developed what we called the empty model, in which we use the mean as the predicted score for each observation.</p>
 <p>We represented this model in General Linear Model (GLM) notation like this:</p>
 <div class="math notranslate nohighlight">
@@ -577,11 +497,11 @@ title="Print to PDF"
 <p>It’s useful to illustrate the empty model (and what we’re about to do to it) with our <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code> dataset. <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code>, you will recall, contains six people’s thumb lengths randomly selected from our complete <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset. This time, we’ll also include their value on the <code class="docutils literal notranslate"><span class="pre">Sex</span></code> variable as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
-<span class="n">Thumb</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">56</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">61</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">68</span><span class="p">)</span>
-<span class="n">Sex</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;female&quot;</span><span class="p">,</span> <span class="s">&quot;female&quot;</span><span class="p">,</span> <span class="s">&quot;female&quot;</span><span class="p">,</span> <span class="s">&quot;male&quot;</span><span class="p">,</span> <span class="s">&quot;male&quot;</span><span class="p">,</span> <span class="s">&quot;male&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_ID</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="n">Thumb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">56</span><span class="p">,</span><span class="w"> </span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="m">61</span><span class="p">,</span><span class="w"> </span><span class="m">63</span><span class="p">,</span><span class="w"> </span><span class="m">64</span><span class="p">,</span><span class="w"> </span><span class="m">68</span><span class="p">)</span>
+<span class="n">Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;female&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;male&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;male&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;male&quot;</span><span class="p">)</span>
 
-<span class="n">tiny_fingers</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span> <span class="n">Thumb</span><span class="p">,</span> <span class="n">Sex</span><span class="p">)</span>
+<span class="n">tiny_fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">student_ID</span><span class="p">,</span><span class="w"> </span><span class="n">Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
 <span class="n">tiny_fingers</span>
 </pre></div>
 </div>
@@ -595,7 +515,7 @@ title="Print to PDF"
 <p>A model that takes <code class="docutils literal notranslate"><span class="pre">Sex</span></code> into account generates a different prediction for a male than it does for a female. Error is still measured the same way, as the deviation of each person’s measured thumb length from their predicted thumb length. But this time, the error is calculated from each person’s group mean (male or female) instead of from the Grand Mean.</p>
 </section>
 <section id="specifying-the-model-form">
-<h2>11.3 Specifying the model form<a class="headerlink" href="#specifying-the-model-form" title="Permalink to this headline">#</a></h2>
+<h2>11.3 Specifying the model form<a class="headerlink" href="#specifying-the-model-form" title="Permalink to this heading">#</a></h2>
 <p>Whereas the empty model was a one-parameter model (we only had to estimate one parameter, the Grand Mean), the <code class="docutils literal notranslate"><span class="pre">Sex</span></code>  model is a two-parameter model. One of the parameters helps us find the mean for males, the other helps us find the mean for females. By using the model as an equation for predicting the value of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>, we should be able to use one or the other mean depending on the value of <code class="docutils literal notranslate"><span class="pre">Sex</span></code>.</p>
 <p>One way to do this is to use the mean of one group (say, females) as β<sub>0</sub>, and then add an extra amount to that value if someone is actually male. In other words, we could specify another parameter, β<sub>1</sub>, as the <em>difference</em> between male and female mean thumb lengths. But this should only be added if someone is male, so let’s multiply this parameter by 1 if <code class="docutils literal notranslate"><span class="pre">Sex</span></code> is “male”, and by 0 if <code class="docutils literal notranslate"><span class="pre">Sex</span></code> if “female” and we should ignore this addition.</p>
 <p>Here is how to write this in GLM form:</p>
@@ -611,7 +531,7 @@ title="Print to PDF"
 <p>This equation would make one prediction (59) when the value of X<sub>i</sub> is 0 (female), and a different prediction (65) when the value of X<sub>i</sub> is 1 (male).</p>
 </section>
 <section id="fitting-the-one-variable-model">
-<h2>11.4 Fitting the one-variable model<a class="headerlink" href="#fitting-the-one-variable-model" title="Permalink to this headline">#</a></h2>
+<h2>11.4 Fitting the one-variable model<a class="headerlink" href="#fitting-the-one-variable-model" title="Permalink to this heading">#</a></h2>
 <p>Now that you have learned how to specify a model with an explanatory variable (also frequently called a <em>predictor</em>), let’s learn how to fit the model using R.</p>
 <p>Fitting a model, as a reminder, simply means automatically calculating the parameter estimates. We use the word “fitting” because we want to calculate the best estimate, the one that will result in the least amount of error and best “fit” our data. For the tiny data set, we could calculate the parameter estimates in our head — it’s just a matter of calculating the mean for males and the mean for females. But when the data set is larger, it is much easier to use R.</p>
 <p>Using R, we will first fit the Sex model to the tiny dataset, just so you can see that R gives you the same parameter estimates you got before. After that we will fit it to the complete data set.</p>
@@ -625,7 +545,7 @@ title="Print to PDF"
 <p>To fit the Sex model we use <code class="docutils literal notranslate"><span class="pre">lm()</span></code> again. This time, instead of the left side of the formula being <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, we have a variable to put there. Thus, the formula argument of <code class="docutils literal notranslate"><span class="pre">lm()</span></code> is <code class="docutils literal notranslate"><span class="pre">Thumb</span> <span class="pre">~</span> <span class="pre">Sex</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_fingers</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_fingers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -636,7 +556,7 @@ title="Print to PDF"
 <p>If you want — and it’s a good idea — you can save the results of this model fit in an R object. Here’s the code to save the model fit in an object called <code class="docutils literal notranslate"><span class="pre">tiny_sex_model</span></code>. Once you’ve saved the model, If you want to see what the model estimates are, you can just type the name of the model and you will get the same output as above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_sex_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_fingers</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_sex_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_fingers</span><span class="p">)</span>
 
 <span class="c1">#type the name of the saved model below to print out its output</span>
 </pre></div>
@@ -650,10 +570,10 @@ title="Print to PDF"
 <p>Now that you have looked in detail at the tiny set of data, find the best estimates for our bigger set of data (in the data frame called <code class="docutils literal notranslate"><span class="pre">fingers</span></code>) by modifying the code below. What would be b<sub>0</sub> and what would be b<sub>1</sub>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># store the model where Sex predicts Thumb</span>
-<span class="n">sex_model</span> <span class="o">&lt;-</span> 
+<span class="n">sex_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span>
 
 <span class="c1"># this prints out the model estimates</span>
 <span class="n">sex_model</span>
@@ -663,7 +583,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="generating-predictions-from-the-model">
-<h2>11.5 Generating predictions from the model<a class="headerlink" href="#generating-predictions-from-the-model" title="Permalink to this headline">#</a></h2>
+<h2>11.5 Generating predictions from the model<a class="headerlink" href="#generating-predictions-from-the-model" title="Permalink to this heading">#</a></h2>
 <p>Now that you have fit the Sex model, you can use your estimates to make predictions about future observations. Doing this requires you to use your model as an equation. In this case, you will put in a value (e.g., “female”) for your explanatory variable (<code class="docutils literal notranslate"><span class="pre">Sex</span></code>), and get out a predicted thumb length.</p>
 <p>Recall that our model looks like this:</p>
 <div class="math notranslate nohighlight">
@@ -676,8 +596,8 @@ title="Print to PDF"
 <p>If you want to produce each coefficient by itself with code, you can also use commands below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span> <span class="c1">#this will print out the first coefficient, b0</span>
-<span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1">#this will print out the second coefficient, b1</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="c1">#this will print out the first coefficient, b0</span>
+<span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span><span class="c1">#this will print out the second coefficient, b1</span>
 </pre></div>
 </div>
 </div>
@@ -696,7 +616,7 @@ title="Print to PDF"
 <p>Let’s say you want to save these predicted values for each person as a variable called <code class="docutils literal notranslate"><span class="pre">Sex_predicted</span></code> (in the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> data frame). See if you can complete the R code to do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex_predicted</span> <span class="o">&lt;-</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex_predicted</span><span class="w"> </span><span class="o">&lt;-</span>
 
 <span class="c1"># this prints the first few lines of the fingers data frame, to check if your variable saved successfully</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">fingers</span><span class="p">)</span>
@@ -706,20 +626,20 @@ title="Print to PDF"
 </div>
 </section>
 <section id="quantifying-model-fit">
-<h2>11.6 Quantifying model fit<a class="headerlink" href="#quantifying-model-fit" title="Permalink to this headline">#</a></h2>
+<h2>11.6 Quantifying model fit<a class="headerlink" href="#quantifying-model-fit" title="Permalink to this heading">#</a></h2>
 <p>Why should we take <code class="docutils literal notranslate"><span class="pre">Sex</span></code> into account in the first place? Using two parameters in our model instead of one makes it more complex, or less <strong>parsimonious</strong>. We’ll talk more later about the importance of parsimony, but for now we should just know that it’s harder to work with a more complex model than a simpler one. Thus, there should be a good reason for making it more complex - it should reduce the error in our model predictions.</p>
 <p>Let’s try it out. We’ll add columns of predictions to <code class="docutils literal notranslate"><span class="pre">tiny_fingers</span></code>, calculate the residuals, and then calculate the RMSE.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandMean</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">62</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">62</span><span class="p">)</span> <span class="c1">#predictions using grand mean</span>
-<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupMeans</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">59</span><span class="p">,</span> <span class="m">59</span><span class="p">,</span> <span class="m">59</span><span class="p">,</span> <span class="m">65</span><span class="p">,</span> <span class="m">65</span><span class="p">,</span> <span class="m">65</span><span class="p">)</span> <span class="c1">#predictions using group means</span>
-<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandResid</span> <span class="o">&lt;-</span> <span class="n">tiny_fingers</span><span class="o">$</span><span class="n">Thumb</span> <span class="o">-</span> <span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandMean</span> <span class="c1">#grand mean prediction residuals</span>
-<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupResid</span> <span class="o">&lt;-</span> <span class="n">tiny_fingers</span><span class="o">$</span><span class="n">Thumb</span> <span class="o">-</span> <span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupMeans</span> <span class="c1">#group mean prediction residuals</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandMean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">62</span><span class="p">,</span><span class="w"> </span><span class="m">62</span><span class="p">,</span><span class="w"> </span><span class="m">62</span><span class="p">,</span><span class="w"> </span><span class="m">62</span><span class="p">,</span><span class="w"> </span><span class="m">62</span><span class="p">,</span><span class="w"> </span><span class="m">62</span><span class="p">)</span><span class="w"> </span><span class="c1">#predictions using grand mean</span>
+<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupMeans</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">59</span><span class="p">,</span><span class="w"> </span><span class="m">59</span><span class="p">,</span><span class="w"> </span><span class="m">59</span><span class="p">,</span><span class="w"> </span><span class="m">65</span><span class="p">,</span><span class="w"> </span><span class="m">65</span><span class="p">,</span><span class="w"> </span><span class="m">65</span><span class="p">)</span><span class="w"> </span><span class="c1">#predictions using group means</span>
+<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandResid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandMean</span><span class="w"> </span><span class="c1">#grand mean prediction residuals</span>
+<span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupResid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupMeans</span><span class="w"> </span><span class="c1">#group mean prediction residuals</span>
 
- <span class="c1">#equation for RMSE in one-parameter case </span>
-<span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandResid</span><span class="o">^</span><span class="m">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandResid</span><span class="p">)</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
- <span class="c1">#equation for RMSE in two-parameter case </span>
-<span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupResid</span><span class="o">^</span><span class="m">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupResid</span><span class="p">)</span> <span class="o">-</span> <span class="m">2</span><span class="p">))</span>
+<span class="w"> </span><span class="c1">#equation for RMSE in one-parameter case </span>
+<span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandResid</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GrandResid</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+<span class="w"> </span><span class="c1">#equation for RMSE in two-parameter case </span>
+<span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupResid</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">tiny_fingers</span><span class="o">$</span><span class="n">GroupResid</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +662,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># ANOVA table of an empty model</span>
-<span class="n">empty_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+<span class="n">empty_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
 <span class="nf">supernova</span><span class="p">(</span><span class="n">empty_model</span><span class="p">)</span>
 
 <span class="c1"># write code to use supernova() on the sex_model object instead</span>
@@ -760,7 +680,7 @@ title="Print to PDF"
 \[ SS_{model} = SS_{total} - SS_{error} \]</div>
 </section>
 <section id="improvement-over-empty-model">
-<h2>11.8 Improvement over empty model<a class="headerlink" href="#improvement-over-empty-model" title="Permalink to this headline">#</a></h2>
+<h2>11.8 Improvement over empty model<a class="headerlink" href="#improvement-over-empty-model" title="Permalink to this heading">#</a></h2>
 <p>Statistical modeling is all about explaining variation. SS<sub>total</sub> tells us how much total variation there is to be explained in an outcome variable. When we fit a model (as we have done with the Sex model), that model explains some of the total variation, and leaves some of that variation still unexplained.</p>
 <p>These relationships are visualized in the diagram below: Total SS can be seen as the sum of the Model SS (the amount of variation explained by a more complex model) and SS Error, which is the amount left unexplained after fitting the model. Just as DATA = MODEL + ERROR, SS Total = SS Model + SS Error.</p>
 <img src="images/ch11-explainedvar.png" width="750">
@@ -785,11 +705,11 @@ title="Print to PDF"
 <p>In the one variable model, if b<sub>1</sub> = 0, then b<sub>1</sub>X<sub>i</sub> effectively drops out of the equation - it has no effect since any value of X multiplied by 0 is just 0. Since b<sub>1</sub> refers to the difference in group means, this would be the case where the means of female and male thumbs lengths are the same. In other words, Sex does NOT explain Thumb. In the ANOVA table, this would look like SS<sub>model</sub> of 0 (or close to it) - there is effectively no difference in the error between the empty model and the full model. In practice, SS<sub>model</sub> is almost never 0. Adding an explanatory variable almost always explains some amount of variance. In a later chapter we will explore the question of how <em>much</em> error reduction is enough for us to care about.</p>
 </section>
 <section id="a-historical-note-the-t-test">
-<h2>11.9 A historical note - the t-test<a class="headerlink" href="#a-historical-note-the-t-test" title="Permalink to this headline">#</a></h2>
+<h2>11.9 A historical note - the t-test<a class="headerlink" href="#a-historical-note-the-t-test" title="Permalink to this heading">#</a></h2>
 <p>In this course we are relying on the general linear model framework to build our understanding of the data generation process. The main logic of the general linear model is that we can create a (most likely simplified) statistical model that is an estimate of the true data generation process, and see whether predictions using that model are more accurate than predictions made using a null model.</p>
 <p>This is not the only approach to statistics, however. Indeed until recently, it was not the most common. The traditional approach to statistics was to develop a separate tool for each kind of dataset. In addition, the goal wasn’t about improving accuracy of data predictions, but describing the distinguishability of data from different groups. In this course it is your professor’s opinion that this is not the best way to teach statistics, since it relies on more complex understanding of data from the get-go, and using separate tests makes it harder to remember the logic of all of them. But because so many researchers learned statistics with these tools, they are often still found in research publications. This it would be good for you to at least know what they are, and what version of the general linear model they map onto.</p>
 <section id="one-sample-t-test">
-<h3>One-sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this headline">#</a></h3>
+<h3>One-sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h3>
 <p>The one-sample t-test is a tool to evaluate whether the mean of one sample is <em>significantly different</em> than a particular number. We have not covered the logic of <em>statistical significance</em> yet - we will get to it later in the course. But a quick understanding of it right now for the purpose of the t-test is that this tool is asking whether a distribution of data in a sample was likely generated by a particular value as the data generation process, or whether it likely came from a different data generation process.</p>
 <p>A T-test outputs a coefficient, known as a <em>t-value</em>. This coefficient can be calculated as:</p>
 <div class="math notranslate nohighlight">
@@ -798,7 +718,7 @@ title="Print to PDF"
 <p>A t-value isn’t the same thing as any value in our general linear model, but you can use b<sub>0</sub> of the null model for a similar purpose. In the general linear model, we could ask whether b<sub>0</sub> being the mean of our sample makes better predictions than b<sub>0</sub> being 0. Thus if you encounter one-sample t-tests in the wild, just think of using the null form of the general linear model for the same purpose.</p>
 </section>
 <section id="independent-samples-t-test">
-<h3>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this headline">#</a></h3>
+<h3>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h3>
 <p>A related type of t-test compares the means of two samples to each other to ask whether we think the same underlying population created them, or not. The computation for an independent-sample t-value is:</p>
 <div class="math notranslate nohighlight">
 \[ t_{independent} = \frac{\bar{X}_1 - \bar{X}_2}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \]</div>
@@ -811,7 +731,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Understand the difference between an empty model and a one-variable model</p></li>
@@ -824,6 +744,7 @@ title="Print to PDF"
 <li><p>Calculate proportional reduction in error from SS</p></li>
 <li><p>Know what general linear model specification maps onto one-sample and independent t-tests</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Next: Chapter 12 - Quantitative Predictor Models</a></p>
 </section>
 </section>
 
@@ -839,7 +760,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -847,36 +768,99 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-variation">11.1 Explaining variation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-an-explanatory-variable-to-the-model">11.2 Adding an explanatory variable to the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-the-model-form">11.3 Specifying the model form</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-one-variable-model">11.4 Fitting the one-variable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-predictions-from-the-model">11.5 Generating predictions from the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifying-model-fit">11.6 Quantifying model fit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-over-empty-model">11.8 Improvement over empty model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-historical-note-the-t-test">11.9 A historical note - the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One-sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples t-test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

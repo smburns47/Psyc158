@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 19 - Evaluating Effect Sizes &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-19';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,451 +156,307 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-19.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-19.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-19.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-19.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-19.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-19.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistical-vs-practical-significance">
-   19.1 Statistical vs. practical significance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unstandardized-effect-sizes">
-   19.2 Unstandardized effect sizes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standardized-effect-sizes">
-   19.3 Standardized effect sizes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standardized-model-coefficient">
-     Standardized model coefficient
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correlation-coefficient-r">
-     Correlation coefficient r
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-sup-2-sup">
-     R
-     <sup>
-      2
-     </sup>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cohen-s-d">
-     Cohen’s d
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cohen-s-f-sup-2-sup">
-     Cohen’s f
-     <sup>
-      2
-     </sup>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-good-effect-size">
-   19.4 What is a good effect size?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistical-power">
-   19.5 Statistical power
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#power-planning">
-   19.7 Power planning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 19 - Evaluating Effect Sizes</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistical-vs-practical-significance">
-   19.1 Statistical vs. practical significance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unstandardized-effect-sizes">
-   19.2 Unstandardized effect sizes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#standardized-effect-sizes">
-   19.3 Standardized effect sizes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standardized-model-coefficient">
-     Standardized model coefficient
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correlation-coefficient-r">
-     Correlation coefficient r
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-sup-2-sup">
-     R
-     <sup>
-      2
-     </sup>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cohen-s-d">
-     Cohen’s d
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cohen-s-f-sup-2-sup">
-     Cohen’s f
-     <sup>
-      2
-     </sup>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-good-effect-size">
-   19.4 What is a good effect size?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistical-power">
-   19.5 Statistical power
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#power-planning">
-   19.7 Power planning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 19 - Evaluating Effect Sizes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-vs-practical-significance">19.1 Statistical vs. practical significance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unstandardized-effect-sizes">19.2 Unstandardized effect sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-effect-sizes">19.3 Standardized effect sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-model-coefficient">Standardized model coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-coefficient-r">Correlation coefficient r</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-sup-2-sup">R<sup>2</sup></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">Cohen’s d</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-f-sup-2-sup">Cohen’s f<sup>2</sup></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-good-effect-size">19.4 What is a good effect size?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-power">19.5 Statistical power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning">19.7 Power planning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Previous: Chapter 18 - Significance Testing with Whole Models</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
@@ -566,26 +465,26 @@ title="Print to PDF"
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">GSS</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
+<span class="n">GSS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
 
 <span class="c1">#smaller dataset, more similar in size to most psychology studies</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-19-evaluating-effect-sizes">
-<h1>Chapter 19 - Evaluating Effect Sizes<a class="headerlink" href="#chapter-19-evaluating-effect-sizes" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 19 - Evaluating Effect Sizes<a class="headerlink" href="#chapter-19-evaluating-effect-sizes" title="Permalink to this heading">#</a></h1>
 <section id="statistical-vs-practical-significance">
-<h2>19.1 Statistical vs. practical significance<a class="headerlink" href="#statistical-vs-practical-significance" title="Permalink to this headline">#</a></h2>
+<h2>19.1 Statistical vs. practical significance<a class="headerlink" href="#statistical-vs-practical-significance" title="Permalink to this heading">#</a></h2>
 <p>In the previous chapters we discussed how we can use data to test hypotheses. This approach gives us p-values, which we can use to decide if we think it is likely or not that the true effect or model in a population is 0. But that sort of decision is ultimately a binary answer: we either reject or fail to reject the null hypothesis. We neglect a lot of the information a model gives us if p-values are the only thing we pay attention to.</p>
 <p>Consider the following situation. You are testing the efficacy of a new drug for treating depression, and find that the effect of the drug has a p-value of &lt;0.01. Taking the drug significantly improves depression! In a simple world, that would be all you need to send the drug into production and start selling it to people. However, we don’t live in a simple world. It takes money and time to produce medicine, which are resources taken away from producing other things. Your bosses (and the taxpayers funding Medicare) want that money and time to be worth it.</p>
 <p>Of course it’s worth it you say, because the effect is signfificant! But what if you learned that the actual <em>amount</em> the drug improved depression by was 1 point on a 10 point scale? Is that worth it? What if it instead improved depression by only 0.1 points? What if it improved depression by only a little bit, and also came with side effects like acne and stomach upset? Would you make the same drug production decision across all of these scenarios?</p>
 <p>We know from our practice with p-values that even tiny effects can be significant if we have enough data. If your only goal is to publish a paper saying that an effect probably exists, then a p-value is enough for that purpose. But if you care about applying your new knowledge in the real world, a p-value doesn’t tell us everything. We don’t know if the <strong>effect size</strong> is large enough to matter. So while null hypothesis testing tells us whether an effect likely exists in some way (statistical significance), effect sizes tell us how meaningful that effect is (called <strong>practical significance</strong>). Good statistical analyses should report both p-values and effect sizes in order to give the full picture about a statistical model.</p>
 </section>
 <section id="unstandardized-effect-sizes">
-<h2>19.2 Unstandardized effect sizes<a class="headerlink" href="#unstandardized-effect-sizes" title="Permalink to this headline">#</a></h2>
+<h2>19.2 Unstandardized effect sizes<a class="headerlink" href="#unstandardized-effect-sizes" title="Permalink to this heading">#</a></h2>
 <p>How do you measure an effect size? Throughout this course, we’ve already been doing it! An effect size is any number expressing the magnitude of an effect. When fitting models, we have interpreted the b coefficients estimated by those models in the context of what difference in predictions we would make for different values of input variables. For a b coefficient of 5, we’d change our prediction of an outcome variable by 5 units for every one unit increase in the predictor variable. For a b coefficient of 0.1, we’d change our outcome prediction only a little bit. These numbers are all effect sizes. They express the size of the effect a predictor variable has on the predictions of an outcome variable.</p>
 <p>Likewise, RMSE is an effect size because it tells us the magnitude of prediction errors to expect when using a whole model.</p>
 <p>The b coefficients and RMSE are specifically known as <strong>unstandardized effect sizes.</strong> An unstandardized effect size is the magnitude of an effect expressed in the units of the variables.</p>
@@ -594,22 +493,22 @@ title="Print to PDF"
 <p>Unstandardized coefficients are useful for understanding the practical significance of effects in units that we know about, but are less useful for abstract measurements or domains we are unfamiliar with. In that case, we can standardize the effect size.</p>
 </section>
 <section id="standardized-effect-sizes">
-<h2>19.3 Standardized effect sizes<a class="headerlink" href="#standardized-effect-sizes" title="Permalink to this headline">#</a></h2>
+<h2>19.3 Standardized effect sizes<a class="headerlink" href="#standardized-effect-sizes" title="Permalink to this heading">#</a></h2>
 <p><strong>Standardized effect sizes</strong> remove the real-world units from variables. We’ve done a version of this already when learning about z-scores. A standardized variable is one that has been converted to z-scores. Z-scores, to review, express the value of a variable in terms of how many standard deviations it is away from the variable mean. By doing this, we don’t need to have domain expertise in the variable to intrinsically understand what certain values mean. Could you say what a temperature of 350F means relative to other typical temperatures for baking? What about a <a class="reference external" href="https://en.wikipedia.org/wiki/Gas_mark">Gas mark</a> of 5? You’re likely more familiar with the former than the latter. But if we convert each to z-scores and find that both have a z-score of -1, we can easily undertand either of those values relative to their distribution.</p>
 <p>A standardized effect size operates similarly. You don’t need to know about a variable’s units to understand the magnitude of a standardized effect size. Doing this has three benefits for understanding statistical models:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Standardized effect sizes help you evaluate how big or small an effect is when the units of measurement aren’t intuitive. We don’t have to know the typical range or mean of a variable already in order to interpret a standardized effect size - its value has all the information wrapped into it.</p></li>
 <li><p>Standardized effect sizes can help you compare results across studies. Many variables are measured on different scales in different studies. This isn’t likely to happen with a variable like temperature, but there are multiple anxiety scales to choose from, each of which is on a different scale. Including standardized effect size statistics can help readers understand trends or differences across studies. It can also help us compare effect sizes of variables in the same model that are measured in different units (although remember we need to use hypothesis testing to figure out if a difference in estimated effect is statistically significant).</p></li>
 <li><p>Standardized effect sizes let us plan our research more easily. We’ll cover this process more later in this chapter, but the short of it is that there are tools we can use to figure out big of a study we should run if we want to be able to find a particular effect size as statistically significant. These tools use standardized effect sizes.</p></li>
 </ol>
 <p>Next we will cover how to calculate some of the most common standardized effect statistics.</p>
 <section id="standardized-model-coefficient">
-<h3>Standardized model coefficient<a class="headerlink" href="#standardized-model-coefficient" title="Permalink to this headline">#</a></h3>
+<h3>Standardized model coefficient<a class="headerlink" href="#standardized-model-coefficient" title="Permalink to this heading">#</a></h3>
 <p>An unstandardized model coefficient is the coefficient estimate a model gives when the model is fit directly onto raw variable values. It is interpreted in the context of those variable units.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">unstandardized_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
-                           <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">unstandardized_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                           </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">unstandardized_model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -619,12 +518,12 @@ title="Print to PDF"
 <p>A standardized model coefficient, in contrast, is the estimate a model gives when those variables have been z-scored first (NOTE: after removing the rows with NAs on <em>any</em> model variable). The code below will pick out the relevant variables for our model and z-score them all at the same time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS_zscore</span> <span class="o">&lt;-</span> <span class="nf">select</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">highest_year_of_school_completed</span><span class="p">,</span> <span class="n">highest_year_school_completed_father</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">na.omit</span><span class="p">(</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="c1">#removes rows with any NAs</span>
-    <span class="nf">scale</span><span class="p">(</span><span class="n">.</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">.</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS_zscore</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">na.omit</span><span class="p">(</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1">#removes rows with any NAs</span>
+<span class="w">    </span><span class="nf">scale</span><span class="p">(</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">.</span><span class="p">)</span>
 
-<span class="n">standardized_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_zscore</span><span class="p">)</span>
+<span class="n">standardized_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_zscore</span><span class="p">)</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">standardized_model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -634,18 +533,22 @@ title="Print to PDF"
 <p>Also notice the difference in p-values between these models. The unstandardized b<sub>0</sub> is significant (p = 2.40e-15), but the standardized b<sub>0</sub> is not (p = 1). This is because the null hypothesis is that β<sub>0</sub> = 0 for both models. In the unstandardized model, 9.2 is a number that is way above 0, and is thus unlikely to be produced by a population unstandardized-β<sub>0</sub> = 0 years. In the standardized model, standardized-β<sub>0</sub> = 0 means unstandardized-β<sub>0</sub> = the mean of of education. A z-score of approximately 0 isn’t different than 0 at all, so we fail to reject that null hypothesis.</p>
 <p>However, the p-values of both b<sub>1</sub> estimates are the same. This is because, regardless of the units, the strength of the effect is still the same. There’s no difference in the significance of effect coefficients between a standardized and unstandardized model. This is why you can choose to express the effect size of an estimate in either standardized or unstandardized terms.</p>
 <p>Also note that in order to find this standardized b estimate, we have to z-score BOTH the predictor and the outcome. If we only z-scored the predictor and not the outcome, the meaning of the b estimate would be “change in years of education for every 1 SD increase in father’s education.” It would be a sort of half-standardized effect estimate, but we want a fully standardized one in order to compare effect sizes between different analyses and studies.</p>
+<p>Another way to convert between unstandardized and standardized bs in the context of simple regression is to use the following formula:</p>
+<div class="math notranslate nohighlight">
+\[\beta = b * \frac{sd(X)}{sd(Y)}\]</div>
+<p>where b is the unstandardized b, and β is the standardized b.</p>
 <p>When talking about standardized vs. unstandardizes model coefficients, because they are different numeric values, make sure you are being explicit about which one you are using.</p>
 </section>
 <section id="correlation-coefficient-r">
-<h3>Correlation coefficient r<a class="headerlink" href="#correlation-coefficient-r" title="Permalink to this headline">#</a></h3>
+<h3>Correlation coefficient r<a class="headerlink" href="#correlation-coefficient-r" title="Permalink to this heading">#</a></h3>
 <p>In chapter 12 we learned about the correlation coefficient r. It is frequently used to represent a standardized relationship strength between two continuous variables. It can range from -1 (perfect negative correlation) to 1 (perfect positive correlation), with 0 meaning no relationship.</p>
 <p>r is the same thing as the standardized b coefficient from a simple linear model with just one predictor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">standardized_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 
-<span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span>
-   <span class="n">use</span><span class="o">=</span><span class="s">&quot;pairwise.complete.obs&quot;</span><span class="p">)</span>
+<span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span>
+<span class="w">   </span><span class="n">use</span><span class="o">=</span><span class="s">&quot;pairwise.complete.obs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -653,13 +556,13 @@ title="Print to PDF"
 <p>Note that if you have a multivariable model, the standardized b coefficients for each predictor are <em>partial correlations</em>, not the same thing as r. They are the correlation with the outcome variable’s residuals after taking into account the effects of the other predictors.</p>
 </section>
 <section id="r-sup-2-sup">
-<h3>R<sup>2</sup><a class="headerlink" href="#r-sup-2-sup" title="Permalink to this headline">#</a></h3>
+<h3>R<sup>2</sup><a class="headerlink" href="#r-sup-2-sup" title="Permalink to this heading">#</a></h3>
 <p>While standardized bs and correlation r speak to the relationship between an outcome variable and one predictor, R<sup>2</sup> is a standardized effect size for how much variation an entire model explains. As just discussed, it tells us the proportional reduction in error of a full model over the empty model.</p>
 <p>In the case of a one-variable model, it is actually the same thing as the square of the correlation coefficient:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span>
-   <span class="n">use</span><span class="o">=</span><span class="s">&quot;pairwise.complete.obs&quot;</span><span class="p">)</span><span class="o">**</span><span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span>
+<span class="w">   </span><span class="n">use</span><span class="o">=</span><span class="s">&quot;pairwise.complete.obs&quot;</span><span class="p">)</span><span class="o">**</span><span class="m">2</span>
 
 <span class="nf">summary</span><span class="p">(</span><span class="n">unstandardized_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
 </pre></div>
@@ -669,7 +572,7 @@ title="Print to PDF"
 <p>That’s where the name “R<sup>2</sup>” comes from. But of course it can also be used to to account for the proportion of error explained by a model with more than one predictor.</p>
 </section>
 <section id="cohen-s-d">
-<h3>Cohen’s d<a class="headerlink" href="#cohen-s-d" title="Permalink to this headline">#</a></h3>
+<h3>Cohen’s d<a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h3>
 <p>Standardized b, r, and R<sup>2</sup> are all effect sizes that we have seen and used before. But there are two more measures of effect size that are common to see in psychology research that we haven’t yet encountered.</p>
 <p>One of them is called <strong>Cohen’s d</strong>. This measure was created by an influential quantitative psychologist named Jacob Cohen in the 1950s. It is used specifically to represent the magnitude of difference between two categorical groups independent of real-world units. Cohen’s d is related to the concept of z-score, in that it indicates the size of a group mean difference in standard deviation units. It is calculated as:</p>
 <div class="math notranslate nohighlight">
@@ -684,20 +587,20 @@ title="Print to PDF"
 <span class="c1">#library(lsr)</span>
 
 <span class="c1">#education for people born in US</span>
-<span class="n">inUS</span> <span class="o">&lt;-</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">[</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span> <span class="o">==</span> <span class="s">&quot;Yes&quot;</span><span class="p">]</span>
+<span class="n">inUS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">[</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Yes&quot;</span><span class="p">]</span>
 <span class="c1">#education for people born outside US</span>
-<span class="n">outsideUS</span> <span class="o">&lt;-</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">[</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span> <span class="o">==</span> <span class="s">&quot;No&quot;</span><span class="p">]</span>
+<span class="n">outsideUS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">[</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;No&quot;</span><span class="p">]</span>
 
-<span class="nf">mean</span><span class="p">(</span><span class="n">inUS</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">mean</span><span class="p">(</span><span class="n">outsideUS</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">cohensD</span><span class="p">(</span><span class="n">inUS</span><span class="p">,</span> <span class="n">outsideUS</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">inUS</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">outsideUS</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">cohensD</span><span class="p">(</span><span class="n">inUS</span><span class="p">,</span><span class="w"> </span><span class="n">outsideUS</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="cohen-s-f-sup-2-sup">
-<h3>Cohen’s f<sup>2</sup><a class="headerlink" href="#cohen-s-f-sup-2-sup" title="Permalink to this headline">#</a></h3>
+<h3>Cohen’s f<sup>2</sup><a class="headerlink" href="#cohen-s-f-sup-2-sup" title="Permalink to this heading">#</a></h3>
 <p>Cohen also came up with something very similar to R<sup>2</sup>, called <strong>Cohen’s f<sup>2</sup></strong> (not to be confused with an F value in an F distribution). Rather than describing the proportion of variation in an outcome that a model explains, Cohen’s f<sup>2</sup> is the ratio of explained to unexplained error:</p>
 <div class="math notranslate nohighlight">
 \[f^2 = \frac{R^2}{1-R^2} \]</div>
@@ -709,22 +612,22 @@ title="Print to PDF"
 </section>
 </section>
 <section id="what-is-a-good-effect-size">
-<h2>19.4 What is a good effect size?<a class="headerlink" href="#what-is-a-good-effect-size" title="Permalink to this headline">#</a></h2>
+<h2>19.4 What is a good effect size?<a class="headerlink" href="#what-is-a-good-effect-size" title="Permalink to this heading">#</a></h2>
 <p>When evaluating an unstandardized effect size, and when you’re familiar with the units of measurement, you will already have a sense about what an “important” vs. “trivial” effect size is. If you’re studying for a test, 10 hours of studying making a difference of 1% on your grade might not be worth it, but a difference of 10% could be worth spending your whole Saturday in the library.</p>
 <p>When you use a standardized effect size, the down side is that you don’t have any real-world units to ground this number in. But the up side is that the same standardized effect size can apply across many research studies. Over time, then, you begin to accumulate a sense for what value of a standardized effect size is “big”, “medium”, or “small.”</p>
 <p>When Jacob Cohen first formulated his measurements of d and f<sup>2</sup>, he came up with rules of thumb for what counts as a small, medium, and large effect. He decided that, in general, a “large” effect is one that is obvious - people generally should be able to see this effect in the population, without the need to collect data. This translates to a Cohen’s d of &gt;= 0.8. Something like the difference in height between men and women is a large effect because it is generally possible to see without systematic research, and also has a Cohen’s d &gt; 0.8:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
 <span class="c1">#education for people born in US</span>
-<span class="n">female_height</span> <span class="o">&lt;-</span> <span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">[</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;female&quot;</span><span class="p">]</span>
+<span class="n">female_height</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">[</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">]</span>
 <span class="c1">#education for people born outside US</span>
-<span class="n">male_height</span> <span class="o">&lt;-</span> <span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">[</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;male&quot;</span><span class="p">]</span>
+<span class="n">male_height</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">[</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;male&quot;</span><span class="p">]</span>
 
-<span class="nf">mean</span><span class="p">(</span><span class="n">female_height</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">mean</span><span class="p">(</span><span class="n">male_height</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">female_height</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">male_height</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 
-<span class="nf">cohensD</span><span class="p">(</span><span class="n">female_height</span><span class="p">,</span> <span class="n">male_height</span><span class="p">)</span>
+<span class="nf">cohensD</span><span class="p">(</span><span class="n">female_height</span><span class="p">,</span><span class="w"> </span><span class="n">male_height</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -732,41 +635,41 @@ title="Print to PDF"
 <p>Cohen set a “medium” effect to be one that is 0.5 &lt; d &lt; 0.8. A medium effect should be visible within a representative dataset “to the naked eye of a careful observer.” You might not obviously see it in real life, but if you collect data and plot the histograms of two groups, you’d be able to notice a difference in the histograms.</p>
 <p>Finally, a “small” effect is 0.2 &lt; d &lt; 0.5. This is one that you can’t see with the naked eye, but that is still meaningful. It will still matter at the scale of an entire population. Cohen considered any d less than 0.2 to be trivial and not worth studying.</p>
 <p>In his 1988 book “Statistical Power Analysis for the Behavioral Sciences”, Cohen also set some general rules of thumb for r, R<sup>2</sup>, and f<sup>2</sup>:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Effect size</p></th>
-<th class="text-align:center head"><p>small effect</p></th>
-<th class="text-align:center head"><p>medium effect</p></th>
-<th class="text-align:center head"><p>large effect</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Effect size</p></th>
+<th class="head text-center"><p>small effect</p></th>
+<th class="head text-center"><p>medium effect</p></th>
+<th class="head text-center"><p>large effect</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>d</p></td>
-<td class="text-align:center"><p>0.2</p></td>
-<td class="text-align:center"><p>0.5</p></td>
-<td class="text-align:center"><p>0.8</p></td>
+<tr class="row-even"><td class="text-center"><p>d</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0.8</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>r</p></td>
-<td class="text-align:center"><p>0.1</p></td>
-<td class="text-align:center"><p>0.3</p></td>
-<td class="text-align:center"><p>0.5</p></td>
+<tr class="row-odd"><td class="text-center"><p>r</p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p>0.3</p></td>
+<td class="text-center"><p>0.5</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>R<sup>2</sup></p></td>
-<td class="text-align:center"><p>0.02</p></td>
-<td class="text-align:center"><p>0.10</p></td>
-<td class="text-align:center"><p>0.25</p></td>
+<tr class="row-even"><td class="text-center"><p>R<sup>2</sup></p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p>0.25</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>f<sup>2</sup></p></td>
-<td class="text-align:center"><p>0.02</p></td>
-<td class="text-align:center"><p>0.15</p></td>
-<td class="text-align:center"><p>0.35</p></td>
+<tr class="row-odd"><td class="text-center"><p>f<sup>2</sup></p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p>0.35</p></td>
 </tr>
 </tbody>
 </table>
 <p>However, in practice it is best to remember that these are just guidelines. A large effect might not be very trustworthy if you found it in a small sample, and a tiny effect might still be theoretically important (e.g., it’s not a great predictor on its own but significantly contributes to a larger model). It is better to be aware of the wider field of study you are working in, what the typical effect sizes are, and how your measured effect size compares to those. For instance, it is pretty rare to find large effects in psychology research (most of those have been published already!). A lot of modern work is on the little effects that give the data generation process nuance.</p>
 </section>
 <section id="statistical-power">
-<h2>19.5 Statistical power<a class="headerlink" href="#statistical-power" title="Permalink to this headline">#</a></h2>
+<h2>19.5 Statistical power<a class="headerlink" href="#statistical-power" title="Permalink to this heading">#</a></h2>
 <p>Effect sizes and statistical significance are not the same thing - you can’t tell what an effect size is just from a p-value, and you can’t tell whether an effect is significant just by looking at an effect size. But these two things cooperate for helping us make conclusions about models. In fact, they balance each other.</p>
 <p>Recall in chapter 17 when we discussed Type I and Type II error. Type I error is the chance that we mistakenly reject the null hypothesis when it is in fact true. We thought that there’s a non-zero effect, but really there’s nothing there. We set this chance ourselves, with an α criterion of 0.05. α = 0.05 means there is a 95% chance we fail to reject the null when it is true (P(fail to reject | H<sub>0</sub> is true); true negative), and a 5% chance we incorrectly reject the null when it is true (P(reject | H<sub>0</sub> is true); false positive). α is the Type I error rate - given the null is true, how often do we get a false positive decision?</p>
 <p>On the other hand is Type II error. This is the chance that we fail to reject the null hypothesis when we should have. Like Type I error is controlled by a criterion that we set, Type II also has a criterion β (not to be confused with the population model parameter β… I guess we were running out of letters to use for things). When we set the β criterion to something like 0.05, we would have a 5% chance of failing to reject the null hypothesis when it is false (P(fail to reject | H<sub>0</sub> is false); false negative). The complement, then, is we have a 95% chance of correctly rejecting the null hypothesis when it is false (P(reject | H<sub>0</sub> is false); true positive)).</p>
@@ -804,7 +707,7 @@ title="Print to PDF"
 <p>This realization came crashing down on psychology in the early 2010’s when the Open Science Foundation published a <a class="reference external" href="https://www.science.org/doi/10.1126/science.aac4716">replication report</a> in which many research teams tried to replicate prior results in the field. Out of 100 unique effects tested, only 36% of them replicated (produced another significant research result). This shocked members of the field and triggered a major crisis of faith, since many of these effects had dozens of earlier papers backing them up. The problem was because that most psychology studies were underpowered, and it turns out research groups had been scrapping many experiments that didn’t show a significant result (termed the <strong>file-drawer problem</strong>). This means that, even for the papers that did find a significant effect, the positive predictive value of those papers was low - they were more likely to be false positives than true positives.</p>
 </section>
 <section id="power-planning">
-<h2>19.7 Power planning<a class="headerlink" href="#power-planning" title="Permalink to this headline">#</a></h2>
+<h2>19.7 Power planning<a class="headerlink" href="#power-planning" title="Permalink to this heading">#</a></h2>
 <p>Low power is thus a one-two punch to a researcher’s efforts. It makes it harder to find an effect that is real in the population, and it also lowers the trustworthiness of results that make it to publication.</p>
 <p>The solution to this is to ensure ahead of time that your study design will have enough power. This process is called <strong>power planning</strong>.</p>
 <p>Recall that these four things are related to each other:</p>
@@ -815,7 +718,7 @@ title="Print to PDF"
 <li><p>effect size</p></li>
 </ul>
 <p>If you know three of these values, you can compute the fourth.</p>
-<p>One version of power planning is called <strong>sensitivity analysis</strong>. It asks, given a chosen Type I error rate and sample size, what is the biggest effect size you are well-powered to find.</p>
+<p>One version of power planning is called <strong>sensitivity analysis</strong>. It asks, given a chosen Type I error rate and sample size, what is the smallest effect size you are well-powered to find.</p>
 <p>A good tool for doing power planning is the <code class="docutils literal notranslate"><span class="pre">pwr</span></code> package in R. With it, you can enter three of the four values above, and it will tell you the fourth. Let’s use the <code class="docutils literal notranslate"><span class="pre">pwr.r.test()</span></code> function in that package for an analysis where we plan to find a correlation between two variables. This function has four arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>, the planned sample size</p></li>
@@ -824,13 +727,13 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">power</span></code>, the desired power level.</p></li>
 </ul>
 <p>To use this function, three out of four of these arguments must be set with a value, and the fourth one assigned a value of <code class="docutils literal notranslate"><span class="pre">NULL</span></code>. Whichever value is set to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> will be computed based on the other three.</p>
-<p>If we use a Type I error rate of 5%, a sample size of 50, and want to have at least 80% power (the modern standard of power for research studies), what is the biggest r correlation that we will have an 80% chance of finding?</p>
+<p>If we use a Type I error rate of 5%, a sample size of 50, and want to have at least 80% power (the modern standard of power for research studies), what is the smallest r correlation that we will have an 80% chance of finding?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;pwr&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">pwr</span><span class="p">)</span>
 
-<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">50</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -840,7 +743,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Enter values into the arguments below</span>
-<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="p">)</span>
+<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -848,7 +751,7 @@ title="Print to PDF"
 <p>Another type of power planning we can do is <strong>sample size planning</strong>. If we want to be able to detect an r=0.2 with 80% power, what sample size do we need to do that?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -865,7 +768,7 @@ title="Print to PDF"
 <p>What sample size do we need to detect an f<sup>2</sup> score of 0.1 in a model with two predictors?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pwr.f2.test</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">f2</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nf">pwr.f2.test</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">f2</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -890,7 +793,7 @@ title="Print to PDF"
 <p>If you don’t have an idea about a smallest effect size of interest and there isn’t a guide from prior research about what you should expect, you can run a pilot study to collect some data and estimate an effect size. A pilot study generally has few data points and thus unstable estimates, but here you’re not worried about a significant effect yet. You can find the confidence interval of an estimate in this pilot study, perhaps choose an effect value that is on the lower end of that interval, and then power plan for a full study with that effect size as a target.</p>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Contrast statistical and practical significance</p></li>
@@ -902,6 +805,7 @@ title="Print to PDF"
 <li><p>Explain why statistical power is important</p></li>
 <li><p>Run a power plan</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Next: Chapter 20 - Sources of Model Bias</a></p>
 </section>
 </section>
 
@@ -917,7 +821,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -925,36 +829,100 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-vs-practical-significance">19.1 Statistical vs. practical significance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unstandardized-effect-sizes">19.2 Unstandardized effect sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-effect-sizes">19.3 Standardized effect sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-model-coefficient">Standardized model coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-coefficient-r">Correlation coefficient r</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-sup-2-sup">R<sup>2</sup></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">Cohen’s d</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-f-sup-2-sup">Cohen’s f<sup>2</sup></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-good-effect-size">19.4 What is a good effect size?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-power">19.5 Statistical power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning">19.7 Power planning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

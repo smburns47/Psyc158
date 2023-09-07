@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 10 - Quantifying Model Error &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-10';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,456 +156,322 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-10.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-10.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-10.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-10.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-10.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-10.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#error-in-a-model">
-   10.1 Error in a model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#error-distributions">
-   10.2 Error distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#central-tendency-of-error">
-   10.3 Central tendency of error
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spread-of-error">
-   10.4 Spread of error
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sum-of-squares">
-     Sum of squares
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-squared-error">
-     Mean squared error
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#root-mean-squared-error">
-     Root mean squared error
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shape-of-the-error-distribution">
-   10.5 Shape of the error distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimates-vs-parameters-of-error">
-   10.6 Estimates vs. parameters of error
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sources-of-error">
-   10.7 Sources of error
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#z-scores">
-   10.8 Z-Scores
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 10 - Quantifying Model Error</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#error-in-a-model">
-   10.1 Error in a model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#error-distributions">
-   10.2 Error distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#central-tendency-of-error">
-   10.3 Central tendency of error
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spread-of-error">
-   10.4 Spread of error
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sum-of-squares">
-     Sum of squares
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-squared-error">
-     Mean squared error
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#root-mean-squared-error">
-     Root mean squared error
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shape-of-the-error-distribution">
-   10.5 Shape of the error distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimates-vs-parameters-of-error">
-   10.6 Estimates vs. parameters of error
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sources-of-error">
-   10.7 Sources of error
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#z-scores">
-   10.8 Z-Scores
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 10 - Quantifying Model Error</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-a-model">10.1 Error in a model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-distributions">10.2 Error distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-tendency-of-error">10.3 Central tendency of error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spread-of-error">10.4 Spread of error</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squares">Sum of squares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean squared error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-mean-squared-error">Root mean squared error</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-of-the-error-distribution">10.5 Shape of the error distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimates-vs-parameters-of-error">10.6 Estimates vs. parameters of error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">10.7 Sources of error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-scores">10.8 Z-Scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Previous: Chapter 9 - Statistical Models</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This chapter uses packages that takes a few minutes to download on Google Colab. </span>
 <span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
 
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
-<span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<span class="n">studentdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/studentdata.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-10-quantifying-model-error">
-<h1>Chapter 10 - Quantifying Model Error<a class="headerlink" href="#chapter-10-quantifying-model-error" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 10 - Quantifying Model Error<a class="headerlink" href="#chapter-10-quantifying-model-error" title="Permalink to this heading">#</a></h1>
 <section id="error-in-a-model">
-<h2>10.1 Error in a model<a class="headerlink" href="#error-in-a-model" title="Permalink to this headline">#</a></h2>
+<h2>10.1 Error in a model<a class="headerlink" href="#error-in-a-model" title="Permalink to this heading">#</a></h2>
 <p>Up to now we have developed the idea that a statistical model can be thought of as a number, a predicted value for the outcome variable. We are trying to model the data generation process, but because we can’t see the data generation process directly, we fit a model to our data and estimate parameters.</p>
 <p>Sometimes we have a pretty good model - our predicted values closely match those in a sample of data taken from the population. But sometimes our model is pretty poor, and our predicted values are way off.</p>
 <p>Using the DATA = MODEL + ERROR framework, we have defined error as the residual that is left after we account for the variance in our data that the model can explain. In the case of our simple model for a quantitative outcome variable, the model is the mean, and the error (or residual) is the deviation of each score above or below the mean.</p>
@@ -574,12 +483,12 @@ title="Print to PDF"
 <p>We have noted before that the mean is a better model of a quantitative outcome variable when the spread of the distribution is smaller than when it is larger. When the spread is smaller, the collection of residuals from the model are smaller. Quantifying the total error around a model will help us to know how good our models are, and which models are better than others.</p>
 </section>
 <section id="error-distributions">
-<h2>10.2 Error distributions<a class="headerlink" href="#error-distributions" title="Permalink to this headline">#</a></h2>
+<h2>10.2 Error distributions<a class="headerlink" href="#error-distributions" title="Permalink to this heading">#</a></h2>
 <p>Let’s again consider the situation where we are modeling the length of people’s thumbs in the dataset <code class="docutils literal notranslate"><span class="pre">fingers</span></code> using the mean of that variable. First, generate an linear model using the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> function, and then make a new variable to hold the residuals:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">thumb_model</span> <span class="o">&lt;-</span>   <span class="c1">#use lm() here with the variable &quot;Thumb&quot; in dataset &quot;fingers&quot;</span>
-<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span> <span class="o">&lt;-</span>  <span class="c1">#use resid() here on the generated model</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">thumb_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">   </span><span class="c1">#use lm() here with the variable &quot;Thumb&quot; in dataset &quot;fingers&quot;</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="c1">#use resid() here on the generated model</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">fingers</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -588,26 +497,26 @@ title="Print to PDF"
 <p>The residuals of a model are the differences between what the model predicts for each person’s thumb length, and what their thumb length actually is: Y<sub>i</sub> - Y^<sub>i</sub>. We now have the residuals for each person stored in the variable <code class="docutils literal notranslate"><span class="pre">Thumb_residuals</span></code>. Much like it is useful to plot a histogram of a variable to begin to understand it, we can also plot a histogram of these residuals. This is called the <strong>error distribution</strong>. Describing the center, spread, and shape of the error distribution of a statistical model helps us evaluate how good the model is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Thumb_residuals</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Thumb_residuals</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="central-tendency-of-error">
-<h2>10.3 Central tendency of error<a class="headerlink" href="#central-tendency-of-error" title="Permalink to this headline">#</a></h2>
+<h2>10.3 Central tendency of error<a class="headerlink" href="#central-tendency-of-error" title="Permalink to this heading">#</a></h2>
 <p>The first thing to note about an error distribution is where it is centered. When we base a statistical model on the mean of an outcome variable, like <code class="docutils literal notranslate"><span class="pre">lm()</span></code> always does, the mean of the residuals is always centered on zero. This highlights why the mean is a great starting place for building a model. It turns out that no number other than the mean will perfectly balance the deviations above the mean with those below the mean. Every value gets taken into account when calculating the mean. The mean is pulled in both directions (larger and smaller) at once and settles right in the middle. The mean is the number that balances the amount of deviation above and below it, yielding the same amount of error above it as below it. As it turns out, in the absence of other information about the objects being studied, the mean of our sample is the best single estimate we have of what data from the population looks like. It is equally likely to be too high as it is too low, making it an <em>unbiased</em> estimator of the parameter.</p>
 <p>Because it is our best guess of what the population parameter is, it is the best predictor we have of the value of a subsequent observation. While it will almost certainly be wrong, the mean will do a better job than any other individual number.</p>
 <p>If we were to pick a different number than the mean to use as the model, our residuals would no longer center on zero and on average we would make worse predictions. Check it out below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">not_the_mean</span> <span class="o">&lt;-</span> <span class="m">55</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">not_the_mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">55</span>
 
-<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_bad_residuals</span> <span class="o">&lt;-</span>  <span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span> <span class="o">-</span> <span class="n">not_the_mean</span>
-<span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Thumb_bad_residuals</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span> <span class="o">%&gt;%</span>
-  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_bad_residuals</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_bad_residuals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">not_the_mean</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Thumb_bad_residuals</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_bad_residuals</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -615,13 +524,13 @@ title="Print to PDF"
 <p>This alternative error distribution has a red line to indicate the mean of the residuals. Since a residual means deviation between a prediction and a real value, we can see that using this bad model (e.g., an individual number below the mean) will result in fewer predictions that are too large. This is because we’re now always guessing 55 instead of 60. But this also means there are more predictions that are too small, and in general our predictions are off by a greater amount.</p>
 </section>
 <section id="spread-of-error">
-<h2>10.4 Spread of error<a class="headerlink" href="#spread-of-error" title="Permalink to this headline">#</a></h2>
+<h2>10.4 Spread of error<a class="headerlink" href="#spread-of-error" title="Permalink to this heading">#</a></h2>
 <p>We have noted before that the mean is a better model of a quantitative outcome variable when the spread of the distribution is smaller than when it is larger. When the spread of a variable is smaller, the spread of the residuals from the model are smaller. Quantifying the total error around a model involves describing this spread, and will help us to know how good our models are.</p>
 <p>To make this concrete, look again at the distribution of error from using the mean as a model:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Thumb_residuals</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Thumb_residuals</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -639,7 +548,7 @@ title="Print to PDF"
 <p>Although we might at first think that the sum of the residuals would be a good indicator of total error, we’ve discovered a fatal flaw in that approach: the sum of the residuals around the mean is equal to 0! If this were our measure of total error, all data sets would be equally well modeled by the mean, because the residuals around the mean would always sum to 0. A data set widely spread out around the mean, and one tightly clustered around the mean, would have the same amount of error around this simple model. Clearly we need a different approach.</p>
 <p>We can return back to the measures of spread in a distribution that we learned in chapter 5 and apply them to describing total error in a statistical model. Because several of those measures involve talking about spread as deviations away from the middle of a distribution, we can also use them to talk about deviations in a model based on the mean (i.e., spread in an error distribution).</p>
 <section id="sum-of-squares">
-<h3>Sum of squares<a class="headerlink" href="#sum-of-squares" title="Permalink to this headline">#</a></h3>
+<h3>Sum of squares<a class="headerlink" href="#sum-of-squares" title="Permalink to this heading">#</a></h3>
 <p>First we’ll use a type of spread measure we didn’t directly work with yet - <strong>sum of squares</strong>. As we talked about in chapter 5, one way to get around the issue of positive and negative deviations adding up to zero is to square all those numbers first before adding them together. That’s all sum of squares is: the sum of all the squared residuals after fitting a model to data. Mathematically, this is written as:</p>
 <div class="math notranslate nohighlight">
 \[ SS = \sum_{i=1}^{N}(Y_i-\hat{Y}_i)^2\]</div>
@@ -661,7 +570,7 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
 
-<span class="n">thumb_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+<span class="n">thumb_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
 
 <span class="nf">supernova</span><span class="p">(</span><span class="n">thumb_model</span><span class="p">)</span>
 </pre></div>
@@ -671,7 +580,7 @@ title="Print to PDF"
 <p>There are a bunch of other things in this output that we will talk about in later chapters. For now, focus your attention on the row labeled “Total (empty model)” and the column labeled “SS”. This stands for the sum of squares around the empty model (e.g., sum of squared deviations from the mean). We see the same value (1180.21) that we previously calculated with the longer sequence of R commands in which we calculated the residuals, squared them, and then summed the squared residuals.</p>
 </section>
 <section id="mean-squared-error">
-<h3>Mean squared error<a class="headerlink" href="#mean-squared-error" title="Permalink to this headline">#</a></h3>
+<h3>Mean squared error<a class="headerlink" href="#mean-squared-error" title="Permalink to this heading">#</a></h3>
 <p>Sum of squares is a good measure of <em>total</em> variation if we are using the mean as a model. But, it does have one important disadvantage. To see it, compare these two distributions:</p>
 <img src="images/ch10-ss.png" width="650">
 <p>The one on top is clearly less spread out than the distribution on the bottom, so we would expect that if we used the mean to model that distribution, there’d be less error. However, because there are more data points in that distribution, there are just more error values to add up. The sum of squares becomes larger than that for the more spread out distribution.</p>
@@ -692,7 +601,7 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">)</span>
 
 <span class="c1">#same as dividing the sum of squares by N-1</span>
-<span class="nf">sum</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="o">^</span><span class="m">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">)</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -718,7 +627,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="root-mean-squared-error">
-<h3>Root mean squared error<a class="headerlink" href="#root-mean-squared-error" title="Permalink to this headline">#</a></h3>
+<h3>Root mean squared error<a class="headerlink" href="#root-mean-squared-error" title="Permalink to this heading">#</a></h3>
 <p>The root mean squared error (abbreviated as RMSE) is simply the square root of the MSE. This is related in the same way that standard deviation is related to variance. We generally prefer thinking about model error in terms of root mean squared error because it yields a number that makes sense using the original scale of measurement. So, for example, if you were modeling weight in pounds, MSE would express the error in squared pounds (not something we are used to thinking about), whereas RMSE would express the error in pounds. RMSE is how big the residual is expected to be, on average, for any particular data point. This is written as:</p>
 <div class="math notranslate nohighlight">
 \[RMSE = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(Y_i-\hat{Y}_i)^2}\]</div>
@@ -733,7 +642,7 @@ title="Print to PDF"
 <span class="nf">sqrt</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
 
 <span class="c1">#same as dividing the sum of squares by N-1 and then taking the square root</span>
-<span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="o">^</span><span class="m">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">)</span> <span class="o">-</span> <span class="m">1</span><span class="p">))</span>
+<span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -745,12 +654,12 @@ title="Print to PDF"
 </section>
 </section>
 <section id="shape-of-the-error-distribution">
-<h2>10.5 Shape of the error distribution<a class="headerlink" href="#shape-of-the-error-distribution" title="Permalink to this headline">#</a></h2>
+<h2>10.5 Shape of the error distribution<a class="headerlink" href="#shape-of-the-error-distribution" title="Permalink to this heading">#</a></h2>
 <p>The final thing to notice about the distribution of residuals is how it is shaped. Check out the shape below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Thumb_residuals</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-  <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Thumb_residuals</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_residuals</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -759,38 +668,38 @@ title="Print to PDF"
 <p>Again, when talking about shapes of distributions, we always keep in mind the qualifier “roughly.” Even though this distribution is spikey, it roughly resembles a normal distribution. We’re not going to do anything with this information just yet (hang on until chapter 20). But in general, you can remember for now that the General Linear Model, the approach to building statistical models and making predictions about data that we are using in this class, works better when residuals are normally distributed. If they’re strongly not normal, that is cause for concern in evaluating what the model means and what you should do next.</p>
 </section>
 <section id="estimates-vs-parameters-of-error">
-<h2>10.6 Estimates vs. parameters of error<a class="headerlink" href="#estimates-vs-parameters-of-error" title="Permalink to this headline">#</a></h2>
+<h2>10.6 Estimates vs. parameters of error<a class="headerlink" href="#estimates-vs-parameters-of-error" title="Permalink to this heading">#</a></h2>
 <p>Recall from last chapter our discussion of <em>estimates</em> (summaries computed from data samples) and <em>parameters</em> (summaries of the underlying population we are trying to guess at). We used Latin vs. Greek letters to separate our estimate of the mean, <em>M</em>, from the unknown population mean parameter, <em>μ</em>.</p>
 <p>We’ve also now estimated error in a sample (general error <em>e</em>, or the special case of variance <em>s<sup>2</sup></em> and standard deviation <em>s</em>). It follows then, that there’s a true error out there that characterizes how all values in a population vary from <em>μ</em>. We don’t know this parameter, but we try to estimate it. The Greek letters for the error parameters are <em><strong>ε</strong></em> for general error (pronounced “epsilon”), <em><strong>σ<sup>2</sup></strong></em> for variance (pronounced “sigma squared”), and just <em><strong>σ</strong></em> for standard deviation (“sigma”). Here is a table of the estimates and parameters we’ve learned so far, to help keep them straight:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Concept</p></th>
-<th class="text-align:center head"><p>Sample Estimate</p></th>
-<th class="text-align:center head"><p>Population Parameter</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Concept</p></th>
+<th class="head text-center"><p>Sample Estimate</p></th>
+<th class="head text-center"><p>Population Parameter</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>Mean</p></td>
-<td class="text-align:center"><p><em>Y¯</em> (“Y-bar”)</p></td>
-<td class="text-align:center"><p><em>μ</em> (“mu”)</p></td>
+<tr class="row-even"><td class="text-center"><p>Mean</p></td>
+<td class="text-center"><p><em>Y¯</em> (“Y-bar”)</p></td>
+<td class="text-center"><p><em>μ</em> (“mu”)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Model error</p></td>
-<td class="text-align:center"><p><em>e</em>  (“e”)</p></td>
-<td class="text-align:center"><p><em>ε</em> (“epsilon”)</p></td>
+<tr class="row-odd"><td class="text-center"><p>Model error</p></td>
+<td class="text-center"><p><em>e</em>  (“e”)</p></td>
+<td class="text-center"><p><em>ε</em> (“epsilon”)</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>Variance</p></td>
-<td class="text-align:center"><p><em>s<sup>2</sup></em> (“s squared”)</p></td>
-<td class="text-align:center"><p><em>σ<sup>2</sup></em> (“sigma squared”)</p></td>
+<tr class="row-even"><td class="text-center"><p>Variance</p></td>
+<td class="text-center"><p><em>s<sup>2</sup></em> (“s squared”)</p></td>
+<td class="text-center"><p><em>σ<sup>2</sup></em> (“sigma squared”)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Standard deviation</p></td>
-<td class="text-align:center"><p><em>s</em> (“s”)</p></td>
-<td class="text-align:center"><p><em>σ</em> (“sigma”)</p></td>
+<tr class="row-odd"><td class="text-center"><p>Standard deviation</p></td>
+<td class="text-center"><p><em>s</em> (“s”)</p></td>
+<td class="text-center"><p><em>σ</em> (“sigma”)</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="sources-of-error">
-<h2>10.7 Sources of error<a class="headerlink" href="#sources-of-error" title="Permalink to this headline">#</a></h2>
+<h2>10.7 Sources of error<a class="headerlink" href="#sources-of-error" title="Permalink to this heading">#</a></h2>
 <p>This is a good time to think a little more about where variation in data even comes from. Why are our models making inaccurate predictions? We already have talked about the data generation process — the process that generates variation in the population from which we collected our sample of data. With our statistical models, we are trying to approximately describe that process. But using just the mean as a model is usually poor - the data generation process includes a lot of different components that, working together, produce the variation we see in an outcome variable. What are these sources of variation?</p>
 <p>There are three important points we want to make about sources of variation. First, variation can be either explained or unexplained.</p>
 <img src="images/ch10-var1.png" width="400">
@@ -803,7 +712,7 @@ title="Print to PDF"
 <p>The third and final point we want to make is this: even though unexplained variation could be explained if we knew enough, statisticians tend to model unexplained variation, whether real or induced by data collection, as though it were generated by a random process. That’s why we expect the shape of the error distribution to be normal.</p>
 </section>
 <section id="z-scores">
-<h2>10.8 Z-Scores<a class="headerlink" href="#z-scores" title="Permalink to this headline">#</a></h2>
+<h2>10.8 Z-Scores<a class="headerlink" href="#z-scores" title="Permalink to this heading">#</a></h2>
 <p>We have looked at the mean as a model, and we have learned some ways to quantify total error around the mean, as well as some good reasons for doing so. But there is another reason to look at both mean and error together. Sometimes, by putting the two ideas together it can give us a better way of understanding where a particular score falls in a distribution.</p>
 <p>A student (let’s call her Zelda) has a thumb length of 64mm. Good for her, but what does this mean? Is that a particularly long thumb? How can we know? By now you may be getting the idea that just knowing the length of one thumb doesn’t tell you very much.</p>
 <p>To interpret the meaning of a single score, it helps to know something about the distribution the score came from. Specifically, we need to know something about its shape, center and spread.</p>
@@ -816,9 +725,9 @@ title="Print to PDF"
 <p>It’s more useful to say something about a particular data point if we can also communicate about the mean and standard deviation of a distribution. In order to make this easier, so that we don’t have to report several numbers at once, we can treat standard deviation as a new <em>unit</em> on which to measure our data. Let’s convert the value of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> to be a data points deviation from the mean, divided by the standard deviation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_scaled</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sd</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">)</span>
-<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># value of Zelda&#39;s thumb length, in original units</span>
-<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_scaled</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># new value of Zelda&#39;s thumb length, in new units</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_scaled</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">)</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1"># value of Zelda&#39;s thumb length, in original units</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_scaled</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1"># new value of Zelda&#39;s thumb length, in new units</span>
 </pre></div>
 </div>
 </div>
@@ -826,8 +735,8 @@ title="Print to PDF"
 <p>This new unit tells us how much of a standard deviation any score is from the mean. This can be positive (above the mean), or negative (below the mean), like this other person’s thumb:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> 
-<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_scaled</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w"> </span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">Thumb_scaled</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -839,9 +748,9 @@ title="Print to PDF"
 <p>The “z” in “z-score” comes from the fact that the standard normal distribution (a normal distribution with a mean of zero and a standard deviation of 1) used to be called the “Z” distribution. So, what this transformation does is it actually morphs our data into being a sample from a normal distribution. It also forces the newly-transformed scores to exactly match what the residuals would be if we fit a linear model to the transformed scores:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">z_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb_scaled</span> <span class="o">~</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
-<span class="n">fingers</span><span class="o">$</span><span class="n">z_residuals</span> <span class="o">&lt;-</span>  <span class="nf">resid</span><span class="p">(</span><span class="n">z_model</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">fingers</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Thumb_scaled&quot;</span><span class="p">,</span> <span class="s">&quot;z_residuals&quot;</span><span class="p">)])</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">z_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb_scaled</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
+<span class="n">fingers</span><span class="o">$</span><span class="n">z_residuals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="nf">resid</span><span class="p">(</span><span class="n">z_model</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">fingers</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Thumb_scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;z_residuals&quot;</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -853,7 +762,7 @@ title="Print to PDF"
 <p>This leads us to the second value of the z-score - we can compare scores from different distributions. Whether you’re measuring thumb length, game score, etc., you can always tell what a more typical vs. more exceptional value is based on its z-score. As we talk about statistical models more, you will see why the z-score is so useful.</p>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Create a distribution of model errors</p></li>
@@ -864,6 +773,7 @@ title="Print to PDF"
 <li><p>Describe different sources of error in a model</p></li>
 <li><p>Calculate the z-score of a variable</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Next: Chapter 11 - Adding an Explanatory Variable</a></p>
 </section>
 </section>
 
@@ -879,7 +789,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -887,36 +797,100 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-a-model">10.1 Error in a model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-distributions">10.2 Error distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-tendency-of-error">10.3 Central tendency of error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spread-of-error">10.4 Spread of error</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-of-squares">Sum of squares</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error">Mean squared error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-mean-squared-error">Root mean squared error</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-of-the-error-distribution">10.5 Shape of the error distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimates-vs-parameters-of-error">10.6 Estimates vs. parameters of error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-error">10.7 Sources of error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-scores">10.8 Z-Scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

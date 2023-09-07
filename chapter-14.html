@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 14 - Non-Linear Models &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-14';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,395 +156,301 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-14.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-14.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-14.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-14.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-14.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-14.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-relationships">
-   14.1 Nonlinear relationships
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-transformations">
-   14.2 Variable transformations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-and-interpreting-nonlinear-models">
-   14.3 Specifying and interpreting nonlinear models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-to-use-nonlinear-models">
-   14.4 When to use nonlinear models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-parametric-models">
-   14.5 Non-parametric models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predictor-interactions">
-   14.6 Predictor interactions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choosing-the-best-model">
-   14.7 Choosing the best model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 14 - Non-Linear Models</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-relationships">
-   14.1 Nonlinear relationships
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-transformations">
-   14.2 Variable transformations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-and-interpreting-nonlinear-models">
-   14.3 Specifying and interpreting nonlinear models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-to-use-nonlinear-models">
-   14.4 When to use nonlinear models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#non-parametric-models">
-   14.5 Non-parametric models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predictor-interactions">
-   14.6 Predictor interactions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choosing-the-best-model">
-   14.7 Choosing the best model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 14 - Non-Linear Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-relationships">14.1 Nonlinear relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-transformations">14.2 Variable transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-and-interpreting-nonlinear-models">14.3 Specifying and interpreting nonlinear models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-nonlinear-models">14.4 When to use nonlinear models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-parametric-models">14.5 Non-parametric models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictor-interactions">14.6 Predictor interactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-model">14.7 Choosing the best model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Previous: Chapter 13 - Multivariable Models</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
@@ -513,12 +462,12 @@ title="Print to PDF"
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-14-non-linear-models">
-<h1>Chapter 14 - Non-Linear Models<a class="headerlink" href="#chapter-14-non-linear-models" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 14 - Non-Linear Models<a class="headerlink" href="#chapter-14-non-linear-models" title="Permalink to this heading">#</a></h1>
 <p>In all the modeling we’ve done so far, we’ve relied on the general <em>linear</em> model to combine the effects of predictors in order to make a guess about the value of an outcome. This <em>linear</em> keyword means we have combined them with addition in the model equation. It implies that we think each predictor can contribute to explaining variance <em>regardless</em> of the value of any other predictor.</p>
 <p>However, this isn’t always how the data generation process actually works. Not everything in the world is combined linearly. Gravity, a very simple deterministic model, has mass and distance integrated in multiplicative ways. If we think a data generation process in psychology is not linear, is that a fatal flaw in using the general linear model framework?</p>
 <p>It turns out that the answer is no! The general linear model always combines things linearly. But we can use some tricks of math to turn nonlinear relationships into linear ones. In this chapter we’ll learn how to do this.</p>
 <section id="nonlinear-relationships">
-<h2>14.1 Nonlinear relationships<a class="headerlink" href="#nonlinear-relationships" title="Permalink to this headline">#</a></h2>
+<h2>14.1 Nonlinear relationships<a class="headerlink" href="#nonlinear-relationships" title="Permalink to this heading">#</a></h2>
 <p>First let’s conceptualize what it means for a data generation process to be nonlinear. We’ll think of this in the context of number of hours of study predicting someone’s grade on a test.</p>
 <p>In this case, the separate components of the model are easy to identify - number of hours of study is the sole explanatory variable, and test grade is the outcome variable. If we were to fit a regression model on this data, we’d interpret the studying coefficient to mean the expected change in grade for every additional hour of study. In other words, we’d expect <em>every</em> additional hour of studying to result in the <em>same</em> change in grade. The difference in grade between 2 and 3 hours of study should be the same as between 12 and 13 hours of study. This sort of relationship would look like the plot below.</p>
 <img src="images/ch14-linear.png" width=250>
@@ -527,7 +476,7 @@ title="Print to PDF"
 <p>That curve in the graph is an example of a nonlinear relationship. It’s where the effect of an explanatory variable <em>depends on the value</em> of the explanatory variable.</p>
 </section>
 <section id="variable-transformations">
-<h2>14.2 Variable transformations<a class="headerlink" href="#variable-transformations" title="Permalink to this headline">#</a></h2>
+<h2>14.2 Variable transformations<a class="headerlink" href="#variable-transformations" title="Permalink to this heading">#</a></h2>
 <p>We can incorporate this sort of relationship into our models by looking to how algebra handles this. Consider the basic equation for a straight line, <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code>. This means for every one point increase in x, there is a one point increase in y, like in the graph below.</p>
 <img src="images/ch14-graphstraight.png" width="500">
 <p>Now consider the <em>polynomial</em> equation, <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x^2</span></code>. This means that for every one point increase in x, you <em>square</em> the value of y. That kind of relationship creates a graph like the one below.</p>
@@ -538,8 +487,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">predictor</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
-<span class="n">error</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">predictor</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span>
+<span class="n">error</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -547,7 +496,7 @@ title="Print to PDF"
 <p>Next, we’ll create an outcome variable that is a product of the predictor and measurement error. Specifically, it is a product of the <em>square</em> of the predictor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">*</span><span class="n">predictor</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> <span class="n">error</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="n">predictor</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">error</span>
 </pre></div>
 </div>
 </div>
@@ -555,9 +504,9 @@ title="Print to PDF"
 <p>Let’s see what would happen if we tried to model these with a simple linear model, <code class="docutils literal notranslate"><span class="pre">outcome</span> <span class="pre">~</span> <span class="pre">predictor</span></code>. Below is some code creating a dataframe, model, and a scatter plot with these values. Add a line with <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> to measure how well we do with this model in predicting the outcome variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">predictor</span><span class="p">,</span> <span class="n">outcome</span><span class="p">)</span>
-<span class="n">linear_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">outcome</span> <span class="o">~</span> <span class="n">predictor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome</span> <span class="o">~</span> <span class="n">predictor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">outcome</span><span class="p">)</span>
+<span class="n">linear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">outcome</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 
 <span class="c1">#Use supernova() to tell us how good this model is</span>
 </pre></div>
@@ -567,7 +516,7 @@ title="Print to PDF"
 <p>That’s really good actually! A PRE of 0.89 is better than we almost ever get with real data. But in this case we know the data generation process - we know we can do better. In this case, the model is systematically underpredicting for both large and small values of X and overpredicting for middle values, because it’s trying to fit the best <em>straight</em> line. Compare the the graph from above to one where we draw the best-fitting curved line, using <code class="docutils literal notranslate"><span class="pre">gf_smooth()</span></code> from <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome</span> <span class="o">~</span> <span class="n">predictor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_smooth</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_smooth</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -576,7 +525,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Square the values of predictor to make a new variable, predictor_squared</span>
-<span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_squared</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+<span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_squared</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
@@ -584,8 +533,8 @@ title="Print to PDF"
 <p>Now model that relationship, plot it, and investigate the model performance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">squared_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">outcome</span> <span class="o">~</span> <span class="n">predictor_squared</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome</span> <span class="o">~</span> <span class="n">predictor_squared</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">squared_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">outcome</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor_squared</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor_squared</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 <span class="nf">supernova</span><span class="p">(</span><span class="n">squared_model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -595,7 +544,7 @@ title="Print to PDF"
 <p>That’s what data might look like under an exponential relationship. Now let’s look at how we might model the case described above, where there are diminishing increases in Y as X gets larger:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">outcome2</span> <span class="o">&lt;-</span> <span class="m">85</span> <span class="o">+</span> <span class="m">4</span><span class="o">*</span><span class="nf">log</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor</span><span class="p">)</span> <span class="o">+</span> <span class="n">error</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">outcome2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">85</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">4</span><span class="o">*</span><span class="nf">log</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">error</span>
 </pre></div>
 </div>
 </div>
@@ -603,8 +552,8 @@ title="Print to PDF"
 <p>Now, <code class="docutils literal notranslate"><span class="pre">outcome</span></code> is a product of the <em>log</em> of <code class="docutils literal notranslate"><span class="pre">predictor</span></code> instead. If we model that and plot it assuming a linear relationship:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">linear2_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="n">predictor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="n">predictor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">linear2_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 <span class="nf">supernova</span><span class="p">(</span><span class="n">linear2_model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -613,7 +562,7 @@ title="Print to PDF"
 <p>Our PRE score is good, but not as good as it can be. We’re making especially bad predictions for small values of X (large residuals), and it looks like there should be a curved line where changes in predicted Y are smaller, the bigger X gets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="n">predictor</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_smooth</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_smooth</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -622,10 +571,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Take the log of predictor to make a new variable, predictor_log</span>
-<span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_log</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+<span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_log</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
 
-<span class="n">log_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="n">predictor_log</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="n">predictor_log</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="n">log_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor_log</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor_log</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 <span class="nf">supernova</span><span class="p">(</span><span class="n">squared_model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -634,7 +583,7 @@ title="Print to PDF"
 <p>Again, we’ve gotten a much better PRE score this way because we’ve modeled the data generation process more accurately.</p>
 </section>
 <section id="specifying-and-interpreting-nonlinear-models">
-<h2>14.3 Specifying and interpreting nonlinear models<a class="headerlink" href="#specifying-and-interpreting-nonlinear-models" title="Permalink to this headline">#</a></h2>
+<h2>14.3 Specifying and interpreting nonlinear models<a class="headerlink" href="#specifying-and-interpreting-nonlinear-models" title="Permalink to this heading">#</a></h2>
 <p>When specifying the equation form of these nonlinear models, we want to write them in such a way that we see what data transformations were done. So, if we were to write the equation for study time and test grades being related via a log transform, we would write it as such:</p>
 <div class="math notranslate nohighlight">
 \[Y_i = b_0 + b_1log(X_i) + e_i\]</div>
@@ -642,8 +591,8 @@ title="Print to PDF"
 <p>When fitting this model with <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, we can do one of two things. First, we can create a new variable like we just did previously, saving the transformed values to a new column in a data frame. Then we would use this new variable in the formula for a simple regression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_log</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor</span><span class="p">)</span>
-<span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="n">predictor_log</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_log</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor</span><span class="p">)</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor_log</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -651,7 +600,7 @@ title="Print to PDF"
 <p>This has the advantage of keeping the transformed values around for you to inspect. Alternatively, you can do the transformation directly in the formula of the model call:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span> <span class="o">~</span> <span class="nf">log</span><span class="p">(</span><span class="n">predictor</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">outcome2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">predictor</span><span class="p">),</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -679,15 +628,15 @@ title="Print to PDF"
 <p>But again, making models more complex has tradeoffs. It might help you get to a better prediction <em>within a specific sample</em>, but could result in overfitting such that your model performs very poorly on new samples of data.</p>
 </section>
 <section id="when-to-use-nonlinear-models">
-<h2>14.4 When to use nonlinear models<a class="headerlink" href="#when-to-use-nonlinear-models" title="Permalink to this headline">#</a></h2>
+<h2>14.4 When to use nonlinear models<a class="headerlink" href="#when-to-use-nonlinear-models" title="Permalink to this heading">#</a></h2>
 <p>Model specifications that you use in research should come primarily from existing theories or hypotheses about the data generation process. Thus, you should use nonlinear models when you suspect that variables are related to eachother in a nonlinear way.</p>
 <p>However, it is actually rare to encounter nonlinear models in psychology. We usually don’t understand the data generation process well enough to expect anything more specific than “as X goes up, Y goes up too.” Additionally, there is often so much error in our measurements that it’s hard to see whether a linear or nonlinear line would fit the data better. Because of this, most people default to using linear models. Yet, there can be clues that point you towards using nonlinear alternatives.</p>
 <p>Remember back in chapter 10 how we briefly talked about the shape of the error distribution? If the error distribution is roughly normal, our model is in general unbiased. It may be making errors when predicting outcome values for certain data points, even large errors. But if there isn’t any systematic pattern in those errors, then the model is likely to make unbiased estimates averaged across many predictions.</p>
 <p>If the error distribution is skewed, however, our model is going to have problems. This means our model is biased - more often it makes a prediction that is too high or too low. Let’s see what the error distribution looks like for the case where we build a simple linear model when the true data generation process is an exponential relationship:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">linear_resid</span> <span class="o">&lt;-</span> <span class="nf">resid</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span>
-<span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">linear_resid</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">linear_resid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">resid</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">linear_resid</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -696,9 +645,9 @@ title="Print to PDF"
 <p>Another way of investigating this is to make a scatter plot of the residuals, against what the predicted values are. If we’re modeling the data generation process in an unbiased way, this scatterplot should look like a random cloud of data points. There shouldn’t be any relationship between the value of what the model predicts, and how far off that prediction is from the actual values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">squared_predicted</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">squared_model</span><span class="p">)</span>
-<span class="n">sim_data</span><span class="o">$</span><span class="n">squared_resid</span> <span class="o">&lt;-</span> <span class="nf">resid</span><span class="p">(</span><span class="n">squared_model</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">squared_resid</span> <span class="o">~</span> <span class="n">squared_predicted</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">squared_predicted</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">squared_model</span><span class="p">)</span>
+<span class="n">sim_data</span><span class="o">$</span><span class="n">squared_resid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">resid</span><span class="p">(</span><span class="n">squared_model</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">squared_resid</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">squared_predicted</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -707,9 +656,9 @@ title="Print to PDF"
 <p>Compare that to the predictions and residuals from the linear, misspecified model:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">linear_predicted</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span>
-<span class="n">sim_data</span><span class="o">$</span><span class="n">linear_resid</span> <span class="o">&lt;-</span> <span class="nf">resid</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">linear_resid</span> <span class="o">~</span> <span class="n">linear_predicted</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">linear_predicted</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span>
+<span class="n">sim_data</span><span class="o">$</span><span class="n">linear_resid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">resid</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">linear_resid</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">linear_predicted</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -718,35 +667,35 @@ title="Print to PDF"
 <p>If you see structure like this in a predicted-by-residual plot, that tells you there’s probably a nonlinear relationship between the predictor variable and the outcome variable. It is then your job to figure out what kind of nonlinear relationship it might be.</p>
 </section>
 <section id="non-parametric-models">
-<h2>14.5 Non-parametric models<a class="headerlink" href="#non-parametric-models" title="Permalink to this headline">#</a></h2>
+<h2>14.5 Non-parametric models<a class="headerlink" href="#non-parametric-models" title="Permalink to this heading">#</a></h2>
 <p>It’s rare to know enough about the data generation process to hypothesize a nonlinear relationship between predictors and an outcome. Nonlinear models make a fairly stringent assumption about the exact relationship between variables.</p>
 <p>In fact, even linear models make a somewhat stringent assumption. They assume that the best fitting line is straight - that for every one-unit increase in the predictor, and <em>any</em> one-unit increase in the predictor, there is a reliable change in the outcome.</p>
 <p>Sometimes we’re not even ready to make a hypothesis that strong. We may not know if the effect of the predictor should be the same for every value of the predictor. Maybe we even suspect that it’s not, but we have no inclination what type of nonlinear pattern would better characterize the relationship.</p>
 <p>In that case, we can use <strong>non-parametric models</strong>. These models remove the real-world units from each variable, and represent values instead in terms of their ranks relative to the rest of the variable. The table below shows an example of a variable holding people’s thumb lengths in millimeters, and the corresponding ranks of those values:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Thumb length (mm)</p></th>
-<th class="text-align:center head"><p>Thumb length (rank)</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Thumb length (mm)</p></th>
+<th class="head text-center"><p>Thumb length (rank)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>68</p></td>
-<td class="text-align:center"><p>6</p></td>
+<tr class="row-even"><td class="text-center"><p>68</p></td>
+<td class="text-center"><p>6</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>63</p></td>
-<td class="text-align:center"><p>4</p></td>
+<tr class="row-odd"><td class="text-center"><p>63</p></td>
+<td class="text-center"><p>4</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>60</p></td>
-<td class="text-align:center"><p>2</p></td>
+<tr class="row-even"><td class="text-center"><p>60</p></td>
+<td class="text-center"><p>2</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>61</p></td>
-<td class="text-align:center"><p>3</p></td>
+<tr class="row-odd"><td class="text-center"><p>61</p></td>
+<td class="text-center"><p>3</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>64</p></td>
-<td class="text-align:center"><p>5</p></td>
+<tr class="row-even"><td class="text-center"><p>64</p></td>
+<td class="text-center"><p>5</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>56</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-odd"><td class="text-center"><p>56</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -761,17 +710,17 @@ title="Print to PDF"
 <p>Here is how we can convert <code class="docutils literal notranslate"><span class="pre">predictor</span></code> and <code class="docutils literal notranslate"><span class="pre">outcome</span></code> from above into ranks in order to model their relationship without knowing whether or not that relationship is linear or nonlinear:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_rank</span> <span class="o">&lt;-</span> <span class="nf">rank</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor</span><span class="p">,</span> <span class="n">na.last</span><span class="o">=</span><span class="s">&quot;keep&quot;</span><span class="p">,</span> <span class="n">ties.method</span><span class="o">=</span><span class="s">&quot;average&quot;</span><span class="p">)</span>
-<span class="n">sim_data</span><span class="o">$</span><span class="n">outcome_rank</span> <span class="o">&lt;-</span> <span class="nf">rank</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">outcome</span><span class="p">,</span> <span class="n">na.last</span><span class="o">=</span><span class="s">&quot;keep&quot;</span><span class="p">,</span> <span class="n">ties.method</span><span class="o">=</span><span class="s">&quot;average&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor_rank</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rank</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">predictor</span><span class="p">,</span><span class="w"> </span><span class="n">na.last</span><span class="o">=</span><span class="s">&quot;keep&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ties.method</span><span class="o">=</span><span class="s">&quot;average&quot;</span><span class="p">)</span>
+<span class="n">sim_data</span><span class="o">$</span><span class="n">outcome_rank</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rank</span><span class="p">(</span><span class="n">sim_data</span><span class="o">$</span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">na.last</span><span class="o">=</span><span class="s">&quot;keep&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ties.method</span><span class="o">=</span><span class="s">&quot;average&quot;</span><span class="p">)</span>
 
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome_rank</span> <span class="o">~</span> <span class="n">predictor_rank</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sim_data</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">outcome_rank</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">predictor_rank</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim_data</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="predictor-interactions">
-<h2>14.6 Predictor interactions<a class="headerlink" href="#predictor-interactions" title="Permalink to this headline">#</a></h2>
+<h2>14.6 Predictor interactions<a class="headerlink" href="#predictor-interactions" title="Permalink to this heading">#</a></h2>
 <p>Another way the effect of a predictor can vary depending on its value is in the case of interactions <em>between</em> predictors.</p>
 <p>Suppose that there is a cholesterol lowering drug that is tested through a clinical trial. Suppose we are expecting a linear dose-response over a given range of drug dose, so that the picture looks like this:</p>
 <img src="images/ch14-lineardrug.png" width="450">
@@ -845,14 +794,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#simulation for the situation above</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">dose</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span> <span class="c1">#uniformly distributed doses</span>
-<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">20</span><span class="p">))</span> <span class="c1">#normally distributed ages</span>
-<span class="n">error</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
-<span class="n">cholesterol</span> <span class="o">&lt;-</span> <span class="m">0.5</span><span class="o">*</span><span class="n">dose</span> <span class="o">+</span> <span class="m">0.02</span><span class="o">*</span><span class="n">age</span> <span class="o">+</span> <span class="m">0.01</span><span class="o">*</span><span class="n">dose</span><span class="o">*</span><span class="n">age</span> <span class="o">+</span> <span class="n">error</span>
-<span class="n">cholesterol_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">,</span> <span class="n">dose</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="n">dose</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">))</span><span class="w"> </span><span class="c1">#uniformly distributed doses</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">))</span><span class="w"> </span><span class="c1">#normally distributed ages</span>
+<span class="n">error</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="n">cholesterol</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.5</span><span class="o">*</span><span class="n">dose</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.02</span><span class="o">*</span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.01</span><span class="o">*</span><span class="n">dose</span><span class="o">*</span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">error</span>
+<span class="n">cholesterol_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">,</span><span class="w"> </span><span class="n">dose</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span>
 
 <span class="c1">#fitting interaction model</span>
-<span class="n">cholesterol_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">cholesterol</span> <span class="o">~</span> <span class="n">dose</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">dose</span><span class="o">*</span><span class="n">age</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">cholesterol_data</span><span class="p">)</span>
+<span class="n">cholesterol_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">cholesterol</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">dose</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dose</span><span class="o">*</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cholesterol_data</span><span class="p">)</span>
 <span class="n">cholesterol_model</span>
 </pre></div>
 </div>
@@ -866,7 +815,7 @@ title="Print to PDF"
 <span class="nf">library</span><span class="p">(</span><span class="n">interactions</span><span class="p">)</span>
 
 <span class="c1">#plotting interaction</span>
-<span class="nf">interact_plot</span><span class="p">(</span><span class="n">cholesterol_model</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">dose</span><span class="p">,</span> <span class="n">modx</span> <span class="o">=</span> <span class="n">age</span><span class="p">)</span>
+<span class="nf">interact_plot</span><span class="p">(</span><span class="n">cholesterol_model</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dose</span><span class="p">,</span><span class="w"> </span><span class="n">modx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -876,7 +825,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#plotting interaction with datapoints </span>
-<span class="nf">interact_plot</span><span class="p">(</span><span class="n">cholesterol_model</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">dose</span><span class="p">,</span> <span class="n">modx</span> <span class="o">=</span> <span class="n">age</span><span class="p">,</span> <span class="n">plot.points</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">interact_plot</span><span class="p">(</span><span class="n">cholesterol_model</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dose</span><span class="p">,</span><span class="w"> </span><span class="n">modx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">plot.points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -885,7 +834,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">interact_plot()</span></code> has a lot more features to help you control how it looks. To see more of those, visit <a class="reference external" href="https://cran.r-project.org/web/packages/interactions/vignettes/interactions.html">this page</a>.</p>
 </section>
 <section id="choosing-the-best-model">
-<h2>14.7 Choosing the best model<a class="headerlink" href="#choosing-the-best-model" title="Permalink to this headline">#</a></h2>
+<h2>14.7 Choosing the best model<a class="headerlink" href="#choosing-the-best-model" title="Permalink to this heading">#</a></h2>
 <p>In just a few chapters, we’ve learned about so many model forms - simple group model, simple regression, multivariable models, nonlinear transformations, nonparametric, and now interaction models. It may start to feel overwhelming to know what model structure you should choose for any particular research question.</p>
 <p>Indeed, it is not an easy task. We are trying to understand the data generation process as best we can, in terms of what explanatory variables are included and how they relate to an outcome, but human psychology is very complex and we’re almost never sure about what the best model truly is. Researchers argue over these details every day. It’s important that you understand the breadth of available models, and some are more obviously wrong than others, but choosing the absolute best one is a difficult feat.</p>
 <p>It is important to get comfortable with not always being right, and with having opinions that are different than other people. To pick a model structure to work with, start with what you think makes the most sense given what you already know about the topic you are trying to study. Then collect some data, evaluate how right or wrong you are, and update your theories accordingly. This is how science advances.</p>
@@ -896,7 +845,7 @@ title="Print to PDF"
 <p>What makes a dataset big enough to run an internal replication, rather than needing to collect a whole new dataset? We’ll talk more about that in chapter 18.</p>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Understand the difference between a linear and nonlinear model</p></li>
@@ -911,6 +860,7 @@ title="Print to PDF"
 <li><p>Plot an interaction model</p></li>
 <li><p>Decide how you will pick a particular model structure for your research question</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Next: Chapter 15 - Models with Categorical Outcomes</a></p>
 </section>
 </section>
 
@@ -926,7 +876,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -934,36 +884,94 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-relationships">14.1 Nonlinear relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-transformations">14.2 Variable transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-and-interpreting-nonlinear-models">14.3 Specifying and interpreting nonlinear models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-nonlinear-models">14.4 When to use nonlinear models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-parametric-models">14.5 Non-parametric models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictor-interactions">14.6 Predictor interactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-model">14.7 Choosing the best model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

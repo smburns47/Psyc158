@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 16 - Estimating Populations &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-16';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,443 +156,309 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-16.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-16.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-16.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-16.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-16.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-16.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#evaluating-model-performance">
-   16.1 Evaluating model performance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distributions">
-   16.2 Sampling distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-importance-of-sample-size">
-   16.3 The importance of sample size
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-central-limit-theorem">
-   16.4 The Central Limit Theorem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimating-population-parameters">
-   16.5 Estimating population parameters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-the-population-mean">
-     Estimating the population mean
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-the-population-standard-deviation">
-     Estimating the population standard deviation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">
-   16.6 Sampling distributions of model outputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#confidence-intervals">
-   16.7 Confidence intervals
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pitfalls-of-interpreting-confidence-intervals">
-     Pitfalls of interpreting confidence intervals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-uncertainty">
-   16.8 Visualizing uncertainty
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 16 - Estimating Populations</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#evaluating-model-performance">
-   16.1 Evaluating model performance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distributions">
-   16.2 Sampling distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-importance-of-sample-size">
-   16.3 The importance of sample size
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-central-limit-theorem">
-   16.4 The Central Limit Theorem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimating-population-parameters">
-   16.5 Estimating population parameters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-the-population-mean">
-     Estimating the population mean
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimating-the-population-standard-deviation">
-     Estimating the population standard deviation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">
-   16.6 Sampling distributions of model outputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#confidence-intervals">
-   16.7 Confidence intervals
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pitfalls-of-interpreting-confidence-intervals">
-     Pitfalls of interpreting confidence intervals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-uncertainty">
-   16.8 Visualizing uncertainty
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 16 - Estimating Populations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-model-performance">16.1 Evaluating model performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">16.2 Sampling distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-sample-size">16.3 The importance of sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem">16.4 The Central Limit Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-population-parameters">16.5 Estimating population parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-mean">Estimating the population mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-standard-deviation">Estimating the population standard deviation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">16.6 Sampling distributions of model outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">16.7 Confidence intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfalls-of-interpreting-confidence-intervals">Pitfalls of interpreting confidence intervals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-uncertainty">16.8 Visualizing uncertainty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Previous: Chapter 15 - Models with Categorical Outcomes</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
@@ -560,15 +469,15 @@ title="Print to PDF"
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">interactions</span><span class="p">)</span>
-<span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-16-estimating-populations">
-<h1>Chapter 16 - Estimating Populations<a class="headerlink" href="#chapter-16-estimating-populations" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 16 - Estimating Populations<a class="headerlink" href="#chapter-16-estimating-populations" title="Permalink to this heading">#</a></h1>
 <section id="evaluating-model-performance">
-<h2>16.1 Evaluating model performance<a class="headerlink" href="#evaluating-model-performance" title="Permalink to this headline">#</a></h2>
+<h2>16.1 Evaluating model performance<a class="headerlink" href="#evaluating-model-performance" title="Permalink to this heading">#</a></h2>
 <p>We’ve spent a great deal of time so far learning about how to pull insights from sets of data - what the distribution of a variable looks like, how to predict new values based on other variables, etc. Ideally, these insights are useful not just for describing <em>this</em> dataset, but for many others you could possibly collect. We hope that our statistical results are good estimates of how things really are in the wider population. That way, we can make more general claims about broad categories that we’re interested in, like human psychology.</p>
 <p>But we usually don’t have access to the entire population. Instead, we have to collect a smaller sample and hope that it is representative. In a sample like the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, which collected information from students in one statistics class, we might find that we can sort of predict someone’s thumb length from how tall they are:</p>
 <div class="math notranslate nohighlight">
@@ -579,36 +488,36 @@ title="Print to PDF"
 <p>With a large PRE score or low RMSE, our predictions are quite good. We are confident that the true values will not be too different… in this dataset, specifically. But one additional layer of uncertainty still at play is how good will this model be in <em>other</em> samples, or in the whole population?</p>
 </section>
 <section id="sampling-distributions">
-<h2>16.2 Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Permalink to this headline">#</a></h2>
+<h2>16.2 Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Permalink to this heading">#</a></h2>
 <p>To answer this question, we must first remember that any one sample we collect won’t look perfectly similar to the population. If it’s not a representative sample, it’ll be different in important ways. But even if it’s a good representative sample, the law of large numbers tells us that randomness will cause some variations, particularly if the sample is much smaller than the population (which psychology samples ALWAYS are, since our population is the billions of humans who have lived or will ever live). Thus, the models we build using that sample - which are intended to explain variation - can <em>themselves</em> vary sample to sample. The sample statistics won’t be the same as the population parameters.</p>
 <p>For example, let’s say we know the population mean of height for all Claremont College students is 66 inches, and the standard deviation is 3.5 inches. Then, a researcher comes along and picks 5 different samples of 50 students each, creating the following sample statistics:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Sample number</p></th>
-<th class="text-align:center head"><p>Height mean</p></th>
-<th class="text-align:center head"><p>Height SD</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Sample number</p></th>
+<th class="head text-center"><p>Height mean</p></th>
+<th class="head text-center"><p>Height SD</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>65.65</p></td>
-<td class="text-align:center"><p>3.13</p></td>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>65.65</p></td>
+<td class="text-center"><p>3.13</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
-<td class="text-align:center"><p>67.04</p></td>
-<td class="text-align:center"><p>3.73</p></td>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>67.04</p></td>
+<td class="text-center"><p>3.73</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>3</p></td>
-<td class="text-align:center"><p>65.94</p></td>
-<td class="text-align:center"><p>3.70</p></td>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>65.94</p></td>
+<td class="text-center"><p>3.70</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>64.37</p></td>
-<td class="text-align:center"><p>4.04</p></td>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>64.37</p></td>
+<td class="text-center"><p>4.04</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>5</p></td>
-<td class="text-align:center"><p>66.04</p></td>
-<td class="text-align:center"><p>3.26</p></td>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>66.04</p></td>
+<td class="text-center"><p>3.26</p></td>
 </tr>
 </tbody>
 </table>
@@ -624,7 +533,7 @@ title="Print to PDF"
 <p>To prepare for asking these questions, let’s learn more about the nature of sampling distributions and how they relate to the population parameter.</p>
 </section>
 <section id="the-importance-of-sample-size">
-<h2>16.3 The importance of sample size<a class="headerlink" href="#the-importance-of-sample-size" title="Permalink to this headline">#</a></h2>
+<h2>16.3 The importance of sample size<a class="headerlink" href="#the-importance-of-sample-size" title="Permalink to this heading">#</a></h2>
 <p>You probably have some intuition that statistical inferences are better the bigger your sample size. In the popular conscious, it seems like “sample size” ranks right under “correlation is not causation” in terms of critiques about psychology research. Sample size is indeed an important concern, and in this section you’ll learn why.</p>
 <p>In the example above, each of our samples was 50 people. We can actually simulate this with our <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, by pretending that the data we have represents the whole population and then sampling from that with replacement. This technique is called <strong>bootstrapping</strong>, and helps us make inferences about sampling distributions even when we don’t know the population parameter. Essentially, we treat our data distribution as a probability distribution and draw many new samples from that.</p>
 <p>Remember when we learned to use the <code class="docutils literal notranslate"><span class="pre">sample()</span></code> function to collect samples from a probability distribution. First we defined a sample space, e.g the six side of a die <code class="docutils literal notranslate"><span class="pre">c(1,2,3,4,5,6)</span></code>. Then we said how many items we want to draw from that sample space, and whether or not we want to draw with replacement (i.e. allow for us to draw the same item multiple times).</p>
@@ -634,7 +543,7 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#drawing a sample of 50 heights from the fingers dataset</span>
 <span class="c1">#if we leave out the probs argument, probability of each item will correspond to </span>
 <span class="c1">#its frequency in the dataset</span>
-<span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">50</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">bootstrap_sample</span>
 </pre></div>
 </div>
@@ -661,14 +570,14 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">bootstrap_means50</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">bootstrap_means50</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples, saving each mean</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">#draw a sample of 50 heights from fingers$Height, replace = TRUE</span>
-    <span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
-    <span class="n">m</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-    <span class="n">bootstrap_means50</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">m</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">#draw a sample of 50 heights from fingers$Height, replace = TRUE</span>
+<span class="w">    </span><span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="w">    </span><span class="n">bootstrap_means50</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">m</span>
 <span class="p">}</span>
 
 <span class="nf">head</span><span class="p">(</span><span class="n">bootstrap_means50</span><span class="p">)</span>
@@ -679,10 +588,10 @@ title="Print to PDF"
 <p>If we turn this set of means into a dataframe, we can plot a histogram and see how these means vary. We’ll also add a vertical line at the population mean, to see how these sample means compare to it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">bootstrap_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">bootstrap_means50</span><span class="p">)</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_means50</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">bootstrap_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">bootstrap_means50</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_means50</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -690,8 +599,8 @@ title="Print to PDF"
 <p>Compare the spread of this sampling distribution to the distribution of raw values in <code class="docutils literal notranslate"><span class="pre">fingers$Height</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -710,29 +619,29 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">bootstrap_means5</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">bootstrap_means5</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples, saving each mean</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">#draw a sample of 5 heights from fingers$Height, replace = TRUE</span>
-    <span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
-    <span class="n">m</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-    <span class="n">bootstrap_means5</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">m</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">#draw a sample of 5 heights from fingers$Height, replace = TRUE</span>
+<span class="w">    </span><span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="w">    </span><span class="n">bootstrap_means5</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">m</span>
 <span class="p">}</span>
 
-<span class="n">bootstrap_df</span><span class="o">$</span><span class="n">bootstrap_means5</span> <span class="o">&lt;-</span> <span class="n">bootstrap_means5</span>
+<span class="n">bootstrap_df</span><span class="o">$</span><span class="n">bootstrap_means5</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bootstrap_means5</span>
 
 <span class="c1">#plotting distribution of n=50 samples</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_means50</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_means50</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 
 <span class="c1">#plotting distribution of n=5 samples</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_means5</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_means5</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 
 <span class="c1">#distribution of population data</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> 
-<span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -750,33 +659,33 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">bootstrap_means1</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">bootstrap_means1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples, saving each mean</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">#draw a sample of 1 height value from fingers$Height, replace = TRUE</span>
-    <span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
-    <span class="n">m</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-    <span class="n">bootstrap_means1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">m</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">#draw a sample of 1 height value from fingers$Height, replace = TRUE</span>
+<span class="w">    </span><span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="w">    </span><span class="n">bootstrap_means1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">m</span>
 <span class="p">}</span>
 
-<span class="n">bootstrap_df</span><span class="o">$</span><span class="n">bootstrap_means1</span> <span class="o">&lt;-</span> <span class="n">bootstrap_means1</span>
+<span class="n">bootstrap_df</span><span class="o">$</span><span class="n">bootstrap_means1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bootstrap_means1</span>
 
 <span class="c1">#plotting distribution of n=50 samples</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_means50</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_means50</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 
 <span class="c1">#plotting distribution of n=5 samples</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_means5</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_means5</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 
 <span class="c1">#plotting distribution of n=1 samples</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_means1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_means1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 
 <span class="c1">#distribution of population data</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span> <span class="o">%&gt;%</span> 
-<span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">xintercept</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">58</span><span class="p">,</span><span class="m">77</span><span class="p">)))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="nf">gf_vline</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">xintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -790,13 +699,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Based on this demonstration, we can see that if you only have a few observations in a sample, any one sample mean is unlikely to be inaccurate: if you replicate a small experiment and recalculate the mean you’ll get a very different answer. The sampling distribution is quite wide. This is why statistical answers from studies with a small sample can be misleading.</p>
+<p>Based on this demonstration, we can see that if you only have a few observations in a sample, any one sample mean is unlikely to be accurate: if you replicate a small experiment and recalculate the mean you’ll get a very different answer. The sampling distribution is quite wide. This is why statistical answers from studies with a small sample can be misleading.</p>
 <p>In contrast, if you run a large experiment and replicate it with another large sample, you’ll probably get nearly the same answer you got last time. The sampling distribution will be very narrow. If we took this to the extreme other side and drew samples that were infinitely large, we’d eventually create a sampling distribution that was just a single line at the population mean. This would be because we’d be taking samples over and over that <em>are</em> the population.</p>
 <p>Since we don’t have this full population though, only smaller samples, we can quantify the variation in the sampling distribution by calculating the standard deviation of the sampling distribution. This is referred to as the <strong>standard error.</strong> The standard error of a statistic is often denoted SE. Think of the standard error as how far a sample estimate typically is from the true population parameter.</p>
 <p>Sample size matters for collecting data samples because as the sample size gets larger, the standard error of the sampling distribution gets smaller. Our sample estimates are on average closer to the true population parameter.</p>
 </section>
 <section id="the-central-limit-theorem">
-<h2>16.4 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this headline">#</a></h2>
+<h2>16.4 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this heading">#</a></h2>
 <p>Despite how poorly a single small sample can do on telling you about a population parameter, it’s important to remember that several samples together, even if very small, will stack up into a distribution that is centered on the true population parameter. That’s why, no matter how small our samples were in the previous demonstration, the mean of means was always very close to the population mean.</p>
 <p>On the basis of what we’ve seen so far, it seems like we have evidence for the following claims about the
 sampling distribution of the mean:</p>
@@ -812,52 +721,52 @@ sampling distribution of the mean:</p>
 <p>This result is useful for all sorts of things. It tells us why large experiments are more reliable than small ones, and because it gives us an explicit formula for the standard error it tells us how much <em>more</em> reliable a large experiment is than a small one.</p>
 </section>
 <section id="estimating-population-parameters">
-<h2>16.5 Estimating population parameters<a class="headerlink" href="#estimating-population-parameters" title="Permalink to this headline">#</a></h2>
+<h2>16.5 Estimating population parameters<a class="headerlink" href="#estimating-population-parameters" title="Permalink to this heading">#</a></h2>
 <p>In the examples in the previous sections, we knew the population parameters ahead of time. This is helpful for learning about statistics, but of course the most interesting things to do research on are the things we don’t already know about; that which we don’t know the population distribution for. So if we want to calculate standard error, how far away our estimate of a mean is likely to be from the population mean, with an equation like σ/sqrt(N), how do we do that when we don’t know µ or σ?</p>
 <p>For instance, suppose you wanted to measure the IQ of Claremont College students. IQ in the general population is known - it has a mean of 100 and a standard deviation of 15. But maybe Claremont College students are a different sort of population, with a different mean and SD. So to find out the IQ of the kind of students who come to the 5Cs, we’re going to have to estimate the population parameters from a sample of data. So how do we do this?</p>
 <section id="estimating-the-population-mean">
-<h3>Estimating the population mean<a class="headerlink" href="#estimating-the-population-mean" title="Permalink to this headline">#</a></h3>
+<h3>Estimating the population mean<a class="headerlink" href="#estimating-the-population-mean" title="Permalink to this heading">#</a></h3>
 <p>Suppose we camp outside Frary and ask 100 students to take an IQ test for us. The average IQ score among these people turns out to be X¯=102.5. So what is the true mean IQ for the entire population of Claremont College students? Obviously, we don’t know the answer to that question. It could be 97.2, or 108. We only have one sample, so we cannot give a definitive answer. Nevertheless, right now our “best guess” is 102.5. That’s the essence of statistical
 estimation: giving a best guess.</p>
 <p>In this example, estimating the unknown poulation parameter for the mean is straightforward. We calculate the sample mean, and we use that as an estimate of the population mean. We calculate X¯, and treat that number as our best guess about the value of µ. Much like we gave hats to symbols in the modeling chapters to designate the difference between predicted values and true values, we can do so here to designate what our predictions are of the population parameter, based on a sample of data.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Symbol</p></th>
-<th class="text-align:center head"><p>What is it?</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Symbol</p></th>
+<th class="head text-center"><p>What is it?</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>X¯</p></td>
-<td class="text-align:center"><p>Sample mean</p></td>
+<tr class="row-even"><td class="text-center"><p>X¯</p></td>
+<td class="text-center"><p>Sample mean</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>µ</p></td>
-<td class="text-align:center"><p>True population mean</p></td>
+<tr class="row-odd"><td class="text-center"><p>µ</p></td>
+<td class="text-center"><p>True population mean</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>µˆ</p></td>
-<td class="text-align:center"><p>Prediction of the population mean</p></td>
+<tr class="row-even"><td class="text-center"><p>µˆ</p></td>
+<td class="text-center"><p>Prediction of the population mean</p></td>
 </tr>
 </tbody>
 </table>
 <p>When we have one data sample, X¯ is thus used as µˆ but we keep in mind that this is likely to vary from the true µ by the standard error.</p>
 </section>
 <section id="estimating-the-population-standard-deviation">
-<h3>Estimating the population standard deviation<a class="headerlink" href="#estimating-the-population-standard-deviation" title="Permalink to this headline">#</a></h3>
+<h3>Estimating the population standard deviation<a class="headerlink" href="#estimating-the-population-standard-deviation" title="Permalink to this heading">#</a></h3>
 <p>So far, estimation seems pretty simple - just take a sample estimate and treat it as the population parameter. So you might be wondering why we forced you to read through all that stuff about sampling theory before getting here. In the case of the mean, our estimate of the population parameter (i.e. ˆµ) turned out to identical to the corresponding sample statistic (i.e. X¯). However, that’s not always true. To see this, let’s think about how to construct an estimate of the population standard deviation, which we’ll denote ˆσ. What shall we use as our estimate in this case?</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Symbol</p></th>
-<th class="text-align:center head"><p>What is it?</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Symbol</p></th>
+<th class="head text-center"><p>What is it?</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>s</p></td>
-<td class="text-align:center"><p>Sample sd</p></td>
+<tr class="row-even"><td class="text-center"><p>s</p></td>
+<td class="text-center"><p>Sample sd</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>σ</p></td>
-<td class="text-align:center"><p>True population sd</p></td>
+<tr class="row-odd"><td class="text-center"><p>σ</p></td>
+<td class="text-center"><p>True population sd</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>σˆ</p></td>
-<td class="text-align:center"><p>Estimate of the population sd</p></td>
+<tr class="row-even"><td class="text-center"><p>σˆ</p></td>
+<td class="text-center"><p>Estimate of the population sd</p></td>
 </tr>
 </tbody>
 </table>
@@ -885,15 +794,15 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 </section>
 </section>
 <section id="sampling-distributions-of-model-outputs">
-<h2>16.6 Sampling distributions of model outputs<a class="headerlink" href="#sampling-distributions-of-model-outputs" title="Permalink to this headline">#</a></h2>
+<h2>16.6 Sampling distributions of model outputs<a class="headerlink" href="#sampling-distributions-of-model-outputs" title="Permalink to this heading">#</a></h2>
 <p>The mean and standard deviation aren’t the only sampling distributions we use. All sample statistics have a counterpart parameter that describes the true population, and thus a distribution of estimates can be built from many samples.</p>
 <p>Another sampling distribution that will be relevant to us is the distribution of coefficients from a statistical model. Let’s fit a simple linear regression predicting thumb length from height in the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset and look at the estimate of b<sub>1</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#fit a linear model of Thumb predicted by Height, in the fingers dataset</span>
-<span class="n">height_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="c1">#YOUR CODE HERE)</span>
+<span class="n">height_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="c1">#YOUR CODE HERE)</span>
 <span class="n">height_model</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -902,20 +811,20 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">bootstrap_b1</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">bootstrap_b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples, saving each mean</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">#draw a sample of 50 height value from fingers$Height, replace = TRUE</span>
-    <span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-    <span class="n">bootstrap_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-    <span class="n">bootstrap_b1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">bootstrap_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">#draw a sample of 50 height value from fingers$Height, replace = TRUE</span>
+<span class="w">    </span><span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">bootstrap_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="w">    </span><span class="n">bootstrap_b1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bootstrap_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 <span class="p">}</span>
 
-<span class="n">bootstrap_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">bootstrap_b1</span><span class="p">)</span>
+<span class="n">bootstrap_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">bootstrap_b1</span><span class="p">)</span>
 
 <span class="c1">#plotting distribution of n=50 samples</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">bootstrap_b1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">bootstrap_b1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -924,9 +833,9 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -935,9 +844,9 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">138</span><span class="p">)</span>
-<span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -946,9 +855,9 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">179</span><span class="p">)</span>
-<span class="n">bootstrap_sample</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="n">bootstrap_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">bootstrap_sample</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -965,7 +874,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>Some new information is in the next column over, called “Std. Error”. This stands for the standard error of the estimate, or how much this estimate is likely to vary from the population coefficient.</p>
 </section>
 <section id="confidence-intervals">
-<h2>16.7 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this headline">#</a></h2>
+<h2>16.7 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this heading">#</a></h2>
 <p>All of this is to say, our sample estimates are only that - estimates. They are likely to be more similar to the true population parameter the larger our samples are, but there’s still variation among estimates from different data samples. So how well can we ever trust one particular sample estimate? How certain can we be that our estimate of the mean, model coefficient, etc. is close to the population estimate? It would be nice to say that we are reasonably confident that the true parameter is in some window around this estimate.</p>
 <p>In fact, there is a way we can say exactly that. The name for this concept is a <strong>confidence interval</strong> of the estimate. This is an interval of values around our estimate that expresses a degree of confidence that the true parameter is somewhere in that interval.</p>
 <p>Our understanding of sampling distributions now will help us construct a confidence interval. Let’s start out with an estimate of the b<sub>1</sub> coefficient in a general linear model. We’ve just finished running an analysis and estimated a b<sub>1</sub> value of 6.05. Suppose we lucked out on that estimate, and the true population coefficient β<sub>1</sub> is also 6.05. Thus, of all the samples we <em>could have</em> collected, there is a range of possible b<sub>1</sub> estimates we <em>could have</em> come up with. You can see this possible range of b<sub>1</sub> estimates in the sampling distribution below. In this image, values within the dotted black lines are more likely to occur given β<sub>1</sub> = 6.05, and values outside the dotted lines are unlikely to occur.</p>
@@ -1043,17 +952,17 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#For the intercept:</span>
-<span class="nf">confint</span><span class="p">(</span><span class="n">height_model</span><span class="p">,</span> <span class="s">&quot;(Intercept)&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+<span class="nf">confint</span><span class="p">(</span><span class="n">height_model</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;(Intercept)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
 
 <span class="c1">#For the Height coefficient: </span>
-<span class="nf">confint</span><span class="p">(</span><span class="n">height_model</span><span class="p">,</span> <span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+<span class="nf">confint</span><span class="p">(</span><span class="n">height_model</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Height&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>One thing you should notice is that the confidence interval for b<sub>1</sub> spans only positive numbers, and doesn’t intersect with 0. This means that, even if the true effect β<sub>1</sub> is not the same as our estimate, we are quite confident that it is at least a positive number - that as height values go up, estimates of thumb length will also go up. Hold onto this thought for next chapter.</p>
 <section id="pitfalls-of-interpreting-confidence-intervals">
-<h3>Pitfalls of interpreting confidence intervals<a class="headerlink" href="#pitfalls-of-interpreting-confidence-intervals" title="Permalink to this headline">#</a></h3>
+<h3>Pitfalls of interpreting confidence intervals<a class="headerlink" href="#pitfalls-of-interpreting-confidence-intervals" title="Permalink to this heading">#</a></h3>
 <p>The hardest thing about confidence intervals is remembering specifically what they mean. There are two major errors people often make when interpreting them.</p>
 <p>First, when you see something like 95% CI [0.606, 1.318], sometimes the first instinct is to treat it as <em>the</em> interval in which future sample estimate can be found. This is incorrect. We have to remember that the numbers in this specific interval are based on one sample estimate. If we had a different sample instead, we would compute a different confidence interval. Thus CIs are themselves estimates that vary sample to sample. You can imagine your first sample of data as being pretty unsual by chance (e.g., when measuring the height of students but somehow collecting data only from the basketball team). Other samples, which will probably be closer to the true mean of height, won’t often be in the CI calculated for this wonky sample. It is not that 95% of sample estimates will be in this interval, but the range of population parameters with a 95% chance of producing <em>this</em> estimate.</p>
 <p>The second common error is to say that there is a 95% <em>probability</em> that the population parameter is in this interval. This is also incorrect. The correct statement is that we are 95% <em>confident</em> that the population parameter is in this interval. This is an incredibly pedantic distinction, but it matters because of the way probability is calculated. The first sentence implies that, given a particular value of b, a β parameter is 95% likely to be in this range. In other words, the probability of β, given b. In mathematics we’d write this as:</p>
@@ -1067,21 +976,21 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 </section>
 </section>
 <section id="visualizing-uncertainty">
-<h2>16.8 Visualizing uncertainty<a class="headerlink" href="#visualizing-uncertainty" title="Permalink to this headline">#</a></h2>
+<h2>16.8 Visualizing uncertainty<a class="headerlink" href="#visualizing-uncertainty" title="Permalink to this heading">#</a></h2>
 <p>As we explored extensively in chapter 7, visualizing data is an important step for communicating the results of all your analyses. For communicating model estimates, we’ve learned how to plot boxplots, simple regressions, and interactions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#plotting group differences, showing data points</span>
-<span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_jitter</span><span class="p">(</span><span class="n">.</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
+<span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.3</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
 
 <span class="c1">#plotting a regression, showing data points</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-    <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">gf_lm</span><span class="p">()</span>
 
 <span class="c1">#plotting an interaction</span>
-<span class="n">interactionmodel</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="o">*</span><span class="n">Weight</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
-<span class="nf">interact_plot</span><span class="p">(</span><span class="n">interactionmodel</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">modx</span> <span class="o">=</span> <span class="n">Sex</span><span class="p">)</span>
+<span class="n">interactionmodel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="o">*</span><span class="n">Weight</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
+<span class="nf">interact_plot</span><span class="p">(</span><span class="n">interactionmodel</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Weight</span><span class="p">,</span><span class="w"> </span><span class="n">modx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1092,8 +1001,8 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>Using <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>, we’re going to do this with a jitter plot divided up by group that adds on summary information using the <code class="docutils literal notranslate"><span class="pre">gf_summary()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  <span class="nf">gf_summary</span><span class="p">(</span><span class="n">fun.data</span> <span class="o">=</span> <span class="s">&quot;mean_cl_boot&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.3</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">gf_summary</span><span class="p">(</span><span class="n">fun.data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_cl_boot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1101,8 +1010,8 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>This summary function adds information that is generated by a background function called “mean_cl_boot”, which calculates the confidence level of each group mean via bootstrapping. It essentally adds a dot for mean estimate of each group, and a line that shows the width of the 95% confidence interval. By changing the <code class="docutils literal notranslate"><span class="pre">size</span></code> and <code class="docutils literal notranslate"><span class="pre">color</span></code> argument, you can control what these lines look like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  <span class="nf">gf_summary</span><span class="p">(</span><span class="n">fun.data</span> <span class="o">=</span> <span class="s">&quot;mean_cl_boot&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.3</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">gf_summary</span><span class="p">(</span><span class="n">fun.data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_cl_boot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1111,8 +1020,8 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>In a regression plot, the estimate of an effect is the slope of the regression line. To communicate the range of slope parameters that are likely to produce our specific estimate, we can add a <strong>confidence band</strong> to the <code class="docutils literal notranslate"><span class="pre">gf_lm()</span></code> layer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-    <span class="nf">gf_lm</span><span class="p">(</span><span class="n">interval</span> <span class="o">=</span> <span class="s">&quot;confidence&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">gf_lm</span><span class="p">(</span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;confidence&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1121,8 +1030,8 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>The <code class="docutils literal notranslate"><span class="pre">interact_plot()</span></code> function also allows us to add confidence bands using the pair of arguments <code class="docutils literal notranslate"><span class="pre">interval</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">int.width</span> <span class="pre">=</span> <span class="pre">0.95</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">interact_plot</span><span class="p">(</span><span class="n">interactionmodel</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">modx</span> <span class="o">=</span> <span class="n">Sex</span><span class="p">,</span>
-             <span class="n">interval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">int.width</span> <span class="o">=</span> <span class="m">0.95</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">interact_plot</span><span class="p">(</span><span class="n">interactionmodel</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Weight</span><span class="p">,</span><span class="w"> </span><span class="n">modx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span>
+<span class="w">             </span><span class="n">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">int.width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1134,19 +1043,19 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;forestplot&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">forestplot</span><span class="p">)</span>
 
-<span class="n">multimodel</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Height</span> <span class="o">+</span> <span class="n">Weight</span> <span class="o">+</span> <span class="n">Pinkie</span> <span class="o">+</span> <span class="n">Middle</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
-<span class="n">bs</span> <span class="o">&lt;-</span> <span class="n">multimodel</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">5</span><span class="p">]</span> <span class="c1">#saving bs of all predictors</span>
-<span class="n">predictors</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="s">&quot;Weight&quot;</span><span class="p">,</span> <span class="s">&quot;Pinkie length&quot;</span><span class="p">,</span> <span class="s">&quot;Middle finger length&quot;</span><span class="p">)</span> <span class="c1">#vector of predictor names</span>
-<span class="n">CI</span> <span class="o">&lt;-</span> <span class="nf">confint</span><span class="p">(</span><span class="n">multimodel</span><span class="p">)</span>
-<span class="n">upper_ci</span> <span class="o">&lt;-</span> <span class="n">CI</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="m">2</span><span class="p">]</span> <span class="c1">#place to hold all upper CI values</span>
-<span class="n">lower_ci</span> <span class="o">&lt;-</span> <span class="n">CI</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="p">]</span> <span class="c1">#place to hold all lower CI values</span>
+<span class="n">multimodel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Weight</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Pinkie</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Middle</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
+<span class="n">bs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">multimodel</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">5</span><span class="p">]</span><span class="w"> </span><span class="c1">#saving bs of all predictors</span>
+<span class="n">predictors</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Height&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pinkie length&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Middle finger length&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">#vector of predictor names</span>
+<span class="n">CI</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">confint</span><span class="p">(</span><span class="n">multimodel</span><span class="p">)</span>
+<span class="n">upper_ci</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">CI</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="c1">#place to hold all upper CI values</span>
+<span class="n">lower_ci</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">CI</span><span class="p">[</span><span class="m">2</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="c1">#place to hold all lower CI values</span>
 
-<span class="n">forest_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">mean</span> <span class="o">=</span> <span class="n">bs</span><span class="p">,</span>             <span class="c1">#the point to visualize on plot</span>
-                         <span class="n">upper</span> <span class="o">=</span> <span class="n">upper_ci</span><span class="p">,</span>       <span class="c1">#the value of the top error bar</span>
-                         <span class="n">lower</span> <span class="o">=</span> <span class="n">lower_ci</span><span class="p">,</span>       <span class="c1">#the value of the lower error bar</span>
-                         <span class="n">predictors</span> <span class="o">=</span> <span class="n">predictors</span><span class="p">)</span><span class="c1">#names of predictors to put on plot</span>
+<span class="n">forest_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bs</span><span class="p">,</span><span class="w">             </span><span class="c1">#the point to visualize on plot</span>
+<span class="w">                         </span><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upper_ci</span><span class="p">,</span><span class="w">       </span><span class="c1">#the value of the top error bar</span>
+<span class="w">                         </span><span class="n">lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lower_ci</span><span class="p">,</span><span class="w">       </span><span class="c1">#the value of the lower error bar</span>
+<span class="w">                         </span><span class="n">predictors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predictors</span><span class="p">)</span><span class="c1">#names of predictors to put on plot</span>
 
-<span class="nf">forestplot</span><span class="p">(</span><span class="n">forest_data</span><span class="p">,</span> <span class="n">labeltext</span> <span class="o">=</span> <span class="n">predictors</span><span class="p">,</span> <span class="n">boxsize</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">)</span>
+<span class="nf">forestplot</span><span class="p">(</span><span class="n">forest_data</span><span class="p">,</span><span class="w"> </span><span class="n">labeltext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predictors</span><span class="p">,</span><span class="w"> </span><span class="n">boxsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1154,7 +1063,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>This plot ultimately gives you a “forest” of b estimates and the confidence interval around them, all positioned relative to each other. This way you can easily see how big the b estimates are, how wide their confidence intervals are, and which confidence intervals overlap with 0 or not.</p>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Define a sampling distribution</p></li>
@@ -1164,6 +1073,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <li><p>Interpret the meaning of a confidence interval of an estimate</p></li>
 <li><p>Add confidence intervals to model visualizations</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Next: Chapter 17 - Significance Testing</a></p>
 </section>
 </section>
 
@@ -1179,7 +1089,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -1187,36 +1097,102 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-model-performance">16.1 Evaluating model performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">16.2 Sampling distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-sample-size">16.3 The importance of sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem">16.4 The Central Limit Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-population-parameters">16.5 Estimating population parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-mean">Estimating the population mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-standard-deviation">Estimating the population standard deviation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">16.6 Sampling distributions of model outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">16.7 Confidence intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfalls-of-interpreting-confidence-intervals">Pitfalls of interpreting confidence intervals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-uncertainty">16.8 Visualizing uncertainty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

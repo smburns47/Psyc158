@@ -1,0 +1,1093 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 8 - The Data Generation Process &#8212; Pomona Psych 158 Online Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-8-22';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-8-22.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-8-22.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-8-22.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 8 - The Data Generation Process</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation-process">Data Generation Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-models">8.2 Deterministic models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-models">8.3 Probability models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-vocab">Probability vocab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-axioms">Probability axioms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-data-with-probabilities">8.4 Simulating data with probabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theoretical-probability-distributions">8.5 Theoretical probability distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">Uniform distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal distribution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness">8.6 Randomness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-rules-with-probability">8.7 Mathematical rules with probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Previous: Chapter 7 - Principles of Data Visualization</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This chapter uses the package ggformula, which takes a few minutes to download on Google Colab. </span>
+<span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing package into ‘/Library/Frameworks/R.framework/Versions/4.2-arm64’
+(as ‘lib’ is unspecified)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
+	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//Rtmpr0Z1s1/downloaded_packages
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
+
+Loading required package: ggstance
+
+
+Attaching package: ‘ggstance’
+
+
+The following objects are masked from ‘package:ggplot2’:
+
+    geom_errorbarh, GeomErrorbarh
+
+
+Loading required package: scales
+
+Loading required package: ggridges
+
+
+New to ggformula?  Try the tutorials: 
+	learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
+	learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-8-the-data-generation-process">
+<h1>Chapter 8 - The Data Generation Process<a class="headerlink" href="#chapter-8-the-data-generation-process" title="Permalink to this heading">#</a></h1>
+<p>We can learn a lot by examining distributions and summaries of a dataset. We can describe the current state of some situation for a clearer picture about reality around us. But in data analysis, our interest usually goes beyond these data alone. We are generally looking at data because we trying to find insights into the broader population it came from. What will a new data point look like? What will the future look like, so we are prepared for it? This is the goal of using statistics for prediction.</p>
+<p>We may also want to find out <em>why</em> our data are they way they are; to infer the ways in which the world works. What made the data come out this way? As we discussed earlier, statistics alone can’t determine cause and effect, but it can give us important clues about the mechanisms of the human mind and society.</p>
+<p>This is when we now move from <strong>descriptive statistics</strong> (describing features of a dataset) to <strong>inferential statistics</strong> (using that dataset to understand the population it came from). We are going to switch from asking questions like “what do the data look like,” to trying to understand what could have produced the specific pattern of variation we see in our data. In this chapter, let’s explore various reasons why a dataset may end up looking the way it does, given a particular population. This will help us build intuitions for later when we try to infer the population when all we have is a sample of data.</p>
+<section id="data-generation-process">
+<h2>Data Generation Process<a class="headerlink" href="#data-generation-process" title="Permalink to this heading">#</a></h2>
+<p>This neblous force we’re trying to now identify, the “why” of our data, is called the <strong>Data Generation Process</strong>.</p>
+<p>Let’s start thinking about the data generation process with an example. The histogram below shows a distribution of 60,000 waiting times at a bus stop on the corner of Fifth Avenue and 97th Street in New York City (<a class="reference external" href="https://perplex.city/memorylessness-at-the-bus-stop-f2c97c59e420">source</a>).</p>
+<img src="images/ch8-buswaiting.png" width="700">
+<p>What does this histogram tell you about waiting times for the bus? Why do you think the distribution has the shape that it does? What process or processes could account for the shape?</p>
+<p>Answering questions like this one requires going far beyond just the information in the histogram. You need to imagine yourself waiting at a bus stop, and think about why you got there when you did. You need to bring to bear your knowledge about bus systems and how they work. What causes a bus to arrive when it does?</p>
+<p>From the histogram you can see that most people wait just a short time for the bus, while some people end up waiting longer times. This makes sense. Buses have schedules, and because many of the passengers are regulars, they roughly know when the bus will come and try to get to the bus stop just before it comes.</p>
+<p>What do you think accounts for the bump in the distribution off in the right tail? Consider again the passengers that know the bus schedule well. If they just miss the bus, and arrive right after the bus leaves, they will end up waiting the longest, until the next bus comes.</p>
+</section>
+<section id="deterministic-models">
+<h2>8.2 Deterministic models<a class="headerlink" href="#deterministic-models" title="Permalink to this heading">#</a></h2>
+<p>Sometimes in systems we care to understand, the data generation process is really simple. It is so simple, that if we know the values of a few explanatory variables, we can perfectly predict what the outcome variable’s value will be by building an equation. For example, the equation for gravitational force is:</p>
+<div class="math notranslate nohighlight">
+\[gravitational force = G\frac{m_1*m_2}{r^2}\]</div>
+<p>where <em>G</em> is the gravitational constant, m<sub>1</sub> is the mass of one body, m<sub>2</sub> is the mass of a second body, and r<sup>2</sup> is the distance between the centers of mass. This is a really helpful equation, because gravitational force is always related to <code class="docutils literal notranslate"><span class="pre">m1</span></code> and <code class="docutils literal notranslate"><span class="pre">m2</span></code> in this way, no matter what their values are. Armed with this equation, we don’t need to go collect data about the gravity on Jupiter ourselves, because so long as we know its mass, we can calculate the gravitational force it will exert on something.</p>
+<p>This equation is also called a <strong>deterministic model</strong>. It is a <strong>model</strong> that describes how variables are related to each other in the data generation process of gravity, and it is <strong>deterministic</strong> because knowing the inputs allows us to always be right about the outputs.</p>
+</section>
+<section id="probability-models">
+<h2>8.3 Probability models<a class="headerlink" href="#probability-models" title="Permalink to this heading">#</a></h2>
+<p>Other times, even if we aren’t able to create a perfect model of a data generation process, we at least know all the outcomes that are possible under it. For example, when someone flips a coin, it is very hard to compute what face the coin will land on for this particular flip - that depends in some way on how forcefully and in what direction it was flicked with the thumb, but we’re not sure of the exact relationship or if any other variables matter (like wind speed). However, we do know two things: 1) there are only two possible options (heads and tails), and 2) both options have an equal likelihood of happening. With these facts, even if we aren’t able to <em>determine</em> what the outcome of <em>one</em> flip will be, we can pretty accurately say what the distribution of values are for <em>all possible</em> flips.</p>
+<p>Making a model of this process is called a <strong>probability model</strong>. The value of any one outcome variable is <strong>random</strong>, but the <strong>population</strong> (the distribution of all possible outcomes) is known. For the case of flipping a coin, we would write the equation for this model as:</p>
+<div class="math notranslate nohighlight">
+\[P(heads) = 0.5\]</div>
+<p>You can read this model as saying “the <em>probability</em> of heads is 0.5”.</p>
+<p>To say the difference between a deterministic and probability model simply:</p>
+<ul class="simple">
+<li><p>in a deterministic model we know all the inputs and their relationships, so we can compute any output perfectly</p></li>
+<li><p>in a probability model we don’t know the inputs but we know all the possible outputs, so we can compute the probability for another output.</p></li>
+</ul>
+<p>Deterministic models are frequently found in math, physics, and chemistry where the data generation process is relatively simple (even if the equation in the model seems complicated!). In more complex sciences like biology, psychology, or social sciences, we unfortunately almost never get to work with deterministic models. The data generation process of systems in these fields are just too complex, the number of variables too numerous, for us to take account of them all (so far).</p>
+<p>In fact, most of the time we don’t even know all the possible outputs for making a good probability model. In those cases, we try to build what’s called a <em>statistical model</em>. We’ll cover that process in the next chapter. For now, knowing about probability models is helpful for eventually building statistical models, so for the rest of this chapter we want you to practice working with probabilities.</p>
+<section id="probability-vocab">
+<h3>Probability vocab<a class="headerlink" href="#probability-vocab" title="Permalink to this heading">#</a></h3>
+<p>Before we move on, we need to all be on the same page in the way we talk about probabilities. So here are some definitions.</p>
+<ol class="arabic simple">
+<li><p>While a population is the distribution of <em>all</em> values that can be generated by the data generation process, the <strong>sample space</strong> is the set of possible <em>unique</em> outcomes. We represent these by listing them. For a coin flip, the population could be an infinitely long list of heads, tails, heads, heads, tails… etc., but the sample space is <code class="docutils literal notranslate"><span class="pre">{heads,</span> <span class="pre">tails}</span></code>. For a six-sided die, the sample space is each of the possible numbers that can appear: <code class="docutils literal notranslate"><span class="pre">{1,2,3,4,5,6}</span></code>. For a continuous variable like the amount of time it takes to get to work, the sample space is all possible real numbers greater than zero (since it can’t take a negative amount of time to get somewhere, at least not yet). We don’t want to try to write out all of those numbers within the brackets, so we would denote a continuous space of possibilities as {0 ≤ y ≤ ∞}.</p></li>
+<li><p>An <strong>elementary event</strong> is one outcome or one datapoint drawn from the sample space. For example, this could be obtaining heads in a single coin flip, rolling a 4 on a throw of the die, or taking 21 minutes to get to work one day.</p></li>
+<li><p>A <strong>complex event</strong> refers to multiple events in combination. E.g., the probability of rolling a 2 and a 2 at the same time on two different dice. In other words, this is the a set of multiple elementary events.</p></li>
+</ol>
+</section>
+<section id="probability-axioms">
+<h3>Probability axioms<a class="headerlink" href="#probability-axioms" title="Permalink to this heading">#</a></h3>
+<p>Now that we have those definitions, we can outline the formal mathematical features of a probability, also known as <strong>axioms</strong>. These are the features that a value has to have if it is going to be a probability, under our definition of one. Let’s say that we have a sample space defined by N possible events, {E<sub>1</sub>, E<sub>2</sub>, E<sub>3</sub>, … E<sub>N</sub>}, and X is a random variable denoting which of the events has occurred, where P(X = E<sub>i</sub>) is the probability of X equaling the i’th kind of possible event. Under this idea:</p>
+<ol class="arabic simple">
+<li><p><strong>Probability cannot be negative</strong>: P(X = E<sub>i</sub>) =&gt; 0</p></li>
+<li><p><strong>The total probability of all outcomes in the sample space is 1</strong>; that is, if we take the probability of each E<sub>i</sub> and add them up, they must sum to 1. We can express this using the summation symbol:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{N} P(X = E_i) = P(X = E_1) + P(X = E_2) + P(X = E_3) + ... + P(X = E_N) = 1\]</div>
+<p>This is interpreted as saying “Take all of the N elementary events, which we have labeled from 1 to N, and add up their probabilities. These must sum to one.” Another way of saying this, which will come in handy later in the course, is that the probability of <em>NOT</em> E<sub>i</sub> is 1-P(X = E<sub>i</sub>).</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>The probability of any individual event cannot be greater than one</strong>: P(X = E<sub>i</sub>) &lt;= 1. This is implied by the previous point; since they must sum to one, and they can’t be negative, then any particular probability cannot exceed one.</p></li>
+</ol>
+</section>
+</section>
+<section id="simulating-data-with-probabilities">
+<h2>8.4 Simulating data with probabilities<a class="headerlink" href="#simulating-data-with-probabilities" title="Permalink to this heading">#</a></h2>
+<p>In a situation where we know all the possible outcomes for some data generation process, it can be helpful to plot the distribution of all those outcomes in order to compute the probability of any individual one. For instance, let’s say we have a fair six-sided die. We know two things about this data generation process: 1) the sample space has six options, <code class="docutils literal notranslate"><span class="pre">{1,2,3,4,5,6}</span></code>; and 2) there is an equal probability of rolling any of those options for one elementary event (which means each probability is 1 / 6 possible events = 0.167). Put another way, the proportion of the population of data that falls into bins for each of the numbers is the same. We can plot this for every possible outcome of the die (on the x-axis), and the proportion of rolls of that outcome in the data population (on the y-axis).</p>
+<img src="images/ch8-uniform.png"  width="400">
+<p>This looks a lot like a histogram when plotted this way, doesn’t it? In fact, the above picture was generated using <code class="docutils literal notranslate"><span class="pre">gf_dhistogram()</span></code>, just with the y-axis label changed from “density” to “probability.” This reveals an inherent truth about probabilities - the proportions of values in any population of data generated (the “density” in a density histogram) will match the expected probability of getting that value for the next event.</p>
+<p>Thus, even if we don’t have a set of data to start with, when we know what the probability model is, we know what the distribution of all possible data is. From this, we can generate or <strong>simulate</strong> new data. This is what people do when they do simulation research - they assume an underlying probability model, and generate a bunch of new data to see what reality would look like given that sort of model.</p>
+<p>With computers, it is very easy to start simulating your own data samples from a probability model. All you need to know is the sample space and the associated probabilities for each possible outcome. In R, we can use the <code class="docutils literal notranslate"><span class="pre">sample()</span></code> function, which pulls a sample out of a probability distribution. Let’s simulate 1,000,000 die rolls (something really tedious to do in real life!) and see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#possible values of the die</span>
+<span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1">#probabilities of each value</span>
+<span class="n">probs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.167</span><span class="p">,</span><span class="m">0.167</span><span class="p">,</span><span class="m">0.167</span><span class="p">,</span><span class="m">0.167</span><span class="p">,</span><span class="m">0.167</span><span class="p">,</span><span class="m">0.167</span><span class="p">)</span>
+
+<span class="c1">#sample() takes a sample space vector, sample size, replace flag, and probability vector</span>
+<span class="n">outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">probs</span><span class="p">)</span>
+
+<span class="c1">#put the outcomes into a dataframe for plotting</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+
+<span class="c1">#plot all the die rolls</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sample()</span></code> function in base R is a general sampling function that lets you define any sample space and any corresponding probabilities. It takes four arguments: 1) a vector ‘x’ representing the sample space; 2) how many values from that sample space you want to generate; 3) a flag to signal if you want to sample <em>with replacement</em> or not (i.e., once you roll a 6, is it still possible to roll another 6? If yes, replace = TRUE); and 4) a vector of the probabilities of each possible outcome (must be the same length as the sample space vector x).</p>
+<p>Examine the graph you made above. It should look like a rectangle, with roughly equal numbers of rolls in each possible die value.</p>
+<p>Next try the code below. Notice that the last argument, <code class="docutils literal notranslate"><span class="pre">prob</span></code> has been left out. What happens?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#sample() function, but no prob argument</span>
+<span class="n">outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#put the outcomes into a dataframe for plotting</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+<span class="c1">#plot all the die rolls</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does it look pretty much the same? Why didn’t the function show an error?</p>
+<p>This is because some functions have what’s called “default arguments,” where if you don’t specify something (like for <code class="docutils literal notranslate"><span class="pre">prob</span></code>), the underlying source code will default to a particular value. In this case, <code class="docutils literal notranslate"><span class="pre">sample()</span></code> has a default value of <code class="docutils literal notranslate"><span class="pre">prob</span></code> being all values have the same probability. When functions get complex like this, it’s good to write down how it works in your R cheatsheet, or google for the documentation of the function. <a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sample">Here</a> is the documentation for <code class="docutils literal notranslate"><span class="pre">sample()</span></code>.</p>
+<p>Now, it’s your turn to finish the code below and generate a new sample of die rolls into the object <code class="docutils literal notranslate"><span class="pre">outcomes</span></code>. However, this time you should use a smaller <code class="docutils literal notranslate"><span class="pre">size</span></code> amount, like 30. What does the distribution look like now?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#finish the sample() command below</span>
+<span class="n">outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="c1">#your code here, with a sample size of 30)</span>
+
+<span class="c1">#put the outcomes into a dataframe for plotting</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+<span class="c1">#plot all the die rolls</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does it still look like a rectangle? Why do you think not?</p>
+<p>The answer to this question comes from the <strong>law of large numbers</strong>, which shows that, even when you know the underlying probability model (since we defined the probabilities of all die rolls to be the same), there’s still randomness at play. With a small sample size, this randomness can mean some possible rolls are more numerous than others. But the bigger your sample size, the less this randomness matters - eventually the proportions of the die values will equal their expected proportions.</p>
+<img src="images/ch8-coinflips.png"  width="400">
+<p><em>A demonstration of the law of large numbers. A coin was flipped 30,000 times, and after each flip the proportion of heads was computed based on the number of heads and tail collected up to that point. It takes about 15,000 flips for the proportion to settle at the true probability of 0.5.</em></p>
+<p>Now, try rerunning your code above a few times without making any changes to it. Do you notice your histogram changing? Processes like sampling rely on randomness, so each time you run the <code class="docutils literal notranslate"><span class="pre">sample()</span></code> function it will produce a different sample. When samples are small, the distribution of them can look very different. If you want to be able to have a random output be the same each time you run some code, put the command <code class="docutils literal notranslate"><span class="pre">set.seed()</span></code> on a line before it, with a number of your choosing as the argument. Each different number will operate as a separate “seed” from which your random outcome deterministically “grows.” Every sample generated from the same seed will produce the same sample and same distribution, and every sample generated from a different seed will look different.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a seed before this sample function. Then run this code multiple times to verify that</span>
+<span class="c1"># the sample is always the same. </span>
+
+<span class="n">outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#put the outcomes into a dataframe for plotting</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+<span class="c1">#plot all the die rolls</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Simulating data by picking samples from a known population is ultimately a simple approach, but it can do some powerful things for us. For one, we don’t have to work with only populations where every outcome has the same chance of happening. Instead of a fair die, let’s now imagine we have an unfair die that is weighted so that the probability of rolling an odd number is twice as likely as rolling an even number. We now change the <code class="docutils literal notranslate"><span class="pre">probs</span></code> argument to be <code class="docutils literal notranslate"><span class="pre">{0.22,</span> <span class="pre">0.11,</span> <span class="pre">0.22,</span> <span class="pre">0.11,</span> <span class="pre">0.22,</span> <span class="pre">0.11}</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+<span class="n">weighted_outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                            </span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.22</span><span class="p">,</span><span class="w"> </span><span class="m">0.11</span><span class="p">,</span><span class="w"> </span><span class="m">0.22</span><span class="p">,</span><span class="w"> </span><span class="m">0.11</span><span class="p">,</span><span class="w"> </span><span class="m">0.22</span><span class="p">,</span><span class="w"> </span><span class="m">0.11</span><span class="p">))</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">weighted_outcomes</span><span class="p">)</span>
+<span class="c1">#plot all the die rolls</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">weighted_outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="c1">#count number of rolls of each number in a table</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">weighted_outcomes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you see the difference in probabilities in your sample histogram and outcome table? If you were trying to cheat with your die, how many rolls do you think you could get away with before other people started noticing the weighting? Play around with the sample size to see how much the shape can vary sample to sample.</p>
+<p>So far we’ve only talked about elementary events (the probability of getting one outcome from the population). We can also use simulation to help us find the probability of complex events. Let’s say that now you’re the Dungeon Master of a game of Dungeons and Dragons. Your players will win their fight if they roll a “critical roll” of 6 on a 6-sided die, but they have two shots to do it (they can roll two dice). What is the probability they roll a 6 on <em>either</em> of the two die?</p>
+<p>Before moving on, think programatically for a moment about each step your code would need to do to calculate this.</p>
+<p>(Seriously, stop and try to find a solution before reading the next paragraph!)</p>
+<p>One answer is that we can use a three-step process: 1) simulate two different samples of rolls (for two different dice), then 2) compute a new variable that checks whether there is a 6 in the ith roll of any sample, then lastly 3) make a distribution of that new variable. Here’s the code for that process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+<span class="c1">#roll 1 die 1,000,000 times</span>
+<span class="n">die1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#repeat for the other die</span>
+<span class="n">die2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1">#make a boolean variable for whether die1 or die2 has a 6, at each index</span>
+<span class="n">any6</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">die1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">die2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span>
+
+<span class="c1">#count number of &quot;true&quot; results for rolling at least one 6</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">any6</span><span class="p">)</span>
+
+<span class="c1">#compute probability (proportion of total complex event sample that is true)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">any6</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">any6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A 16.7% of rolling a 6 on one die might seem like unlikely odds to win a fight, but with two chances at the 6 that probability goes up to ~30.5%. Not as bad!</p>
+<p>As with many things in statistics and coding more generally, there isn’t always just one correct way to do something. That is true here as well. Maybe you thought of a different way to simulate this data. Here is another approach:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span><span class="w">  </span><span class="c1">#sample space</span>
+<span class="n">any6_sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">    </span><span class="c1">#a counter object</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">#making a for loop of 1,000,000 tosses of two dice</span>
+<span class="w">    </span><span class="n">twodice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="c1">#sample two dice at once</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="m">6</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">twodice</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">#if there is at least one 6 in this two-dice sample,</span>
+<span class="w">        </span><span class="n">any6_sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">any6_sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">    </span><span class="c1">#increase the counter object by 1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">#count number of times there was at least 1 six in two-dice samples, across 1,000,000 tosses</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">any6_sum</span><span class="p">)</span>
+
+<span class="c1">#compute probability (proportion of times we found a 6 out of tosses we made)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">any6_sum</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Did that come out as approximately the same value as the first simulation approach?</p>
+<p>Technically this way is a little bit slower for the computer to do (you may have noticed it took about half a second longer to run). It’s not as <em>optimal</em> time wise, since <code class="docutils literal notranslate"><span class="pre">sample()</span></code> samples two sets of one million datapoints really fast compared to sampling 2 datapoints, one million times. If you get into building simulations a lot, this time optimization can become something really important to you. But ultimately, they both gave us the correct answer.</p>
+<p>Another powerful thing simulations can do is help us calculate the probability of how different events combine with each other. Say we’re the Dungeon Master again, and each of our players rolls a die to randomly generate a value for how much power their character has. But, there’s two different types of power - physical power, and magical power. You don’t want to keep track of two different scores for everyone, you’d rather combine them into one score of total power. So you tell your players to roll a die for each type of power, and then add those values together.</p>
+<p>If you’re still using a six-sided die, both values of the sub-types of power have an equal probability of being 1, 2, 3, 4, 5, or 6. Is there also an equal probability of having a total power score of 2 through 12? Let’s find out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+<span class="c1">#roll 1 die 1,000,000 times</span>
+<span class="n">phys_power</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#repeat for the other die</span>
+<span class="n">mag_power</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1">#make a new total power variable by adding both subtypes together</span>
+<span class="n">total_power</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">phys_power</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mag_power</span>
+
+<span class="c1">#make a table of the frequency each total power result across 1,000,000 simulations</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">total_power</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interesting! Even though the chance of any value on the power subtypes is the same, there are differences in probability among the different possible combination scores. The chance of getting a 7 for a character’s total power is about 6 times as high as getting a 12. Let’s visualize this with a histogram:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#make a dataframe out of the new variable</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">total_power</span><span class="p">)</span>
+
+<span class="c1">#Use gf_dhistogram to plot the histogram of scores in outcome_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does that look like the same shape as the histogram of the outcome population for rolling one die? Keep your answer in mind for the next section.</p>
+</section>
+<section id="theoretical-probability-distributions">
+<h2>8.5 Theoretical probability distributions<a class="headerlink" href="#theoretical-probability-distributions" title="Permalink to this heading">#</a></h2>
+<p>As you might imagine, the probability distributions underlying variables in the real world could be a great many shapes. They could look rectangle shaped, like a symmetric bell, skewed one way or another, etc. However, over the years statisticians have figured out that some of these shapes are more common than others. This has led to naming these special shapes and defining the idealized version of them mathematically. These special shapes are called <strong>theoretical probability distributions</strong>, and we’ll introduce you to working with them now.</p>
+<section id="uniform-distribution">
+<h3>Uniform distribution<a class="headerlink" href="#uniform-distribution" title="Permalink to this heading">#</a></h3>
+<p>First, let’s tackle the example above of a fair six-sided die. There are 6 possible outcomes, <code class="docutils literal notranslate"><span class="pre">{1,2,3,4,5,6}</span></code>. We know the probabilities of rolling any of these outcomes is the same, or <em>uniform</em>. Since the sum of all possible probabilities is 1 (from axiom 2 above), we therefore know that the probability of rolling any one value is 1/6 = 0.167, or P(X = E<sub>i</sub>) = 0.167. Written as a set, that would be <code class="docutils literal notranslate"><span class="pre">{0.167,0.167,0.167,0.167,0.167,0.167}</span></code>.</p>
+<p>We can use simulation to make a large sample to approximate this distribution, as we did above, and we see that it forms what looks mostly like a rectangle. The theoretically ideal version of this is a perfect rectangle, called the <strong>uniform distribution</strong>.</p>
+<img src="images/ch8-unidist.png" width="350">
+<p>We can use some different R functions to access this perfectly shaped distribution without simulation: <code class="docutils literal notranslate"><span class="pre">runif()</span></code> and <code class="docutils literal notranslate"><span class="pre">dunif().</span></code> The “unif” part of the function name is obvious - it refers to the uniform distribtion. In the first one, the “r” refers to generating a random sample from the uniform distribution, and in the second one, the “d” refers to calculating the density (or probability) of a particular value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#sampling from the uniform distribution, between values of 0 and 6</span>
+<span class="n">outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1">#putting sample into a dataframe</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+
+<span class="c1">#look at first few values sampled from uniform distribution</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">outcome_df</span><span class="p">)</span>
+
+<span class="c1">#plot the histogram of sample</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The idealized, theoretical shape of the uniform distribution is a smooth line, so we don’t have to only sample integer values from it. <em>Any</em> decimal number has the exact same probability of being drawn as any other. Thus, sampling with <code class="docutils literal notranslate"><span class="pre">runif()</span></code> generates continuous data, meaning any decimal value between the min and max arguments.</p>
+<p>If we wanted to generate ordinal whole number values like on a die, we need to round every generated number up to the nearest ordinal value. R gives a few functions for this: <code class="docutils literal notranslate"><span class="pre">round()</span></code> (round values to the nearest specified decimal place), <code class="docutils literal notranslate"><span class="pre">ceiling()</span></code> (round up to the nearest integer), and <code class="docutils literal notranslate"><span class="pre">floor()</span></code> (round down to the nearest integer). We’ll use <code class="docutils literal notranslate"><span class="pre">ceiling()</span></code> in our case to round up so all our values are only in {1,2,3,4,5,6}.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome_df</span><span class="o">$</span><span class="n">rounded_outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ceiling</span><span class="p">(</span><span class="n">outcome_df</span><span class="o">$</span><span class="n">outcomes</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">outcome_df</span><span class="p">)</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">rounded_outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">runif()</span></code> lets us generate a random sample from the uniform distribution, <code class="docutils literal notranslate"><span class="pre">dunif()</span></code> tells us the probability (density) of a specific value. Try using it to calculate the probability of rolling a 4 on a die, given a uniform probability distribution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># first argument is the value you want the probabilty of; second and third arguments are the min and max of the</span>
+<span class="c1"># (continuous) distribution</span>
+<span class="nf">dunif</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="normal-distribution">
+<h3>Normal distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this heading">#</a></h3>
+<p>When a set of elementary events have equal probabilities of occuring, their probability distribution matches the theoretical uniform distribution. This is the easiest distribution to understand in terms of the data generation process that creates it.</p>
+<p>The <strong>normal distribution</strong> is another very common distribution in nature, because it arises out of <em>combinations</em> of data (as we simulated with our DnD power scores earlier in the chapter). Many things in life (indeed, probably most things we care about) don’t just happen out of thin air - you aren’t your height just by happenstance. You can think of it as a combination score out of the effect of many other variables, such as your genes, nutrition, any diseases, etc. We might not know the data generation process deterministically, but we know it arises out of some sort of combination process. Thus, there is also a theoretical probability distribution for these sorts of variables.</p>
+<p>The shape of the theoretical normal distribution is unimodal and symmetrical - it’s a curve that looks like a bell. But its central tendency and spread can vary. In fact, the normal distribution is actually a <em>family</em> of theoretical distributions, each having a different shape. To specify a particular normal distribution to use, we need to provide two values - the mean and standard deviation. As you will recall from chapter 5, 1 standard deviation means about 68% of the data in a normal distribution is 1 standard deviation above or below the mean, 95% is within 2 standard deviations, etc.</p>
+<p>The figure below can give you a sense of how normal distributions can vary from each other, depending on their means and standard deviations. Note that three of the four distributions pictured have the same mean, which is 0, but quite different shapes. The fourth distribution has a mean that is below the other three.</p>
+<img src="images/ch8-normdist.png" width="700">
+<p>Note that you can’t specify a normal distribution with a min and a max - even if it doesn’t look like it in the picture, technically all values are possible with a normal distribution. The sample space is {-∞ ≤ mean ≤ ∞}.</p>
+<p>In R, we’ll use <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code> and <code class="docutils literal notranslate"><span class="pre">dnorm()</span></code> for doing the same sorts of commands we did previously with the uniform distribution. For instance, imagine that it takes you, generally, 8 minutes to bike to class from your dorm room. However, any of a great many things could happen to you on the way there - you have to wait for traffic, or maybe your coffee suddenly kicks in. All these events combine to contribute to your overall travel time so that some days you’re really fast, and other days it takes longer. Let’s generate a sample of travel times you might have, using a theoretical distribution of mean 8 and standard deviation 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#sampling from the normal distribution </span>
+<span class="n">outcomes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+
+<span class="c1">#putting sample into a dataframe for plotting</span>
+<span class="n">outcome_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
+
+<span class="c1">#plot all the sampled values</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcomes</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now use <code class="docutils literal notranslate"><span class="pre">dnorm()</span></code> to figure out how likely it is that you get to class earlier than average fast, in 6 minutes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dnorm</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Perhaps there’s more variability to your travel time, so the standard deviation of your distribution is actually 2. Plot a new normal distribution with this new sd of 2, and recalculate the probability of arriving at class in 6 minutes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your code below </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are other distributions you are likely to encounter if you continue in your statistics journey: Poisson, binomial, gamma, etc. These represent data that come about through a different generation process (e.g., combination with multiplication instead of addition, data that can’t be less than zero, etc.) These are outside the scope of this intro course, because their shape isn’t too different than the normal distribution, so the normal is often a fine approximation. But feel free to look them up and learn about what sort of data generation processes would create them!</p>
+</section>
+</section>
+<section id="randomness">
+<h2>8.6 Randomness<a class="headerlink" href="#randomness" title="Permalink to this heading">#</a></h2>
+<p>Let’s take a little detour into the notion of randomness. We’ve been assuming we’re talking about the same thing when “drawing a random sample”, or the result of any one coin flip is “random”, but let’s be explicit about the meaning of this now. First we’ll make a distinction between what we might mean by “random” in regular life and what we mean by “random” in statistics.</p>
+<p>To start, let’s look at what humans consider “random”. Students were asked to think of a random number between 1 and 20 and enter it into a survey. What would you answer? How did you decide that number counts as random?</p>
+<p>Here is a histogram of how ~200 students answered this question:</p>
+<img src="images/ch8-randomdist.png" width="650">
+<p>What do you observe in the histogram above? Does it look the way you would expect it to if the selection of numbers was random?</p>
+<p>It seems like there are some spikes around 7, 13, and 17. Very few students chose 1, 2, and 20. If the distribution does not appear to be the result of a random process, what do you think the data generating process might be?</p>
+<p>If we made a histogram of 200 random numbers 1-20 generated from a computer, what would the resulting distribution look like? What shape would you expect?</p>
+<p>Students have many ideas of randomness including “unpredictable,” “unexpected,” “unlikely,” or “weird.” To the students in this survey, some particular numbers sound more random than others. They seem to think, for example, that 17 and 7 sound more random than 10 or 15.</p>
+<p>The mathematical concept of random is different. Whereas we often think that random means unpredictable, random processes (the way statisticians think of them) are things governed by a probability distribution. A probability distribution shows us the probability for every possible event, and thus allows us to estimate the probability of a particular event.</p>
+<p>If each of the numbers 1 to 20 had an equal likelihood of being selected, we could model that as a random process, just like we did die rolls. This is a critical feature of random processes. Even though they are very unpredictable in the short run — for example, if we asked you to predict what the next roll would be of a 20-sided die, you would only have a 1 in 20 chance of predicting correctly — they are actually very predictable in the long run.</p>
+</section>
+<section id="mathematical-rules-with-probability">
+<h2>8.7 Mathematical rules with probability<a class="headerlink" href="#mathematical-rules-with-probability" title="Permalink to this heading">#</a></h2>
+<p>After practicing with probability distributions and simulating data samples from them, hopefully you’re developing a sense of how to find the probability of some event under a probability model. As the last section of this chapter, we want to introduce you to more complicated probability events you can calculate. Traditionally in stats and math classes, students are taught about these through mathematical equations (and professors will go to <a class="reference external" href="https://twitter.com/rafamoral/status/1574176525607661568">great lengths</a> to make students memorize them). For us, now that you appreciate the shapes of probability distributions and how to simulate events, you won’t have to just memorize these equations - you’ll have a deeper sense for why they are the way they are.</p>
+<p>First, here’s a quick recap of the axioms of probabilities we introduced earlier.</p>
+<ol class="arabic simple">
+<li><p>Probability cannot be negative</p></li>
+<li><p>The total probability of all outcomes in the sample space is 1</p></li>
+<li><p>The probability of any individual event cannot be greater than one</p></li>
+</ol>
+<p>Based on these axioms and some algebra, we can build additional mathematical rules that hold so long as the axioms are true:</p>
+<ol class="arabic simple">
+<li><p><strong>Subtraction</strong>: If the sum of all probabilities for a sample space is always 1 (axiom #2 above), then the probability of any particular event <em>NOT</em> occurring is equal to the sum of the probabilities of all other possible events, or 1 minus the probability of this event (in R, the <code class="docutils literal notranslate"><span class="pre">!</span></code> symbol means “not,” so we’ll use it here too):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[P(X != E_1) = 1 - P(X = E_1)\]</div>
+<p>To see this visually, consider the following uniform distribution:</p>
+<img src="images/ch8-subtraction.png"  width="400">
+<p>The probability of all events not equal to 3 is the area of the distribution (turquoise), minus the area of the bin corresponding to 3 (orange). You can also verify this by using <code class="docutils literal notranslate"><span class="pre">dunif()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">prob_3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dunif</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="n">prob_not_3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dunif</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">dunif</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                </span><span class="nf">dunif</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">dunif</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                </span><span class="nf">dunif</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># does prob_not_3 have the same value as 1 - prob_3?</span>
+<span class="n">prob_not_3</span><span class="w"> </span>
+<span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">prob_3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Cumulative probability</strong>: Say we roll a six-sided die, but we don’t really care about the exact number that comes up. Instead, we care about rolling any of a subset of numbers - e.g., less than or equal to 3 (so 1, or 2, or 3). For this, we add up the probabilities of each specific outcome that would be true under our logical statement:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[P(X &lt;= E_3) = P(X = E_1) + P(X = E_2) + P(X = E_3)\]</div>
+<p>Visually:</p>
+<img src="images/ch8-cumulative.png"  width="400">
+<p>The probability of rolling any number less than or equal to 3 is the sum of the areas of options that satisfy this condition.</p>
+<p>We could use <code class="docutils literal notranslate"><span class="pre">dunif()</span></code> to add up the probabilities of 1-3 to verify this, but there’s also a <code class="docutils literal notranslate"><span class="pre">punif()</span></code> (and <code class="docutils literal notranslate"><span class="pre">pnorm()</span></code>) function that makes this faster and returns the cumulative probability of a distribution up to a certain max:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">punif</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w">                  </span><span class="c1"># The max (or min) of the cumulative</span>
+<span class="w">      </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w">            </span><span class="c1"># Lower limit of the distribution </span>
+<span class="w">      </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w">            </span><span class="c1"># Upper limit of the distribution </span>
+<span class="w">      </span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">  </span><span class="c1"># If TRUE, calculate cumulative below 3. </span>
+<span class="w">                          </span><span class="c1"># If FALSE, calculate cumulative above 3. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>AND events</strong>: An AND event (also known as an “intersection” or “joint probability”) is a type of complex event. This is the probability of both outcome 1 <em>AND</em> outcome 2 happening jointly across multiple events. We use a ∩ symbol to denote this. So the probability of getting both a 6 on rolling die 1 AND a 6 on die 2:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[P(X = E_6 \cap Y = E_6) = P(X = E_6) * P(Y = E_6)\]</div>
+<p>Let’s visualize this by making two uniform distributions, and turning one on its side. Then overlap them so we make a sort of matrix. The joint probability of getting two 6s on two different die is the area where the 6 column of each distribution overlaps.</p>
+<img src="images/ch8-joint.png"  width="800">
+<p>There’s not a quick R function for calculating joint probabilities between two distributions, but we can simulate it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1">#roll 1 die 1,000,000 times</span>
+<span class="n">die1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#repeat for the other die</span>
+<span class="n">die2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1">#make a new boolean variable for whether both dice equal 6 for each index</span>
+<span class="n">both6</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">die1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">die2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span>
+
+<span class="c1"># can count the number of true values in a boolean just by summing,</span>
+<span class="c1"># since TRUE also equals 1 and FALSE equals 0</span>
+<span class="c1"># then divide by the number of total rolls</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">both6</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">both6</span><span class="p">)</span>
+
+<span class="c1">#verify it&#39;s about the same as the axiom P(E6)*P(F6)</span>
+<span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>OR events</strong>: An OR event (also known as a “union”) is another complex event (denoted with the ∪ symbol). This one is the probability of <em>either</em> outcome 1 <em>OR</em> outcome 2 happening across multiple events:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[P(X = E_6 \cup Y = E_6) = P(X = E_6) + P(Y = E_6) - P(X = E_6 \cap Y = E_6)\]</div>
+<p>In this rule, we need to remember to subtract the probability of A and B occuring together, because otherwise we’re counting the outcome of A &amp; B twice, since it’s covered both by P(A) and P(B).</p>
+<p>Also remember that this is NOT the same thing as the probability that X equals either one of two events. That would be a cumulative probability of <em>one</em> event having a value of one of a subset of outcomes. Unions refer to <em>separate</em> events happening together.</p>
+<p>A union event visualized is the area covering both columns that have a 6 somewhere in it:</p>
+<img src="images/ch8-union.png" width="350">
+<p>And we can simulate it, this time using a <code class="docutils literal notranslate"><span class="pre">|</span></code> logical condition instead of a <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> condition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample_space</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1">#roll 1 die 1,000,000 times</span>
+<span class="n">die1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#repeat for the other die</span>
+<span class="n">die2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample_space</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1">#make a new boolean variable for whether either dice equal 6 for each index</span>
+<span class="n">both6</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">die1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">die2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span>
+
+<span class="c1"># can count the number of true values in a boolean just by summing,</span>
+<span class="c1"># since TRUE also equals 1 and FALSE equals 0</span>
+<span class="c1"># then divide by the number of total rolls</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">both6</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">both6</span><span class="p">)</span>
+
+<span class="c1">#verify it&#39;s about the same as the axiom P(E6) + P(F6) - P(E6)*P(F6)</span>
+<span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Describe the difference between deterministic and probability models</p></li>
+<li><p>Define a sample space and event in probability</p></li>
+<li><p>Understand the axioms of probabilities</p></li>
+<li><p>Describe what a uniform and normal probability distribution look like</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">sample()</span></code>, <code class="docutils literal notranslate"><span class="pre">runif()</span></code>, and <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code> to simulate data from probability distributions</p></li>
+<li><p>Find the probability of events using <code class="docutils literal notranslate"><span class="pre">dunif()</span></code> and <code class="docutils literal notranslate"><span class="pre">dnorm()</span></code></p></li>
+<li><p>For any variable in the real world, think about what data generation process might be behind it</p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Next: Chapter 9 - Statistical Models</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-generation-process">Data Generation Process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-models">8.2 Deterministic models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-models">8.3 Probability models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-vocab">Probability vocab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-axioms">Probability axioms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-data-with-probabilities">8.4 Simulating data with probabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theoretical-probability-distributions">8.5 Theoretical probability distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-distribution">Uniform distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal distribution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness">8.6 Randomness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-rules-with-probability">8.7 Mathematical rules with probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
