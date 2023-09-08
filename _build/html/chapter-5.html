@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 5 - Describing Data &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,61 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chapter 6 - Variation in Multiple Variables" href="chapter-6.html" />
-    <link rel="prev" title="Chapter 4 - Organizing Data" href="chapter-4.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,596 +156,364 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Chapter 5 - Describing Data
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-5.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-5.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-5.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-5.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-concept-of-a-distribution">
-   5.1 The concept of a distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-distributions">
-   5.2 Visualizing distributions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#histograms">
-     Histograms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#density-plots">
-     Density plots
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shape">
-   5.3 Shape
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#center">
-   5.4 Center
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean">
-     Mean
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#median">
-     Median
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mode">
-     Mode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-measure-of-central-tendency-to-use">
-     Which measure of central tendency to use?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variability">
-   5.5 Variability
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#range">
-     Range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interquartile-range">
-     Interquartile range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-absolute-deviation">
-     Mean absolute deviation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variance">
-     Variance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standard-deviation">
-     Standard deviation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-measure-of-variability-to-use">
-     Which measure of variability to use?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reporting-distribution-summaries">
-   5.6 Reporting distribution summaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#central-tendency">
-     Central tendency
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spread">
-     Spread
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Shape
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 5 - Describing Data</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-concept-of-a-distribution">
-   5.1 The concept of a distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-distributions">
-   5.2 Visualizing distributions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#histograms">
-     Histograms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#density-plots">
-     Density plots
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shape">
-   5.3 Shape
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#center">
-   5.4 Center
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean">
-     Mean
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#median">
-     Median
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mode">
-     Mode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-measure-of-central-tendency-to-use">
-     Which measure of central tendency to use?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variability">
-   5.5 Variability
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#range">
-     Range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interquartile-range">
-     Interquartile range
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-absolute-deviation">
-     Mean absolute deviation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variance">
-     Variance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standard-deviation">
-     Standard deviation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#which-measure-of-variability-to-use">
-     Which measure of variability to use?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reporting-distribution-summaries">
-   5.6 Reporting distribution summaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#central-tendency">
-     Central tendency
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spread">
-     Spread
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Shape
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 5 - Describing Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-concept-of-a-distribution">5.1 The concept of a distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-distributions">5.2 Visualizing distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plots">Density plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape">5.3 Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#center">5.4 Center</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">Mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">Median</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-measure-of-central-tendency-to-use">Which measure of central tendency to use?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variability">5.5 Variability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interquartile-range">Interquartile range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-deviation">Mean absolute deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation">Standard deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-measure-of-variability-to-use">Which measure of variability to use?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-distribution-summaries">5.6 Reporting distribution summaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-tendency">Central tendency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spread">Spread</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Shape</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-describing-data">
-<h1>Chapter 5 - Describing Data<a class="headerlink" href="#chapter-5-describing-data" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Previous: Chapter 4 - Organizing Data</a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-5-describing-data">
+<h1>Chapter 5 - Describing Data<a class="headerlink" href="#chapter-5-describing-data" title="Permalink to this heading">#</a></h1>
 <section id="the-concept-of-a-distribution">
-<h2>5.1 The concept of a distribution<a class="headerlink" href="#the-concept-of-a-distribution" title="Permalink to this headline">#</a></h2>
-<p>Assuming we have a tidy data set to work with, the next step in data analysis is to begin looking at the variation in your measures. This leads us to one of the most fundamental concepts in statistics, the concept of a <strong>distribution</strong>.</p>
-<p>A distribution reflects the specific pattern of variation in a variable or set of variables. It is how the data are divided among different possible values. Thinking about distributions requires you to think abstractly, at a higher level, about your data. You must shift your thinking from a focus on the individual observations in your data set (e.g., the 20 people you have sampled) to a focus on all the observations as a group, and the pattern of how they vary on some variable. The concept of distribution allows us to see the whole as greater than the sum of the parts; the forest, and not just the trees.</p>
+<h2>5.1 The concept of a distribution<a class="headerlink" href="#the-concept-of-a-distribution" title="Permalink to this heading">#</a></h2>
+<p>Assuming we have a tidy dataset with many variables, the next step in data analysis is to begin looking at the variation in your measures. This leads us to one of the most fundamental concepts in statistics, the concept of a <strong>distribution</strong>.</p>
+<p>A distribution reflects the specific pattern of variation in a variable or set of variables. It is how the data are divided among different possible values. Thinking about distributions requires you to think abstractly, at a higher level, about your data. You must shift your thinking from a focus on the individual observations in your data set (e.g., the 20 people you have sampled) to a focus on all the observations as a group, and the pattern of how they vary. The concept of a distribution allows us to see the whole as greater than the sum of the parts; the forest, and not just the trees.</p>
 <p>The features of a forest cannot be seen in a single tree. For example, measuring the height of a single tree does not allow you to see characteristics of the distribution of height. You can know the height of that one tree, but not the minimum, maximum, or average height of trees in the forest based on a single measurement. Statistics such as the mean do not themselves constitute a distribution; they are features of a distribution, features that don’t apply to individual trees.</p>
 <p>Note that not just any bunch of numbers can be thought of as a distribution. The numbers must all be measures of the same attribute. So, for example, if you have measures of height and weight on a sample of 20 people, you can’t just lump the height and weight numbers into a single distribution. You can, however, examine the distribution of height and the distribution of weight separately.</p>
 </section>
 <section id="visualizing-distributions">
-<h2>5.2 Visualizing distributions<a class="headerlink" href="#visualizing-distributions" title="Permalink to this headline">#</a></h2>
+<h2>5.2 Visualizing distributions<a class="headerlink" href="#visualizing-distributions" title="Permalink to this heading">#</a></h2>
 <section id="histograms">
-<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h3>
+<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
 <p>When first learning about distributions, it can help to visualize them. Plotting the distribution of your data each time you start a new data project can also be helpful to start understanding your dataset as a whole. Below are some examples of what distributions can look like:</p>
-<img src="images/ch5-distributions.png" width="800">
-<p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): the age of a sample of housekeepers measured in years; the thumb length of a sample of students measured in millimeters; the life expectancy of the citizens of countries measured in years; and the population of countries measured in millions. The y-axis represents the <em>frequency</em> of some score or range of scores in a sample. So, in the first histogram (in the color coral), the height of the bars does not represent how old a housekeeper is, but instead represents the number of housekeepers in this sample who were of a certain age.</p>
-<p>There are lots of ways to make histograms in R. We will use the package <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>  to make our visualizations. It is a large and flexible package, so it can be good to read through a guide to <a class="reference external" href="http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html">everything you can do with it</a> for help or inspiration. <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> is a weird name, but that’s what the authors of this package called it. Because of that, many of the <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> commands are going to start with <code class="docutils literal notranslate"><span class="pre">gf_</span></code>; the <code class="docutils literal notranslate"><span class="pre">g</span></code> stands for “graphical” and the <code class="docutils literal notranslate"><span class="pre">f</span></code> stands for “formula”.</p>
-<p>We will start by making a histogram with the <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> function. Here is how to make a basic histogram of <code class="docutils literal notranslate"><span class="pre">Wt</span></code> from the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> data frame.</p>
+<img src="images/ch5-distributions.png" width="600">
+<p>This type of image is called a <strong>histogram</strong>. On the x-axis is some value that an observation can have on a variable. In the examples above we see (clockwise from upper left): anxiety scores from the Tetris Memories study; the number of intrusive memories those participants experienced; how long a sample of students slept per night, measured in hours; and the heights of a sample of people, measured in inches. The y-axis represents the <em>frequency</em> of some score or range of scores in a sample. So, in the first histogram (in purple), the height of the bars does not represent what STAI score someone got, but instead represents the number of participants in this sample who got a certain score.</p>
+<p>There are lots of ways to make histograms in R. In this course we will use the package <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>  to make our visualizations. It is a large and flexible package, so it can be good to read through a guide to <a class="reference external" href="http://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html">everything you can do with it</a> for help or inspiration. <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> is a weird name, but that’s what the authors of this package called it. Because of that, many of the <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> commands are going to start with <code class="docutils literal notranslate"><span class="pre">gf_</span></code>; the <code class="docutils literal notranslate"><span class="pre">g</span></code> stands for “graphical” and the <code class="docutils literal notranslate"><span class="pre">f</span></code> stands for “formula”.</p>
+<p>We will start by making a histogram with the <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> function. Here is how to make a basic histogram of <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code> from the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> data frame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
-<span class="c1">#If this were our own computer, we wouldn&#39;t need to install since we&#39;d already done that in a previous chapter</span>
-<span class="c1">#But on a web browser like this we&#39;re using a new server each time, like a fresh computer</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">mindsetmatters</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/mindsetmatters.csv&quot;</span><span class="p">)</span>
+
+<span class="n">tetrismemories</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/tetrismemories.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mindsetmatters</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tetrismemories</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> takes two arguments. The first is a <em>formula</em>; notice that the variable we want to display, <code class="docutils literal notranslate"><span class="pre">Wt</span></code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for graphing a line (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> from geometry class). So in R, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the first argument in <code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> is the formula <code class="docutils literal notranslate"> <span class="pre">~</span> <span class="pre">Wt</span></code>, which tells R “plot the variable Wt on the x-axis.”</p>
-<p>The second argument is <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">mindsetmatters</span></code>, which tells R which dataframe to find <code class="docutils literal notranslate"><span class="pre">Wt</span></code> in.</p>
-<p>Say we wanted to change the histogram to one that plots the variable <code class="docutils literal notranslate"><span class="pre">Age</span></code>. Rewrite the code below to do so.</p>
+<p><code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> takes two arguments. The first is a <em>formula</em>; notice that the variable we want to display, <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for graphing a line (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> from geometry class). So in R, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the first argument in <code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> is the formula <code class="docutils literal notranslate"> <span class="pre">~</span> <span class="pre">instrusive_memories</span></code>, which tells R “plot the variable intrusive_memories on the x-axis.”</p>
+<p>The second argument is <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">tetrismemories</span></code>, which tells R which dataframe to find <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code> in.</p>
+<p>Say we wanted to change the histogram to one that plots the variable <code class="docutils literal notranslate"><span class="pre">STAI_T</span></code>. Rewrite the code below to do so.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Change the plotted variable to Age</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">Wt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mindsetmatters</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Change the plotted variable to STAI_T</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tetrismemories</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -712,8 +521,9 @@ title="Print to PDF"
 <p>Because the variable on the x-axis is often measured on a continuous scale, the bars in the histograms usually represent a range of values, called bins. We’ll illustrate this idea of bins by creating a simple outcome variable called <code class="docutils literal notranslate"><span class="pre">outcome</span></code>, and displaying it on a histogram.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span> <span class="c1">#gf_histogram only works on dataframe objects, not vectors</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">tiny_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span><span class="w"> </span><span class="c1">#gf_histogram only works on dataframe objects, not vectors</span>
+
 <span class="c1">#Write some code below here to plot a histogram of the variable &quot;outcome&quot; in the dataframe &quot;tiny_data&quot;</span>
 </pre></div>
 </div>
@@ -722,7 +532,7 @@ title="Print to PDF"
 <p>This histogram shows gaps between the bars because by default <code class="docutils literal notranslate"><span class="pre">gf_histogram()</span></code> sets up 30 bins, even though we only have five possible numbers in our variable. If we change the number of bins to 5, then we’ll get rid of the gaps between the bars. To do this, we add in a new argument that gf_histogram can accept: <code class="docutils literal notranslate"><span class="pre">bins</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -730,7 +540,7 @@ title="Print to PDF"
 <p>Now we only have one bin per data value. However, since there are exactly one of each type of value, this histogram looks like a rectangle. To help distinguish things more, we can change the colors of the histogram, adding in the arguments <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. What do you think each of these arguments does?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -739,31 +549,31 @@ title="Print to PDF"
 <p>Now try running the following code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the same code as before but we added in another outcome value, 3.2</span>
-<span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">3.2</span><span class="p">)</span>
-<span class="n">tiny_data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the same code as before but we added in another outcome value, 4.2</span>
+<span class="n">outcome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">4.2</span><span class="p">)</span>
+<span class="n">tiny_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span>
 
 <span class="c1"># This makes a histogram with 5 bins</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If you look closely at the x-axis, you’ll see that the bin for 3 actually goes from 2.5 to 3.5. Because of this, there are now two values that fall in the 2.5-3.5 bin: 3 and 3.2.</p>
+<p>If you look closely at the x-axis, you’ll see that the bin for 4 actually goes from 3.5 to 4.5. Because of this, there are now two values that fall in the 3.5-4.5 bin: 4 and 4.2.</p>
 </section>
 <section id="density-plots">
-<h3>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this headline">#</a></h3>
+<h3>Density plots<a class="headerlink" href="#density-plots" title="Permalink to this heading">#</a></h3>
 <p><strong>Density plots</strong> are a lot like histograms, except on the y-axis is the <em>proportion</em> (or percentage) of the data that falls into a bin, rather than the raw count number. The vocab we use for this is called <strong>density</strong>. The only real difference between a histogram and density plot is how the y-axis is represented.</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">gf_dhistogram</span></code> will plot a density plot (note the d before the word histogram, to distinguish it from the regular histogram function).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">tiny_data</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;gray&quot;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>If everything worked right, the general shape of this plot should match the one above. The only difference is, the tallest bin now shows a density of 0.333 instead of 2, since 2 values out of 6 means 33% of the sample is in that bin.</p>
-<p>In the window below, write some code to make a density plot of the <code class="docutils literal notranslate"><span class="pre">Age</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> data.</p>
+<p>In the window below, write some code to make a density plot of the <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Finish the code below to make a density plot of Age in mindsetmatters</span>
@@ -772,49 +582,49 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>You may have gotten a warning by running this that said <code class="docutils literal notranslate"><span class="pre">Warning</span> <span class="pre">message:</span> <span class="pre">Removed</span> <span class="pre">1</span> <span class="pre">rows</span> <span class="pre">containing</span> <span class="pre">non-finite</span> <span class="pre">values</span> <span class="pre">(stat_bin)</span></code>. Warnings in R mean your code can still run, but the program thinks something happened that you should pay attention to. In this case, there is one observation that has missing data in <code class="docutils literal notranslate"><span class="pre">Age</span></code>. Since it’s impossible to plot something that doesn’t exist, this function ignored that row when plotting. Some functions are able to manage missing values this way, others will break completely with an error when you try to pass data with missing values. As you use R more you’ll start getting a sense of which ones behave which way.</p>
-<p>In summary, the very first thing you should always do when analyzing data is to examine the distributions of your variables. If you skip this step, and go directly to the application of more complex statistical procedures, you do so at your own peril. Histograms are a key tool for examining distributions of variables. We will learn some others, too. But first, let’s see what we can learn from histograms.</p>
-<p>What do we look for when we explore distributions of a variable? In general, we look for three things: shape, center, and variability.</p>
+<p>You may have gotten a warning by running this that said <code class="docutils literal notranslate"><span class="pre">Warning</span> <span class="pre">message:</span> <span class="pre">&quot;Removed</span> <span class="pre">36</span> <span class="pre">rows</span> <span class="pre">containing</span> <span class="pre">non-finite</span> <span class="pre">values</span> <span class="pre">(`stat_bin()`).”</span></code>. Warnings in R mean your code can still run, but the program thinks something happened that you should pay attention to. In this case, there are 36 observations that have missing data in <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code>. Since it’s impossible to plot something that doesn’t exist, this function ignored those rows when plotting. Some functions are able to manage missing values this way, others will break completely with an error when you try to pass data with missing values. As you use R more you’ll start getting a sense of which ones behave which way. You’ll also start learning what error messages mean so you can learn to use new functions correctly.</p>
+<p>In summary, the very first thing you should always do when analyzing data is to examine the distributions of your variables. If you skip this step, and go directly to the application of more complex statistical procedures, you do so at your own peril. Histograms are a key tool for examining distributions of variables to make sure the data are ok, and that your planned analysis will be appropriate.</p>
+<p>Let’s see what else we can learn from histograms. What do we look for when we explore distributions of a variable? In general, we look for three things: shape, center, and variability.</p>
 </section>
 </section>
 <section id="shape">
-<h2>5.3 Shape<a class="headerlink" href="#shape" title="Permalink to this headline">#</a></h2>
-<p>Look back at the density plot you made for <code class="docutils literal notranslate"><span class="pre">mindsetmatters$Age</span></code>, and take note of the general shape the whole dataset takes. Where is the peak of the the distribution? What are the most infrequent values? Statisticians describe the shapes of distributions using a few key features. Distributions can be <strong>symmetrical</strong>, or they can be <strong>skewed</strong>. A symmetrical distribution has a peak generally in the center of the x-axis, and the left side of the shape is close to a mirror image of the right side. If a distribution is skewed, it can be skewed left (the skinny longer tail is on the left, like someone stretched out that side) or skewed right (the skinny longer tail is on the right).</p>
-<p>It’s rare to find a distribution perfectly symmetrical, but the more skewed something is the more we should take note of it. The distribution above has a slight skew to the right.</p>
+<h2>5.3 Shape<a class="headerlink" href="#shape" title="Permalink to this heading">#</a></h2>
+<p>Look back at the density plot you made for <code class="docutils literal notranslate"><span class="pre">tetrismemories$intrusive_memories</span></code>, and take note of the general shape the whole dataset takes. Where is the peak of the the distribution? What are the most infrequent values? Statisticians describe the shapes of distributions using a few key features. Distributions can be <strong>symmetrical</strong>, or they can be <strong>skewed</strong>. A symmetrical distribution has a peak generally in the center of the x-axis, and the left side of the shape is close to a mirror image of the right side. If a distribution is skewed, it can be skewed left (the skinny longer tail is on the left, like someone stretched out that side) or skewed right (the skinny longer tail is on the right).</p>
+<p>It’s rare to find a distribution perfectly symmetrical, but the more skewed something is the more we should take note of it. The distribution above has a fairly large skew to the right.</p>
 <p>Other ways to talk about the shape of distributions include:</p>
 <ul class="simple">
 <li><p><strong>uniform</strong>, meaning the number of observations is evenly distributed across the possible scores and there is no peak in the data (remember the rectangle histogram we made earlier?)</p></li>
 <li><p><strong>unimodal</strong>, meaning that there is one peak in the data</p></li>
 <li><p><strong>bimodal</strong> (or multimodal), having two (or more) clear peaks with only a few data values in between</p></li>
 </ul>
-<p>Do you think the <code class="docutils literal notranslate"><span class="pre">Age</span></code> distribution above is uniform, unimodal, or bimodal?</p>
+<p>Do you think the <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code> distribution above is uniform, unimodal, or bimodal?</p>
 <p>You will often see distributions that match a particular shape and skewness. These special distribution types have names. For instance, the <strong>normal</strong> distribution is symmetric and unimodal, looking like a bell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">normal_data</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">1000</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="c1">#rnorm is a function that generates data in a normal distribution;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">normal_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1">#rnorm is a function that generates data in a normal distribution;</span>
 <span class="c1"># we&#39;ll talk about simulating data like this in a later chapter</span>
-<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span> <span class="o">=</span> <span class="n">normal_data</span><span class="p">))</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">data_pts</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normal_data</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Usually, distributions are kind of lumpy and jagged, so many of these features should be thought of with the word “roughly” in front of them. So even if a distribution doesn’t have exactly the same number of observations across all possible scores—but has roughly the same number—we could still call that distribution uniform. If you look at the density plot above, you might see some extra lumpiness along the sides of the bell curve. Some people might think this is a bimodal distribution. But statisticians would consider it roughly unimodal and roughly normal because the lumps are quite small compared to the main peak.</p>
-<p>If a distribution is unimodal, it is often quite useful to notice where the center of the distribution lies. If lots of observations are clustered around the middle, then the value of that middle could be a handy summary of the sample of scores, letting you make statements such as, “Most of the data in this sample is around this middle value.”</p>
+<p>If a distribution is unimodal, it is often quite useful to notice where the center of the distribution lies. If lots of observations are clustered around the middle, then the value of that middle could be a handy summary of the sample of scores, letting you make statements such as, “Most of the data in this sample are around this middle value.”</p>
 </section>
 <section id="center">
-<h2>5.4 Center<a class="headerlink" href="#center" title="Permalink to this headline">#</a></h2>
-<p>Speaking of the middle, it’s often useful to be able to have a quantitative number to represent what that middle point is for a distribution. We mentioned in Chapter 2 that one of the big discoveries of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we summarize a dataset and describe its center value. So in most situations, after checking out the shape of the data distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p>
+<h2>5.4 Center<a class="headerlink" href="#center" title="Permalink to this heading">#</a></h2>
+<p>Speaking of the middle, there are specific numbers that represent what that middle point is for a distribution. We mentioned in Chapter 2 that one of the central principles of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we summarize a dataset and describe its center value. So in most situations, after checking out the shape of the data distribution, the next thing that you’ll want to calculate is a measure of <strong>central tendency</strong>. That is, you’d like to know something about where the “average” or “typical” value of your data lies. The three most commonly used measures are the mean, median, and mode.</p>
 <section id="mean">
-<h3>Mean<a class="headerlink" href="#mean" title="Permalink to this headline">#</a></h3>
-<p>The <strong>mean</strong> of a set of observations is just an old-fashioned average: add all of the values up, and then divide by the total number of values. If a student’s five exam scores were 76, 91, 86, 80 and 92, the mean of those scores would be:</p>
+<h3>Mean<a class="headerlink" href="#mean" title="Permalink to this heading">#</a></h3>
+<p>The <strong>mean</strong> of a set of observations is an old-fashioned average: add all of the values up, and then divide by the total number of values. If a student’s five exam scores were 76, 91, 86, 80 and 92, the mean of those scores would be:</p>
 <div class="math notranslate nohighlight">
 \[\frac{76 + 91 + 86 + 80 + 93}{5} = 85.2\]</div>
 <p>To calculate the mean in R, you could type out that exact formula above and have R work for you like a calculator: <code class="docutils literal notranslate"><span class="pre">(76</span> <span class="pre">+</span> <span class="pre">91</span> <span class="pre">+</span> <span class="pre">86</span> <span class="pre">+</span> <span class="pre">80</span> <span class="pre">+</span> <span class="pre">93)/5</span></code>. However, that’s not the only way to do the calculation, and when the number of observations starts to become large, it’s easily the most tedious. Besides, in almost every real world scenario, you’ve already got the actual numbers stored in a variable of some kind, like <code class="docutils literal notranslate"><span class="pre">test_scores</span> <span class="pre">&lt;-</span> <span class="pre">c(76,91,86,80,93)</span></code>. Under those circumstances, you can use a combination of the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">length()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">test_scores</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">76</span><span class="p">,</span><span class="m">91</span><span class="p">,</span><span class="m">86</span><span class="p">,</span><span class="m">80</span><span class="p">,</span><span class="m">93</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">test_scores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">76</span><span class="p">,</span><span class="m">91</span><span class="p">,</span><span class="m">86</span><span class="p">,</span><span class="m">80</span><span class="p">,</span><span class="m">93</span><span class="p">)</span>
 <span class="c1">#This computes a mean</span>
-<span class="nf">sum</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -825,19 +635,19 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use mean() to calculate the mean of test_scores</span>
 
 <span class="c1">#Evaluate the code below. Do you think it will be true or false?</span>
-<span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">test_scores</span><span class="p">))</span> <span class="o">==</span> <span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">test_scores</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="median">
-<h3>Median<a class="headerlink" href="#median" title="Permalink to this headline">#</a></h3>
+<h3>Median<a class="headerlink" href="#median" title="Permalink to this heading">#</a></h3>
 <p>The mean is a really useful way of describing what the central tendency of a distribution is. However, sometimes it doesn’t work as well as one might think. Imagine two distributions: <code class="docutils literal notranslate"><span class="pre">dist1</span> <span class="pre">&lt;-</span> <span class="pre">c(10,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">9,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10)</span></code> and <code class="docutils literal notranslate"><span class="pre">dist2</span> <span class="pre">&lt;-</span> <span class="pre">c(10,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">9,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">100).</span></code> Plot these as density plots below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dist1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
-<span class="n">dist2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dist1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="n">dist2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
 
 <span class="c1">#Write code to plot the density plot of each of these distributions, using df_dhistogram()</span>
 </pre></div>
@@ -854,7 +664,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The mean of <code class="docutils literal notranslate"><span class="pre">dist2</span></code> is way off of the mean of <code class="docutils literal notranslate"><span class="pre">dist1</span></code>. This sort of situation is not uncommon - in fact, the mean of any distribution with appreciable skew will fall towards the long tail rather than at the peak of the rest of the data. In this case, a better measure of central tendency can be the <strong>median</strong>.</p>
+<p>The mean of <code class="docutils literal notranslate"><span class="pre">dist2</span></code> is way off of the mean of <code class="docutils literal notranslate"><span class="pre">dist1</span></code>. This sort of situation is not uncommon - in fact, the mean of any distribution with appreciable skew will fall towards the long tail rather than the peak of the rest of the data. In this case, a better measure of central tendency can be the <strong>median</strong>.</p>
 <p>The median is even easier to describe than the mean. The median of a set of observations is just the middle value, when the values are in numerical order. As before, let’s imagine we were interested in a student’s five test scores. To figure out the median, we sort these numbers into ascending order, 76,80,<strong>86</strong>,91,93. The value in the middle, bolded here, is the median.</p>
 <p>It’s easy to find the middle value in a set of numbers that are an odd-numbered length. But what should we do if <code class="docutils literal notranslate"><span class="pre">test_scores</span></code> had 6 values instead? E.g., 76,80,<strong>86,91</strong>,93,94. Now there are <em>two</em> middle numbers, 86 and 91. In this case, the median is defined as the average of these: 88.5.</p>
 <p>As before, it’s very tedious to do this by hand when you’ve got lots of numbers. Luckily in R, we have the <code class="docutils literal notranslate"><span class="pre">median()</span></code> function:</p>
@@ -867,18 +677,18 @@ title="Print to PDF"
 </div>
 </section>
 <section id="mode">
-<h3>Mode<a class="headerlink" href="#mode" title="Permalink to this headline">#</a></h3>
+<h3>Mode<a class="headerlink" href="#mode" title="Permalink to this heading">#</a></h3>
 <p>The last common measure of central tendency is the <strong>mode</strong>. This is the most frequent value within our data - what we’ve been calling the “peak” of a distribution. In a somewhat normal distribution, this is near the middle of the curve with the mean and median. But in a really weird distribution, where, say, the most extreme values are the most common, the mode could be way off.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Visualize a weird distribution. Where is the mean versus the median versus the mode?</span>
-<span class="n">weird_dist</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
-<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span> <span class="n">data_pts</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">weird_dist</span><span class="p">)</span>
+<span class="n">weird_dist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">data_pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">50</span><span class="p">))</span>
+<span class="nf">gf_dhistogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">data_pts</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weird_dist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>You may have tried to use a function like <code class="docutils literal notranslate"><span class="pre">mode()</span></code> in the code block above to calculate the mode of the dataframe <code class="docutils literal notranslate"><span class="pre">weird_dist</span></code>. However, in R <code class="docutils literal notranslate"><span class="pre">mode()</span></code> is already taken up by a different function - it returns the data type of a vector. Given that the mode is the most frequent data value in a distribution, we can use the <code class="docutils literal notranslate"><span class="pre">table()</span></code> function to list the number of data points with each unique value, and identify the mode that way:</p>
+<p>You may have tried to use a function like <code class="docutils literal notranslate"><span class="pre">mode()</span></code> in the code block above to calculate the mode of the dataframe <code class="docutils literal notranslate"><span class="pre">weird_dist</span></code>. However, in R <code class="docutils literal notranslate"><span class="pre">mode()</span></code> is already taken up by a different function - it returns the data type of a vector, like <code class="docutils literal notranslate"><span class="pre">str()</span></code> does. So we’ll need a different method to describe our distribution. Given that the mode is the most frequent data value in a distribution, we can use the <code class="docutils literal notranslate"><span class="pre">table()</span></code> function to list the number of data points with each unique value, and identify the mode that way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">weird_dist</span><span class="o">$</span><span class="n">data_pts</span><span class="p">)</span>
@@ -889,9 +699,10 @@ title="Print to PDF"
 <p>Because the mode can be far away from the middle of the value range in distributions like this, it may be better to think of the mode as more of a measure of “typicality” rather than a measure of “central tendency.”</p>
 </section>
 <section id="which-measure-of-central-tendency-to-use">
-<h3>Which measure of central tendency to use?<a class="headerlink" href="#which-measure-of-central-tendency-to-use" title="Permalink to this headline">#</a></h3>
-<p>When do you pick between mean, median, and mode? There’s no hard and fast rule - for each use case, you’ll want to think about the message you’re trying to send with your summary, as well as the nature of the underlying data. But here are some hints to help your decisions:</p>
+<h3>Which measure of central tendency to use?<a class="headerlink" href="#which-measure-of-central-tendency-to-use" title="Permalink to this heading">#</a></h3>
+<p>When do you pick between mean, median, and mode? There’s no hard and fast rule - for each use case, you’ll want to think about the message you’re trying to send with your summary, as well as the nature of the underlying data. But here are some things to think about when making your decision:</p>
 <ul class="simple">
+<li><p>The mean is a good default - many statistical tools are based on the mean, and lots of people know what it is.</p></li>
 <li><p>As already mentioned, if you have a highly skewed distribution, median may be better than mean for describing the middle of the data.</p></li>
 <li><p>If your data are categorical, it doesn’t make sense to calculate the mean or the median. Both the mean and the median rely on the idea that the numbers assigned to values are meaningful - i.e., can you say what the mean is of {apple, orange, banana, watermelon}? If data values aren’t related numerically, it’s best to use mode.</p></li>
 <li><p>If your data are ordinal scale, you’re more likely to want to use the median than the mean. For instance, when measuring the typical number of children that an American household has, you can only have whole-numbered children. However, if we calculate the <a class="reference external" href="https://www.statista.com/statistics/718084/average-number-of-own-children-per-family">average child number per family in 2020</a>, we get 1.93. A partial amount of a child doesn’t really make sense when discussing the typical number of children one might find in a household. Instead, it would make more sense to use the median: 2.</p></li>
@@ -899,10 +710,10 @@ title="Print to PDF"
 </section>
 </section>
 <section id="variability">
-<h2>5.5 Variability<a class="headerlink" href="#variability" title="Permalink to this headline">#</a></h2>
-<p>Lastly we come to variability. Variability refers to how spread out (or wide) the distribution is. Saying most of our sample is around 60 means one thing if the range is from 50 to 70, and quite another if the range is from 2 to 200. This, too, has multiple measures we can use.</p>
+<h2>5.5 Variability<a class="headerlink" href="#variability" title="Permalink to this heading">#</a></h2>
+<p>Lastly we come to variability. Variability refers to how spread out (or wide) the distribution is. Central tendency tells us what the most typical values are like, but we don’t want to completely ignore the infrequent scores. Two distributions can have a mean of 60, but if the range of one is 50 to 70 while the range of another is 2 to 200, those are obviously different distributions of data. Variability also has multiple measures we can use.</p>
 <section id="range">
-<h3>Range<a class="headerlink" href="#range" title="Permalink to this headline">#</a></h3>
+<h3>Range<a class="headerlink" href="#range" title="Permalink to this heading">#</a></h3>
 <p>The <strong>range</strong> of a variable is very simple: it’s the biggest value minus the smallest value. For <code class="docutils literal notranslate"><span class="pre">test_scores</span></code> data, the maximum value is 93, and the minimum value is 76. We can calculate these values in R using the <code class="docutils literal notranslate"><span class="pre">max()</span></code> and <code class="docutils literal notranslate"><span class="pre">min()</span></code> functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -928,16 +739,16 @@ title="Print to PDF"
 <p>Although the range is the simplest way to quantify the notion of variability, it’s one of the worst. Recall from our discussion of the mean that we want our summary measure to be robust (meaning it isn’t affected by outliers very much). If the dataset has one or two extreme values in it, we’d like our statistics not to be unduly influenced by these cases. If we look once again at our toy example of a data set containing a very extreme outlier, <code class="docutils literal notranslate"><span class="pre">dist2</span> <span class="pre">&lt;-</span> <span class="pre">c(10,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">9,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">100)</span></code>, it is clear that the range is not robust, since this has a range of 92. but if the outlier were removed, we would have a range of only 4.</p>
 </section>
 <section id="interquartile-range">
-<h3>Interquartile range<a class="headerlink" href="#interquartile-range" title="Permalink to this headline">#</a></h3>
+<h3>Interquartile range<a class="headerlink" href="#interquartile-range" title="Permalink to this heading">#</a></h3>
 <p>The <strong>interquartile range (IQR)</strong> is like the range, but instead of calculating the difference between the biggest and smallest value, it calculates the difference between the 25th quantile and the 75th quantile. What is a quantile?
 the 25th quantile of a data set is the smallest number x such that 25% of the data is less than x. This is also called percentiles, which you may have heard before.</p>
 <p>In fact, we’ve already come across the idea: the median of a data set is its 50th quantile / percentile! R actually
 provides you with a way of calculating quantiles, using the (surprise, surprise) <code class="docutils literal notranslate"><span class="pre">quantile()</span></code> function. Let’s
-use it to calculate the median of <code class="docutils literal notranslate"><span class="pre">Age</span></code> in the <code class="docutils literal notranslate"><span class="pre">mindsetmatters</span></code> dataset:</p>
+use it to calculate the median of <code class="docutils literal notranslate"><span class="pre">STAI_T</span></code> in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">median</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">STAI_T</span><span class="p">,</span><span class="w"> </span><span class="n">probs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">median</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">STAI_T</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -947,15 +758,15 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </div><p>Not surprisingly, The 50% quartile and the median agree. Now, we can actually input lots of quantiles at once, by specifying a vector for the probs argument. So lets do that, and get the 25th and 75th percentile:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.75</span><span class="p">),</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">STAI_T</span><span class="p">,</span><span class="w"> </span><span class="n">probs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.75</span><span class="p">),</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Since the IQR is the 75th quartile minus the 25th quartile, our IQR is 45-29 = 16. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
+<p>Since the IQR is the 75th quartile minus the 25th quartile, our IQR is 38.25 - 27 = 11.25. As you might have suspected by now, R also gives us a way to calculate the IQR directly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">IQR</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">IQR</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">STAI_T</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -963,58 +774,58 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 <p>The simplest way to think about IQR is that it contains the “middle half” of the data. That is, one quarter of the data falls below the 25th quartile, one quarter of the data is above the 75th quartile, leaving the “middle half” of the data lying in between the two. The IQR is the range covered by that middle half.</p>
 </section>
 <section id="mean-absolute-deviation">
-<h3>Mean absolute deviation<a class="headerlink" href="#mean-absolute-deviation" title="Permalink to this headline">#</a></h3>
-<p>The two measures we’ve looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the quantiles of the data. However, this isn’t the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report the “typical” deviation from that reference point. What do we mean by “typical” deviation? Usually, the mean or median value of all points’ deviations! In practice, this leads to two different measures, the <strong>“mean absolute deviation (from the mean)”</strong> and the <strong>“median absolute deviation (from the median)”.</strong></p>
-<p>Since the previous paragraph might sound a little abstract, let’s go through the mean absolute deviation from the mean a little more slowly. One useful thing about this measure is that the name actually tells you exactly how to calculate it. Let’s think about our <code class="docutils literal notranslate"><span class="pre">test_scores</span></code> data, <code class="docutils literal notranslate"><span class="pre">c(76,91,86,80,93)</span></code>. Since our calculations rely on an examination of the deviation from some reference point (in this case the mean), the first thing we need to calculate is the mean. In math, the mean of a variable X is often written as X with a horizontal line above it, so we’ll use that here to help us write out our calculation. For the five observations of <code class="docutils literal notranslate"><span class="pre">test_scores</span></code>, our mean is</p>
+<h3>Mean absolute deviation<a class="headerlink" href="#mean-absolute-deviation" title="Permalink to this heading">#</a></h3>
+<p>The two measures we’ve looked at so far, the range and the interquartile range, both rely on the idea that we can measure the spread of the data by looking at the quantiles of the data. However, this isn’t the only way to think about the problem. A different approach is to select a meaningful reference point (usually the mean or the median) and then report the typical deviation from that reference point. What do we mean by “typical” deviation? Usually, the mean or median value of all points’ deviations! In practice, this leads to two different measures, the <strong>“mean absolute deviation (from the mean)”</strong> and the <strong>“median absolute deviation (from the median)”.</strong></p>
+<p>Since the previous paragraph might sound a little abstract, let’s go through the mean absolute deviation a little more slowly. One useful thing about this measure is that the name actually tells you exactly how to calculate it. Let’s think about our <code class="docutils literal notranslate"><span class="pre">test_scores</span></code> data, <code class="docutils literal notranslate"><span class="pre">c(76,91,86,80,93)</span></code>. Since our calculations rely on an examination of the deviation from some reference point (in this case the mean), the first thing we need to calculate is the mean. In math, the mean of a variable X is often written as X with a horizontal line above it, so we’ll use that here to help us write out our calculation. For the five observations of <code class="docutils literal notranslate"><span class="pre">test_scores</span></code>, our mean is</p>
 <div class="math notranslate nohighlight">
 \[\bar{X} = 85.2\]</div>
 <p>The next step is to convert each of our observations in X into a deviation score. We do this
-by calculating the difference between the ith observation, X<sub>i</sub>, and the mean X¯. That is, the deviation score is defined to be</p>
+by calculating the difference between each score, X<sub>i</sub>, and the mean X¯. That is, the deviation score is defined to be</p>
 <div class="math notranslate nohighlight">
 \[X_i - \bar{X}\]</div>
 <p>For the first observation in our sample, this is equal to 76 - 85.2 = -9.2. The next step in the process is to convert these deviations to absolute deviations, in order to get rid of that negative sign and say “how far away, in either direction, are we from the mean”. Mathematically, we’d denote the absolute value as |-3| = 3. In R, we can use the <code class="docutils literal notranslate"><span class="pre">abs()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#subtract the mean of test_scores from the first item in the vector, and find the absolute value</span>
-<span class="nf">abs</span><span class="p">(</span><span class="n">test_scores</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">))</span>
+<span class="nf">abs</span><span class="p">(</span><span class="n">test_scores</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>We repeat this process for every item in <code class="docutils literal notranslate"><span class="pre">test_scores</span></code>. To make things easier, we’ve already done it for you and put it into a table:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Which score</p></th>
-<th class="text-align:center head"><p>Value</p></th>
-<th class="text-align:center head"><p>Deviation from mean</p></th>
-<th class="text-align:center head"><p>Absolute deviation</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Which score</p></th>
+<th class="head text-center"><p>Value</p></th>
+<th class="head text-center"><p>Deviation from mean</p></th>
+<th class="head text-center"><p>Absolute deviation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>76</p></td>
-<td class="text-align:center"><p>-9.2</p></td>
-<td class="text-align:center"><p>9.2</p></td>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>76</p></td>
+<td class="text-center"><p>-9.2</p></td>
+<td class="text-center"><p>9.2</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
-<td class="text-align:center"><p>91</p></td>
-<td class="text-align:center"><p>5.8</p></td>
-<td class="text-align:center"><p>5.8</p></td>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>91</p></td>
+<td class="text-center"><p>5.8</p></td>
+<td class="text-center"><p>5.8</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>3</p></td>
-<td class="text-align:center"><p>86</p></td>
-<td class="text-align:center"><p>0.8</p></td>
-<td class="text-align:center"><p>0.8</p></td>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>86</p></td>
+<td class="text-center"><p>0.8</p></td>
+<td class="text-center"><p>0.8</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>80</p></td>
-<td class="text-align:center"><p>-5.2</p></td>
-<td class="text-align:center"><p>5.2</p></td>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>80</p></td>
+<td class="text-center"><p>-5.2</p></td>
+<td class="text-center"><p>5.2</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>5</p></td>
-<td class="text-align:center"><p>93</p></td>
-<td class="text-align:center"><p>7.8</p></td>
-<td class="text-align:center"><p>7.8</p></td>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>93</p></td>
+<td class="text-center"><p>7.8</p></td>
+<td class="text-center"><p>7.8</p></td>
 </tr>
 </tbody>
 </table>
@@ -1029,9 +840,9 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 <p>The last thing we need to talk about is how to calculate MAD in R. We can repeat every step of the calculations above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mean_score</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>     <span class="c1"># step 1. the mean of the data</span>
-<span class="n">AD</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="n">test_scores</span> <span class="o">-</span> <span class="n">mean_score</span><span class="p">)</span> <span class="c1"># step 2. the absolute deviations from the mean</span>
-<span class="n">MAD</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">AD</span><span class="p">)</span>                     <span class="c1"># step 3. the mean of the absolute deviations</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mean_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span><span class="w">     </span><span class="c1"># step 1. the mean of the data</span>
+<span class="n">AD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="n">test_scores</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean_score</span><span class="p">)</span><span class="w"> </span><span class="c1"># step 2. the absolute deviations from the mean</span>
+<span class="n">MAD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">AD</span><span class="p">)</span><span class="w">                     </span><span class="c1"># step 3. the mean of the absolute deviations</span>
 <span class="n">MAD</span>
 </pre></div>
 </div>
@@ -1039,9 +850,8 @@ by calculating the difference between the ith observation, X<sub>i</sub>, and th
 </div>
 </section>
 <section id="variance">
-<h3>Variance<a class="headerlink" href="#variance" title="Permalink to this headline">#</a></h3>
-<p>Although the mean absolute deviation measure has its uses, it’s not the best measure of variability to use for a variety of mathematical reasons we don’t need to get into. Instead, it’s more common to use <em>squared</em> deviations
-rather than <em>absolute</em> deviations. If we do that, we obtain a measure called the <strong>variance</strong>. We’ve used this word before to talk about the general concept of data varying, but here it is a specific measure with a specific formula. The variance of a data set X is sometimes written as Var(X), but it’s more commonly denoted s<sup>2</sup> (the reason for this will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p>
+<h3>Variance<a class="headerlink" href="#variance" title="Permalink to this heading">#</a></h3>
+<p>Although the mean absolute deviation measure has its uses, it’s not the best measure of variability to use for a variety of mathematical reasons we don’t need to get into (<a class="reference external" href="https://medium.com/&#64;kaushalsharma880/squared-error-vs-absolute-values-5c2624bc5ade#:~:text=There%20are%20various%20reasons%20for,not%20differentiable%20at%20x%20%3D%200.">but you can read about it if you like</a>). Instead, it’s more common to use <em>squared</em> deviations rather than <em>absolute</em> deviations. If we do that, we obtain a measure called the <strong>variance</strong>. We’ve used this word before to talk about the general concept of data varying, but here it is a specific measure with a specific formula. The variance of a data set X is sometimes written as Var(X), but it’s more commonly denoted s<sup>2</sup> (the reason for this will become clearer shortly). The formula that we use to calculate the variance of a set of observations is as follows:</p>
 <div class="math notranslate nohighlight">
 \[Var(X) = \frac{1}{N-1}\sum_{i=1}^{N}(X_i-\bar{X})^2\]</div>
 <p>It is very similar to mean absolute deviation, except for two changes. Can you find in them in the equation?</p>
@@ -1051,90 +861,90 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <p>Calculating variance in R is really simple, since there is a built in function for the whole process: <code class="docutils literal notranslate"><span class="pre">var()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">intrusive_memories</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now, what does the variance actually <em>mean</em>? Descriptive statistics are supposed to describe things, after all, and right now the variance is kind of a gibberish number. Unfortunately, the reason why we haven’t given you the human-friendly interpretation of the variance is that there really isn’t one. This is the most serious problem with the variance. Although it has some elegant mathematical properties that suggest that it really is a fundamental quantity for expressing variation, it’s completely useless if you want to communicate with an actual human… variances are uninterpretable in terms of the original variable! All the numbers have been squared, and they don’t have units anymore. What counts as low or high variance? What does it mean for Age to vary at a quantity of 119? These questions don’t have good answers. However, because it is so ubiquitous in statistics at large, we still need to know how to calculate it. Basically, just know that higher variance means more data spread.</p>
+<p>Now, what does the variance actually <em>mean</em>? Descriptive statistics are supposed to describe things, after all, and right now the variance is kind of a gibberish number. Unfortunately, the reason why we haven’t given you the human-friendly interpretation of the variance is that there really isn’t one. This is the most serious problem with the variance. Although it has some elegant mathematical properties that help a lot for deriving other statistical tools, it by itself is pretty useless if you want to communicate with an actual human… variances are uninterpretable in terms of the original variable! All the numbers have been squared, and they don’t have units anymore. What counts as low or high variance? What does it mean for number of memories to vary at a quantity of 11? These questions don’t have good answers. However, because it is so ubiquitous in statistics at large, we still need to know how to calculate it. Basically, just know that higher variance means more data spread.</p>
 </section>
 <section id="standard-deviation">
-<h3>Standard deviation<a class="headerlink" href="#standard-deviation" title="Permalink to this headline">#</a></h3>
-<p>Suppose that you like the idea of using variance because of those nice mathematical properties which you totally trust us are real, but – since you’re a human and not a robot – you’d like to have a measure that is expressed in the same units as the data itself (i.e., years of age, not years-squared). What should you do? The solution to the problem is to take the square root of the variance, known as the <strong>standard deviation,</strong> also called the “root mean squared deviation”, or RMSD. This solves our problem fairly neatly: while nobody has a clue what “a variance of 119.16 age years-squared” really means, it’s much easier to understand “a standard deviation of 10.92 years old”, since it’s expressed in the original units. It is traditional to refer to the standard deviation of a sample of data as <code class="docutils literal notranslate"><span class="pre">s</span></code>, though “sd” and “std dev” are also used at times. Because the standard deviation is equal to the square root of the variance, you probably won’t be surprised to see that the formula is:</p>
+<h3>Standard deviation<a class="headerlink" href="#standard-deviation" title="Permalink to this heading">#</a></h3>
+<p>Suppose that you like the idea of using variance because of those nice mathematical properties which you totally trust us are real, but – since you’re a human and not a robot – you’d like to have a measure that is expressed in the same units as the data itself (i.e., number of memories, not memories-squared). What should you do? The solution to the problem is to take the square root of the variance, known as the <strong>standard deviation,</strong> also called the “root mean squared deviation”, or RMSD. This solves our problem fairly neatly: while nobody has a clue what “a variance of 11.28 memories-squared” really means, it’s much easier to understand “a standard deviation of 3.36 memories”, since it’s expressed in the original units. Interpret it like MAD, but using slightly different math. It is traditional to refer to the standard deviation of a sample of data as <code class="docutils literal notranslate"><span class="pre">s</span></code>, though “sd” and “std dev” are also used at times. Because the standard deviation is equal to the square root of the variance, you probably won’t be surprised to see that the formula is:</p>
 <div class="math notranslate nohighlight">
 \[s = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(X_i-\bar{X})^2}\]</div>
 <p>and the R function to calculate it is <code class="docutils literal notranslate"><span class="pre">sd()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the standard deviation of mindsetmatters$Age using sd(), and verify that it produces the same result </span>
-<span class="c1"># as the square root of var()</span>
-<span class="n">age_var</span> <span class="o">&lt;-</span> <span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">age_sd</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span> <span class="c1">#type your code here )</span>
-<span class="nf">sqrt</span><span class="p">(</span><span class="n">age_var</span><span class="p">)</span> <span class="o">==</span> <span class="n">age_sd</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the standard deviation of mindsetmatters$intrusive_memories using sd(), and verify </span>
+<span class="c1"># that it produces the same result as the square root of var()</span>
+<span class="n">memories_var</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="n">mindsetmatters</span><span class="o">$</span><span class="n">intrusive_memories</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">memories_sd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="w"> </span><span class="c1">#type your code here )</span>
+<span class="nf">sqrt</span><span class="p">(</span><span class="n">memores_var</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">memores_sd</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Besides telling us about a typical amonut of deviation in our data distribution, standard deviation can also tell us how much of the data deviates by that amount. In general, you should expect ~68% of the data to fall within 1 standard deviation away from the mean, ~95% of the data to fall within 2 standard deviations, and ~99.7% of the data to fall within 3 standard deviations. This rule tends to work pretty well most of the time, but it’s not exact: it’s actually calculated based on an assumption that the histogram is normally distributed. But even with skewed distributions, this rule is pretty close.</p>
+<p>Besides telling us about a typical amount of deviation in our data distribution, standard deviation can also tell us how much of the data deviates by that amount. In general, you should expect ~68% of the data to fall within 1 standard deviation away from the mean, ~95% of the data to fall within 2 standard deviations, and ~99.7% of the data to fall within 3 standard deviations. This rule tends to work pretty well most of the time, but it’s not exact: it’s actually calculated based on an assumption that the histogram is normally distributed. But even with skewed distributions, this rule is pretty close.</p>
 </section>
 <section id="which-measure-of-variability-to-use">
-<h3>Which measure of variability to use?<a class="headerlink" href="#which-measure-of-variability-to-use" title="Permalink to this headline">#</a></h3>
-<p>We’ve discussed quite a few measures of spread (range, IQR, AAD, variance, and standard deviation), and hinted at their strengths and weaknesses. Here’s a quick summary:</p>
+<h3>Which measure of variability to use?<a class="headerlink" href="#which-measure-of-variability-to-use" title="Permalink to this heading">#</a></h3>
+<p>We’ve discussed quite a few measures of spread (range, IQR, MAD, variance, and standard deviation), and hinted at their strengths and weaknesses. Here’s a quick summary:</p>
 <ul class="simple">
 <li><p>Range: Gives you the full spread of the data. It’s very vulnerable to outliers, and as a consequence it isn’t often used unless you have good reasons to care about the extremes in the data.</p></li>
 <li><p>Interquartile range: Tells you where the “middle half” of the data sits. It’s pretty robust, and complements the median nicely. This is used a lot.</p></li>
 <li><p>Mean absolute deviation: Tells you how far “on average” the observations are from the mean. It’s very interpretable, but has a few minor issues (not discussed here) that make it less attractive to statisticians than the standard deviation. Used sometimes, but not often.</p></li>
-<li><p>Variance: Tells you the average squared deviation from the mean. It’s mathematically elegant, and is probably the “right” way to describe variation around the mean, but it’s completely uninterpretable because it doesn’t use the same units as the data. Almost never used except as a mathematical tool; but it’s buried “under the hood” of a very large number of statistical tools.</p></li>
+<li><p>Variance: Tells you the average squared deviation from the mean. It’s mathematically elegant, and is probably the “right” way to describe variation around the mean, but it’s completely uninterpretable to humans because it doesn’t use the same units as the data. Almost never used except as a mathematical tool; but it’s buried “under the hood” of a very large number of statistical tools.</p></li>
 <li><p>Standard deviation: This is the square root of the variance. It’s fairly elegant mathematically, and it’s expressed in the same units as the data so it can be interpreted pretty well. In situations where the mean is the measure of central tendency, this is the default. This is by far the most popular measure of variation.</p></li>
 </ul>
 </section>
 </section>
 <section id="reporting-distribution-summaries">
-<h2>5.6 Reporting distribution summaries<a class="headerlink" href="#reporting-distribution-summaries" title="Permalink to this headline">#</a></h2>
-<p>Shape, spread, and central tendency are the first major statistical tools you’ve officially learned in order to describe sets of data. Congrats, you’re doing statistics! However, there’s not much point to doing all that work if you can’t share the results with other people.</p>
-<p>Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a class="reference external" href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in this chapter:</p>
+<h2>5.6 Reporting distribution summaries<a class="headerlink" href="#reporting-distribution-summaries" title="Permalink to this heading">#</a></h2>
+<p>Shape, central tendency, and spread are the first major statistical tools you’ve officially learned in order to describe sets of data. Congrats, you’re doing statistics! Specifically, you are doing what is called descriptive statistics - calculating numbers that describe a sample of data.</p>
+<p>However, there’s not much point to doing all that work if you can’t share the results with other people. Given all the words and equations we used to describe concepts like median or standard deviation, it can be a lot of work to write out descriptions of all of that when communicating about your results to other people. Thus, the psychology community has decided on some standards to use when writing about results in research reports. Psychologists use the <a class="reference external" href="https://www.pindling.org/Math/Statistics1/Textbook/Appendix/APA_Style.pdf">style guide</a> dictated by the American Psychological Association (“APA style”) for reporting statistics, and you should get in the practice of writing your results in this way as well. Here is what APA style has to say about how to share the kinds of statistics we learned in this chapter:</p>
 <section id="central-tendency">
-<h3>Central tendency<a class="headerlink" href="#central-tendency" title="Permalink to this headline">#</a></h3>
-<p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, as it isn’t used very frequently (if you do need to report it, just write it as <em>mode</em>). Reporting the mean in the body of some text may look like:</p>
+<h3>Central tendency<a class="headerlink" href="#central-tendency" title="Permalink to this heading">#</a></h3>
+<p>Measures of central tendency are reported in APA style using the italic symbol <em>M</em> for mean and <em>Mdn</em> for median. There is no symbol for mode, as it isn’t used very frequently (if you do need to report it, just write it as <em>Mode</em>). Reporting the mean in the body of some text may look like:</p>
 <p>“The pretest score for the group is lower (<em>M</em> = 20.5) than the posttest score (<em>M</em> = 65.3).”</p>
 <p>The full name of the statistics may also be used in describing it in a narrative text. Here is an example statement about the median of two categories:</p>
-<p>“The median study time for the treatment group was 4.5 hours, compared to a median of 2.5 for the control group.”</p>
+<p>“The median time for the treatment group was 4.5 hours, compared to a median of 2.5 for the control group.”</p>
 <p>When there are many means or medians to report (3+), putting those results into a table is more appropriate than cluttering your text with numbers. The table below shows the means of both pretest and posttest scores for male and females on an aptitude test. Notice that the statement about the mean being summarized in this particular table is presented in the table title.</p>
 <p><strong>Mean Scores for Pre- and Post-test by Gender</strong></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p></p></th>
-<th class="text-align:center head"><p>Pre-test</p></th>
-<th class="text-align:center head"><p>Post-test</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>Pre-test</p></th>
+<th class="head text-center"><p>Post-test</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>Female</p></td>
-<td class="text-align:center"><p>45.6</p></td>
-<td class="text-align:center"><p>72.8</p></td>
+<tr class="row-even"><td class="text-center"><p>Female</p></td>
+<td class="text-center"><p>45.6</p></td>
+<td class="text-center"><p>72.8</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Male</p></td>
-<td class="text-align:center"><p>50.2</p></td>
-<td class="text-align:center"><p>69.5</p></td>
+<tr class="row-odd"><td class="text-center"><p>Male</p></td>
+<td class="text-center"><p>50.2</p></td>
+<td class="text-center"><p>69.5</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="spread">
-<h3>Spread<a class="headerlink" href="#spread" title="Permalink to this headline">#</a></h3>
-<p>Descriptive statistics of variables involving all scales of measurement (except nominal) often report both measurements on central tendency and spread together. Usually, standard deviation is the spread score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in this chapter (e.g., IQR) or just the word of the measure. The results of a statistical summary may include the following texts about descriptive statistics:</p>
+<h3>Spread<a class="headerlink" href="#spread" title="Permalink to this heading">#</a></h3>
+<p>Descriptive statistics of variables involving interval or ordinal scales often report both measurements on central tendency and spread together. Usually, standard deviation is the spread score that is reported. In APA style, the symbol for the standard deviation is italic <em>SD</em> (in fact, all statistical abbreviations are italicized in APA style). Other measures of variability either use the abbreviations we’ve used in this chapter (e.g., IQR) or just the word of the measure. The results of a statistical summary may include the following texts about descriptive statistics:</p>
 <p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2).”</p>
 <p>When reporting the descriptive statistical summary of many groups, the results may be summarized in a table as well.</p>
 </section>
 <section id="id1">
-<h3>Shape<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Shape<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Generally distribution shapes aren’t reported (so if we ask you to talk about it in assignments, just use normal English phrasing). Instead, the third component that is normally reported in descriptive statistics is the sample size, <em>N</em>. This represents how many cases or observations are included in your estimation of central tendency and spread. So a complete reporting in APA style would look something like:</p>
 <p>“The pretest score for the group is lower (<em>M</em> = 20.5, <em>SD</em> = 4.1, <em>N</em> = 76) than the posttest score (<em>M</em> = 65.3, <em>SD</em> = 10.2, <em>N</em> = 74).”</p>
 <p>When describing the results of analyses you do in this course, make sure to use APA style reporting.</p>
 </section>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Define “distribution”</p></li>
@@ -1145,6 +955,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
 <li><p>Describe the differences between range, interquartile range, mean absolute deviation, variance, and standard deviation</p></li>
 <li><p>Report summaries in APA style</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Next: Chapter 6 - Variation in Multiple Variables</a></p>
 </section>
 </section>
 
@@ -1160,7 +971,7 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -1168,50 +979,116 @@ in the sample? As we’ll discuss in a later chapter, there’s a subtle distinc
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chapter-4.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter 4 - Organizing Data</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="chapter-6.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 6 - Variation in Multiple Variables</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-concept-of-a-distribution">5.1 The concept of a distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-distributions">5.2 Visualizing distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-plots">Density plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape">5.3 Shape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#center">5.4 Center</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">Mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">Median</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-measure-of-central-tendency-to-use">Which measure of central tendency to use?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variability">5.5 Variability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interquartile-range">Interquartile range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-deviation">Mean absolute deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation">Standard deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-measure-of-variability-to-use">Which measure of variability to use?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-distribution-summaries">5.6 Reporting distribution summaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-tendency">Central tendency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spread">Spread</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Shape</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

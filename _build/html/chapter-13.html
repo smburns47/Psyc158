@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 13 - Multivariable Models &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-13';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,469 +156,310 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-13.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-13.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-13.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-13.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-13.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-13.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-multiple-predictors">
-   13.1 Using multiple predictors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-multivariable-models">
-   13.2 Visualizing multivariable models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-a-multivariable-model">
-   13.3 Specifying a multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fitting-a-multivariable-model">
-   13.4 Fitting a multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpreting-the-parameter-estimates-in-a-multivariable-model">
-   13.5 Interpreting the parameter estimates in a multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understanding-error-in-the-multivariable-model">
-   13.6 Understanding error in the multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpreting-non-independent-predictors">
-   13.7 Interpreting non-independent predictors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predictors-of-different-data-types">
-   13.8 Predictors of different data types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#categorical-predictors">
-     Categorical predictors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ordinal-predictors">
-     Ordinal predictors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mixed-set-of-predictors">
-     Mixed set of predictors
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#beyond-two-predictors">
-   13.9 Beyond two predictors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#controlling-for-confounding-variables">
-   13.10 Controlling for confounding variables
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#historical-note-anova-test">
-   13.11 Historical note - ANOVA test
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 13 - Multivariable Models</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-multiple-predictors">
-   13.1 Using multiple predictors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-multivariable-models">
-   13.2 Visualizing multivariable models
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#specifying-a-multivariable-model">
-   13.3 Specifying a multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fitting-a-multivariable-model">
-   13.4 Fitting a multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpreting-the-parameter-estimates-in-a-multivariable-model">
-   13.5 Interpreting the parameter estimates in a multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#understanding-error-in-the-multivariable-model">
-   13.6 Understanding error in the multivariable model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interpreting-non-independent-predictors">
-   13.7 Interpreting non-independent predictors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predictors-of-different-data-types">
-   13.8 Predictors of different data types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#categorical-predictors">
-     Categorical predictors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ordinal-predictors">
-     Ordinal predictors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mixed-set-of-predictors">
-     Mixed set of predictors
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#beyond-two-predictors">
-   13.9 Beyond two predictors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#controlling-for-confounding-variables">
-   13.10 Controlling for confounding variables
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#historical-note-anova-test">
-   13.11 Historical note - ANOVA test
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 13 - Multivariable Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-multiple-predictors">13.1 Using multiple predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-multivariable-models">13.2 Visualizing multivariable models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-a-multivariable-model">13.3 Specifying a multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-multivariable-model">13.4 Fitting a multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-parameter-estimates-in-a-multivariable-model">13.5 Interpreting the parameter estimates in a multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-error-in-the-multivariable-model">13.6 Understanding error in the multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-non-independent-predictors">13.7 Interpreting non-independent predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictors-of-different-data-types">13.8 Predictors of different data types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-predictors">Categorical predictors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinal-predictors">Ordinal predictors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-set-of-predictors">Mixed set of predictors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-two-predictors">13.9 Beyond two predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-for-confounding-variables">13.10 Controlling for confounding variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-note-anova-test">13.11 Historical note - ANOVA test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Previous: Chapter 12 - Quantitative Predictor Models</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
@@ -586,15 +470,15 @@ title="Print to PDF"
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">GSS</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
+<span class="n">GSS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-13-multivariable-models">
-<h1>Chapter 13 - Multivariable Models<a class="headerlink" href="#chapter-13-multivariable-models" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 13 - Multivariable Models<a class="headerlink" href="#chapter-13-multivariable-models" title="Permalink to this heading">#</a></h1>
 <section id="using-multiple-predictors">
-<h2>13.1 Using multiple predictors<a class="headerlink" href="#using-multiple-predictors" title="Permalink to this headline">#</a></h2>
+<h2>13.1 Using multiple predictors<a class="headerlink" href="#using-multiple-predictors" title="Permalink to this heading">#</a></h2>
 <p>You have now learned to specify models with single explanatory variables, either categorical or continous. We saw how adding variables like this can improve prediction accuracy beyond that of the empty model, getting us closer to understanding the underlying data generation process.</p>
 <p>It stands to reason that if one explanatory variable can help us, maybe more than one can help us even more. Afterall, most real world processes aren’t so simple as being created by one input, and in our models in the previous chapter it looked like there was still plenty of unexplained variance to account for. So let’s start building even more complex models, with multiple variables - <strong>multivariable models</strong> or <strong>multiple regression</strong>.</p>
 <p>First, we’ll introduce a new dataset <code class="docutils literal notranslate"><span class="pre">GSS</span></code>. This is a subset of the <a class="reference external" href="https://gss.norc.org/">General Social Survey</a>, a US-wide yearly survey administered by the University of Chicago to assess national demographics and attitudes. We’ll check out the variables that are included in this data file:</p>
@@ -613,28 +497,28 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span> <span class="c1">#args are dataframe to sample from, and number of observations to sample</span>
+<span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="c1">#args are dataframe to sample from, and number of observations to sample</span>
 
 <span class="c1">#removing NA observations</span>
 <span class="c1">#does it make sense what this filtering code is doing? Check out chapter 4 for a refresher</span>
-<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="p">)</span> <span class="o">&amp;</span> 
-                    <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">highest_year_school_completed_father</span><span class="p">)</span> <span class="o">&amp;</span>
-                    <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">number_of_brothers_and_sisters</span><span class="p">))</span>
+<span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span>
+<span class="w">                    </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">highest_year_school_completed_father</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span>
+<span class="w">                    </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">number_of_brothers_and_sisters</span><span class="p">))</span>
 
 <span class="c1">#Make a model that predicts highest years of schooling from father&#39;s years of education.</span>
 <span class="c1">#Look at the variable list above to get exact variable names and use GSS_subset as the data.</span>
-<span class="n">father_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="c1">#FINISH CODE HERE, data = GSS_subset)</span>
-    
+<span class="n">father_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="c1">#FINISH CODE HERE, data = GSS_subset)</span>
+<span class="w">    </span>
 <span class="c1">#Make a model that predicts highest years of schooling from number of siblings    </span>
-<span class="n">sibling_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="c1">#FINISH CODE HERE, data = GSS_subset)</span>
+<span class="n">sibling_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="c1">#FINISH CODE HERE, data = GSS_subset)</span>
 
 <span class="c1">#Plotting father model</span>
-<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">gf_lm</span><span class="p">()</span>    
-    
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">gf_lm</span><span class="p">()</span><span class="w">    </span>
+<span class="w">    </span>
 <span class="c1">#Plotting sibling_model    </span>
-<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-    <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">number_of_brothers_and_sisters</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -655,13 +539,13 @@ title="Print to PDF"
 \[{Education} = {Father's Education} + {Siblings} + {Error}\]</div>
 </section>
 <section id="visualizing-multivariable-models">
-<h2>13.2 Visualizing multivariable models<a class="headerlink" href="#visualizing-multivariable-models" title="Permalink to this headline">#</a></h2>
+<h2>13.2 Visualizing multivariable models<a class="headerlink" href="#visualizing-multivariable-models" title="Permalink to this heading">#</a></h2>
 <p>Let’s explore this idea with some visualizations. We will start with a graph of <code class="docutils literal notranslate"><span class="pre">father_model</span></code>, plotting <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> by <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>. We will then explore some ways we could visualize the effect of <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> <em>above and beyond</em> that of <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plotting father model</span>
-<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span>
-        <span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span> 
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span>
+<span class="w">        </span><span class="n">size</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -670,8 +554,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add in the color argument to the gf_jitter() function</span>
-<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> 
-          <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -681,11 +565,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Save the residuals of father_model to a residual variable</span>
-<span class="n">GSS_subset</span><span class="o">$</span><span class="n">father_resid</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">father_resid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
 
 <span class="c1">#plotting these residuals against number of siblings</span>
-<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">father_resid</span> <span class="o">~</span> <span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> 
-          <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">father_resid</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">number_of_brothers_and_sisters</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -694,7 +578,7 @@ title="Print to PDF"
 <p>These patterns are a clue that adding <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> into <code class="docutils literal notranslate"><span class="pre">father_model</span></code> will explain additional variation in  <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> above and beyond that explained by just their father’s education alone.</p>
 </section>
 <section id="specifying-a-multivariable-model">
-<h2>13.3 Specifying a multivariable model<a class="headerlink" href="#specifying-a-multivariable-model" title="Permalink to this headline">#</a></h2>
+<h2>13.3 Specifying a multivariable model<a class="headerlink" href="#specifying-a-multivariable-model" title="Permalink to this heading">#</a></h2>
 <p>We can see from visualizations of the data that a model that includes both <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> might help us make better predictions of <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> than would a model including only one of these variables.</p>
 <p>In the case of a one-variable model, we learned how to write an equation that represents this statistical model:</p>
 <div class="math notranslate nohighlight">
@@ -708,7 +592,7 @@ title="Print to PDF"
 <p>Notice, also, that with the additional X<sub>2i</sub> we also add a new coefficient or parameter estimate: b<sub>2</sub>. We said before that the empty model is a one-parameter model because we are estimating only one parameter, b<sub>0</sub>. A single-predictor model (e.g., <code class="docutils literal notranslate"><span class="pre">father_model</span></code>) is a two-parameter model: it has both b<sub>0</sub> and b<sub>1</sub>. This multivariable model is a three-parameter model: b<sub>0</sub>, b<sub>1</sub>, and b<sub>2</sub>.</p>
 </section>
 <section id="fitting-a-multivariable-model">
-<h2>13.4 Fitting a multivariable model<a class="headerlink" href="#fitting-a-multivariable-model" title="Permalink to this headline">#</a></h2>
+<h2>13.4 Fitting a multivariable model<a class="headerlink" href="#fitting-a-multivariable-model" title="Permalink to this heading">#</a></h2>
 <p>Having specified the skeletal structure of the model, we next want to fit the model, which means finding the best fitting parameter estimates (i.e., the values of b<sub>0</sub>, b<sub>1</sub>, and b<sub>2</sub>). By “best fitting” we mean the parameter estimates that reduce error as much as possible around the model predictions.</p>
 <p>Although there are several mathematical ways to do this, you can imagine the computer trying every possible combination of three numbers to find the set that results in the lowest Sum of Squares (SS) Error.</p>
 <p>To specify the formula to give R to use, remember that the formula dictates the kind of relationship all the variables have. Since we’re thinking <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> varies as a function of both <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>, our formula looks like:</p>
@@ -717,7 +601,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># use lm() to find the best fitting coefficients for our multivariate model and output the coefficient values</span>
-<span class="n">full_model</span> <span class="o">&lt;-</span> <span class="c1">#YOUR CODE HERE</span>
+<span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
@@ -727,14 +611,14 @@ title="Print to PDF"
 \[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980X_{2i} \]</div>
 </section>
 <section id="interpreting-the-parameter-estimates-in-a-multivariable-model">
-<h2>13.5 Interpreting the parameter estimates in a multivariable model<a class="headerlink" href="#interpreting-the-parameter-estimates-in-a-multivariable-model" title="Permalink to this headline">#</a></h2>
+<h2>13.5 Interpreting the parameter estimates in a multivariable model<a class="headerlink" href="#interpreting-the-parameter-estimates-in-a-multivariable-model" title="Permalink to this heading">#</a></h2>
 <p>We use the parameter estimates to make predictions in the same way as we did before, but this time we adjust our prediction based on two variables: how much education their father received, and the number of siblings they have. Now let’s try to understand how the variables in the multivariate model are coded in order to generate predictions.</p>
 <p>The equation form of the statistical model generates a prediction of someone’s years of education by starting with the intercept (b<sub>0</sub>, which is 10.3742), then adding 0.3424 years for each year of their father’s education, and subtracting 0.1980 for each additional sibling they have. This means that for someone who’s father received no formal schooling and who had no siblings (X<sub>1</sub>=0 and X<sub>2</sub>=0), we’d predict that they’d get to about the 10th grade. For every year their father had schooling, we’d predict an additional third of a year, but for every additional sibling they had, we’d predict a fifth of a year less.</p>
 <p>How should we talk about the <em>meaning</em> of these parameters then, to describe these predictions? To build this understanding, let’s do some funky visualizations for a second. First, write code to save our multivariable model as <code class="docutils literal notranslate"><span class="pre">full_model</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the multivariable model here</span>
-<span class="n">full_model</span> <span class="o">&lt;-</span> 
+<span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +626,7 @@ title="Print to PDF"
 <p>We will now save the predictions from this model to <code class="docutils literal notranslate"><span class="pre">GSS_subset</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">education_predicted</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">education_predicted</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -750,10 +634,10 @@ title="Print to PDF"
 <p>And now the funky part. We will plot these predictions against <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code>, but ONLY for datapoints that had 0 or 7 siblings:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subsetsubset</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">number_of_brothers_and_sisters</span> <span class="o">==</span> <span class="m">0</span> <span class="o">|</span>
-                      <span class="n">number_of_brothers_and_sisters</span> <span class="o">==</span> <span class="m">7</span><span class="p">)</span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">education_predicted</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span><span class="p">,</span> 
-          <span class="n">data</span> <span class="o">=</span> <span class="n">subsetsubset</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subsetsubset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="n">number_of_brothers_and_sisters</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span>
+<span class="w">                      </span><span class="n">number_of_brothers_and_sisters</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">7</span><span class="p">)</span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">education_predicted</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">subsetsubset</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -785,7 +669,7 @@ title="Print to PDF"
 <p>Because of the partial prediction nature of these parameters - b<sub>1</sub> representing the effect of X<sub>1</sub> when X<sub>2</sub> is held constant - we call these <strong>partial regression coefficients</strong>. It only makes sense to interpret them in the context of the other coefficients.</p>
 </section>
 <section id="understanding-error-in-the-multivariable-model">
-<h2>13.6 Understanding error in the multivariable model<a class="headerlink" href="#understanding-error-in-the-multivariable-model" title="Permalink to this headline">#</a></h2>
+<h2>13.6 Understanding error in the multivariable model<a class="headerlink" href="#understanding-error-in-the-multivariable-model" title="Permalink to this heading">#</a></h2>
 <p>In most respects, concepts developed for the single-predictor models will apply to the multi-predictor models. In all cases, the model generates a predicted value on the outcome variable for each observation in the data frame. Subtracting the model prediction from the observed value will give us a residual, which tells us how far off the model prediction is (positive or negative) for each observation.</p>
 <p>If we square and then total up all the residuals we will get the SS<sub>Error</sub> for the model, which gives us a sense of how well the model fits the data. Using this SS<sub>Error</sub>, we can then compare the multi-predictor model to other models, starting with the empty model. To assess how well a model fits the data we will continually ask: How much does one model reduce error over another?</p>
 <p>To begin to answer this question, let’s start by comparing the sum of squared error from our new model to the error from the empty model.</p>
@@ -801,7 +685,7 @@ title="Print to PDF"
 <p>As before, SS<sub>Total</sub> = SS<sub>Model</sub> + SS<sub>Error</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">182.376</span> <span class="o">+</span> <span class="m">388.286</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">182.376</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">388.286</span>
 </pre></div>
 </div>
 </div>
@@ -810,7 +694,7 @@ title="Print to PDF"
 <p>SS<sub>Error</sub> is the generic name we give to the sum of the squared residuals leftover after fitting a complex model (by “complex” we just mean a model that is more complex than the empty model). Because SS<sub>Total</sub> = SS<sub>Model</sub> + SS<sub>Error</sub>, the lower SS<sub>Error</sub> is, the higher SS<sub>Model</sub> will be, meaning that more of the variation has been explained by the model, which is the same as saying that more of the error has been reduced by the model. We can apply the concepts of SS<sub>Model</sub> and SS<sub>Error</sub> to any model, from those with just a single predictor all the way to those with many predictors.</p>
 </section>
 <section id="interpreting-non-independent-predictors">
-<h2>13.7 Interpreting non-independent predictors<a class="headerlink" href="#interpreting-non-independent-predictors" title="Permalink to this headline">#</a></h2>
+<h2>13.7 Interpreting non-independent predictors<a class="headerlink" href="#interpreting-non-independent-predictors" title="Permalink to this heading">#</a></h2>
 <p>Earlier we fit the coefficients of the full multivariable model as:</p>
 <div class="math notranslate nohighlight">
 \[ \hat{Y_i} = 10.3742 + 0.3424X_{1i} - 0.1980X_{2i} \]</div>
@@ -827,8 +711,8 @@ title="Print to PDF"
 <p>This phenomenon happens because of <em>independence</em> of the two predictor variables. Or rather, the fact that they are <em>not</em> independent from each other. These two variables themselves are related to each other, as we can see in this scatter plot of father’s education and number of siblings:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_school_completed_father</span> <span class="o">~</span> <span class="n">number_of_brothers_and_sisters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> 
-          <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_jitter</span><span class="p">(</span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">number_of_brothers_and_sisters</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -836,7 +720,7 @@ title="Print to PDF"
 <p>We can also see this by investigating the correlation between the variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_brothers_and_sisters</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_brothers_and_sisters</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -861,16 +745,16 @@ title="Print to PDF"
 <p>Region B exists because father’s education and number of siblings are related. Parameter estimates in the model thus have to be adjusted to account for this fact and enable correct calculation of Y. Also, the sum of squares must be adjusted. The SS<sub>Model</sub> for the multivariate model cannot be found by simply adding together the SS<sub>Model</sub> numbers that result from fitting from the two single-predictor models separately (<code class="docutils literal notranslate"><span class="pre">father_model</span></code> and <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code>). If you added them separately you would be counting region B twice, and thus would overestimate SS<sub>Model</sub> for the multivariable model. For the same reason, we need to look at PRE for the full model to judge how much total variation in <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> we can account for with both <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> together.</p>
 </section>
 <section id="predictors-of-different-data-types">
-<h2>13.8 Predictors of different data types<a class="headerlink" href="#predictors-of-different-data-types" title="Permalink to this headline">#</a></h2>
+<h2>13.8 Predictors of different data types<a class="headerlink" href="#predictors-of-different-data-types" title="Permalink to this heading">#</a></h2>
 <p>The multivariate model we built above is constructed with two continuous variables, <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code>. But when using the general linear model, we aren’t limited to just this data type. It’s flexible that way.</p>
 <section id="categorical-predictors">
-<h3>Categorical predictors<a class="headerlink" href="#categorical-predictors" title="Permalink to this headline">#</a></h3>
+<h3>Categorical predictors<a class="headerlink" href="#categorical-predictors" title="Permalink to this heading">#</a></h3>
 <p>Let’s say we instead want to model <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with the variables <code class="docutils literal notranslate"><span class="pre">respondents_sex</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code>. Use <code class="docutils literal notranslate"><span class="pre">str()</span></code> to check out the data types of these variables in particular:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#resetting GSS_subset, since we deleted some rows earlier</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">GSS_subset</span> <span class="o">&lt;-</span> <span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span> 
+<span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span>
 
 <span class="c1">#check variable type of respondents_sex</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">respondents_sex</span><span class="p">)</span>
@@ -933,7 +817,7 @@ title="Print to PDF"
 <p>When the model is automatically built out of a multi-level single variable like <code class="docutils literal notranslate"><span class="pre">race_of_respondent</span></code>, it’s not possible for a datapoint to have an X<sub>1</sub> of 1 <em>and</em> an X<sub>2</sub> of 1. That would mean they are both “Other” and “White”, and this variable is set up such that someone can only be one category. But you could imagine allowing participants to select multiple cateogries for themselves, in which case you could have a value of 1 on multiple categorical variables.</p>
 </section>
 <section id="ordinal-predictors">
-<h3>Ordinal predictors<a class="headerlink" href="#ordinal-predictors" title="Permalink to this headline">#</a></h3>
+<h3>Ordinal predictors<a class="headerlink" href="#ordinal-predictors" title="Permalink to this heading">#</a></h3>
 <p>We haven’t talked much about ordinal data in a while, but it is a common way of representing variables - Likert scales (e.g, ratings from 1 to 5) are used very frequently in psychology. In this very dataset there are multiple instances of ordinal variables.</p>
 <p>For the purposes of regression, they’re a bit of a hybrid between categorical predictors and continuous predictors. They’re ordered, such that a one-unit increase in this variable means you’re getting “bigger” or “larger” on the variable, like with a continuous variable. But there’s only a few response options, so predicting an outcome value for X = 4.3 doesn’t make sense when participants only have the option of responding 1, 2, 3, 4, or 5 (i.e., 4.3 is not a real possible input).</p>
 <p>So how should you interpret the value of a coefficient when using an ordinal variable as a predictor? The answer is maybe unsatisfactory, but it depends on how you <em>want</em> to interpret it. In other words, do you care about the effect of having a particular value on the scale? Or do you care about the effect of just moving up on the scale, no matter the specific scale value?</p>
@@ -942,10 +826,10 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#number_of_children was saves as a character type because one response option is &quot;8 or more&quot; - </span>
 <span class="c1">#always check your data types before modeling!</span>
-<span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_children</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_children</span><span class="p">)</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_children</span><span class="p">)</span>
 
-<span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">general_happiness</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">general_happiness</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="o">~</span><span class="n">general_happiness</span><span class="p">)</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">general_happiness</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">gf_boxplot</span><span class="p">(</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">general_happiness</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">general_happiness</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -956,12 +840,12 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#converting general_happiness to new labels, and as numeric</span>
-<span class="n">GSS_subset</span><span class="o">$</span><span class="n">happiness_num</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">recode</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">general_happiness</span><span class="p">,</span> <span class="s">&quot;Not too happy&quot;</span> <span class="o">=</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
-                                  <span class="s">&quot;Pretty happy&quot;</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> 
-                                  <span class="s">&quot;Very happy&quot;</span> <span class="o">=</span> <span class="s">&quot;2&quot;</span><span class="p">))</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">happiness_num</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">recode</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">general_happiness</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Not too happy&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">                                  </span><span class="s">&quot;Pretty happy&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                  </span><span class="s">&quot;Very happy&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">))</span>
 
-<span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">happiness_num</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">happiness_num</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">gf_lm</span><span class="p">()</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">happiness_num</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">happiness_num</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -970,8 +854,8 @@ title="Print to PDF"
 <p>There’s also a difference in proportional reduction of error between these different model versions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">categ_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">general_happiness</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="n">continuous_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span> <span class="o">~</span> <span class="n">happiness_num</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">categ_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">general_happiness</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="n">continuous_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">number_of_children</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">happiness_num</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
 
 <span class="nf">supernova</span><span class="p">(</span><span class="n">categ_model</span><span class="p">)</span>
 <span class="nf">supernova</span><span class="p">(</span><span class="n">continuous_model</span><span class="p">)</span>
@@ -983,11 +867,11 @@ title="Print to PDF"
 <p>Whichever method you choose for ordinal predictors will depend on how you want to use your statistical model. But it will have consequences on how you interpret the coefficients and how well you make predictions, so think deeply about your reasons before you start modeling. In general, analysts tend to treat ordinal variables with 5+ levels as continuous, and ordinal variables with 4 or fewer levels as categorical. But there are also exceptions, and this is something that most analysts don’t actually put a lot of thought into. Try to be better than that!</p>
 </section>
 <section id="mixed-set-of-predictors">
-<h3>Mixed set of predictors<a class="headerlink" href="#mixed-set-of-predictors" title="Permalink to this headline">#</a></h3>
+<h3>Mixed set of predictors<a class="headerlink" href="#mixed-set-of-predictors" title="Permalink to this heading">#</a></h3>
 <p>Due to the flexibility of the general linear model, it is also possible to combine categorical and continuous predictors into one model. Let’s predict <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with <code class="docutils literal notranslate"><span class="pre">highest_year_school_completed_father</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span> <span class="o">+</span> <span class="n">born_in_us</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">GSS_subset</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">born_in_us</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -996,7 +880,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="beyond-two-predictors">
-<h2>13.9 Beyond two predictors<a class="headerlink" href="#beyond-two-predictors" title="Permalink to this headline">#</a></h2>
+<h2>13.9 Beyond two predictors<a class="headerlink" href="#beyond-two-predictors" title="Permalink to this heading">#</a></h2>
 <p>Since the general linear model allows us to account for an additional predictor via addition, it assuredly allows us to add even more than two.</p>
 <p>When prediction is our main goal, adding as many predictors as possible can be helpful. In general, the more parameters we add to a model, the less leftover error there is after subtracting out the model. Because we have said, many times, that the goal of the statistician is to reduce error, this seems like a good thing. And it is, but only to a point.</p>
 <p>Let’s do a little thought experiment. You know already that the three-parameter model <code class="docutils literal notranslate"><span class="pre">full_model</span></code> explained more variation than either of the two-parameter models <code class="docutils literal notranslate"><span class="pre">father_model</span></code> or <code class="docutils literal notranslate"><span class="pre">sibling_model</span></code>. Something with four parameters would explain more than the three-parameter model. And so on. What would happen if we kept adding variables until there were as many predictors as datapoints?</p>
@@ -1007,7 +891,7 @@ title="Print to PDF"
 <p>There is a quote attributed to Einstein that sums up things pretty well: “Everything should be made as simple as possible, but not simpler.” A certain amount of complexity is required in our models just because of complexity in the world. But if we can simplify our model so as to help us make sense of complexity, and make predictions that are “good enough,” that is a good thing.</p>
 </section>
 <section id="controlling-for-confounding-variables">
-<h2>13.10 Controlling for confounding variables<a class="headerlink" href="#controlling-for-confounding-variables" title="Permalink to this headline">#</a></h2>
+<h2>13.10 Controlling for confounding variables<a class="headerlink" href="#controlling-for-confounding-variables" title="Permalink to this heading">#</a></h2>
 <p>When one’s goal is to make accurate predictions about an outcome variable, adding multiple predictors to a regression equation buys us more variance explained and reduces error. In this case it doesn’t really matter how much variance each predictor individually accounts for, you’re just interested in the explanatory power of the entire model. This is a common goal in data applications like business analytics or machine learning.</p>
 <p>But as psychologists, often we are curious about <em>specific</em> predictors and how they relate to an outcome variable. I.e, we want to know how one’s parents’ education level relates to a person’s own education level. This doesn’t imply that we think <em>only</em> parental education influences own education - we can recognize the whole system is complex. But we want to characterize that particular relationship and understand that specific part of the data generation process.</p>
 <p>Under this goal multiple regression is still done, but with specific reasons. In the prediction use case, you add as many predictors as you reasonably can to the model to try to maximize both your in-sample and out-of-sample prediction accuracy. In the use case for understanding specific predictors, you want to make sure that there aren’t other variables that better explain any association you find between your predictor of interest and your outcome. As we saw previously, predictors that are correlated with each other share some variance in the outcome variable. So if you think some variable X is associated with an outcome Y, you want to make sure this association isn’t just because of some other variable C that causes both X and Y. In this case, C is what’s known as a <strong>confound</strong> - a variable not of interest, but which is a part of the data generation process and influences how you can interpret the effect of X on Y.</p>
@@ -1027,10 +911,10 @@ title="Print to PDF"
 <p>It looks like father’s education explains 34.48% of the variance in own education, such that for every 1-year increase in father’s education, there is an expected 0.3882 year-increase in own education. But could mother’s education explain this association? First we can check whether it is related to father’s education and to a participants’ own education, each separately:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span> 
-   <span class="n">use</span><span class="o">=</span><span class="s">&quot;complete.obs&quot;</span><span class="p">)</span> <span class="c1">#dealing with NAs</span>
-<span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span> <span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span> 
-   <span class="n">use</span><span class="o">=</span><span class="s">&quot;complete.obs&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="n">use</span><span class="o">=</span><span class="s">&quot;complete.obs&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">#dealing with NAs</span>
+<span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span>
+<span class="w">   </span><span class="n">use</span><span class="o">=</span><span class="s">&quot;complete.obs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1038,8 +922,8 @@ title="Print to PDF"
 <p>Mother’s education is quite correlated with both, so there’s a real possibility that it actually accounts for the relationship between father’s education and own education! Perhaps the variance that father’s education explains is <em>actually</em> explained by mother’s education. So, let’s build a model to examine the effect of father’s education, <em>controlling for</em> mother’s education:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">bothparents_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span> <span class="o">~</span> <span class="n">highest_year_school_completed_father</span> <span class="o">+</span> 
-                       <span class="n">highest_year_school_completed_mother</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">GSS_subset</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">bothparents_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                       </span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">)</span>
 
 <span class="n">bothparents_model</span>
 <span class="nf">supernova</span><span class="p">(</span><span class="n">bothparents_model</span><span class="p">)</span>
@@ -1053,7 +937,7 @@ title="Print to PDF"
 <p><strong>2022 NOTE TO SELF: Add explaination of good and bad predictors, how to do partial residual plot for visualizing effect of interest controlling for others</strong></p>
 </section>
 <section id="historical-note-anova-test">
-<h2>13.11 Historical note - ANOVA test<a class="headerlink" href="#historical-note-anova-test" title="Permalink to this headline">#</a></h2>
+<h2>13.11 Historical note - ANOVA test<a class="headerlink" href="#historical-note-anova-test" title="Permalink to this heading">#</a></h2>
 <p>Just as t-tests were traditionally used to do similar things to the empty model and two-group model, another historical class of statistical tests is called <strong>ANOVAs</strong>. This is actually where the ANOVA name comes from for the table we’ve been using.</p>
 <p>ANOVAs work by comparing the amount of variance <em>within</em> a group of data points to the amount of variance <em>between</em> different groups of data points. In the example we worked with earlier for predicting <code class="docutils literal notranslate"><span class="pre">highest_year_of_school_completed</span></code> with <code class="docutils literal notranslate"><span class="pre">race_of_respondent</span></code>, an ANOVA test would compare the differences in education among people within each racial group to the differences in education among people of different racial groups. It then asks how statistically likely it is that data of different groups actually come from the same distribution. These are typically done with categorical predictor variables, but some versions include a mixed-predictor approach. Below is a summary of each common type of ANOVA:</p>
 <ul class="simple">
@@ -1064,7 +948,7 @@ title="Print to PDF"
 <p>For an ANCOVA, we can fit the same formula above but with studying as an additional predictor variable: <code class="docutils literal notranslate"><span class="pre">GPA</span> <span class="pre">~</span> <span class="pre">major</span> <span class="pre">+</span> <span class="pre">studytime</span></code>. This would make a statistical equation of the form: Y<sub>i</sub> = b<sub>0</sub> + b<sub>1</sub>X<sub>1i</sub> + b<sub>2</sub>X<sub>2i</sub> + b<sub>3</sub>X<sub>3i</sub> + e<sub>i</sub>, where the additional X<sub>3</sub> is how much time someone studies and b<sub>3</sub> is the increase in GPA due to a 1-unit increase in study time, over and above the effect of major.</p>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Specify the equation form of a multivariable model and fit it in R</p></li>
@@ -1074,6 +958,7 @@ title="Print to PDF"
 <li><p>Control for confound variables</p></li>
 <li><p>Identify which form of the GLM to use when you see a one-way ANOVA or ANCOVA</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Next: Chapter 14 - Nonlinear Models</a></p>
 </section>
 </section>
 
@@ -1089,7 +974,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -1097,36 +982,103 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-multiple-predictors">13.1 Using multiple predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-multivariable-models">13.2 Visualizing multivariable models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-a-multivariable-model">13.3 Specifying a multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-multivariable-model">13.4 Fitting a multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-parameter-estimates-in-a-multivariable-model">13.5 Interpreting the parameter estimates in a multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-error-in-the-multivariable-model">13.6 Understanding error in the multivariable model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-non-independent-predictors">13.7 Interpreting non-independent predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictors-of-different-data-types">13.8 Predictors of different data types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-predictors">Categorical predictors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinal-predictors">Ordinal predictors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-set-of-predictors">Mixed set of predictors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-two-predictors">13.9 Beyond two predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-for-confounding-variables">13.10 Controlling for confounding variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-note-anova-test">13.11 Historical note - ANOVA test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Chapter 17 - Significance Testing &#8212; Pomona Psych 158 Online Textbook</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,59 +63,91 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-17';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Pomona Psych 158 Online Textbook</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,508 +156,329 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 1 Describing Data
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">
-   https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-2.html">
-   Chapter 2 - Statistical Reasoning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-3.html">
-   Chapter 3 - What are Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-4.html">
-   Chapter 4 - Organizing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-5.html">
-   Chapter 5 - Describing Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 2 - Modeling Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-6.html">
-   Chapter 6 - Variation in Multiple Variables
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Unit 3 - Evaluating Models
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapter-7.html">
-   Chapter 7 - Principles of Data Visualization
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-17.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/chapter-17.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-17.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter-17.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/smburns47/Psyc158"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fchapter-17.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/chapter-17.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-null-hypothesis">
-   17.1 The null hypothesis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distribution-of-an-estimate">
-   17.2 Sampling distribution of an estimate
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#significance-testing">
-   17.3 Significance testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-p-value">
-   17.4 The p-value
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-t-distribution">
-   17.5 The t-distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#things-that-affect-the-p-value">
-   17.5 Things that affect the p-value
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-limits-of-significance-testing">
-   17.6 The limits of significance testing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-i-and-type-ii-error">
-     Type I and Type II error
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#can-only-reject-the-null-not-prove-it">
-     Can only reject the null, not prove it
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#significance-is-a-binary-decision">
-     Significance is a binary decision
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probability-of-data-not-population">
-     Probability of data, not population
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-values-and-sample-size">
-     P-values and sample size
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#significant-effects-in-practice">
-   17.7 Significant effects in practice
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effects-in-the-simple-model">
-     Effects in the simple model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effects-in-the-multivariable-model">
-     Effects in the multivariable model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effects-in-interaction-models">
-     Effects in interaction models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 17 - Significance Testing</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-null-hypothesis">
-   17.1 The null hypothesis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distribution-of-an-estimate">
-   17.2 Sampling distribution of an estimate
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#significance-testing">
-   17.3 Significance testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-p-value">
-   17.4 The p-value
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-t-distribution">
-   17.5 The t-distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#things-that-affect-the-p-value">
-   17.5 Things that affect the p-value
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-limits-of-significance-testing">
-   17.6 The limits of significance testing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-i-and-type-ii-error">
-     Type I and Type II error
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#can-only-reject-the-null-not-prove-it">
-     Can only reject the null, not prove it
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#significance-is-a-binary-decision">
-     Significance is a binary decision
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#probability-of-data-not-population">
-     Probability of data, not population
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-values-and-sample-size">
-     P-values and sample size
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#significant-effects-in-practice">
-   17.7 Significant effects in practice
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effects-in-the-simple-model">
-     Effects in the simple model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effects-in-the-multivariable-model">
-     Effects in the multivariable model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effects-in-interaction-models">
-     Effects in interaction models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-summary">
-   Chapter summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 17 - Significance Testing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-hypothesis">17.1 The null hypothesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distribution-of-an-estimate">17.2 Sampling distribution of an estimate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing">17.3 Significance testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">17.4 The p-value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-t-distribution">17.5 The t-distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-that-affect-the-p-value">17.5 Things that affect the p-value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-significance-testing">17.6 The limits of significance testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-i-and-type-ii-error">Type I and Type II error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-only-reject-the-null-not-prove-it">Can only reject the null, not prove it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-is-a-binary-decision">Significance is a binary decision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-data-not-population">Probability of data, not population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-values-and-sample-size">P-values and sample size</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-effects-in-practice">17.7 Significant effects in practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-simple-model">Effects in the simple model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-multivariable-model">Effects in the multivariable model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-interaction-models">Effects in interaction models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="cell docutils container">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Previous: Chapter 16 - Estimating Populations</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">fingers</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-17-significance-testing">
-<h1>Chapter 17 - Significance Testing<a class="headerlink" href="#chapter-17-significance-testing" title="Permalink to this headline">#</a></h1>
+<h1>Chapter 17 - Significance Testing<a class="headerlink" href="#chapter-17-significance-testing" title="Permalink to this heading">#</a></h1>
 <section id="the-null-hypothesis">
-<h2>17.1 The null hypothesis<a class="headerlink" href="#the-null-hypothesis" title="Permalink to this headline">#</a></h2>
+<h2>17.1 The null hypothesis<a class="headerlink" href="#the-null-hypothesis" title="Permalink to this heading">#</a></h2>
 <p>In the course so far we have discussed, is somewhat vague terms, how we use statistics to test pre-existing hypotheses about data. So far, our hypotheses have only been as specific as “a predictor explains some of the variance in an outcome.” But we can define a more formal hypothesis than that. The strictest definition of a hypothesis is a pre-defined statement about what value a model coefficient will have, once we fit the model. Once we have a formal hypothesis about what the population parameter is, we can judge whether or not we think a sample of data likely came from that population or not.</p>
 <p>For example, rather than hypothesizing generally that someone’s height is related to their thumb length, a formal hypothesis would be “the effect of height for predicting thumb length is 0.9.” In Frequentist statistics, we assume there is one population parameter from which random samples are derived. So we can collect some data, fit a model, build a confidence interval, and check if the estimated interval includes our hypothesized 0.9 parameter. If it does, then we would say the data is consistent with the proposed population - some data like this is likely to be generated by a population with a coefficient of 0.9. However if 0.9 is not in the confidence interval, we would be very surprised to hear that this data was indeed generated by this parameter. Only a very few rare samples would look like ours, if 0.9 were the true coefficient. We would think it more likely that a different sort of population generated the data.</p>
 <p>Try thinking of some formal hypotheses for other research questions. E.g., predicting someone’s resting heart rate based on how many hours during the week they spend in the gym. What do you think the specific value of β<sub>1</sub> would be in a model such as heart rate ~ gym hours?</p>
@@ -624,7 +488,7 @@ title="Print to PDF"
 <p>To answer this question, we turn to a concept called <strong>statistical significance</strong>.</p>
 </section>
 <section id="sampling-distribution-of-an-estimate">
-<h2>17.2 Sampling distribution of an estimate<a class="headerlink" href="#sampling-distribution-of-an-estimate" title="Permalink to this headline">#</a></h2>
+<h2>17.2 Sampling distribution of an estimate<a class="headerlink" href="#sampling-distribution-of-an-estimate" title="Permalink to this heading">#</a></h2>
 <p>Let’s refresh on the concept of a sampling distribution in a concrete example before we learn how test the statistical significance of a sample estimate. Going back to the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, we previously explored how someone’s sex would explain some of the variation in thumb lengths. In other words, we thought there was a non-zero difference between the mean of female thumbs and the mean of male thumbs. We didn’t have a more specific hypothesis than that, but that “non-zero” part is enough to define a null hypothesis and test whether or not these data likely came from a population that <em>does</em> have a zero difference between female and male thumbs.</p>
 <p>In our equation of the statistical model of this question:</p>
 <div class="math notranslate nohighlight">
@@ -638,7 +502,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">)</span>
 
-<span class="n">shuffled_Sex</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">shuffled_Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">shuffled_Sex</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -648,17 +512,17 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1s</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples, saving each b1</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">fingers</span><span class="o">$</span><span class="n">shuffled_Sex</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-    <span class="n">model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">shuffled_Sex</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
-    <span class="n">null_b1s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fingers</span><span class="o">$</span><span class="n">shuffled_Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
+<span class="w">    </span><span class="n">null_b1s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 <span class="p">}</span>
 
-<span class="n">b1s_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
-<span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">null_b1s</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
+<span class="n">b1s_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -668,7 +532,7 @@ title="Print to PDF"
 <p>Just eyeballing the histogram can give us a rough idea of the probability of getting a particular sample b<sub>1</sub> from this population where we know β<sub>1</sub> is equal to 0. When we use these frequencies to estimate probability, we are using this distribution of shuffled b<sub>1</sub>s as a probability distribution.</p>
 </section>
 <section id="significance-testing">
-<h2>17.3 Significance testing<a class="headerlink" href="#significance-testing" title="Permalink to this headline">#</a></h2>
+<h2>17.3 Significance testing<a class="headerlink" href="#significance-testing" title="Permalink to this heading">#</a></h2>
 <p>We used R to simulate a world where the null hypothesis is true in order to construct a sampling distribution. Now let’s return to our original goal, to decide whether the null hypothesis is a good explanation for our data, or if it should be rejected.</p>
 <p>The basic idea is this: using the sampling distribution of possible sample b<sub>1</sub>s that could have resulted from a population in which the null hypothesis is true (i.e., in which β<sub>1</sub> = 0), we can look at a specific sample b<sub>1</sub> that we estimated with data and gauge how likely such a b<sub>1</sub>s would be if the null hypothesis is, in fact, true.</p>
 <p>If we judge the b<sub>1</sub> we observed to be unlikely to have come from the null hypothesis, we then reject H<sub>0</sub> as our specific idea about the data generation process. If, on the other hand, we judge our observed b<sub>1</sub> to be likely (or at least not all that <em>unlikely</em>), then the null hypothesis could still be a good explanation for these data.</p>
@@ -683,16 +547,16 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#cut-off values for extremeness</span>
-<span class="n">sorted_nullb1</span> <span class="o">&lt;-</span> <span class="nf">sort</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
-<span class="n">high_cutoff</span> <span class="o">&lt;-</span> <span class="n">sorted_nullb1</span><span class="p">[</span><span class="m">975</span><span class="p">]</span>
-<span class="n">low_cutoff</span> <span class="o">&lt;-</span> <span class="n">sorted_nullb1</span><span class="p">[</span><span class="m">25</span><span class="p">]</span>
+<span class="n">sorted_nullb1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
+<span class="n">high_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sorted_nullb1</span><span class="p">[</span><span class="m">975</span><span class="p">]</span>
+<span class="n">low_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sorted_nullb1</span><span class="p">[</span><span class="m">25</span><span class="p">]</span>
 <span class="n">high_cutoff</span>
 <span class="n">low_cutoff</span>
 
 <span class="c1">#marking something as extreme if it is greater than 97.5%ile or less than 2.5%ile</span>
-<span class="n">b1s_df</span><span class="o">$</span><span class="n">extreme</span> <span class="o">&lt;-</span> <span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s</span> <span class="o">&gt;</span> <span class="n">high_cutoff</span> <span class="o">|</span> <span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s</span> <span class="o">&lt;</span> <span class="n">low_cutoff</span>
+<span class="n">b1s_df</span><span class="o">$</span><span class="n">extreme</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">high_cutoff</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">low_cutoff</span>
 
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_b1s</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">b1s_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span><span class="n">extreme</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1s_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -702,7 +566,7 @@ title="Print to PDF"
 <p>In the code window below, change the bin number to something large, like 100 (the default number of bins is 30).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_b1s</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">b1s_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span><span class="n">extreme</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span> <span class="c1">#YOUR CODE HERE)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1s_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="o">=</span><span class="w"> </span><span class="c1">#YOUR CODE HERE)</span>
 </pre></div>
 </div>
 </div>
@@ -710,17 +574,17 @@ title="Print to PDF"
 <p>Another neat trick to know is, if we convert a sampling distribution to z-scores, we automatically know which samples are extreme or not by looking at which z-scores are above 1.96 or below -1.96, since 1 in z-scored units corresponds to 1 standard deviation and the 2.5%ile and 97%ile values are 1.96 SDs away from the mean.</p>
 </section>
 <section id="the-p-value">
-<h2>17.4 The p-value<a class="headerlink" href="#the-p-value" title="Permalink to this headline">#</a></h2>
+<h2>17.4 The p-value<a class="headerlink" href="#the-p-value" title="Permalink to this heading">#</a></h2>
 <p>We have now spent some time looking at the sampling distribution of b<sub>1</sub>s assuming the null hypothesis is true (i.e., β<sub>1</sub> = 0). We have developed the idea that simulated samples, generated by random shuffles of the thumb length data, are typically clustered around 0. Samples that end up in the tails of the distribution – the upper and lower .025 of values – are considered unlikely.</p>
 <p>Let’s place our sample b<sub>1</sub> right onto our histogram of the sampling distribution and see where it falls. Does it fall in the tails of the distribution, or in the middle .95?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sex_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
-<span class="n">b1</span> <span class="o">&lt;-</span> <span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sex_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
+<span class="n">b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span> <span class="n">null_b1s</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">b1s_df</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="o">~</span><span class="n">extreme</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="m">100</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">b1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-7</span><span class="p">,</span><span class="m">7</span><span class="p">)))</span> 
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1s_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="o">=</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="nf">gf_point</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-7</span><span class="p">,</span><span class="m">7</span><span class="p">)))</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -733,12 +597,12 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#boolean where 1 = value is greater than 3</span>
-<span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_b1s</span> <span class="o">&gt;</span> <span class="m">3</span>
-<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">3</span>
+<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
 
 <span class="c1">#boolean where 1 = value is less than -3</span>
-<span class="n">more_negative</span> <span class="o">&lt;-</span> <span class="n">null_b1s</span> <span class="o">&lt;</span> <span class="m">-3</span>
-<span class="n">num_more_negative</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-3</span>
+<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +610,7 @@ title="Print to PDF"
 <p>Second, we can find what proportion of the entire null sampling distribution is more extreme than this value of interest:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">num_more_positive</span> <span class="o">+</span> <span class="n">num_more_negative</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -756,13 +620,13 @@ title="Print to PDF"
 <p>Now let’s check our actual b<sub>1</sub> value of 6.447. What is its p-value?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_b1s</span> <span class="o">&gt;</span> <span class="m">6.447</span>
-<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">6.447</span>
+<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
 
-<span class="n">more_negative</span> <span class="o">&lt;-</span> <span class="n">null_b1s</span> <span class="o">&lt;</span> <span class="m">-6.447</span>
-<span class="n">num_more_negative</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-6.447</span>
+<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
 
-<span class="p">(</span><span class="n">num_more_positive</span> <span class="o">+</span> <span class="n">num_more_negative</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
+<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -782,7 +646,7 @@ title="Print to PDF"
 <p>Something else to notice as well is the confidence interval for b<sub>1</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">sex_model</span><span class="p">,</span> <span class="s">&quot;Sexmale&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">sex_model</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sexmale&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -791,7 +655,7 @@ title="Print to PDF"
 <p>A confidence interval tells you the same thing as a p-value, just in a different way. If the interval does not include 0, we decide that this estimate is significantly different than 0. If it does include 0, then 0 might be the parameter that created these data and we fail to reject the null hypothesis.</p>
 </section>
 <section id="the-t-distribution">
-<h2>17.5 The t-distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this headline">#</a></h2>
+<h2>17.5 The t-distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this heading">#</a></h2>
 <p>The early statisticians who developed the ideas behind sampling distributions and p-values didn’t have computers. They could only imagine what it might be like to shuffle their data a thousand times in just a couple seconds. What we have been able to do with R would seem like a miracle to them! So instead of using computational techniques to create sampling distributions, the early statisticians had to develop mathematical formulas of what the sampling distributions should look like, and then calculate probabilities based on these mathematical distributions. These are what the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function uses to give us exact p-values, so we’ll learn a little about that now to understand where these numbers come from.</p>
 <p>The mathematical concept that <code class="docutils literal notranslate"><span class="pre">summary()</span></code> uses to model the sampling distribution of coefficient estimates is known as the <strong>t-distribution</strong>. The t-distribution is closely related to the normal distribution, and in fact it looks very much like the normal distribution.</p>
 <p>In the figure below we have overlaid the t-distribution (depicted as a red line) on top of a sampling distribution constructed with permutation testing. You can see that it looks very much like the normal distribution you learned about previously.</p>
@@ -811,7 +675,7 @@ title="Print to PDF"
 <p>Because this is the traditional method of determining p-values and statistical significance, sometimes you’ll read research papers where the authors ran a linear model but also report a t-value. This does not mean that they did a t-test, only that they’re reporting the corresponding t-value of their beta estimate that is found in the linear model output.</p>
 </section>
 <section id="things-that-affect-the-p-value">
-<h2>17.5 Things that affect the p-value<a class="headerlink" href="#things-that-affect-the-p-value" title="Permalink to this headline">#</a></h2>
+<h2>17.5 Things that affect the p-value<a class="headerlink" href="#things-that-affect-the-p-value" title="Permalink to this heading">#</a></h2>
 <p>Back in the simple model, the sample b<sub>1</sub> for the difference between male and female thumb lengths was 6.447. Based on the the output of <code class="docutils literal notranslate"><span class="pre">summary()</span></code>, the probability of getting a sample with a b<sub>1</sub> as extreme or more extreme than 6.447 when the null hypothesis is true is approximately 1.79e-05. Based on our α criterion of .05, we decided that b<sub>1</sub> = 6.447 is significantly different from 0, and we reject the null hypothesis. Some alternative population likely make these data.</p>
 <p>Compare that to a b<sub>1</sub> = 3. For this, we used permutation testing to find that this value would have a p-value of 0.061. This is larger than the α value of 0.05, so we fail to reject the null hypothesis. These data are not so unlikely that we think the null hypothesis didn’t generate it.</p>
 <p>As evidenced here, the p-value is affected by how far the observed b<sub>1</sub> is from 0. Since 6.447 is further away from 0 than 3 is from 0, b<sub>1</sub> = 6.447 has a smaller p-value. The further away the b<sub>1</sub> is from 0, the lower the p-value, meaning the less likely the observed b<sub>1</sub> is to have been produced by the null hypothesis.</p>
@@ -824,19 +688,19 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1s_n30</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples of N=30, saving each b1</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">shuffled_Thumb</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">30</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-    <span class="n">Sex</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">30</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-    <span class="n">small_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="p">,</span> <span class="n">Sex</span><span class="p">)</span>
-    <span class="n">model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">shuffled_Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">small_df</span><span class="p">)</span>
-    <span class="n">null_b1s_n30</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">small_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">small_df</span><span class="p">)</span>
+<span class="w">    </span><span class="n">null_b1s_n30</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 <span class="p">}</span>
 
-<span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s_n30</span> <span class="o">&lt;-</span> <span class="n">null_b1s_n30</span>
-<span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">null_b1s_n30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
+<span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_n30</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s_n30</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -844,13 +708,13 @@ title="Print to PDF"
 <p>This null sampling distribution is much wider than we saw before. Now, the tails go on past 10 and -10. The extreme values got more extreme. If we now try to calculate the p-value of b<sub>1</sub> = 6.447 in this sampling distribution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span> <span class="o">&lt;-</span> <span class="n">null_b1s_n30</span> <span class="o">&gt;</span> <span class="m">6.447</span>
-<span class="n">num_more_positive</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">6.447</span>
+<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
 
-<span class="n">more_negative</span> <span class="o">&lt;-</span> <span class="n">null_b1s_n30</span> <span class="o">&lt;</span> <span class="m">-6.447</span>
-<span class="n">num_more_negative</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-6.447</span>
+<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
 
-<span class="p">(</span><span class="n">num_more_positive</span> <span class="o">+</span> <span class="n">num_more_negative</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">null_b1s_n30</span><span class="p">)</span>
+<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_b1s_n30</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -862,19 +726,19 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1s_100k</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">null_b1s_100k</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples of N=100000, saving each b1</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">shuffled_Thumb</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-    <span class="n">Sex</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-    <span class="n">big_df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="p">,</span> <span class="n">Sex</span><span class="p">)</span>
-    <span class="n">model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">shuffled_Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">big_df</span><span class="p">)</span>
-    <span class="n">null_b1s_100k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">big_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">big_df</span><span class="p">)</span>
+<span class="w">    </span><span class="n">null_b1s_100k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 <span class="p">}</span>
 
-<span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s_100k</span> <span class="o">&lt;-</span> <span class="n">null_b1s_100k</span>
-<span class="nf">gf_histogram</span><span class="p">(</span> <span class="o">~</span> <span class="n">null_b1s_100k</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
+<span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s_100k</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_100k</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s_100k</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -883,10 +747,10 @@ title="Print to PDF"
 <p>In very large datasets, nearly every model coefficient you estimate will be statistically significant. Significance then becomes a less useful concept. Sure 0.2mm is significantly different from 0 when it’s estimated from 100k datapoints, but how much does a difference that tiny matter to us for <em>using</em> the model? Do we care that male and female thumb lengths would be different by only 0.2mm? Or is that so small that it’s no longer <em>practically</em> different than 0?</p>
 </section>
 <section id="the-limits-of-significance-testing">
-<h2>17.6 The limits of significance testing<a class="headerlink" href="#the-limits-of-significance-testing" title="Permalink to this headline">#</a></h2>
+<h2>17.6 The limits of significance testing<a class="headerlink" href="#the-limits-of-significance-testing" title="Permalink to this heading">#</a></h2>
 <p>Significance testing is a major component of modern psychology research. Hypotheses and theories are made or broken on the back of p &lt; 0.05. But the strong reliance on p-values for determining whether effects exist or not is not always a good thing. There are several limits to what conclusions we can make using significance testing, and sometimes people push past these limits.</p>
 <section id="type-i-and-type-ii-error">
-<h3>Type I and Type II error<a class="headerlink" href="#type-i-and-type-ii-error" title="Permalink to this headline">#</a></h3>
+<h3>Type I and Type II error<a class="headerlink" href="#type-i-and-type-ii-error" title="Permalink to this heading">#</a></h3>
 <p>First, we typically set our α criterion to be 0.05, meaning that any b<sub>1</sub> value that is as extreme or more extreme than the 5% most extreme values in the null sampling distribution will be treated as unlikely. For unlikely estimates, we decide that they are probably not from the null hypothesis at all. This could be the right decision…</p>
 <p>But it might be the wrong decision. If the null hypothesis <em>is</em> true, 5% of the b<sub>1</sub>s that could appear would be extreme enough to lead us to reject the null hypothesis. We would be incorrectly deciding that these data came from a different distribution than they actually did. If we rejected the null hypothesis when it is in fact true, we would be making what’s called a <strong>Type I error</strong> or <strong>false positive</strong>.</p>
 <p>Our chance of making this type of inference error is directly tied to the α level we chose. By setting α = .05, we are saying that b<sub>1</sub> values above or below 1.96 SDs of the null sampling distribution are so unlikely that we think they’re from a different population. But by definition, 5% of the b<sub>1</sub> values in the β<sub>1</sub> = 0 sampling distribution are this level of unlikely. Thus when the null hypothesis is true, 5% of samples drawn from the population will lead us to the wrong conclusion.</p>
@@ -894,39 +758,39 @@ title="Print to PDF"
 <p>However, that causes us other problems. Now, it is harder to detect when the null hypothesis <em>should</em> be rejected. We need much stronger evidence to do so when α = 0.001 than when α = 0.05. If we fail to reject the null hypothesis when it should be rejected, this is called a <strong>Type II error</strong> or a <strong>false negative</strong>. Type I and Type II errors are always a tradeoff with each other - where we reduce the chance of one, we increase the chance of the other. Also, it is never possible to completely eliminate the risk of either. This is an inherent limitation of Null Hypothesis Significance Testing.</p>
 </section>
 <section id="can-only-reject-the-null-not-prove-it">
-<h3>Can only reject the null, not prove it<a class="headerlink" href="#can-only-reject-the-null-not-prove-it" title="Permalink to this headline">#</a></h3>
+<h3>Can only reject the null, not prove it<a class="headerlink" href="#can-only-reject-the-null-not-prove-it" title="Permalink to this heading">#</a></h3>
 <p>A second limitation of NHST is that, while it is possible to declare a sample estimate as too unlikely for us to think it comes from the null hypothesis, it is not possible to be sure an estimate definitely <em>does</em> come from the null hypothesis. To be concrete, what if a b<sub>1</sub> estimate doesn’t fall in the tails of the null sampling distribution but instead falls in the middle part? Should we then call it “likely”? In this case, we can say that the sample is <em>not unlikely</em>. But you can’t say it is likely. In this framework, we can never <em>confirm</em> the null hypothesis, only reject it or fail to reject it. This is because there are infinite other population parameters slightly above or below 0 that could generate this data as well. You can’t prove that any estimate came from β<sub>1</sub> = 0 specifically and not β<sub>1</sub> = 0.1. You can only say there is a very high likelihood that something did <em>not</em> come from a particular population like β<sub>1</sub> = 0. Null hypothesis testing is about rejecting some reality, not confirming one. If we fail to reject the null hypothesis, the true population parameter <em>could</em> be 0, but it could also be something else sort of close to 0.</p>
 </section>
 <section id="significance-is-a-binary-decision">
-<h3>Significance is a binary decision<a class="headerlink" href="#significance-is-a-binary-decision" title="Permalink to this headline">#</a></h3>
+<h3>Significance is a binary decision<a class="headerlink" href="#significance-is-a-binary-decision" title="Permalink to this heading">#</a></h3>
 <p>Thirdly, another limitation of NHST is that there is no way to compare amongst different levels of extremeness in terms of their statistical significance. We can compute different p-values for different b<sub>1</sub> estimates and find that one has a higher probability to appear under the null hypothesis than another. But the <em>decision</em> of something being significantly different from 0 is a binary decision - it either is significant, or it is not. Something that is in the top 2% of the null sampling distribution is just as significant as something that is in the top 0.02% of the distribution, because both are beyond the alpha cutoff. Null hypothesis testing doesn’t give us a way to test whether different p-values are significantly different from <em>each other</em>. Thus a sample estimate is either significant, or it’s not. We decide it either didn’t come from the null hypothesis, or there’s not enough evidence to decide. You can’t have one estimate that is <em>more</em> or <em>less</em> significant than another, and you can’t have something that is <em>almost</em> significant.</p>
 </section>
 <section id="probability-of-data-not-population">
-<h3>Probability of data, not population<a class="headerlink" href="#probability-of-data-not-population" title="Permalink to this headline">#</a></h3>
+<h3>Probability of data, not population<a class="headerlink" href="#probability-of-data-not-population" title="Permalink to this heading">#</a></h3>
 <p>Fourthly, the specific meaning of a p-value can be tricky to get right. It is the probability that, given the null hypothesis being true, we would find a sample value as extreme or more extreme than the one we did. A p-value does NOT mean the probability that the null hypothesis <em>is</em> true. Remember that in Frequentist statistics, a population parameter cannot have a probability - it exists as a single entity that can’t be repeated multiple times like a sample. The null hypothesis thus does not have a probability. <em>These data</em> have a probability, given the null hypothesis being true.</p>
 </section>
 <section id="p-values-and-sample-size">
-<h3>P-values and sample size<a class="headerlink" href="#p-values-and-sample-size" title="Permalink to this headline">#</a></h3>
+<h3>P-values and sample size<a class="headerlink" href="#p-values-and-sample-size" title="Permalink to this heading">#</a></h3>
 <p>Lastly, as we explored previously, the p-value we get is tied to our sample size. In small amounts of data, we would need to estimate a really large effect in order to call it significant, because the confidence interval is so wide that it covers many values including 0. Thus when we only have a small amount of data available to us, we might not be able to declare anything as significant. But in large amounts of data, almost everything is significant, even effects so tiny that they’re not useful in the real world. Would it matter to you to hear that a predictor in a model was significant, but the model only explained 0.01% of the variation in the outcome data? P-values can thus be “gamed” a bit with large sample sizes. They tell us something about the certainty of this true estimate being 0 or not, but they don’t help us with determining whether this effect size is useful for real-world purposes.</p>
 <p>In summary, there are five main hang-ups that cause a lot of consternation for people trying to use null hypothesis testing:</p>
 <ul class="simple">
-<li><ol class="simple">
+<li><ol class="arabic simple">
 <li><p>The risk of Type I and Type II error is everpresent</p></li>
 </ol>
 </li>
-<li><ol class="simple">
+<li><ol class="arabic simple" start="2">
 <li><p>You can only reject the null hypothesis, or fail to reject the null hypothesis (not confirm the null hypothesis)</p></li>
 </ol>
 </li>
-<li><ol class="simple">
+<li><ol class="arabic simple" start="3">
 <li><p>You can only decide if a sample estimate is significantly different from 0 or not; there are no levels of significance</p></li>
 </ol>
 </li>
-<li><ol class="simple">
+<li><ol class="arabic simple" start="4">
 <li><p>A p-value is the probability of these data given the null hypothesis, NOT the probability of the null hypothesis given these data.</p></li>
 </ol>
 </li>
-<li><ol class="simple">
+<li><ol class="arabic simple" start="5">
 <li><p>P-values are tied to sample sizes, so it is possible to get a significant p-value with an impractically-tiny effect.</p></li>
 </ol>
 </li>
@@ -936,9 +800,9 @@ title="Print to PDF"
 </section>
 </section>
 <section id="significant-effects-in-practice">
-<h2>17.7 Significant effects in practice<a class="headerlink" href="#significant-effects-in-practice" title="Permalink to this headline">#</a></h2>
+<h2>17.7 Significant effects in practice<a class="headerlink" href="#significant-effects-in-practice" title="Permalink to this heading">#</a></h2>
 <section id="effects-in-the-simple-model">
-<h3>Effects in the simple model<a class="headerlink" href="#effects-in-the-simple-model" title="Permalink to this headline">#</a></h3>
+<h3>Effects in the simple model<a class="headerlink" href="#effects-in-the-simple-model" title="Permalink to this heading">#</a></h3>
 <p>Let’s practice using and interpreting p-values with some concrete research situations. One hypothesis we have used a lot is whether someone’s sex explains some of the variation in their thumb length. A research question like this implies that we are interested in the predictor “sex” specifically, and its unique contribution to predictions about thumb length. We recognize that there are likely many factors that lead to how long someone’s thumb is, and we may even know some more of them and be able to model them as well. But our interests focus on how important someone’s sex is specifically in the data generation process. Is it a meaningful contributor to explaining variation in thumb length? Or is there not really an effect?</p>
 <p>Using the framework of Null Hypothesis Statistical Testing, we can answer this sort of question. We just have to go through five steps in order to frame this question correctly for the NHST.</p>
 <p>First, we need to pick the variables we’re using to test this question. We’ll use the outcome variable <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> from the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, as we have been, and we’ll use <code class="docutils literal notranslate"><span class="pre">Sex</span></code> to predict it.</p>
@@ -952,7 +816,7 @@ title="Print to PDF"
 <p>Where X<sub>i</sub> is <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. Knowing that equation, we automatically fit it with <code class="docutils literal notranslate"><span class="pre">lm()</span></code> as we have done many times before:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -986,7 +850,7 @@ title="Print to PDF"
 <p>Is this value &lt; 0.05?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">0.05</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0.05</span>
 </pre></div>
 </div>
 </div>
@@ -1013,7 +877,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="effects-in-the-multivariable-model">
-<h3>Effects in the multivariable model<a class="headerlink" href="#effects-in-the-multivariable-model" title="Permalink to this headline">#</a></h3>
+<h3>Effects in the multivariable model<a class="headerlink" href="#effects-in-the-multivariable-model" title="Permalink to this heading">#</a></h3>
 <p>As we saw in chapter 13, predictors in a multivariable model can be correlated. Thus if we’re interested specifically in the effect of sex, we may want to <em>control for</em> what might be a better explanatory variable, like height. This would enable us to investigate if sex is a significant, unique effect in its own right or if it’s only related to thumb length by virtue of being related to height.</p>
 <p>To do this, first we pick our variables. We’ll use <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and <code class="docutils literal notranslate"><span class="pre">Sex</span></code> as before, as well as <code class="docutils literal notranslate"><span class="pre">Height</span></code> as another predictor.</p>
 <p>Second, specify the null hypothesis. Here we’re still interested in the effect of sex in particular. We’re just using height as a control. So the null hypothesis is still:</p>
@@ -1024,7 +888,7 @@ title="Print to PDF"
 \[\hat{Y} = b_0 + b_1X_{1i} + b_2X_{2i}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span> <span class="o">+</span> <span class="n">Height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1041,7 +905,7 @@ title="Print to PDF"
 <p>Because sex and height are related, there is shared variation between them - both of them explain some of the same variation in thumb length. We need to put them both in a model together in order to disentangle what amount of <em>unique</em> variation they each explain. By doing this, we see that the effect of sex got smaller, after taking height into account - the coefficient fell from 6.447 to 2.783. This effect is so small, that it is no longer significant - the p-value is 0.132, which is above our α cutoff of 0.05. We’d interpret this to mean that in a world where there is <em>no</em> unique effect of sex (β<sub>1</sub> = 0), a b<sub>1</sub> estimate of 2.783 would be a likely outcome. We can further see this by checking the 95% confidence interval:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model_obj</span><span class="p">,</span> <span class="s">&quot;Sexmale&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model_obj</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sexmale&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1051,7 +915,7 @@ title="Print to PDF"
 <p>Note again that this does not mean β<sub>1</sub> is definitely 0. There are still many non-zero values in the confidence interval that could be the truth. It could be that we only failed to find a significant effect because <code class="docutils literal notranslate"><span class="pre">fingers</span></code> only had a sample size of N=157. If we ran this model in a much larger dataset, we could create a narrower CI that might not overlap with 0. It’s easier to distinguish small effects from β<sub>1</sub> = 0 with more data. But in that case, it’s always worthwhile to ask yourself if an effect that is significant, but with a very small coefficient, is worth anything to you in practical terms. Statistically significant doesn’t mean <em>important</em>, only unlikely to be 0.</p>
 </section>
 <section id="effects-in-interaction-models">
-<h3>Effects in interaction models<a class="headerlink" href="#effects-in-interaction-models" title="Permalink to this headline">#</a></h3>
+<h3>Effects in interaction models<a class="headerlink" href="#effects-in-interaction-models" title="Permalink to this heading">#</a></h3>
 <p>When we test for interaction effects, we are often most interested in the interaction term. We want to know if the effect of one variable depends on values of the other (a non-zero interaction coefficient), or if the effects of each variable operate on the outcome variable independently of each other (a zero interaction coefficient). Thus, when we have hypotheses about interactions, we usually assess the significance of the interaction term.</p>
 <p>Let’s test the hypothesis that there is an interaction between sex and height on thumb length. Our variables will be the same as in the multivariable case, <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>, <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, and <code class="docutils literal notranslate"><span class="pre">Height</span></code>.</p>
 <p>Our null hypothesis is now for the interaction effect, and not the main effect of sex:</p>
@@ -1062,7 +926,7 @@ title="Print to PDF"
 \[\hat{Y} = b_0 + b_1X_{1i} + b_2X_{2i} + b_3X_{1i}*X_{2i}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span> <span class="o">~</span> <span class="n">Sex</span> <span class="o">+</span> <span class="n">Height</span> <span class="o">+</span> <span class="n">Sex</span><span class="o">*</span><span class="n">Height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fingers</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Sex</span><span class="o">*</span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1070,7 +934,7 @@ title="Print to PDF"
 <p>Our hypothesis is about the interaction effect b<sub>3</sub>, so investigate the estimate and p-value on the line for <code class="docutils literal notranslate"><span class="pre">Sexmale:Height</span></code>. We see that the p-value of the interaction is p = 0.953, which is not below the α criterion of 0.05. Thus we fail to reject the null hypothesis that there is no interaction. We can’t be <em>sure</em> that there is no interaction truly in the population, but we are pretty confident that the true interaction effect is something close to zero:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model_obj</span><span class="p">,</span> <span class="s">&quot;Sexmale:Height&quot;</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="m">0.95</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model_obj</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sexmale:Height&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1080,7 +944,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="chapter-summary">
-<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this headline">#</a></h2>
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
 <li><p>Define the null hypothesis</p></li>
@@ -1091,6 +955,7 @@ title="Print to PDF"
 <li><p>Find the p-value of a model estimate</p></li>
 <li><p>Explain the limits of null hypothesis testing</p></li>
 </ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Next: Chapter 18 - Significance Testing with Whole Models</a></p>
 </section>
 </section>
 
@@ -1106,7 +971,7 @@ title="Print to PDF"
             mode: "r"
         },
         kernelOptions: {
-            kernelName: "ir",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
@@ -1114,36 +979,107 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'ir'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-hypothesis">17.1 The null hypothesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distribution-of-an-estimate">17.2 Sampling distribution of an estimate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing">17.3 Significance testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">17.4 The p-value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-t-distribution">17.5 The t-distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-that-affect-the-p-value">17.5 Things that affect the p-value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-significance-testing">17.6 The limits of significance testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-i-and-type-ii-error">Type I and Type II error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-only-reject-the-null-not-prove-it">Can only reject the null, not prove it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-is-a-binary-decision">Significance is a binary decision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-data-not-population">Probability of data, not population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-values-and-sample-size">P-values and sample size</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-effects-in-practice">17.7 Significant effects in practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-simple-model">Effects in the simple model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-multivariable-model">Effects in the multivariable model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-interaction-models">Effects in interaction models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Shannon Burns<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
