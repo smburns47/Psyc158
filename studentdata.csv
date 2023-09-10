@@ -142,7 +142,7 @@ Female,Latino,NA,0,7,Part-time Job,Strongly Agree,Somewhat Interested,A-,5,70,90
 Female,Latino,NA,9,3,Part-time Job,Neither Agree nor Disagree,Very Interested,A,7,50,70,75,65,45,66,Claremont
 Male,White,NA,7,3,Not Working,Disagree,Somewhat Interested,A-,7,50,75,80,75,60,72,Claremont
 Male,Asian,NA,0,2,Not Working,Strongly Disagree,Very Interested,A,8,70,75,87,79,61,70.9,Claremont
-Female,Black,NA,8,3,Part-time Job,Agree,Somewhat Interested,A-,9,60,9,9.5,7.8,6,72,Claremont
+Female,Black,NA,8,3,Part-time Job,Agree,Somewhat Interested,A-,9,60,90,95,78,60,72,Claremont
 Female,Black,NA,9,2,Not Working,Disagree,Somewhat Interested,A-,7,63,77,79,75,66,68.75,Claremont
 Female,Black,NA,10364850,3,Not Working,Agree,Somewhat Interested,A-,8,70,80,90,80,65,62,Claremont
 Male,Latino,NA,4,2,Part-time Job,Neither Agree nor Disagree,Very Interested,A-,6,63.5,69.85,79.3,71.1,45.72,69,Claremont
@@ -154,5 +154,5 @@ Female,Asian,NA,6,3,Part-time Job,Disagree,Somewhat Interested,A,7,57,75,80,60,5
 Female,Latino,NA,0,2,Not Working,Strongly Agree,Very Interested,A,6,50.8,63.5,76.2,63.5,50.8,60,Claremont
 Male,Asian,NA,0,3,Part-time Job,Strongly Agree,Somewhat Interested,A-,6,55,60,80,70,55,68,Claremont
 Male,Black,NA,8,3,Not Working,Strongly Agree,Somewhat Interested,A-,7,90,80,95,85,75,71,Claremont
-Male,Latino,NA,6,3,Part-time Job,Disagree,Very Interested,B+,4,NA,NA,NA,NA,NA,66,Claremont
+Male,Latino,NA,6,3,Part-time Job,Disagree,Very Interested,B+,4,63,94,126,110,94,66,Claremont
 Male,White,NA,5,3,Not Working,Agree,Somewhat Interested,A-,5,60,80,90,75,60,72,Claremont
