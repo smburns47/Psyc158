@@ -1,0 +1,1013 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 15 - Models with Categorical Outcomes &#8212; Pomona Psych 158 Online Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'adv-logistic';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Models with Moderation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/adv-logistic.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fadv-logistic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/adv-logistic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 15 - Models with Categorical Outcomes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-continuous-outcomes">15.1 Non-continuous outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logit-link-function">15.2 Logit link function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-odds-conversion-step-1">Log odds conversion - step 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-odds-conversion-step-2">Log odds conversion - step 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-odds-conversion-step-3">Log odds conversion - step 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretting-a-logistic-model">15.4 Interpretting a logistic model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-predictions">Interpreting predictions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-coefficients">Interpreting coefficients</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-logistic-model">15.5 Visualizing a logistic model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-logistic-regression-models">15.6 Fitting logistic regression models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-logistic-models">15.6 Error in logistic models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-categorical-outcomes-with-more-than-two-levels">15.7 Predicting categorical outcomes with more than two levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Previous: Chapter 14 - Nonlinear Models</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-15-models-with-categorical-outcomes">
+<h1>Chapter 15 - Models with Categorical Outcomes<a class="headerlink" href="#chapter-15-models-with-categorical-outcomes" title="Permalink to this heading">#</a></h1>
+<p>Thus far in the course, we’ve explored a great many types of models that the general linear model framework can handle. This gives us a large amount of flexibility in the types of research questions we can answer with statistics. Hopefully you are beginning to appreciate how understanding the fundamentals of the general linear model can open a great many avenues of inquiry for you. The general linear model is not the only way to do statistics (there are more advanced statistics classes you can take that will teach you different approaches for specific problems), but it is an extremely powerful one to start with.</p>
+<p>The last major class of general linear model that we will learn in this course will address one thing we’ve been leaving out so far. Across all the regressions, interactions, nonparametric tests with all sorts of predictors and relationships between predictors, one thing has been contast - we’ve always been predicting a <em>continuous</em> outcome variable. Of course, there are research questions concerning categorical outcome variables as well. What political party is someone likely to join, whether or not someone is admitted to college, etc. These sorts of models are called <strong>logistic regression</strong>, and we will cover them here.</p>
+<section id="non-continuous-outcomes">
+<h2>15.1 Non-continuous outcomes<a class="headerlink" href="#non-continuous-outcomes" title="Permalink to this heading">#</a></h2>
+<p>Standard regression models are linear combinations of parameters estimated from the data. Multiplying these parameters by different values of the predictor variables (or by each other) gives estimates of the outcome.</p>
+<p>However, because there’s no hard limit on the range of predictor variables (at least, no limit coded into the model itself), the predictions of a linear model in theory range between negative -∞ (infinity) and +∞. Although values approaching infinity might be very unlikely, there is no hard limit on either the parameters we fit (the regression coefficients) or the predictor values themselves.</p>
+<p>When outcome data are continuous or somewhat like a continuous variable this isn’t usually a problem. Although our models might predict some improbable values (for example, that someone is 8 feet tall), they will not often be strictly impossible.</p>
+<p>It might occur to you at this point that, if a model predicted a height of -8 feet or a temperature below absolute zero, then this <em>would</em> be impossible. And this is true, and a theoretical violation of the assumption of the linear model that the outcome can range betweem -∞ (infinity) and +∞ (we’ll talk more about the assumptions the GLM makes in chapter 20, and what violates those assumptions). Despite this, researchers use linear regression to predict many outcomes which have this type of range restriction and, although models can make strange predictions in edge cases, they are useful and can make good predictions most of the time.</p>
+<p>However, for other types of outcomes like categories, this often won’t be the case. Standard linear regression will fail to make sensible predictions even in cases that are not unusual.</p>
+<p>One of the most common cases where this occurs is when you’re trying to predict a binary outcome, yes or no. We already learned in simple regression how expressing this as a dummy-coded number, 1 or 0, let’s us do math with it. That is also why we choose to express categorical outcome variables with dummy codes.</p>
+<p>But hang on. When a dummy variable is an outcome, no other option outside the range of 0 to 1 is possible, and no other option <em>between</em> these values is possible either. This poses a problem for predictions based off a continuous regression line like in linear regression, where all possible inputs can be operated on to produce theoretically all possible output values.</p>
+<p>Let’s see a demonstration of this. We have some medical data about patients with kidney disease from <a class="reference external" href="https://matthew-brett.github.io/cfd2020/data/chronic_kidney_disease.html">this dataset</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">kidney_disease</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/ckd.csv&quot;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">kidney_disease</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this dataset are two variables <code class="docutils literal notranslate"><span class="pre">Appetite</span></code> and <code class="docutils literal notranslate"><span class="pre">Hemoglobin</span></code>. In people with kidney disease, their body produces lower levels of hemoglobin, the molecule that carries oxygen around in the bloodstream. Concentrations of hemoglobin can be used as a measure of kidney disease severity. Let’s say we want to use this variable to predict whether or not someone tends to have a good or poor appetite.</p>
+<p>First off, since linear models make numeric predictions, <code class="docutils literal notranslate"><span class="pre">lm()</span></code> will give an error if we try to have it predict a non-numeric data type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">Appetite</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Hemoglobin</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kidney_disease</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So let’s manually make it into a dummy variable ourselves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">kidney_disease</span><span class="o">$</span><span class="n">Appetite_dummy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">recode</span><span class="p">(</span><span class="n">kidney_disease</span><span class="o">$</span><span class="n">Appetite</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;poor&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;good&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+<span class="n">kidney_disease</span><span class="o">$</span><span class="n">Appetite_dummy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">kidney_disease</span><span class="o">$</span><span class="n">Appetite_dummy</span><span class="p">)</span>
+
+<span class="c1">#checking our work</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">kidney_disease</span><span class="o">$</span><span class="n">Appetite_dummy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have the dummy (1 or 0) variable, let’s use a scatterplot to look at the relationship between hemoglobin concentration and whether a patient has a good appetite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Appetite_dummy</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Hemoglobin</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kidney_disease</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the plot, it does look as if the patients with lower hemoglobin are more likely to have poor appetite (<code class="docutils literal notranslate"><span class="pre">Appetite_dummy</span></code> values of 0), whereas patients with higher hemoglobin tend to have good appetite (<code class="docutils literal notranslate"><span class="pre">Appetite_dummy</span></code> values of 1).</p>
+<p>Remember in linear regression, we predict scores on the outcome variable using a straight-line relationship of the predictor variable. Why not use the same linear regression technique for our case to make predictions about patients’ appetites? After all, the <code class="docutils literal notranslate"><span class="pre">Appetite_dummy</span></code> values are just numbers (0 and 1), as are our <code class="docutils literal notranslate"><span class="pre">Hemoglobin</span></code> values. Let’s visualize what the regression line would look like on our data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Appetite_dummy</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Hemoglobin</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kidney_disease</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gf_lm</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The linear regression line looks plausible, in that it predicts that people with higher hemoglobin levels are probably going to have a better appetite.</p>
+<p>However, when the hemoglobin value gets higher than about 15.5, linear regression starts to predict a value for appetite that is greater than 1. This is not a realistic outcome value in the dummy appetite variable, which is restricted to 0 or 1. Unfortunately, hemoglobin values above 15.5 are very real and indeed common.</p>
+<p>Also, looking at the plot, without the regression line, it looks as if we can be fairly confident of predicting a 1 (“good”) value for a hemoglobin above 12.5, but we are increasingly less confident about predicting a 1 value as hemoglobin drops down to about 7.5, at which point we become confident about predicting a 0 value. However, a straight line doesn’t accurately reflect these changes in confidence. It says each additional unit of hemoglobin should buy us a consistent amount of prediction confidence.</p>
+<p>These reflections make us wonder whether we should be using something other than a simple, unconstrained straight line for our predictions.</p>
+</section>
+<section id="logit-link-function">
+<h2>15.2 Logit link function<a class="headerlink" href="#logit-link-function" title="Permalink to this heading">#</a></h2>
+<p>The answer to this in the GLM framework is to still make continuous predictions, but then translate those predictions into being either a 1 or 0 final answer. The mathematical tool for doing this kind of translation is called a <strong>link function</strong>. A link function, like the name suggests, is a separate mathematical function that <em>links</em> the output of a linear model to a corresponding value that makes sense in terms of the actual outcome variable.</p>
+<p>Simple linear regression actually has a link function too. It’s just a trivial one, called the <strong>identity function</strong> - the linear model’s prediction is mapped to an outcome value by its identity, its already-existing value. For other types of model different functions are used.</p>
+<p>The link function in logistic regression is called the <strong>logit function</strong> (hence the name logistic regression). The logit function expresses category membership in terms of the <em>log odds</em> of being in that category. If we’re predicting whether or not someone is admitted to college, their <em>likelihood</em> of admittance is what the prediction means.</p>
+<section id="log-odds-conversion-step-1">
+<h3>Log odds conversion - step 1<a class="headerlink" href="#log-odds-conversion-step-1" title="Permalink to this heading">#</a></h3>
+<p>The first step in converting a binary categorical variable into log odds is to consider the probability of someone being in one category versus the other. Recall our discussion of probabilities back in chapter 8. Under a probability model, we can’t determine the value of any one datapoint, but we know over the whole population of datapoints how many end up in one category versus another. We know the <em>probability</em> of category membership. When 9% of students are admitted to Pomona and 91% are not, there is a 9% likelihood that any one person will end up in the category “admitted.”</p>
+<p>Probabilities thus allow us to express a binary outcome - admitted or not - as a probability of category membership. Thus, we can now express this variable as a continuous variable between 0 and 1. True data will always have a 0 or 1 value - when someone has <em>already</em> been admitted to college or rejected, the probability of their admittance is 100% or 0%. But when making predictions about new data points, their predicted probability can be anything between 0 and 1. Predictors in a logistic model help us make guesses about these probabilities.</p>
+</section>
+<section id="log-odds-conversion-step-2">
+<h3>Log odds conversion - step 2<a class="headerlink" href="#log-odds-conversion-step-2" title="Permalink to this heading">#</a></h3>
+<p>We now have a binary variable expressed as a continuous variable, but it is still bounded between 0 and 1. We can transform a probability on the 0—1 scale to a 0 → ∞ scale by converting it to <strong>odds</strong>, which are expressed as a ratio:</p>
+<div class="math notranslate nohighlight">
+\[odds = \frac{p}{1-p} \]</div>
+<p>Probabilities and odds ratios are two equivalent ways of expressing the same idea. So a probability of P(X) = 0.5 equates to an odds ratio of 1 (i.e. 1 to 1 or 1/1, which is what 0.5/(1-0.5) reduces to). P(X) = 0.6 equates to odds of 1.5 (that is, 1.5 to 1, or 3 to 2). And P(X) = 0.95 equates to an odds ratio of 19 (19 to 1).</p>
+<p>Odds convert or map probabilities from 0 to 1 onto the real numbers from 0 to ∞.</p>
+<img src="images/ch15-probtoodds.png" width="500">
+<p>We can reverse the transformation (which is important later) like so:</p>
+<div class="math notranslate nohighlight">
+\[probability = \frac{odds}{1 + odds} \]</div>
+</section>
+<section id="log-odds-conversion-step-3">
+<h3>Log odds conversion - step 3<a class="headerlink" href="#log-odds-conversion-step-3" title="Permalink to this heading">#</a></h3>
+<p>When we convert a probability to odds, the odds can go up to infinity, but will never be less than 0. This is still a problem for our linear model. We’d like our regression coefficients to be able to vary between -∞ and ∞.</p>
+<p>To avoid this restriction, we can take the <em>logarithm</em> of the odds — sometimes called the <strong>logit</strong> for conciseness. The figure below shows the transformation of probabilities between 0 and 1 to the log-odds scale.</p>
+<img src="images/ch15-probtologit.png" width="500">
+<p>The logit has two nice properties:</p>
+<ul class="simple">
+<li><p>It converts odds of less than one to negative numbers, because the log of a number between 0 and 1 is always negative.</p></li>
+<li><p>It flattens the rather square curve for the odds in the figure above, giving you more interpretability among different logit values.</p></li>
+</ul>
+<p>By doing these mathematical conversion steps, we can now express a binary 0-or-1 variable as a continuous variable, possibly ranging from -∞ to ∞. We can also this sigmoid-shaped regression line to make predictions of the log-odds of category membership, rather than relying on a straight line.</p>
+</section>
+</section>
+<section id="interpretting-a-logistic-model">
+<h2>15.4 Interpretting a logistic model<a class="headerlink" href="#interpretting-a-logistic-model" title="Permalink to this heading">#</a></h2>
+<section id="interpreting-predictions">
+<h3>Interpreting predictions<a class="headerlink" href="#interpreting-predictions" title="Permalink to this heading">#</a></h3>
+<p>As we’ve seen here, the logit or logistic link function transforms probabilities between 0 and 1 to the range from negative to positive infinity. This means logistic regression coefficients are in log-odds units, so we must interpret logistic regression coefficients differently from regular regression with continuous outcomes. Consider the equation form of a simple logistic regression model:</p>
+<div class="math notranslate nohighlight">
+\[logit(Y_i) = b_0 + b_1X_i + e_i\]</div>
+<p>The right side of the equation, the actual model side, is built the same between a linear model and a logistic model. We still combine the values of predictors with coefficients in order to make predictions. However, in linear regression, a coefficient like b<sub>1</sub> means the change in the outcome (expressed with the outcome’s units) for a unit change in the predictor.</p>
+<p>For logistic regression, the same coefficient means the change in the <em>log odds</em> of the outcome being 1, for a unit change in the predictor.</p>
+<p>If we want to interpret logistic regression in terms of probabilities, we need to undo the transformation described in steps 1 and 2. To do this:</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>We take the exponent of the logit to ‘undo’ the log transformation and get the predicted odds. Taking the exponent means calculating e<sup>y</sup>, where e is the special mathematical value 2.71828… and y is the logit.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>We convert the odds back to probability: prob = odds / (1 + odds)</p></li>
+</ol>
+</li>
+</ul>
+<p>Here’s a hypothetical example to walk through how to do this. Imagine if we have a model to predict whether a person has any children. The outcome is binary, so equals 1 if the person has any children, and 0 otherwise.</p>
+<p>The model has an intercept and one predictor, age in years:</p>
+<div class="math notranslate nohighlight">
+\[logit(children_i) = b_0 + b_1age_i + e_i\]</div>
+<p>We fit this model and get two parameter estimates: b<sub>0</sub> = 0.5 and b<sub>1</sub> = 0.02.</p>
+<p>The outcome of the linear model is the log-odds of having any children. So to compute this for any particular person, we simply input their age as the value of the predictor. For someone aged 30, the predicted log-odds are:</p>
+<div class="math notranslate nohighlight">
+\[0.5 + 0.02*30 = 1.1\]</div>
+<p>In order to understand what that prediction means in terms of probabilities, we first take the exponent to find odds:</p>
+<div class="math notranslate nohighlight">
+\[odds = e^{1.1} = 3.004166\]</div>
+<p>That suggests there are 3 to 1 odds that a person aged 30 will have children. Lastly, we can use the conversion equation above to find probability:</p>
+<div class="math notranslate nohighlight">
+\[probability = \frac{odds}{1 + odds} = \frac{3.004166}{1 + 3.004166} = 0.7502601\]</div>
+<p>Thus, given our logistic regression model, we would predict that by taking a random person off the street who is 30 years old, not knowing anything else about them, there is a 75% chance that they have children.</p>
+<p>For someone aged 40:</p>
+<div class="math notranslate nohighlight">
+\[0.5 + 0.02*40 = 1.3 \]</div>
+<div class="math notranslate nohighlight">
+\[odds = e^{1.3} = 3.669297\]</div>
+<div class="math notranslate nohighlight">
+\[probability = \frac{3.669297}{1 + 3.669297} = 0.785835\]</div>
+<p>and so on.</p>
+</section>
+<section id="interpreting-coefficients">
+<h3>Interpreting coefficients<a class="headerlink" href="#interpreting-coefficients" title="Permalink to this heading">#</a></h3>
+<p>That’s how to understand the predictions of a logistic model, the log odds of category membership. But what does that b<sub>1</sub> = 0.02 value mean for how the prediction <em>changes</em>, for each one-unit change in the predictor? It would be the change in the log odds of someone having children, for a one-year increase in age. You could leave it at that, but that’s hard to wrap one’s head around.</p>
+<p>If we take the exponent of 0.02, would that tell us how much odds are changing by?</p>
+<div class="math notranslate nohighlight">
+\[e^{0.02} = 1.020201\]</div>
+<p>Unfortunately, no. If we interpreted things this way, it would imply that a a 31-year-old has 1.02 higher odds of having kids compared to a 30-year-old. I.e., 4.02 to 1, compared with 3 to 1. However, solving for the odds of a 31-year-old tells us that’s not the case:</p>
+<div class="math notranslate nohighlight">
+\[0.5 + 0.02*31 = 1.12 \]</div>
+<div class="math notranslate nohighlight">
+\[odds = e^{1.12} = 3.064854\]</div>
+<p>Instead, an important feature of logs to know about is that subtracting the logs of two numbers is the same thing as taking the log of those numbers’ ratio:</p>
+<div class="math notranslate nohighlight">
+\[log(3.064854) - log(3.004166) = 0.02\]</div>
+<div class="math notranslate nohighlight">
+\[log(\frac{3.064854}{3.004166}) = 0.02\]</div>
+<p>You can verify this in the code window below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">log</span><span class="p">(</span><span class="m">3.064854</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="m">3.004166</span><span class="p">)</span>
+<span class="nf">log</span><span class="p">(</span><span class="m">3.064854</span><span class="o">/</span><span class="m">3.004166</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus, we can interpret the exponent of the coefficient b<sub>1</sub> = 0.02 as being the <em>ratio</em> of odds, for a one-unit change in predictor. In other words, e<sup>0.02</sup> = 1.02, so the odds of having kids is 1.02x great for each 1-year increase in someone’s age.</p>
+<p>To take exponents in R, you can use the <code class="docutils literal notranslate"><span class="pre">exp()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="m">0.02</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this is not the same as saying the <em>probability</em> of having kids is 1.02x greater for each 1-year increase in age. Probability is odds/(1+odds), so the probability that a 31-year-old has kids is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#probability of a 31-year-old having kids</span>
+<span class="m">3.064854</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3.064854</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s not the same thing as 1.02 times 0.7502601 (the probability of a 30-year-old having kids):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1.02</span><span class="o">*</span><span class="m">0.7502601</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In logistic regression, you have to be very careful with how you talk about the interpretations. 0.02 is the change in log odds for every one-unit increase in the predictor. e<sup>0.02</sup> is the multiplier of odds for every one-unit increase in the predictor.</p>
+<p>That’s the case for a simple logistic regression. In a multiple logistic regression, there are multiple predictors. For example:</p>
+<div class="math notranslate nohighlight">
+\[logit(children_i) = b_0 + b_1age_i + b_2married_i + e_i\]</div>
+<p>This would be a model predicting how many children someone has, both from how old they are and whether or not they’re married.</p>
+<p>Let’s say when fitting this model, we estimate b<sub>0</sub> = 0.1, b<sub>1</sub> = 0.01, and b<sub>2</sub> = 1.3. The coefficients still speak to the change in predicted log-odds for every one-unit increase in the predictor, but we have to interpret that in the context of the other variable again. In this case, b<sub>1</sub> means the predicted change in log-odds (or multiplier of odds) of having children for every additional year in age, when holding marriage status constant. b<sub>2</sub> means the predicted change in log-odds (or multiplier of odds) of having children for someone who is married compared to someone who is not, when age is held constant.</p>
+<p>Extending to the case of a logistic regression with an interaction:</p>
+<div class="math notranslate nohighlight">
+\[logit(children_i) = b_0 + b_1age_i + b_2married_i + b_3age_i*married_i + e_i\]</div>
+<p>Make sure to interpret b<sub>3</sub> appropriately as an interaction coefficient, but in terms of log-odds of the outcome variable. Here, we might say it’s the change in difference of log odds between people who are married and people who are not, for every year increase in their age.</p>
+</section>
+</section>
+<section id="visualizing-a-logistic-model">
+<h2>15.5 Visualizing a logistic model<a class="headerlink" href="#visualizing-a-logistic-model" title="Permalink to this heading">#</a></h2>
+<p>For linear regression, piping <code class="docutils literal notranslate"><span class="pre">gf_lm()</span></code> from the <code class="docutils literal notranslate"><span class="pre">ggformula</span></code> package as another layer on a scatterplot draws the best-fitting straight regression line through the data.</p>
+<p>For a logistic model, you can also use <code class="docutils literal notranslate"><span class="pre">gf_lm()</span></code> to draw the relationship between a predictor variable and the log-odds of the outcome, since that is a linear relationship. However more frequently, you’ll want to plot the relationship between the predictor and the raw outcome values directly. This sort of relationship, as we saw, has a sigmoid line shape. To get that sort of line added to a scatter plot, use the function <code class="docutils literal notranslate"><span class="pre">gf_smooth()</span></code> with some specific arguments to make it fit the appropriate sigmoid curve:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_point</span><span class="p">(</span><span class="n">Appetite_dummy</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Hemoglobin</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kidney_disease</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">gf_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;glm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">method.args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;binomial&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In a linear regression equation, the intercept coefficient controls where the line crosses the y-axis and the effect coefficient controls the steepness of the line’s slope. In logistic regression it’s a bit different. Since the raw outcome is bounded between 0 and 1, the line at X=0 will always cross the y-axis at Y=0 (the lowest possible value).</p>
+<p>Instead, the intercept of the logistic equation moves the logistic curve left or right on the x-axis:</p>
+<img src="images/ch15-logisticintercepts.png" width="500">
+<p>The effect coefficient, or the slope of the logistic line, sets how steeply it increases or decreases:</p>
+<img src="images/ch15-logisticslopes.png" width="500"></section>
+<section id="fitting-logistic-regression-models">
+<h2>15.6 Fitting logistic regression models<a class="headerlink" href="#fitting-logistic-regression-models" title="Permalink to this heading">#</a></h2>
+<p>In R, the function <code class="docutils literal notranslate"><span class="pre">lm()</span></code> finds the best-fitting coefficients for the model in order to minimize error between predictions and true outcomes. However, the fact that real outcome data only have two unique values (0 and 1) makes it really hard to do this fitting process, when the predictions could be any real number value. If you convert a binary categorical variable into 0s and 1s and include that as the outcome in a linear model, the function will <em>run</em>, and give you an answer, but because the fitting process was flawed those coefficient estimates will be very inaccurate for making guesses about new data.</p>
+<p>To deal with this, we use a separate function: <code class="docutils literal notranslate"><span class="pre">glm()</span></code>. This stands for <strong><em>generalized</em> linear model</strong>. This function can fit any linear model, but will <em>generalize</em> to outcome variables of types other than continuous if you tell it to. In order to be sensitive to different data types, it takes an additional argument <code class="docutils literal notranslate"><span class="pre">family</span> <span class="pre">=</span></code>. In the case of logistic regression, this argument should be set to <code class="docutils literal notranslate"><span class="pre">family</span> <span class="pre">=</span> <span class="pre">binomial</span></code>, indicating that we’re predicting binary data.</p>
+<p>In fact, we could use glm() to run the linear models we were building before. For that, we would set <code class="docutils literal notranslate"><span class="pre">family</span> <span class="pre">=</span> <span class="pre">gaussian</span></code> to tell it we’re predicting gaussian-distributed data (another name for the continuous normal distribution).</p>
+<p>The upside of this function is that it can outcome data on any sort of distribution. The downside is that unlike <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, it won’t automatically convert categorical variables to dummy variables for us. We have to do that manually.</p>
+<p>Let’s go back to our kidney disease example and find the actual model that best predicts appetite from hemoglobin levels. We already created a dummy variable version of the appetite variable so we can use that here, but remember for your own use cases you’ll have to do this yourself.</p>
+<p>The formula for fitting a model with <code class="docutils literal notranslate"><span class="pre">glm()</span></code> is in the same form as it would be in <code class="docutils literal notranslate"><span class="pre">lm()</span></code>. Thus for our case, it is <code class="docutils literal notranslate"><span class="pre">Appetite_dummy</span> <span class="pre">~</span> <span class="pre">Hemoglobin</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">kidney_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">glm</span><span class="p">(</span><span class="n">Appetite_dummy</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Hemoglobin</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kidney_disease</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial</span><span class="p">)</span>
+<span class="n">kidney_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And that’s that! The intercept coefficient represents the log odds of having good appetite with a hemoglobin level of 0, and the effect coefficient represents the change in log odds for every one-point increase in hemoglobin.</p>
+<p>If you wanted to make a prediction of appetite likelihood for someone with a hemoglobin level of 10, you simply plug in those coefficient estimates to the regression equation to get predicted log-odds, and then convert to probabilities:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">logodds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kidney_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">kidney_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="o">*</span><span class="m">10</span>
+<span class="n">odds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">logodds</span><span class="p">)</span>
+<span class="n">probability</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">odds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">odds</span><span class="p">)</span>
+<span class="n">probability</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This means that there is a 66.8% chance that someone with a hemoglobin level of 10 would have a good appetite.</p>
+<p>Let’s try another more complicated example with the General Social Survey data, predicting the likelihood that someone supports marijuana legalization based on their religious affiliation. First we’ll load that data and investigate the outcome variable of interest, <code class="docutils literal notranslate"><span class="pre">should_marijuana_be_made_legal</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
+
+<span class="nf">str</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">should_marijuana_be_made_legal</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">should_marijuana_be_made_legal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is a character datatype with two possible values, “Legal” and “Not legal”. It is binary, which means we can use logistic regression to predict someone’s likelihood of supporting marijuana legalization or not. However we first need to recode it as a numeric dummy variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#resetting values</span>
+<span class="n">GSS</span><span class="o">$</span><span class="n">marijuana_dummy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">recode</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">should_marijuana_be_made_legal</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                             </span><span class="s">&quot;Legal&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">                             </span><span class="s">&quot;Not legal&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">)</span>
+<span class="n">GSS</span><span class="o">$</span><span class="n">marijuana_dummy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">marijuana_dummy</span><span class="p">)</span>
+
+<span class="c1">#confirming we did it right</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">marijuana_dummy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our predictor of interest is in the variable <code class="docutils literal notranslate"><span class="pre">rs_religious_preference</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">rs_religious_preference</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">GSS</span><span class="o">$</span><span class="n">rs_religious_preference</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a categorical variable with many levels, but some levels are very rare in the dataset. It will be hard to fit accurate coefficients for these levels, so let’s only retain data for religions that have at least ten people representing them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">included_religions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Buddhism&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Catholic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Christian&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jewish&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Moslem/islam&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;None&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                       </span><span class="s">&quot;Other&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Protestant&quot;</span><span class="p">)</span>
+<span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span><span class="w"> </span><span class="n">rs_religious_preference</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">included_religions</span><span class="p">)</span>
+
+<span class="c1">#confirming we did it right</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">rs_religious_preference</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will fit our logistic regression model. Because <code class="docutils literal notranslate"><span class="pre">rs_religious_preference</span></code> is a many-leveled categorical variable there will be many coefficients fit in the model representing whether or not someone is in a specific religious category, but the formula for fitting it is just <code class="docutils literal notranslate"><span class="pre">marijuana_dummy</span> <span class="pre">~</span> <span class="pre">rs_religious_preference</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#fitting the logistic regression with glm(), including family argument for binary data</span>
+<span class="n">marijuana_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">glm</span><span class="p">(</span><span class="n">marijuana_dummy</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">rs_religious_preference</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial</span><span class="p">)</span>
+<span class="n">marijuana_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each coefficient in this table represents the change in log-odds of supporting marijuana legalization, based on whether or not someone is in that particular religious group. The intercept is the log-odds of supporting marijuana legalization for someone in the reference group, which is whatever religion is missing from this list of coefficients (in this case, Buddhism).</p>
+<p>If you wanted to make predictions about the likelihood of people’s marijuana legalization support given their religion, you can plug in those coefficient estimates to the regression equation to get predicted log-odds, and then convert to probabilities. For example, for someone who is Buddhist, we’d use just the intercept value. Because they are the reference group, every predictor X has a value of 0 and those components of the model drop out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">logodds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">marijuana_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span>
+<span class="n">odds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">logodds</span><span class="p">)</span>
+<span class="n">probability</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">odds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">odds</span><span class="p">)</span>
+<span class="n">probability</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is about a 93% chance someone who is Buddhist will support marijuana legalization.</p>
+<p>All the other coefficients being negative mean that all other religious groups have a lower chance of supporting marijuana legalization. For instance, for someone who is Catholic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#the Catholic coefficient is the second one, b1</span>
+<span class="n">logodds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">marijuana_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">marijuana_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span>
+<span class="n">odds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">logodds</span><span class="p">)</span>
+<span class="n">probability</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">odds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">odds</span><span class="p">)</span>
+<span class="n">probability</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An individual Catholic person is only about 58% likely to support marijuana legalization.</p>
+<p>As with linear models, we can also make predictions for lots of datapoints at once. One twist though is that we have to choose whether to make predictions in probability units of the response (i.e. probability of supporting marijuana legalization), or predictions of the transformed response (logit) that is actually the outcome in a logistic model. By default <code class="docutils literal notranslate"><span class="pre">predict()</span></code> will make predictions in terms of log-odds, since that’s what the logistic model outputs. But it’s much easier to understand the consequences of your model in terms of probabilities. For that sort of prediction, you need to add <code class="docutils literal notranslate"><span class="pre">type=&quot;response&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> function call. Here we predict the chance of marijuana legalization support for the first ten people in the dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">predict</span><span class="p">(</span><span class="n">marijuana_model</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,],</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;response&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="error-in-logistic-models">
+<h2>15.6 Error in logistic models<a class="headerlink" href="#error-in-logistic-models" title="Permalink to this heading">#</a></h2>
+<p>In linear models, we talked extensively about using the sum of squares to measure error in a model and evaluate how good the model is. We use the sum of squares for the linear model because it is smallest at the mean of a bivariate distribution, or the point where a straight line is drawn.</p>
+<p>Sum of squares does <em>not</em> work for a logistic line, which is curved. It will estimate the error of the model incorrectly. Thus we shouldn’t use sum of squares for measuring error in logistic models, and we shouldn’t use <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> to evaluate models (which only uses the sum of squares).</p>
+<p>Instead, logistic regression uses a concept called <strong>minimal deviance</strong> or <strong>maximum likelihood</strong>. In brief, this concept represents how likely our current dataset is, given the predictive logistic model we’ve estimated. A better model is one where the current data is more likely - the model makes strong predictions about the probability of being in the outcome category or not, and those predictions are usually right. It’s more complicated to compute than sum of squares is, so we won’t make you learn that in intro stats (if you’re burning with curiosity, try reading through <a class="reference external" href="https://matthew-brett.github.io/cfd2020/more-regression/logistic_regression.html#a-different-measure-of-prediction-error">this</a> description).</p>
+<p>What we do want to point out, however, is that the output of a glm object does this deviance calculation for you:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">marijuana_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Look at the bottom of the output, where it says “Null Deviance” and “Residual Deviance”. Null Deviance is the deviance in the empty or null form of a logistic model.</p>
+<p>In linear regression, the null model always makes a prediction of the outcome variable’s mean. In the case of a logistic regression, the null model always predicts the probability of a data point being 0 or 1 without knowing any other information (i.e, the number of 1 data points divided by the total number of data points). Thus Null Deviance is the deviance of the null logistic model.</p>
+<p>Residual Deviance is the amount of deviance still left in the fully specified model. Our goal with logistic modeling is to reduce deviance as much as possible - we don’t want real data to deviate at all from the predictions we make. Thus, the smaller the deviance left behind, the better our model is.</p>
+<p>Sound familiar? These concepts, while calculated differently, are very similar to how we use SS<sub>Total</sub> and SS<sub>Error</sub> in linear modeling. SS<sub>Total</sub> represents the amount of error in a null model; Null Deviance represents the amount of deviance in a null model. SS<sub>Error</sub> represents the amount of error still left after accounting for some explanatory variables; Residual Deviance represents the amount of deviance still left after accounting for some explanatory variables.</p>
+<p>Thus, while there’s no ANOVA table for a logistic model to find out how well the model does (via the PRE score, Proportional Reduction in Error), we can calculate our own Proportional Reduction in Deviance (or PRD).</p>
+<p>Recall the formula for PRE in linear regression:</p>
+<div class="math notranslate nohighlight">
+\[ PRE = \frac{SS_{model}}{SS_{total}} \]</div>
+<p>This is the amount of error the model reduced, relative to how much unexplained error there was. SS<sub>Model</sub> itself is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[ SS_{model} = SS_{total} - SS_{error} \]</div>
+<p>Thus, PRE can also be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[ PRE = \frac{SS_{total} - SS_{error}}{SS_{total}} \]</div>
+<p>Since we have comparable numbers to SS<sub>Total</sub> and SS<sub>Error</sub>, we can calculate PRD as:</p>
+<div class="math notranslate nohighlight">
+\[ PRD = \frac{DEV_{null} - DEV_{residual}}{DEV_{null}} \]</div>
+<p>Let’s see how our marijuana legalization model does, by taking into account people’s religious affiliation. We can access the null deviance and residual deviance directly from the model using <code class="docutils literal notranslate"><span class="pre">model$null.deviance</span></code> and <code class="docutils literal notranslate"><span class="pre">model$deviance</span></code>, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#finding DEVnull and DEVresidual from model output</span>
+<span class="p">(</span><span class="n">marijuana_model</span><span class="o">$</span><span class="n">null.deviance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">marijuana_model</span><span class="o">$</span><span class="n">deviance</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">marijuana_model</span><span class="o">$</span><span class="n">null.deviance</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Think of this PRD score as you would think of the PRE score in linear regression. This number suggests that accounting for people’s religious affiliation explains about 3.67% of the deviance in predictions of marijuana legalization support.</p>
+<p>For predicting appetite from hemoglobin levels in the kidney disease data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">kidney_model</span><span class="o">$</span><span class="n">null.deviance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">kidney_model</span><span class="o">$</span><span class="n">deviance</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">kidney_model</span><span class="o">$</span><span class="n">null.deviance</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A pretty good model! Hemoglobin levels explain almost half the deviance in appetite predictions.</p>
+</section>
+<section id="predicting-categorical-outcomes-with-more-than-two-levels">
+<h2>15.7 Predicting categorical outcomes with more than two levels<a class="headerlink" href="#predicting-categorical-outcomes-with-more-than-two-levels" title="Permalink to this heading">#</a></h2>
+<p>Logistic regression works on binary data by predicting the probability or odds that any one data point is in one category versus another. Yes or no, 0 or 1. It doesn’t have the capability to predict among more than two categories.</p>
+<p>Unfortunately this is the farthest we’re going to go in this introductory course in terms of predicting catgorical outcome data. If we had more time, we could dive into this rich area of statistics as well. But alas, we only get a few short weeks together. Instead, I will direct you to some learning resources on this topic, in case you ever need to do this in your own research.</p>
+<p>One approach to this problem is called a <strong>Chi-square</strong> test. This is one of the oldest statistical tools developed (and thus doesn’t use the general linear model framework). This test gives you the likelihood that the distribution of data among different categories occurred by chance, or was perhaps influenced by some other explanatory variable. To learn about Chi-square tests, read Chapter 12 in <a class="reference external" href="https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html">this online book</a>.</p>
+<p>A more modern approach is a collection of different models that make predictions among many categories. Some of these involve layers of logistic regressions, others are completely different methodologies. Collectively, these are known as <strong>classification models</strong>. If you ever take a machine learning class, you will learn a lot about these. These models are what a significant portion of modern data science and machine learning are based off of. <a class="reference external" href="https://dzone.com/articles/introduction-to-classification-algorithms">Here</a> is a quick introduction to how these methods work.</p>
+<p>Finally, a special version of logistic regression for ordinal variables is called <strong>ordinal regression</strong>. This fits parameters for the change in odds corresponding to going up each level in an ordinal scale. <a class="reference external" href="https://stats.oarc.ucla.edu/r/dae/ordinal-logistic-regression/">This page</a> will give you the background and code for getting started with those.</p>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Describe why a linear model is not good for predicting binary data</p></li>
+<li><p>Convert between a logit and a probability</p></li>
+<li><p>Interpret predictions made by a logistic model</p></li>
+<li><p>Interpret coefficients in a logistic model</p></li>
+<li><p>Visualize a logistic model fit</p></li>
+<li><p>Fit a logistic model in error</p></li>
+<li><p>Calculate Proportional Reduction in Deviance for a logistic model</p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Next: Chapter 16 - Estimating Populations</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-continuous-outcomes">15.1 Non-continuous outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logit-link-function">15.2 Logit link function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-odds-conversion-step-1">Log odds conversion - step 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-odds-conversion-step-2">Log odds conversion - step 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-odds-conversion-step-3">Log odds conversion - step 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretting-a-logistic-model">15.4 Interpretting a logistic model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-predictions">Interpreting predictions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-coefficients">Interpreting coefficients</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-logistic-model">15.5 Visualizing a logistic model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-logistic-regression-models">15.6 Fitting logistic regression models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-logistic-models">15.6 Error in logistic models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-categorical-outcomes-with-more-than-two-levels">15.7 Predicting categorical outcomes with more than two levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

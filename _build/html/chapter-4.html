@@ -172,19 +172,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Models with Moderation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
@@ -670,7 +669,7 @@ document.write(`
 </section>
 <section id="manipulating-data">
 <h2>4.6 Manipulating data<a class="headerlink" href="#manipulating-data" title="Permalink to this heading">#</a></h2>
-<p>Once data are in a tidy format, we can use R commands to manipulate the data in various ways. Let’s look at a few common things you might need to do before analyzing your data:</p>
+<p>Once we’ve chosen what data we’re going to work with, we can use R commands to manipulate the data in various ways. Let’s look at a few common things you might need to do before analyzing your data:</p>
 <ul class="simple">
 <li><p>identifying missing data</p></li>
 <li><p>filtering data</p></li>
@@ -679,8 +678,8 @@ document.write(`
 </ul>
 <section id="identifying-missing-data">
 <h3>Identifying missing data<a class="headerlink" href="#identifying-missing-data" title="Permalink to this heading">#</a></h3>
-<p>Sometimes (in fact, usually) we end up with some missing data in our data set. People don’t always answer every question on a survey, someone didn’t show up to their third doctor’s appointment, etc. R represents missing data with the value NA (not available). It will also recode a blank cell in a file as NA. If your data set represents missing data in some other way (e.g., some people put a nonsense value like -999), you should recode the values as NA when working in R.</p>
-<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> data frame. First, a function called <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> can be used to tell you whether a datapoint is NA or not (it will out <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> or <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>). If we apply that to an entire vector, it will return a vector of falses and trues corresponding to what indices in the vector have an NA value.</p>
+<p>Sometimes (in fact, usually) we end up with some missing data in our data set. People don’t always answer every question on a survey, someone didn’t show up to their third doctor’s appointment, etc. R represents missing data with the value NA (“not available”). It will also recode a blank cell in a file as NA. If your data set represents missing data in some other way (e.g., some people put a nonsense value like -999), you should recode the values as NA when working in R.</p>
+<p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> data frame. First, a function called <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> can be used to tell you whether a datapoint is NA or not (it will return <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> or <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>). If we apply that to an entire vector, it will return a vector of falses and trues corresponding to what indices in the vector have an NA value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using is.na() on the tetris_total_score variable to see where NA values might be</span>
@@ -690,7 +689,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Based on this, we can easily see some missing data in this variable - there are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> results to the question “is this datapoint NA.” We can also count how many observations have this value by summing this boolean vector with nested functions (remember, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is also represented as 1 in R, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> as 0).</p>
+<p>Based on this, we can easily see some missing data in this variable - there are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> results to the question “is this datapoint NA?” We can also count how many observations have this value by summing this boolean vector with nested functions (remember, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is also represented as 1 in R, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> as 0).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">tetris_total_score</span><span class="p">))</span>
