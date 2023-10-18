@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 18 - Significance Testing with Models &#8212; Pomona Psych 158 Online Textbook</title>
+    <title>Chapter 18 - Evaluating Effect Sizes &#8212; Pomona Psych 158 Online Textbook</title>
   
   
   
@@ -174,19 +174,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Models with Moderation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
@@ -419,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 18 - Significance Testing with Models</h1>
+    <h1>Chapter 18 - Evaluating Effect Sizes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,13 +428,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-models">18.1 Significant models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-sampling-distribution-of-r-sup-2-sup">18.2 Null sampling distribution of R<sup>2</sup></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing-a-model">18.3 Significance testing a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-f-distribution">18.4 The F distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-full-models">18.5 Comparing different full models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-direct-comparison">18.6 Importance of direct comparison</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons-problem">18.7 Multiple comparisons problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-vs-practical-significance">19.1 Statistical vs. practical significance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unstandardized-effect-sizes">19.2 Unstandardized effect sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-effect-sizes">19.3 Standardized effect sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-model-coefficient">Standardized model coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-coefficient-r">Correlation coefficient r</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-sup-2-sup">R<sup>2</sup></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">Cohen’s d</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-f-sup-2-sup">Cohen’s f<sup>2</sup></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-good-effect-size">19.4 What is a good effect size?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-power">19.5 Statistical power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning">19.7 Power planning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
             </nav>
@@ -449,16 +454,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Previous: Chapter 17 - Significance Testing</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Previous: Chapter 17 - Significance Testing Whole Models</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
 <span class="n">GSS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
@@ -470,403 +473,338 @@ document.write(`
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="chapter-18-significance-testing-with-models">
-<h1>Chapter 18 - Significance Testing with Models<a class="headerlink" href="#chapter-18-significance-testing-with-models" title="Permalink to this heading">#</a></h1>
-<section id="significant-models">
-<h2>18.1 Significant models<a class="headerlink" href="#significant-models" title="Permalink to this heading">#</a></h2>
-<p>In the previous chapter we learned how to use the sampling distribution of β to test the null hypothesis. Using permutation testing, we generated a sampling distribution for a world in which β = 0 is true in the data generation process. We used the sampling distribution to calculate the p-value, the probability that the sample b, or a b more extreme than the sample, would have occurred just by chance if the null hypothesis were true. Based on the p-value, and the decision criterion we had set (i.e., α of .05), we decided whether to reject the null hypothesis or not.</p>
-<p>Decisions of statistical significance are made about one statistical estimate at a time. Thus, it is a common tool for psychologists who are interested in questions such as “is <em>this</em> effect a real part of the data generation process?” To answer that question they will build a statistical model with that effect included, calculate a p-value, and then interpret the p-value of that effect in particular.</p>
-<p>But that’s not the only type of research question you might have. Perhaps instead of one particular variable, you’re interested in whether a set of multiple variables together are helpful for making predictions about an outcome. In other words, you want to know if your entire <em>model</em> is significant, not just any one predictor.</p>
-<p>As it turns out, the sampling distribution of β is just one of many sampling distributions we could construct. Using the same approach we developed for one model coefficient, we could make a sampling distribution of any statistic that we can calculate. That includes estimates of whole model error such as PRE.</p>
-<p>At this point, we’re going to switch over to using a different name for PRE that is used more commonly - R<sup>2</sup>. “PRE” is the name used in the <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> package we relied on for learning about error in models, but the concept of what proportion of error a model explains is more commonly discussed and written about as R<sup>2</sup>.</p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">summary()</span></code> on a model object, we can skip the ANOVA table entirely and find this value:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_mother</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>On the second to the last line of this output is an entry called “Multiple R-squared: 0.2857”. This stands for the R<sup>2</sup> value in a regression model. It is also possible to get this value directly by saving the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output to its own object, and then finding the <code class="docutils literal notranslate"><span class="pre">$r.squared</span></code> property of the summary object.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_summary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
-<span class="n">model_summary</span><span class="o">$</span><span class="n">r.squared</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can easily verify that this is the same value as PRE is in the ANOVA table for the full model:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">supernova</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>When assessing statistical models as a whole, rather than individual predictors, the statistic we care about is PRE/R<sup>2</sup>. We don’t care so much how strong any one effect is, but together we want a model that explains at least some proportion of the variation in an outcome variable. In a world where this model is not helpful, it wouldn’t explain any variance - the population R<sup>2</sup> value would be 0. Thus, for significance testing entire models, we need to examine the null sampling distribution of R<sup>2</sup> = 0.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-18-evaluating-effect-sizes">
+<h1>Chapter 18 - Evaluating Effect Sizes<a class="headerlink" href="#chapter-18-evaluating-effect-sizes" title="Permalink to this heading">#</a></h1>
+<section id="statistical-vs-practical-significance">
+<h2>19.1 Statistical vs. practical significance<a class="headerlink" href="#statistical-vs-practical-significance" title="Permalink to this heading">#</a></h2>
+<p>In the previous chapters we discussed how we can use data to test hypotheses. This approach gives us p-values, which we can use to decide if we think it is likely or not that the true effect or model in a population is 0. But that sort of decision is ultimately a binary answer: we either reject or fail to reject the null hypothesis. We neglect a lot of the information a model gives us if p-values are the only thing we pay attention to.</p>
+<p>Consider the following situation. You are testing the efficacy of a new drug for treating depression, and find that the effect of the drug has a p-value of &lt;0.01. Taking the drug significantly improves depression! In a simple world, that would be all you need to send the drug into production and start selling it to people. However, we don’t live in a simple world. It takes money and time to produce medicine, which are resources taken away from producing other things. Your bosses (and the taxpayers funding Medicare) want that money and time to be worth it.</p>
+<p>Of course it’s worth it you say, because the effect is signfificant! But what if you learned that the actual <em>amount</em> the drug improved depression by was 1 point on a 10 point scale? Is that worth it? What if it instead improved depression by only 0.1 points? What if it improved depression by only a little bit, and also came with side effects like acne and stomach upset? Would you make the same drug production decision across all of these scenarios?</p>
+<p>We know from our practice with p-values that even tiny effects can be significant if we have enough data. If your only goal is to publish a paper saying that an effect probably exists, then a p-value is enough for that purpose. But if you care about applying your new knowledge in the real world, a p-value doesn’t tell us everything. We don’t know if the <strong>effect size</strong> is large enough to matter. So while null hypothesis testing tells us whether an effect likely exists in some way (statistical significance), effect sizes tell us how meaningful that effect is (called <strong>practical significance</strong>). Good statistical analyses should report both p-values and effect sizes in order to give the full picture about a statistical model.</p>
 </section>
-<section id="null-sampling-distribution-of-r-sup-2-sup">
-<h2>18.2 Null sampling distribution of R<sup>2</sup><a class="headerlink" href="#null-sampling-distribution-of-r-sup-2-sup" title="Permalink to this heading">#</a></h2>
-<p>In order to construct a null sampling distribution of R<sup>2</sup>, we first need to understand what would cause a model to have R<sup>2</sup> = 0. The R<sup>2</sup> model reflects the proportion of variation in an outcome variable that a full model explains, relative to the empty model. This score can range from 0 to 1. With R<sup>2</sup> = 1, there would be no error left in a model; the set of explanatory variables the model uses results in perfect predictions about the outcome values.</p>
-<p>The opposite, then, is when R<sup>2</sup> = 0. This would mean the full model explains no additional variation relative to the empty model. It performs exactly how the empty model would for making predictions. What would turn a full model into an empty model?</p>
-<p>Recall the equation for the empty model:</p>
-<div class="math notranslate nohighlight">
-\[ \hat{Y}_i = b_0 \]</div>
-<p>The only parameter in the model is b<sub>0</sub>. For a full multivariable model with two predictors, the equation would look like so:</p>
-<div class="math notranslate nohighlight">
-\[ \hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} \]</div>
-<p>In order to make this match the equation of the empty model, we need to cancel out the extra terms. The situation that would create this is if both b<sub>1</sub> and b<sub>2</sub> were 0.</p>
-<div class="math notranslate nohighlight">
-\[ \hat{Y}_i = b_0 + (0)X_{1i} + (0)X_{2i} =\]</div>
-<div class="math notranslate nohighlight">
-\[ \hat{Y}_i = b_0 \]</div>
-<p>The null hypothesis for a full model is thus larger than any one parameter. It is the hypothesis that <em>all</em> predictor coefficients are equal to 0. You could write this as:</p>
-<div class="math notranslate nohighlight">
-\[H_0: \beta_1 = \beta_2 = 0 \]</div>
-<p>Or, since the consequence of all coefficients being 0 are that no additional variation is explained beyond the empty model, you can write the null hypothesis as:</p>
-<div class="math notranslate nohighlight">
-\[H_0: R^2 = 0 \]</div>
-<p>To create the null sampling distribution of one coefficient, last chapter we used permutation testing to shuffle the order of one predictor variable. That broke the relationship between the predictor and the outcome, making the true value of that predictor’s coefficient equal to 0. We can use permutation testing for our full model situation as well. Since our null hypothesis is that all predictor coefficients = 0, we simply shuffle every predictor and fit a model with those shuffled predictors. Then we estimate the R<sup>2</sup> value of the permutation test model. Saving this value and repeating many times will let us build a null sampling distribution of R<sup>2</sup>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_R2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
-
-<span class="c1">#generate 1000 unique samples, saving each R2</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                                         </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                         </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                                         </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                         </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">shuffled_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">null_R2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="p">}</span>
-
-<span class="n">R2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_R2</span><span class="p">)</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_R2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">R2_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Walk yourself through every line of this permutation test code, and make sure you understand what it’s doing and why. We’re shuffling both of the predictors of mother’s and father’s education, using those shuffled predictors to predict the participants’ education level, saving the model R<sup>2</sup>, and repeating that process 1,000 times.</p>
-<p>Then, investigate the shape of the R<sup>2</sup> null sampling distribution. Interestingly, it has a very different shape than the sampling distribution of β. In the figure below we put two example sampling distributions side by side for purposes of comparison.</p>
-<img src="images/ch18-R2b1.png" width="750">
-<p>The sampling distribution of β has two tails because the effect of a predictor could be positive or could be negative. But R<sup>2</sup> is different: the full model can explain none of the error compared to the empty model (0), or up to all of the error from the empty model (1). But it cannot explain less than 0 error. Because R<sup>2</sup> is a proportion, it has a clear lower bound of 0, and a clear upper bound of 1.</p>
-<p>Assuming the null hypothesis is true, the only place an extreme R<sup>2</sup> could fall is in the upper tail of the distribution, which is why there is only one tail. An extreme positive effect of parental education <em>or</em> an extreme negative effect of parental education are both the same to R<sup>2</sup>: both would make a predictive model, and fall in the upper tail of the sampling distribution of R<sup>2</sup>.</p>
+<section id="unstandardized-effect-sizes">
+<h2>19.2 Unstandardized effect sizes<a class="headerlink" href="#unstandardized-effect-sizes" title="Permalink to this heading">#</a></h2>
+<p>How do you measure an effect size? Throughout this course, we’ve already been doing it! An effect size is any number expressing the magnitude of an effect. When fitting models, we have interpreted the b coefficients estimated by those models in the context of what difference in predictions we would make for different values of input variables. For a b coefficient of 5, we’d change our prediction of an outcome variable by 5 units for every one unit increase in the predictor variable. For a b coefficient of 0.1, we’d change our outcome prediction only a little bit. These numbers are all effect sizes. They express the size of the effect a predictor variable has on the predictions of an outcome variable.</p>
+<p>Likewise, RMSE is an effect size because it tells us the magnitude of prediction errors to expect when using a whole model.</p>
+<p>The b coefficients and RMSE are specifically known as <strong>unstandardized effect sizes.</strong> An unstandardized effect size is the magnitude of an effect expressed in the units of the variables.</p>
+<p>Unstandardized effect sizes are useful for making decisions about particular situations. Drug dose, cholesterol, etc. all having meaningful units by which their quantity is expressed. An unstandardized effect size representing a number in these units tells you how much of a drug you have to give to get an expected outcome, and amount of cholesterol in the blood is well-mapped to heart risks. We interact with the world through the units of quantities, and we best understand effects in these same units.</p>
+<p>However, we have less understanding about domains or measurements that we’re not already familiar with. E.g., if a model suggested that drinking alcohol before bed is associated with a decrease in sleep length of 2 hours, we intuitively know what that means. We all sleep, and we’ve all felt the effects of 8 hours versus 6 hours of sleep. But if that model instead suggested that drinking alcohol before bed is associated with a 2 point decrease in cognitive fluency, what does that mean? What concrete things define cognitive fluency? What does fluency = 5 feel like compared to fluency = 7? What range is it on?</p>
+<p>Unstandardized coefficients are useful for understanding the practical significance of effects in units that we know about, but are less useful for abstract measurements or domains we are unfamiliar with. In that case, we can standardize the effect size.</p>
 </section>
-<section id="significance-testing-a-model">
-<h2>18.3 Significance testing a model<a class="headerlink" href="#significance-testing-a-model" title="Permalink to this heading">#</a></h2>
-<p>Once we have the null sampling distribution of R<sup>2</sup>, we can compare our estimate of R<sup>2</sup> to it. In this comparison, we ask ourselves - if R<sup>2</sup> = 0 in the population, is it likely or unlikely to produce an estimate of R<sup>2</sup> such as ours?</p>
-<p>In the null distribution of β, we considered something “unlikely” if it was outside the area where 95% of b estimates would fall. In other words, an unlikely b estimate is one that is at least 1.96 standard errors above or below β = 0.</p>
+<section id="standardized-effect-sizes">
+<h2>19.3 Standardized effect sizes<a class="headerlink" href="#standardized-effect-sizes" title="Permalink to this heading">#</a></h2>
+<p><strong>Standardized effect sizes</strong> remove the real-world units from variables. We’ve done a version of this already when learning about z-scores. A standardized variable is one that has been converted to z-scores. Z-scores, to review, express the value of a variable in terms of how many standard deviations it is away from the variable mean. By doing this, we don’t need to have domain expertise in the variable to intrinsically understand what certain values mean. Could you say what a temperature of 350F means relative to other typical temperatures for baking? What about a <a class="reference external" href="https://en.wikipedia.org/wiki/Gas_mark">Gas mark</a> of 5? You’re likely more familiar with the former than the latter. But if we convert each to z-scores and find that both have a z-score of -1, we can easily undertand either of those values relative to their distribution.</p>
+<p>A standardized effect size operates similarly. You don’t need to know about a variable’s units to understand the magnitude of a standardized effect size. Doing this has three benefits for understanding statistical models:</p>
+<ol class="arabic simple">
+<li><p>Standardized effect sizes help you evaluate how big or small an effect is when the units of measurement aren’t intuitive. We don’t have to know the typical range or mean of a variable already in order to interpret a standardized effect size - its value has all the information wrapped into it.</p></li>
+<li><p>Standardized effect sizes can help you compare results across studies. Many variables are measured on different scales in different studies. This isn’t likely to happen with a variable like temperature, but there are multiple anxiety scales to choose from, each of which is on a different scale. Including standardized effect size statistics can help readers understand trends or differences across studies. It can also help us compare effect sizes of variables in the same model that are measured in different units (although remember we need to use hypothesis testing to figure out if a difference in estimated effect is statistically significant).</p></li>
+<li><p>Standardized effect sizes let us plan our research more easily. We’ll cover this process more later in this chapter, but the short of it is that there are tools we can use to figure out big of a study we should run if we want to be able to find a particular effect size as statistically significant. These tools use standardized effect sizes.</p></li>
+</ol>
+<p>Next we will cover how to calculate some of the most common standardized effect statistics.</p>
+<section id="standardized-model-coefficient">
+<h3>Standardized model coefficient<a class="headerlink" href="#standardized-model-coefficient" title="Permalink to this heading">#</a></h3>
+<p>An unstandardized model coefficient is the coefficient estimate a model gives when the model is fit directly onto raw variable values. It is interpreted in the context of those variable units.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
-
-<span class="c1">#generate 1000 unique samples, saving each b1</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                                         </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                         </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">null_b1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
-<span class="p">}</span>
-
-<span class="n">b1_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_b1</span><span class="p">)</span>
-
-<span class="c1">#cut-off values for extremeness</span>
-<span class="n">b1s_sd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span>
-<span class="n">high_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span><span class="o">*</span><span class="m">1.96</span>
-<span class="n">low_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span><span class="o">*</span><span class="m">-1.96</span>
-
-<span class="c1">#marking something as extreme if it is greater than 1.96*sd or less than -1.96*sd</span>
-<span class="n">b1_df</span><span class="o">$</span><span class="n">extreme</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">high_cutoff</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">low_cutoff</span>
-
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">unstandardized_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                           </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">unstandardized_model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>There are two “zones” of unlikeliness in this distribution, because a b estimate can either be greater than 0 or less than 0. 2.5% of the distribution is in each tail, adding up to the 5% of bs that count as unlikely. To check whether a particular estimate of b is unlikely (and thus significantly different from 0), we’d ask if it’s larger than the 97.5%ile OR less than the 2.5%ile of the distribution.</p>
+<p>When fitting this model, we get a b<sub>0</sub> estimate of 9.2 and a b<sub>1</sub> estimate of 0.388. These mean, in the context of the variable units, that we expect some to have 9.2 years of education if their father had 0 years of education. For every one additional year of education their father had, we’d expect their education to higher by 0.388 years.</p>
+<p>A standardized model coefficient, in contrast, is the estimate a model gives when those variables have been z-scored first (NOTE: after removing the rows with NAs on <em>any</em> model variable). The code below will pick out the relevant variables for our model and z-score them all at the same time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">simple_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="n">b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">simple_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">GSS_zscore</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">,</span><span class="w"> </span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">na.omit</span><span class="p">(</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1">#removes rows with any NAs</span>
+<span class="w">    </span><span class="nf">scale</span><span class="p">(</span><span class="n">.</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">.</span><span class="p">)</span>
 
-<span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.025</span><span class="p">)</span>
-<span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.975</span><span class="p">)</span>
-<span class="n">b1</span>
-<span class="n">b1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.975</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.025</span><span class="p">)</span>
+<span class="n">standardized_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_zscore</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">standardized_model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In the sampling distribution of R<sup>2</sup>, an estimate can only be larger than 0, never less. There is one tail to the distribution. This means that if we were to use the same α criterion for significance as before, α = 0.05, the 5% unlikely estimates will all be in the high tail. Based on this fact, a significant R<sup>2</sup> is one that is larger than the 95%ile of the null sampling distribution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_mother</span><span class="w"> </span><span class="o">+</span>
-<span class="w">                </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="n">R2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-
-<span class="nf">quantile</span><span class="p">(</span><span class="n">null_R2</span><span class="p">,</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
-<span class="n">R2</span><span class="w"> </span>
-<span class="n">R2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nf">quantile</span><span class="p">(</span><span class="n">null_R2</span><span class="p">,</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Remember that a p-value is the probability of getting an estimate that is as extreme or more extreme as the one we got, if the population parameter were 0. To calculate the p-value for a model’s R<sup>2</sup> score, we’d count the proportion of the null sampling distribution that is at least as extreme as our model estimate.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_R2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">R2</span>
-<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
-
-<span class="n">num_more_positive</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_R2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>According to this, we didn’t simulate any R<sup>2</sup>s from the null distribution that were larger than the R<sup>2</sup> we estimated from the dataset. Its p-value is something less than 1 in a thousand: p &lt; 0.001.</p>
-</section>
-<section id="the-f-distribution">
-<h2>18.4 The F distribution<a class="headerlink" href="#the-f-distribution" title="Permalink to this heading">#</a></h2>
-<p>The shape of this sort of one-tailed distribution is called an <strong>F distribution</strong>. Much in the same way original statisticians had to build a mathematical formula to represent the theoretical shape of a coefficient’s sampling distribution (the t distribution), they also built one for model performance.</p>
-<img src="images/ch18-fdist.png" width="500">
-<p>The shape of an F distribution is controlled by two values: the number of predictor parameters in a model (k) and the degrees of freedom of a model (N-k). k sets where the peak of the distribution is horizontally, while the ratio of k to df sets what proportion of the area is in the major peak versus the tail.</p>
-<p>The width of the null sampling distribution for a b estimate is directly proportional to the sample size N, such that smaller N’s lead to wider distributions. This is because the estimates from smaller sample sizes are less stable, so larger estimates are considered more likely. The same principle applies in the null sampling distribution of R<sup>2</sup>, but it’s not just the sample size that determines this. It’s the degrees of freedom, N-k. A model could be fit in a large dataset, but if a large number of parameters are also fit, the R<sup>2</sup> estimate will be less stable than a model fit with just a couple of parameters. This is because, with many parameters, there are a lot more ways the set of bs can vary! With more ways bs can vary, a wider range of R<sup>2</sup>s are likely.</p>
-<p>With permutation testing, we can calculate a p-value by counting up the proportion of the simulated null sampling distribution that is as extreme or more extreme than an estimated R<sup>2</sup> value. But again, R can also give the exact p-value to us in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output, but using the math of the F distribution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Don’t be distracted by the p-values for each separate predictor. Right now we’re not interested in how strong each of those effects are individually, just how well they combine to make predictions.</p>
-<p>We now know how to find the model’s R<sup>2</sup> value in this output: it is the number labeled “Multiple R-squared” on the second to the last line. For the p-value of that estimate, look below it at the last line of the output. There will be a number for “F-statistic” that tells you how extreme on the null F distribution this R<sup>2</sup> would fall, along with the two values that determine the shape of the F distribution: the number of predictor coefficients (2; the intercept isn’t counted here) and the degrees of freedom (63). Next to that is a number labeled “p-value.” That is the p-value for the entire model.</p>
-<p>Notice that the p-value in our example is still significant even though one of the predictors in the model is not. The model as a whole is likely to make better predictions than the empty model, even if not all the predictors significantly contribute to those predictions.</p>
-<p>We can use the p-value to decide, based on our stated alpha of .05, whether the observed sample statistic would be unlikely or not if the null hypothesis is true. If we judge it to be unlikely (i.e., p &lt; .05), then we would most likely decide to reject the empty model in favor of this more complex model. But if the p-value is greater than .05, we would probably decide to stick with the empty model for now, pending further evidence. It’s more parsimonious, and an insignificant model would be adding complexity without enough of an improvement in predictions to make that complexity worth it.</p>
-</section>
-<section id="comparing-different-full-models">
-<h2>18.5 Comparing different full models<a class="headerlink" href="#comparing-different-full-models" title="Permalink to this heading">#</a></h2>
-<p>Testing the significance of a model’s R<sup>2</sup> estimate lets you test whether or not the model as a whole is likely to perform similarly to the empty model - whether or not this R<sup>2</sup> estimate likely comes from a world where all the beta estimates are truly 0. It’s a test of whether or not we are confident that this model will perform better than nothing.</p>
-<p>But that’s not the only kind of question we might have about a model. Perhaps instead of a comparison to the empty model, we want to make comparisons between different full models. As an example, maybe we’re using the data in the GSS to help us plan a study of our own that will explore why parental education is related to child education. We’re only going to have enough funding to talk to one parent though, so we want to know if either mother’s or father’s education is a significantly <em>better</em> predictor of child education.</p>
-<p>Can we just make two separate simple linear models and look at the R<sup>2</sup> of each model separately? Do this below and examine the outputs.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Fit a linear model predicting highest_year_of_school_completed with highest_year_school_completed_mother</span>
-<span class="c1">#in GSS_subset</span>
-<span class="n">mother_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span>
-
-<span class="c1">#return the summary of that model</span>
-
-<span class="c1">#Fit a linear model predicting highest_year_of_school_completed with highest_year_school_completed_father</span>
-<span class="c1">#in GSS_subset</span>
-<span class="n">father_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span>
-
-<span class="c1">#return the summary of that model</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The R<sup>2</sup> estimate for <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> is 0.223, while the R<sup>2</sup> estimate for <code class="docutils literal notranslate"><span class="pre">father_model</span></code> is 0.290. Both models themselves are significant, so to answer our question about which one explains more variation overall, let’s look at the difference between these values. Just from the raw numbers, it looks like father’s education will explain more variation in child education than mother’s education will. The <em>difference</em> in these R<sup>2</sup> estimates, ΔR<sup>2</sup>, is 0.067 in favor of the father model.</p>
-<p>But both of these R<sup>2</sup> values are point estimates, drawn from the population of possible R<sup>2</sup> values. We know not every sample will have these exact R<sup>2</sup> values. Is it possible that the R<sup>2</sup> for father’s education is larger than the R<sup>2</sup> for mother’s education just by chance? I.e., is the true ΔR<sup>2</sup> in the population actually equal to 0?</p>
-<p>We can develop a null hypothesis about any statistical estimate we want. In this case, the estimate we care about is not the exact R<sup>2</sup> value of the two models, but whether one is significantly larger than the other. Our null hypothesis is:</p>
+<p>These b estimates are different than before. Now, b<sub>0</sub> = 0.074 and b<sub>1</sub> = 0.538. This is because these coefficients are now in the context of z-scores instead of years of education. We’d interpret these as expecting someone to have an education level that is the mean (z = 0) if their father had a mean amount of education (z = 0), and for that education level to increase by 0.538 SDs for every 1 SD increase in father’s education.</p>
+<p>Also notice the difference in p-values between these models. The unstandardized b<sub>0</sub> is significant (p = 2.40e-15), but the standardized b<sub>0</sub> is not (p = 1). This is because the null hypothesis is that β<sub>0</sub> = 0 for both models. In the unstandardized model, 9.2 is a number that is way above 0, and is thus unlikely to be produced by a population unstandardized-β<sub>0</sub> = 0 years. In the standardized model, standardized-β<sub>0</sub> = 0 means unstandardized-β<sub>0</sub> = the mean of of education. A z-score of approximately 0 isn’t different than 0 at all, so we fail to reject that null hypothesis.</p>
+<p>However, the p-values of both b<sub>1</sub> estimates are the same. This is because, regardless of the units, the strength of the effect is still the same. There’s no difference in the significance of effect coefficients between a standardized and unstandardized model. This is why you can choose to express the effect size of an estimate in either standardized or unstandardized terms.</p>
+<p>Also note that in order to find this standardized b estimate, we have to z-score BOTH the predictor and the outcome. If we only z-scored the predictor and not the outcome, the meaning of the b estimate would be “change in years of education for every 1 SD increase in father’s education.” It would be a sort of half-standardized effect estimate, but we want a fully standardized one in order to compare effect sizes between different analyses and studies.</p>
+<p>Another way to convert between unstandardized and standardized bs in the context of simple regression is to use the following formula:</p>
 <div class="math notranslate nohighlight">
-\[H_0: R^2_1 - R^2_2 = \Delta{R^2} = 0\]</div>
-<p>More complicated estimates like these don’t have a pre-defined shape of the null sampling distibution - original statisticians could only do so much. Because of this, there isn’t a simple way to compute the p-value of ΔR<sup>2</sup>. But this is where permutation testing really shines, and is the sort of case where it is used for real research. If you don’t know the shape of the null sampling distribution ahead of time, you can always generate one with simulations and use that <strong>experimental null</strong> to test the null hypothesis.</p>
-<p>The easiest way to build a null sampling distribution for ΔR<sup>2</sup> is to make both R<sup>2</sup><sub>1</sub> and R<sup>2</sup><sub>2</sub> equal to 0, and find the difference between them. This way any differences found would be the result of both of these estimates varying around 0. Below is some incomplete code for doing this permutation test. Fill in the missing lines in order to generate a null sampling distribution of ΔR<sup>2</sup>. Remember that to do this permutation test, we need to shuffle the predictors, as R<sup>2</sup> = 0 when all b estimates in a model equal 0.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
-
-<span class="c1">#generate 1000 unique samples, saving each R2</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
-<span class="w">    </span><span class="n">mother_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">R2_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">mother_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
-<span class="w">    </span><span class="n">father_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">R2_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">father_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="w">    </span><span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">R2_mother</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R2_father</span>
-<span class="p">}</span>
-
-<span class="n">deltaR2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
-
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deltaR2_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The shape of this distribution is two tailed, because it’s possible to have a ΔR<sup>2</sup> that is either positive or negative - R<sup>2</sup> for <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> might be bigger, or it might be smaller than <code class="docutils literal notranslate"><span class="pre">father_model</span></code>. Because of this the null sampling distribution of ΔR<sup>2</sup> is clearly not an F distribution. But it’s also a much skinnier distribution than the t distribution. We haven’t learned about a specific shape this distribution is expected to look like, but with permutation testing we don’t need that. To find the p-value of our estimated ΔR<sup>2</sup> of 0.067, we just need to find the proportion of the experimental null distribution that is at least as extreme as this number (in both the positive and negative tails).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.067</span>
-<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
-<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-0.067</span>
-<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
-
-<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>You might get a slightly different p-value because of the random samples that ended up in your experimental null distribution. But when running this code to write this chapter, I got p = 0.025. This would indicate than a ΔR<sup>2</sup> = 0.067 only has a 2.5% chance of occurring when the true population ΔR<sup>2</sup> = 0. This is less than our α criterion of 0.05, so we reject the null hypothesis that <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> and <code class="docutils literal notranslate"><span class="pre">father_model</span></code> explain equal amounts of variation. We choose father’s education as the better predictor.</p>
-<p>Lets consider another model comparison case we might care about. Perhaps we aren’t sure whether father’s education is related to child’s education linearly, or nonlinearly. Maybe the difference between a father who graduated high school versus not has a bigger effect on a child’s level of education than the difference between a father with a master’s and a PhD degree. Let’s repeat the same process as above, but comparing R<sup>2</sup> values for the linear vs. nonlinear version of the model.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">linear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                   </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-
-<span class="c1">#Converting to log, adding a small value to any 0s so that the log isn&#39;t -Inf</span>
-<span class="n">GSS_subset</span><span class="o">$</span><span class="n">nonlinear_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.001</span><span class="p">)</span>
-<span class="n">nonlinear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">nonlinear_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">nonlinear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The point estimates of each R<sup>2</sup> indicate that the nonlinear model might be better: ΔR<sup>2</sup> = 0.047. But we have to run a null hypothesis test to see how confident we are in that. Complete the code below to run this permutation test.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
-
-<span class="c1">#generate 1000 unique samples, saving each R2</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_linear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
-<span class="w">    </span><span class="c1">#Add a small value to any 0s so that the log isn&#39;t -Inf</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_nonlinear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_linear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.001</span><span class="p">)</span>
-<span class="w">    </span><span class="n">linear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father_linear</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">R2_linear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="w">    </span><span class="n">nonlinear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father_nonlinear</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">R2_nonlinear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">nonlinear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="w">    </span><span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">R2_linear</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R2_nonlinear</span>
-<span class="p">}</span>
-
-<span class="n">deltaR2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
-
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deltaR2_df</span><span class="p">)</span>
-
-<span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.047</span>
-<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
-<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-0.047</span>
-<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
-
-<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>When I ran this test, my p-value = 0.058. That is not smaller than 0.05, so we fail to reject the null hypothesis. We aren’t confident enough that the linear vs. nonlinear models are different from each other in how much variation they explain. In that case, I would probably go with the linear model, because it is simpler to understand.</p>
-<p>Lastly, maybe we want to know whether adding some new predictors would significantly improve a model compared to a more reduced model. This is like calculating the significance of a model compared to the empty model, except now we’re comparing to a simple, but not empty model. In fact, testing the significance of a model’s R<sup>2</sup> compared to the empty model is just a special case of testing the significance of ΔR<sup>2</sup> - it’s just ΔR<sup>2</sup> in than case is the difference between R<sup>2</sup> and 0. Let’s test whether or not adding <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code> significantly improve the predictions of <code class="docutils literal notranslate"><span class="pre">father_model</span></code>.</p>
-<p>First, we generate point estimates of R<sup>2</sup> for both versions of the model, and compute an estimated ΔR<sup>2</sup>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">simple_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                   </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">simple_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-
-<span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">                                                     </span><span class="n">number_of_brothers_and_sisters</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">                                                     </span><span class="n">born_in_us</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Looks like the full model might be 0.044 better, but we have to run the permutation test to be confident!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
-
-<span class="c1">#generate 1000 unique samples, saving each R2</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                                              </span><span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                              </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="c1">#Have to shuffle all predictors</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_siblings</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_brothers_and_sisters</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                                              </span><span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                              </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_usborn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                                              </span><span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                              </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">simple_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">R2_simple</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">simple_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="w">    </span><span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">shuffled_siblings</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
-<span class="w">                                                         </span><span class="n">shuffled_usborn</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
-<span class="w">    </span><span class="n">R2_full</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
-<span class="w">    </span><span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">R2_full</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R2_simple</span>
-<span class="p">}</span>
-
-<span class="n">deltaR2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
-
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deltaR2_df</span><span class="p">)</span>
-
-<span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.047</span>
-<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
-<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-0.047</span>
-<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
-
-<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This distribution is almost entirely one-tailed in the positive direction, because we know adding predictors (even insignificant ones) increases a model’s R<sup>2</sup>. In fact, according to this experimental null distribution, about 20% of the time we’d expect the larger model to outperform the simpler model by a ΔR<sup>2</sup> of at least 0.044 even when the population ΔR<sup>2</sup> is 0 (p = 0.203). ΔR<sup>2</sup> = 0.044 is not a significant change in model performance. The full model is likely significant compared to the empty model, but it is not significantly better than the simple model. In that case we’d probably go with the simple model because it’s easier to understand.</p>
-<p>Comparing different models like this is called <strong>model selection</strong>. It is useful when you want to find out what predictors are better than others, whether a nonlinear model is a better fit to the data than a linear model, and/or whether adding new predictors significantly improves predictions. We can’t look at the raw error estimates from models in order to make these decisions, because those are estimates than might vary sample to sample. But by directly comparing estimates with permutation testing, we can see the expected distribution of estimates under the null hypothesis, and decide whether our estimate is likely to occur in that scenario, or whether a true difference in models probably exists.</p>
+\[\beta = b * \frac{sd(X)}{sd(Y)}\]</div>
+<p>where b is the unstandardized b, and β is the standardized b.</p>
+<p>When talking about standardized vs. unstandardizes model coefficients, because they are different numeric values, make sure you are being explicit about which one you are using.</p>
 </section>
-<section id="importance-of-direct-comparison">
-<h2>18.6 Importance of direct comparison<a class="headerlink" href="#importance-of-direct-comparison" title="Permalink to this heading">#</a></h2>
-<p>The model selection exercise we did above highlights the importance of statistically comparing models, and not just looking at the difference in point estimates. Each model’s R<sup>2</sup> is an estimate that varies sample to sample, so any difference between them also varies sample to sample and may be 0 in the population.</p>
-<p>Sometimes you will find researchers who do this incorrectly. There is published research out there where the analysts chose a model based on which point estimate was larger, but not by testing the difference in point estimates against a null distribution.</p>
-<p>Another common direct comparison mistake is to say that, because one model was significant and another was not, therefor the models are significantly different from <em>each other</em>. To see why this is wrong, imagine the situation where one model A’s p-value is 0.035, and another model B’s p-value is 0.074. Model A is significant while Model B is not. Seems that would mean Model A is automatically better, right? But what if we told you the R<sup>2</sup> value of Model A was 0.22 and the R<sup>2</sup> value of Model B was 0.17. Thus, ΔR<sup>2</sup> is 0.05. We’ve seen examples already where ΔR<sup>2</sup> = 0.05 is likely to occur when the population ΔR<sup>2</sup> is actually 0. Thus, just because Model A is significantly different from 0 and Model B is not, does not mean that either of those models are significantly better than each other. It could be that Model B had slightly too few data points to find a confidence interval of the coefficients that does not include 0. This is particularly evident if you visualize both models:</p>
-<img src="images/ch18-directcomp.png" width="450">
-<p>Clearly, Model B does not look all that different from Model A. It just so happens that their estimates fall slightly on either side of the α = 0.05 criterion.</p>
-<p>So keep this in mind: if you ever want to make a statement that one thing is significantly better than another thing, you need to directly compare them with a statistical test. If comparing groups, make sure “group” is a variable in one model so that the beta coefficient of group differences can be tested against β = 0. If comparing models, make sure to test the difference in model R<sup>2</sup> scores against a null sampling distribution of ΔR<sup>2</sup> = 0.</p>
+<section id="correlation-coefficient-r">
+<h3>Correlation coefficient r<a class="headerlink" href="#correlation-coefficient-r" title="Permalink to this heading">#</a></h3>
+<p>In chapter 12 we learned about the correlation coefficient r. It is frequently used to represent a standardized relationship strength between two continuous variables. It can range from -1 (perfect negative correlation) to 1 (perfect positive correlation), with 0 meaning no relationship.</p>
+<p>r is the same thing as the standardized b coefficient from a simple linear model with just one predictor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">standardized_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+
+<span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span>
+<span class="w">   </span><span class="n">use</span><span class="o">=</span><span class="s">&quot;pairwise.complete.obs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that if you have a multivariable model, the standardized b coefficients for each predictor are <em>partial correlations</em>, not the same thing as r. They are the correlation with the outcome variable’s residuals after taking into account the effects of the other predictors.</p>
 </section>
-<section id="multiple-comparisons-problem">
-<h2>18.7 Multiple comparisons problem<a class="headerlink" href="#multiple-comparisons-problem" title="Permalink to this heading">#</a></h2>
-<p>Another thing to be aware of in model selection is what’s called the <strong>multiple comparisons problem</strong>.</p>
-<p>Imagine you want to select the best model among 4 options, A, B, C, and D. You start out by testing A against B, then against C, and against D. In each of these comparisons, you find that Model A was significantly better because the p-value of ΔR<sup>2</sup> was &lt;0.05 for each comparison (e.g., p = 0.01, p = 0.005, p = 0.04). Sounds great, right?</p>
-<p>But there is a danger to doing multiple comparisons like this. When we do a hypothesis test, we set an α level to define what will count as an “unlikely” sample estimate. It is common to set α = 0.05, such that any estimate in the null sampling distribution that is more extreme than the 0.05 boundary is considered unlikely to be produced by the null sampling distribution.</p>
-<p>But that doesn’t mean the null sampling distribution <em>can’t</em> produce it. It is possible that we reject the null hypothesis when it is in fact true - that we commit a Type I error.</p>
-<p>If we set our Type I error rate at 0.05 (that is, we define 5% of the least likely estimates as unlikely) and we do a lot of hypothesis tests, we will make a Type I error, on average, one out of every 20 times (that is, 5% of the time), rejecting the empty model when, in fact, the empty model is true. Every time we find a statistically significant result, there is a 5% chance that we are incorrectly rejecting the null hypothesis. On the flipside, that means we avoid making a Type I error 95% of the time.</p>
-<p>This is okay if all we care about is a single test. But if we do three tests in sequence as in the example above, we want to achieve a 95% rate of avoiding Type I error across all three tests, not just for each one separately.</p>
-<p>You can think of it like flipping a coin. If you flip a coin once, the probability that it will come up heads is 50%. But if you flip a coin three times, the probability of all three coming up heads is a lot less than 50%. Similarly, if you do a single hypothesis test, the probability of avoiding a Type I error is 95%. But if you do three hypothesis tests, the probability of avoiding a Type I error is a lot less than 95%.</p>
-<p>How much less than 95%? If the probability of one test not being wrong is 95%, the probability that none of the three tests is wrong would be 95%*95%*95%, or 0.857. Therefore, the probability that any one of these three tests is wrong is 1 minus 0.857, or 0.143. This is called the <strong>family-wise error rate</strong>. What this means is that the probability of making a Type I error on any one of the three comparisons is 0.143 (which is a lot higher than 0.05). With every additional hypothesis test we run, the chance increases that we’ve made a Type I error somewhere.</p>
-<p>This isn’t a big deal when you have one hypothesis to test. But in modern scientific research, we are increasingly asking questions that involve many hypothesis tests. E.g., in model selection, where we test many models to see which makes the best predictions; or in cases where there are multiple outcome measures to make predictions about. These scenarios can be found all across the social and life sciences. The more tests that are run, the bigger the Type I error and risk of erroneous conclusions such as <a class="reference external" href="https://www.wired.com/2009/09/fmrisalmon/">finding significant brain activity in a dead salmon</a>.</p>
-<p>To control this family-wise error rate are a suite of methods that do <strong>multiple comparison correction</strong>. Some involve more sophisticated math than others, but all involve adjusting the p-values of a hypothesis test before comparing it to an α criterion for making decisions about significance. This adjustment is dependent on the number of tests we have to run. The simplest multiple comparison correction method is called the Bonferroni adjustment, named after the person who proposed it. In this method, if we want to maintain a 95% chance of not making a Type I error on <em>any</em> of our comparisons, we would simply multiply the p-value of each test times the number of comparisons before comparing it to the alpha criterion.</p>
-<p>In our model selection example above, Model A was better than Models B, C, and D at p = 0.01, p = 0.005, and p = 0.04, respectively. If any of those comparisons had been done alone, we would simply compare those p-values to α = 0.05 and find that Model A is significantly better. But because we did three tests, there is a risk that any one of those tests is an incorrect rejection of the null hypothesis. In order to control that risk with Bonferroni correction and keep the Type I <em>family-wise</em> error rate to 5%, we multiply each of those p-values by the number of tests we ran:</p>
+<section id="r-sup-2-sup">
+<h3>R<sup>2</sup><a class="headerlink" href="#r-sup-2-sup" title="Permalink to this heading">#</a></h3>
+<p>While standardized bs and correlation r speak to the relationship between an outcome variable and one predictor, R<sup>2</sup> is a standardized effect size for how much variation an entire model explains. As just discussed, it tells us the proportional reduction in error of a full model over the empty model.</p>
+<p>In the case of a one-variable model, it is actually the same thing as the square of the correlation coefficient:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">,</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span>
+<span class="w">   </span><span class="n">use</span><span class="o">=</span><span class="s">&quot;pairwise.complete.obs&quot;</span><span class="p">)</span><span class="o">**</span><span class="m">2</span>
+
+<span class="nf">summary</span><span class="p">(</span><span class="n">unstandardized_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s where the name “R<sup>2</sup>” comes from. But of course it can also be used to to account for the proportion of error explained by a model with more than one predictor.</p>
+</section>
+<section id="cohen-s-d">
+<h3>Cohen’s d<a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h3>
+<p>Standardized b, r, and R<sup>2</sup> are all effect sizes that we have seen and used before. But there are two more measures of effect size that are common to see in psychology research that we haven’t yet encountered.</p>
+<p>One of them is called <strong>Cohen’s d</strong>. This measure was created by an influential quantitative psychologist named Jacob Cohen in the 1950s. It is used specifically to represent the magnitude of difference between two categorical groups independent of real-world units. Cohen’s d is related to the concept of z-score, in that it indicates the size of a group mean difference in standard deviation units. It is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\bar{X_1} - \bar{X_2}}{s_{pooled}} \]</div>
+<p>s<sub>pooled</sub> is a weighted average of the standard deviations from both groups:</p>
+<div class="math notranslate nohighlight">
+\[s_{pooled} = \frac{df_1s_1 + df_2s_2}{df_1 + df_2}\]</div>
+<p>Cohen’s d can range between 0 and infinity, but in practice is rarely more than 2. The bigger the d value, the bigger an effect is. To find Cohen’s d in R, first the data from the separate groups need to be saved into two different vectors. Then, you can use the <code class="docutils literal notranslate"><span class="pre">cohensD()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">lsr</span></code> package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;lsr&quot;)</span>
+<span class="c1">#library(lsr)</span>
+
+<span class="c1">#education for people born in US</span>
+<span class="n">inUS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">[</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Yes&quot;</span><span class="p">]</span>
+<span class="c1">#education for people born outside US</span>
+<span class="n">outsideUS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_of_school_completed</span><span class="p">[</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;No&quot;</span><span class="p">]</span>
+
+<span class="nf">mean</span><span class="p">(</span><span class="n">inUS</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">outsideUS</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">cohensD</span><span class="p">(</span><span class="n">inUS</span><span class="p">,</span><span class="w"> </span><span class="n">outsideUS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cohen-s-f-sup-2-sup">
+<h3>Cohen’s f<sup>2</sup><a class="headerlink" href="#cohen-s-f-sup-2-sup" title="Permalink to this heading">#</a></h3>
+<p>Cohen also came up with something very similar to R<sup>2</sup>, called <strong>Cohen’s f<sup>2</sup></strong> (not to be confused with an F value in an F distribution). Rather than describing the proportion of variation in an outcome that a model explains, Cohen’s f<sup>2</sup> is the ratio of explained to unexplained error:</p>
+<div class="math notranslate nohighlight">
+\[f^2 = \frac{R^2}{1-R^2} \]</div>
+<p>Rather than being bound between 0 and 1 as R<sup>2</sup> is, f<sup>2</sup> can be as small as 0 and theoretically as large as infinity. A bigger f<sup>2</sup> means a model is explaining more variation. If f<sup>2</sup> is above 1, then the model explains more variation than what is left unexplained. In psychology that is rare but not unheard of.</p>
+<p>The above equation is known as the global f<sup>2</sup>, or the f<sup>2</sup> score for a model compared to the empty model. There is also a local f<sup>2</sup> that tells you the increase in explained variation that is attributable to one predictor in the model. The equation for that is:</p>
+<div class="math notranslate nohighlight">
+\[f^2 = \frac{R^2_{full} - R^2_{reduced}}{1-R^2_{full}} \]</div>
+<p>where R<sup>2</sup><sub>full</sub> is the R<sup>2</sup> of the model with all predictors in it, and R<sup>2</sup><sub>reduced</sub> is the R<sup>2</sup> of a model with all predictors except the one of interest.</p>
+</section>
+</section>
+<section id="what-is-a-good-effect-size">
+<h2>19.4 What is a good effect size?<a class="headerlink" href="#what-is-a-good-effect-size" title="Permalink to this heading">#</a></h2>
+<p>When evaluating an unstandardized effect size, and when you’re familiar with the units of measurement, you will already have a sense about what an “important” vs. “trivial” effect size is. If you’re studying for a test, 10 hours of studying making a difference of 1% on your grade might not be worth it, but a difference of 10% could be worth spending your whole Saturday in the library.</p>
+<p>When you use a standardized effect size, the down side is that you don’t have any real-world units to ground this number in. But the up side is that the same standardized effect size can apply across many research studies. Over time, then, you begin to accumulate a sense for what value of a standardized effect size is “big”, “medium”, or “small.”</p>
+<p>When Jacob Cohen first formulated his measurements of d and f<sup>2</sup>, he came up with rules of thumb for what counts as a small, medium, and large effect. He decided that, in general, a “large” effect is one that is obvious - people generally should be able to see this effect in the population, without the need to collect data. This translates to a Cohen’s d of &gt;= 0.8. Something like the difference in height between men and women is a large effect because it is generally possible to see without systematic research, and also has a Cohen’s d &gt; 0.8:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<span class="c1">#education for people born in US</span>
+<span class="n">female_height</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">[</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">]</span>
+<span class="c1">#education for people born outside US</span>
+<span class="n">male_height</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fingers</span><span class="o">$</span><span class="n">Height</span><span class="p">[</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;male&quot;</span><span class="p">]</span>
+
+<span class="nf">mean</span><span class="p">(</span><span class="n">female_height</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">male_height</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="nf">cohensD</span><span class="p">(</span><span class="n">female_height</span><span class="p">,</span><span class="w"> </span><span class="n">male_height</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cohen set a “medium” effect to be one that is 0.5 &lt; d &lt; 0.8. A medium effect should be visible within a representative dataset “to the naked eye of a careful observer.” You might not obviously see it in real life, but if you collect data and plot the histograms of two groups, you’d be able to notice a difference in the histograms.</p>
+<p>Finally, a “small” effect is 0.2 &lt; d &lt; 0.5. This is one that you can’t see with the naked eye, but that is still meaningful. It will still matter at the scale of an entire population. Cohen considered any d less than 0.2 to be trivial and not worth studying.</p>
+<p>In his 1988 book “Statistical Power Analysis for the Behavioral Sciences”, Cohen also set some general rules of thumb for r, R<sup>2</sup>, and f<sup>2</sup>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Effect size</p></th>
+<th class="head text-center"><p>small effect</p></th>
+<th class="head text-center"><p>medium effect</p></th>
+<th class="head text-center"><p>large effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>d</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>r</p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p>0.3</p></td>
+<td class="text-center"><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>R<sup>2</sup></p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.10</p></td>
+<td class="text-center"><p>0.25</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>f<sup>2</sup></p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.15</p></td>
+<td class="text-center"><p>0.35</p></td>
+</tr>
+</tbody>
+</table>
+<p>However, in practice it is best to remember that these are just guidelines. A large effect might not be very trustworthy if you found it in a small sample, and a tiny effect might still be theoretically important (e.g., it’s not a great predictor on its own but significantly contributes to a larger model). It is better to be aware of the wider field of study you are working in, what the typical effect sizes are, and how your measured effect size compares to those. For instance, it is pretty rare to find large effects in psychology research (most of those have been published already!). A lot of modern work is on the little effects that give the data generation process nuance.</p>
+</section>
+<section id="statistical-power">
+<h2>19.5 Statistical power<a class="headerlink" href="#statistical-power" title="Permalink to this heading">#</a></h2>
+<p>Effect sizes and statistical significance are not the same thing - you can’t tell what an effect size is just from a p-value, and you can’t tell whether an effect is significant just by looking at an effect size. But these two things cooperate for helping us make conclusions about models. In fact, they balance each other.</p>
+<p>Recall in chapter 17 when we discussed Type I and Type II error. Type I error is the chance that we mistakenly reject the null hypothesis when it is in fact true. We thought that there’s a non-zero effect, but really there’s nothing there. We set this chance ourselves, with an α criterion of 0.05. α = 0.05 means there is a 95% chance we fail to reject the null when it is true (P(fail to reject | H<sub>0</sub> is true); true negative), and a 5% chance we incorrectly reject the null when it is true (P(reject | H<sub>0</sub> is true); false positive). α is the Type I error rate - given the null is true, how often do we get a false positive decision?</p>
+<p>On the other hand is Type II error. This is the chance that we fail to reject the null hypothesis when we should have. Like Type I error is controlled by a criterion that we set, Type II also has a criterion β (not to be confused with the population model parameter β… I guess we were running out of letters to use for things). When we set the β criterion to something like 0.05, we would have a 5% chance of failing to reject the null hypothesis when it is false (P(fail to reject | H<sub>0</sub> is false); false negative). The complement, then, is we have a 95% chance of correctly rejecting the null hypothesis when it is false (P(reject | H<sub>0</sub> is false); true positive)).</p>
+<p>This concept, the chance of correctly finding an effect that exists in the population, is called <strong>statistical power</strong>. Statistical power, α, and β are all related, as we can see in this grid:</p>
+<img src="images/ch19-powergrid.png" width="500">
+<p>For any one study, Type I and Type II error are at odds - lowering the α criterion to make it harder to get a false positive (rejecting the null when we shouldn’t) will raise the chance of getting a false negative (failing to reject the null when we should).</p>
+<p>However, before even running a study, it is possible to keep both α and β low. This is because statistical power (1-β) is related to both sample size and effect size. A larger sample size makes our estimates more accurate, and easier to find a small effect significant. A larger effect size is easier to find statistically significant. Thus, when we have a large sample size and a large effect size to find, our statistical power is high for a pre-determined Type I error rate.</p>
+<p>We can verify this through simulation. Below is a simulated experiment, comparing the means of two groups. This simulation varied the size of the effect (specified in terms of Cohen’s d), the Type I error rate, and the sample size. This was repeated many times to find the proportion times that the true effect was correctly identified as significant (statistical power).</p>
+<img src="images/ch19-powersim.png" width="550">
+<p>This simulation shows us that for any given Type I error rate we choose, we will have more statistical power if our sample size is large and the effect we are looking to estimate is large. Even if the effect size is small, we will have more power to correctly detect it if we use a big sample size and a more lenient Type I error rate.</p>
+<p>There are at least two important reasons to care about statistical power. First, generally we can’t control how big an effect is in the population, but we can increase our chance of finding it by designing a study with a large sample size and high statistical power. If we run a study with low statistical power, it will be what is called <strong>underpowered</strong> and we have low hope of correctly finding a significant effect, even if it does exist in the population. Underpowered research is ultimately a waste of money.</p>
+<p>Second, it turns out that any positive findings that come from an underpowered study are more likely to be false compared to a well-powered study. How can this be? Even if we run a study with a small sample size, if we find a significant effect, that would just mean the effect is a large one, right?</p>
+<p>It’s counter-intuitive, but when a research field in general is made up of studies with low power, the chance that any one published study is a false positive is high. This is because it is harder for true positives to be found, but still possible to find false positives. We can use math to demonstrate this explicitly:</p>
+<p>When we open up a research study reporting an effect, we want to know how likely the results in that study are to be a good reflection of reality - a <em>true positive</em>. We want the <strong>positive predictive value</strong> of any one research paper to be high:</p>
+<div class="math notranslate nohighlight">
+\[PPV = \frac{P(true positive)}{P(true positive) + P(false positive)}\]</div>
+<p>This is the proportion of positive results that are true positives.</p>
+<p>In a research field where many hypotheses are being tested, some are real effects and some are null. There is a probability that any one hypothesis is a true effect (p(effect)) or null (p(null effect)). The probability of finding a true positive result is simply p(effect) multiplied by the statistical power of the study:</p>
+<div class="math notranslate nohighlight">
+\[P(true positive) = P(effect) * (1-\beta)\]</div>
+<p>where β is the Type II error rate. The probability of a false positive result is determined by p(null effect) (1 - p(effect)) and the false positive rate α</p>
+<div class="math notranslate nohighlight">
+\[P(false positive) = (1-P(effect)) * \alpha\]</div>
+<p>The positive predictive value of any one published study is then:</p>
+<div class="math notranslate nohighlight">
+\[PPV = \frac{P(effect) * (1-\beta)}{P(effect) * (1-\beta) + (1-P(effect)) * \alpha}\]</div>
+<p>Let’s say a research field is pushing the boundaries of knowledge, where most hypotheses that are tested are duds (e.g. p(effect) = 0.2; though note that we don’t actually know this number in reality). If the researchers of this field are using a typical Type I error rate of 5% and high power (say, 95% power), we can compute the positive predictive value of any one publication as:</p>
+<div class="math notranslate nohighlight">
+\[PPV = \frac{0.2 * 0.95}{0.2 * 0.95 + (1-0.2) * 0.05} = 0.826\]</div>
+<p>This means that any one published paper has an ~83% chance of being a true positive vs. a false positive.</p>
+<p>But now let’s do the same for a research community that doesn’t use good power (say, 15% power):</p>
+<div class="math notranslate nohighlight">
+\[PPV = \frac{0.2 * 0.15}{0.2 * 0.15 + (1-0.2) * 0.05} = 0.429\]</div>
+<p>Now, any one published study only has a ~43% chance of being a true positive. There are more false positive publications than true positives (and a very large file drawer of true and false negatives that never made it to publication).</p>
+<p>This realization came crashing down on psychology in the early 2010’s when the Open Science Foundation published a <a class="reference external" href="https://www.science.org/doi/10.1126/science.aac4716">replication report</a> in which many research teams tried to replicate prior results in the field. Out of 100 unique effects tested, only 36% of them replicated (produced another significant research result). This shocked members of the field and triggered a major crisis of faith, since many of these effects had dozens of earlier papers backing them up. The problem was because that most psychology studies were underpowered, and it turns out research groups had been scrapping many experiments that didn’t show a significant result (termed the <strong>file-drawer problem</strong>). This means that, even for the papers that did find a significant effect, the positive predictive value of those papers was low - they were more likely to be false positives than true positives.</p>
+</section>
+<section id="power-planning">
+<h2>19.7 Power planning<a class="headerlink" href="#power-planning" title="Permalink to this heading">#</a></h2>
+<p>Low power is thus a one-two punch to a researcher’s efforts. It makes it harder to find an effect that is real in the population, and it also lowers the trustworthiness of results that make it to publication.</p>
+<p>The solution to this is to ensure ahead of time that your study design will have enough power. This process is called <strong>power planning</strong>.</p>
+<p>Recall that these four things are related to each other:</p>
 <ul class="simple">
-<li><p>Model A vs. Model B: p = 0.01 * 3 = 0.03</p></li>
-<li><p>Model A vs. Model C: p = 0.005 * 3 = 0.015</p></li>
-<li><p>Model A vs. Model D: p = 0.04 * 3 = 0.12</p></li>
+<li><p>statistical power</p></li>
+<li><p>sample size</p></li>
+<li><p>Type I error rate</p></li>
+<li><p>effect size</p></li>
 </ul>
-<p>After multiple comparison correction, Model A no longer looks significantly better than Model D.</p>
-<p>The Bonferroni adjustment is straightforward, and essentially makes our decision criteria for any one test among the set more stringent. But some think it is overly conservative - in other words, that it’s trying too hard to protect us from making Type I error. The corrected p-value can get very large if the number of simultaneous comparisons gets large. Although this decreases the chance of making a Type I error, it increases the chance of making a Type II error of not detecting a difference when one does exist. We’ve taught you the Bonferroni correction because it is the easiest to use, but other less conservative multiple comparison corrections are more common in research and include <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/post-hoc/tukey-test-honest-significant-difference/">Tukey’s Honestly Significant Difference Test</a> and the <a class="reference external" href="https://www.statisticshowto.com/benjamini-hochberg-procedure/">Benjamini-Hochberg False Discovery Rate</a>.</p>
+<p>If you know three of these values, you can compute the fourth.</p>
+<p>One version of power planning is called <strong>sensitivity analysis</strong>. It asks, given a chosen Type I error rate and sample size, what is the smallest effect size you are well-powered to find.</p>
+<p>A good tool for doing power planning is the <code class="docutils literal notranslate"><span class="pre">pwr</span></code> package in R. With it, you can enter three of the four values above, and it will tell you the fourth. Let’s use the <code class="docutils literal notranslate"><span class="pre">pwr.r.test()</span></code> function in that package for an analysis where we plan to find a correlation between two variables. This function has four arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>, the planned sample size</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>, the effect size r</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sig.level</span></code>, the Type I error rate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">power</span></code>, the desired power level.</p></li>
+</ul>
+<p>To use this function, three out of four of these arguments must be set with a value, and the fourth one assigned a value of <code class="docutils literal notranslate"><span class="pre">NULL</span></code>. Whichever value is set to <code class="docutils literal notranslate"><span class="pre">NULL</span></code> will be computed based on the other three.</p>
+<p>If we use a Type I error rate of 5%, a sample size of 50, and want to have at least 80% power (the modern standard of power for research studies), what is the smallest r correlation that we will have an 80% chance of finding?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;pwr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">pwr</span><span class="p">)</span>
+
+<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result of this sensitivity analysis says that, with a sample size of 50 and Type I error rate of 5%, we have 80% power to detect an effect as small as r=0.38. If the true effect in the population is smaller than that, we are underpowered to detect it.</p>
+<p>Now use the <code class="docutils literal notranslate"><span class="pre">pwr.r.test()</span></code> function yourself to run a sensitivity analysis for a study with n=80, significance level 0.05, and power level of 0.8.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Enter values into the arguments below</span>
+<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another type of power planning we can do is <strong>sample size planning</strong>. If we want to be able to detect an r=0.2 with 80% power, what sample size do we need to do that?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We would need about 193 people in our research study in order to find a significant effect of r=0.2.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pwr</span></code> has functions for different sorts of effect sizes. For instance, to plan the sample size for detecting a total model f<sup>2</sup> score, we would use <code class="docutils literal notranslate"><span class="pre">pwr.f2.test()</span></code>. This one takes five arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code>, the number of variable coefficients to estimate (k-1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v</span></code>, the degrees of freedom (N-k)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2</span></code>, the effect size f<sup>2</sup></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sig.level</span></code>, the Type I error rate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">power</span></code>, the desired power level.</p></li>
+</ul>
+<p>What sample size do we need to detect an f<sup>2</sup> score of 0.1 in a model with two predictors?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nf">pwr.f2.test</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">f2</span><span class="o">=</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We would need about 96 degrees of freedom in our study. Since we are estimating coefficients for 2 predictors (a three-parameter model), that means 96 + 3 = 99 people to recruit.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pwr</span></code> doesn’t have a function for d or R<sup>2</sup>. but for d, r, R<sup>2</sup>, and f<sup>2</sup>, you can actually convert between these values since they’re all ultimately built on sum of squares. To go between d and r, you can use the following equations:</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{d}{\sqrt{d^2 + h}}\]</div>
+<div class="math notranslate nohighlight">
+\[ d = \frac{r\sqrt{h}}{\sqrt{1-r^2}}\]</div>
+<p>where h is an equation to take into account the sizes of two separate groups:</p>
+<div class="math notranslate nohighlight">
+\[ h = \frac{n_1 + n_2 - 2}{n_1} + \frac{n_1 + n_2 - 2}{n_2}\]</div>
+<p>R<sup>2</sup> is, of course, the square of r. And, as discussed above, the following equations can take you between R<sup>2</sup> and f<sup>2</sup>:</p>
+<div class="math notranslate nohighlight">
+\[f^2 = \frac{R^2}{1-R^2}\]</div>
+<div class="math notranslate nohighlight">
+\[R^2 = \frac{f^2}{1+f^2}\]</div>
+<p>A big question for power planning is what sort of effect size should we plan for? If a sensitivity analysis says we can detect down to r=0.38, is that a good thing or do we need to power for something lower?</p>
+<p>This sort of question could be answered two ways. One, what is the smallest effect size that would matter to you? What do you consider to be a meaningful effect, and what would be too trivial to deal with? You could use Cohen’s rules of thumb for this, or your own expertise in the research domain for what kind of effect size is worth the trouble of an intervention.</p>
+<p>The second way to answer this is, what effect sizes have other researchers found in related studies? You might expect your effect size to be similar to theirs, so you can power plan with that sort of effect size in mind.</p>
+<p>If you don’t have an idea about a smallest effect size of interest and there isn’t a guide from prior research about what you should expect, you can run a pilot study to collect some data and estimate an effect size. A pilot study generally has few data points and thus unstable estimates, but here you’re not worried about a significant effect yet. You can find the confidence interval of an estimate in this pilot study, perhaps choose an effect value that is on the lower end of that interval, and then power plan for a full study with that effect size as a target.</p>
 </section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
-<li><p>Find the R<sup>2</sup> estimate in a model output</p></li>
-<li><p>Generate the null sampling distribution of R<sup>2</sup></p></li>
-<li><p>Test the significance of a model</p></li>
-<li><p>Perform model selection among different models</p></li>
-<li><p>Explain the importance of direct comparison</p></li>
-<li><p>Conduct multiple comparison correction</p></li>
+<li><p>Contrast statistical and practical significance</p></li>
+<li><p>List examples of unstandardized effect sizes</p></li>
+<li><p>List examples of standardized effect sizes</p></li>
+<li><p>Compute the most common standardized effect sizes</p></li>
+<li><p>Discuss what makes a good effect size</p></li>
+<li><p>Define statistical power</p></li>
+<li><p>Explain why statistical power is important</p></li>
+<li><p>Run a power plan</p></li>
 </ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Next: Chapter 19 - Evaluating Effect Sizes</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Next: Chapter 19 - Sources of Model Bias</a></p>
 </section>
 </section>
 
@@ -919,13 +857,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-models">18.1 Significant models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-sampling-distribution-of-r-sup-2-sup">18.2 Null sampling distribution of R<sup>2</sup></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing-a-model">18.3 Significance testing a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-f-distribution">18.4 The F distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-full-models">18.5 Comparing different full models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-direct-comparison">18.6 Importance of direct comparison</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons-problem">18.7 Multiple comparisons problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-vs-practical-significance">19.1 Statistical vs. practical significance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unstandardized-effect-sizes">19.2 Unstandardized effect sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-effect-sizes">19.3 Standardized effect sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-model-coefficient">Standardized model coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-coefficient-r">Correlation coefficient r</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-sup-2-sup">R<sup>2</sup></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">Cohen’s d</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-f-sup-2-sup">Cohen’s f<sup>2</sup></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-good-effect-size">19.4 What is a good effect size?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-power">19.5 Statistical power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning">19.7 Power planning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
   </nav></div>
