@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 17 - Significance Testing &#8212; Pomona Psych 158 Online Textbook</title>
+    <title>Chapter 17 - Significance Testing with Models &#8212; Pomona Psych 158 Online Textbook</title>
   
   
   
@@ -174,19 +174,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Nonlinear Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Models with Categorical Outcomes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Models with Moderation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Estimating Populations</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Inference Methods</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternate Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Building</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 23 - Bias due to Improper Model Selection</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
 </ul>
 
     </div>
@@ -419,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 17 - Significance Testing</h1>
+    <h1>Chapter 17 - Significance Testing with Models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,26 +428,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-hypothesis">17.1 The null hypothesis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distribution-of-an-estimate">17.2 Sampling distribution of an estimate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing">17.3 Significance testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">17.4 The p-value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-t-distribution">17.5 The t-distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-that-affect-the-p-value">17.5 Things that affect the p-value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-significance-testing">17.6 The limits of significance testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-i-and-type-ii-error">Type I and Type II error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-only-reject-the-null-not-prove-it">Can only reject the null, not prove it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-is-a-binary-decision">Significance is a binary decision</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-data-not-population">Probability of data, not population</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-values-and-sample-size">P-values and sample size</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-effects-in-practice">17.7 Significant effects in practice</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-simple-model">Effects in the simple model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-multivariable-model">Effects in the multivariable model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-interaction-models">Effects in interaction models</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-models">18.1 Significant models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-sampling-distribution-of-r-sup-2-sup">18.2 Null sampling distribution of R<sup>2</sup></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing-a-model">18.3 Significance testing a model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-f-distribution">18.4 The F distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-full-models">18.5 Comparing different full models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-direct-comparison">18.6 Importance of direct comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons-problem">18.7 Multiple comparisons problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
             </nav>
@@ -462,500 +448,424 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Previous: Chapter 16 - Estimating Populations</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Previous: Chapter 16 - Significance Testing</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<span class="n">GSS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/GSS.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">#smaller dataset, more similar in size to most psychology studies</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GSS_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample_n</span><span class="p">(</span><span class="n">GSS</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="chapter-17-significance-testing">
-<h1>Chapter 17 - Significance Testing<a class="headerlink" href="#chapter-17-significance-testing" title="Permalink to this heading">#</a></h1>
-<section id="the-null-hypothesis">
-<h2>17.1 The null hypothesis<a class="headerlink" href="#the-null-hypothesis" title="Permalink to this heading">#</a></h2>
-<p>In the course so far we have discussed, is somewhat vague terms, how we use statistics to test pre-existing hypotheses about data. So far, our hypotheses have only been as specific as “a predictor explains some of the variance in an outcome.” But we can define a more formal hypothesis than that. The strictest definition of a hypothesis is a pre-defined statement about what value a model coefficient will have, once we fit the model. Once we have a formal hypothesis about what the population parameter is, we can judge whether or not we think a sample of data likely came from that population or not.</p>
-<p>For example, rather than hypothesizing generally that someone’s height is related to their thumb length, a formal hypothesis would be “the effect of height for predicting thumb length is 0.9.” In Frequentist statistics, we assume there is one population parameter from which random samples are derived. So we can collect some data, fit a model, build a confidence interval, and check if the estimated interval includes our hypothesized 0.9 parameter. If it does, then we would say the data is consistent with the proposed population - some data like this is likely to be generated by a population with a coefficient of 0.9. However if 0.9 is not in the confidence interval, we would be very surprised to hear that this data was indeed generated by this parameter. Only a very few rare samples would look like ours, if 0.9 were the true coefficient. We would think it more likely that a different sort of population generated the data.</p>
-<p>Try thinking of some formal hypotheses for other research questions. E.g., predicting someone’s resting heart rate based on how many hours during the week they spend in the gym. What do you think the specific value of β<sub>1</sub> would be in a model such as heart rate ~ gym hours?</p>
-<p>If you’re having a hard time thinking of where to even start with that question, you wouldn’t be alone. A specific hypothesis is really tough to create and requires a level of knowledge about the data generation process that is unpractical for most topics we care about. It’s much easier to hypothesize that there is some sort of relationship between gym hours and heart rate, such that the population parameter is something that is NOT 0.</p>
-<p>This is the crux of how Frequentists test hypotheses, called <strong>Null Hypothesis Significance Testing</strong> (NHST). In this process, your hypothetical thinking skills will be tested: you make an assumption of a formal hypothesis that β = 0. This is the <strong>null hypothesis</strong>, that there is a null effect for β. The null hypothesis name is often abbreviated as H<sub>0</sub>. Then, we collect data, make an estimate, and judge how likely a population with β = 0 is to produce these data. If it’s very unlikely, we make a guess that the data were probably generated by some other population: the <strong>alternative hypothesis</strong>. We <em>reject</em> the null hypothesis.</p>
-<p>It’s important to remember that an estimate of a coefficient having a non-zero value is not enough to reject the null hypothesis. As we saw last chapter, a population with a specific parameter can generate samples with a range of estimates. So if we get a b = 0.5, Is that different enough from 0 to reject the null hypothesis? Or could that estimate have been reasonably generated by a population with β = 0?</p>
-<p>To answer this question, we turn to a concept called <strong>statistical significance</strong>.</p>
-</section>
-<section id="sampling-distribution-of-an-estimate">
-<h2>17.2 Sampling distribution of an estimate<a class="headerlink" href="#sampling-distribution-of-an-estimate" title="Permalink to this heading">#</a></h2>
-<p>Let’s refresh on the concept of a sampling distribution in a concrete example before we learn how test the statistical significance of a sample estimate. Going back to the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, we previously explored how someone’s sex would explain some of the variation in thumb lengths. In other words, we thought there was a non-zero difference between the mean of female thumbs and the mean of male thumbs. We didn’t have a more specific hypothesis than that, but that “non-zero” part is enough to define a null hypothesis and test whether or not these data likely came from a population that <em>does</em> have a zero difference between female and male thumbs.</p>
-<p>In our equation of the statistical model of this question:</p>
-<div class="math notranslate nohighlight">
-\[Y_i = b_0 + b_1X_i + e_i \]</div>
-<p>X<sub>i</sub> represents whether or not someone is male or female. The parameter estimate b<sub>1</sub> is the difference in thumb lengths between males and females, and is thus the specific one we are interested in. This is our best estimate of β<sub>1</sub>, the true effect of sex in the population of thumb lengths.</p>
-<p>Before we fit this model again and get an estimate, let’s imagine what we would expect to see if a particular version of the data generation process were true. If there is a real difference between male and female thumb lengths such that male thumbs were generally longer (i.e., if β<sub>1</sub> is a positive value), we might expect that samples from such a population would have positive b<sub>1</sub>s on average in the sampling distribution.</p>
-<p>Although we couldn’t predict any single b<sub>1</sub> that will be drawn from the population, we can make predictions about the average b<sub>1</sub> that would be generated from multiple random samples. On average, the b<sub>1</sub>s would tend to resemble the parent β<sub>1</sub> from which they come. So a negative β<sub>1</sub> would tend to produce negative b<sub>1</sub>s, a positive β<sub>1</sub>, positive b<sub>1</sub>s.</p>
-<p>The null hypothesis is a special case in which β<sub>1</sub> = 0. If the null hypothesis is true it means that someone’s sex has no effect on their thumb length. The b<sub>1</sub>s generated by multiple random samples from a population in which β<sub>1</sub> = 0 would tend to cluster around 0, but they wouldn’t necessarily be exactly 0. We can construct a sampling distribution to find out if our sample b<sub>1</sub> could have been generated by the null hypothesis.</p>
-<p>We can do this with our own data with a version of bootstrapping called <strong>permutation testing</strong>. In this, we <em>permute</em> or shuffle around the datapoints in the predictor variable, thus breaking any relationship between a predictor and the outcome. We can use <code class="docutils literal notranslate"><span class="pre">sample()</span></code> to do this, drawing all the datapoints in a variable randomly without replacement and then making a new variable out of that randomized vector.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-17-significance-testing-with-models">
+<h1>Chapter 17 - Significance Testing with Models<a class="headerlink" href="#chapter-17-significance-testing-with-models" title="Permalink to this heading">#</a></h1>
+<section id="significant-models">
+<h2>18.1 Significant models<a class="headerlink" href="#significant-models" title="Permalink to this heading">#</a></h2>
+<p>In the previous chapter we learned how to use the sampling distribution of β to test the null hypothesis. Using permutation testing, we generated a sampling distribution for a world in which β = 0 is true in the data generation process. We used the sampling distribution to calculate the p-value, the probability that the sample b, or a b more extreme than the sample, would have occurred just by chance if the null hypothesis were true. Based on the p-value, and the decision criterion we had set (i.e., α of .05), we decided whether to reject the null hypothesis or not.</p>
+<p>Decisions of statistical significance are made about one statistical estimate at a time. Thus, it is a common tool for psychologists who are interested in questions such as “is <em>this</em> effect a real part of the data generation process?” To answer that question they will build a statistical model with that effect included, calculate a p-value, and then interpret the p-value of that effect in particular.</p>
+<p>But that’s not the only type of research question you might have. Perhaps instead of one particular variable, you’re interested in whether a set of multiple variables together are helpful for making predictions about an outcome. In other words, you want to know if your entire <em>model</em> is significant, not just any one predictor.</p>
+<p>As it turns out, the sampling distribution of β is just one of many sampling distributions we could construct. Using the same approach we developed for one model coefficient, we could make a sampling distribution of any statistic that we can calculate. That includes estimates of whole model error such as PRE.</p>
+<p>At this point, we’re going to switch over to using a different name for PRE that is used more commonly - R<sup>2</sup>. “PRE” is the name used in the <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> package we relied on for learning about error in models, but the concept of what proportion of error a model explains is more commonly discussed and written about as R<sup>2</sup>.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">summary()</span></code> on a model object, we can skip the ANOVA table entirely and find this value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">)</span>
-
-<span class="n">shuffled_Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">shuffled_Sex</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_mother</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Breaking any association between <code class="docutils literal notranslate"><span class="pre">Sex</span></code> and <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> by shuffling the values of <code class="docutils literal notranslate"><span class="pre">Sex</span></code> around makes it so that any still existing relationship between those variables is only due to randomness - the true association, or true β<sub>1</sub>, is 0. Doing this many times and collecting the sample estimates of models fit on these shuffled data will give us a sampling distribution of b<sub>1</sub>s when the null hypothesis is true.</p>
+<p>On the second to the last line of this output is an entry called “Multiple R-squared: 0.2857”. This stands for the R<sup>2</sup> value in a regression model. It is also possible to get this value directly by saving the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output to its own object, and then finding the <code class="docutils literal notranslate"><span class="pre">$r.squared</span></code> property of the summary object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_summary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
+<span class="n">model_summary</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can easily verify that this is the same value as PRE is in the ANOVA table for the full model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">supernova</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When assessing statistical models as a whole, rather than individual predictors, the statistic we care about is PRE/R<sup>2</sup>. We don’t care so much how strong any one effect is, but together we want a model that explains at least some proportion of the variation in an outcome variable. In a world where this model is not helpful, it wouldn’t explain any variance - the population R<sup>2</sup> value would be 0. Thus, for significance testing entire models, we need to examine the null sampling distribution of R<sup>2</sup> = 0.</p>
+</section>
+<section id="null-sampling-distribution-of-r-sup-2-sup">
+<h2>18.2 Null sampling distribution of R<sup>2</sup><a class="headerlink" href="#null-sampling-distribution-of-r-sup-2-sup" title="Permalink to this heading">#</a></h2>
+<p>In order to construct a null sampling distribution of R<sup>2</sup>, we first need to understand what would cause a model to have R<sup>2</sup> = 0. The R<sup>2</sup> model reflects the proportion of variation in an outcome variable that a full model explains, relative to the empty model. This score can range from 0 to 1. With R<sup>2</sup> = 1, there would be no error left in a model; the set of explanatory variables the model uses results in perfect predictions about the outcome values.</p>
+<p>The opposite, then, is when R<sup>2</sup> = 0. This would mean the full model explains no additional variation relative to the empty model. It performs exactly how the empty model would for making predictions. What would turn a full model into an empty model?</p>
+<p>Recall the equation for the empty model:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 \]</div>
+<p>The only parameter in the model is b<sub>0</sub>. For a full multivariable model with two predictors, the equation would look like so:</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} \]</div>
+<p>In order to make this match the equation of the empty model, we need to cancel out the extra terms. The situation that would create this is if both b<sub>1</sub> and b<sub>2</sub> were 0.</p>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 + (0)X_{1i} + (0)X_{2i} =\]</div>
+<div class="math notranslate nohighlight">
+\[ \hat{Y}_i = b_0 \]</div>
+<p>The null hypothesis for a full model is thus larger than any one parameter. It is the hypothesis that <em>all</em> predictor coefficients are equal to 0. You could write this as:</p>
+<div class="math notranslate nohighlight">
+\[H_0: \beta_1 = \beta_2 = 0 \]</div>
+<p>Or, since the consequence of all coefficients being 0 are that no additional variation is explained beyond the empty model, you can write the null hypothesis as:</p>
+<div class="math notranslate nohighlight">
+\[H_0: R^2 = 0 \]</div>
+<p>To create the null sampling distribution of one coefficient, last chapter we used permutation testing to shuffle the order of one predictor variable. That broke the relationship between the predictor and the outcome, making the true value of that predictor’s coefficient equal to 0. We can use permutation testing for our full model situation as well. Since our null hypothesis is that all predictor coefficients = 0, we simply shuffle every predictor and fit a model with those shuffled predictors. Then we estimate the R<sup>2</sup> value of the permutation test model. Saving this value and repeating many times will let us build a null sampling distribution of R<sup>2</sup>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">null_R2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                                         </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                                         </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">shuffled_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">null_R2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="p">}</span>
+
+<span class="n">R2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_R2</span><span class="p">)</span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_R2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">R2_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Walk yourself through every line of this permutation test code, and make sure you understand what it’s doing and why. We’re shuffling both of the predictors of mother’s and father’s education, using those shuffled predictors to predict the participants’ education level, saving the model R<sup>2</sup>, and repeating that process 1,000 times.</p>
+<p>Then, investigate the shape of the R<sup>2</sup> null sampling distribution. Interestingly, it has a very different shape than the sampling distribution of β. In the figure below we put two example sampling distributions side by side for purposes of comparison.</p>
+<img src="images/ch18-R2b1.png" width="750">
+<p>The sampling distribution of β has two tails because the effect of a predictor could be positive or could be negative. But R<sup>2</sup> is different: the full model can explain none of the error compared to the empty model (0), or up to all of the error from the empty model (1). But it cannot explain less than 0 error. Because R<sup>2</sup> is a proportion, it has a clear lower bound of 0, and a clear upper bound of 1.</p>
+<p>Assuming the null hypothesis is true, the only place an extreme R<sup>2</sup> could fall is in the upper tail of the distribution, which is why there is only one tail. An extreme positive effect of parental education <em>or</em> an extreme negative effect of parental education are both the same to R<sup>2</sup>: both would make a predictive model, and fall in the upper tail of the sampling distribution of R<sup>2</sup>.</p>
+</section>
+<section id="significance-testing-a-model">
+<h2>18.3 Significance testing a model<a class="headerlink" href="#significance-testing-a-model" title="Permalink to this heading">#</a></h2>
+<p>Once we have the null sampling distribution of R<sup>2</sup>, we can compare our estimate of R<sup>2</sup> to it. In this comparison, we ask ourselves - if R<sup>2</sup> = 0 in the population, is it likely or unlikely to produce an estimate of R<sup>2</sup> such as ours?</p>
+<p>In the null distribution of β, we considered something “unlikely” if it was outside the area where 95% of b estimates would fall. In other words, an unlikely b estimate is one that is at least 1.96 standard errors above or below β = 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
 <span class="c1">#generate 1000 unique samples, saving each b1</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">fingers</span><span class="o">$</span><span class="n">shuffled_Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
-<span class="w">    </span><span class="n">null_b1s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                         </span><span class="n">size</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_mother</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                                         </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">null_b1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
 <span class="p">}</span>
 
-<span class="n">b1s_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>In this sampling distribution, we can see that the b<sub>1</sub>s vary each time we shuffle and calculate a new b<sub>1</sub>. Also, the center seems to be around 0. We know from last chapter that the mean of a sampling distribution converges on the population parameter. Because the sampling distribution is based on the null hypothesis, where β<sub>1</sub> = 0, we expect the parameter estimates to be clustered around 0. But we also expect each individual one to vary because of sampling variation. We can see here that it’s possible to get a b<sub>1</sub> almost as high as +/-6 just by chance, even when there is no true difference between female and male thumbs!</p>
-<p>However, these values are really rare in the sampling distribution. It’s much more common to generate small mean differences (e.g., 0.6).</p>
-<p>Just eyeballing the histogram can give us a rough idea of the probability of getting a particular sample b<sub>1</sub> from this population where we know β<sub>1</sub> is equal to 0. When we use these frequencies to estimate probability, we are using this distribution of shuffled b<sub>1</sub>s as a probability distribution.</p>
-</section>
-<section id="significance-testing">
-<h2>17.3 Significance testing<a class="headerlink" href="#significance-testing" title="Permalink to this heading">#</a></h2>
-<p>We used R to simulate a world where the null hypothesis is true in order to construct a sampling distribution. Now let’s return to our original goal, to decide whether the null hypothesis is a good explanation for our data, or if it should be rejected.</p>
-<p>The basic idea is this: using the sampling distribution of possible sample b<sub>1</sub>s that could have resulted from a population in which the null hypothesis is true (i.e., in which β<sub>1</sub> = 0), we can look at a specific sample b<sub>1</sub> that we estimated with data and gauge how likely such a b<sub>1</sub>s would be if the null hypothesis is, in fact, true.</p>
-<p>If we judge the b<sub>1</sub> we observed to be unlikely to have come from the null hypothesis, we then reject H<sub>0</sub> as our specific idea about the data generation process. If, on the other hand, we judge our observed b<sub>1</sub> to be likely (or at least not all that <em>unlikely</em>), then the null hypothesis could still be a good explanation for these data.</p>
-<p>Let’s see how this works in the context of the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, where b<sub>1</sub> represents the average difference in thumb lengths between males and females.</p>
-<p>Samples that are extreme in either a positive (average male thumbs much longer than females) or negative direction (average male thumbs much shorter than females), are unlikely to be generated if the true β<sub>1</sub> = 0. If we saw a sample b<sub>1</sub> like this, we would doubt that the null hypothesis produced it.</p>
-<p>Put another way: if we had a sample that fell in either the extreme upper tail or extreme lower tail of the nul sampling distribution (see figure below), we might reject the null hypothesis as the true picture of the data generation process.</p>
-<img src="images/ch17-samplingtails.png" width="600">
-<p>In statistics, this is commonly referred to as a <strong>two-tailed significance test</strong> because whether our actual sample falls in the extreme upper tail or extreme lower tail of this sampling distribution, we would have reason to reject the null hypothesis as the true version of the population. By rejecting the null hypothesis, we decide instead that some alternative hypothesis where β<sub>1</sub> != 0 must be true. We wouldn’t know exactly what the true β<sub>1</sub> is, but only that it is probably not 0. In more traditional statistical terms, we would have found a statistically significant difference between male thumb lengths and female thumb lengths. b<sub>1</sub> is significantly different from 0.</p>
-<p>All of this, however, begs the question of how extreme a sample b<sub>1</sub> would need to be in order for us to reject the null hypothesis. What is unlikely to one person might not seem so unlikely to another person. It would help to have some sort of agreed upon standard of “what counts as unlikely” before we actually bring in our real sample statistic. The definition of “unlikely” depends on what you are trying to do with your statistical model and what your community of practice agrees on.</p>
-<p>One common standard used in the social sciences is that a sample counts as unlikely if there is less than a .05 chance of generating a sample estimate at least as extreme as this one (either negative or positive) in the null sampling distribution. We notate this numerical definition of “unlikely” with the Greek letter α (pronounced “alpha”). A scientist might describe this criterion by writing that they “set α = .05”. If they wanted to use a stricter definition of unlikely, they might say “α = .001,” indicating that a sample would have to be really unlikely for us to reject the null hypothesis.</p>
-<p>Let’s identify an α-level of .05 in the null sampling distribution of b<sub>1</sub>s we generated from random shuffles of thumb lengths. If you take the 1000 b<sub>1</sub>s and line them up in order, the .025 lowest values and the .025 highest values would be the most extreme 5% of values and therefore the most unlikely values to be randomly generated. So let’s sort our null distribution and then find the value corresponding to the 2.5%ile and 97.5%ile. Since there are 1,000 data points in our simulated null sampling distribution, this would be the 25th and 975th values of the sorted vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#cut-off values for extremeness</span>
-<span class="n">sorted_nullb1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
-<span class="n">high_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sorted_nullb1</span><span class="p">[</span><span class="m">975</span><span class="p">]</span>
-<span class="n">low_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sorted_nullb1</span><span class="p">[</span><span class="m">25</span><span class="p">]</span>
-<span class="n">high_cutoff</span>
-<span class="n">low_cutoff</span>
+<span class="n">b1_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_b1</span><span class="p">)</span>
 
-<span class="c1">#marking something as extreme if it is greater than 97.5%ile or less than 2.5%ile</span>
-<span class="n">b1s_df</span><span class="o">$</span><span class="n">extreme</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">high_cutoff</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">low_cutoff</span>
+<span class="c1">#cut-off values for extremeness</span>
+<span class="n">b1s_sd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span>
+<span class="n">high_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span><span class="o">*</span><span class="m">1.96</span>
+<span class="n">low_cutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="p">)</span><span class="o">*</span><span class="m">-1.96</span>
 
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1s_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>You might be wondering why some of the bars of the histogram include both red and blue. This is because the data in a histogram is grouped into bins, and some bins might contain values both just inside and just outside the extremeness cutoff.</p>
-<p>If you would like to see a more sharp delineation, you could try making more unique bins. Doing so would increase the chances of having just one color in each bin.</p>
-<p>In the code window below, change the bin number to something large, like 100 (the default number of bins is 30).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1s_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="o">=</span><span class="w"> </span><span class="c1">#YOUR CODE HERE)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Another neat trick to know is, if we convert a sampling distribution to z-scores, we automatically know which samples are extreme or not by looking at which z-scores are above 1.96 or below -1.96, since 1 in z-scored units corresponds to 1 standard deviation and the 2.5%ile and 97%ile values are 1.96 SDs away from the mean.</p>
-</section>
-<section id="the-p-value">
-<h2>17.4 The p-value<a class="headerlink" href="#the-p-value" title="Permalink to this heading">#</a></h2>
-<p>We have now spent some time looking at the sampling distribution of b<sub>1</sub>s assuming the null hypothesis is true (i.e., β<sub>1</sub> = 0). We have developed the idea that simulated samples, generated by random shuffles of the thumb length data, are typically clustered around 0. Samples that end up in the tails of the distribution – the upper and lower .025 of values – are considered unlikely.</p>
-<p>Let’s place our sample b<sub>1</sub> right onto our histogram of the sampling distribution and see where it falls. Does it fall in the tails of the distribution, or in the middle .95?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sex_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
-<span class="n">b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sex_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="c1">#marking something as extreme if it is greater than 1.96*sd or less than -1.96*sd</span>
+<span class="n">b1_df</span><span class="o">$</span><span class="n">extreme</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">high_cutoff</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b1_df</span><span class="o">$</span><span class="n">null_b1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">low_cutoff</span>
 
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1s_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="o">=</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
-<span class="nf">gf_point</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
-<span class="nf">gf_refine</span><span class="p">(</span><span class="nf">coord_cartesian</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-7</span><span class="p">,</span><span class="m">7</span><span class="p">)))</span><span class="w"> </span>
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1_df</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">extreme</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can see that our sample is in the unlikely zone. It is beyond the point where the histogram of the null sampling distribution switches to blue extreme values. Thus we would reject that it comes from a population where male and female thumb lengths are the same, and say that our b<sub>1</sub> estimate is significantly different than 0.</p>
-<p>But we can say it more specifically than this, and give its location in the tail a quantitative score. Instead of only asking whether the sample b<sub>1</sub> is in the unlikely area or not (yes or no), we could instead ask, what is the probability of getting a b<sub>1</sub> as extreme or more extreme as the one observed in the actual experiment, if the null hypothesis were true? The answer to this question is called the <strong>p-value</strong>.</p>
-<p>We know what our α is before we even do a study – it’s just a statement of our criterion for deciding what we will count as unlikely. Whatever the values in the null sampling distribution end up being, we define the “extreme” ones as the top and bottom 2.5% of the distribution. The p-value is calculated after we do a study, based on actual sample data. The p-value is calculated based on both the value of the sample estimate we want to assign a p-value, and the shape of the null sampling distribution of the parameter estimate under the null hypothesis.</p>
-<p>We calculate the p-value of any potential b<sub>1</sub> value as the probability that we would produce a b<sub>1</sub> as extreme or more extreme than this one when the null hypothesis is true. Since our α = 0.05, any p-value &lt; 0.05 would be considered significant.</p>
-<p>We can use the null sampling distribution itself for computing the p-value by counting up all the values in the distribution that are more extreme than our estimated b<sub>1</sub>. Let’s take, for instance, a value of b<sub>1</sub> = 3. What is its p-value? Well first, let’s count how many values in the null sampling distribution are greater than 3 or less than -3.</p>
+<p>There are two “zones” of unlikeliness in this distribution, because a b estimate can either be greater than 0 or less than 0. 2.5% of the distribution is in each tail, adding up to the 5% of bs that count as unlikely. To check whether a particular estimate of b is unlikely (and thus significantly different from 0), we’d ask if it’s larger than the 97.5%ile OR less than the 2.5%ile of the distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#boolean where 1 = value is greater than 3</span>
-<span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">3</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">simple_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="n">b1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">simple_model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+
+<span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.025</span><span class="p">)</span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.975</span><span class="p">)</span>
+<span class="n">b1</span>
+<span class="n">b1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.975</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nf">quantile</span><span class="p">(</span><span class="n">null_b1</span><span class="p">,</span><span class="w"> </span><span class="m">0.025</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the sampling distribution of R<sup>2</sup>, an estimate can only be larger than 0, never less. There is one tail to the distribution. This means that if we were to use the same α criterion for significance as before, α = 0.05, the 5% unlikely estimates will all be in the high tail. Based on this fact, a significant R<sup>2</sup> is one that is larger than the 95%ile of the null sampling distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_mother</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="n">R2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="nf">quantile</span><span class="p">(</span><span class="n">null_R2</span><span class="p">,</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
+<span class="n">R2</span><span class="w"> </span>
+<span class="n">R2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nf">quantile</span><span class="p">(</span><span class="n">null_R2</span><span class="p">,</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that a p-value is the probability of getting an estimate that is as extreme or more extreme as the one we got, if the population parameter were 0. To calculate the p-value for a model’s R<sup>2</sup> score, we’d count the proportion of the null sampling distribution that is at least as extreme as our model estimate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_R2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">R2</span>
 <span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
 
-<span class="c1">#boolean where 1 = value is less than -3</span>
-<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-3</span>
-<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+<span class="n">num_more_positive</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_R2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Second, we can find what proportion of the entire null sampling distribution is more extreme than this value of interest:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The probability that a b<sub>1</sub> value coming from the null sampling distribution is more extreme than +/- 3 is 0.061. Thus, a b<sub>1</sub> of 3 would have a p-value of 0.061.</p>
-<p>In the code window above, try changing the value of 3 to some other numbers to see what the p-value of those would be.</p>
-<p>Now let’s check our actual b<sub>1</sub> value of 6.447. What is its p-value?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">6.447</span>
-<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
-
-<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-6.447</span>
-<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
-
-<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_b1s</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Nothing in the null sampling distribution is more extreme than 6.447. Thus, it looks like its p-value is 0. Clearly significant!</p>
-<p>In actuality, you can’t truly have a p-value of 0. If you drew infinitely many samples to create the null sampling distribution, there would be tiny but existing tails to the distribution that go on forever (it approaches the theoretical shape of the normal distribution). We just aren’t able to get tiny enough to calculate the p-value in a null sampling distribution of only 1,000 samples.</p>
-<p>R can find the exact p-value for us. Simply use the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function again applied to a model object:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">sex_model</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Look at the last column in the Coefficients table called “Pr(&gt;|t|)”. This is the probability of getting a value more extreme than our b<sub>1</sub> estimate under the null hypothesis - aka the p-value. You can see it is not 0, but it is still a very small number. It’s so small, R has to represent it with scientific notation (1.79 * 10<sup>-5</sup>). Clearly smaller than our 0.05 α criterion.</p>
-<p>You’ll see the intercept has a p-value too, also a tiny number. This is saying that we can reject the null hypothesis that β<sub>0</sub> is 0. All fitted parameters in a linear model get a p-value, but you might not care to evaluate all of these parameters if your research question is about a particular one.</p>
-<p>Something else to notice as well is the confidence interval for b<sub>1</sub>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">sex_model</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sexmale&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This suggests that we are 95% confident that the true difference between male and female thumb lengths is somewhere between 3.57mm and 9.32mm. This interval does not include 0, so we are 95% confident that the null hypothesis is not the parameter that made these data.</p>
-<p>A confidence interval tells you the same thing as a p-value, just in a different way. If the interval does not include 0, we decide that this estimate is significantly different than 0. If it does include 0, then 0 might be the parameter that created these data and we fail to reject the null hypothesis.</p>
+<p>According to this, we didn’t simulate any R<sup>2</sup>s from the null distribution that were larger than the R<sup>2</sup> we estimated from the dataset. Its p-value is something less than 1 in a thousand: p &lt; 0.001.</p>
 </section>
-<section id="the-t-distribution">
-<h2>17.5 The t-distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this heading">#</a></h2>
-<p>The early statisticians who developed the ideas behind sampling distributions and p-values didn’t have computers. They could only imagine what it might be like to shuffle their data a thousand times in just a couple seconds. What we have been able to do with R would seem like a miracle to them! So instead of using computational techniques to create sampling distributions, the early statisticians had to develop mathematical formulas of what the sampling distributions should look like, and then calculate probabilities based on these mathematical distributions. These are what the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function uses to give us exact p-values, so we’ll learn a little about that now to understand where these numbers come from.</p>
-<p>The mathematical concept that <code class="docutils literal notranslate"><span class="pre">summary()</span></code> uses to model the sampling distribution of coefficient estimates is known as the <strong>t-distribution</strong>. The t-distribution is closely related to the normal distribution, and in fact it looks very much like the normal distribution.</p>
-<p>In the figure below we have overlaid the t-distribution (depicted as a red line) on top of a sampling distribution constructed with permutation testing. You can see that it looks very much like the normal distribution you learned about previously.</p>
-<img src="images/ch17-nulldist.png" width="600">
-<p>While the sampling distribution we created using permutation testing looks jagged (because it was made up of just 1000 separate estimates), the t-distribution is a smooth continuous mathematical function. It is the theoretically idealized shape of the null sampling distribution. If you want to see the equation that describes this shape, you can see it <a class="reference external" href="https://mathworld.wolfram.com/Studentst-Distribution.html">here</a>.</p>
-<p>Whereas the shape of the normal distribution is completely determined by its mean and standard deviation, the t-distribution changes shape slightly depending on how many degrees of freedom are in the samples that make up the sampling distribution. You can see how degrees of freedom affect the shape of the t-distribution in the figure below. Once the degrees of freedom reach about 30, however, the t-distribution looks very similar to the normal distribution.</p>
-<img src="images/ch17-tdist.png" width="600">
-<p>In the null sampling distribution you created you were able to just count the number of estimates more extreme than the sample b<sub>1</sub> in order to calculate the p-value. The t-distribution works the same way, except that it finds the cumulative probabilities in the upper and lower tails. I.e., the area under the curve that is more extreme than our sample b<sub>1</sub>. Fortunately, you don’t have to do this math; R will do it for you in <code class="docutils literal notranslate"><span class="pre">summary()</span></code>. But you <em>could</em> do it with probability sampling functions like <a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/TDist.html">these</a>, which work the same way as <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code> or <code class="docutils literal notranslate"><span class="pre">pnorm()</span></code> that we learned in chapter 8.</p>
-<p>These functions would give you a <strong>t-value</strong>, telling you where on the t-distribution your sample b<sub>1</sub> falls if the null hypothesis is true. This specific t-value can be found in the third column of the Coefficients table in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output.</p>
+<section id="the-f-distribution">
+<h2>18.4 The F distribution<a class="headerlink" href="#the-f-distribution" title="Permalink to this heading">#</a></h2>
+<p>The shape of this sort of one-tailed distribution is called an <strong>F distribution</strong>. Much in the same way original statisticians had to build a mathematical formula to represent the theoretical shape of a coefficient’s sampling distribution (the t distribution), they also built one for model performance.</p>
+<img src="images/ch18-fdist.png" width="500">
+<p>The shape of an F distribution is controlled by two values: the number of predictor parameters in a model (k) and the degrees of freedom of a model (N-k). k sets where the peak of the distribution is horizontally, while the ratio of k to df sets what proportion of the area is in the major peak versus the tail.</p>
+<p>The width of the null sampling distribution for a b estimate is directly proportional to the sample size N, such that smaller N’s lead to wider distributions. This is because the estimates from smaller sample sizes are less stable, so larger estimates are considered more likely. The same principle applies in the null sampling distribution of R<sup>2</sup>, but it’s not just the sample size that determines this. It’s the degrees of freedom, N-k. A model could be fit in a large dataset, but if a large number of parameters are also fit, the R<sup>2</sup> estimate will be less stable than a model fit with just a couple of parameters. This is because, with many parameters, there are a lot more ways the set of bs can vary! With more ways bs can vary, a wider range of R<sup>2</sup>s are likely.</p>
+<p>With permutation testing, we can calculate a p-value by counting up the proportion of the simulated null sampling distribution that is as extreme or more extreme than an estimated R<sup>2</sup> value. But again, R can also give the exact p-value to us in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output, but using the math of the F distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write some code to again output the bigger results table for sex_model, not just the coefficients</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Because this is the traditional method of determining p-values and statistical significance, sometimes you’ll read research papers where the authors ran a linear model but also report a t-value. This does not mean that they did a t-test, only that they’re reporting the corresponding t-value of their beta estimate that is found in the linear model output.</p>
+<p>Don’t be distracted by the p-values for each separate predictor. Right now we’re not interested in how strong each of those effects are individually, just how well they combine to make predictions.</p>
+<p>We now know how to find the model’s R<sup>2</sup> value in this output: it is the number labeled “Multiple R-squared” on the second to the last line. For the p-value of that estimate, look below it at the last line of the output. There will be a number for “F-statistic” that tells you how extreme on the null F distribution this R<sup>2</sup> would fall, along with the two values that determine the shape of the F distribution: the number of predictor coefficients (2; the intercept isn’t counted here) and the degrees of freedom (63). Next to that is a number labeled “p-value.” That is the p-value for the entire model.</p>
+<p>Notice that the p-value in our example is still significant even though one of the predictors in the model is not. The model as a whole is likely to make better predictions than the empty model, even if not all the predictors significantly contribute to those predictions.</p>
+<p>We can use the p-value to decide, based on our stated alpha of .05, whether the observed sample statistic would be unlikely or not if the null hypothesis is true. If we judge it to be unlikely (i.e., p &lt; .05), then we would most likely decide to reject the empty model in favor of this more complex model. But if the p-value is greater than .05, we would probably decide to stick with the empty model for now, pending further evidence. It’s more parsimonious, and an insignificant model would be adding complexity without enough of an improvement in predictions to make that complexity worth it.</p>
 </section>
-<section id="things-that-affect-the-p-value">
-<h2>17.5 Things that affect the p-value<a class="headerlink" href="#things-that-affect-the-p-value" title="Permalink to this heading">#</a></h2>
-<p>Back in the simple model, the sample b<sub>1</sub> for the difference between male and female thumb lengths was 6.447. Based on the the output of <code class="docutils literal notranslate"><span class="pre">summary()</span></code>, the probability of getting a sample with a b<sub>1</sub> as extreme or more extreme than 6.447 when the null hypothesis is true is approximately 1.79e-05. Based on our α criterion of .05, we decided that b<sub>1</sub> = 6.447 is significantly different from 0, and we reject the null hypothesis. Some alternative population likely make these data.</p>
-<p>Compare that to a b<sub>1</sub> = 3. For this, we used permutation testing to find that this value would have a p-value of 0.061. This is larger than the α value of 0.05, so we fail to reject the null hypothesis. These data are not so unlikely that we think the null hypothesis didn’t generate it.</p>
-<p>As evidenced here, the p-value is affected by how far the observed b<sub>1</sub> is from 0. Since 6.447 is further away from 0 than 3 is from 0, b<sub>1</sub> = 6.447 has a smaller p-value. The further away the b<sub>1</sub> is from 0, the lower the p-value, meaning the less likely the observed b<sub>1</sub> is to have been produced by the null hypothesis.</p>
-<p>But the distance between b<sub>1</sub> and 0 (or the hypothesized β<sub>1</sub>) is not the only thing that affects a p-value. The other important factor is the width of the sampling distribution, also known as the standard error.</p>
-<p>Take a look at the two simulated sampling distributions in the figure below. The one on the right is something like what we created in our permutation test earlier. The one on the left is similar, but wider. Both have a roughly normal shape, both consist of 1000 estimates, and both distributions are centered at 0. But the standard error is smaller for the distribution on the right. By being wider, the sampling distribution on the left pushes the extreme zone farther out, and makes our b<sub>1</sub> value of 6.447 no longer significant.</p>
-<img src="images/ch17-stderror.png" width="850">
-<p>The standard error can make a big difference in our ability to reject the null hypothesis. If it is smaller, we will have an easier time rejecting the null, because whatever estimate we get for b<sub>1</sub>, it will be more likely to be in the upper or lower .025 of the null sampling distribution.</p>
-<p>We learned last chapter that the size of the standard error is tied to the size of the samples within it. Samples with fewer data will have more varied parameter estimates, and thus the sampling distribution will have a wider standard error.</p>
-<p>Our <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset has 157 data points in it, which is a fine sample size. But let’s see what would happen if it were a much smaller study, with only 30 people. First we’ll do a permutation test, but only drawing shuffled samples of N=30.</p>
+<section id="comparing-different-full-models">
+<h2>18.5 Comparing different full models<a class="headerlink" href="#comparing-different-full-models" title="Permalink to this heading">#</a></h2>
+<p>Testing the significance of a model’s R<sup>2</sup> estimate lets you test whether or not the model as a whole is likely to perform similarly to the empty model - whether or not this R<sup>2</sup> estimate likely comes from a world where all the beta estimates are truly 0. It’s a test of whether or not we are confident that this model will perform better than nothing.</p>
+<p>But that’s not the only kind of question we might have about a model. Perhaps instead of a comparison to the empty model, we want to make comparisons between different full models. As an example, maybe we’re using the data in the GSS to help us plan a study of our own that will explore why parental education is related to child education. We’re only going to have enough funding to talk to one parent though, so we want to know if either mother’s or father’s education is a significantly <em>better</em> predictor of child education.</p>
+<p>Can we just make two separate simple linear models and look at the R<sup>2</sup> of each model separately? Do this below and examine the outputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Fit a linear model predicting highest_year_of_school_completed with highest_year_school_completed_mother</span>
+<span class="c1">#in GSS_subset</span>
+<span class="n">mother_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span>
+
+<span class="c1">#return the summary of that model</span>
+
+<span class="c1">#Fit a linear model predicting highest_year_of_school_completed with highest_year_school_completed_father</span>
+<span class="c1">#in GSS_subset</span>
+<span class="n">father_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span>
+
+<span class="c1">#return the summary of that model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The R<sup>2</sup> estimate for <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> is 0.223, while the R<sup>2</sup> estimate for <code class="docutils literal notranslate"><span class="pre">father_model</span></code> is 0.290. Both models themselves are significant, so to answer our question about which one explains more variation overall, let’s look at the difference between these values. Just from the raw numbers, it looks like father’s education will explain more variation in child education than mother’s education will. The <em>difference</em> in these R<sup>2</sup> estimates, ΔR<sup>2</sup>, is 0.067 in favor of the father model.</p>
+<p>But both of these R<sup>2</sup> values are point estimates, drawn from the population of possible R<sup>2</sup> values. We know not every sample will have these exact R<sup>2</sup> values. Is it possible that the R<sup>2</sup> for father’s education is larger than the R<sup>2</sup> for mother’s education just by chance? I.e., is the true ΔR<sup>2</sup> in the population actually equal to 0?</p>
+<p>We can develop a null hypothesis about any statistical estimate we want. In this case, the estimate we care about is not the exact R<sup>2</sup> value of the two models, but whether one is significantly larger than the other. Our null hypothesis is:</p>
+<div class="math notranslate nohighlight">
+\[H_0: R^2_1 - R^2_2 = \Delta{R^2} = 0\]</div>
+<p>More complicated estimates like these don’t have a pre-defined shape of the null sampling distibution - original statisticians could only do so much. Because of this, there isn’t a simple way to compute the p-value of ΔR<sup>2</sup>. But this is where permutation testing really shines, and is the sort of case where it is used for real research. If you don’t know the shape of the null sampling distribution ahead of time, you can always generate one with simulations and use that <strong>experimental null</strong> to test the null hypothesis.</p>
+<p>The easiest way to build a null sampling distribution for ΔR<sup>2</sup> is to make both R<sup>2</sup><sub>1</sub> and R<sup>2</sup><sub>2</sub> equal to 0, and find the difference between them. This way any differences found would be the result of both of these estimates varying around 0. Below is some incomplete code for doing this permutation test. Fill in the missing lines in order to generate a null sampling distribution of ΔR<sup>2</sup>. Remember that to do this permutation test, we need to shuffle the predictors, as R<sup>2</sup> = 0 when all b estimates in a model equal 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
-<span class="c1">#generate 1000 unique samples of N=30, saving each b1</span>
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">small_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
-<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">small_df</span><span class="p">)</span>
-<span class="w">    </span><span class="n">null_b1s_n30</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
+<span class="w">    </span><span class="n">mother_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_mother</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">R2_mother</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">mother_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
+<span class="w">    </span><span class="n">father_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">R2_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">father_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="w">    </span><span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">R2_mother</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R2_father</span>
 <span class="p">}</span>
 
-<span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_n30</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s_n30</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
+<span class="n">deltaR2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deltaR2_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This null sampling distribution is much wider than we saw before. Now, the tails go on past 10 and -10. The extreme values got more extreme. If we now try to calculate the p-value of b<sub>1</sub> = 6.447 in this sampling distribution:</p>
+<p>The shape of this distribution is two tailed, because it’s possible to have a ΔR<sup>2</sup> that is either positive or negative - R<sup>2</sup> for <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> might be bigger, or it might be smaller than <code class="docutils literal notranslate"><span class="pre">father_model</span></code>. Because of this the null sampling distribution of ΔR<sup>2</sup> is clearly not an F distribution. But it’s also a much skinnier distribution than the t distribution. We haven’t learned about a specific shape this distribution is expected to look like, but with permutation testing we don’t need that. To find the p-value of our estimated ΔR<sup>2</sup> of 0.067, we just need to find the proportion of the experimental null distribution that is at least as extreme as this number (in both the positive and negative tails).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">6.447</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.067</span>
 <span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
-
-<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_n30</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-6.447</span>
+<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-0.067</span>
 <span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
 
-<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_b1s_n30</span><span class="p">)</span>
+<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This estimate would not be significant.</p>
-<p>Sample size is thus directly tied to our ability to reject the null hypothesis, independent of what our b<sub>1</sub> estimate actually is. Running a bigger study makes the null sampling distribution narrower, and thus it is easier to reject the null hypothesis. This is relevant for when we think the true value of a coefficient is something small or close to 0. If we want to get a good estimate of it (narrow confidence interval) and be confident it is not 0 (p &lt; 0.05), we need to collect a lot of data.</p>
-<p>But this doesn’t mean that if we get a small p-value with a small study, that we’re in the clear. Coefficient estimates in general are less stable when sample sizes are small, meaning the difference between whether something is significant or not could be the inclusion/exclusion of one extreme data point, or some other small modeling choice. Fishing around for the perfect configuration of data that makes your results significant is called <strong>p-hacking</strong>, and increases the chance that you reject the null hypothesis when it is actually true (more on this in chapter 22).</p>
-<p>We can also take the relationship between p-values and sample size to absurd limits, to where it may be possible to collect <em>too much</em> data. Now let’s sample giant datasets, of one hundred thousand data points. We’ll use <code class="docutils literal notranslate"><span class="pre">replace=TRUE</span></code> in the sampling function or else we would run out of datapoints to use for permutation testing. Because the samples are so big, it may take a few moments for this code to run.</p>
+<p>You might get a slightly different p-value because of the random samples that ended up in your experimental null distribution. But when running this code to write this chapter, I got p = 0.025. This would indicate than a ΔR<sup>2</sup> = 0.067 only has a 2.5% chance of occurring when the true population ΔR<sup>2</sup> = 0. This is less than our α criterion of 0.05, so we reject the null hypothesis that <code class="docutils literal notranslate"><span class="pre">mother_model</span></code> and <code class="docutils literal notranslate"><span class="pre">father_model</span></code> explain equal amounts of variation. We choose father’s education as the better predictor.</p>
+<p>Lets consider another model comparison case we might care about. Perhaps we aren’t sure whether father’s education is related to child’s education linearly, or nonlinearly. Maybe the difference between a father who graduated high school versus not has a bigger effect on a child’s level of education than the difference between a father with a master’s and a PhD degree. Let’s repeat the same process as above, but comparing R<sup>2</sup> values for the linear vs. nonlinear version of the model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">linear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="c1">#Converting to log, adding a small value to any 0s so that the log isn&#39;t -Inf</span>
+<span class="n">GSS_subset</span><span class="o">$</span><span class="n">nonlinear_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.001</span><span class="p">)</span>
+<span class="n">nonlinear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">nonlinear_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">nonlinear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The point estimates of each R<sup>2</sup> indicate that the nonlinear model might be better: ΔR<sup>2</sup> = 0.047. But we have to run a null hypothesis test to see how confident we are in that. Complete the code below to run this permutation test.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
-<span class="n">null_b1s_100k</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+<span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
 
-<span class="c1">#generate 1000 unique samples of N=100000, saving each b1</span>
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">Sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fingers</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="w">    </span><span class="n">big_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="p">,</span><span class="w"> </span><span class="n">Sex</span><span class="p">)</span>
-<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">shuffled_Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">big_df</span><span class="p">)</span>
-<span class="w">    </span><span class="n">null_b1s_100k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_linear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
+<span class="w">    </span><span class="c1">#Add a small value to any 0s so that the log isn&#39;t -Inf</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_nonlinear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father_linear</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.001</span><span class="p">)</span>
+<span class="w">    </span><span class="n">linear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father_linear</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">R2_linear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="w">    </span><span class="n">nonlinear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father_nonlinear</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">R2_nonlinear</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">nonlinear_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="w">    </span><span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">R2_linear</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R2_nonlinear</span>
 <span class="p">}</span>
 
-<span class="n">b1s_df</span><span class="o">$</span><span class="n">null_b1s_100k</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_b1s_100k</span>
-<span class="nf">gf_histogram</span><span class="p">(</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">null_b1s_100k</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">b1s_df</span><span class="p">)</span>
+<span class="n">deltaR2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deltaR2_df</span><span class="p">)</span>
+
+<span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.047</span>
+<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-0.047</span>
+<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The null sampling distribution in this case is much narrower. Even a mean difference in thumb lengths as small as 0.2mm would be considered significantly different than 0.</p>
-<p>In very large datasets, nearly every model coefficient you estimate will be statistically significant. Significance then becomes a less useful concept. Sure 0.2mm is significantly different from 0 when it’s estimated from 100k datapoints, but how much does a difference that tiny matter to us for <em>using</em> the model? Do we care that male and female thumb lengths would be different by only 0.2mm? Or is that so small that it’s no longer <em>practically</em> different than 0?</p>
+<p>When I ran this test, my p-value = 0.058. That is not smaller than 0.05, so we fail to reject the null hypothesis. We aren’t confident enough that the linear vs. nonlinear models are different from each other in how much variation they explain. In that case, I would probably go with the linear model, because it is simpler to understand.</p>
+<p>Lastly, maybe we want to know whether adding some new predictors would significantly improve a model compared to a more reduced model. This is like calculating the significance of a model compared to the empty model, except now we’re comparing to a simple, but not empty model. In fact, testing the significance of a model’s R<sup>2</sup> compared to the empty model is just a special case of testing the significance of ΔR<sup>2</sup> - it’s just ΔR<sup>2</sup> in than case is the difference between R<sup>2</sup> and 0. Let’s test whether or not adding <code class="docutils literal notranslate"><span class="pre">number_of_brothers_and_sisters</span></code> and <code class="docutils literal notranslate"><span class="pre">born_in_us</span></code> significantly improve the predictions of <code class="docutils literal notranslate"><span class="pre">father_model</span></code>.</p>
+<p>First, we generate point estimates of R<sup>2</sup> for both versions of the model, and compute an estimated ΔR<sup>2</sup>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">simple_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">simple_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">highest_year_school_completed_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                                                     </span><span class="n">number_of_brothers_and_sisters</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                                                     </span><span class="n">born_in_us</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks like the full model might be 0.044 better, but we have to run the permutation test to be confident!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating an empty vector of 1000 spots</span>
+<span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="m">1000</span><span class="p">)</span>
+
+<span class="c1">#generate 1000 unique samples, saving each R2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">highest_year_school_completed_father</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                              </span><span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                                              </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">#Have to shuffle all predictors</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_siblings</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">number_of_brothers_and_sisters</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                              </span><span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                                              </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">shuffled_usborn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">GSS_subset</span><span class="o">$</span><span class="n">born_in_us</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                              </span><span class="n">size</span><span class="o">=</span><span class="nf">nrow</span><span class="p">(</span><span class="n">GSS_subset</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                                              </span><span class="n">replace</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="n">simple_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">R2_simple</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">simple_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="w">    </span><span class="n">full_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">highest_year_of_school_completed</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">shuffled_father</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">shuffled_siblings</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                                                         </span><span class="n">shuffled_usborn</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">GSS_subset</span><span class="p">)</span>
+<span class="w">    </span><span class="n">R2_full</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">full_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+<span class="w">    </span><span class="n">null_deltaR2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">R2_full</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R2_simple</span>
+<span class="p">}</span>
+
+<span class="n">deltaR2_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+
+<span class="nf">gf_histogram</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">deltaR2_df</span><span class="p">)</span>
+
+<span class="n">more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.047</span>
+<span class="n">num_more_positive</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_positive</span><span class="p">)</span>
+<span class="n">more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">null_deltaR2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">-0.047</span>
+<span class="n">num_more_negative</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">more_negative</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">num_more_positive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num_more_negative</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">null_deltaR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This distribution is almost entirely one-tailed in the positive direction, because we know adding predictors (even insignificant ones) increases a model’s R<sup>2</sup>. In fact, according to this experimental null distribution, about 20% of the time we’d expect the larger model to outperform the simpler model by a ΔR<sup>2</sup> of at least 0.044 even when the population ΔR<sup>2</sup> is 0 (p = 0.203). ΔR<sup>2</sup> = 0.044 is not a significant change in model performance. The full model is likely significant compared to the empty model, but it is not significantly better than the simple model. In that case we’d probably go with the simple model because it’s easier to understand.</p>
+<p>Comparing different models like this is called <strong>model selection</strong>. It is useful when you want to find out what predictors are better than others, whether a nonlinear model is a better fit to the data than a linear model, and/or whether adding new predictors significantly improves predictions. We can’t look at the raw error estimates from models in order to make these decisions, because those are estimates than might vary sample to sample. But by directly comparing estimates with permutation testing, we can see the expected distribution of estimates under the null hypothesis, and decide whether our estimate is likely to occur in that scenario, or whether a true difference in models probably exists.</p>
 </section>
-<section id="the-limits-of-significance-testing">
-<h2>17.6 The limits of significance testing<a class="headerlink" href="#the-limits-of-significance-testing" title="Permalink to this heading">#</a></h2>
-<p>Significance testing is a major component of modern psychology research. Hypotheses and theories are made or broken on the back of p &lt; 0.05. But the strong reliance on p-values for determining whether effects exist or not is not always a good thing. There are several limits to what conclusions we can make using significance testing, and sometimes people push past these limits.</p>
-<section id="type-i-and-type-ii-error">
-<h3>Type I and Type II error<a class="headerlink" href="#type-i-and-type-ii-error" title="Permalink to this heading">#</a></h3>
-<p>First, we typically set our α criterion to be 0.05, meaning that any b<sub>1</sub> value that is as extreme or more extreme than the 5% most extreme values in the null sampling distribution will be treated as unlikely. For unlikely estimates, we decide that they are probably not from the null hypothesis at all. This could be the right decision…</p>
-<p>But it might be the wrong decision. If the null hypothesis <em>is</em> true, 5% of the b<sub>1</sub>s that could appear would be extreme enough to lead us to reject the null hypothesis. We would be incorrectly deciding that these data came from a different distribution than they actually did. If we rejected the null hypothesis when it is in fact true, we would be making what’s called a <strong>Type I error</strong> or <strong>false positive</strong>.</p>
-<p>Our chance of making this type of inference error is directly tied to the α level we chose. By setting α = .05, we are saying that b<sub>1</sub> values above or below 1.96 SDs of the null sampling distribution are so unlikely that we think they’re from a different population. But by definition, 5% of the b<sub>1</sub> values in the β<sub>1</sub> = 0 sampling distribution are this level of unlikely. Thus when the null hypothesis is true, 5% of samples drawn from the population will lead us to the wrong conclusion.</p>
-<p>We can reduce this error rate by making our α value smaller. Maybe instead of 5% of the null sampling distribution being surprising, we set α = 0.001 such that only 0.1% of the null sampling distribution would be considered unlikely. This would make it harder for us to erroneously reject the null hypothesis.</p>
-<p>However, that causes us other problems. Now, it is harder to detect when the null hypothesis <em>should</em> be rejected. We need much stronger evidence to do so when α = 0.001 than when α = 0.05. If we fail to reject the null hypothesis when it should be rejected, this is called a <strong>Type II error</strong> or a <strong>false negative</strong>. Type I and Type II errors are always a tradeoff with each other - where we reduce the chance of one, we increase the chance of the other. Also, it is never possible to completely eliminate the risk of either. This is an inherent limitation of Null Hypothesis Significance Testing.</p>
+<section id="importance-of-direct-comparison">
+<h2>18.6 Importance of direct comparison<a class="headerlink" href="#importance-of-direct-comparison" title="Permalink to this heading">#</a></h2>
+<p>The model selection exercise we did above highlights the importance of statistically comparing models, and not just looking at the difference in point estimates. Each model’s R<sup>2</sup> is an estimate that varies sample to sample, so any difference between them also varies sample to sample and may be 0 in the population.</p>
+<p>Sometimes you will find researchers who do this incorrectly. There is published research out there where the analysts chose a model based on which point estimate was larger, but not by testing the difference in point estimates against a null distribution.</p>
+<p>Another common direct comparison mistake is to say that, because one model was significant and another was not, therefor the models are significantly different from <em>each other</em>. To see why this is wrong, imagine the situation where one model A’s p-value is 0.035, and another model B’s p-value is 0.074. Model A is significant while Model B is not. Seems that would mean Model A is automatically better, right? But what if we told you the R<sup>2</sup> value of Model A was 0.22 and the R<sup>2</sup> value of Model B was 0.17. Thus, ΔR<sup>2</sup> is 0.05. We’ve seen examples already where ΔR<sup>2</sup> = 0.05 is likely to occur when the population ΔR<sup>2</sup> is actually 0. Thus, just because Model A is significantly different from 0 and Model B is not, does not mean that either of those models are significantly better than each other. It could be that Model B had slightly too few data points to find a confidence interval of the coefficients that does not include 0. This is particularly evident if you visualize both models:</p>
+<img src="images/ch18-directcomp.png" width="450">
+<p>Clearly, Model B does not look all that different from Model A. It just so happens that their estimates fall slightly on either side of the α = 0.05 criterion.</p>
+<p>So keep this in mind: if you ever want to make a statement that one thing is significantly better than another thing, you need to directly compare them with a statistical test. If comparing groups, make sure “group” is a variable in one model so that the beta coefficient of group differences can be tested against β = 0. If comparing models, make sure to test the difference in model R<sup>2</sup> scores against a null sampling distribution of ΔR<sup>2</sup> = 0.</p>
 </section>
-<section id="can-only-reject-the-null-not-prove-it">
-<h3>Can only reject the null, not prove it<a class="headerlink" href="#can-only-reject-the-null-not-prove-it" title="Permalink to this heading">#</a></h3>
-<p>A second limitation of NHST is that, while it is possible to declare a sample estimate as too unlikely for us to think it comes from the null hypothesis, it is not possible to be sure an estimate definitely <em>does</em> come from the null hypothesis. To be concrete, what if a b<sub>1</sub> estimate doesn’t fall in the tails of the null sampling distribution but instead falls in the middle part? Should we then call it “likely”? In this case, we can say that the sample is <em>not unlikely</em>. But you can’t say it is likely. In this framework, we can never <em>confirm</em> the null hypothesis, only reject it or fail to reject it. This is because there are infinite other population parameters slightly above or below 0 that could generate this data as well. You can’t prove that any estimate came from β<sub>1</sub> = 0 specifically and not β<sub>1</sub> = 0.1. You can only say there is a very high likelihood that something did <em>not</em> come from a particular population like β<sub>1</sub> = 0. Null hypothesis testing is about rejecting some reality, not confirming one. If we fail to reject the null hypothesis, the true population parameter <em>could</em> be 0, but it could also be something else sort of close to 0.</p>
-</section>
-<section id="significance-is-a-binary-decision">
-<h3>Significance is a binary decision<a class="headerlink" href="#significance-is-a-binary-decision" title="Permalink to this heading">#</a></h3>
-<p>Thirdly, another limitation of NHST is that there is no way to compare amongst different levels of extremeness in terms of their statistical significance. We can compute different p-values for different b<sub>1</sub> estimates and find that one has a higher probability to appear under the null hypothesis than another. But the <em>decision</em> of something being significantly different from 0 is a binary decision - it either is significant, or it is not. Something that is in the top 2% of the null sampling distribution is just as significant as something that is in the top 0.02% of the distribution, because both are beyond the alpha cutoff. Null hypothesis testing doesn’t give us a way to test whether different p-values are significantly different from <em>each other</em>. Thus a sample estimate is either significant, or it’s not. We decide it either didn’t come from the null hypothesis, or there’s not enough evidence to decide. You can’t have one estimate that is <em>more</em> or <em>less</em> significant than another, and you can’t have something that is <em>almost</em> significant.</p>
-</section>
-<section id="probability-of-data-not-population">
-<h3>Probability of data, not population<a class="headerlink" href="#probability-of-data-not-population" title="Permalink to this heading">#</a></h3>
-<p>Fourthly, the specific meaning of a p-value can be tricky to get right. It is the probability that, given the null hypothesis being true, we would find a sample value as extreme or more extreme than the one we did. A p-value does NOT mean the probability that the null hypothesis <em>is</em> true. Remember that in Frequentist statistics, a population parameter cannot have a probability - it exists as a single entity that can’t be repeated multiple times like a sample. The null hypothesis thus does not have a probability. <em>These data</em> have a probability, given the null hypothesis being true.</p>
-</section>
-<section id="p-values-and-sample-size">
-<h3>P-values and sample size<a class="headerlink" href="#p-values-and-sample-size" title="Permalink to this heading">#</a></h3>
-<p>Lastly, as we explored previously, the p-value we get is tied to our sample size. In small amounts of data, we would need to estimate a really large effect in order to call it significant, because the confidence interval is so wide that it covers many values including 0. Thus when we only have a small amount of data available to us, we might not be able to declare anything as significant. But in large amounts of data, almost everything is significant, even effects so tiny that they’re not useful in the real world. Would it matter to you to hear that a predictor in a model was significant, but the model only explained 0.01% of the variation in the outcome data? P-values can thus be “gamed” a bit with large sample sizes. They tell us something about the certainty of this true estimate being 0 or not, but they don’t help us with determining whether this effect size is useful for real-world purposes.</p>
-<p>In summary, there are five main hang-ups that cause a lot of consternation for people trying to use null hypothesis testing:</p>
+<section id="multiple-comparisons-problem">
+<h2>18.7 Multiple comparisons problem<a class="headerlink" href="#multiple-comparisons-problem" title="Permalink to this heading">#</a></h2>
+<p>Another thing to be aware of in model selection is what’s called the <strong>multiple comparisons problem</strong>.</p>
+<p>Imagine you want to select the best model among 4 options, A, B, C, and D. You start out by testing A against B, then against C, and against D. In each of these comparisons, you find that Model A was significantly better because the p-value of ΔR<sup>2</sup> was &lt;0.05 for each comparison (e.g., p = 0.01, p = 0.005, p = 0.04). Sounds great, right?</p>
+<p>But there is a danger to doing multiple comparisons like this. When we do a hypothesis test, we set an α level to define what will count as an “unlikely” sample estimate. It is common to set α = 0.05, such that any estimate in the null sampling distribution that is more extreme than the 0.05 boundary is considered unlikely to be produced by the null sampling distribution.</p>
+<p>But that doesn’t mean the null sampling distribution <em>can’t</em> produce it. It is possible that we reject the null hypothesis when it is in fact true - that we commit a Type I error.</p>
+<p>If we set our Type I error rate at 0.05 (that is, we define 5% of the least likely estimates as unlikely) and we do a lot of hypothesis tests, we will make a Type I error, on average, one out of every 20 times (that is, 5% of the time), rejecting the empty model when, in fact, the empty model is true. Every time we find a statistically significant result, there is a 5% chance that we are incorrectly rejecting the null hypothesis. On the flipside, that means we avoid making a Type I error 95% of the time.</p>
+<p>This is okay if all we care about is a single test. But if we do three tests in sequence as in the example above, we want to achieve a 95% rate of avoiding Type I error across all three tests, not just for each one separately.</p>
+<p>You can think of it like flipping a coin. If you flip a coin once, the probability that it will come up heads is 50%. But if you flip a coin three times, the probability of all three coming up heads is a lot less than 50%. Similarly, if you do a single hypothesis test, the probability of avoiding a Type I error is 95%. But if you do three hypothesis tests, the probability of avoiding a Type I error is a lot less than 95%.</p>
+<p>How much less than 95%? If the probability of one test not being wrong is 95%, the probability that none of the three tests is wrong would be 95%*95%*95%, or 0.857. Therefore, the probability that any one of these three tests is wrong is 1 minus 0.857, or 0.143. This is called the <strong>family-wise error rate</strong>. What this means is that the probability of making a Type I error on any one of the three comparisons is 0.143 (which is a lot higher than 0.05). With every additional hypothesis test we run, the chance increases that we’ve made a Type I error somewhere.</p>
+<p>This isn’t a big deal when you have one hypothesis to test. But in modern scientific research, we are increasingly asking questions that involve many hypothesis tests. E.g., in model selection, where we test many models to see which makes the best predictions; or in cases where there are multiple outcome measures to make predictions about. These scenarios can be found all across the social and life sciences. The more tests that are run, the bigger the Type I error and risk of erroneous conclusions such as <a class="reference external" href="https://www.wired.com/2009/09/fmrisalmon/">finding significant brain activity in a dead salmon</a>.</p>
+<p>To control this family-wise error rate are a suite of methods that do <strong>multiple comparison correction</strong>. Some involve more sophisticated math than others, but all involve adjusting the p-values of a hypothesis test before comparing it to an α criterion for making decisions about significance. This adjustment is dependent on the number of tests we have to run. The simplest multiple comparison correction method is called the Bonferroni adjustment, named after the person who proposed it. In this method, if we want to maintain a 95% chance of not making a Type I error on <em>any</em> of our comparisons, we would simply multiply the p-value of each test times the number of comparisons before comparing it to the alpha criterion.</p>
+<p>In our model selection example above, Model A was better than Models B, C, and D at p = 0.01, p = 0.005, and p = 0.04, respectively. If any of those comparisons had been done alone, we would simply compare those p-values to α = 0.05 and find that Model A is significantly better. But because we did three tests, there is a risk that any one of those tests is an incorrect rejection of the null hypothesis. In order to control that risk with Bonferroni correction and keep the Type I <em>family-wise</em> error rate to 5%, we multiply each of those p-values by the number of tests we ran:</p>
 <ul class="simple">
-<li><ol class="arabic simple">
-<li><p>The risk of Type I and Type II error is everpresent</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="2">
-<li><p>You can only reject the null hypothesis, or fail to reject the null hypothesis (not confirm the null hypothesis)</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="3">
-<li><p>You can only decide if a sample estimate is significantly different from 0 or not; there are no levels of significance</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="4">
-<li><p>A p-value is the probability of these data given the null hypothesis, NOT the probability of the null hypothesis given these data.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="5">
-<li><p>P-values are tied to sample sizes, so it is possible to get a significant p-value with an impractically-tiny effect.</p></li>
-</ol>
-</li>
+<li><p>Model A vs. Model B: p = 0.01 * 3 = 0.03</p></li>
+<li><p>Model A vs. Model C: p = 0.005 * 3 = 0.015</p></li>
+<li><p>Model A vs. Model D: p = 0.04 * 3 = 0.12</p></li>
 </ul>
-<p>This is a long section on the difficulties of null hypothesis testing because <a class="reference external" href="https://statisticsbyjim.com/hypothesis-testing/p-values-misinterpreted/">a lot of people use it incorrectly</a>, even long-practicing scientists. NHST is a powerful tool but it’s tricky to interpret correctly, and it often gets used for the wrong questions that it is just not able to answer.</p>
-<p>Thus if you default to only ever looking at p-values in your research and not the wider context of what your model looks like and what goals you have for it, you run the risk of misinterpreting your statistics. Just because a p-value is significant does not mean your model can be used in the way you want to, and just because a p-value is insignificant doesn’t mean your model is useless. We’ll cover the idea of <em>practical</em> vs. statistical significance in a later chapter but for now, remember that p-values aren’t the whole story! We also want to judge what sort of predictions are our models making, do we like that level of accuracy or not, and is there any way we can think of to make our model better.</p>
-</section>
-</section>
-<section id="significant-effects-in-practice">
-<h2>17.7 Significant effects in practice<a class="headerlink" href="#significant-effects-in-practice" title="Permalink to this heading">#</a></h2>
-<section id="effects-in-the-simple-model">
-<h3>Effects in the simple model<a class="headerlink" href="#effects-in-the-simple-model" title="Permalink to this heading">#</a></h3>
-<p>Let’s practice using and interpreting p-values with some concrete research situations. One hypothesis we have used a lot is whether someone’s sex explains some of the variation in their thumb length. A research question like this implies that we are interested in the predictor “sex” specifically, and its unique contribution to predictions about thumb length. We recognize that there are likely many factors that lead to how long someone’s thumb is, and we may even know some more of them and be able to model them as well. But our interests focus on how important someone’s sex is specifically in the data generation process. Is it a meaningful contributor to explaining variation in thumb length? Or is there not really an effect?</p>
-<p>Using the framework of Null Hypothesis Statistical Testing, we can answer this sort of question. We just have to go through five steps in order to frame this question correctly for the NHST.</p>
-<p>First, we need to pick the variables we’re using to test this question. We’ll use the outcome variable <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> from the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset, as we have been, and we’ll use <code class="docutils literal notranslate"><span class="pre">Sex</span></code> to predict it.</p>
-<p>Second, we need to formulate the null hypothesis. We think that sex is interesting if it predicts some variation in thumb length - that there is a relationship between the two. That implies that there would be a non-zero coefficient for <code class="docutils literal notranslate"><span class="pre">Sex</span></code> in a linear model. It would <em>not</em> be an interesting variable if there was no change in predicted thumb length when sex varied - i.e., if the b<sub>1</sub> coefficient were 0. Thus, we define the null hypothesis to be:</p>
-<div class="math notranslate nohighlight">
-\[H_0: b_1 = 0\]</div>
-<p>In a world where the true population parameter β<sub>1</sub> is 0, where there is no real effect of sex, we wouldn’t be so interested in it as a predictor. So we want to test if it’s likely that b<sub>1</sub> in our sample came from a world where β<sub>1</sub> is 0, or if we want to reject that explanation.</p>
-<p>In step 3, we now need to fit a model in the data. We need to specify the equation of that model so we know what we’re testing:</p>
-<div class="math notranslate nohighlight">
-\[\hat{Y} = b_0 + b_1X_i\]</div>
-<p>Where X<sub>i</sub> is <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. Knowing that equation, we automatically fit it with <code class="docutils literal notranslate"><span class="pre">lm()</span></code> as we have done many times before:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>From this model, we can extract our estimate of b<sub>1</sub>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Fourthly, we determine the probability of getting a b<sub>1</sub> like this, were the null hypothesis true - if β<sub>1</sub> truly equals 0. Use <code class="docutils literal notranslate"><span class="pre">summary()</span></code> to find this p-value for the b<sub>1</sub> coefficient:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use summary() to see the p-value of the effect of Sex</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>And as our final step, we look at that p-value and decide whether or not it is significant - whether or not we should reject the hypothetical world of β<sub>1</sub> = 0. As psychologists we are likely using an α criterion of 0.05, so we will check if the p-value for b<sub>1</sub> is &lt; 0.05.</p>
-<p>We can look in the output of <code class="docutils literal notranslate"><span class="pre">summary()</span></code>, or we can directly output it with the <code class="docutils literal notranslate"><span class="pre">$</span></code> operator:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The code above uses the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output as an object itself, digs into the Coefficients table, and ouputs the number on the second row, fourth column. As we saw in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output, that would be the number for <code class="docutils literal notranslate"><span class="pre">Pr(&gt;|t|)</span></code> on the row for <code class="docutils literal notranslate"><span class="pre">Sexmale</span></code>.</p>
-<p>Is this value &lt; 0.05?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0.05</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>It is. Thus, we reject the null hypothesis that there is no effect of sex.</p>
-<p>Further, if we find the 95% confidence interval for b<sub>1</sub>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use confint() to find 95% CI of Sexmale estimate</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We see that the interval includes only positive values. Thus we reject the null hypothesis that there is no effect of sex, AND we say the likely range of true β<sub>1</sub>s is a positive number. As someone’s sex label switches from 0 to 1 (difference from female to male), the change in thumb length is likely to increase as well.</p>
-<p>Congrats, you have tested a hypothesis and come up with a conclusion! You can now write up your study and send it for peer review! In APA style, we would write this result as:</p>
-<p>“There is a significant effect of sex (<em>b</em> = 6.447, <em>p</em> &lt;0.001, 95% CI [3.571, 9.323]).”</p>
-<p>By following these five steps, you were able to fit an evaluate a model of the data generation process for thumb length. Just remember that the conclusions we can make about this research question are limited, when we use null hypothesis testing. In the context of this analysis:</p>
-<ul class="simple">
-<li><p>We can’t be <em>sure</em> that β<sub>1</sub> doesn’t equal 0 - we’re only very confident.</p></li>
-<li><p>If our p-value had been &gt; 0.05, we couldn’t say that we’re sure β<sub>1</sub> equals 0, because we can’t confirm the null hypothesis - only reject it or fail to reject it.</p></li>
-<li><p>If our p-value had been 0.06, that would still be an insignificant effect. We set our α decision criterion to be 0.05, and we need to stick to that.</p></li>
-<li><p>Our p-value is the probability that we would get this b<sub>1</sub> estimate if β<sub>1</sub> = 0; it is NOT the probability that β<sub>1</sub> = 0 if we get this b<sub>1</sub> estimate. Those statements are different conditional probabilities and thus different numbers (and a Frequentist would say you can’t get a probability of β<sub>1</sub> anyways).</p></li>
-<li><p>Our p-value is tied to our sample size N=157. If we had more or less data, we might have made a different decision.</p></li>
-</ul>
-</section>
-<section id="effects-in-the-multivariable-model">
-<h3>Effects in the multivariable model<a class="headerlink" href="#effects-in-the-multivariable-model" title="Permalink to this heading">#</a></h3>
-<p>As we saw in chapter 13, predictors in a multivariable model can be correlated. Thus if we’re interested specifically in the effect of sex, we may want to <em>control for</em> what might be a better explanatory variable, like height. This would enable us to investigate if sex is a significant, unique effect in its own right or if it’s only related to thumb length by virtue of being related to height.</p>
-<p>To do this, first we pick our variables. We’ll use <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and <code class="docutils literal notranslate"><span class="pre">Sex</span></code> as before, as well as <code class="docutils literal notranslate"><span class="pre">Height</span></code> as another predictor.</p>
-<p>Second, specify the null hypothesis. Here we’re still interested in the effect of sex in particular. We’re just using height as a control. So the null hypothesis is still:</p>
-<div class="math notranslate nohighlight">
-\[H_0: b_1 = 0\]</div>
-<p>Third, specify and fit the model:</p>
-<div class="math notranslate nohighlight">
-\[\hat{Y} = b_0 + b_1X_{1i} + b_2X_{2i}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Fourth, find the p-value of b<sub>1</sub>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">model_obj</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>And finally, make a decision about whether or not sex is significant.</p>
-<p>Because sex and height are related, there is shared variation between them - both of them explain some of the same variation in thumb length. We need to put them both in a model together in order to disentangle what amount of <em>unique</em> variation they each explain. By doing this, we see that the effect of sex got smaller, after taking height into account - the coefficient fell from 6.447 to 2.783. This effect is so small, that it is no longer significant - the p-value is 0.132, which is above our α cutoff of 0.05. We’d interpret this to mean that in a world where there is <em>no</em> unique effect of sex (β<sub>1</sub> = 0), a b<sub>1</sub> estimate of 2.783 would be a likely outcome. We can further see this by checking the 95% confidence interval:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model_obj</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sexmale&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This range includes 0 as one of the β<sub>1</sub>s that are likely to produce b<sub>1</sub> = 2.783. Thus, with the data we have, we fail to reject the null hypothesis that there is no unique effect of sex. We’d report this result as:</p>
-<p>“The effect of sex was insignificant when controlling for height (<em>b</em> = 2.783, <em>p</em> = 0.132, 95% CI [-0.847, 6.413]).”</p>
-<p>Note again that this does not mean β<sub>1</sub> is definitely 0. There are still many non-zero values in the confidence interval that could be the truth. It could be that we only failed to find a significant effect because <code class="docutils literal notranslate"><span class="pre">fingers</span></code> only had a sample size of N=157. If we ran this model in a much larger dataset, we could create a narrower CI that might not overlap with 0. It’s easier to distinguish small effects from β<sub>1</sub> = 0 with more data. But in that case, it’s always worthwhile to ask yourself if an effect that is significant, but with a very small coefficient, is worth anything to you in practical terms. Statistically significant doesn’t mean <em>important</em>, only unlikely to be 0.</p>
-</section>
-<section id="effects-in-interaction-models">
-<h3>Effects in interaction models<a class="headerlink" href="#effects-in-interaction-models" title="Permalink to this heading">#</a></h3>
-<p>When we test for interaction effects, we are often most interested in the interaction term. We want to know if the effect of one variable depends on values of the other (a non-zero interaction coefficient), or if the effects of each variable operate on the outcome variable independently of each other (a zero interaction coefficient). Thus, when we have hypotheses about interactions, we usually assess the significance of the interaction term.</p>
-<p>Let’s test the hypothesis that there is an interaction between sex and height on thumb length. Our variables will be the same as in the multivariable case, <code class="docutils literal notranslate"><span class="pre">Thumb</span></code>, <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, and <code class="docutils literal notranslate"><span class="pre">Height</span></code>.</p>
-<p>Our null hypothesis is now for the interaction effect, and not the main effect of sex:</p>
-<div class="math notranslate nohighlight">
-\[H_0: b_3 = 0\]</div>
-<p>Specifying and fitting our model, we get:</p>
-<div class="math notranslate nohighlight">
-\[\hat{Y} = b_0 + b_1X_{1i} + b_2X_{2i} + b_3X_{1i}*X_{2i}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Sex</span><span class="o">*</span><span class="n">Height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fingers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Our hypothesis is about the interaction effect b<sub>3</sub>, so investigate the estimate and p-value on the line for <code class="docutils literal notranslate"><span class="pre">Sexmale:Height</span></code>. We see that the p-value of the interaction is p = 0.953, which is not below the α criterion of 0.05. Thus we fail to reject the null hypothesis that there is no interaction. We can’t be <em>sure</em> that there is no interaction truly in the population, but we are pretty confident that the true interaction effect is something close to zero:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model_obj</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sexmale:Height&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Without a significant interaction, we would interpret the relationship between sex, height, and thumb length just as main effects. We’d report this as:</p>
-<p>“There was no significant interaction between the effects of sex and height on thumb length (<em>b</em> = -0.030, <em>p</em> = 0.953, 95% CI [-1.024, 0.964]). Instead there was a significant main effect of height (<em>b</em> = 0.745, <em>p</em> = 0.010, 95% CI [0.178, 1.312]).”</p>
-</section>
+<p>After multiple comparison correction, Model A no longer looks significantly better than Model D.</p>
+<p>The Bonferroni adjustment is straightforward, and essentially makes our decision criteria for any one test among the set more stringent. But some think it is overly conservative - in other words, that it’s trying too hard to protect us from making Type I error. The corrected p-value can get very large if the number of simultaneous comparisons gets large. Although this decreases the chance of making a Type I error, it increases the chance of making a Type II error of not detecting a difference when one does exist. We’ve taught you the Bonferroni correction because it is the easiest to use, but other less conservative multiple comparison corrections are more common in research and include <a class="reference external" href="https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/post-hoc/tukey-test-honest-significant-difference/">Tukey’s Honestly Significant Difference Test</a> and the <a class="reference external" href="https://www.statisticshowto.com/benjamini-hochberg-procedure/">Benjamini-Hochberg False Discovery Rate</a>.</p>
 </section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
-<li><p>Define the null hypothesis</p></li>
-<li><p>Explain what it means to reject the null hypothesis</p></li>
-<li><p>Shuffle data to create null sampling distributions</p></li>
-<li><p>Explain the alpha criterion</p></li>
-<li><p>Define the meaning of a p-value</p></li>
-<li><p>Find the p-value of a model estimate</p></li>
-<li><p>Explain the limits of null hypothesis testing</p></li>
+<li><p>Find the R<sup>2</sup> estimate in a model output</p></li>
+<li><p>Generate the null sampling distribution of R<sup>2</sup></p></li>
+<li><p>Test the significance of a model</p></li>
+<li><p>Perform model selection among different models</p></li>
+<li><p>Explain the importance of direct comparison</p></li>
+<li><p>Conduct multiple comparison correction</p></li>
 </ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Next: Chapter 18 - Significance Testing with Whole Models</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Next: Chapter 18 - Evaluating Effect Sizes</a></p>
 </section>
 </section>
 
@@ -1008,26 +918,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-hypothesis">17.1 The null hypothesis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distribution-of-an-estimate">17.2 Sampling distribution of an estimate</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing">17.3 Significance testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">17.4 The p-value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-t-distribution">17.5 The t-distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#things-that-affect-the-p-value">17.5 Things that affect the p-value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-limits-of-significance-testing">17.6 The limits of significance testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-i-and-type-ii-error">Type I and Type II error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-only-reject-the-null-not-prove-it">Can only reject the null, not prove it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-is-a-binary-decision">Significance is a binary decision</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-data-not-population">Probability of data, not population</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-values-and-sample-size">P-values and sample size</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-effects-in-practice">17.7 Significant effects in practice</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-simple-model">Effects in the simple model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-the-multivariable-model">Effects in the multivariable model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effects-in-interaction-models">Effects in interaction models</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significant-models">18.1 Significant models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-sampling-distribution-of-r-sup-2-sup">18.2 Null sampling distribution of R<sup>2</sup></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-testing-a-model">18.3 Significance testing a model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-f-distribution">18.4 The F distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-full-models">18.5 Comparing different full models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-direct-comparison">18.6 Importance of direct comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons-problem">18.7 Multiple comparisons problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
   </nav></div>
