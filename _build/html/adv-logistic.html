@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 15 - Models with Categorical Outcomes &#8212; Pomona Psych 158 Online Textbook</title>
+    <title>Models with Categorical Outcomes &#8212; Pomona Psych 158 Online Textbook</title>
   
   
   
@@ -178,14 +178,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 15 - Estimating Populations</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 16 - Significance Testing</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -418,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 15 - Models with Categorical Outcomes</h1>
+    <h1>Models with Categorical Outcomes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -456,9 +456,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Previous: Chapter 14 - Nonlinear Models</a></p>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
@@ -471,8 +469,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="chapter-15-models-with-categorical-outcomes">
-<h1>Chapter 15 - Models with Categorical Outcomes<a class="headerlink" href="#chapter-15-models-with-categorical-outcomes" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="models-with-categorical-outcomes">
+<h1>Models with Categorical Outcomes<a class="headerlink" href="#models-with-categorical-outcomes" title="Permalink to this heading">#</a></h1>
 <p>Thus far in the course, we’ve explored a great many types of models that the general linear model framework can handle. This gives us a large amount of flexibility in the types of research questions we can answer with statistics. Hopefully you are beginning to appreciate how understanding the fundamentals of the general linear model can open a great many avenues of inquiry for you. The general linear model is not the only way to do statistics (there are more advanced statistics classes you can take that will teach you different approaches for specific problems), but it is an extremely powerful one to start with.</p>
 <p>The last major class of general linear model that we will learn in this course will address one thing we’ve been leaving out so far. Across all the regressions, interactions, nonparametric tests with all sorts of predictors and relationships between predictors, one thing has been contast - we’ve always been predicting a <em>continuous</em> outcome variable. Of course, there are research questions concerning categorical outcome variables as well. What political party is someone likely to join, whether or not someone is admitted to college, etc. These sorts of models are called <strong>logistic regression</strong>, and we will cover them here.</p>
 <section id="non-continuous-outcomes">
@@ -887,7 +885,6 @@ document.write(`
 <li><p>Fit a logistic model in error</p></li>
 <li><p>Calculate Proportional Reduction in Deviance for a logistic model</p></li>
 </ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Next: Chapter 16 - Estimating Populations</a></p>
 </section>
 </section>
 

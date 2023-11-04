@@ -47,10 +47,10 @@ parts:
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb
     title: Chapter 18 - Effect Sizes & Power
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb
-    title: Chapter 19 - Alternate Approaches - Traditional Inference Methods
+    title: Chapter 19 - Bias due to Improper Model Building
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb
-    title: Chapter 20 - Alternate Approaches - Bayesian Statistics
+    title: Chapter 20 - Alternate Approaches - Traditional Statistical Tools
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb
-    title: Chapter 21 - Bias due to Improper Model Building
+    title: Chapter 21 - Alternative Approaches - Bayesian Statistics
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb
-    title: Chapter 22 - Bias due to Improper Model Selection
+    title: Chapter 22 - Lying with Statistics
