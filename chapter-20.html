@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 21 - Bayesian Statistics &#8212; Pomona Psych 158 Online Textbook</title>
+    <title>Chapter 20 - Traditional Statistical Tools &#8212; Pomona Psych 158 Online Textbook</title>
   
   
   
@@ -182,10 +182,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -418,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 21 - Bayesian Statistics</h1>
+    <h1>Chapter 20 - Traditional Statistical Tools</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,21 +428,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-vs-bayesian-statistics">21.1 Frequentist vs. Bayesian statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">21.2 Conditional probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-conditional-probability-bayes-rule">21.3 Reversing a conditional probability: Bayes’ rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-hypothesis-testing">21.4 Bayesian hypothesis testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-parameter-estimation">21.5 Bayesian parameter estimation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-set-the-prior">Step 1 - Set the prior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-estimate-model">Step 2 - Estimate model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-interpret-posterior-probability">Step 3 - Interpret posterior probability</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posterior-intervals">21.6 Posterior intervals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smallest-effect-size-of-interest">21.7 Smallest effect size of interest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning-in-bayesian-stats">21.8 Power planning in Bayesian stats</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-priors">21.9 Updating priors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-factors">21.10 Bayes factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-teaching-philosophies">20.1 Different teaching philosophies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">20.2 One-sample t-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">20.3 Independent-samples t-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-way-anova">20.4 One-way ANOVA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-anova">20.5 Factorial ANOVA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-multiple-regression">20.6 Correlation &amp; multiple regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-square">20.7 Chi-square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measures-tests">20.8 Repeated measures tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tests">20.9 Summary of tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
             </nav>
@@ -456,983 +450,553 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Previous: Chapter 20 - Sources of Model Bias</a></p>
-<div class="alert alert-block alert-info">
-<b>**NOTE**</b>: At the moment there is an issue with Google Colab and the package rstanarm, where it takes ~1hr to install in the notebook. For now, read through this version of the notebook where the rstanarm code has been pre-executed. If you'd like to try it out yourself, you can download it to your own RStudio and enter the same commands. 
-</div><div class="cell docutils container">
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Previous: Chapter 19 - Model Bias</a></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;interactions&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
-<span class="n">fingers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/fingers.csv&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">interactions</span><span class="p">)</span>
+
+<span class="n">trackscores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/trackscores.csv&quot;</span><span class="p">)</span>
+<span class="n">trackscores</span><span class="o">$</span><span class="n">track_training</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">trackscores</span><span class="o">$</span><span class="n">track_training</span><span class="p">)</span>
+<span class="n">trackscores</span><span class="o">$</span><span class="n">weight_training</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">trackscores</span><span class="o">$</span><span class="n">weight_training</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="chapter-21-bayesian-statistics">
-<h1>Chapter 21 - Bayesian Statistics<a class="headerlink" href="#chapter-21-bayesian-statistics" title="Permalink to this heading">#</a></h1>
-<section id="frequentist-vs-bayesian-statistics">
-<h2>21.1 Frequentist vs. Bayesian statistics<a class="headerlink" href="#frequentist-vs-bayesian-statistics" title="Permalink to this heading">#</a></h2>
-<p>The ideas about inferential statistics in the previous chapters come from the perspective of Frequentist statistics. Almost every textbook for undergraduate psychology students starts with this framework, as the Frequentist view of statistics dominated the academic field of statistics for most of the 20th century and is a popular collection of tools among applied scientists. It was and is the most common practice among psychologists to use Frequentist methods. Because Frequentist methods are ubiquitous in scientific papers, every student of statistics needs to understand those methods.</p>
-<p>However, Frequentist statistics can be frustrating to interpret. The major tenet of Frequentism is that there is only one state of the world. A hypothesis you are testing is either true, or it is not. We can describe the probability of generating certain datasets given the true state of the world, but if we don’t know that state, we can’t describe the probability of what that state is given a particular dataset we have collected. Unfortunately, that’s usually the case we find ourselves in - we <em>don’t</em> know the true state of the world, and our only hope to figure it out is by looking at some data. Frequentism thus isn’t an ideal method for answering that question, and we have to do some brain bending things to make it work for us anyways:</p>
-<ul class="simple">
-<li><p>We can’t figure out the probability of the true population parameter, so we have to think up some hypothetical parameters and see how likely those are to produce our data (p-values)</p></li>
-<li><p>We then have to reduce these probabilities to a binary yes/no decision about whether we want to accept this hypothetical parameter as being the truth (null hypothesis testing)</p></li>
-<li><p>We can only ever reject a null hypothesis, but we can never build support for it</p></li>
-</ul>
-<p>If these topics have felt abstract and difficult to master, you wouldn’t be alone. The convoluted nature of statistical inference with Frequentist methods partially explains errors that can be found in published research.</p>
-<p>This is why some people prefer a different approach to inferential statistics, called <strong>Bayesian statistics</strong>. These ideas as a collection are named after Thomas Bayes, the mathematician who contributed much to our understanding of probabilities.</p>
-<p>Bayesian statistics have a fundamentally different view of probability than Frequentist statistics do. In Frequentism, probability means the long-run proportion across many samples. If the true population parameter β is 0, we can’t measure it directly, but we can estimate it many times across many samples. This builds a sampling distribution, composed of many b estimates.</p>
-<img src="images/ch16-beta0.png" width="450">
-<p>Because we sample these b estimates over and over and get different values each time, the b estimates can have probability. There is some proportion of these estimates, across many samples, that will equal a particular value.</p>
-<p>To a Frequentist, the population parameter β <em>cannot</em> have a probability. It is inherently just one value, and it isn’t generated by some underlying process. It just is. A population parameter is either equal to a particular value, or it is not. There’s no way to get many values of it for measuring a proportion.</p>
-<p>In contrast, in the Bayesian perspective, probability means something different. To a Bayesian, probability is your strength of belief about the population parameter. There is still one population parameter that we don’t know, but until we know it there are many possible values is <em>could</em> be.</p>
-<img src="images/ch21-beliefdist.png" width="650">
-<p>We can believe more strongly in some possible values than others - one value is more likely to be the truth than another value. In this sense, a population parameter can have a probability. Do we think a β value of 0 is more likely to be the truth than a β value of 10? What value do we believe in most strongly?</p>
-<p>Bayesian statistics is gaining ground among psychologists, so in this chapter we want to expose you to the basics of this approach, as well as contrast how you would use Bayesian statistics for the same use cases we have so far explored with Frequentist statistics. Bayesian statistics as a whole is a large field of study that is most appropriately learned in an entire course, rather than just one chapter in a course. But if these alternate approaches to statistical questions intrigue you more than the Frequentist methods you’ve already learned, pursuing more study in the area would be a great idea.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-20-traditional-statistical-tools">
+<h1>Chapter 20 - Traditional Statistical Tools<a class="headerlink" href="#chapter-20-traditional-statistical-tools" title="Permalink to this heading">#</a></h1>
+<section id="different-teaching-philosophies">
+<h2>20.1 Different teaching philosophies<a class="headerlink" href="#different-teaching-philosophies" title="Permalink to this heading">#</a></h2>
+<p>In this course you have spent a long time learning about how to make predictions and do inference with the general linear model. This actually makes you rather unique in terms of how you’re getting started with statistics. Most students instead learn an assortment of different statistical procedures like the t-test, ANOVA, chi-square, etc. as their introduction to data analysis. Indeed many practicing researchers also use these tools exclusively.</p>
+<p>So why learn the GLM at all if not everyone uses it? There are two pedagogical reasons for why this course emphasized this method instead of the traditional content:</p>
+<ol class="arabic simple">
+<li><p><strong>Traditional tools require learning how to do hypothesis testing first</strong> - Traditional methods fundamentally depend on Null Hypothesis Significance Testing. They start with defining a null hypothesis and cannot be interpreted without computing a t/F score and finding a p-value. This means to learn how to use these tools, students first have to learn about sampling distributions and significance testing. This is a rather abstract thing to learn first and impedes understanding for many people. This leads them to using intellectual short cuts like “always look for p &lt; 0.05” despite the dangers of overrelying on that number.</p></li>
+<li><p><strong>Traditional tools are more variable, harder to remember</strong> - When first starting out, the list of all the common statistical tools is often daunting. They are calculated all different ways, with different names, applied to different situations, and it’s hard to remember what goes where. In contrast, the GLM is ultimatly one tool: <span class="math notranslate nohighlight">\(Y_i = b_0 + b_1X_i + e_i\)</span>. How many predictors you add to the equation and how you interpret the coefficients varies depending on your use situation, but just knowing about this one equation gets you 80% of the way there. This makes it a better starting point to build conceptual understanding.</p></li>
+</ol>
+<p>Despite the advantages of the GLM however, many people still use the traditional tools. Thus, it is good for you to be able to identify them and understand how they map onto what you have learned with the GLM. Ultimately, the GLM and these tools will give you the same answer and you can choose which you prefer in your own research. Knowing both will enable you to read and understand research reports no matter what method the authors used. You may even find that most of these tools build on concepts you’ve already learned. They’re just a different way of showing that information.</p>
 </section>
-<section id="conditional-probability">
-<h2>21.2 Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this heading">#</a></h2>
-<p>Thomas Bayes’ theorems of probability, and thus all of Bayesian statistics, are based on the idea of <strong>conditional probability</strong>. In chapter 8 we limited ourselves to simple probabilities - that is, the probability of a single elementary or complex event. This was the probability of such an event without any context, or other information that might help us narrow down the outputs.</p>
-<p>A conditional probability is the likelihood of some event, given another event has already happened. It is a bigger picture of likelihood than simple probability.</p>
-<p>Let’s take the 2020 US Presidential election as an example. There are two simple probabilities that we could use to describe the electorate. First, we know the probability that a voter in that election was affiliated with the Republican party: P(Republican) = 0.36. We also know the probability that a voter cast their vote in favor of Donald Trump: P(Trump) = 0.47.</p>
-<p>If we wanted to know the probability that a random voter coming out of a polling place voted for Trump, we might use that simple probability 47% to make a decision. It’s not a very helpful probability - essentially flipping a coin. But in truth we rarely make decisions this way - obviously we’d find it more surprising that someone voted for Trump in West LA, California than if they were in Lander County, Nevada.</p>
-<p>Our instinct is to actually use conditional probabilities. We might expect that people who are Republican are more likely to have voted for Trump than people who are Democrat. Thus, if we already knew a random person was Republican, we might be able to use that information to better inform our decision about whether or not they voted for Trump. The question we now ask is, what is the probability that a person voted for Trump, <em>given</em> that they are a Republican?</p>
-<p>We write the equation for a conditional probability as:</p>
+<section id="one-sample-t-test">
+<h2>20.2 One-sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h2>
+<p>Previously in chapter 11, we were introduced to the idea of a t-test. To explain it in more depth, let’s start with the <strong>one-sample t-test</strong>.</p>
+<p>Let’s say you are a track coach and you’re assessing the progress of your runners’ training. They all recorded their best times for running the 400m when they initially joined the team. Now after a month of training with track drills, you want to know if they, as a group, have improved.</p>
+<p>Here is some data from your team. We will filter it down to just those scores at tryouts and 1 month later at the first meet, then calculate their change in running times. Negative scores mean they got faster (less time to complete the 100m), positive scores mean they ran slower.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#take a look at how this dataset was organized</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">trackscores</span><span class="p">)</span>
+
+<span class="n">tryout_scores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="o">==</span><span class="s">&quot;tryouts&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="o">==</span><span class="s">&quot;track-training&quot;</span><span class="p">)</span>
+<span class="n">meet1_scores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="o">==</span><span class="s">&quot;meet1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="o">==</span><span class="s">&quot;track-training&quot;</span><span class="p">)</span>
+
+<span class="n">change_scores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">meet1_scores</span><span class="o">$</span><span class="n">time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tryout_scores</span><span class="o">$</span><span class="n">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If our question is restricted to just our team of runners and no one else, we can figure out their improvement really easily. We simply find the mean of their change scores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">change_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! This number means that, on average, our team ran faster than before after training for a month. If we only care about evaluating our current team, we can stop here and don’t need to use any more statistics.</p>
+<p>But let’s say our question goes beyond just our team. If we were to recruit new runners the following year, would they also improve their scores with this training regimen? Is it good enough to use for everyone? Now we are hypothesizing about data we don’t have. At this point we need inferential statistics, and a one-sample t-test can help.</p>
+<p>A one-sample t-test answers a particular kind of question: is the mean of some data <span class="math notranslate nohighlight">\(\bar{X}\)</span> likely or unlikely to be from a population with a specific <span class="math notranslate nohighlight">\(\mu\)</span>? In other words, if we think the population <span class="math notranslate nohighlight">\(\mu\)</span> is a particular value and our data sample is drawn from that population, is it reasonable or surprising to find that our sample’s mean is the value we measured?</p>
+<p>In the case of our specific example: is our data sample likely to happen even in a population of runners who on average didn’t improve?</p>
+<p>In order to do a one-sample t-test to answer this question, we first need to set down our idea about what <span class="math notranslate nohighlight">\(\mu\)</span> should be. This is specifying the null hypothesis. For our particular example, the data we are evaluating are improvements in running time. We want to know if these data came from a population of scores where there’s no improvement. In such a population some people might run a bit faster than their initial time, some a bit slower, but on average there’s no change. Thus, to set our null hypothesis:</p>
 <div class="math notranslate nohighlight">
-\[P(A|B)\]</div>
-<p>Which states the probability of A, given B. In our specific example, the probability of voting for Trump given someone is Republican is:</p>
+\[H_0: \mu = 0\]</div>
+<p>When we calculated our data sample earlier, it was -0.349, not 0. Does that mean we can conclude these runners did not come from a population of no improvement? Not necessarily. Remember, due to random sampling, it is frequently possible to get a sample mean that is not the same value as the population mean:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">sim_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1">#random sample of 10 scores from population with mean 0</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">sim_sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus we need a way of refining our question: given a population <span class="math notranslate nohighlight">\(\mu\)</span> <em>and</em> an expected variation among samples from that population, is our sample really surprising or not?</p>
+<p>Enter the t-value. It is a way of scaling the difference between a sample and hypothesized population mean by the standard error of that population. For a one-sample t-test, this is calculated as:</p>
 <div class="math notranslate nohighlight">
-\[P(Trump vote|Republican)\]</div>
-<p>The likelihood that any one person voted for Trump is 47%: P(Trump vote) = 0.47. But if we find out that 94% of Republicans voted for Trump, knowing whether or not somone is a Republican would change our guess confidence by a lot. Rather than 0.47, P(Trump vote|Republican) = 0.94.</p>
-<p>To calculate the conditional probability of A, we need to know the joint probability (that is, the probability of the complex event of both A and B occurring) as well as the overall probability of B. We want to know the probability that both things are true, given that the one being conditioned upon is true. The equation for this is:</p>
+\[t = \frac{\bar{X} - \mu}{SEM}\]</div>
+<p>If you recall from chapter 15, SEM in turn is calculated as:</p>
 <div class="math notranslate nohighlight">
-\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</div>
-<p>We can calculate conditional probability from data. Let’s use an example we’re familiar with, in the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset. We already know from lots of practice that student sex is related to their thumb length. Let’s put this is terms of a conditional probability - what is the probability that someone’s thumb is 60mm or longer, <em>given</em> that they are male?</p>
-<p>Below is a table of the joint probability of these data. On each row is each unique combination of data values (male or female, &gt;=60mm or &lt;60mm), as well as the number of people who fall into both those categories.</p>
+\[SEM = \frac{\hat{σ}}{\sqrt{N}}\]</div>
+<p>All this together means that a t-value will be larger when there’s a bigger difference between our sample mean and the hypothesized population mean, or when the standard error is smaller.</p>
+<p>The type of t-score we can get falls somewhere in the t distribution that we first encountered in chapter 16:</p>
+<img src="images/ch16-tdist.png" width="600">
+<p>The cumulative probability outside of our t-value is the corresponding p-value for that t-score. The smaller the p-value, the more surprising it is to get a t-value like ours when the true t in the population is 0. If the associated p-value is &lt;0.05, we would decide it’s so surprising that our sample probably came from a different sort of population instead - one with some alternative <span class="math notranslate nohighlight">\(\mu\)</span> that is not 0.</p>
+<p>R provides us with a built-in function to quickly compute a one sample t-test:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">change_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output of this function gives us information about the calculated t-score (-1.9294), the degrees of freedom of the test (9), and the p-value (0.08575). It also gives us a 95% CI for our estimate of the mean, [-0.758, 0.060]. Note that a t-value can be positive or negative, signifying if our sample mean is higher or lower than the hypothesized population mean.</p>
+<p>Based on these results, there is not enough evidence to reject the null hypothesis that our training regimen results in no improvement. In APA format, we would write these results as “There was no significant improvement in running time for this sample of runners (<em>t(9)</em> = -1.93, <em>p</em> = 0.086).”</p>
+<p>The different parts of doing a t-test (calculating a mean, null hypothesis, standard error, and p-value) are all concepts you’ve learned before. For this reason, a t-test is actually just another way of getting to the same answer as we previously did with the general linear model. Check out the t and p values in the model output below, and compare them to the results of the above t-test:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">change_scores</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the null model of the GLM framework, we are estimating the sample mean as <span class="math notranslate nohighlight">\(b_0\)</span> and evaluating if it is significantly different from 0. In a one-sample t-test, we are evaluating whether a sample mean <span class="math notranslate nohighlight">\(\bar{X}\)</span> is significantly different from the null hypothesis <span class="math notranslate nohighlight">\(\mu = 0\)</span>. These are the exact same question, just posed different ways. Thus, you can get the same result using a null model form of the GLM or the one-sample t-test!</p>
+<p>However, we should also point out that in the null model, the significance of <span class="math notranslate nohighlight">\(b_0\)</span> is specifically compared in the context of a null hypothesis where <span class="math notranslate nohighlight">\(\beta_0 = 0\)</span>. In the one-sample t-test, we can be more general that this. We don’t have to restrict ourselves to a null hypothesis of 0. For instance, let’s imagine that instead of running improvement, we are interested in whether our team’s new running times are significantly better than the <a class="reference external" href="https://www.ncsasports.org/mens-track-and-field/scholarship-standards">Division III track and field recruiting cut off</a> of 51.76. First we calculate the mean of everyone’s new running times:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">meet1_scores</span><span class="o">$</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we specify a null hypothesis:</p>
+<div class="math notranslate nohighlight">
+\[H_0: \mu = 51.76\]</div>
+<p>This is a different null hypothesis than before. Now, we are wondering if our sample is likely to come from DIII track and field athletes, or if we should conclude they come from an even faster population.</p>
+<p>Then we run the t-test to see if our sample mean is significantly different from this hypothesized population mean. To specify a null hypothesis in a t-test that is different than 0, add the <code class="docutils literal notranslate"><span class="pre">mu=</span></code> argument to the <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> with this specific null hypothesis value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">meet1_scores</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">mu</span><span class="o">=</span><span class="m">51.76</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Based on these results, our sample mean of 48.354 would be very unusual if it were drawn from a population with <span class="math notranslate nohighlight">\(\mu = 51.76\)</span> (p &lt; 0.001). We reject this null hypothesis in favor of the alternative hypothesis that our team is from a faster population.</p>
+</section>
+<section id="independent-samples-t-test">
+<h2>20.3 Independent-samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h2>
+<p>A one sample t-test is used when you have one group of data and want to understand how likely it is that that one group came from a particular population. If you have two separate groups of data and want to be able to distingush them from each other, this calls for a different kind of t-test called an <strong>independent samples t-test</strong> or <strong>two-sample t-test</strong>.</p>
+<p>Let’s say you’re still the track coach, but this time you want to compare how two different kinds of training impact your athletes. This time, you have half the team run track drills for a month and half the team do weights in the gym. Afterwards, you assess their running time on the 400m at their first meet. In this situation you no longer have one group of data like last time. You have two groups who went through different experiences that might make them different from each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">track_training</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="o">==</span><span class="s">&quot;meet1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="o">==</span><span class="s">&quot;track-training&quot;</span><span class="p">)</span>
+<span class="n">weight_training</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="o">==</span><span class="s">&quot;meet1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="o">==</span><span class="s">&quot;weight-training&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An independent samples t-test answers the question “are these two groups likely drawn from the same population?” The null hypothesis of this question would be:</p>
+<div class="math notranslate nohighlight">
+\[H_0: \mu_1 = \mu_2\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\mu_1\)</span> is the population from which group 1 came, and <span class="math notranslate nohighlight">\(\mu_2\)</span> is the population from which group 2 came. The alternative hypothesis, then, is that they come from different populations.</p>
+<p>An independent samples t-score is calculated a bit differently than a one-sample t-score. This one comes out to:</p>
+<div class="math notranslate nohighlight">
+\[ t = \frac{\bar{X}_1 - \bar{X}_2}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(s_p\)</span> stands for the <em>pooled</em> standard deviation, a way of combining the standard deviations of two samples:</p>
+<div class="math notranslate nohighlight">
+\[s_p = \sqrt{\frac{(n_1 - 1)s^2_1 + (n_2 - 1)s^2_2}{n_1 + n_2 + 2}} \]</div>
+<p>While this equation is more complicated, in general this t-score gets larger based on the same factors as the one-sample t-test. You will get a larger t-score, and thus more likely to reject the null hypothesis, if there is a large difference between the group means <em>or</em> if the sample sizes are large.</p>
+<p>In R we can use the same <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> function to do an independent-samples t-test. We just need to include more arguments. Specifically, we need to pass the separate groups to compare as separate vectors, and then add a <code class="docutils literal notranslate"><span class="pre">var.equal=</span></code> flag to tell this function to use the pooled variance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">track_training</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">weight_training</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Based on this result, what would you conclude about which populations each group likely came from?</p>
+<p>Again, it is possible to get this same result using the GLM approach we already know. However we have to reshape our data a bit in order to make this possible. In the <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> command above we wanted to compare values on the outcome variable for the two different groups, so we needed to divide the data in this variable into two separate vectors. To use <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, we don’t separate our data into different datasets. We merely include another variable that stores information about which group is which.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#filtering to every time score during meet1, for track-training or weight-training athletes</span>
+<span class="n">meet1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="o">==</span><span class="s">&#39;meet1&#39;</span><span class="p">,</span>
+<span class="w">                       </span><span class="p">(</span><span class="n">condition</span><span class="o">==</span><span class="s">&#39;track-training&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">condition</span><span class="o">==</span><span class="s">&#39;weight-training&#39;</span><span class="p">))</span>
+
+<span class="c1">#fitting glm version of test</span>
+<span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">))</span>
+
+<span class="c1">#visualizing group differences</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">gf_summary</span><span class="p">(</span><span class="n">fun.data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_cl_boot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="one-way-anova">
+<h2>20.4 One-way ANOVA<a class="headerlink" href="#one-way-anova" title="Permalink to this heading">#</a></h2>
+<p>T-tests allow you to investigate differences in means between a population and one group of data, or two separate groups. Beyond that, you might encounter a situation where you want to investigate differences between more than two groups. E.g., instead of comparing just the athletes who did track training vs. weight training, you also have athletes who did neither type or both types of training.</p>
+<p>There’s no t-test that helps you analyze more than two groups. Instead, we need to expand into a different kind of test known as a <strong>one-way ANOVA</strong>.</p>
+<p>To start, we recognize that we’re interested in comparing the average 400m running time for the 4 different training conditions. In that sense, we’re still hypothesizing about differences in means, but between several groups. Specifically, it would be pretty uninteresting if no type of training made any difference in running time and all athletes were from the same population. Thus, our null hypothesis is:</p>
+<div class="math notranslate nohighlight">
+\[H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4\]</div>
+<p>Where each <span class="math notranslate nohighlight">\(\mu\)</span> is the population from which that group number came. In contrast, the alternative hypothesis is that <em>at least one</em> of the four different training conditions results in different running times. We’re not trying to predict which group(s) is different from which other group(s), just that at least one of those equal signs in the null hypothesis is not true.</p>
+<p>Because there are many different ways the null hypothesis could be false (1 =/= 3, 2 =/=3 &amp; 4, etc.), this null hypothesis isn’t possible to test in the t-test framework. There isn’t one group difference to compare to one population parameter. Instead we use an ANOVA procedure, which stands for Analysis of Variance.</p>
+<p>The way this works is by looking at variation in data and figuring out how much variation is within a group of data, vs. between different groups.</p>
+<img src="images/ch20-btwn-within.png" width="800">
+<p>To quantify variation, we’ve used the idea of sum of squares before. We can use it again here to calculate new* kinds of sum of squares to represent, instead of deviations between data and model predictions, deviations between groups or within groups. We’ll denote this as <span class="math notranslate nohighlight">\(SS_w\)</span> for the within-group variation, where <span class="math notranslate nohighlight">\(\bar{Y}_g\)</span> is the mean of some group G:</p>
+<div class="math notranslate nohighlight">
+\[SS_w = \sum_{i=1}^{N}(Y_i-\bar{Y}_G)^2\]</div>
+<p>And here is <span class="math notranslate nohighlight">\(SS_b\)</span> for the between-groups variation, where <span class="math notranslate nohighlight">\(\bar{Y}\)</span> is the mean of all data regardless of group (the Grand Mean):</p>
+<div class="math notranslate nohighlight">
+\[SS_b = \sum_{i=1}^{N}(\bar{Y}_G - \bar{Y})^2\]</div>
+<p>Now that we’ve defined these different types of sum of squares, we can ask a specific mathematical question: is there more variation between the groups of data than within a group? Are the differences between individual scores because of which group they belong to, or just randomness? A ratio is a good way to represent this question:</p>
+<div class="math notranslate nohighlight">
+\[\frac{SS_b}{SS_w}\]</div>
+<p>But wait, if we’re calculating sum of squares then we know it’s problematic to not consider the size of our dataset. Thus we should convert these values to mean squared error by dividing SS by the degrees of freedom. As usual, the degrees of freedom corresponds to the number of ways data can vary once we have some existing information about it. For the within-groups variability, what we’re calculating is the variation of the individual observations (N data points) around the group means (all the <span class="math notranslate nohighlight">\(\bar{Y}_G\)</span> estimates). In contrast, for the between groups variability, we’re interested in the variation of the group means (G data points) around the Grand Mean (one <span class="math notranslate nohighlight">\(\bar{Y}\)</span> estimate). Therefore, the degrees of freedom here are:</p>
+<div class="math notranslate nohighlight">
+\[df_b = G - 1\]</div>
+<div class="math notranslate nohighlight">
+\[df_w = N - G\]</div>
+<p>The ratio of mean squared errors then is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{SS_b / df_b}{SS_w / df_w} = \frac{MSE_b}{MSE_w}\]</div>
+<p>This ratio has a specific name: it is the <strong>F-ratio</strong> or the <strong>F-statistic</strong> (<a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb#scrollTo=509057e3">sound familiar?</a>).</p>
+<p>That’s all a one-way ANOVA does: it calculates an F-statistic to compare between to within-group variation. If the value of this F-statistic is sufficiently large, that means the differences in the group means are so large that we’d be very surprised to hear they were actually sampled from the same population. We’d reject the null hypothesis in favor of an alternative, that at least one came from a different population.</p>
+<p>That brings us to doing a one-way ANOVA test in R. There are a couple different implementations of ANOVA tests in R. The most basic is built into base R, called <code class="docutils literal notranslate"><span class="pre">aov()</span></code>. To use this one, you no longer need to save the data for the different groups into different vectors - we can keep it in one dataset like with a GLM model and simply pass a formula to ask how the outcome variable varies as a function of group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#choosing all running times at meet1, regardless of condition</span>
+<span class="n">meet1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="o">==</span><span class="s">&#39;meet1&#39;</span><span class="p">)</span>
+
+<span class="c1">#running one-way ANOVA test</span>
+<span class="n">anova_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aov</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">)</span>
+<span class="n">anova_results</span>
+
+<span class="c1">#visualizing group differences</span>
+<span class="nf">gf_jitter</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">gf_summary</span><span class="p">(</span><span class="n">fun.data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean_cl_boot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output of this code tells you <span class="math notranslate nohighlight">\(SS_b\)</span> (Sum of Squares in the ‘condition’ column) and <span class="math notranslate nohighlight">\(SS_w\)</span> (Sum of Squares in the ‘Residuals’ column). To get the corresponding F-statistic and p-value, wrap this command in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">anova_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since this p-value is &lt;0.05, we’d reject the null hypothesis that all groups of athletes come from the same population. At least one of the group means is sufficiently different from at least one other that we decide there are different populations involved here - meaning, type of training matters for running time. In APA format, we’d write this as “there was a significant effect of training type on running time <em>F</em>(3,36) = 7.035, <em>p</em> &lt; 0.001.”</p>
+<p>Now, at this moment we should pause so I can let you know that I actually lied to you earlier. <span class="math notranslate nohighlight">\(SS_b\)</span> and <span class="math notranslate nohighlight">\(SS_w\)</span> aren’t new kinds of sum of squares at all. To see what I mean, here’s the <span class="math notranslate nohighlight">\(SS_{model}\)</span> and <span class="math notranslate nohighlight">\(SS_{error}\)</span> from a GLM with the same formula:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">glm_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">)</span>
+<span class="nf">supernova</span><span class="p">(</span><span class="n">glm_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(SS_b\)</span> is the exact same value as <span class="math notranslate nohighlight">\(SS_{model}\)</span>, just with a different name. Both refer to the amount of variation explained by this grouping variable. Likewise, <span class="math notranslate nohighlight">\(SS_w\)</span> is the same as <span class="math notranslate nohighlight">\(SS_{error}\)</span>, the amount of variation left unexplained. The F-statistic and p-value are also the same. That’s why this is called an ANOVA table - it’s the results of an ANOVA test. If we output the summary of a GLM model with <code class="docutils literal notranslate"><span class="pre">condition</span></code> predicting <code class="docutils literal notranslate"><span class="pre">time</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">glm_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That F-statistic and p-value for the significance of the whole model is also the same. Thus, a one-way ANOVA test is the exact same as testing a whole GLM model with multiple categorical predictors.</p>
+<p>Now there are some differences between a one-way ANOVA and GLM on the other kinds of information you get from the model. Specifically, the significance of differences between <em>particular</em> pairs of groups. At baseline, an ANOVA test can’t tell you anything about this. It only tests the null hypothesis that all groups are the same. Any one pair being different results in rejecting the null hypothesis, but you don’t know which pair(s) of groups were different. To get this answer, you need to perform an independent-samples t-test on each unique pair. Because this involves many tests, you also have to correct for multiple comparisons.</p>
+<p>In R, you can do this with one function <code class="docutils literal notranslate"><span class="pre">pairwise()</span></code>, which takes an object holding the results of an ANOVA test and returns the significance of the difference between every possible pair of groups:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pairwise</span><span class="p">(</span><span class="n">anova_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The method of multiple comparison correction that <code class="docutils literal notranslate"><span class="pre">pairwise()</span></code> is using is called Tukey’s Honestly Significance Differences, which adjusts the calculated p-values up rather than pulling down the critical p-value.</p>
+<p>Now compare these numbers to those in the summary report of the GLM model (where “both-training” is the reference group because it is first in the alphabet). For instance, look at the difference between the “no-training” and “both-training” conditions here, and then look at the estimate of the effect of “no-training” in the GLM output. Both of these numbers are the same (2.038), indicating that both methods are finding the difference in means between the “both-training” condition and the “no-training” condition. However, the p-values for these lines are different.</p>
+<p>Why is that? The reason is, with the GLM model you don’t need to do multiple comparisons correction. This is because a multiple regression is just one test. It calculates the standard error of each coefficient at once, in the context of the other predictors. This means it’s essentially already correcting for the fact that there are other coefficients to test. Further, it is only doing this correction for 3 comparisons with the reference group (“both-training” against the other three).</p>
+<p>In contrast, with the pairwise tests after the ANOVA, these are all done independently on separate subgroups of data. In addition, all 6 possible pairwise comparisons are done. With more comparisons, that means you have to correct the p-value by more in order to keep the family-wise error rate at <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>. With more correction, it is harder to find any one comparison as significant. This is why the comparison between “both-training” and “track-training” is significant in the GLM (effect of “track-training”, p = 0.0133) but not significant in the pairwise table of the ANOVA results (p = 0.0614). However, this is also why the pairwise table has comparisons for conditions like “weight-training” and “track-training”, while the GLM doesn’t. To get that result with a GLM approach, one of those conditions would need to be treated as the reference group.</p>
+<p>For this multiple comparisons reason, it is often better to use a GLM than a one-way ANOVA.</p>
+</section>
+<section id="factorial-anova">
+<h2>20.5 Factorial ANOVA<a class="headerlink" href="#factorial-anova" title="Permalink to this heading">#</a></h2>
+<p>Of the traditional tools we’ve covered so far in this chapter, you can probably detect a general trend. So far we’ve looked at a fairly simple experimental design: each person falls into only one of several groups, and we want to know whether these groups have different means on some outcome variable. This assumes that there is only one variable that matters for differences in the outcome value - which of these groups someone is in.</p>
+<p>But in the multiple regression version of the GLM framework, we learned that multiple different predictor variables can have separate effects on an outcome. They can even interact with each other, such that the effect of one predictor changes as a function of the value of another predictor. This might be a better way of understanding our athlete data - instead of four different categories of training regimens, maybe there is a more general effect of track-training and of weight-training that combine in order to produce someone’s running time. Being in the “both-training” condition just means being a part of both of these general groups, instead of its own unique category.</p>
+<p>In the ANOVA approach to statistics, taking into account the effect of multiple grouping variables is called <strong>factorial ANOVA</strong>. Sometimes it is also called something like two-way ANOVA (which means two separate predictor variables) or 2x2 ANOVA (meaning there are two levels in the first predictor and two levels in the second). Like the one-way ANOVA, factorial ANOVA is a method of comparing group means to see if they come from the same population. So a sensible place to start would be to be explicit about a null hypothesis for these means. However, the fact that the different training groups are made of combinations of multiple variables means there are several different means that one might be interested. To see this, let’s start by thinking about all the different sample means that we can calculate for this kind of design:</p>
+<p>Firstly, there’s the obvious idea that we might be interested in this table of group means for our athletes at their first meet:</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Sex</p></th>
-<th class="head text-center"><p>Thumb length</p></th>
-<th class="head text-center"><p>number of participants</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>No weight training</p></th>
+<th class="head text-center"><p>Weight training</p></th>
+<th class="head text-center"><p>Any weight training</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>Male</p></td>
-<td class="text-center"><p>&gt;=60mm</p></td>
-<td class="text-center"><p>34</p></td>
+<tr class="row-even"><td class="text-center"><p><strong>No track training</strong></p></td>
+<td class="text-center"><p>49.071</p></td>
+<td class="text-center"><p>47.323</p></td>
+<td class="text-center"><p>48.047</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Female</p></td>
-<td class="text-center"><p>&gt;=60mm</p></td>
-<td class="text-center"><p>46</p></td>
+<tr class="row-odd"><td class="text-center"><p><strong>Track training</strong></p></td>
+<td class="text-center"><p>48.354</p></td>
+<td class="text-center"><p>47.134</p></td>
+<td class="text-center"><p>47.774</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Male</p></td>
-<td class="text-center"><p>&lt;60mm</p></td>
-<td class="text-center"><p>11</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Female</p></td>
-<td class="text-center"><p>&lt;60mm</p></td>
-<td class="text-center"><p>66</p></td>
+<tr class="row-even"><td class="text-center"><p><strong>Any track training</strong></p></td>
+<td class="text-center"><p>48.563</p></td>
+<td class="text-center"><p>47.229</p></td>
+<td class="text-center"><p>47.969</p></td>
 </tr>
 </tbody>
 </table>
-<p>To compute P(&gt;=60mm | male), we need to know the joint probability of being male and having a thumb at least as long as 60mm, in addition to the simple probability of being male.</p>
-<p>To calculate the joint probability, we divide the number of people who are both male and have a long thumb by the total number of people. In our case, that is</p>
-<div class="math notranslate nohighlight">
-\[\frac{34}{(34+46+11+66)} = 0.217\]</div>
-<p>We could find this out with code as well:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">long_and_male</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">fingers</span><span class="p">,</span><span class="w"> </span><span class="n">Thumb</span><span class="o">&gt;=</span><span class="m">60</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Sex</span><span class="o">==</span><span class="s">&quot;male&quot;</span><span class="p">)</span>
-
-<span class="n">prob_jointAB</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">long_and_male</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">fingers</span><span class="p">)</span>
-<span class="n">prob_jointAB</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The simple probability of being male is the number of all people who are male, divided by the total number of people.</p>
-<div class="math notranslate nohighlight">
-\[\frac{(34+11)}{(34+46+11+66)} = 0.287\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use code like above to figure out the probability of being male in our dataset:</span>
-<span class="n">prob_B</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Using the equation for conditional probability, the probability of having a long thumb given that someone is male is:</p>
-<div class="math notranslate nohighlight">
-\[P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{0.2165605}{0.2866242} = 0.755\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">prob_jointAB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">prob_B</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice that this conditional probability is different than the simple probability of being male (0.287) and of having a long thumb (0.510). If two variables are related to each other like sex and thumb length are, the conditional probability of a particular value on one variable given a value on the other is different than the simple probability of either variable alone. Knowing information about one variable helps us update our beliefs about the probability of the other variable.</p>
-</section>
-<section id="reversing-a-conditional-probability-bayes-rule">
-<h2>21.3 Reversing a conditional probability: Bayes’ rule<a class="headerlink" href="#reversing-a-conditional-probability-bayes-rule" title="Permalink to this heading">#</a></h2>
-<p>Sometimes we know P(A|B), but we really want to know P(B|A). For example in medical screening, we know P(+test|disease), but we want to know P(disease|+test).</p>
-<p>Thomas Bayes <a class="reference external" href="http://www.hep.upenn.edu/~johnda/Papers/Bayes.pdf">figured out a mathematical theorem</a> to help us do this. We now call this theorem <strong>Bayes’ rule</strong>. To reverse a conditional probability:</p>
-<div class="math notranslate nohighlight">
-\[P(B|A) = \frac{P(A|B)*P(B)}{P(A)}\]</div>
-<p>Let’s plug in our numbers from the table above to figure out P(male|&gt;=60mm), rather than P(&gt;=60mm|male).</p>
-<div class="math notranslate nohighlight">
-\[P(male|&gt;=60mm) = \frac{P(&gt;=60mm|male)*P(male)}{P(&gt;=60mm)} = \frac{0.755*0.287}{0.510} = 0.425\]</div>
-<p>Does that seem surprising? The probability of having a long thumb given someone was male is pretty high, ~75.5%. But the reverse is not automatically true - if someone has a long thumb, the probability that they are also male is only 42.5%. This is because of the <strong>base rate</strong> of sex in our sample - only 28.7% of the participants are male. If we know someone has a long thumb, there is still an overall lower chance that someone is male. However, it’s a <em>higher</em> chance than if we knew nothing about their thumb length. We changed our probability estimation based on the additional information about thumb length.</p>
-<p>Another way to think of Bayes’ rule is as a way to update our beliefs on the basis of data. That is, improving our understanding about the world using data. The different parts of Bayes’ rule have specific names, that relate to their role in using Bayes’ rule to update our beliefs.</p>
-<p>We start out with an initial guess about the probability of sex (P(B)), which we refer to as the <strong>prior probability</strong>. In the example above we’d use the base rate of sex as our prior, since it was our best guess as to the individual’s chance of being male before we knew their thumb length.</p>
-<p>We then collect some data about a new variable, thumb length. The degree to which thumb length (A) is related to sex (B) is given by P(A|B), which we refer to as the <strong>likelihood</strong>. This is how likely a long thumb is, given someone is male.</p>
-<p>The denominator of Bayes’ rule (P(A)) is referred to as the <strong>marginal likelihood</strong>, because it expresses the overall likelihood of thumb length, averaged across all of the possible values of sex.</p>
-<p>The outcome to the left (P(B|A)) is referred to as the <strong>posterior probability</strong> - the probability of being male, given a long thumb. This name is because it’s what comes out the back end of the computation, once we’ve updated our prior probability with additional information.</p>
-<p>A slightly different way of writing Bayes’ rule makes this clearer:</p>
-<div class="math notranslate nohighlight">
-\[P(B|A) = \frac{P(A|B)}{P(A)}*P(B)\]</div>
-<p>The fraction (P(A|B)/P(A)) tells us how much more or less likely having a long thumb is given being male, relative to the overall (marginal) likelihood of having a long thumb. If it is much more likely that someone will have a long thumb once we know they are male, this fraction value will be a large number. If it is much less likely that someone will have a long thumb once we know they are male, this fraction value will be less than 1. If knowing someone’s sex doesn’t change the likelihood of a long thumb at all, the fraction value will be equal to 1.</p>
-<p>The part on the right side (P(B)) tells us how likely we thought being male was before we knew anything about thumb length.</p>
-<p>This makes it clearer that the role of Bayes’ rule is to update our prior knowledge about the probability of B, based on the degree to which A and B are related.</p>
-</section>
-<section id="bayesian-hypothesis-testing">
-<h2>21.4 Bayesian hypothesis testing<a class="headerlink" href="#bayesian-hypothesis-testing" title="Permalink to this heading">#</a></h2>
-<p>Let’s return now to the idea of hypothesis testing. In Frequentist statistics, we learned that a p-value is just the probability of a set of data given the null hypothesis H<sub>0</sub> is true. We can write that now as a conditional probability:</p>
-<div class="math notranslate nohighlight">
-\[P(b|\beta=0)\]</div>
-<p>When hypothesis testing, we want to be able to make a decision about the null hypothesis being true, or not. In Frequentism the null hypothesis can’t have a probability, so the closest we can get to that answer is to reason, if P(b|β=0) is really small, β=0 probably isn’t the right description about the world.</p>
-<p>With Bayesian statistics, we can do a better job of answering this question. Now we can directly find the probability that β equals 0. Specifically, using Bayes’ rule, we can find the probability of the null hypothesis being true, given the data we have collected.</p>
-<div class="math notranslate nohighlight">
-\[P(\beta=0|b) = \frac{P(b|\beta=0)}{P(b)}*P(\beta=0)\]</div>
-<p>It’s what we’ve been wanting to say all along, and now we’re no longer held down by the convoluted nature of the Frequentist approach! When we have the ability to talk about the probability of a hypothesis we can do even more things, like:</p>
-<ul class="simple">
-<li><p>Figure out the probability that the true population parameter is at least as big as a smallest effect size of interest</p></li>
-<li><p>Adjust our belief of the probability of a population parameter based on prior information we already have</p></li>
-<li><p>Provide evidentiary support for a specific value of the population parameter; this includes supporting the null hypothesis instead of just rejecting it</p></li>
-</ul>
-</section>
-<section id="bayesian-parameter-estimation">
-<h2>21.5 Bayesian parameter estimation<a class="headerlink" href="#bayesian-parameter-estimation" title="Permalink to this heading">#</a></h2>
-<p>One powerful use case of Bayesian statistics is to figure out the most likely value of a population parameter. This process is called <strong>Bayesian estimation</strong>.</p>
-<p>Let’s imagine an example where we want to test the effect of sex on thumb length. Sex is the only predictor, so the equation for this model would look like:</p>
-<div class="math notranslate nohighlight">
-\[ Thumb_i = b_0 + b_1Sex_i + e_i\]</div>
-<p>We can fit this model in R like we normally have in order to come up with a b<sub>1</sub> estimate from these data, as well as a likelihood that a true β<sub>1</sub> = 0 would produce this estimate (the p-value). But Bayesian estimation goes a step further and uses that likelihood to update an existing belief about the true value of β<sub>1</sub>.</p>
-<p>We will use an R package called <code class="docutils literal notranslate"><span class="pre">rstanarm</span></code> to do this process. Within this package is a function <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> which will fit a model in the same way we did with <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, but also solve Bayes’ rule for us in order to make statements about the probability of specific population parameters.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#uncomment if you want to run rstanarm code yourself</span>
-<span class="c1">#note right now it will take 40-60min to install (but the code is pre-executed for reading purposes)</span>
-<span class="c1">#Sys.setenv(MAKEFLAGS= paste0(&quot;-j&quot;,parallel::detectCores()))</span>
-<span class="c1">#install.packages(&quot;rstanarm&quot;)</span>
-<span class="c1">#library(rstanarm)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
-	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmpheagNO/downloaded_packages
-</pre></div>
-</div>
-</div>
-</div>
-<p>Directly calculating the probability of a population parameter is a more satisfying decision than just rejecting or failing to reject a null hypothesis. But this kind of power comes with a downside. In Frequentist statistics, we calculated the probability of the data given a null hypothesis β=0. This was only one probability calculation. In Bayesian statistics, remember that there are four parts to Bayes’ rule, which in the context of estimates and parameters means:</p>
-<ul class="simple">
-<li><p>The prior P(β): Our degree of belief about what the population parameter is before seeing any data</p></li>
-<li><p>The likelihood P(b|β): How likely are the observed data given a particular population parameter</p></li>
-<li><p>The marginal likelihood P(b): How likely are the observed data, combining over all possible hypotheses</p></li>
-<li><p>The posterior P(β|b): Our updated belief about the population parameter, given the data</p></li>
-</ul>
-<p>We have to calculate four things to make decisions about a population estimate, instead of one. For the prior in particular, this isn’t even something we calculate so much as something we say we believe in to start with. It’s just a number we pick. This is why one criticism of Bayesian statistics is that it is more subjective than Frequentist statistics. You shouldn’t let that scare you away from using these tools, but it does mean you should be informed about how to make that decision.</p>
-<section id="step-1-set-the-prior">
-<h3>Step 1 - Set the prior<a class="headerlink" href="#step-1-set-the-prior" title="Permalink to this heading">#</a></h3>
-<p>Before we can estimate a population parameter, we need to establish what range of values it might have, and what probabilities we assign to each value before we know about any data. In other words, we have to pick a prior probability distribution.</p>
-<p>How do you make a belief about what the effect of <code class="docutils literal notranslate"><span class="pre">Sex</span></code> should be, before you’ve seen any data about it? Good question. There is a lot of debate over the best way to pick the prior. If you have no previous information about an effect and what you think the true effect might be, it’s really hard to make guesses about its probability. In this case, researchers can start with what’s called an <strong>uninformative prior</strong> or <strong>flat prior</strong>. This is a probability distribution that is constant across all possible values, since we have no information about what values are more likely than others. A uniform distribution would be an uninformative prior - that would be the guess that the true value of β<sub>1</sub> has an equal probability of being any value.</p>
-<p>Other times, researchers use a <strong>weakly informative prior</strong>. We use this distribution when we don’t know what a likely value of β<sub>1</sub> is, but we have some vague sense that certain values are more likely than others. I.e., if β<sub>1</sub> in this model is the difference in group means between male and female thumb lengths (mm), something like β<sub>1</sub>=4 is probably more likely than β<sub>1</sub>=40. A normal distribution with a large standard deviation would be an example of this prior. Weakly informative priors are most common to use, and the defaults in most Bayesian software.</p>
-<p>On the other hand, if you’re experienced with a research question, you may have done research like this before. You’d have an expert opinion on the likely value of β<sub>1</sub>. You may not know it exactly, but you can guess pretty close. In this case, you have strong existing beliefs about what the probability distribution of β<sub>1</sub> should be, and you’d choose to use an <strong>informative prior</strong> that is narrow.</p>
-<img src="images/ch21-informativepriors.png" width="900">
-</section>
-<section id="step-2-estimate-model">
-<h3>Step 2 - Estimate model<a class="headerlink" href="#step-2-estimate-model" title="Permalink to this heading">#</a></h3>
-<p>To start with, we’re going to go with the default prior in <code class="docutils literal notranslate"><span class="pre">rstanarm</span></code> (we’ll investigate what that prior is in a little bit). Next, we fit the model with the <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> function. This function lets us use the same formula syntax as <code class="docutils literal notranslate"><span class="pre">lm()</span></code> used and then output the results with <code class="docutils literal notranslate"><span class="pre">summary()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#stan_glm(Thumb ~ Sex, data=fingers)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 1).
-Chain 1: 
-Chain 1: Gradient evaluation took 3.5e-05 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.35 seconds.
-Chain 1: Adjust your expectations accordingly!
-Chain 1: 
-Chain 1: 
-Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 1: 
-Chain 1:  Elapsed Time: 0.023412 seconds (Warm-up)
-Chain 1:                0.028455 seconds (Sampling)
-Chain 1:                0.051867 seconds (Total)
-Chain 1: 
-
-SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 2).
-Chain 2: 
-Chain 2: Gradient evaluation took 3e-06 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.03 seconds.
-Chain 2: Adjust your expectations accordingly!
-Chain 2: 
-Chain 2: 
-Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 2: 
-Chain 2:  Elapsed Time: 0.014452 seconds (Warm-up)
-Chain 2:                0.023212 seconds (Sampling)
-Chain 2:                0.037664 seconds (Total)
-Chain 2: 
-
-SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 3).
-Chain 3: 
-Chain 3: Gradient evaluation took 3e-06 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.03 seconds.
-Chain 3: Adjust your expectations accordingly!
-Chain 3: 
-Chain 3: 
-Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 3: 
-Chain 3:  Elapsed Time: 0.01573 seconds (Warm-up)
-Chain 3:                0.023076 seconds (Sampling)
-Chain 3:                0.038806 seconds (Total)
-Chain 3: 
-
-SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 4).
-Chain 4: 
-Chain 4: Gradient evaluation took 2e-06 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
-Chain 4: Adjust your expectations accordingly!
-Chain 4: 
-Chain 4: 
-Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
-Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
-Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
-Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
-Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
-Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
-Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
-Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
-Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
-Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
-Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
-Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
-Chain 4: 
-Chain 4:  Elapsed Time: 0.016236 seconds (Warm-up)
-Chain 4:                0.0238 seconds (Sampling)
-Chain 4:                0.040036 seconds (Total)
-Chain 4: 
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stan_glm
- family:       gaussian [identity]
- formula:      Thumb ~ Sex
- observations: 157
- predictors:   2
-------
-            Median MAD_SD
-(Intercept) 58.3    0.8  
-Sexmale      6.4    1.5  
-
-Auxiliary parameter(s):
-      Median MAD_SD
-sigma 8.3    0.5   
-
-------
-* For help interpreting the printed output see ?print.stanreg
-* For info on the priors used see ?prior_summary.stanreg
-</pre></div>
-</div>
-</div>
-</div>
-<p>When running this code, you should see a big output with lines talking about chains. This is because R uses simulations of sampling distributions in order to estimate the posterior probability. We can ignore this information for our purposes. If you want to avoid getting this output in the future, add <code class="docutils literal notranslate"><span class="pre">refresh=0</span></code> as another argument in <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>. In addition, <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> uses simulations to estimate the model, so you can get slightly different answers each time you run it unless you set a seed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
-<span class="c1">#bayes_model &lt;- stan_glm(Thumb ~ Sex, data=fingers, refresh=0)</span>
-<span class="c1">#summary(bayes_model)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model Info:
- function:     stan_glm
- family:       gaussian [identity]
- formula:      Thumb ~ Sex
- algorithm:    sampling
- sample:       4000 (posterior sample size)
- priors:       see help(&#39;prior_summary&#39;)
- observations: 157
- predictors:   2
-
-Estimates:
-              mean   sd   10%   50%   90%
-(Intercept) 58.3    0.8 57.3  58.3  59.3 
-Sexmale      6.4    1.4  4.6   6.5   8.3 
-sigma        8.3    0.5  7.7   8.3   8.9 
-
-Fit Diagnostics:
-           mean   sd   10%   50%   90%
-mean_PPD 60.1    0.9 58.9  60.1  61.3 
-
-The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help(&#39;summary.stanreg&#39;)).
-
-MCMC diagnostics
-              mcse Rhat n_eff
-(Intercept)   0.0  1.0  3563 
-Sexmale       0.0  1.0  3612 
-sigma         0.0  1.0  3295 
-mean_PPD      0.0  1.0  3760 
-log-posterior 0.0  1.0  1963 
-
-For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
-</pre></div>
-</div>
-</div>
-</div>
-<p>After fitting the model, we can investigate what prior probability distribution this model used. We didn’t specify anything in the model call, so it used the default of a weakly informative prior. To see what prior was used specifically, we can use the function <code class="docutils literal notranslate"><span class="pre">prior_summary()</span></code> on the model object.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#prior_summary(bayes_model)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Priors for model &#39;bayes_model&#39; 
-------
-Intercept (after predictors centered)
-  Specified prior:
-    ~ normal(location = 60, scale = 2.5)
-  Adjusted prior:
-    ~ normal(location = 60, scale = 22)
-
-Coefficients
-  Specified prior:
-    ~ normal(location = 0, scale = 2.5)
-  Adjusted prior:
-    ~ normal(location = 0, scale = 48)
-
-Auxiliary (sigma)
-  Specified prior:
-    ~ exponential(rate = 1)
-  Adjusted prior:
-    ~ exponential(rate = 0.11)
-------
-See help(&#39;prior_summary.stanreg&#39;) for more details
-</pre></div>
-</div>
-</div>
-</div>
-<p>Each section of the output tells you the shape of the prior that was used for each estimate in the model. The line “Specified prior” describes this shape in terms of standardized units, while the line “Adjusted prior” describes the shape in units of the variable.</p>
-<p>Look at the prior used for the predictor coefficients. There’s only predictor, so just one prior is described here. The adjusted prior line tells us that the model call used a normal distribution for this prior, with a mean of 0 (“location” in this output) and an SD of 48 (“scale” in this output).</p>
-<p>Let’s visualize this prior so that we understand it better. We’ll draw 4,000 random numbers from a normal probability distribution with <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code>, using this mean and SD value. Then we’ll plot the smoothed distribution of those samples using <code class="docutils literal notranslate"><span class="pre">gf_density()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#sex_betas_prior &lt;- rnorm(4000, 0, 48)</span>
-<span class="c1">#probs_df &lt;- data.frame(sex_betas_prior)</span>
-<span class="c1">#gf_density(~sex_betas_prior, data=probs_df)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/7a63d401f8f46fa3629fbfcdc012b7225fc5251fe76f1469a8ef73ebb462c7fc.png" src="_images/7a63d401f8f46fa3629fbfcdc012b7225fc5251fe76f1469a8ef73ebb462c7fc.png" />
-</div>
-</div>
-<p>This prior distribution represents our guesses about what the true population parameter for β<sub>1</sub> actually is. It’s not an uninformative prior because it’s not flat - we think β<sub>1</sub>=0 is more likely to be the truth than β<sub>1</sub>=100. But it’s a weakly informative prior because there’s a very large range of β<sub>1</sub>s that we’re considering. In our minds, before seeing any data, β<sub>1</sub>=100 is still possible (if unlikely). In addition, because this prior is centered at 0 and covers potential β<sub>1</sub> values that are both positive and negative, that means we don’t know anything about the magnitude of the effect - we think a negative effect is just as likely as a positive effect.</p>
-<p>The intercept coefficient has a prior probability distribution too. According to the <code class="docutils literal notranslate"><span class="pre">prior_summary()</span></code> output, this prior is a normal distribution with mean 60 and SD 22. Even the estimate of the population standard deviation has a prior distribution to describe our beliefs about it (listed under “Auxilliary (sigma)”). The shape of that prior distribution is the exponential distribution (sampled with <code class="docutils literal notranslate"><span class="pre">rexp()</span></code>) since that is the right shape for the sampling distribution of σ.</p>
-</section>
-<section id="step-3-interpret-posterior-probability">
-<h3>Step 3 - Interpret posterior probability<a class="headerlink" href="#step-3-interpret-posterior-probability" title="Permalink to this heading">#</a></h3>
-<p>The main values we care about in the model output are in the “Estimates” table. You can get this without the mess of the simulation information with the <code class="docutils literal notranslate"><span class="pre">$stan_summary</span></code> property of the model object:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bayes_model$stan_summary</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td>  58.276635</td><td>0.012879671</td><td>0.7687449</td><td>  56.782095</td><td>  57.311830</td><td>  57.745845</td><td>  58.271291</td><td>  58.799327</td><td>  59.266843</td><td>  59.792521</td><td>3562.500</td><td>1.0000791</td></tr>
-	<tr><th scope=row>Sexmale</th><td>   6.443833</td><td>0.023792864</td><td>1.4300291</td><td>   3.569797</td><td>   4.598453</td><td>   5.489937</td><td>   6.455513</td><td>   7.414708</td><td>   8.270203</td><td>   9.217522</td><td>3612.404</td><td>0.9992579</td></tr>
-	<tr><th scope=row>sigma</th><td>   8.283067</td><td>0.008466218</td><td>0.4859560</td><td>   7.408737</td><td>   7.670394</td><td>   7.944087</td><td>   8.256777</td><td>   8.591663</td><td>   8.925175</td><td>   9.315826</td><td>3294.694</td><td>1.0000627</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  60.135760</td><td>0.015053170</td><td>0.9230810</td><td>  58.309899</td><td>  58.949647</td><td>  59.519628</td><td>  60.141318</td><td>  60.759740</td><td>  61.312291</td><td>  61.953128</td><td>3760.311</td><td>1.0002726</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-560.477259</td><td>0.027209503</td><td>1.2056062</td><td>-563.657366</td><td>-562.095139</td><td>-561.023959</td><td>-560.182511</td><td>-559.573342</td><td>-559.271705</td><td>-559.078182</td><td>1963.223</td><td>1.0007891</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>We are interested in the effect of sex on thumb length, so we will focus on the row for that effect, <code class="docutils literal notranslate"><span class="pre">Sexmale</span></code>. In the Bayesian model output, we don’t actually get one single estimate for the population parameter. Under the hood it’s fitting the same model in the same data as <code class="docutils literal notranslate"><span class="pre">lm()</span></code> does, but what it’s giving us as a return value is the <em>posterior probability distribution</em>. This is the new distribution of our beliefs about the true population parameter, now that we have seen some data. That’s why this output has columns for mean, sd, etc.</p>
-<p>We can visualize this new posterior probability distribution based on the model itself. The model object holds all the estimates of the population parameter from each simulation, so we can simply make a vector out of those estimates:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#probs_df$sex_betas_posterior &lt;- as.matrix(bayes_model, pars = &quot;Sexmale&quot;)</span>
-<span class="c1">#gf_density(~sex_betas_posterior, data=probs_df)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/9abc8231264cd4756c6073f4a42b62d612782b8b12b301fd7f2a18c53ccba9e1.png" src="_images/9abc8231264cd4756c6073f4a42b62d612782b8b12b301fd7f2a18c53ccba9e1.png" />
-</div>
-</div>
-<p>Bayes models don’t return just a point estimate, like Frequentist models do. We still have some variability in our beliefs about what the true population parameter is, so the model returns to us a distribution of this variability rather than a point estimate. We can visualize both the prior and the posterior probability distributions to see how the data changed out beliefs about the range of likely population parameters:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#gf_density(~sex_betas_prior, data=probs_df, fill=&quot;red&quot;, alpha=0.5) %&gt;%</span>
-<span class="c1">#    gf_density(~sex_betas_posterior, data=probs_df, fill=&quot;blue&quot;, alpha=0.5)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/92cdfb1f5f37588fced134ddae350b821a95bc7d7a4552b48f4e0b81522be3c3.png" src="_images/92cdfb1f5f37588fced134ddae350b821a95bc7d7a4552b48f4e0b81522be3c3.png" />
-</div>
-</div>
-<p>The shapes of these distributions are extremely different, which means the data changed our beliefs a lot! We are now much more certain about what the most likely population parameter value is - the posterior distribution is much narrower. In addition, the posterior is now centered on 6.444, instead of 0. The mean of a probability distribution is the most probable value in the distribution, so the fact that our posterior is centered on 6.444 means we shifted our idea of the most likely population parameter to be 6.444, instead of 0.</p>
-<p>Compare that value to the b<sub>1</sub> estimate that comes from a normal <code class="docutils literal notranslate"><span class="pre">lm()</span></code> call:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#summary(lm(Thumb ~ Sex, data=fingers))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-lm(formula = Thumb ~ Sex, data = fingers)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--19.256  -4.281  -1.106   5.244  28.104 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  58.2558     0.7794  74.743  &lt; 2e-16 ***
-Sexmale       6.4468     1.4558   4.428 1.79e-05 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 8.249 on 155 degrees of freedom
-Multiple R-squared:  0.1123,	Adjusted R-squared:  0.1066 
-F-statistic: 19.61 on 1 and 155 DF,  p-value: 1.785e-05
-</pre></div>
-</div>
-</div>
-</div>
-<p>They’re similar, but slightly different. In the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> model output, the estimated b<sub>1</sub> is 6.447. This is the best fitting coefficient to minimize model error <em>in this sample</em>. In Frequentism we don’t have prior beliefs about what the true population parameters are, so we would just take this number as our estimate of the β<sub>1</sub>.</p>
-<p>In Bayesian stats we do have prior beliefs, and those prior beliefs are not completely erased by the data. They’re <em>updated</em>. The posterior mean is a bit closer to the mean of the prior than the Frequentist estimate is, because the prior still has sway over our posterior beliefs.</p>
-<p>In this case the prior doesn’t influence our estimates by much. That’s because we used weakly informative priors. If we had used flat priors, the posterior point estimates would perfectly match the Frequentist estimates (on average, across many simulation iterations). If we had used informative priors, those would have had a much larger influence on the posterior estimates.</p>
-</section>
-</section>
-<section id="posterior-intervals">
-<h2>21.6 Posterior intervals<a class="headerlink" href="#posterior-intervals" title="Permalink to this heading">#</a></h2>
-<p>Remember in chapter 16 when we learned about confidence intervals. Those are a Frequentist tool that tells us the range of β parameters that are 95% likely to create a specific b estimate.</p>
-<p>We went through an entire discussion about why you have to be careful when talking about the meaning of confidence intervals. You can’t say that there is a 95% chance the population parameter is in this range, because that would be ascribing probability to a parameter that can’t have a probability in Frequentism. Instead we have to do some linguistic tricks like saying we are 95% <em>confident</em> the true population parameter is in this range.</p>
-<p>In Bayesian models we can come up with a similar interval, but this time it actually does express the 95% probability of a parameter. These are called <strong>credible intervals</strong> or <strong>posterior intervals</strong>, and are calculated on the posterior probability distribution returned by a Bayesian model.</p>
-<p>Look again at the summary of the Bayesian model output:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bayes_model$stan_summary</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td>  58.276635</td><td>0.012879671</td><td>0.7687449</td><td>  56.782095</td><td>  57.311830</td><td>  57.745845</td><td>  58.271291</td><td>  58.799327</td><td>  59.266843</td><td>  59.792521</td><td>3562.500</td><td>1.0000791</td></tr>
-	<tr><th scope=row>Sexmale</th><td>   6.443833</td><td>0.023792864</td><td>1.4300291</td><td>   3.569797</td><td>   4.598453</td><td>   5.489937</td><td>   6.455513</td><td>   7.414708</td><td>   8.270203</td><td>   9.217522</td><td>3612.404</td><td>0.9992579</td></tr>
-	<tr><th scope=row>sigma</th><td>   8.283067</td><td>0.008466218</td><td>0.4859560</td><td>   7.408737</td><td>   7.670394</td><td>   7.944087</td><td>   8.256777</td><td>   8.591663</td><td>   8.925175</td><td>   9.315826</td><td>3294.694</td><td>1.0000627</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  60.135760</td><td>0.015053170</td><td>0.9230810</td><td>  58.309899</td><td>  58.949647</td><td>  59.519628</td><td>  60.141318</td><td>  60.759740</td><td>  61.312291</td><td>  61.953128</td><td>3760.311</td><td>1.0002726</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-560.477259</td><td>0.027209503</td><td>1.2056062</td><td>-563.657366</td><td>-562.095139</td><td>-561.023959</td><td>-560.182511</td><td>-559.573342</td><td>-559.271705</td><td>-559.078182</td><td>1963.223</td><td>1.0007891</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>After the mean and sd values of the posterior probability distribution, this output lists several quantile values. A 95% posterior interval (abbreviated PI<sub>95</sub>) is the range of values that has a 95% chance of containing the true population parameter. In the context of the posterior distribution, this is the bounds between which 95% of the posterior is located. In this output, that would be the 2.5%ile to the 97.5%ile. For the effect of sex, that is PI<sub>95</sub> [3.57, 9.22].</p>
-<p>We can also get this more directly with the <code class="docutils literal notranslate"><span class="pre">posterior_interval()</span></code> function:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#posterior_interval(bayes_model, pars=&quot;Sexmale&quot;, prob=0.95)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 1 × 2 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>Sexmale</th><td>3.569797</td><td>9.217522</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>The mean of the posterior distribution is our best guess about the population parameter, and the posterior interval communicates the precision of that guess.</p>
-</section>
-<section id="smallest-effect-size-of-interest">
-<h2>21.7 Smallest effect size of interest<a class="headerlink" href="#smallest-effect-size-of-interest" title="Permalink to this heading">#</a></h2>
-<p>We can also use the posterior probability distribution to determine how likely it is that the true population parameter is at least as large as some smallest effect size of interest.</p>
-<p>Based on how the data updated our prior beliefs, we now think the most likely value of the population parameter is 6.444. But there’s still some uncertainty in our beliefs, as communicated by the posterior interval.</p>
-<p>Let’s say we’re working for a fashion company and trying to decide if our new glove design should be made with a male and female version. The fashion house only wants to spend the time on that if male and female thumb lengths differ by at least 5mm. Based on our posterior distribution, what is the probability that the true β<sub>1</sub> &gt;= 5?</p>
-<p>We can easily find the proportion of a normal posterior distribution with mean 6.444 and SD 1.430 that is above a value of 5:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bigger_than_5 &lt;- probs_df$sex_betas_posterior &gt;= 5</span>
-<span class="c1">#sum(bigger_than_5) / length(probs_df$sex_betas_posterior)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.84625</div></div>
-</div>
-<p>This tells us that, under our new beliefs about the population parameter, there is an 83.1% chance that the true difference between male and female thumb lengths is at least as large as 5mm. If I were advising a fashion company, I’d probably say they should make two versions of gloves!</p>
-</section>
-<section id="power-planning-in-bayesian-stats">
-<h2>21.8 Power planning in Bayesian stats<a class="headerlink" href="#power-planning-in-bayesian-stats" title="Permalink to this heading">#</a></h2>
-<p>At the heart of Bayesian statistics is a motivation to estimate a population parameter as accurately as possible. That’s different than the primary motivation of null hypothesis testing in Frequentism, which is to identify whether or not a population parameter is probably equal to 0.</p>
-<p>Power planning procedures that inform the sample size of a study in Frequentist statistics are aimed at telling us, based on an anticipated effect size and desired power level/Type I error rate, how many data points we need in order to find an effect as significant. In power planning, the precision of that estimate doesn’t matter, just whether or not it is found to be significantly different than 0.</p>
-<p>Consider a power plan where we want to know what minimum sample size we need to find a correlation r effect size of 0.7. That’s a big effect. If the true population parameter is really equal to 0.7, then we don’t need much data to find it:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;pwr&quot;)</span>
-<span class="c1">#library(pwr)</span>
-
-<span class="c1">#pwr.r.test(n=NULL, r=0.7, sig.level=0.05, power=0.8)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
-	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmpheagNO/downloaded_packages
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     approximate correlation power calculation (arctangh transformation) 
-
-              n = 12.81943
-              r = 0.7
-      sig.level = 0.05
-          power = 0.8
-    alternative = two.sided
-</pre></div>
-</div>
-</div>
-</div>
-<p>According to this power plan, we’d only need 13 data points to find that effect size as significant, if that were the true effect size.</p>
-<p>You might have an intuition that that number is too small to be useful, despite what the power plan says. That depends on your definition of “useful.” If all you care about is finding an effect significant, if you expect the effect to be large, you don’t need much data at all to do that.</p>
-<p>But with n=13 and true β=0.7, we would just barely decide it is significant (and only 80% of the time). The confidence interval of our estimate would be something like CI<sub>95</sub> [0.01, 1.39]. That doesn’t overlap with 0, but if we care about the <em>specific value</em> of the true population parameter, that confidence interval isn’t very helpful. Nearly all possible positive correlation values could reasonably produce an estimate of r=0.7 with only 13 data points.</p>
-<p>In Bayesian statistics, power planning is not about what sample size you need to find a <em>significant</em> effect. Instead, it answers what sample size you need to find a <em>precise</em> effect. Bayesians do <strong>precision planning</strong>, instead of power planning.</p>
-<p>Currently there aren’t easy-to-use tools in R for doing precision planning. Most people build their own simulations. Below is an example of some code that simulates a Bayesian sample size plan. Specifically, if we wanted to make a posterior estimate of the effect size that is at least as precise as 5mm (the posterior interval is no more than 5mm wide), we could draw increasingly larger random samples from the data until we can make a posterior interval that is narrow enough. Read through each line of the code and see if you understand what that step is doing. When you run the code, it may take a few moments to do all the simulations but will eventually output a minimum sample size needed to get a posterior interval with a precision of 5mm.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#power planning for bayes model</span>
-
-<span class="c1">#precision_target &lt;- 5    #widest we want the PI to be</span>
-<span class="c1">#PI_width &lt;- Inf          #starting width of the PI</span>
-<span class="c1">#sample_size &lt;- 5         #minimum sample size to start with</span>
-
-<span class="c1">#while (PI_width &gt; precision_target) {                  #while the PI width is larger than precision_target...</span>
-<span class="c1">#  sample_size &lt;- sample_size + 1        #increase sample size on each loop</span>
-<span class="c1">#  bootstrap_sample &lt;- sample_n(fingers, size=sample_size, replace=TRUE) #draw a sample</span>
-<span class="c1">#  num_sex &lt;- length(unique(bootstrap_sample$Sex))   #are both sex values present in sample? If not, redraw</span>
-<span class="c1">#  while (num_sex&lt;2) {</span>
-<span class="c1">#    bootstrap_sample &lt;- sample_n(fingers, size=sample_size, replace=TRUE)</span>
-<span class="c1">#    num_sex &lt;- length(unique(bootstrap_sample$Sex))</span>
-<span class="c1">#  }</span>
-<span class="c1">#  bm &lt;- stan_glm(Thumb ~ Sex, data=bootstrap_sample, refresh=0)   #fit bayesian model on subsample of data</span>
-<span class="c1">#  PI &lt;- posterior_interval(bm, pars=&quot;Sexmale&quot;, prob=0.95)         #find posterior interval of Sex effect </span>
-<span class="c1">#  PI_width &lt;- PI[2]-PI[1]                    #update PI_width to be distance between lower and upper PI bounds</span>
-<span class="c1">#}</span>
-
-<span class="c1">#while loop will stop when PI precision is smaller than precision_target</span>
-<span class="c1">#can then return sample_size</span>
-<span class="c1">#sample_size</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">174</div></div>
-</div>
-</section>
-<section id="updating-priors">
-<h2>21.9 Updating priors<a class="headerlink" href="#updating-priors" title="Permalink to this heading">#</a></h2>
-<p>Most researchers use weakly informative priors for their Bayesian models. This is because we are usually studying novel hypotheses, and don’t have strong beliefs about the true value of the population parameter. But if you have experience with a research question already (e.g., you’ve run a study before and are now doing a replication), you can change the priors used by <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> to be informative priors.</p>
-<p>Let’s walk through this process by estimating a new effect, the relationship between height and thumb length. We’ll first split the <code class="docutils literal notranslate"><span class="pre">fingers</span></code> dataset in half to get a train and test set for replication.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#fingers_train &lt;- fingers[1:79,]</span>
-<span class="c1">#fingers_test &lt;- fingers[80:157,]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we will fit a Bayesian model to estimate the posterior belief of the effect of sex, but only in the training dataset.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
-<span class="c1">#train_model &lt;- stan_glm(Thumb ~ Height, data=fingers_train, refresh=0)</span>
-<span class="c1">#train_model$stan_summary</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td>   7.8778877</td><td>0.297331400</td><td>18.0531477</td><td> -27.6828418</td><td> -14.7026987</td><td>  -4.8055153</td><td>   7.4850286</td><td>  20.102060</td><td>  31.108663</td><td>  44.128154</td><td>3686.586</td><td>0.9994737</td></tr>
-	<tr><th scope=row>Height</th><td>   0.7787846</td><td>0.004505499</td><td> 0.2735220</td><td>   0.2320031</td><td>   0.4249465</td><td>   0.5911932</td><td>   0.7812811</td><td>   0.971463</td><td>   1.120664</td><td>   1.318096</td><td>3685.519</td><td>0.9994834</td></tr>
-	<tr><th scope=row>sigma</th><td>   7.6760737</td><td>0.010164091</td><td> 0.6188773</td><td>   6.5879370</td><td>   6.9245533</td><td>   7.2298121</td><td>   7.6427870</td><td>   8.068300</td><td>   8.475023</td><td>   8.987407</td><td>3707.423</td><td>0.9995159</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  59.3282148</td><td>0.019374600</td><td> 1.2032933</td><td>  57.0019306</td><td>  57.7965637</td><td>  58.5029731</td><td>  59.3193835</td><td>  60.147198</td><td>  60.846518</td><td>  61.756865</td><td>3857.248</td><td>0.9997390</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-278.5645050</td><td>0.026670502</td><td> 1.2137391</td><td>-281.8614251</td><td>-280.1433537</td><td>-279.0964427</td><td>-278.2708477</td><td>-277.677897</td><td>-277.357872</td><td>-277.170779</td><td>2071.039</td><td>1.0023112</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>For <code class="docutils literal notranslate"><span class="pre">train_model</span></code>, we didn’t have strong prior beliefs about the true value of the height parameter. Because of this, we used the default prior included in <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#prior_summary(train_model)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Priors for model &#39;train_model&#39; 
-------
-Intercept (after predictors centered)
-  Specified prior:
-    ~ normal(location = 59, scale = 2.5)
-  Adjusted prior:
-    ~ normal(location = 59, scale = 20)
-
-Coefficients
-  Specified prior:
-    ~ normal(location = 0, scale = 2.5)
-  Adjusted prior:
-    ~ normal(location = 0, scale = 6.1)
-
-Auxiliary (sigma)
-  Specified prior:
-    ~ exponential(rate = 1)
-  Adjusted prior:
-    ~ exponential(rate = 0.13)
-------
-See help(&#39;prior_summary.stanreg&#39;) for more details
-</pre></div>
-</div>
-</div>
-</div>
-<p>This weakly informative prior had a mean of 0 and an SD of 6.1.</p>
-<p>Now, after fitting the model, we are more confident in what the true population parameter is. The mean of our posterior is 0.779, and the SD is 0.274. This is now the state of our belief about the population parameter. There are no p-values here, but the posterior interval tells us how precise our beliefs are about the parameter estimate:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#posterior_interval(train_model, pars=&quot;Height&quot;, prob=0.95)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 1 × 2 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>Height</th><td>0.2320031</td><td>1.318096</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>This tells us that we believe the true population parameter has a 95% chance of being between 0.232 and 1.318. Each 1 inch increase in height corresponds to a predicted 0.232mm change in thumb length, up to a predicted 1.318mm change in thumb length. We no longer think the possible options for this parameter are as wide (prior SD was 6.1), and we no longer think a population parameter of 0 is a likely option.</p>
-<p>Now, we want to do a replication with the test data. Because we’ve fit this model before, we don’t have to go back to using an uninformative prior. Our beliefs were updated based on seeing the data in the train set, so we shouldn’t forget about that. When fitting the model in the train data, we should use the posterior of <code class="docutils literal notranslate"><span class="pre">train_model</span></code> and pass it in as the prior of <code class="docutils literal notranslate"><span class="pre">test_model</span></code>.</p>
-<p>To do this, we need some more arguments in the <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> function call. Look at the new argument <code class="docutils literal notranslate"><span class="pre">prior=</span></code> in the code below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
-<span class="c1">#test_model &lt;- stan_glm(Thumb ~ Height, data = fingers_test, refresh=0, </span>
-<span class="c1">#                       prior = normal(0.7787846, 0.2735220, autoscale=FALSE))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Rather than using a default prior of mean=0 and SD=6.1, this new prior is the posterior from the previous analysis, with the mean and SD from <code class="docutils literal notranslate"><span class="pre">train_model</span></code>’s summary. We also set <code class="docutils literal notranslate"><span class="pre">autoscale=FALSE</span></code> so that it doesn’t try to standardize these values.</p>
-<p>We were somewhat certain about the true population parameter going into this analysis, but not strongly certain: the posterior interval had a range of ~1.09. Now, when we update our beliefs even further with additional data, we get:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#test_model$stan_summary</span>
-<span class="c1">#posterior_interval(test_model, pars=&quot;Height&quot;, prob=0.95)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td>  -1.9086566</td><td>0.201984998</td><td>12.4061098</td><td> -26.896851</td><td> -17.6534184</td><td> -10.050390</td><td>  -1.9976874</td><td>   6.306390</td><td>  14.064395</td><td>  22.653486</td><td>3772.533</td><td>0.9994552</td></tr>
-	<tr><th scope=row>Height</th><td>   0.9544212</td><td>0.003053495</td><td> 0.1876025</td><td>   0.585029</td><td>   0.7159396</td><td>   0.830606</td><td>   0.9556246</td><td>   1.076878</td><td>   1.192674</td><td>   1.336991</td><td>3774.703</td><td>0.9994234</td></tr>
-	<tr><th scope=row>sigma</th><td>   8.5562759</td><td>0.011524464</td><td> 0.6944112</td><td>   7.345231</td><td>   7.6955498</td><td>   8.068811</td><td>   8.5082341</td><td>   8.998116</td><td>   9.472051</td><td>  10.051075</td><td>3630.714</td><td>1.0006378</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  60.8956847</td><td>0.021720984</td><td> 1.3442115</td><td>  58.252216</td><td>  59.1929788</td><td>  59.948060</td><td>  60.9005909</td><td>  61.833616</td><td>  62.606171</td><td>  63.432703</td><td>3829.801</td><td>1.0004535</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-284.1739371</td><td>0.030483917</td><td> 1.2262261</td><td>-287.346699</td><td>-285.8222326</td><td>-284.762009</td><td>-283.8722743</td><td>-283.271839</td><td>-282.933727</td><td>-282.764560</td><td>1618.078</td><td>0.9997015</td></tr>
-</tbody>
-</table>
-</div><div class="output text_html"><table class="dataframe">
-<caption>A matrix: 1 × 2 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>Height</th><td>0.585029</td><td>1.336991</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>Now, our posterior distribution is even narrower. It is only ~0.752 wide. We can compare visualizations of the prior and posterior distributions again to see how our beliefs changed based on the second set of data:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#probs_df$height_prior &lt;- as.matrix(train_model, pars = &quot;Height&quot;)</span>
-<span class="c1">#probs_df$height_posterior &lt;- as.matrix(test_model, pars = &quot;Height&quot;)</span>
-<span class="c1">#gf_density(~height_prior, data=probs_df, fill=&quot;red&quot;, alpha=0.5) %&gt;%</span>
-<span class="c1">#    gf_density(~height_posterior, data=probs_df, fill=&quot;blue&quot;, alpha=0.5)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/a5cf6571720eb2095c8c1bd541634963a56eee9a1566d0b1c244268ebeb3c104.png" src="_images/a5cf6571720eb2095c8c1bd541634963a56eee9a1566d0b1c244268ebeb3c104.png" />
-</div>
-</div>
-<p>The red distribution is our prior, and the blue distribution is our posterior. We see that considering data from the second dataset shifted our beliefs up a bit, and made our beliefs more precise.</p>
-<p>If we had instead ignored the beliefs we collected in the train data and used a weakly informative prior again for <code class="docutils literal notranslate"><span class="pre">test_model</span></code>, our posterior would be centered on a different value and be less precise.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#fit a Bayesian model with stan_glm() and data=fingers_test, but using the default prior</span>
-<span class="c1">#set.seed(10)</span>
-<span class="c1">#test_model2 &lt;- stan_glm(Thumb ~ Height, data=fingers_test, refresh=0) </span>
-<span class="c1">#test_model2$stan_summary</span>
-<span class="c1">#posterior_interval(test_model2, pars=&quot;Height&quot;, prob=0.95)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td> -12.307686</td><td>0.279193408</td><td>16.7280286</td><td> -44.905462</td><td> -33.4271951</td><td> -23.4495059</td><td> -12.387899</td><td>  -1.351409</td><td>   8.958024</td><td>  20.344961</td><td>3589.874</td><td>1.0002574</td></tr>
-	<tr><th scope=row>Height</th><td>   1.112792</td><td>0.004229328</td><td> 0.2538605</td><td>   0.615760</td><td>   0.7886862</td><td>   0.9462744</td><td>   1.115422</td><td>   1.285241</td><td>   1.434090</td><td>   1.604901</td><td>3602.862</td><td>1.0003165</td></tr>
-	<tr><th scope=row>sigma</th><td>   8.548490</td><td>0.011852731</td><td> 0.7072630</td><td>   7.289631</td><td>   7.6895188</td><td>   8.0568139</td><td>   8.502755</td><td>   8.997519</td><td>   9.454188</td><td>  10.075990</td><td>3560.615</td><td>0.9998898</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  60.955728</td><td>0.022317587</td><td> 1.3408151</td><td>  58.375578</td><td>  59.2513121</td><td>  60.0500037</td><td>  60.926074</td><td>  61.830021</td><td>  62.676579</td><td>  63.567947</td><td>3609.469</td><td>1.0009680</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-283.788286</td><td>0.029877805</td><td> 1.2733773</td><td>-287.029851</td><td>-285.4004522</td><td>-284.3291013</td><td>-283.463167</td><td>-282.877874</td><td>-282.551359</td><td>-282.384199</td><td>1816.422</td><td>1.0032082</td></tr>
-</tbody>
-</table>
-</div><div class="output text_html"><table class="dataframe">
-<caption>A matrix: 1 × 2 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>Height</th><td>0.61576</td><td>1.604901</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>This is actually another version of Bayesian power planning, called <strong>optional stopping</strong>. Rather than knowing ahead of time how many datapoints to collect, you can collect in batches of smaller numbers (e.g., 20). After each batch, you fit a Bayesian model, refining the beliefs of the prior model. You keep adding new batches until the posterior distribution is narrow enough for your liking. At that point, you choose to stop collecting new data.</p>
-<p>If you wanted to control the priors for a multivariable model, you would likely want to make different priors for each predictor in the model. For instance, if we regress Thumb length on the effect of Height AND Sex:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
-<span class="c1">#multi_train_model &lt;- stan_glm(Thumb ~ Height + Sex, data = fingers_train, refresh=0)</span>
-<span class="c1">#multi_train_model$stan_summary</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 6 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td>  12.1610324</td><td>0.476942720</td><td>24.1339730</td><td> -35.53425821</td><td> -18.6532342</td><td>  -3.7932677</td><td>  12.2856983</td><td>  28.3643732</td><td>  42.911324</td><td>  59.714771</td><td>2560.502</td><td>1.0011904</td></tr>
-	<tr><th scope=row>Height</th><td>   0.7105006</td><td>0.007421526</td><td> 0.3729238</td><td>  -0.02356005</td><td>   0.2325843</td><td>   0.4606013</td><td>   0.7077751</td><td>   0.9595246</td><td>   1.184119</td><td>   1.449795</td><td>2524.956</td><td>1.0012810</td></tr>
-	<tr><th scope=row>Sexmale</th><td>   0.7048560</td><td>0.052727460</td><td> 2.6040970</td><td>  -4.39806775</td><td>  -2.5810635</td><td>  -1.0375642</td><td>   0.6592855</td><td>   2.4840200</td><td>   4.041773</td><td>   5.857015</td><td>2439.162</td><td>1.0012642</td></tr>
-	<tr><th scope=row>sigma</th><td>   7.7223836</td><td>0.012404984</td><td> 0.6341368</td><td>   6.61523077</td><td>   6.9451031</td><td>   7.2768866</td><td>   7.6874744</td><td>   8.1184809</td><td>   8.537103</td><td>   9.116240</td><td>2613.205</td><td>1.0009864</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  59.3086130</td><td>0.021164984</td><td> 1.2271953</td><td>  56.84362082</td><td>  57.7415777</td><td>  58.5131819</td><td>  59.3142277</td><td>  60.1275321</td><td>  60.873625</td><td>  61.650245</td><td>3361.952</td><td>0.9999716</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-280.0048357</td><td>0.037690666</td><td> 1.4885211</td><td>-283.91900347</td><td>-281.9710757</td><td>-280.7135295</td><td>-279.6584266</td><td>-278.9280644</td><td>-278.487828</td><td>-278.189945</td><td>1559.705</td><td>1.0027638</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<p>We find that in the train data, the mean and SD of the posterior for Height are 0.711/0.373 respectively, while the mean and SD of the posterior for Sex is 0.705/2.604. To pass these different numbers to the <code class="docutils literal notranslate"><span class="pre">prior=</span></code> argument of <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>, we use vectors containing all the numbers instead of one number at a time.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
-<span class="c1">#multi_test_model &lt;- stan_glm(Thumb ~ Height + Sex, data = fingers_test, refresh=0, </span>
-<span class="c1">#                       prior = normal(c(0.711,0.705), c(0.373,2.604), autoscale=FALSE)) </span>
-<span class="c1">#multi_test_model$stan_summary</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 6 × 12 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>(Intercept)</th><td>   4.9917902</td><td>0.241224602</td><td>14.5966684</td><td> -23.5349453</td><td> -13.8061997</td><td>  -4.5477325</td><td>   5.0648344</td><td>  14.9238393</td><td>  22.912117</td><td>  33.605835</td><td>3661.544</td><td>1.0002934</td></tr>
-	<tr><th scope=row>Height</th><td>   0.8362679</td><td>0.003723849</td><td> 0.2239008</td><td>   0.3956248</td><td>   0.5585055</td><td>   0.6830834</td><td>   0.8366127</td><td>   0.9837587</td><td>   1.124017</td><td>   1.274382</td><td>3615.156</td><td>1.0002612</td></tr>
-	<tr><th scope=row>Sexmale</th><td>   3.1408343</td><td>0.028982465</td><td> 1.7944355</td><td>  -0.3490377</td><td>   0.8730790</td><td>   1.9397885</td><td>   3.1211039</td><td>   4.3457404</td><td>   5.447382</td><td>   6.666120</td><td>3833.408</td><td>1.0000942</td></tr>
-	<tr><th scope=row>sigma</th><td>   8.3819504</td><td>0.011139545</td><td> 0.6814396</td><td>   7.1910507</td><td>   7.5517826</td><td>   7.9030719</td><td>   8.3471688</td><td>   8.7954100</td><td>   9.253999</td><td>   9.822847</td><td>3742.138</td><td>0.9994899</td></tr>
-	<tr><th scope=row>mean_PPD</th><td>  60.8872533</td><td>0.022631621</td><td> 1.3304074</td><td>  58.2749726</td><td>  59.1469400</td><td>  60.0283220</td><td>  60.9049201</td><td>  61.7884897</td><td>  62.597216</td><td>  63.450034</td><td>3455.715</td><td>1.0000238</td></tr>
-	<tr><th scope=row>log-posterior</th><td>-284.0347906</td><td>0.035722019</td><td> 1.4796697</td><td>-287.6952448</td><td>-285.9946231</td><td>-284.7446480</td><td>-283.6679107</td><td>-282.9722284</td><td>-282.555816</td><td>-282.261078</td><td>1715.764</td><td>1.0010260</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-</section>
-<section id="bayes-factors">
-<h2>21.10 Bayes factors<a class="headerlink" href="#bayes-factors" title="Permalink to this heading">#</a></h2>
-<p>The above use cases describe how to apply Bayesian philosophy to evaluation of individual parameters in a model. We can estimate the likely value of each population parameter in a model, say how precise that estimate is, make sample size decisions for attaining precision, and update beliefs about population parameters based on new data.</p>
-<p>There is also a Bayesian method to compare entire models to each other. The method for that involves what are called <strong>Bayes factors</strong>.</p>
-<p>Bayesian estimation tells you the probability that the population parameter equals a particular value, given some data. A Bayes factor is a ratio of the probability that the parameter equals some number I, compared to the probability that the parameters equals some other number J, given the same data:</p>
-<div class="math notranslate nohighlight">
-\[Bayes factor = \frac{P(\beta=I|b)}{P(\beta=J|b)}\]</div>
-<p>If I has a much higher probability (the Bayes factor ratio is large), then we would say the evidence strongly favors the parameter equalling I instead of J. A Bayes factor is the value of this ratio.</p>
-<p>We can extend this logic up to many sets of parameters for comparing models. What is the probability that all the parameters in a model are equal to a set of values, compared to the probability they equal a different set of values?</p>
-<p>Frequently, this question is asked about a null hypothesis where all β=0 vs. some alternative hypothesis where at least some β=/=0. It uses Bayesian methods to answer the Frequentist concern about the null hypothesis. The plus side to doing this instead of Frequentist model comparison is that it lets you build support for the null hypothesis itself, and allows you to use optional stopping once you’ve accumulated enough evidence for either hypothesis.</p>
-<p>The package <code class="docutils literal notranslate"><span class="pre">BayesFactor</span></code> is an easy way of doing this. All you have to do is fit a model the normal way with the function <code class="docutils literal notranslate"><span class="pre">BFlm()</span></code>, and it will tell you the Bayes factor in favor of that model having non-zero parameters compared to the null model where all β = 0.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#big package, may take a moment to install and load - but this one should work for you!</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;BayesFactor&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">BayesFactor</span><span class="p">)</span>
-
-<span class="nf">lmBF</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The output of this function is a table telling you which model is being compared to the null, and what the Bayes factor is in favor of that model. In this case, we are considering a model with just Sex as a predictor, and the corresponding Bayes factor is 1003.178.</p>
-<p>Is that good or bad evidence in favor of the sex model? This number means that the probability at least one parameter in the model is non-zero is about 1000x higher than the probability all parameters are zero. Seems like pretty good evidence in favor of the sex model!</p>
-<p>In case you get smaller numbers, the stats community has arrived at some rules of thumb for what counts as strong vs. weak evidence in favor of a model. Those can be seen in the table below.</p>
+<p>In this table, the number in each cell stands for the group mean with that combination of track training type (row) and weight training type (column). The values in the last row are the means of each weight training group regardless of what type of track training they did. The values in the last column are the means of each track training group regardless of what type of weight training they did - aka the <strong>marginal means</strong>. The bottom right cell holds the Grand Mean, or the mean running time of everyone regardless of their value on any training variable.</p>
+<p>These are all group means, which are statistical estimates. That means there are population parameter versions of these values that our estimates came from. We can express our table above with those values instead:</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Bayes Factor</p></th>
-<th class="head text-center"><p>Evidence in favor of model</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>No weight training</p></th>
+<th class="head text-center"><p>Weight training</p></th>
+<th class="head text-center"><p>Any weight training</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>&lt;0.007</p></td>
-<td class="text-center"><p>Very strong evidence in favor of null</p></td>
+<tr class="row-even"><td class="text-center"><p><strong>No track training</strong></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{11}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{12}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{1.}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>0.01-0.05</p></td>
-<td class="text-center"><p>Strong evidence in favor of null</p></td>
+<tr class="row-odd"><td class="text-center"><p><strong>Track training</strong></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{21}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{22}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{2.}\)</span></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>0.05-0.3</p></td>
-<td class="text-center"><p>Weak evidence in favor of null</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>0.3-3</p></td>
-<td class="text-center"><p>Inconclusive evidence either way</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>3-20</p></td>
-<td class="text-center"><p>Weak evidence in favor of full model</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>20-150</p></td>
-<td class="text-center"><p>Strong evidence in favor of full model</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>&gt;150</p></td>
-<td class="text-center"><p>Very strong evidence in favor of full model</p></td>
+<tr class="row-even"><td class="text-center"><p><strong>Any track training</strong></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{.1}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{.2}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mu_{..}\)</span></p></td>
 </tr>
 </tbody>
 </table>
-<p>To compare full models to simpler ones, consider the fact that:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\frac{A}{C}}{\frac{B}{C}} = \frac{A}{B}\]</div>
-<p>So if the Bayes factor of a model represents the ratio of model/null evidence, dividing the Bayes factor for one model by the Bayes factor for another model will tell you the amount of evidence in favor of a particular model.</p>
+<p>We have a bunch of <span class="math notranslate nohighlight">\(\mu\)</span> values with different subtexts. <span class="math notranslate nohighlight">\(\mu_{11}\)</span> means the population mean for the group in the first value of track training type and first value of the weight training type. <span class="math notranslate nohighlight">\(\mu_{12}\)</span> would be the population mean for the group in the first value of track training type and second value of the weight training type, and so on. A dot in the notation means any value for that variable.</p>
+<p>Now that we have this notation, it is straightforward to formulate and express some null hypotheses. Let’s suppose that the goal is to find out two things: firstly, does track training have any effect on running time? Secondly, does weight training have any effect on running time? Formally, we write down our null hypotheses in terms of the equality of marginal means. We also create a separate null hypothesis for each predictor we are interested in:</p>
+<p>row means are the same: <span class="math notranslate nohighlight">\(H_0: \mu_{1.} = \mu_{2.}\)</span></p>
+<p>column means are the same: <span class="math notranslate nohighlight">\(H_0: \mu_{.1} = \mu_{.2}\)</span></p>
+<p>Since this is a type of ANOVA, to test these hypotheses we investigate the within and between sum of squares for each of these hypotheses. At this point, this is done the same way as a one-way ANOVA (which, in the case of just two group means like here, also reduces to being the same thing as an independent samples t-test - it’s all connected!). The one-way ANOVA is applied for the effect of track training and separately for the effect of weight training.</p>
+<p>In our dataset, information about athletes’ training is also stored in two variables <code class="docutils literal notranslate"><span class="pre">track_training</span></code> and <code class="docutils literal notranslate"><span class="pre">weight_training</span></code>. Try using the <code class="docutils literal notranslate"><span class="pre">aov()</span></code> function yourself using the formula <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">~</span> <span class="pre">track_training</span> <span class="pre">+</span> <span class="pre">weight_training</span></code> in the dataset <code class="docutils literal notranslate"><span class="pre">meet1</span></code> in order to run this factorial ANOVA.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">bf1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lmBF</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="o">*</span><span class="n">Weight</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span><span class="w"> </span><span class="c1">#model option with an interaction</span>
-<span class="n">bf2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lmBF</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Weight</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">fingers</span><span class="p">)</span><span class="w">   </span><span class="c1">#model option with no interaction</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#run aov() with the formula time ~ track_training + weight_training</span>
+<span class="n">anova_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
 
-<span class="n">bf1</span><span class="o">/</span><span class="n">bf2</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">anova_results</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The Bayes factor of 0.52 in this model comparison suggests there is inconclusive evidence for which model is more likely than the other, given the data. Based on this, we’d probably just go with a simpler model with no interaction.</p>
+<p>In this table, remember we’re getting <span class="math notranslate nohighlight">\(SS_b\)</span> for the effect of each predictor (in the Sum Sq column) as well as <span class="math notranslate nohighlight">\(SS_w\)</span> for the between group variation (that which is not explained by the grouping variables). We also get a corresponding F and p value for each separate predictor that tells us whether there is a significant difference in group means for different levels of that predictor.</p>
+<p>That’s how to run a factorial ANOVA to test the differences in marginal means. However, that might not be the full story with our data. We may decide that <span class="math notranslate nohighlight">\(\mu_{.1}\)</span> and <span class="math notranslate nohighlight">\(\mu_{.2}\)</span> are different from each other, but what about <span class="math notranslate nohighlight">\(\mu_{11}\)</span> and <span class="math notranslate nohighlight">\(\mu_{12}\)</span> or <span class="math notranslate nohighlight">\(\mu_{21}\)</span> and <span class="math notranslate nohighlight">\(\mu_{22}\)</span>? Is there always going to be the same difference in running time for different levels of weight training regardless of the value of track training, or might there be an interaction between these two variables?</p>
+<p>It is possible to include an interaction in a factorial ANOVA as well. However, since ANOVAs are all about sum of squares, we need to be able to compute a sum of squares for the interaction term as well as the main effects. We won’t deal with the math of how to do this in the ANOVA framework, as you can easily run this factorial ANOVA in R:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#same formula as an interaction for a GLM </span>
+<span class="n">anova_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aov</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">track_training</span><span class="o">*</span><span class="n">weight_training</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">)</span>
+
+<span class="n">anova_results</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">anova_results</span><span class="p">)</span>
+
+<span class="c1">#visualizing interaction</span>
+<span class="nf">cat_plot</span><span class="p">(</span><span class="n">anova_results</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="o">=</span><span class="n">track_training</span><span class="p">,</span><span class="w"> </span><span class="n">modx</span><span class="o">=</span><span class="n">weight_training</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you might guess, you can run a comparable test using the GLM. It even uses the same formula:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">track_training</span><span class="o">*</span><span class="n">weight_training</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wait, we’ve found another situation where the p-values from the ANOVA analysis don’t exactly match those from the GLM. Before when this happened, this was because of extra multiple comparison corrections in the one-way ANOVA. But at least the model level F-statistics matched in that case. This time we have an even bigger issue - the factorial ANOVA is actually <em>wrong</em>. It’s wrong for a very small, but impactful reason:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">meet1</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see here, there aren’t an equal number of data points in each level of each variable. In otherwords, our dataset is <strong>unbalanced</strong>. This isn’t a problem for the GLM - it will still calculate the <span class="math notranslate nohighlight">\(SS_{model}\)</span> and <span class="math notranslate nohighlight">\(SS_{error}\)</span> of the model regardless of how many data points are in each condition. In the GLM then, the p-values we get are correct. But the way <span class="math notranslate nohighlight">\(SS_b\)</span> and <span class="math notranslate nohighlight">\(SS_w\)</span> are calculated in a factorial ANOVA is different, and depends on each group having the same number of datapoints. These <em>should</em> come to the same value as <span class="math notranslate nohighlight">\(SS_{model}\)</span> and <span class="math notranslate nohighlight">\(SS_{error}\)</span>. But if the group sizes aren’t equal, these calculations are wrong and we get wrong p-values. To fix it, we’d have to <a class="reference external" href="https://bookdown.org/ndphillips/YaRrr/type-i-type-ii-and-type-iii-anovas.html">change the math that ANOVAs are based on</a>.</p>
+<p>A lot of practicing researchers don’t know this about factorial ANOVAs. In consequence, many who are publishing the results of factorial ANOVAs with unbalanced datasets are reporting incorrect statistics that are hard to replicate. This is another reason why it is often better for you to use a GLM instead of an ANOVA for your analyses. We should really consider this test as outdated now that we have the GLM to handle everything for us.</p>
 </section>
+<section id="correlation-multiple-regression">
+<h2>20.6 Correlation &amp; multiple regression<a class="headerlink" href="#correlation-multiple-regression" title="Permalink to this heading">#</a></h2>
+<p>So far we are seeing how we can get similar results with traditional statistical tools as we do with the GLM, and thus use them interchangeably. However, we’ve also learned some situations where GLMs are more flexible and thus a better default to use (e.g., when using unbalanced data and/or multiple pairwise comparisons).</p>
+<p>There’s another big limitation to know about for t-tests and ANOVAs - they can only ever handle categorical predictors. These tests were developed to compare group means for classic experimental designs, but they aren’t helpful if you don’t have separate conditions or groups as your manipulation.</p>
+<p>To accommodate this, <strong>correlation</strong> was developed. We’ve already learned about this traditional tool, but to review, a correlation expresses the strength of covariance between two quantitative variables. It is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum(X_i - \bar{X})^2 \sum(Y_i - \bar{Y})^2}} \]</div>
+<p>In R, we can extract this value easily with the <code class="docutils literal notranslate"><span class="pre">cor()</span></code> function applied to two separate vectors that hold the X and Y variables. For instance, if we are interested in the correlation between an athlete’s height and how fast they run the 400m:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">meet1</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">meet1</span><span class="o">$</span><span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is an estimate drawn from a population, meaning we can set a null hypothesis and use inferential statistics to tell us if our estimate likely came from a population with this null hypothesis.</p>
+<p>A correlation expresses strength of a relationship between these variables, so our null hypothesis about a correlation is that there is no relationship; r = 0.</p>
+<div class="math notranslate nohighlight">
+\[H_0: r = 0\]</div>
+<p>To test this hypothesis, the sampling distribution of r scores also has the t-distribution shape. To calculate a t-score for a correlation:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{r}{\sqrt{1-r^2}}\sqrt{n-2}\]</div>
+<p>In R, we can get this value and the associated p, as well as the correlation estimate, using the <code class="docutils literal notranslate"><span class="pre">cor.test()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor.test</span><span class="p">(</span><span class="n">meet1</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">meet1</span><span class="o">$</span><span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In APA format, we’d report the results of this analysis like so: “there was no significant correlation between an athlete’s height and their running time, <em>r</em>(37) = 0.129, <em>p</em> = 0.433.”</p>
+<p>Now as we learned previously, there isn’t really a need to do this if we already know how to use the GLM. We can get this exact same answer if we simply perform a simple linear regression between the z-scored values of these variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#z-scoring the variables within the lm() call</span>
+<span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">height</span><span class="p">),</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notably, we don’t even have to scale the variables if all we care about is looking at the p-value. The significance of the predictor’s effect is the same regardless of the units it’s in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#raw versions of the variables</span>
+<span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A correlation can only handle relationships between two variables - one predictor and one outcome. To be able to integrate the effects of multiple quantitative predictors, that is what <strong>multiple regression</strong> and the general linear model was developed to do. Only at that point did people realize all the prior tests can also be answered with this same framework. All hail the GLM!</p>
+</section>
+<section id="chi-square">
+<h2>20.7 Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this heading">#</a></h2>
+<p>You now know about a great many ways to analyze data - categorical or quantitative predictors, one or multiple, with main effects or interactions. You also now know multiple versions for each of these kinds of analysis, using either the GLM or traditional statistical tools. You’ve done a lot of work to get this far!</p>
+<p>But this is an <em>Intro</em> to Psychological Statistics course, which means there’s still a lot of stuff we haven’t even touched on. So much to learn, so little time. We won’t learn these additional analyses in detail, but there are two categories of analyses we haven’t covered that are still fairly common in psychology research. So you should at least know about them and why they are different. We’ll do an overview of those here.</p>
+<p>Firstly: across all the types of models and tests we’ve learned so far, one thing has been constant - we’ve always been predicting a <em>quantitative</em> outcome variable. But there are research questions concerning categorical outcome variables as well. What political party is someone likely to join, whether or not someone is admitted to college, etc. For this example, let’s load in a dataset of hospital patients and see how their levels of anemia relate to their appetite:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">patient_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/ckd.csv&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">select</span><span class="p">(</span><span class="n">Appetite</span><span class="p">,</span><span class="w"> </span><span class="n">Anemia</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">patient_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In these data, values for both of these variables were stored categorically. One <em>could</em> imagine recording severity of anemia and strength of appetite as quantitative, but that’s not the data we have here. Patients were only coded as having anemia or not, and a good or poor appetite. Thus, we don’t have any information about the quantitative difference between these variable levels. They are categorical.</p>
+<p>Using a regression, t-test, ANOVA, etc. to predict a categorical outcome variable is not appropriate. This is because these models require numeric variation in outcome score values to calculate means, predictions, and residuals. If we built a model for a categorical outcome variable in the same way, our residuals would only ever have two values - correct prediction, or incorrect. The equations for sum of squares would break over this.</p>
+<p>Thus, we need a different approach. For situations where you have a categorical predictor and categorical outcome, traditional statisticians developed a tool called the <strong>chi-square test</strong>. This test solves our problem of categorical data by reasoning about <em>probabilities</em> of certain values, rather than the values themselves.</p>
+<p>Let’s break down how to do this. First, we can see that each person falls into one of four groups - either they have anemia or not, and they have a good appetite or not. We can put the number of people in each of these groups in a table like so, called a <strong>contingency table</strong>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>Anemia</p></th>
+<th class="head text-center"><p>No anemia</p></th>
+<th class="head text-center"><p>Row total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Good appetite</strong></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>133</p></td>
+<td class="text-center"><p>139</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Bad appetite</strong></p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>9</p></td>
+<td class="text-center"><p>19</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Column total</strong></p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>142</p></td>
+<td class="text-center"><p>158</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is similar to the means table from our ANOVA example, except now these numbers are group and marginal counts instead of group and marginal means. From these counts, we can calculate what proportion of people in the dataset are in each group. ~4% of the people in this data are anemic with a good appetite (6/158) while 6% are anemic with a bad appetite (10/158). These numbers are small, but that’s because not many of our patients are anemic. If we looked at the anemic patients only, 37.5% have a good appetite (6/16) while 62.5% don’t (10/16).</p>
+<p>If we thought anemia was unrelated to appetite, we might expect some people with anemia to have a good appetite and some to have a poor appetite. Further, we’d expect the <em>proportion</em> of people with good/poor appetites to be the same regardless of whether or not someone has anemia. In otherwords, knowing someone’s anemia status doesn’t change our prediction of how likely they are to have a poor appetite. This is the null hypothesis for a chi-square test. Formally, if P stands for probability:</p>
+<div class="math notranslate nohighlight">
+\[H_0: P_{(poor|anemic)} = P_{(poor|not anemic)}\]</div>
+<p>However, instead we might actually believe that having anemia increases your risk of a poor appetite. In this case, we’d expect the <em>probability</em> of having a poor appetite to be different in the anemia condition compared to the no-anemia condition. A <span class="math notranslate nohighlight">\(\chi^2\)</span> or chi-statistic (pronounced “kai-square”) represents the ratio difference in these probabilities.</p>
+<p>That’s what we’d expect from the population of people with anemia and appetites. But of course, our sample is just a subset of the population, so the actual proportions of these values in our data might be slightly different even if the null hypothesis is true. The sampling distribution of <span class="math notranslate nohighlight">\(\chi^2\)</span> looks like so, depending on how many rows and columns in the contingency table that you have (k = (r-1)(c-1)):</p>
+<img src="images/ch20-chisquare.png" width="500">
+<p>While 62.5% of anemic patients had a poor appetite, only 6.3% of non-anemic patients did (9/142). Is this a big enough difference in the probability of a poor appetite between the two conditions to consider them to come from different populations? A chi-square test calculates a chi-square statistic for your sample and then finds an associated p-value for how likely it is your sample came from a population with no difference in group probabilities.</p>
+<p>To perform a chi-square test in R, we can use the <code class="docutils literal notranslate"><span class="pre">chisq.test()</span></code> function with two separate vectors that each hold the values for the predictor and outcome variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">chisq.test</span><span class="p">(</span><span class="n">patient_data</span><span class="o">$</span><span class="n">Appetite</span><span class="p">,</span><span class="w"> </span><span class="n">patient_data</span><span class="o">$</span><span class="n">Anemia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’d report this result in APA format as: “there is a significant association between patient anemia and their appetite, <span class="math notranslate nohighlight">\(\chi^2\)</span>(1) = 37.728, <em>p</em> &lt; 0.001.”</p>
+<p>There is a way to generalize this and perform the same test with the general linear model. Doing so is called a <strong>logistic regression</strong> which you can learn more about <a class="reference external" href="http://localhost:8888/notebooks/adv-logistic.ipynb">here</a>.</p>
+</section>
+<section id="repeated-measures-tests">
+<h2>20.8 Repeated measures tests<a class="headerlink" href="#repeated-measures-tests" title="Permalink to this heading">#</a></h2>
+<p>There’s another broad category of analyses that we’ve also ignored in this class. Recall last chapter when we discussed the assumptions of the general linear model. These assumptions hold for the above set of tools as well. This means we need a different approach if our data has <strong>repeated measures</strong>, or data points that are not completely independent of each other.</p>
+<p>This simplest version of this situation is when you have two scores per person - you did a within-subjects experiment where you measured something about them before treatment, and then again on the same variable after treatment. You want to know if scores on average changed from before to after. For example, going back to our track training data, we may wonder if our athletes continued to improve between meet 1 and meet 2.</p>
+<p>Your first instinct might be to do an independent samples t-test for the scores during meet 1 and the scores during meet 2:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">meet1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;meet1&#39;</span><span class="p">)</span>
+<span class="n">meet2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;meet2&#39;</span><span class="p">)</span>
+
+<span class="c1">#use t.test() to compare the mean of meet1$time with the mean of meet2$time</span>
+<span class="nf">t.test</span><span class="p">(</span><span class="c1">#YOUR CODE HERE)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>R doesn’t stop you from doing this, but it is incorrect. This is because the independent samples t-test assumes, well, that the samples are independent. That they contain completely separate sets of people. If this isn’t actually true of your data, the analysis will be wrong.</p>
+<p>In contrast, a <strong>paired-samples t-test</strong> is for when you have non-independent data. This test looks at the <em>change</em> in scores within a person to see if the mean of that change is non-zero.</p>
+<p>To run a paired-samples t-test in R, we can still use the <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> function while adding a <code class="docutils literal notranslate"><span class="pre">paired=TRUE</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">meet1</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">meet2</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">paired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The degrees of freedom here is less because we technically don’t have 78 unique points of data - we have 39 unique people, measured twice. But our p-value is much lower because this other way of measuring differences in scores results in a much bigger mean difference.</p>
+<p>We can also do a paired-samples t-test with the GLM. We just have to calculate this change score ourselves, and then test the size of <span class="math notranslate nohighlight">\(b_0\)</span> in a null model (i.e., is this change score significantly different than 0):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">score_change</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">meet2</span><span class="o">$</span><span class="n">time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">meet1</span><span class="o">$</span><span class="n">time</span>
+
+<span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">score_change</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An extension of a paired-samples t-test is when you have some predictor variables that may be influencing the size of the score difference within a person. If that predictor variable(s) is categorical, we can use a <strong>repeated measures ANOVA</strong>. If the predictor variable(s) is quantitative, we can use a version of multiple regression known as <strong>mixed-effects modeling</strong>.</p>
+<p>Entire classes can be taught on these last two sections (categorical outcomes and repeated measures). Maybe some day you will take an advanced stats class and learn more about them. For now, just know why we need to use different tools for these situations.</p>
+</section>
+<section id="summary-of-tests">
+<h2>20.9 Summary of tests<a class="headerlink" href="#summary-of-tests" title="Permalink to this heading">#</a></h2>
+<p>Altogether, the purpose of this chapter is to acquaint you with the most common statistical tools used in psychology, and help you understand how they map onto the GLM framework that you already know. This way if you encounter these tests in published research, you’ll know what sort of hypothesis is being tested and you’ll know how to replicate it yourself, either with that same test or the GLM. You should also now have an appreciation of why we learned the GLM in this class first: it doesn’t rely solely on hypothesis testing, and it is more flexible for various situations than these more rigid tools.</p>
+<p>For ease of memory, here is all the important information of this chapter stored in one table. It tells you when to use various tests and what the comparable GLM version is. This would make a great reference sheet for you to keep for the rest of this class and beyond.</p>
+<img src="images/ch20-testreference.png" width="800"></section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
-<li><p>Explain the difference between Frequentist and Bayesian definitions of probability</p></li>
-<li><p>Understand a conditional probability</p></li>
-<li><p>Use Bayes’ rule to reverse a conditional probability</p></li>
-<li><p>Define a prior vs. posterior probability</p></li>
-<li><p>Use stan_glm() in the rstanarm package to estimate posterior probabilities of model parameters</p></li>
-<li><p>Find the posterior interval of a model parameter</p></li>
-<li><p>Calculate the probability that a parameter is at least as large as a smallest effect size of interest</p></li>
-<li><p>Understand power planning for precision</p></li>
-<li><p>Update priors in stan_glm()</p></li>
-<li><p>Explain and use Bayes factors for model comparison</p></li>
+<li><p>perform t-tests, ANOVAs, and correlations</p></li>
+<li><p>conduct GLM models that give you the same answers as these traditional tools</p></li>
+<li><p>Identify which tests to use when the outcome variable is categorical</p></li>
+<li><p>Identify which tests to use when there are repeated measures</p></li>
 </ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Next: Chapter 22 - Lying with Statistics</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Next: Chapter 21 - Alternate Approaches - Bayesian Statistics</a></p>
 </section>
 </section>
 
@@ -1485,21 +1049,15 @@ See help(&#39;prior_summary.stanreg&#39;) for more details
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-vs-bayesian-statistics">21.1 Frequentist vs. Bayesian statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">21.2 Conditional probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-conditional-probability-bayes-rule">21.3 Reversing a conditional probability: Bayes’ rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-hypothesis-testing">21.4 Bayesian hypothesis testing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-parameter-estimation">21.5 Bayesian parameter estimation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-set-the-prior">Step 1 - Set the prior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-estimate-model">Step 2 - Estimate model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-interpret-posterior-probability">Step 3 - Interpret posterior probability</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posterior-intervals">21.6 Posterior intervals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smallest-effect-size-of-interest">21.7 Smallest effect size of interest</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning-in-bayesian-stats">21.8 Power planning in Bayesian stats</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-priors">21.9 Updating priors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-factors">21.10 Bayes factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-teaching-philosophies">20.1 Different teaching philosophies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">20.2 One-sample t-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">20.3 Independent-samples t-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-way-anova">20.4 One-way ANOVA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-anova">20.5 Factorial ANOVA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-multiple-regression">20.6 Correlation &amp; multiple regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-square">20.7 Chi-square</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measures-tests">20.8 Repeated measures tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tests">20.9 Summary of tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
   </nav></div>
