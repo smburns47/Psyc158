@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 3 - What are Data &#8212; Pomona Psych 158 Online Textbook</title>
+    <title>Chapter 3 - Organizing Data &#8212; Pomona Psych 158 Online Textbook</title>
   
   
   
@@ -176,14 +176,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 15 - Estimating Populations</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 16 - Significance Testing</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 19 - Alternate Approaches - Traditional Inference Methods</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 20 - Alternate Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 21 - Bias due to Improper Model Building</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-23.ipynb">Chapter 22 - Bias due to Improper Model Selection</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -416,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 3 - What are Data</h1>
+    <h1>Chapter 3 - Organizing Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,22 +426,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-data-in-r">3.1 Representing data in R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">3.2 Data types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-data">Qualitative data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-data">Numeric data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-data">Boolean data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-data">3.1 The structure of data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-data-frame">3.2 Creating a data frame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-vectors">Combining vectors</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scales-of-measurement">3.3 Scales of measurement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-data">3.4 Converting data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-good-data">3.5 What makes good data?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-error">Measurement error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability">Reliability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">Validity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-existing-data">3.3 Importing existing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-data">3.4 Looking at data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">3.5 Control flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-functions">3.6 Writing your own functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
 </ul>
             </nav>
         </div>
@@ -454,424 +454,415 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Previous: Chapter 2 - Statistical Reasoning</a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="chapter-3-what-are-data">
-<h1>Chapter 3 - What are Data<a class="headerlink" href="#chapter-3-what-are-data" title="Permalink to this heading">#</a></h1>
-<p>Although we can apply statistical techniques to any bunch of numbers, and sometimes we do just make up numbers to analyze (more about that later), we generally want to analyze numbers that represent something about the world. These numbers we refer to as <strong>data</strong>.</p>
-<p>The first important point about data is that data are – meaning that the word “data” is plural. You might also wonder how to pronounce “data” – some people say “DAY-tah”, some say “DAH-tah.” Some people even use both interchangeably, within the same conversation!</p>
-<section id="representing-data-in-r">
-<h2>3.1 Representing data in R<a class="headerlink" href="#representing-data-in-r" title="Permalink to this heading">#</a></h2>
-<p>We’ve used R objects so far to store a single number or message. But in statistics we are dealing with more than one — and sometimes many — numbers. An R object can also store a whole set of numbers. This set together is called a <strong>vector</strong>. You can think of a vector as a list of numbers (or values).</p>
-<p>The R function <code class="docutils literal notranslate"><span class="pre">c()</span></code> can be used to combine a list of individual values into a vector. You could think of the “c” as standing for “combine.” In the following code we have created two vectors (we just named them <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> and <code class="docutils literal notranslate"><span class="pre">my_vector2</span></code>) and put a list of values into each vector.</p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Previous: Chapter 2 - What are Data</a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-3-organizing-data">
+<h1>Chapter 3 - Organizing Data<a class="headerlink" href="#chapter-3-organizing-data" title="Permalink to this heading">#</a></h1>
+<p>Last chapter we discussed different types of data and had you practice representing them in R. You did this by writing out data values in vectors, essentially making the data up. However, real data comes from somewhere else - a study you run, an open-source repository, etc. In addition, data usually consists of more than one variable at once, stored together in a <strong>dataset</strong>. In this chapter we will get familiar with how to store and access datasets in files, and how to manage a much larger amount of data than we’ve so far worked with.</p>
+<section id="the-structure-of-data">
+<h2>3.1 The structure of data<a class="headerlink" href="#the-structure-of-data" title="Permalink to this heading">#</a></h2>
+<p>Data can come to us in many forms. If you collect data yourself, you may start out with numbers written on scraps of paper. Or you may get a computer file filled with numbers and words of various sorts, representing many variables at once.</p>
+<p>So far we have worked with one variable at a time, which is easy to visualize and understand simply by printing its vector. However, most real-world data has many variables stored at once. To manage this, it is necessary to organize and format data so that they are easy to analyze using statistical software. There is no one way to organize data, but there is a way that is most common, and that is what we recommend you use.</p>
+<p>This common way is called a <strong>data frame</strong>. Under this framework, data are stored into rectangular tables, with rows and columns. What goes on each row and column follows four principles:</p>
+<ul class="simple">
+<li><p>Each column is a variable</p></li>
+<li><p>Each row is an observation</p></li>
+<li><p>The first row contains the names of all the variables</p></li>
+<li><p>The data within a data frame are from the same dataset</p></li>
+</ul>
+<p>Rectangular tables of this sort are represented in R using a new data type - conveniently, called a data frame. It is a rectangular matrix as described above, with columns as variables and rows as the cases sampled. Each value of different variables that are on the same row belong to the same observation (e.g., the same person, zip code, habitat, etc.) Data frames provide a way to save information such as column headings (i.e., variable names) in the same table as the actual data values.</p>
+<p>Principle 4 above simply states that the types of observations that form the rows cannot be mixed within a single table. So, for example, you wouldn’t have rows of college students intermixed with rows of cars or countries or couples. If you have a mix of observation types (e.g., students, families, countries), they each go in a different data frame.</p>
+</section>
+<section id="creating-a-data-frame">
+<h2>3.2 Creating a data frame<a class="headerlink" href="#creating-a-data-frame" title="Permalink to this heading">#</a></h2>
+<section id="combining-vectors">
+<h3>Combining vectors<a class="headerlink" href="#combining-vectors" title="Permalink to this heading">#</a></h3>
+<p>Let’s see how we create and work with data frames in R. Say we have two vectors, <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&lt;-</span> <span class="pre">c(1,2,3,4,5)</span></code> and <code class="docutils literal notranslate"><span class="pre">x2</span> <span class="pre">&lt;-</span> <span class="pre">c(18,21,20,23,20)</span></code>. We can combine these together into one data frame object using the <code class="docutils literal notranslate"><span class="pre">data.frame()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is the code to create two vectors my_vector and my_vector2. We just made up those names.</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">x2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">20</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span>
 
-<span class="c1"># Run the code and see what happens</span>
-<span class="n">my_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-<span class="n">my_vector2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
+<span class="c1">#What do you think the &lt;dbl&gt; line in the data frame means? Try googling for an answer!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe.</p>
+<p>Using this approach, you can form a dataframe out of any set of variables - well, almost. Try out the code below, and see if you can find why it causes an error. What can we do to fix it?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">x2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">23</span><span class="p">)</span>
+<span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since a dataframe is a rectangle, in order for vectors to be combinable, they need to be the same lengths.</p>
+</section>
+</section>
+<section id="importing-existing-data">
+<h2>3.3 Importing existing data<a class="headerlink" href="#importing-existing-data" title="Permalink to this heading">#</a></h2>
+<p>The vast majority of the time in data analysis, you are not manually creating vectors and data frames (except when you are doing data simulations - we’ll talk more about that in Chapter 8). Instead, you are importing an existing file of data. So for the rest of this chapter we’re going to practice working with and understanding an example dataset from a study by <a class="reference external" href="https://journals.sagepub.com/stoken/default+domain/hQ2W4fbPrZVJ7eyNJaqu/full">James et al. (2015)</a>, on how playing Tetris may limit intrusive traumatic memories. In this study, 72 participants watched a traumatic video and were then put into one of four experimental conditions designed to test how often intrusive memories happened.</p>
+<p>You may have experience opening datasets in programs like Excel with an .xlsx extension. The extension tells you what kind of file format it is - .xlsx, for example, is an excel file. There are many file formats data can be saved in that are more or less easy to open in various software. Our Tetris Memories data is saved as a .csv, meaning a “comma-separated value” format, as this is really easy for computer programs to parse. If you were to open this file in a basic text editor program, you’d see rows are separated on different lines, and columns are separated by commas. In R, the <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> function can understand this format and create a rectangle dataframe for us.</p>
+<p>But before we can load our data, R has to know where on your computer it is located. By default, it only looks in what is called your <strong>working directory</strong> - a specific folder on your computer that R treats as its “home base,” per se. You can use the function <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> to learn what your current working directory is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">getwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is like a mailing address for where a file lives on a computer, with slashes separating each level of folders. Because this book is hosted on a website, the current working directory is where these web files are stored on the web server. On your own computer, <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> will return something different.</p>
+<p>The important thing to know about accessing files through a coding language like R is that it can’t see your whole computer at once, only what is in the current working directory. It’s not a search engine like Google Drive or Finder on a Mac. Thus if you have stored a data file in any folder (aka directory) that is not the current working directory and try to open it, you will get an error that the file doesn’t exist. For example, we will try to load the <code class="docutils literal notranslate"><span class="pre">tetrismemories.csv</span></code> file from the working directory even though it has been stored somewhere else:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;tetrismemories.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To successfully open a data file, you will need to know the address of where the file is on your computer, called the <strong>file path</strong>. For this data file, here is the correct file path. We can access the data by passing the file path as an argument to <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code>, surrounded by quotes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/tetrismemories.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If this data file lived on your own computer and was within your working directory, it would be even simpler to load: <code class="docutils literal notranslate"><span class="pre">read.csv(&quot;tetrismemories.csv&quot;).</span></code> If the data lived in a different directory, for example in a folder called “datasets”, you’d have to include the relative path to that file that in the filename for R to be able to find it. I.e., <code class="docutils literal notranslate"><span class="pre">read.csv(&quot;datasets/tetrismemories.csv&quot;)</span></code>.</p>
+</section>
+<section id="looking-at-data">
+<h2>3.4 Looking at data<a class="headerlink" href="#looking-at-data" title="Permalink to this heading">#</a></h2>
+<p>The first thing to do when opening a dataset for the first time is to understand it - what each variable is, how many data points, what the variable data types are, etc.</p>
+<p>After you run the code above, you should see a big print out of the whole dataframe. You might be thinking to yourself, “Wow, that’s a lot to take in.” In fact, this would be considered a small dataset! Real data can have thousands of datapoints stored together, with hundreds of variables recorded. It can get unweildy to look at a whole dataset at once. Thus its usually best to look at a summary of the data in a dataframe, or a sampling of it.</p>
+<p>We can use certain functions to do this summarizing for us. But first, we have to make sure we save our dataframe so we can keep using it over and over. Remember that we have a new data type, data frame, which means it can be saved as an object itself. In the code below, read the data frame into an object called <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the file again and save to an object called tetrismemories</span>
+<span class="n">tetrismemories</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1"># your code here</span>
 
-<span class="c1"># Now write some code to return these two vectors in the R console. Run the code and see what happens.</span>
+<span class="c1"># check the data type of this object</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Many functions will take in a vector as the input. For example, try using <code class="docutils literal notranslate"><span class="pre">max()</span></code> to find the largest number in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>.</p>
+<p>A cool thing about the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function is that, when you’re working with a complex object like a data frame that contains many values, it’ll tell you the type of the object as a whole as well as the type of every variable within it. Look at the output above - what data type is the variable “Condition”? Can you find where it tells you the size of the data frame?</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">str()</span></code> lets you summarize the information within a data frame without opening the whole thing to view. Another way to do it, if you want to see how the dataframe is arranged, is to use the function <code class="docutils literal notranslate"><span class="pre">head()</span></code>. This will show you just the first 6 lines of the data frame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">14</span><span class="p">,</span><span class="m">22</span><span class="p">,</span><span class="m">31</span><span class="p">,</span><span class="m">24</span><span class="p">,</span><span class="m">15</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#run this code to see the head of the dataframe</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next you probably want to know how big your dataset is - how many observations and how many variables you are working with. The height and width of a dataframe are known as <strong>dimensions</strong>, and the function <code class="docutils literal notranslate"><span class="pre">dim()</span></code> will tell you the size of each of them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first dimension always corresponds to the number of rows, and the second dimension to the number of columns.</p>
+<p>You can also use code to find the size of specific dimensions of the dataframe. Since observations are rows and variables are columns, you can use specific functions to count how many rows and columns a data frame has. In R, these functions are nrow() (for number of rows) and ncol() (for number of columns).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
 
-<span class="c1"># Use max() to find the largest value in my_vector</span>
+<span class="c1">#use ncol() to output the number of variables in tetrismemories</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>There may be times when you just want to know a subset of the values in a vector, not all of the values. We can <strong>index</strong> a position in the vector by using brackets with a number in it like this: <code class="docutils literal notranslate"><span class="pre">[1]</span></code>. So if we wanted to print out just the first item in <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>, we could write <code class="docutils literal notranslate"><span class="pre">my_vector[1]</span></code>.</p>
+<p>Oftentimes we want to view or reference a specific variable within a data frame. So long as a data file was saved with the first line having the names of each variable, we can access it using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol in R. If you want to see just the <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> dataframe, for example, you would write <code class="docutils literal notranslate"><span class="pre">tetrismemories$diary_compliance</span></code>.</p>
+<p>Try using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol to print out just the variable <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> from <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write code to get the 4th value in my_vector</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the $ sign to print out the contents of the diary_compliance variable </span>
+<span class="c1"># in the tetrismemories data frame</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We’re not limited to indexing only one position at a time, either. We can also pass a vector of <em>index positions</em> inside the brackets to return only those positions:</p>
+<p>When R is asked to print out a single variable (such as <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code>), R prints out each person’s value on the variable all in a row. You can then work with this variable as if it were a single vector, like we used in the previous chapter. This variable measures how many days people kept record of their intrusive memories. Try giving everyone an extra day in the study by adding 1 to the <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> variable. (Remember that adding a constant to a vector adds that value to every item in the vector).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns both the 2nd and 4th value in my_vector</span>
-<span class="n">my_vector</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">)]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add 1 to everyone&#39;s diary_compliance value, and print out the result</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>And if we want to return a whole chunk of the vector (say, the 1st through the 4th position), we don’t have to type out <code class="docutils literal notranslate"><span class="pre">c(1,2,3,4)</span></code> within the brackets. The <code class="docutils literal notranslate"><span class="pre">:</span></code> operator works like the word “through”, such that the code <code class="docutils literal notranslate"><span class="pre">1:4</span></code> means “every value from the 1st to the 4th, inclusive”.</p>
+<p>Usually you want to access variables this way - it has more meaning to humans reading code. But just so you know, you can also access variables using index notation with <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets. However, since we know a data frame has two dimensions (rows and columns), we need to access data using indexing by providing a number value for both which row we want, and which column we want. Recall that rows are always the first dimension and columns are always the second, so we type our indexing like <code class="docutils literal notranslate"><span class="pre">[row_num,</span> <span class="pre">col_num]</span></code>.</p>
+<p>If we want to print out the entirety of the third row from <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>, we’d use <code class="docutils literal notranslate"><span class="pre">tetrismemories[3,]</span></code>. Leaving nothing after the comma for column number tells R to return every value in the third row regardless of column. Likewise, returning the entirety of the third <em>column</em> from <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> would look like <code class="docutils literal notranslate"><span class="pre">tetrismemories[,3]</span></code>. Try it out in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns the 1st through the 4th values in my_vector</span>
-<span class="n">my_vector</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Finally, what if we want to return every item in a vector <em>except</em> a particular one? Then we get to use what’s called <strong>negative indexing</strong>! Simply put a negative sign in front of an index position, and that will <em>remove</em> the item at that position from the output.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code returns my_vector, but without the 3rd item</span>
-<span class="n">my_vector</span><span class="p">[</span><span class="m">-3</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write code to return the 10th row of tetrismemories</span>
 
-<span class="c1"># Try using both the colon method and the negative indexing method as different ways to return </span>
-<span class="c1"># the vector (2,3,4,5) using my_vector</span>
+<span class="c1">#Write code to return the 5th column of tetrismemories</span>
+
+<span class="c1">#What do you think this code will return?</span>
+<span class="n">tetrismemories</span><span class="p">[</span><span class="m">10</span><span class="p">,</span><span class="m">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops become very useful when we want to <strong>iterate</strong> through a vector (do something with each vector item). For instance, last chapter we created a vector of numbers, and then printed each item:</p>
+</section>
+<section id="control-flow">
+<h2>3.5 Control flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h2>
+<p>With more data comes more choices regarding what to do with it. So far we have opened and looked at the variables saved in a data file, but we haven’t done anything with them yet. Often times we will do multiple things to data as a part of an entire analysis process, such as subsetting, cleaning, computing new variables or summaries, visualizing, and modeling. In order to manage all these steps, we need to talk about an important concept in coding called <strong>control flow</strong>.</p>
+<p>Control flow refers to telling a programming language like R the order you want it to evaluate code commands in. So far we haven’t written much more than a few lines of code at a time, but what happens when you write code scripts that are many lines long? How is it all executed? By default, R reads your code from the top of a file to the bottom. Each line of code happens one at a time, in order. But sometimes you want R to do things multiple times (e.g., repeat a calculation for each data point), or you want it to do different things depending on some condition (e.g., do a calculation only if a datapoint is of a certain value).</p>
+<p>For a non-data example, say you were writing a computer program that would cook chicken:</p>
+<ol class="arabic simple">
+<li><p>Add heat to pan</p></li>
+<li><p>Add chicken breast</p></li>
+<li><p>Check chicken doneness once a minute</p></li>
+<li><p>Once chicken is done, turn off heat</p></li>
+<li><p>If bland, add salt to chicken</p></li>
+</ol>
+<p>To do the above with code, you need to <em>control</em> what steps R executes, and when to execute them. Two concepts that help you do this are <strong>conditional statements</strong> and <strong>loops</strong>. By including some specific syntax, you can set up conditional statements and loops that tell R when you want code to be treated in a special way like this.</p>
+<section id="conditional-statements">
+<h3>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h3>
+<p>The most basic control flow statement in R is the “if” statement. An if statement checks whether some logical expression is true or false and executes a specified block of code if the logical expression is true.</p>
+<p>In R, an if statement starts with <code class="docutils literal notranslate"><span class="pre">if</span></code>, followed by a logical expression in parentheses, followed by the code to execute when the if statement is true in curly braces. Before running the below code, read the comments and see if you can predict what will be returned by the code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span><span class="w">         </span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span><span class="w">         </span><span class="c1"># Assign some object values</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 
-<span class="nf">for </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">my_sequence</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1"># for loop over the specified items</span>
-<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="w">                 </span><span class="c1"># Print the value of each item</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1"># The keyword &quot;if&quot; starts an if statement; a logical expression follows the &quot;if&quot;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">    </span><span class="c1"># Curly brace &quot;{&quot; starts a chunk of code that you want to execute only if the logical         </span>
+<span class="p">}</span><span class="w">               </span><span class="c1"># expression is true. Afterwards, close the conditional block with a &quot;}&quot; brace.  </span>
+<span class="w">                </span><span class="c1"># The chunk of code within the &quot;{}&quot; braces should be indented, for readibility. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case the logical expression was true - x was greater than y - so the <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> statement was executed.</p>
+<p>If statements are often accompanied by “else” statements. Else statements come after if statements and allow you to execute separate code in the event that the logical expression of an if statement is false.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">25</span><span class="w">         </span><span class="c1"># Reassigned variable y to make it larger than x</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1"># The original if statement</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="c1"># With a new else statement added</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is a false statement so the code in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block is skipped and the code in the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is executed instead. Were <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> true, the code in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block would be executed and the <code class="docutils literal notranslate"><span class="pre">else</span></code> block would be ignored.</p>
+<p>Notice that there is no logical statement in parentheses after the <code class="docutils literal notranslate"><span class="pre">else</span></code> keyword. Why do you think that is? Try debugging the code below to make it work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try writing your own if/else statement with a different arithmatic equation, using the above format as a guide</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">25</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="nf">else </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="c1"># What&#39;s wrong with this line?</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If statements require a logical statement that is only true or false. There can be no other option. Thus, if <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is not true and the <code class="docutils literal notranslate"><span class="pre">if</span></code> block of code doesn’t run, the only other option can be false, which is when the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement kicks in. Because of that, no logical statement is needed after <code class="docutils literal notranslate"><span class="pre">else</span></code> - if R gets to that keyword before executing any other block, it knows to execute this one.</p>
+<p>What about when you have more than two options you want R to be able to do? I.e., maybe you want to print both x and y if they equal each other? You can extend this basic if/else construct to perform multiple logical checks in a row by adding one or more <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statements between the opening <code class="docutils literal notranslate"><span class="pre">if</span></code> and the closing <code class="docutils literal notranslate"><span class="pre">else</span></code>. Each <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> statement performs another logical check and executes its code if the check is true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">25</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                     </span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x and y are equal&quot;</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span><span class="w">                         </span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> is evaluating a new logical statement, it does need to have that logical statement included after the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> key phrase. You can include as many <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> blocks as you want, just remember that they are evaluated in order.</p>
+<p>Here’s another example of using conditional statements, this time using the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> dataset. Let’s say we only want to consider participants who had at least 8 days of diary compliance during the study. We could use conditional statements to tell us whether some observation should be included in our final dataset or not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;keep row 1&quot;</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;exclude row 1&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span><span class="p">[</span><span class="m">15</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;keep row 15&quot;</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;exclude row 15&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us that the first observation of the dataset (element 1 in the <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> variable) had a value of at least 8, so we want to keep it. On the other hand, row 15’s value was less than 8, so should be excluded.</p>
+<p>Right now this seems like a lot of work when you could just look at the values in row 1 and row 15 yourself. But the power of conditional statements often comes in when you need to repeat something over and over, which we will cover next.</p>
+</section>
+<section id="for-loops">
+<h3>For loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
+<p>For loops are a programming construct that let you iterate through multiple items in a sequence and perform some operation on each one. For instance, you could use a for loop to go through all the values in a set of numbers and check whether each conforms to some logical expression, or to print each value to the console.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1"># Create a new for loop over the specified items</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w">                             </span><span class="c1"># Code to execute</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The<code class="docutils literal notranslate"><span class="pre">for</span></code> keyword is also followed by some command in a set of parentheses. This time, that command also uses the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword. This keyword essentially tells R that you want to consider one thing at a time (which we’ve named <code class="docutils literal notranslate"><span class="pre">item</span></code>), and each thing comes from some larger set (the variable <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> in <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>).</p>
 <p>When the command in the set of parentheses looks like <code class="docutils literal notranslate"><span class="pre">(X</span> <span class="pre">in</span> <span class="pre">SOME_VECTOR)</span></code>, this is saying that X will take on the <em>value</em> of a specific item in SOME_VECTOR for that iteration of the loop. However, you can also lean on the function <code class="docutils literal notranslate"><span class="pre">length()</span></code> to go through each <em>position</em> of each item:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span><span class="w">         </span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">position</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1"># for loop over the position number of each item,</span>
-<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span><span class="w">                           </span><span class="c1"># from the first item up to the max length of my_sequence</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>my_sequence &lt;- c(2,4,6,8,10)</p>
+<p>for (position in 1:length(my_sequence)) {     # for loop over the position number of each item,
+print(position)                           # from the first item up to the max length of my_sequence
+}</p>
 <p>Instead of the object <code class="docutils literal notranslate"><span class="pre">position</span></code> taking on the value of each item in <code class="docutils literal notranslate"><span class="pre">my_sequence</span></code>, it is now taking a numeric value in the sequence 1 through the length of <code class="docutils literal notranslate"><span class="pre">my_sequence</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using indexing, how would you make this code print out (2,4,6,8,10) while still using positions </span>
-<span class="c1"># in the for loop?</span>
-
-<span class="n">my_sequence</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span><span class="w">         </span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">position</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">     </span>
-<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span><span class="w">                           </span><span class="c1"># Make a change to this line to print out the value of my_sequence </span>
-<span class="p">}</span><span class="w">                                             </span><span class="c1"># at this position using indexing</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="data-types">
-<h2>3.2 Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
-<section id="qualitative-data">
-<h3>Qualitative data<a class="headerlink" href="#qualitative-data" title="Permalink to this heading">#</a></h3>
-<p>Data are the measurements that make up <strong>variables</strong>. Variables are sets of measurements that, across many values, will vary in some way. For example, human intelligence is a variable because, across many people, we would likely measure different intelligence scores. The values of intelligence would vary person to person. In contrast, people’s species is <em>not</em> a variable, since by definition all humans are <em>homo sapien.</em> There’s no variation datapoint to datapoint.</p>
-<p>There are different types of variables. Some are <strong>qualitative</strong>, meaning that they describe a quality rather than a numeric quantity. For example, say we ran a survey in class that asked “What is your favorite food?” Some of the answers may be: blueberries, chocolate, tamales, pasta, and pizza. Those data are not intrinsically numerical; there’s nothing to indicate quantity or numerical relations among them.</p>
-<p>In R, there are also different types of objects we can rely on to represent different data types. We can represent qualitative data like words or letters with the <strong>character value type</strong>. Remember at the beginning of Chapter 1 when you printed out <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world!&quot;</span></code>? By putting those words within a set of quotation marks, we created a character-type object. This is also known in other programming languages as a “string”. If we forget the quotes, R will think that a word is a name of an object instead of a character value. Note that numbers can also be turned into character values - for example, when 20 is in quotation marks like this – “20” – it will be treated as a character value, even though it includes a number. R doesn’t care whether you use single quotes, ‘like this’, or double quotes, ”like that”.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of a character value</span>
-<span class="n">my_character</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;I am a character.&quot;</span>
-<span class="n">my_character</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>You can also put character objects into a vector, to represent a set of qualitative data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">many_hellos</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;shalom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hola&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bonjour&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ni hao&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;merhaba&quot;</span><span class="p">)</span>
-
-<span class="c1"># Write code to print out the 5th way of saying hello in this vector</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="numeric-data">
-<h3>Numeric data<a class="headerlink" href="#numeric-data" title="Permalink to this heading">#</a></h3>
-<p>In statistics we will also work with <strong>quantitative</strong> data. This means data that are numerical. It is often easier to work with quantitative over qualitative data - this let’s us do more mathematical computations like finding the mean. For example, this table shows the results from the same class favorite food survey, but presented in a different way:</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Food choice</p></th>
-<th class="head text-center"><p>Number of students</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>blueberries</p></td>
-<td class="text-center"><p>2</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>chocolate</p></td>
-<td class="text-center"><p>8</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>tamales</p></td>
-<td class="text-center"><p>5</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>pasta</p></td>
-<td class="text-center"><p>6</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>pizza</p></td>
-<td class="text-center"><p>10</p></td>
-</tr>
-</tbody>
-</table>
-<p>The students’ answers were qualitative, but we generated a quantitative summary of them by counting how many students gave each response.</p>
-<p>In R, when the program sees typed numbers, it will usually assume you’re talking about a <strong>numeric value type</strong>. However, don’t assume that if <em>you</em> see numbers in some data, that the variable is definitely quantitative. A researcher might choose to use numbers as a sort of code or label, in place of the full qualitative description. For example, if they recorded what hand every student in a class used to write with, they could save the variable as:</p>
-<p><code class="docutils literal notranslate"><span class="pre">handedness_word</span> <span class="pre">&lt;-</span> <span class="pre">c(&quot;left&quot;,&quot;right&quot;,&quot;right&quot;,&quot;right&quot;,&quot;right&quot;,&quot;left&quot;,&quot;right&quot;,&quot;right&quot;,&quot;right&quot;)</span></code></p>
-<p>That’s a lot of typing though. Instead, they could choose to assign “right” the value of 1, and “left” the value of 2.
-This would create a vector like:</p>
-<p><code class="docutils literal notranslate"><span class="pre">handedness_label</span> <span class="pre">&lt;-</span> <span class="pre">c(2,1,1,1,1,2,1,1,1)</span></code></p>
-<p>Much shorter to write!</p>
-</section>
-<section id="boolean-data">
-<h3>Boolean data<a class="headerlink" href="#boolean-data" title="Permalink to this heading">#</a></h3>
-<p><strong>Boolean values</strong> (also called “logical values”) are either True or False - they represent the truth of a state of reality, like when we were using if/else last chapter. Maybe we have a statement such as: “10 is greater than 5”. We can ask R to evaluate this and return the answer <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>. We can do that by using logical operators like <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">==</span></code>. The double <code class="docutils literal notranslate"><span class="pre">==</span></code> sign checks if two values are equal. There is even a logical operator to check whether values are not equal: <code class="docutils literal notranslate"><span class="pre">!=</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">!=</span> <span class="pre">3</span></code> is a True statement. Essentially, a boolean represents the answer to a true/false statement. Below is a table of the logic operators in R that you can use for making logic statements.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>Symbol</p></th>
-<th class="head text-left"><p>Example use</p></th>
-<th class="head text-left"><p>Meaning</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>&lt;</p></td>
-<td class="text-left"><p>A &lt; B</p></td>
-<td class="text-left"><p>A is less than B</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>&gt;</p></td>
-<td class="text-left"><p>A &gt; B</p></td>
-<td class="text-left"><p>A is greater than B</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>==</p></td>
-<td class="text-left"><p>A == B</p></td>
-<td class="text-left"><p>A is equal to B</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>&lt;=</p></td>
-<td class="text-left"><p>A &lt;= B</p></td>
-<td class="text-left"><p>A is less than or equal to B</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>&gt;=</p></td>
-<td class="text-left"><p>A &gt;= B</p></td>
-<td class="text-left"><p>A is greater than or equal to B</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>!=</p></td>
-<td class="text-left"><p>A != B</p></td>
-<td class="text-left"><p>A is not equal to B</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>%in%</p></td>
-<td class="text-left"><p>A %in% c(B1, B2, B3)</p></td>
-<td class="text-left"><p>A is in the set [B1, B2, B3]</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>&amp;</p></td>
-<td class="text-left"><p>A == B &amp; C == D</p></td>
-<td class="text-left"><p>A equals B AND C equals D (both statements are true)</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>|</p></td>
-<td class="text-left"><p>A == B | C == D</p></td>
-<td class="text-left"><p>A equals B OR C equals D (either statement is true)</p></td>
-</tr>
-</tbody>
-</table>
 <div class="alert alert-block alert-info">
 <b>Note</b>: "%in%" is NOT the same as the "in" statement used in for loops. That one helps R go through each item in a sequence; %in% is used in conditional statements that check whether a value matches ANY item in the sequence.
 </div>
-<p>In R, we will avoid using the single equal sign, <code class="docutils literal notranslate"><span class="pre">=</span></code>. If you want to know whether A is equal to B, use the double equal sign, <code class="docutils literal notranslate"><span class="pre">==</span></code>. The single equal sign is sometimes used instead of the assignment operator, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>, but in more niche cases that you’ll learn later. Use the arrow <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> to assign values to an R object, and <code class="docutils literal notranslate"><span class="pre">==</span></code> to ask whether two values are equal.</p>
+<p>For loops and conditional statements can be combined. For example, think about how you can add an <code class="docutils literal notranslate"><span class="pre">if</span></code> block within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop block to only print out every item in the sequence 1 through 10 that is greater than 5:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read this code and predict what value will come out of the R console. Then run the code and see if you were right.</span>
-
-<span class="n">A</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
-<span class="n">B</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
-
-<span class="n">comparison</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">B</span>
-
-<span class="n">comparison</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span>
+<span class="w">    </span><span class="c1">#add an if statement here {</span>
+<span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Lots of things can be turned into boolean data if you think about it. For example, The researcher above could choose to represent handedness as a boolean, by conceptualizing the variable as “this person is right-handed.”</p>
-<p><code class="docutils literal notranslate"><span class="pre">handedness_bool</span> <span class="pre">&lt;-</span> <span class="pre">c(FALSE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">FALSE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE,</span> <span class="pre">TRUE).</span></code></p>
-<p>Before creating an object, it’s good to think about what type the value should be. I.e., think about what operations you plan to do on the object, and thus what type the value needs to be for that operation to make sense. However, sometimes you forget what type an object was that you created a while ago, or you will receive some data from someone else with pre-defined objects. If you ever need to find out the type of an object, you can simply use the command <code class="docutils literal notranslate"><span class="pre">str([OBJECT_NAME])</span></code>. Str is short for “structure.” It will print out the type of the object as well as its value.</p>
+<p>Or, say we want to know all the rows of <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> that should be excluded based on low diary compliance. The code below creates a vector that tracks these rows. See if you can explain what each line of code does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use str() to print out the type of each object below</span>
-<span class="n">object1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;What am I?&quot;</span>
-<span class="n">object2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">TRUE</span>
-<span class="n">object3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">30</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">to_exclude</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">()</span><span class="w">   </span><span class="c1">#function for making an empty vector to hold values in</span>
 
-<span class="c1">#Write your code below this line</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="alert alert-block alert-info">
-<b>Note</b>: There are technically subtypes of values within the umbrella of numeric (double, integer, etc.) or qualitative (character or factor) that refer to how the number is stored in computer memory. You don't need to know the difference for this course, just remember that when R returns one of these for a value type, it's a sort of number or qualitative value.   
-</div></section>
-</section>
-<section id="scales-of-measurement">
-<h2>3.3 Scales of measurement<a class="headerlink" href="#scales-of-measurement" title="Permalink to this heading">#</a></h2>
-<p>Among quantitative data, the numbers a variable can take can be related to each other in different ways. What exactly the numbers mean determines what kind, or what <strong>scale</strong> of measurement the variable is in.</p>
-<p>A <strong>categorical</strong> variable (also called a nominal variable) is one like the example above, when we first assigned numeric labels to each food choice. In a nominal variable, each value of the variable represents a different category of something. These categories are distinct, and they’re not inherently sortable. You can use character or numeric data types to represent a categorical variable, as discussed above with handedness. As another example, we might ask people for their political party affiliation, and then code those as numbers: 1 = “Republican”, 2 = “Democrat”, 3 = “Libertarian”, and so on. The different numbers do not have any ordered relationship with one another - they’re just another way of writing a categorical label.</p>
-<p>An <strong>ordinal</strong> variable has values where the magnitude matters, but only for ordering the values, not for determining how far apart any of the levels are from each other. For example, we might ask a person with chronic pain to complete a form assessing how bad their pain is, using a 1-7 numeric scale. While the person is presumably feeling more pain on a day when they report a 6 versus a day when they report a 3, it wouldn’t make sense to say that their pain is twice as bad on the former versus the latter day - there isn’t a unit of measurement available, only a sense of one option being stronger than another. The ordering gives us information about relative magnitude, but the differences between values are not necessarily equal in magnitude.</p>
-<p>An <strong>interval</strong> variable has all of the features of an ordinal scale, but in addition the distance between units on the measurement scale are measurable and consistent. A standard example is physical temperature measured in Celsius or Fahrenheit; the physical difference between 10 and 20 degrees is the same as the physical difference between 90 and 100 degrees.</p>
-</section>
-<section id="converting-data">
-<h2>3.4 Converting data<a class="headerlink" href="#converting-data" title="Permalink to this heading">#</a></h2>
-<p>Sometimes you will have data in one format that you would prefer to have in another - e.g., you have a variable for someone’s zip code, but R is trying to evaluate that data type as quantitative instead of categorical. That doesn’t make sense - Pomona’s zip code 91711 isn’t quantitatively comparable to Harvard’s 01434, it’s just using numbers to denote a category (Pomona is of course comparable and better than Harvard in other ways!). How though would you convince R to treat these numbers as a categorical variable?</p>
-<p>Luckily, you don’t need to rewrite the whole zipcode data vector with quotations manually. You can use a function to classify the vector of numbers as a categorical variable. The function that converts numerical data to categorical is <code class="docutils literal notranslate"><span class="pre">as.character()</span></code>. Try it out below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">zipcodes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span><span class="w"> </span><span class="m">01002</span><span class="p">,</span><span class="w"> </span><span class="m">19081</span><span class="p">,</span><span class="w"> </span><span class="m">91711</span><span class="p">,</span><span class="w"> </span><span class="m">02481</span><span class="p">,</span><span class="w"> </span><span class="m">04011</span><span class="p">,</span><span class="w"> </span><span class="m">21402</span><span class="p">,</span><span class="w"> </span><span class="m">91711</span><span class="p">,</span><span class="w"> </span><span class="m">55057</span><span class="p">,</span><span class="w"> </span><span class="m">05753</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">row</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">to_exclude</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">to_exclude</span><span class="p">,</span><span class="w"> </span><span class="n">row</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="c1"># Use the as.character() function on zipcodes, assign it to zipcodes_char, and then return the type </span>
-<span class="c1"># of that new object</span>
-<span class="n">zipcodes_char</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#replace this comment with your code</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes_char</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also turn a nominal variable back into a numeric variable by using the <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> function. This is useful in the case where a dataset has numbers that accidentally get saved as character types.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">zipcodes_numeric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">zipcodes_char</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">zipcodes_numeric</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>When we code the values of a variable using numbers, it is always important to keep in mind what the numbers mean. The value 2 has a very different meaning if it represents the handedness of a person (e.g., left) than if it represents their height in inches (very short!). When we use statistical software to analyze data, the software processes the numbers. But the software doesn’t know what the numbers actually mean. Only you know that.</p>
-<p>We can also convert the actual <em>values</em> of data within variables. One might do this if we decided the numbers in the zipcode variable were too ambiguous, and we instead wanted to label the names of their towns. The <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function has some arguments you can add to relabel the values in a variable that you want to convert to qualitative:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4 places, coded by zipcode</span>
-<span class="n">places_num</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span><span class="w"> </span><span class="m">01002</span><span class="p">,</span><span class="w"> </span><span class="m">19081</span><span class="p">,</span><span class="w"> </span><span class="m">91711</span><span class="p">,</span><span class="w"> </span><span class="m">91711</span><span class="p">)</span>
-<span class="n">places_factor</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">places_num</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">01267</span><span class="p">,</span><span class="w"> </span><span class="m">01002</span><span class="p">,</span><span class="w"> </span><span class="m">19081</span><span class="p">,</span><span class="w"> </span><span class="m">91711</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                        </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;williamstown&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;amherst&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;swarthmore&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;claremont&quot;</span><span class="p">))</span>
-<span class="c1"># if your command is too wide, hit return after a comma to make it wrap around on a new line, indented</span>
-
-<span class="n">places_factor</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This looks complicated - why are there now <code class="docutils literal notranslate"><span class="pre">=</span></code> signs and other words in our function? At this point we’ll introduce to you the concept of <em>named</em> arguments. A function like <code class="docutils literal notranslate"><span class="pre">factor()</span></code> can be run with just one argument, a vector to turn into nominal values, <em>or</em> it can take additional arguments. It’s flexible like that. But if you’re giving it additional arguments, you have to tell the function what each argument is supposed to represent. That’s where you get to using the argument’s name (<code class="docutils literal notranslate"><span class="pre">levels</span></code> or <code class="docutils literal notranslate"><span class="pre">labels</span></code> in this example), and using the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign to tell the function what the value of that specific argument should be.</p>
-<p>Here you can think of the input to the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function as having three parts: the variable to recode, the existing values (<code class="docutils literal notranslate"><span class="pre">levels</span></code>), and the <code class="docutils literal notranslate"><span class="pre">labels</span></code> to recode the values as. You only need to include the unique levels and labels in these arguments - anytime R finds 91711 in the <code class="docutils literal notranslate"><span class="pre">places_num</span></code> vector, it will replace it with “claremont.”</p>
-<p>You can also change the values of numeric variables. For example, you have water depth data measured in inches, but you’d prefer to see it in feet. In this case, you will need to transform each value in the vector holding that data.</p>
-<p>You don’t have to manually retype the vector to do this either. Vectors in R work like vectors in linear algebra. So, if you have a constant value you want to modify a vector by, you can simply use the mathematical operation between that value and the vector object. E.g., in the example above, you could write <code class="docutils literal notranslate"><span class="pre">water_depth</span> <span class="pre">/</span> <span class="pre">12</span></code> to convert every water depth measurement from inches to feet. When you use an operation between a vector and a single value, R will apply that operation to every item in the vector individually.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-
-<span class="c1"># write code to multiply each number in my_vector by 100</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice that when you do a calculation with a vector, you’ll get a vector of numbers as the answer, not just a single number.</p>
-<p>After you multiply <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> by 100, what will happen if you return <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>? Will you get the original vector (1,2,3,4,5), or one that has the hundreds (100,200,300,400,500)? Try running this code to see what happens.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the code below to see what happens</span>
-<span class="n">my_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-<span class="n">my_vector</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span>
-
-<span class="c1"># This will return my_vector</span>
-<span class="n">my_vector</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Remember, R will do the calculations, but if you want something saved, you have to assign it somewhere. Try writing some code to compute <code class="docutils literal notranslate"><span class="pre">my_vector</span> <span class="pre">*</span> <span class="pre">100</span></code> and then assign the result back into <code class="docutils literal notranslate"><span class="pre">my_vector</span></code>. If you do this, it will replace the old contents of <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> with the new contents (i.e., the product of <code class="docutils literal notranslate"><span class="pre">my_vector</span></code> and 100). (Hint: you can use objects in the same command where you redefine their values).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This creates `my_vector` and stores 1, 2, 3, 4, 5 in it</span>
-<span class="n">my_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
-
-<span class="c1"># Now write code to save `my_vector * 100` back into `my_vector`</span>
-<span class="n">my_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#replace this comment with your code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also create Boolean vectors by subjecting a whole vector to a logical statement. Since a logical statement is an operation, R will apply it to every item in the handedness vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">handedness</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
-<span class="n">handedness_bool</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">handedness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span>
-
-<span class="n">handedness_bool</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do you expect from this code? Make a guess first, then run the code to see what happens. </span>
-
-<span class="n">handedness</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
-<span class="n">footedness</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
-
-<span class="n">hand_foot_alignment</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">handedness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">footedness</span>
-<span class="n">hand_foot_alignment</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Sometimes you will need to do something more complicated. Instead of modifying each value in a vector by the same amount, you want to make a different modification. E.g., say you want to know how much each person improved their SAT scores with practice, but you only have their first and last scores saved as data. Everyone improves at different rates, so you can’t add the same score to each person. Instead, you could do <code class="docutils literal notranslate"><span class="pre">end_score</span> <span class="pre">-</span> <span class="pre">beginning_score</span></code>. If both <code class="docutils literal notranslate"><span class="pre">end_score</span></code> and <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> are vectors of the same length, R will apply the operation to each item <em>pairwise</em>: the first item of <code class="docutils literal notranslate"><span class="pre">beginning_score</span></code> will be subtracted from the first item of <code class="docutils literal notranslate"><span class="pre">end_score</span></code>, the second from the second, third from the third, and so on.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1400</span><span class="p">,</span><span class="w"> </span><span class="m">1450</span><span class="p">,</span><span class="w"> </span><span class="m">1500</span><span class="p">,</span><span class="w"> </span><span class="m">1200</span><span class="p">,</span><span class="w"> </span><span class="m">1150</span><span class="p">,</span><span class="w"> </span><span class="m">1600</span><span class="p">)</span>
-<span class="n">beginning_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1350</span><span class="p">,</span><span class="w"> </span><span class="m">1400</span><span class="p">,</span><span class="w"> </span><span class="m">1400</span><span class="p">,</span><span class="w"> </span><span class="m">1200</span><span class="p">,</span><span class="w"> </span><span class="m">1100</span><span class="p">,</span><span class="w"> </span><span class="m">1400</span><span class="p">)</span>
-
-<span class="c1">#write code that will subtract beginning_score from end_score, and return the resulting vector</span>
-<span class="n">change_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#write your code here</span>
+<span class="n">to_exclude</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="what-makes-good-data">
-<h2>3.5 What makes good data?<a class="headerlink" href="#what-makes-good-data" title="Permalink to this heading">#</a></h2>
-<p>Data are meant to be a clear representation of something in the world. However, in many fields such as psychology, the thing that we are measuring is not a physical feature, but instead an unobservable theoretical concept, which we usually refer to as a <strong>construct</strong>. For example, let’s say that we want to test how well you understand the distinction between categorical, ordinal, and interval variables. The professor could give you a pop quiz that would ask you several questions about these concepts and count how many you got right. This would be one way to try and measure the construct that is your knowledge. However, constructs are difficult to measure well. There are several things that can get in the way of good measurement:</p>
-<section id="measurement-error">
-<h3>Measurement error<a class="headerlink" href="#measurement-error" title="Permalink to this heading">#</a></h3>
-<p>It is usually impossible to measure a construct without some amount of error. In the example above, you might know the answer, but you might mis-read the question and get it wrong. In other cases, there is error intrinsic to the thing being measured, such as when we measure how long it takes a person to respond on a simple reaction time test, which will vary from trial to trial for many reasons. This is called <strong>measurement error</strong> - when the values we record are different than what the true construct value should be because of an imperfect measurement system. We generally want our measurement error to be as low as possible, which we can achieve either by improving the quality of the measurement (for example, using a better timer to measure reaction time), or by averaging over a large number of indvidiual measurements.</p>
+<section id="while-loops">
+<h3>While loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h3>
+<p>While loops are similar to for loops in that they allow you to execute code over and over again. For loops execute their contents, at most, a number of iterations equal to the length of the sequence you are looping over. While loops, on the other hand, keep executing their contents as long as a certain logical expression you supply remains true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+<span class="n">hour</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
+
+<span class="c1">#Study until 5 o&#39;clock</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">hour</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">end_time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1"># Execute the contents as long as hour &lt; end_time</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Studying...&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hour</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">hour</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="c1"># Increment hour value by 1 each time the loop executes</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Done!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why wasn’t “Done!” printed until the end in the code above?</p>
+<p>Remember that a loop will only loop over code that is contained within the “{}” brackets of the code block.</p>
+<p>While loops can get you into trouble because they keep executing until the logical statement provided is false. If you supply a logical statement that will never become false, it will run forever. For instance, if the while loop above didn’t include the command to increment the value of <code class="docutils literal notranslate"><span class="pre">hour</span></code> by 1, the logical statement would never become false and the code would run forever. You’d never stop studying! Infinite while loops are a common cause of program hangs and crashes.</p>
+<p>Consider the following while loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">end_time</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+<span class="n">hour</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w">                 </span>
+
+<span class="nf">while </span><span class="p">(</span><span class="n">hour</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">end_time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1"># This logical expression is always true!</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Studying...&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hour</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">hour</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="c1"># We made a bug here - subtracting 1 means hour will never increase above end_time</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you hit “run” on this code, it will never stop since <code class="docutils literal notranslate"><span class="pre">hour</span></code> will never become larger than <code class="docutils literal notranslate"><span class="pre">end_time</span></code>. It is important to make sure that while loops contain a logical expression that will eventually be false. But if you find yourself in a position like this, most coding programs give you a way to manually stop code. In this notebook, hit the stop button to the left of the code window.</p>
+<p>Although you can use a while loop to do anything a for loop can do, it is best to use for loops whenever you want to perform an operation a specific number of times. While loops should be reserved for cases where you don’t know how many times you need to execute the loop.</p>
 </section>
-<section id="reliability">
-<h3>Reliability<a class="headerlink" href="#reliability" title="Permalink to this heading">#</a></h3>
-<p><strong>Reliability</strong> refers to the consistency of our measurements. One common form of reliability, known as <strong>test-retest reliability</strong>, measures how well the measurements agree if the same measurement is performed twice. For example, someone might give you a questionnaire about your attitude towards statistics today, repeat this same questionnaire tomorrow, and compare your answers on the two days; if the questionnaire is a good measurement of your true attitude, we would hope that they would be very similar to one another, unless something happened in between the two tests that should have changed your view of statistics (like taking this class!).</p>
-<p>Another way to assess reliability comes in cases where the data include subjective judgments. For example, let’s say that a researcher wants to determine whether a treatment changes how well an autistic child interacts with other children, which is measured by having experts watch the child and rate their interactions with the other children. In this case we would like to make sure that the answers don’t depend on the individual rater — that is, we would like for there to be high <strong>inter-rater reliability</strong>. This can be assessed by having more than one rater perform the rating, and then comparing their ratings to make sure that they agree well with one another.</p>
-<p>Reliability is important if we want to compare one measurement to another, because the relationship between two different variables can’t be any stronger than the relationship between either of the variables and itself (i.e., its reliability). This means that an unreliable measure can never have a strong statistical relationship with any other measure. For this reason, researchers developing a new measurement (such as a new survey) will often go to great lengths to establish and improve its reliability.</p>
 </section>
-<section id="validity">
-<h3>Validity<a class="headerlink" href="#validity" title="Permalink to this heading">#</a></h3>
-<p>Reliability is important, but on its own it’s not enough: After all, I could create a perfectly reliable measurement on a personality test by re-coding every answer using the same number, regardless of how the person actually answers. We want our measurements to also be <strong>valid</strong> — that is, we want to make sure that we are actually measuring the construct that we think we are measuring. There are many different types of validity that are commonly discussed; we will focus on three of them.</p>
-<p><strong>Face validity</strong> - Does the measurement make sense on its face? If I were to tell you that I was going to measure a person’s blood pressure by looking at the color of their tongue, you would probably think that this was not a valid measure on its face. On the other hand, using a blood pressure cuff would have face validity. This is usually a first reality check before we dive into more complicated aspects of validity. If you read about a construct measurement that doesn’t seem face valid to you (e.g., “what your shirt color says about you!!”), you should be immediately suspicious of it until there is good evidence of other validity.</p>
-<p><strong>Construct validity</strong> - Is the measurement related to other measurements in an appropriate way? This is often subdivided into two aspects. <strong>Convergent validity</strong> means that the measurement should be closely related to other measures that are thought to reflect the same construct. Let’s say that I am interested in measuring how extroverted a person is using either a questionnaire or an interview. Convergent validity would be demonstrated if both of these different measurements are closely related to one another. On the other hand, measurements thought to reflect different constructs should be unrelated, known as <strong>divergent validity</strong>. If my theory of personality says that extraversion and conscientiousness are two distinct constructs, then I should also see that my measurements of extraversion are unrelated to measurements of conscientiousness.</p>
-<img src="images/ch3-relyvalid.png" width="600">
-<p><em>A figure demonstrating the distinction between reliability and validity, using shots at a bullseye. The consistency of location of shots is a metaphor for reliability, and the accuracy of the shots with respect to the center of the bullseye.</em></p>
-</section>
+<section id="writing-your-own-functions">
+<h2>3.6 Writing your own functions<a class="headerlink" href="#writing-your-own-functions" title="Permalink to this heading">#</a></h2>
+<p>Control flow is very useful for managing the progression of steps you take in a long program or analysis. So much so, that a lot of other people have written new functions to download (remember packages from chapter 1?) that implement common analysis control flows for you. In this introductory course, we will usually use those downloadable functions to save us time. But it is still important to know how to explicitly define control flow like above because ocassionally, you will need to do something that has not already been written by someone else. In these cases, if you need to do the thing over and over, writing your own function becomes useful. In addition, if you find yourself repeating the same analysis steps over and over for multiple projects, you can write functions that will execute <em>sets of other functions</em>, which will save you a lot of time when writing code.</p>
+<p>A function definition requires three pieces of information: the function name, the argument(s) to give it, and a block of code that is executed whenever your function is called. For example, here is a function that will convert temperature readings in Fahrenheit to Celsius:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#function to convert Fahrenheit to Celsius:</span>
+<span class="n">fahrenheit_to_celsius</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">temp_F</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">temp_C</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">temp_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">9</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">temp_C</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">#what&#39;s freezing temp in Celsius?</span>
+<span class="nf">fahrenheit_to_celsius</span><span class="p">(</span><span class="m">32</span><span class="p">)</span>
+
+<span class="c1">#use the function with today&#39;s temperature in F to find out what it is in C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We define a new function, <code class="docutils literal notranslate"><span class="pre">fahrenheit_to_celsius</span></code>, by assigning it to the output of a function that makes functions (helpfully, called <code class="docutils literal notranslate"><span class="pre">function()</span></code>). The list of arguments to the function-making function are the arguments you would pass to your own function when using it. Next, the body of the function – the statements that are executed when it runs – is contained within curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. The statements in the body are indented, which makes the code easier to read. Lastly, the final line of the function body has the function <code class="docutils literal notranslate"><span class="pre">return()</span></code>, which tells R what value should be returned by your function.</p>
+<p>When we call the function, the values we pass to it are assigned to objects so that we can use them inside the function. Those objects are not defined <em>outside</em> the function block, and thus don’t exist outside the function block - this is known as <strong>object scope</strong>.</p>
+<p>Try defining your own function to convert Celsius temperatures the other way into Fahrenheit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># complete the function below to convert Celsius to Fahrenheit </span>
+<span class="n">celsius_to_fahrenheit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
-<li><p>Define a variable</p></li>
-<li><p>Make a vector in R</p></li>
-<li><p>Describe the difference between qualitative and quantitative data</p></li>
-<li><p>recode vectors in R as numeric or categorical</p></li>
-<li><p>Explain the difference between categorical, ordinal, and interval data</p></li>
-<li><p>Do basic math operations on vectors</p></li>
-<li><p>Talk about in what ways data can be more or less reliable</p></li>
-<li><p>Define the four types of validity</p></li>
+<li><p>load a dataset into R</p></li>
+<li><p>Explain what the rows and columns of a dataframe mean</p></li>
+<li><p>Access particular variables in a data frame</p></li>
+<li><p>Create control flow code using if/else, for, and while</p></li>
+<li><p>Write your own R functions</p></li>
 </ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Next: Chapter 4 - Organizing Data</a></p>
+</section>
+<section id="new-concepts">
+<h2>New concepts<a class="headerlink" href="#new-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>dataset</strong>: a collection of information, representing data values collected from multiple entities and usually across multiple variables.</p></li>
+<li><p><strong>data frame</strong>: a data type in R that holds dataset values as a rectangular matrix, with rows as separate observations and columns as separate variables.</p></li>
+<li><p><strong>working directory</strong>: the directory on a computer that is currently visible to a computer program.</p></li>
+<li><p><strong>file path</strong>: the location of a file within the directory structure of a computer. The <strong>absolute file path</strong> is the path of navigation to the file from the computer root directory. The <strong>relative file path</strong> is the path of nagivation to the file from the current working directory.</p></li>
+<li><p><strong>dimension</strong>: A property of a matrix. The value of the first dimension is the number of rows and the value of the second dimension is the number of columns.</p></li>
+<li><p><strong>control flow</strong>: Ways of controling the order in which multiple actions in code are executed.</p></li>
+<li><p><strong>conditional statement</strong>: A programming language construct that performs different actions depending on the value of a logical expression.</p></li>
+<li><p><strong>loop</strong>: A sequence of code actions that is repeated a set number of times (in for loops) or until some condition is met (in while loops).</p></li>
+<li><p><strong>object scope</strong>: The accessibility or visibility of objects within different parts of your code.</p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Next: Chapter 4 - Cleaning Data</a></p>
 </section>
 </section>
 
@@ -924,22 +915,22 @@ This would create a vector like:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-data-in-r">3.1 Representing data in R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">3.2 Data types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-data">Qualitative data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-data">Numeric data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-data">Boolean data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-data">3.1 The structure of data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-data-frame">3.2 Creating a data frame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-vectors">Combining vectors</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scales-of-measurement">3.3 Scales of measurement</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-data">3.4 Converting data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-good-data">3.5 What makes good data?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-error">Measurement error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability">Reliability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">Validity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-existing-data">3.3 Importing existing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-data">3.4 Looking at data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">3.5 Control flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-functions">3.6 Writing your own functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
 </ul>
   </nav></div>
 

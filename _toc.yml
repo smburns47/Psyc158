@@ -7,13 +7,13 @@ parts:
 - caption: Unit 1 Describing Data
   chapters:
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb
-    title: Chapter 1 - Intro to Doing Statistics
+    title: Chapter 1 - Introduction to Statistical Thinking
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb
-    title: Chapter 2 - Statistical Reasoning
+    title: Chapter 2 - What are Data
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb
-    title: Chapter 3 - What are Data
+    title: Chapter 3 - Organizing Data
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb
-    title: Chapter 4 - Organizing Data
+    title: Chapter 4 - Cleaning Data
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb
     title: Chapter 5 - Describing Data
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb

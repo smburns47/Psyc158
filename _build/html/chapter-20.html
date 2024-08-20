@@ -652,9 +652,9 @@ document.write(`
 \[df_b = G - 1\]</div>
 <div class="math notranslate nohighlight">
 \[df_w = N - G\]</div>
-<p>The ratio of mean squared errors then is:</p>
+<p>The ratio of mean squared differences then is:</p>
 <div class="math notranslate nohighlight">
-\[\frac{SS_b / df_b}{SS_w / df_w} = \frac{MSE_b}{MSE_w}\]</div>
+\[\frac{SS_b / df_b}{SS_w / df_w} = \frac{MS_b}{MS_w}\]</div>
 <p>This ratio has a specific name: it is the <strong>F-ratio</strong> or the <strong>F-statistic</strong> (<a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb#scrollTo=509057e3">sound familiar?</a>).</p>
 <p>That’s all a one-way ANOVA does: it calculates an F-statistic to compare between to within-group variation. If the value of this F-statistic is sufficiently large, that means the differences in the group means are so large that we’d be very surprised to hear they were actually sampled from the same population. We’d reject the null hypothesis in favor of an alternative, that at least one came from a different population.</p>
 <p>That brings us to doing a one-way ANOVA test in R. There are a couple different implementations of ANOVA tests in R. The most basic is built into base R, called <code class="docutils literal notranslate"><span class="pre">aov()</span></code>. To use this one, you no longer need to save the data for the different groups into different vectors - we can keep it in one dataset like with a GLM model and simply pass a formula to ask how the outcome variable varies as a function of group.</p>
@@ -702,7 +702,7 @@ document.write(`
 </div>
 <p>That F-statistic and p-value for the significance of the whole model is also the same. Thus, a one-way ANOVA test is the exact same as testing a whole GLM model with multiple categorical predictors.</p>
 <p>Now there are some differences between a one-way ANOVA and GLM on the other kinds of information you get from the model. Specifically, the significance of differences between <em>particular</em> pairs of groups. At baseline, an ANOVA test can’t tell you anything about this. It only tests the null hypothesis that all groups are the same. Any one pair being different results in rejecting the null hypothesis, but you don’t know which pair(s) of groups were different. To get this answer, you need to perform an independent-samples t-test on each unique pair. Because this involves many tests, you also have to correct for multiple comparisons.</p>
-<p>In R, you can do this with one function <code class="docutils literal notranslate"><span class="pre">pairwise()</span></code>, which takes an object holding the results of an ANOVA test and returns the significance of the difference between every possible pair of groups:</p>
+<p>In R, you can do this with the function <code class="docutils literal notranslate"><span class="pre">pairwise()</span></code> in the <code class="docutils literal notranslate"><span class="pre">supernova</span></code> package, which takes an object holding the results of an ANOVA test and returns the significance of the difference between every possible pair of groups:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pairwise</span><span class="p">(</span><span class="n">anova_results</span><span class="p">)</span>
