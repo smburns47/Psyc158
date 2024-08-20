@@ -1011,7 +1011,7 @@ F-statistic:  15.7 on 1 and 155 DF,  p-value: 0.0001131
 <p>We can also use the posterior probability distribution to determine how likely it is that the true population parameter is at least as large as some smallest effect size of interest.</p>
 <p>Based on how the data updated our prior beliefs, we now think the most likely value of the population parameter is 6.063. But there’s still some uncertainty in our beliefs, as communicated by the credible interval.</p>
 <p>Let’s say we’re working for a fashion company and trying to decide if our new glove design should be made with a male and female version. The fashion house only wants to spend the time on that if male and female thumb lengths differ by at least 5mm. Based on our credible distribution, what is the probability that the true <span class="math notranslate nohighlight">\(\beta_1 &gt;= 5\)</span>?</p>
-<p>We can easily find the proportion of a normal posterior distribution with mean 6.063 and SD 1.538 that is above a value of 5:</p>
+<p>We can easily find the proportion of our posterior distribution that is above a value of 5:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bigger_than_5 &lt;- sex_betas_posterior &gt;= 5</span>
@@ -1022,11 +1022,11 @@ F-statistic:  15.7 on 1 and 155 DF,  p-value: 0.0001131
 <div class="cell_output docutils container">
 <div class="output text_html">0.75325</div></div>
 </div>
-<p>This tells us that, under our new beliefs about the population parameter, there is a 75.3% chance that the true difference between male and female thumb lengths is at least as large as 5mm. If we were advising a fashion company, we’d probably say they should make two versions of gloves!</p>
+<p>This tells us that, under our new beliefs about the population parameter, there is a 75.3% chance that the true difference between male and female thumb lengths is at least as large as 5mm. If we were advising the fashion company, we’d probably say they should make two versions of gloves!</p>
 </section>
 <section id="power-planning-in-bayesian-stats">
 <h2>21.8 Power planning in Bayesian stats<a class="headerlink" href="#power-planning-in-bayesian-stats" title="Permalink to this heading">#</a></h2>
-<p>At the heart of Bayesian statistics is a motivation to estimate a population parameter as accurately as possible. That’s different than the primary motivation of null hypothesis testing in Frequentism, which is to identify whether or not a population parameter is probably equal to 0.</p>
+<p>At the heart of Bayesian statistics is a motivation to estimate a population parameter as accurately as possible. That’s different than the primary motivation of null hypothesis testing in Frequentism, which is to identify whether or not one data sample likely came from a population parameter equal to 0.</p>
 <p>Power planning procedures that inform the sample size of a study in Frequentist statistics are aimed at telling us, based on an anticipated effect size and desired power level/Type I error rate, how many data points we need in order to find an effect as significant. In power planning, the precision of that estimate doesn’t matter, just whether or not it is found to be significantly different than 0.</p>
 <p>Consider a power plan where we want to know what minimum sample size we need to find a correlation r effect size of 0.7. That’s a big effect. If the true population parameter is really equal to 0.7, then we don’t need much data to find it:</p>
 <div class="cell docutils container">
@@ -1191,7 +1191,7 @@ See help(&#39;prior_summary.stanreg&#39;) for more details
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
 <span class="c1">#test_model &lt;- stan_glm(Thumb ~ Height, data = studentdata_test, refresh=0, </span>
-<span class="w">                       </span><span class="n">prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">normal</span><span class="p">(</span><span class="m">0.8398978</span><span class="p">,</span><span class="w"> </span><span class="m">0.3290638</span><span class="p">,</span><span class="w"> </span><span class="n">autoscale</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">))</span>
+<span class="c1">#                       prior = normal(0.8398978, 0.3290638, autoscale=FALSE))</span>
 </pre></div>
 </div>
 </div>
