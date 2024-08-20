@@ -158,10 +158,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Introduction to Statistical Thinking</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Cleaning Data</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
@@ -428,21 +428,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-model-performance">15.1 Evaluating model performance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">15.2 Sampling distributions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-sample-size">15.3 The importance of sample size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem">15.4 The Central Limit Theorem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-population-parameters">15.5 Estimating population parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">15.1 Sampling distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-sample-size">15.2 The importance of sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem">15.3 The Central Limit Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-population-parameters">15.4 Estimating population parameters</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-mean">Estimating the population mean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-standard-deviation">Estimating the population standard deviation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">15.6 Sampling distributions of model outputs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">15.7 Confidence intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">15.5 Sampling distributions of model outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">15.6 Confidence intervals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfalls-of-interpreting-confidence-intervals">Pitfalls of interpreting confidence intervals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-uncertainty">15.8 Visualizing uncertainty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-uncertainty">15.7 Visualizing uncertainty</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
             </nav>
@@ -473,8 +472,6 @@ document.write(`
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-15-estimating-populations">
 <h1>Chapter 15 - Estimating Populations<a class="headerlink" href="#chapter-15-estimating-populations" title="Permalink to this heading">#</a></h1>
-<section id="evaluating-model-performance">
-<h2>15.1 Evaluating model performance<a class="headerlink" href="#evaluating-model-performance" title="Permalink to this heading">#</a></h2>
 <p>We’ve spent a great deal of time so far learning about how to pull insights from sets of data - what the distribution of a variable looks like, how to predict new values based on other variables, etc. Ideally, these insights are useful not just for describing <em>this</em> dataset, but for many others you could possibly collect. We hope that our statistical results are good estimates of how things really are in the wider population. That way, we can make more general claims about broad categories that we’re interested in, like human psychology.</p>
 <p>But we usually don’t have access to the entire population. Instead, we have to collect a smaller sample and hope that it is representative. In a sample like the <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> dataset, which collected information from students in statistics class, we might find that we can sort of predict someone’s thumb length from how tall they are:</p>
 <div class="math notranslate nohighlight">
@@ -483,9 +480,8 @@ document.write(`
 <p>Those RMSE and PRE scores are both measures of model performance called effect sizes. We will return to those in a few chapters, but it’s an important concept to start getting familiar with because it helps us decide what to <em>do</em> with our statistical model. Is it good enough? Am I confident in my predictions?</p>
 <p>If we’re okay with guesses that are on average 9mm away, we can stop there and move on with our day. If we want to make even better guesses, we can try to build a more complex model with additional predictors. Ultimately, how confident we are in our predictions is the deciding factor for how good our statistical models are. We build psychological theories about relationships between variables in order to find the predictors that will improve predictions about how people think, feel, and behave.</p>
 <p>With a large PRE score or low RMSE, our predictions are quite good. We are confident that the true values will not be too different… in this dataset, specifically. But one additional layer of uncertainty still at play is how good will this model be in <em>other</em> samples, or in the whole population?</p>
-</section>
 <section id="sampling-distributions">
-<h2>15.2 Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Permalink to this heading">#</a></h2>
+<h2>15.1 Sampling distributions<a class="headerlink" href="#sampling-distributions" title="Permalink to this heading">#</a></h2>
 <p>To answer this question, we must first remember that any one sample we collect won’t look perfectly similar to the population. If it’s not a representative sample, it’ll be different in important ways. But even if it’s sampled randomly, the law of large numbers tells us that randomness will cause some variations, particularly if the sample is much smaller than the population (which psychology samples always are, if our population of interest is the billions of humans who have lived or will ever live). Thus, the models we build using that sample can <em>themselves</em> vary sample to sample. The sample statistics won’t be the same as the population parameters, or across different datasets.</p>
 <p>For example, let’s say we know the population mean of height for all Claremont College students is <span class="math notranslate nohighlight">\(\mu = 66\)</span> inches, and the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> is 3.5 inches. Then, a researcher comes along and picks 5 different samples of 50 students each, creating the following sample statistics:</p>
 <table class="table">
@@ -530,7 +526,7 @@ document.write(`
 <p>To prepare for asking these questions, let’s learn more about the nature of sampling distributions and how they relate to the population parameter.</p>
 </section>
 <section id="the-importance-of-sample-size">
-<h2>15.3 The importance of sample size<a class="headerlink" href="#the-importance-of-sample-size" title="Permalink to this heading">#</a></h2>
+<h2>15.2 The importance of sample size<a class="headerlink" href="#the-importance-of-sample-size" title="Permalink to this heading">#</a></h2>
 <p>You probably have some intuition that statistical inferences are better the bigger your sample size. In the popular conscious, it seems like “sample size” ranks right under “correlation is not causation” in terms of critiques about psychology research. Sample size is indeed an important concern, and in this section you’ll learn why.</p>
 <p>In the example above, each of our samples was 50 people. While we typically don’t have the time or funding to conduct 50 iterations of a research experiment, we can actually use simulation to tell us what it might look like if we did.</p>
 <p>One option is to use the random sampling functions we’ve learned about before, that draw samples from known distributions - <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code>, <code class="docutils literal notranslate"><span class="pre">runif()</span></code>, etc.</p>
@@ -713,7 +709,7 @@ document.write(`
 <p>Sample size matters for collecting data samples because as the sample size gets larger, the standard error of the sampling distribution gets smaller. Our sample estimates are on average closer to the true population parameter.</p>
 </section>
 <section id="the-central-limit-theorem">
-<h2>15.4 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this heading">#</a></h2>
+<h2>15.3 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this heading">#</a></h2>
 <p>Despite how poorly a single small sample can do on telling you about a population parameter, it’s important to remember that several samples together, even if very small, will stack up into a distribution that is centered on the true population parameter. That’s why, no matter how small our samples were in the previous demonstration, the mean of means was always be very close to the population mean.</p>
 <p>On the basis of what we’ve seen so far, it seems like we have evidence for the following claims about the
 sampling distribution of the mean:</p>
@@ -729,7 +725,7 @@ sampling distribution of the mean:</p>
 <p>This result is useful for all sorts of things. It tells us why large experiments are more reliable than small ones, and because it gives us an explicit formula for the standard error it tells us how much <em>more</em> reliable a large experiment is than a small one.</p>
 </section>
 <section id="estimating-population-parameters">
-<h2>15.5 Estimating population parameters<a class="headerlink" href="#estimating-population-parameters" title="Permalink to this heading">#</a></h2>
+<h2>15.4 Estimating population parameters<a class="headerlink" href="#estimating-population-parameters" title="Permalink to this heading">#</a></h2>
 <p>In the simulations in the previous sections, we knew the population parameter ahead of time. This is helpful for learning about statistics, but of course the most interesting things to do research on are the things we don’t already know about; that which we don’t know the population distribution for. So if we want to calculate standard error (how far away our estimate of a mean is likely to be from the population mean) with an equation like <span class="math notranslate nohighlight">\(\frac{σ}{\sqrt{N}}\)</span>, how do we do that when we don’t know <span class="math notranslate nohighlight">\(\mu\)</span> or <span class="math notranslate nohighlight">\(\sigma\)</span>?</p>
 <p>For instance, suppose you wanted to measure the IQ of Claremont College students. IQ in the general population is known - it has a mean of 100 and a standard deviation of 15. But maybe Claremont College students are a different sort of population, with a different mean and SD. So to find out the IQ of the kind of students who come to the 5Cs, we’re going to have to estimate the population parameters from a sample of data. So how do we do this?</p>
 <section id="estimating-the-population-mean">
@@ -808,7 +804,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 </section>
 </section>
 <section id="sampling-distributions-of-model-outputs">
-<h2>15.6 Sampling distributions of model outputs<a class="headerlink" href="#sampling-distributions-of-model-outputs" title="Permalink to this heading">#</a></h2>
+<h2>15.5 Sampling distributions of model outputs<a class="headerlink" href="#sampling-distributions-of-model-outputs" title="Permalink to this heading">#</a></h2>
 <p>The mean and standard deviation aren’t the only sampling distributions we use. All sample statistics have a counterpart parameter that describes the true population, and thus a distribution of estimates can be built from many samples.</p>
 <p>Another sampling distribution that will be relevant to us is the distribution of coefficients from a statistical model. Let’s fit a simple linear regression predicting thumb length from height in the <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> dataset and look at the estimate of <span class="math notranslate nohighlight">\(b_1\)</span>:</p>
 <div class="cell docutils container">
@@ -888,7 +884,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 <p>Some new information is in the next column over, called “Std. Error”. This stands for the standard error of the estimate, or how much this estimate is likely to vary on average from the population coefficient based on the sample size for these particular data.</p>
 </section>
 <section id="confidence-intervals">
-<h2>15.7 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this heading">#</a></h2>
+<h2>15.6 Confidence intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this heading">#</a></h2>
 <p>All of this is to say, our sample estimates are only that - estimates. They are likely to be more similar to the true population parameter the larger our samples are, but there’s still variation among estimates from different data samples. So how well can we ever trust one particular sample estimate from our one humble research study? How certain can we be that our estimate of the mean, model coefficient, etc. is close to the population estimate? It would be nice to say that we are reasonably confident that the true parameter is in some window around this estimate.</p>
 <p>In fact, there is a way we can say exactly that and find an interval of values around our estimate that expresses a degree of confidence that the true parameter is somewhere in that interval.</p>
 <p>Our understanding of sampling distributions now will help us construct this concept. Let’s start out with an estimate of the <span class="math notranslate nohighlight">\(b_1\)</span> coefficient in a general linear model. Suppose the true population coefficient <span class="math notranslate nohighlight">\(\beta_1\)</span> is 0. Due to sampling error, if we collect samples that are smaller than the population size, there is a range of <span class="math notranslate nohighlight">\(b_1\)</span> estimates that might happen even with the same population parameter. You can see this possible range of <span class="math notranslate nohighlight">\(b_1\)</span> estimates in the sampling distribution below. Each value in this distribution is one <span class="math notranslate nohighlight">\(b_1\)</span> value that would be estimated from a random subsample of the population.</p>
@@ -994,7 +990,7 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
 </section>
 </section>
 <section id="visualizing-uncertainty">
-<h2>15.8 Visualizing uncertainty<a class="headerlink" href="#visualizing-uncertainty" title="Permalink to this heading">#</a></h2>
+<h2>15.7 Visualizing uncertainty<a class="headerlink" href="#visualizing-uncertainty" title="Permalink to this heading">#</a></h2>
 <p>As we explored extensively in chapter 7, visualizing data is an important step for communicating the results of all your analyses. For communicating model estimates, we’ve learned how to plot boxplots, simple regressions, and interactions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1144,21 +1140,20 @@ sample size of N=2, let’s repeat the exercise again for sample sizes from 1 to
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-model-performance">15.1 Evaluating model performance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">15.2 Sampling distributions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-sample-size">15.3 The importance of sample size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem">15.4 The Central Limit Theorem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-population-parameters">15.5 Estimating population parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions">15.1 Sampling distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-importance-of-sample-size">15.2 The importance of sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem">15.3 The Central Limit Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-population-parameters">15.4 Estimating population parameters</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-mean">Estimating the population mean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-population-standard-deviation">Estimating the population standard deviation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">15.6 Sampling distributions of model outputs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">15.7 Confidence intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distributions-of-model-outputs">15.5 Sampling distributions of model outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">15.6 Confidence intervals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfalls-of-interpreting-confidence-intervals">Pitfalls of interpreting confidence intervals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-uncertainty">15.8 Visualizing uncertainty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-uncertainty">15.7 Visualizing uncertainty</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 </ul>
   </nav></div>
