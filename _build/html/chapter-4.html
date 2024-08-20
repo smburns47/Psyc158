@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
@@ -427,16 +427,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsetting-data">4.1 Subsetting data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">4.2 Filtering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-missing-data">Identifying missing data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-bad-data">4.2 Filtering bad data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-variables">4.3 Creating new variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoding-variables">4.4 Recoding variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-multiple-cleaning-steps">4.5 Combining multiple cleaning steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data">4.6 Saving data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
 </ul>
             </nav>
         </div>
@@ -454,7 +451,7 @@ document.write(`
 <h1>Chapter 4 - Cleaning Data<a class="headerlink" href="#chapter-4-cleaning-data" title="Permalink to this heading">#</a></h1>
 <p>The scientific study of humans is a messy process. They don’t always understand what we’re asking in a survey, or do what we want them to do in a behavioral study. Some people are nervous of looking a certain way, so will answer questions not as they truly believe but as they want other people to think of them. Other people just want to finish the study as fast as possible and get paid, so they complete tasks without paying much attention. Sometimes, participants don’t want to answer a question at all. Other times we the researchers made a mistake in creating the study in the first place.</p>
 <p>For these reasons, the preparation of human data for analysis - called <strong>data cleaning</strong> - is an important skill. It is the process of reorganizing a dataset so that it most closely resembles the true values we want to analyze, in a format that works for our chosen analysis process. Data cleaning is also a time consuming process. Analysis of any research study is often 80%+ data cleaning with a much smaller proportion of time dedicated to running models or testing hypotheses.</p>
-<p>The difference between clean and dirty data can be the difference between a successful research study and noisy data that no one can understand. In this chapter, we will spend time learning the most helpful data cleaning approaches for psychological data.</p>
+<p>The difference between clean and dirty data can be the difference between a successful research study and noisy data that no one can understand. In this chapter, we will spend time learning the most helpful data cleaning steps for psychological data.</p>
 <section id="subsetting-data">
 <h2>4.1 Subsetting data<a class="headerlink" href="#subsetting-data" title="Permalink to this heading">#</a></h2>
 <p>Some research studies are simple to conduct, with just a couple variables recorded. Other studies can be massive endeavors with many variables collected at once for the purpose of several different hypotheses.</p>
@@ -482,16 +479,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Notice that we saved the subsetted data as a separate object here. If we saved the output of <code class="docutils literal notranslate"><span class="pre">tetrismemories[,c(1,16)]</span></code> to the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> object name, we would overwrite the original data and no longer be able to use it! We’d have to reload the whole data frame from the original file in order to work with any other variables.</p>
+<p>Notice that we saved the subsetted data as a separate object here. What do you think would happen if we saved <code class="docutils literal notranslate"><span class="pre">tetrismemories[,c(1,16)]</span></code> to the object name <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>?</p>
+<p>If we save the subsetted data to the same data frame name, it will overwrite the original data frame. Doing this would mean we can no longer access the data we filtered out, and we’d have to reload the data file to get it back. This process is called <strong>destructive editing</strong>. In general, we don’t want to do this - we don’t want to permanently erase any data. Thus if you’re manipulating data in a data frame, it’s usually best to save the manipulated data as a new object. That way you can always access the original data again if needed. <em>Definitely</em> don’t save manipulated data frames as a csv that replaces the original file you loaded the data from, or you won’t be able to get it back!</p>
 <p>The above process works for subsetting variables, but is kind of clunky. You have to manually count column numbers, which is prone to error. What most people do instead is use a package written specifically for making data cleaning easier, called <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> (dee-ply-er).</p>
 <p>After we install the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package and load it from the library, the <code class="docutils literal notranslate"><span class="pre">select()</span></code> function provides easy syntax for subsetting. When using <code class="docutils literal notranslate"><span class="pre">select()</span></code>, we just need to provide arguments to tell R which data frame to work on (as the first argument) and which variables to select from that data frame.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colnames</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">#downloading package from the internet - this may take a few moments</span>
@@ -503,17 +494,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>You may need to scroll the output up and down to see it all. It’s quite a lot because the function <code class="docutils literal notranslate"><span class="pre">select()</span></code> will print out all the values of the selected variables. What the <code class="docutils literal notranslate"><span class="pre">select()</span></code> function actually does is return a new data frame with the selected subset of columns.</p>
-<p>If you want to look at just a few rows of a few variables, we can combine <code class="docutils literal notranslate"><span class="pre">head()</span></code> and <code class="docutils literal notranslate"><span class="pre">select()</span></code> together in a <strong>nested function.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Nesting functions allows us to do multiple operations on one line. Nested functions always evaluate from the inside out - <code class="docutils literal notranslate"><span class="pre">head()</span></code> is applied to the result of <code class="docutils literal notranslate"><span class="pre">select()</span></code>. In this case, a new data frame is made by <code class="docutils literal notranslate"><span class="pre">select()</span></code>, and then <code class="docutils literal notranslate"><span class="pre">head()</span></code> returns the first six lines of it. Technically, you can nest as many functions as you want! But it does get harder to read the deeper you go, so beware what your future self will appreciate when reading the code again later.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">select()</span></code> function lets us look at a subset of variables. But sometimes you might want to look at a subset of observations. Notice the first person in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> dataframe had 4 instrusive memories over the course of the study. Are they the only person with that many? What happens if we put 4 as an argument in <code class="docutils literal notranslate"><span class="pre">select()</span></code>?</p>
+<p>You may need to scroll the output up and down to see it all. It’s quite a lot because the function <code class="docutils literal notranslate"><span class="pre">select()</span></code> will print out all the values of the selected variables.</p>
+<p>Sometimes you might want to look at a subset of observations, not variables. Notice the first person in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> dataframe had 4 instrusive memories over the course of the study. Are they the only person with that many? What happens if we put 4 as an argument in <code class="docutils literal notranslate"><span class="pre">select()</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
@@ -522,7 +504,7 @@ document.write(`
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">select()</span></code> only works on <em>variables</em> (or columns of the data frame), not values. In this case, since you gave it the number 4 for the second argument, it thought you were asking for the 4th column, so it gave you that.</p>
-<p>To get a subset of observations (or rows of the data frame) we use a different function: <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. This function filters the dataframe to show only those observations (rows) that match some criteria. For example, here is the code that will return only the observations where the number of memories is 4:</p>
+<p>To get a subset of observations (or rows of the data frame) we use a different <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> function: <code class="docutils literal notranslate"><span class="pre">filter()</span></code>. This function filters the data frame to show only the observations (rows) that match some criteria. For example, here is the code that will return only the observations where the number of memories is 4:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
@@ -533,26 +515,49 @@ document.write(`
 <p>The function <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, like <code class="docutils literal notranslate"><span class="pre">select()</span></code>, returns a data frame. In this case, the data frame has ten rows because ten people in the study reported having four intrusive memories.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#How would you use filter() to return a dataframe of everyone who had *at least* 4 memories?</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#How would you use filter() to return a data frame of everyone who had *at least* 4 memories?</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>One challenge for students is to keep track of the difference between an observation (e.g., participants, represented in rows), a variable (e.g., <code class="docutils literal notranslate"><span class="pre">condition</span></code> or <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>, represented in columns), and the values a variable can take (e.g., 4, represented in cells). It is helpful to imagine the rows and columns of a data frame when you read about observations and variables, respectively. If the data are in a dataframe format like this (also known as “tidy”), the rows will always be observations and the columns, variables.</p>
+<p>One challenge for students is to keep track of the difference between an observation (e.g., participants, represented in rows) and a variable (e.g., <code class="docutils literal notranslate"><span class="pre">condition</span></code> or <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>, represented in columns). It is helpful to imagine the rows and columns of a data frame when you read about observations and variables, respectively. If the data are in a data frame format like this (also known as “tidy”), the rows will always be observations and the columns, variables.</p>
 <p>In this course we will be providing most of the data you analyze in a tidy format. However, the world is not always tidy. One day, in the wild world outside of this course, you may have to transform a non-tidy data set into a tidy one.</p>
 </section>
-<section id="filtering">
-<h2>4.2 Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">#</a></h2>
-<p>Once we’ve chosen what data we’re going to work with, we can use R commands to manipulate the data in various ways. Let’s look at a few common things you might need to do before analyzing your data:</p>
-<ul class="simple">
-<li><p>identifying missing data</p></li>
-<li><p>filtering data</p></li>
-<li><p>creating new variables</p></li>
-<li><p>recoding variables</p></li>
-</ul>
-<section id="identifying-missing-data">
-<h3>Identifying missing data<a class="headerlink" href="#identifying-missing-data" title="Permalink to this heading">#</a></h3>
-<p>Sometimes (in fact, usually) we end up with some missing data in our data set. People don’t always answer every question on a survey, someone didn’t show up to their third doctor’s appointment, etc. R represents missing data with the value NA (“not available”). It will also recode a blank cell in a file as NA. If your data set represents missing data in some other way (e.g., some people put a nonsense value like -999), you should recode the values as NA when working in R.</p>
+<section id="filtering-bad-data">
+<h2>4.2 Filtering bad data<a class="headerlink" href="#filtering-bad-data" title="Permalink to this heading">#</a></h2>
+<p>Filtering is very useful for removing data points we don’t want, such as the bad outliers and missing values discussed in chapter 2. To remove outliers, we need to decide what counts as realistic values for a variable. There are different opinions on this among researchers. Some believe you should remove any data points that are sufficiently far away from the average of a variable (chapter 5 will discuss ways to calculate this). Other researchers are more conservative and think you should only remove data points if the value is clearly incorrect, like someone mistyping their age as 211 instead of 21. This is an example of a situation where statistics aren’t completely objective, and different decisions lead to different analysis outcomes. You will have to develop domain knowledge in the topic you are studying in order to be confident that the decision you made on outlier classification is the best decision for your data.</p>
+<p>Let’s say for our purposes that it wouldn’t be realistic for anyone to have more than 100 intrusive memories during the tetris study (that would be at least 10 per day). Thus if an observation has a value of &gt;100 in <code class="docutils literal notranslate"><span class="pre">instrusive_memories</span></code>, we want to exclude it as bad data. Write code below to create a new data frame that excludes anyone with more than 100 reported intrusive memories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_clean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="c1">#your code here)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">filter()</span></code> filters <em>in</em>, so the filtering criteria should apply to all the data points you want to keep. So your code above should be using <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span> <span class="pre">&lt;=</span> <span class="pre">100</span></code> as the filtering criteria to exclude people with unrealistic values.</p>
+<p>Got it working? Let’s see how many people we filtered out by comparing the length of this cleaned dataset to the original raw data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
+<span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories_clean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks like everyone had valid values on <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>, because we did not remove anyone based on our exclusion criteria for that variable.</p>
+<p>There are other reasons you might exclude data. For instance, was a person with 2 intrusive memories less affected by the traumatic videos? Or did they only record information in their diary for a couple days? We probably want to exclude people who did not comply with the study instructions for the majority of the time (say, 8+ days of diary entry). So let’s filter our dataset to exclude anyone with too few days:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_clean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
+
+<span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
+<span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories_clean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this approach, we removed 12 participants for poor complaince.</p>
+<p>Another reason to exclude observations from a dataset is because of missing values. It is very common in psychology to have at least a few missing values somewhere. In a data file, this would likely look like a blank cell where a value should otherwise be. When loaded into R, blank cells are represented with the value NA (“not available”). If your data set represents missing data in some other way (e.g., some people put a nonsense value like -999), you should recode the values as NA when working in R (recoding will be discussed later in this chapter).</p>
 <p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> data frame. First, a function called <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> can be used to tell you whether a datapoint is NA or not (it will return <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> or <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>). If we apply that to an entire vector, it will return a vector of falses and trues corresponding to what indices in the vector have an NA value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -563,27 +568,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Based on this, we can easily see some missing data in this variable - there are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> results to the question “is this datapoint NA?” We can also count how many observations have this value by summing this boolean vector with nested functions (remember, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> is also represented as 1 in R, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> as 0).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">tetris_total_score</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>In this dataframe, <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> is the score a participant got when they played tetris. Use the code window below to explore whether there are any missing values for a different variable in <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>. Why do you think <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> has some missing values?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now that you can find missing data, the big question is - what to do about it? There is a whole area of study in quantitative psychology on what to do with missing data. This is an advanced topic, so we won’t get into it in this course. Instead, in future lessons we’ll tell you what actions to take for missing data, but just know that there are different opinions out there about what the <em>best</em> actions are.</p>
-</section>
-<section id="filtering-data">
-<h3>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this heading">#</a></h3>
-<p>One of these options is to remove all the observations from a dataset that are missing data on a variable you care about. We can use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function, introduced previously, to remove observations with missing data from a data frame. For example:</p>
+<p>Based on this, we can easily see some missing data in this variable - there are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> results to the question “is this datapoint NA?”</p>
+<p>Now that you can find missing data, the big question is - what to do about it? Again, there are different opinions. Most commonly, researchers just remove observations with values missing on important variables. There’s also something called imputation, which involves figuring out what the missing value most likely is and inserting that value into the dataset. For this exercise, we will use the exclusion method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">tetris_total_score</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;NA&quot;</span><span class="p">)</span>
@@ -591,91 +577,50 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Can you remember what the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator does? This code returns a data frame that includes only cases for which the variable <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> is <em>not</em> equal to NA. Note that the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function filters in, not out (i.e., keeps).</p>
-<p>As with anything in R, your filtered dataframe is only temporary unless you save it to an R object. So save the data with no missing <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> values in a new data frame called <code class="docutils literal notranslate"><span class="pre">tetrismemories_subset</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Write code here to make your new dataframe tetrismemories_subset without any NA in tetris_total_score</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>What do you think would happen if we saved <code class="docutils literal notranslate"><span class="pre">filter(tetrismemories,</span> <span class="pre">tetris_total_score</span> <span class="pre">!=</span> <span class="pre">&quot;NA&quot;)</span></code> to the object name <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>? If we save the filtered data to the same data frame name, it will overwrite the original data frame. Doing this would mean we can no longer access the data we filtered out, and we’d have to reload the data file to get it back. This process is called <strong>destructive editing</strong>. In general, we don’t want to do this - we don’t want to permanently erase any data. Thus if you’re manipulating data in a data frame, it’s usually best to save the manipulated data as a new object. That way you can always access the original data again if needed. <em>Definitely</em> don’t save manipulated data frames as a csv that replaces the original file you loaded the data from.</p>
-</section>
+<p>Can you remember what the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator does? This code returns a data frame that includes only cases for which the variable <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> is <em>not</em> equal to NA.</p>
 </section>
 <section id="creating-new-variables">
 <h2>4.3 Creating new variables<a class="headerlink" href="#creating-new-variables" title="Permalink to this heading">#</a></h2>
-<p>Often we use multiple measures of a single attribute because no single measure would be adequate. For instance, it would be difficult to measure school achievement with a grade score from just your English class. And as we talked about last chapter, aggregating over multiple measurements can help with measurement error.</p>
-<p>However, if you do have multiple measures, you probably will want to combine them into a single variable. In the case of school achievement, a good summary measure might be the average grade earned across all of a student’s courses.</p>
-<p>It is quite common to create new variables that mutate values from other variables. For example, in <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>, participants reported the total number of intrusive memories they experienced (<code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>) over a certain number of days they kept track for (<code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code>). We don’t know how many memories per day they were having on average, but we could calculate this by dividing <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code> by <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> to make a new variable <code class="docutils literal notranslate"><span class="pre">memory_rate</span></code>.</p>
-<p>Making a new variable in a data frame is easy. Simply assign the computed vector to a new variable name using the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol after the data frame name. E.g., <code class="docutils literal notranslate"><span class="pre">tetrismemories$memory_rate</span> <span class="pre">&lt;-</span> <span class="pre">tetrismemories$intrusive_memories</span> <span class="pre">/</span> <span class="pre">tetrismemories$diary_compliance</span></code>. If the variable <code class="docutils literal notranslate"><span class="pre">memory_rate</span></code> already exists in the dataframe, R will overwrite it with these new values. If it doesn’t, R will create a new variable and append it as a new column to the end of <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>.</p>
+<p>Often we use multiple measures of a single attribute because no single measure would be adequate. As we talked about in chapter 2, aggregating over multiple measurements can help with measurement error, such as surveys with multiple related questions or behavioral studies with multiple trials.</p>
+<p>If you do have multiple measures of one thing in a dataset, you will want to combine them into a single variable. For example, in <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>, participants gave ratings for how strongly they felt various negative emotions before and after video watching, on a scale from 0 to 10. These values are recorded in the <code class="docutils literal notranslate"><span class="pre">pre_sad_rating</span></code>, <code class="docutils literal notranslate"><span class="pre">pre_hopeless_rating</span></code>, <code class="docutils literal notranslate"><span class="pre">pre_depressed_rating</span></code>, <code class="docutils literal notranslate"><span class="pre">pre_fear_rating</span></code>, <code class="docutils literal notranslate"><span class="pre">pre_horror_rating</span></code>, and <code class="docutils literal notranslate"><span class="pre">pre_anxious_rating</span></code> (and corresponding variables for the post ratings). If we have a hypothesis about different video conditions inducing more negative affect in general, we may want to sum up these scores into one combined negative affect variable.</p>
+<p>To do so, we create a new variable in a data frame using values from these original variables. The <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function in R mutates a data frame to include added or changed columns. The first argument is again the data frame to mutate, and then we define a new variable name and how it is computed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create copy of dataset to avoid destructive editing</span>
-<span class="n">tetrismemories2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">pre_negative_affect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pre_sad_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_hopeless_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_depressed_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="n">pre_fear_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_horror_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_anxious_rating</span><span class="p">)</span>
 
-<span class="c1"># Look at all the variables in tetrismemories</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">)</span>
-
-<span class="c1"># Create a new variable in tetrismemories called memory_rate from intrusive_memories</span>
-<span class="c1"># and diary_compliance</span>
-<span class="n">tetrismemories2</span><span class="o">$</span><span class="n">memory_rate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">intrusive_memories</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span>
-
-<span class="c1">#Look at the updated dataframe, and find where the new variable went</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">)</span>
+<span class="c1">#If a line of code is really long, hitting return will make it wrap onto the next line. </span>
+<span class="c1">#It is still evaluated as one line of code. </span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Whenever you make new variables, or even do anything else in R, it’s a good idea to check to make sure R did what you intended it to do. You can use the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function for this.</p>
-<p>Sometimes you also might want to create a new variable that represents the data in a different way. For example, maybe in one analysis we want to look at only participants who gave memory reports for every day in the study (<code class="docutils literal notranslate"><span class="pre">diary_compliance</span> <span class="pre">==</span> <span class="pre">10</span></code>). You can make a new boolean variable that is <code class="docutils literal notranslate"><span class="pre">true</span></code> for everyone with a 10 value, and <code class="docutils literal notranslate"><span class="pre">false</span></code> for everyone else.</p>
+<p>If the new variable created with <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> already exists in the data frame, R will overwrite it with these new values. If it doesn’t, <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> will create a new variable and append it as a new column to the end of the mutated data frame.</p>
+<p>Other reasons you might create a new variable is because you want to represent an existing variable in a different way. For example, in <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>, participants reported the total number of intrusive memories they experienced (<code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>) over a certain number of days they kept track for (<code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code>). We don’t know how many memories per day they were having on average, but we could calculate this by dividing <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code> by <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> to make a new variable <code class="docutils literal notranslate"><span class="pre">memory_rate</span></code>. Try it yourself in the code block below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># making a new boolean variable to mark who was fully compliant</span>
-<span class="n">tetrismemories2</span><span class="o">$</span><span class="n">full_compliance</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">10</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="c1">#your code here)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and its functions are very popular among R coders because of their easy syntax when working with tidy data. In fact this package is among those colloquially called the “tidyverse”, a name you might come across while googling R functions. But like with <code class="docutils literal notranslate"><span class="pre">subset()</span></code> and <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, there is also a way to create new variables without downloading <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions (using what’s called “base R”). The base R version of creating new variables is to reference a new variable name using the <code class="docutils literal notranslate"><span class="pre">$</span></code> operator we learned last chapter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write some more code below, using filter(), to make a tetrismemories_subset data frame of only</span>
-<span class="c1"># participants who gave reports all 10 days. Does the size of this data frame match what you </span>
-<span class="c1"># expect from the code above?</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># making a new memory_rate variable using the base R approach</span>
+<span class="n">tetrismemories_clean</span><span class="o">$</span><span class="n">memory_rate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">instrusive_memories</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Another way of creating variables, but using a function instead of the <code class="docutils literal notranslate"><span class="pre">$</span></code> operator, is the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package. When you use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code>, you need to specify 3 things:</p>
-<ul class="simple">
-<li><p>the data frame you want to modify</p></li>
-<li><p>the name of the new variable that you’ll create</p></li>
-<li><p>the value you will assign to the new variable</p></li>
-</ul>
-<p>Here is code that will make the same <code class="docutils literal notranslate"><span class="pre">memory_rate</span></code> variable we created earlier:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">memory_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="o">/</span><span class="n">diary_compliance</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">mutate()</span></code> – like all of the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions – strictly operates on data frames. It’s not set up to work with lists, matrices, vectors, or other data structures. Thus this code is changing a dataset (“mutating” it) to have a new variable. The first argument is the data frame to mutate, and the second argument is called a “name-value pair”. <code class="docutils literal notranslate"><span class="pre">memory_rate</span></code> is not a pre-defined argument in the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function, but is a “name” you are choosing to which you assign a new “value.”</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use mutate as another way to make the full_compliance variable from above in tetrismemories2</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>As we learn more R, you will often find that there are multiple ways to do the same thing. Neither the tidyverse approach or the base R approach is more correct than the other. Like linguistic quirks in spoken language, your choice of method will just depend on the way that is easier for you to remember or how you prefer to “say” things in code.</p>
 <div class="alert alert-block alert-info">
-<b>Note</b>: Are we learning too many functions to memorize? Create a "cheatsheet" or page of notes just for keeping track of R functions and how to use them.
+<b>Note</b>: Are we learning too many functions to memorize? Create a "cheatsheet" or page of notes for keeping track of R functions and how to use them.
 </div></section>
 <section id="recoding-variables">
 <h2>4.4 Recoding variables<a class="headerlink" href="#recoding-variables" title="Permalink to this heading">#</a></h2>
-<p>There are some instances where you may want to change the way a variable is coded. For instance, the variable <code class="docutils literal notranslate"><span class="pre">condition</span></code> is coded 1-4, depending on which condition a participant was in:</p>
+<p>Another very common step in data cleaning is changing the values or data types used to represent variables. Changing these values is called <strong>recoding</strong> a variable. For instance, the variable <code class="docutils literal notranslate"><span class="pre">condition</span></code> is coded 1-4, depending on which condition a participant was in:</p>
 <ol class="arabic simple">
 <li><p>No-task control: These participants completed a 10-minute music filler task.</p></li>
 <li><p>Reactivation + Tetris: These participants were shown a series of images from the trauma film to
@@ -685,32 +630,50 @@ participants played the video game Tetris for 12 minutes.</p></li>
 task.</p></li>
 <li><p>Reactivation Only: These participants completed the reactivation task, but did not play Tetris.</p></li>
 </ol>
-<p>Since these data are inherently qualitative, but currently stored as numbers, we want to transform them into the categorical data type. Recall the <code class="docutils literal notranslate"><span class="pre">factor()</span></code> function we learned last chapter, and turn this variable into a factor in <code class="docutils literal notranslate"><span class="pre">tetrismemories2</span></code>.</p>
+<p>These data are currently stored as numbers. But since these numbers represent study conditions, the variable’s scale of measurement is inherently categorical. Thus we probably want to transform this variable into character labels that are easier to remember the meaning of. What happens if we simply convert the <code class="docutils literal notranslate"><span class="pre">condition</span></code> variable to a character data type?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Identify the data type of Cond</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_recoded</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="w"> </span><span class="c1">#avoiding destructive editing by making a new copy of data frame</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
 
-<span class="c1">#Recode condition into a factor, and save it over the original condition variable</span>
+<span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
 
-
-<span class="c1">#Identify the data type of Cond again. Did it change?</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">)</span>
+<span class="c1">#or the tidyverse way with a function inside a function:</span>
+<span class="c1"># mutate(tetrismemories, condition = as.character(condition))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Remember that some functions take multiple arguments (such as the dataframe and the variable name), or one argument (just the variable, accessed with <code class="docutils literal notranslate"><span class="pre">$</span></code>). This means you’ll have to remember how functions work, or keep a cheatsheet you can refer back to.</p>
-<p>What if you don’t want to change only the data type, but also the values in a variable? We learned last chapter that the function <code class="docutils literal notranslate"><span class="pre">factor()</span></code> can do this with its <code class="docutils literal notranslate"><span class="pre">levels</span></code> and <code class="docutils literal notranslate"><span class="pre">labels</span></code> arguments. Another way to do it is using the function <code class="docutils literal notranslate"><span class="pre">recode()</span></code> like this:</p>
-<p><code class="docutils literal notranslate"><span class="pre">recode(tetrismemories2$condition,</span> <span class="pre">&quot;1&quot;=&quot;control&quot;,</span> <span class="pre">&quot;2&quot;=&quot;react_tetris&quot;,</span> <span class="pre">&quot;3&quot;=&quot;tetris&quot;,</span> <span class="pre">&quot;4&quot;=&quot;react&quot;)</span></code></p>
-<p>In R, there are often multiple ways to do the same thing! In the <code class="docutils literal notranslate"><span class="pre">recode()</span></code> function, you need to put the old value in quotes; the new variable could be in quotes (if a character value) or not (if numerical). This function also uses the <code class="docutils literal notranslate"><span class="pre">=</span></code> assignment operator instead of <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>. This is just for telling R a momentary command inside an argument - you’re not permanently assigning 1 in the workspace to have the value of “control”. Keep using <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> for assigning objects that stick around.</p>
-<p>As always, whenever we do anything, we might want to save it. Try saving the recoded version of <code class="docutils literal notranslate"><span class="pre">condition</span></code> as <code class="docutils literal notranslate"><span class="pre">condition_recode</span></code>, a new variable in <code class="docutils literal notranslate"><span class="pre">tetrismemories2</span></code>. Print a few observations of <code class="docutils literal notranslate"><span class="pre">condition</span></code> and <code class="docutils literal notranslate"><span class="pre">condition_recode</span></code> to check that your recode worked.</p>
+<p>This makes the <code class="docutils literal notranslate"><span class="pre">condition</span></code> variable a character type, but the number labels still aren’t very descriptive. Let’s go further, and change those actual values into words that are easier to understand. In base R, you could set up a for loop and several if/else statements to change these values based on the current labels:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the recoded version of `condition` to `condition_recode`</span>
-<span class="n">tetrismemories2</span><span class="o">$</span><span class="n">condition_recode</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">recode</span><span class="p">(</span><span class="w">     </span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_recoded</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="w"> </span><span class="c1">#avoiding destructive editing by making a new copy of data frame</span>
 
-<span class="c1"># Write code to print the first 6 observations of `condition` and `condition_recode` only</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">row</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;control&#39;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;reactivation_tetris&#39;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;tetris&#39;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;reactivation&#39;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Whew, that was a lot! Alternatively, <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> has a function that handles all that control flow for you under the hood, making it much easier to write the code. This function is <code class="docutils literal notranslate"><span class="pre">case_match()</span></code>. As the first argument, <code class="docutils literal notranslate"><span class="pre">case_match()</span></code> takes a variable you want to modify. The remaining arguments are mapping specification for which values should turn into which other values, separated by a <code class="docutils literal notranslate"><span class="pre">~</span></code> symbol. When combined with <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> using a <strong>nested function</strong> (one function creating the argument for another from the inside) we can modify an existing variable to have new labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_match</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;control&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">#existing value ~ new value</span>
+<span class="w">                                                        </span><span class="m">2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;reactivation_tetris&#39;</span><span class="p">,</span>
+<span class="w">                                                        </span><span class="m">3</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;tetris&#39;</span><span class="p">,</span>
+<span class="w">                                                        </span><span class="m">4</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;reactivation&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -718,15 +681,83 @@ task.</p></li>
 </section>
 <section id="combining-multiple-cleaning-steps">
 <h2>4.5 Combining multiple cleaning steps<a class="headerlink" href="#combining-multiple-cleaning-steps" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>piping</p></li>
-</ul>
-</section>
+<p>Cleaning a dataset is rarely simple. Often we need to do multiple of the steps described above such as subsetting, filtering, creating new variables, and/or recoding. One could feasibly write a new line of code for each step, defining a new data frame object each time in order to avoid destructive editing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
+
+<span class="n">tetrismemories3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories2</span><span class="p">,</span><span class="w"> </span><span class="n">pre_negative_affect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pre_sad_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_hopeless_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_depressed_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="n">pre_fear_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_horror_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pre_anxious_rating</span><span class="p">)</span>
+
+<span class="n">tetrismemories4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories3</span><span class="p">,</span><span class="w"> </span><span class="n">post_negative_affect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">post_sad_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">post_hopeless_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">post_depressed_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="n">post_fear_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">post_horror_rating</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">post_anxious_rating</span><span class="p">)</span>
+
+<span class="n">tetrismemories5</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories4</span><span class="p">,</span><span class="w"> </span><span class="n">negative_affect_change</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">post_negative_affect</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pre_negative_affect</span><span class="p">)</span>
+
+<span class="n">tetrismemories6</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">tetrismemories5</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_match</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;control&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                                        </span><span class="m">2</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;reactivation_tetris&#39;</span><span class="p">,</span>
+<span class="w">                                                        </span><span class="m">3</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;tetris&#39;</span><span class="p">,</span>
+<span class="w">                                                        </span><span class="m">4</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&#39;reactivation&#39;</span><span class="p">))</span>
+
+<span class="n">tetrismemories7</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">tetrismemories6</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">,</span><span class="w"> </span><span class="n">negative_affect_change</span><span class="p">)</span>
+
+<span class="c1">#What cleaning steps are done by each line of code?</span>
+
+<span class="c1">#looking at raw vs. cleaned data</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This works, but isn’t best practice for a couple reasons. First, there are now several data frames stored in the R workspace. It can be hard for you as the researcher to remember which is which. Second, especially when data frames a large, storing this many data frames at once can cause your computer to run out of memory.</p>
+<p>A better approach is to combine multiple cleaning steps into one object declaration call. We could use nested functions like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#inside filter function creates a value that is used as the first argument to outer select() function</span>
+<span class="n">tetrismemories_clean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">),</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But that gets difficult to read if there are more than a couple levels to the nesting.</p>
+<p>To solve this issue, the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> packages provides functionality for a new operator that looks like <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code>. This is called a <strong>pipe</strong>. Piping lets you pass the output of one function immediately as an argument to another without the need to define an intermediate data frame object. Doing the same command above with a pipe looks like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_clean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">                        </span><span class="nf">filter</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                        </span><span class="nf">select</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories_clean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Chaining functions together with a pipe is easier for a human to read (and thus use and debug). The first item in the chain (<code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>) is the object you want to start operating on. That object is piped in as the argument of the next function denoted with a <code class="docutils literal notranslate"><span class="pre">.</span></code>. The output of that function is further piped in as an argument in the next function, and so on. Putting these piping steps on separate lines makes it further easier to read. Finally, this whole chain is saved to a data frame object which will hold the final resulting value.</p>
+<div class="alert alert-block alert-info">
+<b>Note</b>: If the argument you are piping into is the first one, you don't need to include a dot at all as a placeholder - you can simply leave out the first argument in the function call. R programmers frequently do this. If the argument is anything besides the first, the dot is needed. In this course we will always include the dot as a way to more explicitly keep track of what argument is being piped into.
+</div>
+<p>In the code block below, try it out yourself by adding a step that recodes the <code class="docutils literal notranslate"><span class="pre">condition</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_clean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">                        </span><span class="nf">filter</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                        </span><span class="c1">#add a step here, followed by a pipe</span>
+<span class="w">                        </span><span class="nf">select</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories_clean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<b>Note</b>: Base R has its own version of the pipe, |>. It works very similarly to the %>% pipe in dplyr, except it can't pipe into any argument position besides the first one. For this reason %>% is more flexible, but you do need to load the dplyr library to use it.
+</div></section>
 <section id="saving-data">
 <h2>4.6 Saving data<a class="headerlink" href="#saving-data" title="Permalink to this heading">#</a></h2>
-<p>The majority of data projects you will ever work on will involve some data manipulation steps like this. We often do this to fix problems with raw data files or arrange things in a way that will give us easier time later in analysis. This whole process is called <strong>data cleaning</strong>. While we are only spending one chapter dedicated to this in this course, you will actually find (maybe to some <a class="reference external" href="https://www.quora.com/Why-do-people-state-that-the-majority-of-work-for-a-data-scientist-is-data-cleaning-not-the-machine-learning-part">frustration</a>) that the majority of time you spend on a data file is cleaning, rather than analyzing. Once you get comfortable with statistics, analysis can be as simple as a few lines of code. But data cleaning can involve many steps and a lot of time figuring out what cleaning steps you even need to take!</p>
-<p>This is why it is very helpful to save the results of your cleaning after you’re done. You don’t want to have to go through all that again if you decide later on you want to do a different kind of data analysis.</p>
-<p>Much as we used <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> to read in data files to R, we can use <code class="docutils literal notranslate"><span class="pre">write.csv()</span></code> to save .csv files of our cleaned data. In its most basic use, it only needs two arguments: the data frame object you wish to save, and a string of the file name you wish to save it as (.csv extension must be included). So if we were to save the results of <code class="docutils literal notranslate"><span class="pre">tetrismemories2</span></code>, we would simply type:</p>
+<p>The majority of data projects you will ever work on will involve some data manipulation steps like this. We often do this to fix problems with raw data files or arrange things in a way that will give us easier time later in analysis. We’ve already mentioned how data cleaning is an important step, but it’s worth repeating again. While we are only spending one chapter dedicated to this in this course, you will actually find (maybe to some <a class="reference external" href="https://www.quora.com/Why-do-people-state-that-the-majority-of-work-for-a-data-scientist-is-data-cleaning-not-the-machine-learning-part">frustration</a>) that the majority of time you spend on a data file is cleaning, rather than analyzing. Once you get comfortable with statistics, analysis can be as simple as a few lines of code. But data cleaning can involve many steps and a lot of time figuring out what cleaning steps you even need to take!</p>
+<p>For this reason, it is very helpful to save the results of your data cleaning after you’re done. You don’t want to have to go through all that again if you decide later on you want to do a different kind of data analysis.</p>
+<p>As we used <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> to read in data files to R, we can use <code class="docutils literal notranslate"><span class="pre">write.csv()</span></code> to save .csv files of our cleaned data. In its most basic use, it only needs two arguments: the data frame object you wish to save, and a string of the file name you wish to save it as (.csv extension must be included). So if we were to save the results of <code class="docutils literal notranslate"><span class="pre">tetrismemories2</span></code>, we would simply type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#saving a data frame into a csv file</span>
@@ -735,20 +766,27 @@ task.</p></li>
 </div>
 </div>
 </div>
-<p>This would create a “tetrismemories2.csv” file in the current working directory.</p>
+<p>This would create a “tetrismemories2.csv” file in the current working directory. Make sure to save it as a different file name from your raw file so you can always refer back to the original if needed (no destructive editing!).</p>
 </section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
 <p>After reading this chapter, you should be able to:</p>
 <ul class="simple">
-<li><p>load a dataset into R</p></li>
-<li><p>Explain what the rows and columns of a dataframe mean</p></li>
-<li><p>Access particular variables in a dataframe</p></li>
-<li><p>Use select() and filter() to subset a dataframe</p></li>
-<li><p>Identify missing data</p></li>
-<li><p>Create and add a new variable to a dataframe</p></li>
-<li><p>Recode a variable</p></li>
+<li><p>Explain why we would do the common data cleaning processes of subsetting, filtering, creating new variables, and recoding.</p></li>
+<li><p>Subset a data frame with code</p></li>
+<li><p>Filter a data frame code</p></li>
+<li><p>Add a new variable to a dataframe and change an existing one</p></li>
+<li><p>Recode a variable to new data types or values</p></li>
+<li><p>String multiple data cleaning steps together with pipes</p></li>
 <li><p>Save a dataframe to a new file</p></li>
+</ul>
+</section>
+<section id="new-concepts">
+<h2>New concepts<a class="headerlink" href="#new-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>data cleaning</strong>: Ahe process of identifying and fixing errors in a dataset, and reformatting the dataset to be more analysis-compliant.</p></li>
+<li><p><strong>destructive editing</strong>: An editing practice where the original copy of a file is overwritten by an edited copy, destroying the original.</p></li>
+<li><p><strong>pipe</strong>: An operator in R that allows a coder to pass the output of one function immediately as an argument in another.</p></li>
 </ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Next: Chapter 5 - Describing Data</a></p>
 </section>
@@ -804,16 +842,13 @@ task.</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsetting-data">4.1 Subsetting data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">4.2 Filtering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-missing-data">Identifying missing data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-bad-data">4.2 Filtering bad data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-variables">4.3 Creating new variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoding-variables">4.4 Recoding variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-multiple-cleaning-steps">4.5 Combining multiple cleaning steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data">4.6 Saving data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
 </ul>
   </nav></div>
 

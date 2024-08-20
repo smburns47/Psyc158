@@ -45,7 +45,7 @@ parts:
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb
     title: Chapter 17 - Significance Testing Whole Models
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb
-    title: Chapter 18 - Effect Sizes & Power
+    title: Chapter 18 - Effect Sizes & Statistical Power
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb
     title: Chapter 19 - Bias due to Improper Model Building
   - url: https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb
