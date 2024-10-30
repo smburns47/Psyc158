@@ -61,8 +61,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapter-3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -182,10 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -444,6 +441,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-functions">3.6 Writing your own functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -489,22 +487,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 5 x 2</caption>
-<thead>
-	<tr><th scope=col>x1</th><th scope=col>x2</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>18</td></tr>
-	<tr><td>2</td><td>21</td></tr>
-	<tr><td>3</td><td>20</td></tr>
-	<tr><td>4</td><td>23</td></tr>
-	<tr><td>5</td><td>20</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>This function takes as arguments all the vectors you want to combine, and lines them up together as columns in the order you typed them in. This way, you imply that the second item in <code class="docutils literal notranslate"><span class="pre">x1</span></code> and the second item in <code class="docutils literal notranslate"><span class="pre">x2</span></code> belong to the same observation, since they appear on the same row in the dataframe.</p>
 <p>You can also name these columns more descriptively:</p>
@@ -514,22 +496,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 5 x 2</caption>
-<thead>
-	<tr><th scope=col>id</th><th scope=col>age</th></tr>
-	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>18</td></tr>
-	<tr><td>2</td><td>21</td></tr>
-	<tr><td>3</td><td>20</td></tr>
-	<tr><td>4</td><td>23</td></tr>
-	<tr><td>5</td><td>20</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Notice the single <code class="docutils literal notranslate"><span class="pre">=</span></code> sign in this function call. In R we use this operator within functions to assign values to <strong>named arguments</strong>. This is where you explicitly call or create a certain argument for a function, and then assign it a value. In many functions, by declaring argument names, you don’t have to put the argument values in a specific order. You’ll see more examples of named arguments later in the course.</p>
 <p>Using this approach, you can form a dataframe out of any set of variables - well, almost. Try out the code below, and see if you can find why it causes an error. What can we do to fix it?</p>
@@ -579,8 +545,8 @@ document.write(`
 <section id="looking-at-data">
 <h2>3.4 Looking at data<a class="headerlink" href="#looking-at-data" title="Permalink to this heading">#</a></h2>
 <p>The first thing to do when opening a dataset for the first time is to understand it - what each variable is, how many data points, what the variable data types are, etc.</p>
-<p>After you run the code above, you should see a big print out of the whole dataframe. You might be thinking to yourself, “Wow, that’s a lot to take in.” In fact, this would be considered a small dataset! Real data can have thousands of datapoints stored together, with hundreds of variables recorded. It can get unweildy to look at a whole dataset at once. Thus its usually best to look at a summary of the data in a dataframe, or a sampling of it.</p>
-<p>We can use certain functions to do this summarizing for us. But first, we have to make sure we save our dataframe so we can keep using it over and over. Remember that we have a new data type, data frame, which means it can be saved as an object itself. In the code below, read the data frame into an object called <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>.</p>
+<p>After you run the code above, you should see a big print out of the whole data frame. You might be thinking to yourself, “Wow, that’s a lot to take in.” In fact, this would be considered a small dataset! Real data can have thousands of datapoints stored together, with hundreds of variables recorded. It can get unweildy to look at a whole dataset at once. Thus its usually best to look at a summary of the data in a data frame, or a sampling of it.</p>
+<p>We can use certain functions to do this summarizing for us. But first, we have to make sure we save our data frame so we can keep using it over and over. Remember that we have a new data type, data frame, which means it can be saved as an object itself. In the code below, read the data frame into an object called <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the file again and save to an object called tetrismemories</span>
@@ -596,7 +562,7 @@ document.write(`
 <p>Using <code class="docutils literal notranslate"><span class="pre">str()</span></code> lets you summarize the information within a data frame without opening the whole thing to view. Another way to do it, if you want to see how the dataframe is arranged, is to use the function <code class="docutils literal notranslate"><span class="pre">head()</span></code>. This will show you just the first 6 lines of the data frame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#run this code to see the head of the dataframe</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#run this code to see the head of the data frame</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -611,7 +577,7 @@ document.write(`
 </div>
 </div>
 <p>The first dimension always corresponds to the number of rows, and the second dimension to the number of columns.</p>
-<p>You can also use code to find the size of specific dimensions of the dataframe. Since observations are rows and variables are columns, you can use specific functions to count how many rows and columns a data frame has. In R, these functions are nrow() (for number of rows) and ncol() (for number of columns).</p>
+<p>You can also use code to find the size of specific dimensions of the dataframe. Since observations are rows and variables are columns, you can use specific functions to count how many rows and columns a data frame has. In R, these functions are <code class="docutils literal notranslate"><span class="pre">nrow()</span></code> (for number of rows) and <code class="docutils literal notranslate"><span class="pre">ncol()</span></code> (for number of columns).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">)</span>
@@ -658,15 +624,7 @@ document.write(`
 <h2>3.5 Control flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h2>
 <p>With more data comes more choices regarding what to do with it. So far we have opened and looked at the variables saved in a data file, but we haven’t done anything with them yet. Often times we will do multiple things to data as a part of an entire analysis process, such as subsetting, cleaning, computing new variables or summaries, visualizing, and modeling. In order to manage all these steps, we need to talk about an important concept in coding called <strong>control flow</strong>.</p>
 <p>Control flow refers to telling a programming language like R the order you want it to evaluate code commands in. So far we haven’t written much more than a few lines of code at a time, but what happens when you write code scripts that are many lines long? How is it all executed? By default, R reads your code from the top of a file to the bottom. Each line of code happens one at a time, in order. But sometimes you want R to do things multiple times (e.g., repeat a calculation for each data point), or you want it to do different things depending on some condition (e.g., do a calculation only if a datapoint is of a certain value).</p>
-<p>For a non-data example, say you were writing a computer program that would cook chicken:</p>
-<ol class="arabic simple">
-<li><p>Add heat to pan</p></li>
-<li><p>Add chicken breast</p></li>
-<li><p>Check chicken doneness once a minute</p></li>
-<li><p>Once chicken is done, turn off heat</p></li>
-<li><p>If bland, add salt to chicken</p></li>
-</ol>
-<p>To do the above with code, you need to <em>control</em> what steps R executes, and when to execute them. Two concepts that help you do this are <strong>conditional statements</strong> and <strong>loops</strong>. By including some specific syntax, you can set up conditional statements and loops that tell R when you want code to be treated in a special way like this.</p>
+<p>To do this, you need to <em>control</em> what steps R executes, and when to execute them. Two concepts that help you do this are <strong>conditional statements</strong> and <strong>loops</strong>. By including some specific syntax, you can set up conditional statements and loops that tell R when you want code to be treated in a special way like this.</p>
 <section id="conditional-statements">
 <h3>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h3>
 <p>The most basic control flow statement in R is the “if” statement. An if statement checks whether some logical expression is true or false and executes a specified block of code if the logical expression is true.</p>
@@ -684,7 +642,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>In this case the logical expression was true - x was greater than y - so the <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> statement was executed.</p>
+<p>In this case the logical expression was true - x was greater than y - so the <code class="docutils literal notranslate"><span class="pre">print(x)</span></code> statement was executed. If the logical statement were false, nothing would have been printed.</p>
 <p>If statements are often accompanied by “else” statements. Else statements come after if statements and allow you to execute separate code in the event that the logical expression of an if statement is false.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,6 +692,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 25
+</pre></div>
+</div>
+</div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> is evaluating a new logical statement, it does need to have that logical statement included after the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> key phrase. You can include as many <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> blocks as you want, just remember that they are evaluated in order.</p>
 <p>Here’s another example of using conditional statements, this time using the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> dataset. Let’s say we only want to consider participants who had at least 8 days of diary compliance during the study. We could use conditional statements to tell us whether some observation should be included in our final dataset or not.</p>
@@ -771,6 +734,17 @@ document.write(`
 </div>
 <p>The<code class="docutils literal notranslate"><span class="pre">for</span></code> keyword is also followed by some command in a set of parentheses. This time, that command also uses the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword. This keyword essentially tells R that you want to consider one thing at a time (which we’ve named <code class="docutils literal notranslate"><span class="pre">item</span></code>), and each thing comes from some larger set (the variable <code class="docutils literal notranslate"><span class="pre">diary_compliance</span></code> in <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code>).</p>
 <p>When the command in the set of parentheses looks like <code class="docutils literal notranslate"><span class="pre">(X</span> <span class="pre">in</span> <span class="pre">SOME_VECTOR)</span></code>, this is saying that X will take on the <em>value</em> of a specific item in SOME_VECTOR for that iteration of the loop. However, you can also lean on the function <code class="docutils literal notranslate"><span class="pre">length()</span></code> to go through each <em>position</em> of each item:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_sequence</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span><span class="w">         </span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">position</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">my_sequence</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1"># for loop over the position number of each item,</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">position</span><span class="p">)</span><span class="w">                           </span><span class="c1"># from the first item up to the max length of my_sequence</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>my_sequence &lt;- c(2,4,6,8,10)</p>
 <p>for (position in 1:length(my_sequence)) {     # for loop over the position number of each item,
 print(position)                           # from the first item up to the max length of my_sequence
@@ -794,7 +768,7 @@ print(position)                           # from the first item up to the max le
 <p>Or, say we want to know all the rows of <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> that should be excluded based on low diary compliance. The code below creates a vector that tracks these rows. See if you can explain what each line of code does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">to_exclude</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">()</span><span class="w">   </span><span class="c1">#function for making an empty vector to hold values in</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">to_exclude</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">vector</span><span class="p">()</span><span class="w">  </span><span class="c1">#function for making an empty vector to hold values in</span>
 
 <span class="nf">for </span><span class="p">(</span><span class="n">row</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">diary_compliance</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -897,6 +871,7 @@ print(position)                           # from the first item up to the max le
 <ul class="simple">
 <li><p><strong>dataset</strong>: a collection of information, representing data values collected from multiple entities and usually across multiple variables.</p></li>
 <li><p><strong>data frame</strong>: a data type in R that holds dataset values as a rectangular matrix, with rows as separate observations and columns as separate variables.</p></li>
+<li><p><strong>named argument</strong>: values passed as arguments to a function and identified by a specific parameter name. In R, the name/value pair is declared with an = sign.</p></li>
 <li><p><strong>working directory</strong>: the directory on a computer that is currently visible to a computer program.</p></li>
 <li><p><strong>file path</strong>: the location of a file within the directory structure of a computer. The <strong>absolute file path</strong> is the path of navigation to the file from the computer root directory. The <strong>relative file path</strong> is the path of nagivation to the file from the current working directory.</p></li>
 <li><p><strong>dimension</strong>: A property of a matrix. The value of the first dimension is the number of rows and the value of the second dimension is the number of columns.</p></li>
@@ -904,6 +879,24 @@ print(position)                           # from the first item up to the max le
 <li><p><strong>conditional statement</strong>: A programming language construct that performs different actions depending on the value of a logical expression.</p></li>
 <li><p><strong>loop</strong>: A sequence of code actions that is repeated a set number of times (in for loops) or until some condition is met (in while loops).</p></li>
 <li><p><strong>object scope</strong>: The accessibility or visibility of objects within different parts of your code.</p></li>
+</ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/data.frame">data.frame()</a></p></li>
+<li><p><a class="reference external" href="https://www.oreilly.com/library/view/r-in-a/9781449358204/ch09s05.html">named arguments</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table">read.csv()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd">getwd()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/head">head()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/dim">dim()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/nrow">nrow()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/length">length()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/hyperSpec/versions/0.98-20140523/topics/ncol">ncol()</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/r/r_if_else.asp">if/else statements</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/r/r_for_loop.asp">for loops</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/r/r_while_loop.asp">while loops</a></p></li>
+<li><p><a class="reference external" href="https://www.dataquest.io/blog/write-functions-in-r/">function()</a></p></li>
 </ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Next: Chapter 4 - Cleaning Data</a></p>
 </section>
@@ -974,6 +967,7 @@ print(position)                           # from the first item up to the max le
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-functions">3.6 Writing your own functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 

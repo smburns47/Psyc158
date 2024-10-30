@@ -182,10 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -458,6 +457,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -470,7 +471,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Previous: Chapter 4 - Organizing Data</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Previous: Chapter 4 - Cleaning Data</a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-describing-data">
 <h1>Chapter 5 - Describing Data<a class="headerlink" href="#chapter-5-describing-data" title="Permalink to this heading">#</a></h1>
 <p>Over the last four chapters you’ve developed the basic proficiency in coding and data management that will enable you to explore and analyze data in many contexts. These skills are an important foundation for the rest of the course, so it is highly recommended that you practice with them and return to them to review frequently (and keep this url handy to come back to in future classes).</p>
@@ -500,37 +501,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing package into &#39;/Library/Frameworks/R.framework/Versions/4.3-arm64&#39;
-(as &#39;lib&#39; is unspecified)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
-	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//Rtmp0Uj7bo/downloaded_packages
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
-
-Loading required package: scales
-
-Loading required package: ggridges
-
-
-New to ggformula?  Try the tutorials: 
-	learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
-	learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_histogram</span><span class="p">(</span><span class="n">gformula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">intrusive_memories</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tetrismemories</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/0cec1958d6c49512d6edd0ea9d181164c9a88406cbba734a7bd646d71e12665c.png" src="_images/0cec1958d6c49512d6edd0ea9d181164c9a88406cbba734a7bd646d71e12665c.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> takes two arguments. The first is a <em>formula</em> (using the argument name <code class="docutils literal notranslate"><span class="pre">gformula</span></code>). In this formula, notice that the variable we want to display, <code class="docutils literal notranslate"><span class="pre">intrusive_memories</span></code>, is placed after a ~ symbol (tilde). The ~ works like an equal sign in the equation for graphing a line (e.g., <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> from geometry class). So in R, whenever you put something before the ~, its values go on the y-axis and whenever you put something after the ~, its values go on the x-axis. A histogram is a special case where the y-axis is just a count related to the variable on the x-axis, not a different variable. Thus, the <code class="docutils literal notranslate"><span class="pre">gformula</span></code> argument in <code class="docutils literal notranslate"><span class="pre">gf_formula</span></code> is the formula <code class="docutils literal notranslate"> <span class="pre">~</span> <span class="pre">instrusive_memories</span></code>, which tells R “plot the variable intrusive_memories on the x-axis.”</p>
@@ -571,9 +547,6 @@ New to ggformula?  Try the tutorials:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/9116e5bdfa4bb5d7a4e9b6eefd03eaf8ac2c46dac63930ce072897cb2b837db8.png" src="_images/9116e5bdfa4bb5d7a4e9b6eefd03eaf8ac2c46dac63930ce072897cb2b837db8.png" />
-</div>
 </div>
 <p>In chapter 7, we’ll talk much more about how to tweak the details of our data visualizations.</p>
 </section>
@@ -586,9 +559,6 @@ New to ggformula?  Try the tutorials:
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">gf_dhistogram</span><span class="p">(</span><span class="n">gformula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">outcome</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">,</span><span class="w"> </span><span class="n">bins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/1015f9e409704a8b318c29b88f0a889164aa4e4bcd3c07943ba4e7e741933236.png" src="_images/1015f9e409704a8b318c29b88f0a889164aa4e4bcd3c07943ba4e7e741933236.png" />
 </div>
 </div>
 <p>If everything worked right, the general shape of this plot should match the one above. The only difference is, the bins show a density of 0.2 instead of 1, since 1 value out of 5 means 20% of the sample is in that bin.</p>
@@ -649,8 +619,6 @@ New to ggformula?  Try the tutorials:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">85.2</div></div>
 </div>
 <p>Although it’s pretty easy to calculate the mean like this, we can do it in an even easier way. Since the mean is such a common metric to compute, R also provides us with the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> function. Simply pass a vector to this fuction to return the mean. Try it in the code block below.</p>
 <div class="cell docutils container">
@@ -710,20 +678,11 @@ New to ggformula?  Try the tutorials:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/ef39d560d95d3d31b77e0e99179323aee54883074f0cec42cac22573f9b1ad02.png" src="_images/ef39d560d95d3d31b77e0e99179323aee54883074f0cec42cac22573f9b1ad02.png" />
-</div>
 </div>
 <p>You may have tried to use a function like <code class="docutils literal notranslate"><span class="pre">mode()</span></code> in the code block above to calculate the mode of the dataframe <code class="docutils literal notranslate"><span class="pre">weird_dist</span></code>. However, in R <code class="docutils literal notranslate"><span class="pre">mode()</span></code> is already taken up by a different function that does something else. So we’ll need a different method to describe our distribution. Given that the mode is the most frequent data value in a distribution, we can use the <code class="docutils literal notranslate"><span class="pre">table()</span></code> function to list the number of data points with each unique value, and identify the mode that way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">weird_dist</span><span class="o">$</span><span class="n">data_pts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 20 30 40 50 
- 1  2  3  4  5 
 </pre></div>
 </div>
 </div>
@@ -854,8 +813,6 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">-1.4210854715202e-14</div></div>
 </div>
 <p>Uh oh, there seems to be a problem. Our sum of deviations is practically 0 (-1.42e<sup>-14</sup> is a really, really small number!). Surely there is more deviation in our dataset than that?</p>
 <p>The reason this happened is because some data points are above the mean (a positive difference score), and some are below the mean (a negative difference score). When you sum up positive and negative numbers, they cancel each other out.</p>
@@ -882,8 +839,6 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">11.276799687011</div></div>
 </div>
 <p>Now, what does the variance actually <em>mean</em>? Descriptive statistics are supposed to describe things, after all, and right now the variance is kind of a gibberish number. Unfortunately, the reason why we haven’t given you the human-friendly interpretation of the variance is that there really isn’t one. This is the most serious problem with the variance. Although it has some elegant mathematical properties that help a lot for deriving other statistical tools, it by itself is pretty useless if you want to communicate with an actual human because variances are uninterpretable in terms of the original variable. All the numbers have been squared, and they don’t have units anymore. What counts as low or high variance? What does it mean for number of memories to vary at a quantity of 11? These questions don’t have good answers. However, because it is so ubiquitous in statistics at large, we still need to know how to calculate it. Basically, just know that higher variance means more data spread.</p>
 </section>
@@ -975,6 +930,41 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 <li><p>Describe the differences between range, interquartile range, sum of squares, variance, and standard deviation</p></li>
 <li><p>Report summaries in APA style</p></li>
 </ul>
+</section>
+<section id="new-concepts">
+<h2>New concepts<a class="headerlink" href="#new-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>distribution</strong>: Variation in the values of a variable. Can be visualized and described with summary statistics.</p></li>
+<li><p><strong>histogram</strong>: A type of plot that visualizes a distribution. Variable values are represented on the x-axis and number of data points with that value is represented on the y-axis.</p></li>
+<li><p><strong>density plot</strong>: A type of plot that visualizes a distribution. Similar to a histogram, except the y-axis represents percentage of data points with a specific value instead of counts.</p></li>
+<li><p><strong>symmetrical</strong>: A distribution shape where both halves of the distribution look approximately mirrored.</p></li>
+<li><p><strong>skewed</strong>: A distribution shape where who half of the distribution is more spread out than the other.</p></li>
+<li><p><strong>uniform</strong>: A distribution shape where there is no clear peak; the distribution looks approximately like a rectangle.</p></li>
+<li><p><strong>unimodal</strong>: A distribution shape where there is one clear peak.</p></li>
+<li><p><strong>bimodal</strong>: A distribution shape where there are two clear peaks.</p></li>
+<li><p><strong>normal</strong>: A distribution shape that is unimodal and symmetrical.</p></li>
+<li><p><strong>central tendency</strong>: The “middle” or “typical” value of a distribution; close to where most points are.</p></li>
+<li><p><strong>mean</strong>: A method of representing the central tendency of a distribution by summing all values and dividing by the number of values.</p></li>
+<li><p><strong>median</strong>: A method of representing the central tendency of a distribution by finding the middle value if all values were ordered smallest to largest.</p></li>
+<li><p><strong>mode</strong>: A method of representing the central tendency of a distribution; is the most frequent value.</p></li>
+<li><p><strong>range</strong>: A method of representing the amount of spread in a distribution by identifying the minimum and maximum values.</p></li>
+<li><p><strong>interquartile range (IQR)</strong>: A method of representing the amount of spread in a distribution by finding the “middle half” of the data, or the values that consitute the 25th and 75th percentiles.</p></li>
+<li><p><strong>sum of squares</strong>: A method of representing the amound of spread in a distribution by summing the squares of all data points’ deviations from the mean.</p></li>
+<li><p><strong>variance</strong>: a method of representing the amount of spread in a distribution by dividing the sum of squares by N-1.</p></li>
+<li><p><strong>standard deviation</strong>: A method of representing the amount of spread in a distribution by taking the square root of variance. Can be interpreted as the average amount of deviation each data point has from the mean.</p></li>
+</ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/ggformula/versions/0.6/topics/gf_histogram">ggformula::gf_histogram() &amp; gf_dhistogram()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/mean">mean()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/median">median()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/table">table()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quantile">quantile()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/cmvnorm/versions/1.0-7/topics/var">var()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/sd">sd()</a></p></li>
+</ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Next: Chapter 6 - Variation in Multiple Variables</a></p>
 </section>
 </section>
@@ -1058,6 +1048,8 @@ use it to calculate the median of <code class="docutils literal notranslate"><sp
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,1555 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 21 - Bayesian Statistics &#8212; Pomona Psych 158 Online Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'adv-bayesian';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pomona College Psych 158 Online Textbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Introduction to Statistical Thinking</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Cleaning Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 2 - Modeling Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-8.ipynb">Chapter 8 - Where Data Come From</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-9.ipynb">Chapter 9 - Modeling the Data Generation Process</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Chapter 10 - Quantifying Model Error</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-11.ipynb">Chapter 11 - Adding an Explanatory Variable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-12.ipynb">Chapter 12 - Quantitative Predictor Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Chapter 13 - Multivariable Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-14.ipynb">Chapter 14 - Models with Moderation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 3 - Evaluating Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/smburns47/Psyc158/main?urlpath=tree/adv-bayesian.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/smburns47/Psyc158/issues/new?title=Issue%20on%20page%20%2Fadv-bayesian.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/adv-bayesian.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 21 - Bayesian Statistics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-vs-bayesian-statistics">21.1 Frequentist vs. Bayesian statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">21.2 Conditional probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-conditional-probability-bayes-rule">21.3 Reversing a conditional probability: Bayes’ rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-hypothesis-testing">21.4 Bayesian hypothesis testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-parameter-estimation">21.5 Bayesian parameter estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-set-the-prior">Step 1 - Set the prior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-estimate-model">Step 2 - Estimate model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-interpret-posterior-probability">Step 3 - Interpret posterior probability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credible-intervals">21.6 Credible intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smallest-effect-size-of-interest">21.7 Smallest effect size of interest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning-in-bayesian-stats">21.8 Power planning in Bayesian stats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-priors">21.9 Updating priors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-factors">21.10 Bayes factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a class="reference external" href="https://www.shannonmburns.com/Psyc158/intro.html">Back to Table of Contents</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Previous: Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></p>
+<div class="alert alert-block alert-info">
+<b>**NOTE**</b>: The main package used in this chapter, rstanarm, is large and exceeds the RAM limits on the free versions of Google Colab and Posit Cloud. For this reading, all the rstanarm code has been pre-executed. If you'd like to try it out yourself, you can download it to your own (desktop) RStudio and enter the same commands. 
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
+<span class="n">studentdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/studentdata.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-21-bayesian-statistics">
+<h1>Chapter 21 - Bayesian Statistics<a class="headerlink" href="#chapter-21-bayesian-statistics" title="Permalink to this heading">#</a></h1>
+<section id="frequentist-vs-bayesian-statistics">
+<h2>21.1 Frequentist vs. Bayesian statistics<a class="headerlink" href="#frequentist-vs-bayesian-statistics" title="Permalink to this heading">#</a></h2>
+<p>The ideas about inferential statistics in the previous chapters come from the perspective of Frequentist statistics. Almost every textbook for undergraduate psychology students starts with this framework, as the Frequentist view of statistics dominated the academic field of statistics for most of the 20th century and is a popular collection of tools among applied scientists. It was and is the most common practice among psychologists to use Frequentist methods. Because Frequentist methods are ubiquitous in scientific papers, every student of statistics needs to understand those methods.</p>
+<p>However, Frequentist statistics can be frustrating to interpret. The major tenet of Frequentism is that there is only one state of the world. A hypothesis you are testing is either true, or it is not. We can describe the probability of generating certain datasets given the true state of the world, but if we don’t know that state, we can’t describe the probability of what that state is given a particular dataset we have collected. Unfortunately, that’s usually the case we find ourselves in - we <em>don’t</em> know the true state of the world, and our only hope to figure it out is by looking at some data. Frequentism thus isn’t an ideal method for answering that question, and we have to do some brain bending things to make it work for us anyways:</p>
+<ul class="simple">
+<li><p>We can’t figure out the probability of the true population parameter, so we have to think up some hypothetical parameters and see how likely those are to produce our data (p-values)</p></li>
+<li><p>We then have to reduce these probabilities to a binary yes/no decision about whether we want to accept this hypothetical parameter as being the truth (null hypothesis testing)</p></li>
+<li><p>We can only ever reject a null hypothesis, but we can never build support for it</p></li>
+</ul>
+<p>If these topics have felt abstract and difficult to master, you wouldn’t be alone. The convoluted nature of statistical inference with Frequentist methods partially explains errors that can be found in published research.</p>
+<p>This is why some people prefer a different approach to inferential statistics, called <strong>Bayesian statistics</strong>. These ideas as a collection are named after Thomas Bayes, the mathematician who contributed much to our understanding of probabilities.</p>
+<p>Bayesian statistics have a fundamentally different view of probability than Frequentist statistics do. In Frequentism, probability means the long-run proportion across many samples. If the true population parameter β is 0, we can’t measure it directly, but we can estimate it many times across many samples. This builds a sampling distribution, composed of many b estimates.</p>
+<img src="images/ch15-betadist0.png" width="400">
+<p>Because we sample these b estimates over and over and get different values each time, the b estimates can have probability. There is some proportion of these estimates, across many samples, that will equal a particular value.</p>
+<p>To a Frequentist, the population parameter β <em>cannot</em> have a probability. It is inherently just one value, and it isn’t generated by some underlying process. It just is. A population parameter is either equal to a particular value, or it is not. There’s no way to get many values of it for measuring a proportion.</p>
+<p>In contrast, in the Bayesian perspective, probability means something different. To a Bayesian, probability is your strength of belief about the population parameter. There is still one population parameter that we don’t know, but until we know it there are many possible values is <em>could</em> be.</p>
+<img src="images/ch21-beliefdist.png" width="600">
+<p>We can believe more strongly in some possible values than others - one value is more likely to be the truth than another value. In this sense, a population parameter can have a probability. Do we think a β value of 0 is more likely to be the truth than a β value of 10? What value do we believe in most strongly?</p>
+<p>Bayesian statistics is gaining ground among psychologists, so in this chapter we want to expose you to the basics of this approach, as well as contrast how you would use Bayesian statistics for the same use cases we have so far explored with Frequentist statistics. Bayesian statistics as a whole is a large field of study that is most appropriately learned in an entire course, rather than just one chapter in a course. But if these alternate approaches to statistical questions intrigue you more than the Frequentist methods you’ve already learned, pursuing more study in the area would be a great idea.</p>
+</section>
+<section id="conditional-probability">
+<h2>21.2 Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this heading">#</a></h2>
+<p>Thomas Bayes’ theorems of probability, and thus all of Bayesian statistics, are based on the idea of <strong>conditional probability</strong>. In chapter 8 we limited ourselves to simple probabilities of one or two elementary events happening. This was the probability of such an event without any context - without other information that might help us narrow down the outputs.</p>
+<p>A conditional probability is the likelihood of some event, given another event has already happened. It is a bigger picture of likelihood than simple probability.</p>
+<p>Let’s take the 2020 US Presidential election as an example. There are two simple probabilities that we could use to describe the electorate. First, we know the probability that a voter in that election was affiliated with the Republican party: P(Republican) = 0.36. We also know the probability that a voter cast their vote in favor of Donald Trump: P(Trump) = 0.47.</p>
+<p>If we wanted to know the probability that a random voter coming out of a polling place voted for Trump, we might use that simple probability 47% to make a decision. It’s not a very helpful probability - essentially flipping a coin. But in truth we rarely make decisions this way - obviously we’d find it more surprising that someone voted for Trump in West LA, California than if they were in Lander County, Nevada.</p>
+<p>Our instinct is to actually use conditional probabilities. We might expect that people who are Republican are more likely to have voted for Trump than people who are Democrat. Thus, if we already knew a random person was Republican, we might be able to use that information to better inform our decision about whether or not they voted for Trump. The question we now ask is, what is the probability that a person voted for Trump, <em>given</em> that they are a Republican?</p>
+<p>We write the equation for a conditional probability as:</p>
+<div class="math notranslate nohighlight">
+\[P(A|B)\]</div>
+<p>Which states the probability of A, given B. In our specific example, the probability of voting for Trump given someone is Republican is:</p>
+<div class="math notranslate nohighlight">
+\[P(Trump vote|Republican)\]</div>
+<p>The likelihood that any one person voted for Trump is 47%: P(Trump vote) = 0.47. But if we find out that 94% of Republicans voted for Trump, knowing whether or not somone is a Republican would change our guess confidence by a lot. Rather than 0.47, P(Trump vote|Republican) = 0.94.</p>
+<p>To calculate the conditional probability of A, we need to know the joint probability (that is, the probability of both A and B occurring) as well as the overall probability of B. We want to know the probability that both things are true, given that the one being conditioned upon is true. The equation for this is:</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</div>
+<p>We can calculate conditional probability from data. Let’s use an example we’re familiar with in the <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> dataset. We already know from lots of practice that student sex is related to their thumb length. Let’s put this is terms of a conditional probability - what is the probability that someone’s thumb is 60mm or longer, <em>given</em> that they are male?</p>
+<p>Below is a contingency table of these data. Each cell represents the number of people with a certain combination of Sex and Thumb values (male or female, &gt;=60mm or &lt;60mm).</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>Thumb &gt;=60mm</p></th>
+<th class="head text-center"><p>Thumb &lt;60mm</p></th>
+<th class="head text-center"><p>Row total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Male</p></td>
+<td class="text-center"><p>34</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>46</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Female</p></td>
+<td class="text-center"><p>47</p></td>
+<td class="text-center"><p>64</p></td>
+<td class="text-center"><p>111</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Column total</p></td>
+<td class="text-center"><p>81</p></td>
+<td class="text-center"><p>76</p></td>
+<td class="text-center"><p>157</p></td>
+</tr>
+</tbody>
+</table>
+<p>To compute <span class="math notranslate nohighlight">\(P(&gt;=60mm | Male)\)</span>, we need to know the joint probability of being male and having a thumb at least as long as 60mm, in addition to the simple probability of being male.</p>
+<p>To calculate the joint probability, we divide the number of people who are both male and have a long thumb by the total number of people. In our case, that is</p>
+<div class="math notranslate nohighlight">
+\[\frac{34}{157} = 0.217\]</div>
+<p>The simple probability of being male is the number of all people who are male, divided by the total number of people.</p>
+<div class="math notranslate nohighlight">
+\[\frac{46}{157} = 0.293\]</div>
+<p>Using the equation for conditional probability, the probability of having a long thumb given that someone is male is:</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{0.217}{0.293} = 0.741\]</div>
+<p>Notice that this conditional probability is different than the simple probability of being male (0.293) and of having a long thumb (81/157 = 0.516). If two variables are related to each other like sex and thumb length are, the conditional probability of a particular value on one variable given a value on the other is different than the simple probability of either variable alone. Knowing information about one variable helps us update our beliefs about the probability of the other variable.</p>
+</section>
+<section id="reversing-a-conditional-probability-bayes-rule">
+<h2>21.3 Reversing a conditional probability: Bayes’ rule<a class="headerlink" href="#reversing-a-conditional-probability-bayes-rule" title="Permalink to this heading">#</a></h2>
+<p>Sometimes we know <span class="math notranslate nohighlight">\(P(A|B)\)</span>, but we really want to know <span class="math notranslate nohighlight">\(P(B|A)\)</span>. For example in medical screening, we know <span class="math notranslate nohighlight">\(P(+test|disease)\)</span> from the test manufacturer, but we want to know <span class="math notranslate nohighlight">\(P(disease|+test)\)</span>; the probability you are sick given you got a positive test.</p>
+<p>Thomas Bayes <a class="reference external" href="http://www.hep.upenn.edu/~johnda/Papers/Bayes.pdf">figured out a mathematical theorem</a> to help us do this. We now call this theorem <strong>Bayes’ rule</strong>. To reverse a conditional probability:</p>
+<div class="math notranslate nohighlight">
+\[P(B|A) = \frac{P(A|B)*P(B)}{P(A)}\]</div>
+<p>Let’s plug in our numbers from the table above to figure out <span class="math notranslate nohighlight">\(P(Male | &gt;=60mm)\)</span>, rather than <span class="math notranslate nohighlight">\(P(&gt;=60mm | Male)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[P(Male|&gt;=60mm) = \frac{P(&gt;=60mm|Male)*P(Male)}{P(&gt;=60mm)} = \frac{0.741*0.293}{0.516} = 0.421\]</div>
+<p>Does that seem surprising? The probability of having a long thumb given someone was male is pretty high, 74.1%. But the reverse is not automatically true - if someone has a long thumb, the probability that they are also male is only 42.1%. This is because of the <strong>base rate</strong> of sex in our sample - only 29.3% of the participants are male. If we know someone has a long thumb, there is still an overall lower chance that someone is male. However, it’s a <em>higher</em> chance than if we knew nothing about their thumb length. We changed our probability estimation based on the additional information about thumb length.</p>
+<p>Another way to think of Bayes’ rule is as a way to update our beliefs on the basis of data. That is, improving our understanding about the world using data. The different parts of Bayes’ rule have specific names, that relate to their role in using Bayes’ rule to update our beliefs.</p>
+<p>We start out with an initial guess about the probability of sex (<span class="math notranslate nohighlight">\(P(B)\)</span>), which we refer to as the <strong>prior probability</strong>. In the example above we’d use the base rate of sex as our prior, since it was our best guess as to the individual’s chance of being male before we knew their thumb length.</p>
+<p>We then collect some data about a new variable, thumb length. The degree to which thumb length (<span class="math notranslate nohighlight">\(A\)</span>) is related to sex (<span class="math notranslate nohighlight">\(B\)</span>) is given by <span class="math notranslate nohighlight">\(P(A|B)\)</span>, which we refer to as the <strong>likelihood</strong>. This is how likely a long thumb is, given someone is male.</p>
+<p>The denominator of Bayes’ rule (<span class="math notranslate nohighlight">\(P(A)\)</span>) is referred to as the <strong>marginal likelihood</strong>, because it expresses the overall likelihood of thumb length, averaged across all of the possible values of sex.</p>
+<p>The outcome to the left (<span class="math notranslate nohighlight">\(P(B|A)\)</span>) is referred to as the <strong>posterior probability</strong> - the probability of being male, given a long thumb. This name is because it’s what comes out the back end of the computation, once we’ve updated our prior probability with additional information.</p>
+<p>A slightly different way of writing Bayes’ rule makes this clearer:</p>
+<div class="math notranslate nohighlight">
+\[P(B|A) = \frac{P(A|B)}{P(A)}*P(B)\]</div>
+<p>The fraction (<span class="math notranslate nohighlight">\(\frac{P(A|B)}{P(A)}\)</span>) tells us how much more or less likely having a long thumb is given being male, relative to the overall (marginal) likelihood of having a long thumb. If it is much more likely that someone will have a long thumb once we know they are male, this fraction value will be a large number. If it is much less likely that someone will have a long thumb once we know they are male, this fraction value will be less than 1. If knowing someone’s sex doesn’t change the likelihood of a long thumb at all, the fraction value will be equal to 1.</p>
+<p>The part on the right side (<span class="math notranslate nohighlight">\(P(B)\)</span>) tells us how likely we thought being male was before we knew anything about thumb length.</p>
+<p>This makes it clearer that the role of Bayes’ rule is to update our prior knowledge about the probability of B, based on the degree to which A and B are related.</p>
+</section>
+<section id="bayesian-hypothesis-testing">
+<h2>21.4 Bayesian hypothesis testing<a class="headerlink" href="#bayesian-hypothesis-testing" title="Permalink to this heading">#</a></h2>
+<p>Let’s return now to the idea of hypothesis testing. In Frequentist statistics, we learned that a p-value is just the probability of a certain sample estimate given the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span> is true. We can write that now as a conditional probability:</p>
+<div class="math notranslate nohighlight">
+\[P(b|\beta=0)\]</div>
+<p>When hypothesis testing, we want to be able to make a decision about the null hypothesis being true, or not. In Frequentism the null hypothesis can’t have a probability, so the closest we can get to that answer is to reason, if <span class="math notranslate nohighlight">\(P(b|\beta=0)\)</span> is really small, <span class="math notranslate nohighlight">\(\beta=0\)</span> probably isn’t the right description about the world.</p>
+<p>With Bayesian statistics, we can do a better job of answering this question. Now we can directly find the probability that <span class="math notranslate nohighlight">\(\beta\)</span> equals 0. Specifically, using Bayes’ rule, we can find the probability of the null hypothesis being true, given the data we have collected.</p>
+<div class="math notranslate nohighlight">
+\[P(\beta=0|b) = \frac{P(b|\beta=0)}{P(b)}*P(\beta=0)\]</div>
+<p>It’s what we’ve been wanting to say all along, and now we’re no longer held down by the convoluted nature of the Frequentist approach! When we have the ability to talk about the probability of a hypothesis we can do even more things, like:</p>
+<ul class="simple">
+<li><p>Figure out the probability that the true population parameter is at least as big as a smallest effect size of interest</p></li>
+<li><p>Adjust our belief of the probability of a population parameter based on prior information we already have</p></li>
+<li><p>Provide evidentiary support for a specific value of the population parameter; this includes supporting the null hypothesis instead of just rejecting it</p></li>
+</ul>
+</section>
+<section id="bayesian-parameter-estimation">
+<h2>21.5 Bayesian parameter estimation<a class="headerlink" href="#bayesian-parameter-estimation" title="Permalink to this heading">#</a></h2>
+<p>One powerful use case of Bayesian statistics is to figure out the most likely value of a population parameter. This process is called <strong>Bayesian estimation</strong>.</p>
+<p>Let’s imagine an example where we want to test the effect of sex on thumb length. Sex is the only predictor, so the equation for this model would look like:</p>
+<div class="math notranslate nohighlight">
+\[ Thumb_i = b_0 + b_1Sex_i + e_i\]</div>
+<p>We can fit this model in R like we normally have in order to come up with a <span class="math notranslate nohighlight">\(b_1\)</span> estimate from these data, as well as a likelihood that a true <span class="math notranslate nohighlight">\(\beta_1 = 0\)</span> would produce this estimate (the p-value). But Bayesian estimation goes a step further and uses that likelihood to update an existing belief about the true value of <span class="math notranslate nohighlight">\(\beta_1\)</span>.</p>
+<p>We will use an R package called <code class="docutils literal notranslate"><span class="pre">rstanarm</span></code> to do this process. Within this package is a function <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> which will fit a model in the same way we did with <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, but also solve Bayes’ rule for us in order to make statements about the probability of specific population parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#commented out because this package is too big for the free Google Colab</span>
+<span class="c1">#do these commands in your own RStudio to follow along </span>
+
+<span class="c1">#install.packages(&quot;rstanarm&quot;)</span>
+<span class="c1">#library(rstanarm)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing package into ‘/Library/Frameworks/R.framework/Versions/4.2-arm64’
+(as ‘lib’ is unspecified)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
+	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmphHZCYv/downloaded_packages
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: Rcpp
+
+This is rstanarm version 2.26.1
+
+- See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!
+
+- Default priors may change, so it&#39;s safest to specify priors, even if equivalent to the defaults.
+
+- For execution on a local, multicore CPU with excess RAM we recommend calling
+
+  options(mc.cores = parallel::detectCores())
+</pre></div>
+</div>
+</div>
+</div>
+<p>Directly calculating the probability of a population parameter is a more satisfying decision than just rejecting or failing to reject a null hypothesis. But this kind of power comes with a downside. In Frequentist statistics, we calculated the probability of the data given a null hypothesis <span class="math notranslate nohighlight">\(\beta=0\)</span>. This was only one probability calculation. In Bayesian statistics, remember that there are four parts to Bayes’ rule, which in the context of estimates and parameters means:</p>
+<ul class="simple">
+<li><p>The prior <span class="math notranslate nohighlight">\(P(\beta)\)</span>: Our degree of belief about what the population parameter is before seeing any data</p></li>
+<li><p>The likelihood <span class="math notranslate nohighlight">\(P(b|\beta)\)</span>: How likely are the observed data given a particular population parameter</p></li>
+<li><p>The marginal likelihood <span class="math notranslate nohighlight">\(P(b)\)</span>: How likely are the observed data, combining over all possible hypotheses</p></li>
+<li><p>The posterior <span class="math notranslate nohighlight">\(P(\beta|b)\)</span>: Our updated belief about the population parameter, given the data</p></li>
+</ul>
+<p>We have to calculate four things to make decisions about a population estimate, instead of one. For the prior in particular, this isn’t even something we calculate so much as something we say we believe in to start with. It’s just a number we pick. This is why one criticism of Bayesian statistics is that it is more subjective than Frequentist statistics. You shouldn’t let that scare you away from using these tools, but it does mean you should be informed about how to make that decision.</p>
+<section id="step-1-set-the-prior">
+<h3>Step 1 - Set the prior<a class="headerlink" href="#step-1-set-the-prior" title="Permalink to this heading">#</a></h3>
+<p>Before we can estimate a population parameter, we need to establish what range of values it might have, and what probabilities we assign to each value before we know about any data. In other words, we have to pick a prior probability distribution.</p>
+<p>How do you make a belief about what the effect of <code class="docutils literal notranslate"><span class="pre">Sex</span></code> should be, before you’ve seen any data about it? Good question. There is a lot of debate over the best way to pick the prior. If you have no previous information about an effect and what you think the true effect might be, it’s really hard to make guesses about its probability. In this case, researchers can start with what’s called an <strong>uninformative prior</strong> or <strong>flat prior</strong>. This is a probability distribution that is constant across all possible values, since we have no information about what values are more likely than others. A uniform distribution would be an uninformative prior - that would be the guess that the true value of <span class="math notranslate nohighlight">\(\beta_1\)</span> has an equal probability of being any value.</p>
+<p>Other times, researchers use a <strong>weakly informative prior</strong>. We use this distribution when we don’t know what a likely value of <span class="math notranslate nohighlight">\(\beta_1\)</span> is, but we have some vague sense that certain values are more likely than others. I.e., if <span class="math notranslate nohighlight">\(\beta_1\)</span> in this model is the difference in group means between male and female thumb lengths (mm), something like <span class="math notranslate nohighlight">\(\beta_1 = 4\)</span> is probably more likely than <span class="math notranslate nohighlight">\(\beta_1 = 40\)</span>. A normal distribution with a large standard deviation would be an example of this prior. Weakly informative priors are most common to use, and the defaults in most Bayesian software.</p>
+<p>On the other hand, if you’re experienced with a research question, you may have done research like this before. You’d have an expert opinion on the likely value of <span class="math notranslate nohighlight">\(\beta_1\)</span>. You may not know it exactly, but you can guess pretty close. In this case, you have strong existing beliefs about what the probability distribution of <span class="math notranslate nohighlight">\(\beta_1\)</span> should be, and you’d choose to use an <strong>informative prior</strong> that is narrow.</p>
+<img src="images/ch21-informativepriors.png" width="900">
+</section>
+<section id="step-2-estimate-model">
+<h3>Step 2 - Estimate model<a class="headerlink" href="#step-2-estimate-model" title="Permalink to this heading">#</a></h3>
+<p>To start with, we’re going to go with the default prior in <code class="docutils literal notranslate"><span class="pre">rstanarm</span></code> (we’ll investigate what that prior is in a little bit). Next, we fit the model with the <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> function. This function lets us use the same formula syntax as <code class="docutils literal notranslate"><span class="pre">lm()</span></code> used and then output the results with <code class="docutils literal notranslate"><span class="pre">summary()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#stan_glm(Thumb ~ Sex, data = studentdata)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000255 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 2.55 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.018 seconds (Warm-up)
+Chain 1:                0.024 seconds (Sampling)
+Chain 1:                0.042 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 3e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.03 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.015 seconds (Warm-up)
+Chain 2:                0.023 seconds (Sampling)
+Chain 2:                0.038 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 2e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.015 seconds (Warm-up)
+Chain 3:                0.023 seconds (Sampling)
+Chain 3:                0.038 seconds (Total)
+Chain 3: 
+
+SAMPLING FOR MODEL &#39;continuous&#39; NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 2e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.02 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.018 seconds (Warm-up)
+Chain 4:                0.023 seconds (Sampling)
+Chain 4:                0.041 seconds (Total)
+Chain 4: 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stan_glm
+ family:       gaussian [identity]
+ formula:      Thumb ~ Sex
+ observations: 157
+ predictors:   2
+------
+            Median MAD_SD
+(Intercept) 58.6    0.9  
+SexMale      6.1    1.5  
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.7    0.5   
+
+------
+* For help interpreting the printed output see ?print.stanreg
+* For info on the priors used see ?prior_summary.stanreg
+</pre></div>
+</div>
+</div>
+</div>
+<p>When running this code, you should see a big output with lines talking about chains. This is because R uses simulations of sampling distributions in order to estimate the posterior probability. We can ignore this information for our purposes. If you want to avoid getting this output in the future, add <code class="docutils literal notranslate"><span class="pre">refresh=0</span></code> as another argument in <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>. In addition, <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> uses simulations to estimate the model, so you can get slightly different answers each time you run it unless you set a seed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
+<span class="c1">#bayes_model &lt;- stan_glm(Thumb ~ Sex, data = studentdata, refresh = 0)</span>
+<span class="c1">#summary(bayes_model)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model Info:
+ function:     stan_glm
+ family:       gaussian [identity]
+ formula:      Thumb ~ Sex
+ algorithm:    sampling
+ sample:       4000 (posterior sample size)
+ priors:       see help(&#39;prior_summary&#39;)
+ observations: 157
+ predictors:   2
+
+Estimates:
+              mean   sd   10%   50%   90%
+(Intercept) 58.6    0.8 57.5  58.6  59.6 
+SexMale      6.1    1.5  4.1   6.0   8.1 
+sigma        8.8    0.5  8.1   8.7   9.4 
+
+Fit Diagnostics:
+           mean   sd   10%   50%   90%
+mean_PPD 60.4    1.0 59.1  60.4  61.6 
+
+The mean_ppd is the sample average posterior predictive distribution of the outcome variable (for details see help(&#39;summary.stanreg&#39;)).
+
+MCMC diagnostics
+              mcse Rhat n_eff
+(Intercept)   0.0  1.0  3886 
+SexMale       0.0  1.0  4084 
+sigma         0.0  1.0  3765 
+mean_PPD      0.0  1.0  3866 
+log-posterior 0.0  1.0  1721 
+
+For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
+</pre></div>
+</div>
+</div>
+</div>
+<p>After fitting the model, we can investigate what prior probability distribution this model used. We didn’t specify anything in the model call, so it used the default of a weakly informative prior. To see what prior was used specifically, we can use the function <code class="docutils literal notranslate"><span class="pre">prior_summary()</span></code> on the model object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#prior_summary(bayes_model)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Priors for model &#39;bayes_model&#39; 
+------
+Intercept (after predictors centered)
+  Specified prior:
+    ~ normal(location = 60, scale = 2.5)
+  Adjusted prior:
+    ~ normal(location = 60, scale = 23)
+
+Coefficients
+  Specified prior:
+    ~ normal(location = 0, scale = 2.5)
+  Adjusted prior:
+    ~ normal(location = 0, scale = 50)
+
+Auxiliary (sigma)
+  Specified prior:
+    ~ exponential(rate = 1)
+  Adjusted prior:
+    ~ exponential(rate = 0.11)
+------
+See help(&#39;prior_summary.stanreg&#39;) for more details
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each section of the output tells you the shape of the prior that was used for each estimate in the model. The line “Specified prior” describes this shape in terms of standardized units, while the line “Adjusted prior” describes the shape in units of the variable.</p>
+<p>Look at the prior used for the predictor coefficients. There’s only one predictor, so just one prior is described here. The adjusted prior line tells us that the model call used a normal distribution for this prior, with a mean of 0 (“location” in this output) and an SD of 50 (“scale” in this output).</p>
+<p>Let’s visualize this prior so that we understand it better. We’ll draw 4,000 random numbers from a normal probability distribution with <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code>, using this mean and SD value. Then we’ll plot the smoothed distribution of those samples using <code class="docutils literal notranslate"><span class="pre">gf_density()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#sex_betas_prior &lt;- rnorm(4000, 0, 48)</span>
+<span class="c1">#gf_density(~sex_betas_prior)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7a63d401f8f46fa3629fbfcdc012b7225fc5251fe76f1469a8ef73ebb462c7fc.png" src="_images/7a63d401f8f46fa3629fbfcdc012b7225fc5251fe76f1469a8ef73ebb462c7fc.png" />
+</div>
+</div>
+<p>This prior distribution represents our guesses about what the true population parameter for <span class="math notranslate nohighlight">\(\beta_1\)</span> actually is. It’s not an uninformative prior because it’s not flat - we think <span class="math notranslate nohighlight">\(\beta_1 = 0\)</span> is more likely to be the truth than <span class="math notranslate nohighlight">\(\beta_1 = 100\)</span>. But it’s a weakly informative prior because there’s a very large range of <span class="math notranslate nohighlight">\(\beta_1\)</span> values that we’re considering. In our minds, before seeing any data, <span class="math notranslate nohighlight">\(\beta_1 = 100\)</span> is still possible (if less likely). In addition, because this prior is centered at 0 and covers potential <span class="math notranslate nohighlight">\(\beta_1\)</span> values that are both positive and negative, that means we don’t know anything about the direction of the effect - we think a negative effect is just as likely as a positive effect.</p>
+<p>The intercept coefficient has a prior probability distribution too. According to the <code class="docutils literal notranslate"><span class="pre">prior_summary()</span></code> output, this prior is a normal distribution with mean 60 and SD 23. Even the estimate of the population standard deviation has a prior distribution to describe our beliefs about it (listed under “Auxilliary (sigma)”). The shape of that prior distribution is the exponential distribution (sampled with <code class="docutils literal notranslate"><span class="pre">rexp()</span></code>) since that is the right shape for the sampling distribution of <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
+</section>
+<section id="step-3-interpret-posterior-probability">
+<h3>Step 3 - Interpret posterior probability<a class="headerlink" href="#step-3-interpret-posterior-probability" title="Permalink to this heading">#</a></h3>
+<p>The main values we care about in the model output are in the “Estimates” table. You can get this without the mess of the simulation information with the <code class="docutils literal notranslate"><span class="pre">$stan_summary</span></code> property of the model object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bayes_model$stan_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 12 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>  58.592913</td><td>0.013225230</td><td>0.8244568</td><td>  56.980051</td><td>  57.534645</td><td>  58.056241</td><td>  58.588136</td><td>  59.139276</td><td>  59.646997</td><td>  60.210994</td><td>3886.238</td><td>1.0010907</td></tr>
+	<tr><th scope=row>SexMale</th><td>   6.062713</td><td>0.024065946</td><td>1.5380246</td><td>   3.134548</td><td>   4.080528</td><td>   5.016736</td><td>   6.021529</td><td>   7.099507</td><td>   8.078545</td><td>   9.089250</td><td>4084.329</td><td>1.0013231</td></tr>
+	<tr><th scope=row>sigma</th><td>   8.756970</td><td>0.008238445</td><td>0.5055324</td><td>   7.846224</td><td>   8.127429</td><td>   8.398327</td><td>   8.728814</td><td>   9.084287</td><td>   9.427611</td><td>   9.794524</td><td>3765.369</td><td>0.9994105</td></tr>
+	<tr><th scope=row>mean_PPD</th><td>  60.361782</td><td>0.015851793</td><td>0.9855599</td><td>  58.405510</td><td>  59.088637</td><td>  59.714872</td><td>  60.373678</td><td>  61.032487</td><td>  61.599546</td><td>  62.269832</td><td>3865.531</td><td>0.9992121</td></tr>
+	<tr><th scope=row>log-posterior</th><td>-569.201810</td><td>0.029813683</td><td>1.2369351</td><td>-572.311310</td><td>-570.838568</td><td>-569.743725</td><td>-568.909575</td><td>-568.314133</td><td>-567.982895</td><td>-567.800488</td><td>1721.324</td><td>1.0014803</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>We are interested in the effect of sex on thumb length, so we will focus on the row for that effect, <code class="docutils literal notranslate"><span class="pre">SexMale</span></code>. In the Bayesian model output, we don’t actually get one single estimate for the population parameter. Under the hood it’s fitting the same model in the same data as <code class="docutils literal notranslate"><span class="pre">lm()</span></code> does, but what it’s giving us as a return value is the <em>posterior probability distribution</em>. This is the new distribution of our beliefs about the true population parameter, now that we have seen some data. That’s why this output has columns for mean, sd, etc.</p>
+<p>We can visualize this new posterior probability distribution based on the model itself. The model object holds all the estimates of the population parameter from each simulation, so we can simply make a vector out of those estimates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#sex_betas_posterior &lt;- as.matrix(bayes_model, pars = &quot;SexMale&quot;)</span>
+<span class="c1">#gf_density(~sex_betas_posterior)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bcd3d38cc2f3b64759f9d43aed4115369fdd2717891be9f59b0dbc921aa92f5c.png" src="_images/bcd3d38cc2f3b64759f9d43aed4115369fdd2717891be9f59b0dbc921aa92f5c.png" />
+</div>
+</div>
+<p>Bayes models don’t return just a point estimate, like Frequentist models do. We still have some variability in our beliefs about what the true population parameter is, so the model returns to us a distribution of this variability rather than a point estimate. We can visualize both the prior and the posterior probability distributions to see how the data changed out beliefs about the range of likely population parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#gf_density(~sex_betas_prior, fill=&quot;red&quot;, alpha=0.5) %&gt;%</span>
+<span class="c1">#    gf_density(~sex_betas_posterior, fill=&quot;blue&quot;, alpha=0.5)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c49d9d020ff77855c22a16b24db2a02a7d1d8b9507709f5b3ce0eb0e3bee06e9.png" src="_images/c49d9d020ff77855c22a16b24db2a02a7d1d8b9507709f5b3ce0eb0e3bee06e9.png" />
+</div>
+</div>
+<p>The shapes of these distributions are extremely different, which means the data changed our beliefs a lot! We are now much more certain about what the most likely population parameter value is - the posterior distribution is much narrower. In addition, the posterior is now centered on 6.063 instead of 0. The mean of a normal probability distribution is the most probable value in the distribution, so the fact that our posterior is centered on 6.063 means we shifted our idea of the most likely population parameter to be 6.063 instead of 0.</p>
+<p>Compare that value to the <span class="math notranslate nohighlight">\(b_1\)</span> estimate that comes from a normal <code class="docutils literal notranslate"><span class="pre">lm()</span></code> call:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#summary(lm(Thumb ~ Sex, data = studentdata))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Thumb ~ Sex, data = studentdata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.590  -4.646  -1.146   5.354  27.770 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  58.5897     0.8274  70.814  &lt; 2e-16 ***
+SexMale       6.0560     1.5285   3.962 0.000113 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.717 on 155 degrees of freedom
+Multiple R-squared:  0.09196,	Adjusted R-squared:  0.0861 
+F-statistic:  15.7 on 1 and 155 DF,  p-value: 0.0001131
+</pre></div>
+</div>
+</div>
+</div>
+<p>They’re similar, but slightly different. This is because <code class="docutils literal notranslate"><span class="pre">lm()</span></code> finds the best fitting coefficient to minimize model error <em>in this sample</em>. In <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>, we’re using simulations which can vary a bit run to run.</p>
+</section>
+</section>
+<section id="credible-intervals">
+<h2>21.6 Credible intervals<a class="headerlink" href="#credible-intervals" title="Permalink to this heading">#</a></h2>
+<p>Remember in chapter 15 when we learned about confidence intervals? Those are a Frequentist tool that tells us the range of <span class="math notranslate nohighlight">\(\beta\)</span> parameters that are 95% likely to create a specific <span class="math notranslate nohighlight">\(b\)</span> estimate.</p>
+<p>We went through an entire discussion about why you have to be careful when talking about the meaning of confidence intervals. You can’t say that there is a 95% chance the population parameter is in this range, because that would be ascribing probability to a parameter that can’t have a probability in Frequentism. Instead we have to do some linguistic tricks like saying we are 95% <em>confident</em> the true population parameter is in this range.</p>
+<p>In Bayesian models we can come up with a similar interval, but this time it actually does express the 95% probability of a parameter. These are called <strong>credible intervals</strong> or <strong>posterior intervals</strong>, and are calculated on the posterior probability distribution returned by a Bayesian model.</p>
+<p>Look again at the summary of the Bayesian model output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bayes_model$stan_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 12 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>  58.592913</td><td>0.013225230</td><td>0.8244568</td><td>  56.980051</td><td>  57.534645</td><td>  58.056241</td><td>  58.588136</td><td>  59.139276</td><td>  59.646997</td><td>  60.210994</td><td>3886.238</td><td>1.0010907</td></tr>
+	<tr><th scope=row>SexMale</th><td>   6.062713</td><td>0.024065946</td><td>1.5380246</td><td>   3.134548</td><td>   4.080528</td><td>   5.016736</td><td>   6.021529</td><td>   7.099507</td><td>   8.078545</td><td>   9.089250</td><td>4084.329</td><td>1.0013231</td></tr>
+	<tr><th scope=row>sigma</th><td>   8.756970</td><td>0.008238445</td><td>0.5055324</td><td>   7.846224</td><td>   8.127429</td><td>   8.398327</td><td>   8.728814</td><td>   9.084287</td><td>   9.427611</td><td>   9.794524</td><td>3765.369</td><td>0.9994105</td></tr>
+	<tr><th scope=row>mean_PPD</th><td>  60.361782</td><td>0.015851793</td><td>0.9855599</td><td>  58.405510</td><td>  59.088637</td><td>  59.714872</td><td>  60.373678</td><td>  61.032487</td><td>  61.599546</td><td>  62.269832</td><td>3865.531</td><td>0.9992121</td></tr>
+	<tr><th scope=row>log-posterior</th><td>-569.201810</td><td>0.029813683</td><td>1.2369351</td><td>-572.311310</td><td>-570.838568</td><td>-569.743725</td><td>-568.909575</td><td>-568.314133</td><td>-567.982895</td><td>-567.800488</td><td>1721.324</td><td>1.0014803</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>After the mean and sd values of the posterior probability distribution, this output lists several quantile values. A 95% credible interval is the range of values that has a 95% chance of containing the true population parameter. In the context of the posterior distribution, this is the bounds between which 95% of the posterior is located. In this output, that would be the 2.5%ile to the 97.5%ile. For the effect of sex, that is [3.13, 9.09].</p>
+<p>We can also get this more directly with the <code class="docutils literal notranslate"><span class="pre">posterior_interval()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#posterior_interval(bayes_model, pars=&quot;SexMale&quot;, prob=0.95)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 1 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>SexMale</th><td>3.134548</td><td>9.08925</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>The mean of the posterior distribution is our best guess about the population parameter, and the credible interval communicates the precision of that guess.</p>
+</section>
+<section id="smallest-effect-size-of-interest">
+<h2>21.7 Smallest effect size of interest<a class="headerlink" href="#smallest-effect-size-of-interest" title="Permalink to this heading">#</a></h2>
+<p>We can also use the posterior probability distribution to determine how likely it is that the true population parameter is at least as large as some smallest effect size of interest.</p>
+<p>Based on how the data updated our prior beliefs, we now think the most likely value of the population parameter is 6.063. But there’s still some uncertainty in our beliefs, as communicated by the credible interval.</p>
+<p>Let’s say we’re working for a fashion company and trying to decide if our new glove design should be made with a male and female version. The fashion house only wants to spend the time on that if male and female thumb lengths differ by at least 5mm. Based on our credible distribution, what is the probability that the true <span class="math notranslate nohighlight">\(\beta_1 &gt;= 5\)</span>?</p>
+<p>We can easily find the proportion of our posterior distribution that is above a value of 5:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bigger_than_5 &lt;- sex_betas_posterior &gt;= 5</span>
+<span class="c1">#sum(bigger_than_5) / length(sex_betas_posterior)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.75325</div></div>
+</div>
+<p>This tells us that, under our new beliefs about the population parameter, there is a 75.3% chance that the true difference between male and female thumb lengths is at least as large as 5mm. If we were advising the fashion company, we’d probably say they should make two versions of gloves!</p>
+</section>
+<section id="power-planning-in-bayesian-stats">
+<h2>21.8 Power planning in Bayesian stats<a class="headerlink" href="#power-planning-in-bayesian-stats" title="Permalink to this heading">#</a></h2>
+<p>At the heart of Bayesian statistics is a motivation to estimate a population parameter as accurately as possible. That’s different than the primary motivation of null hypothesis testing in Frequentism, which is to identify whether or not one data sample likely came from a population parameter equal to 0.</p>
+<p>Power planning procedures that inform the sample size of a study in Frequentist statistics are aimed at telling us, based on an anticipated effect size and desired power level/Type I error rate, how many data points we need in order to find an effect as significant. In power planning, the precision of that estimate doesn’t matter, just whether or not it is found to be significantly different than 0.</p>
+<p>Consider a power plan where we want to know what minimum sample size we need to find a correlation r effect size of 0.7. That’s a big effect. If the true population parameter is really equal to 0.7, then we don’t need much data to find it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;pwr&quot;)</span>
+<span class="c1">#library(pwr)</span>
+
+<span class="c1">#pwr.r.test(n=NULL, r=0.7, sig.level=0.05, power=0.8)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing package into ‘/Library/Frameworks/R.framework/Versions/4.2-arm64’
+(as ‘lib’ is unspecified)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
+	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmphHZCYv/downloaded_packages
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     approximate correlation power calculation (arctangh transformation) 
+
+              n = 12.81943
+              r = 0.7
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to this power plan, we’d only need 13 data points to find that effect size as significant, if that were the true effect size.</p>
+<p>You might have an intuition that that number is too small to be useful, despite what the power plan says. That depends on your definition of “useful.” If all you care about is finding a significant effect, if you expect the effect to be large, you don’t need much data at all to do that.</p>
+<p>But with n=13 and true <span class="math notranslate nohighlight">\(\beta_1 = 0.7\)</span>, we would just barely decide it is significant (and only 80% of the time). The confidence interval of our estimate would be something like [0.01, 1.39]. That doesn’t overlap with 0, but if we care about the <em>specific value</em> of the true population parameter, that confidence interval isn’t very helpful. Nearly all possible positive correlation values in the population could reasonably produce a sample estimate of <span class="math notranslate nohighlight">\(r=0.7\)</span> with only 13 data points.</p>
+<p>In Bayesian statistics, power planning is not about what sample size you need to find a <em>significant</em> effect. Instead, it answers what sample size you need to find a <em>precise</em> effect. Bayesians do <strong>precision planning</strong>, instead of power planning.</p>
+<p>Currently there aren’t easy-to-use tools in R for doing precision planning. Most people build their own simulations. Below is an example of some code that simulates a Bayesian sample size plan. Specifically, if we wanted to make a posterior estimate of the effect size that is at least as precise as 5mm (the credible interval is no more than 5mm wide), we could draw increasingly larger random samples from the data until we can make a credible interval that is narrow enough. Read through each line of the code and see if you understand what that step is doing. When you run the code, it may take a few moments to do all the simulations but will eventually output a minimum sample size needed to get a posterior interval with a precision of 5mm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#precision planning for bayes model</span>
+
+<span class="c1">#precision_target &lt;- 5    #widest we want the credible interval to be</span>
+<span class="c1">#PI_width &lt;- Inf          #starting width of the credible interval</span>
+<span class="c1">#sample_size &lt;- 5         #minimum sample size to start with</span>
+
+<span class="c1">#while (PI_width &gt; precision_target) {   #while the PI width is larger than precision_target...</span>
+<span class="c1">#  sample_size &lt;- sample_size + 1        #increase sample size on each loop</span>
+<span class="c1">#  bootstrap_sample &lt;- sample_n(studentdata, size=sample_size, replace=TRUE) #draw a sample</span>
+<span class="c1">#  num_sex &lt;- length(unique(bootstrap_sample$Sex))   #are both sex values present in sample? If not, redraw</span>
+<span class="c1">#  while (num_sex&lt;2) {</span>
+<span class="c1">#    bootstrap_sample &lt;- sample_n(studentdata, size=sample_size, replace=TRUE)</span>
+<span class="c1">#    num_sex &lt;- length(unique(bootstrap_sample$Sex))</span>
+<span class="c1">#  }</span>
+<span class="c1">#  bm &lt;- stan_glm(Thumb ~ Sex, data=bootstrap_sample, refresh=0)   #fit bayesian model on subsample of data</span>
+<span class="c1">#  PI &lt;- posterior_interval(bm, pars=&quot;SexMale&quot;, prob=0.95)         #find posterior interval of Sex effect </span>
+<span class="c1">#  PI_width &lt;- PI[2]-PI[1]                    #update PI_width to be distance between lower and upper PI bounds</span>
+<span class="c1">#}</span>
+
+<span class="c1">#while loop will stop when PI precision is smaller than precision_target</span>
+<span class="c1">#can then return sample_size</span>
+<span class="c1">#sample_size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">178</div></div>
+</div>
+</section>
+<section id="updating-priors">
+<h2>21.9 Updating priors<a class="headerlink" href="#updating-priors" title="Permalink to this heading">#</a></h2>
+<p>Most researchers use weakly informative priors for their Bayesian models. This is because we are usually studying novel hypotheses, and don’t have strong beliefs about the true value of the population parameter. But if you have experience with a research question already (e.g., you’ve run a study before and are now doing a replication), you can change the priors used by <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> to be informative priors.</p>
+<p>Let’s walk through this process by estimating a new effect, the relationship between height and thumb length. We’ll first split the <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> dataset in half to get a train and test set for replication.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#studentdata_train &lt;- studentdata[1:79,]</span>
+<span class="c1">#studentdata_test &lt;- studentdata[80:157,]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will fit a Bayesian model to estimate the posterior belief of the effect of sex, but only in the training dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
+<span class="c1">#train_model &lt;- stan_glm(Thumb ~ Height, data=studentdata_train, refresh=0)</span>
+<span class="c1">#train_model$stan_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 12 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>   4.2309375</td><td>0.361059269</td><td>21.6628365</td><td> -38.4095254</td><td> -23.4405808</td><td> -10.4369723</td><td>   4.2964149</td><td>  19.064352</td><td>  31.389117</td><td>  45.81811</td><td>3599.761</td><td>0.9997365</td></tr>
+	<tr><th scope=row>Height</th><td>   0.8398978</td><td>0.005488119</td><td> 0.3290638</td><td>   0.2090068</td><td>   0.4257877</td><td>   0.6139448</td><td>   0.8385092</td><td>   1.060439</td><td>   1.257394</td><td>   1.49523</td><td>3595.119</td><td>0.9997676</td></tr>
+	<tr><th scope=row>sigma</th><td>   9.0649448</td><td>0.013320464</td><td> 0.7545153</td><td>   7.7256816</td><td>   8.1418862</td><td>   8.5427445</td><td>   9.0004577</td><td>   9.551572</td><td>  10.061702</td><td>  10.67513</td><td>3208.465</td><td>1.0003018</td></tr>
+	<tr><th scope=row>mean_PPD</th><td>  59.4520624</td><td>0.024037552</td><td> 1.4627377</td><td>  56.5555618</td><td>  57.5708656</td><td>  58.4953861</td><td>  59.4265042</td><td>  60.408443</td><td>  61.336718</td><td>  62.37156</td><td>3702.989</td><td>1.0000196</td></tr>
+	<tr><th scope=row>log-posterior</th><td>-291.9129015</td><td>0.033127303</td><td> 1.3278763</td><td>-295.2966921</td><td>-293.6749543</td><td>-292.5152069</td><td>-291.5652690</td><td>-290.963427</td><td>-290.638273</td><td>-290.44356</td><td>1606.731</td><td>1.0018987</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>For <code class="docutils literal notranslate"><span class="pre">train_model</span></code>, we didn’t have strong prior beliefs about the true value of the height parameter. Because of this, we used the default prior included in <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#prior_summary(train_model)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Priors for model &#39;train_model&#39; 
+------
+Intercept (after predictors centered)
+  Specified prior:
+    ~ normal(location = 59, scale = 2.5)
+  Adjusted prior:
+    ~ normal(location = 59, scale = 23)
+
+Coefficients
+  Specified prior:
+    ~ normal(location = 0, scale = 2.5)
+  Adjusted prior:
+    ~ normal(location = 0, scale = 7.3)
+
+Auxiliary (sigma)
+  Specified prior:
+    ~ exponential(rate = 1)
+  Adjusted prior:
+    ~ exponential(rate = 0.11)
+------
+See help(&#39;prior_summary.stanreg&#39;) for more details
+</pre></div>
+</div>
+</div>
+</div>
+<p>This weakly informative prior had a mean of 0 and an SD of 7.3.</p>
+<p>Now, after fitting the model, we are more confident in what the true population parameter is. The mean of our posterior is 0.84 and the SD is 0.329. This is now the state of our belief about the population parameter. There are no p-values here, but the credible interval tells us how precise our beliefs are about the parameter estimate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">posterior_interval</span><span class="p">(</span><span class="n">train_model</span><span class="p">,</span><span class="w"> </span><span class="n">pars</span><span class="o">=</span><span class="s">&quot;Height&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">prob</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 1 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>Height</th><td>0.2090068</td><td>1.49523</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>This tells us that we believe the true population parameter has a 95% chance of being between 0.209 and 1.495. Each 1 inch increase in height corresponds to a predicted change in thumb length that is somewhere between 0.209 and 1.495mm. We no longer think the possible options for this parameter are as wide (prior SD was 7.3), and we no longer think a population parameter of 0 is a likely option.</p>
+<p>Now, we want to do a replication with the test data. Because we’ve fit this model before, we don’t have to go back to using an uninformative prior. Our beliefs were updated based on seeing the data in the train set, so we shouldn’t forget about that. When fitting the model in the train data, we should use the posterior of <code class="docutils literal notranslate"><span class="pre">train_model</span></code> and pass it in as the prior of <code class="docutils literal notranslate"><span class="pre">test_model</span></code>.</p>
+<p>To do this, we need some more arguments in the <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code> function call. Look at the new argument <code class="docutils literal notranslate"><span class="pre">prior=</span></code> in the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
+<span class="c1">#test_model &lt;- stan_glm(Thumb ~ Height, data = studentdata_test, refresh=0, </span>
+<span class="c1">#                       prior = normal(0.8398978, 0.3290638, autoscale=FALSE))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rather than using a default prior of mean=0 and SD=7.3, this new prior is the posterior from the previous analysis, with the mean and SD from <code class="docutils literal notranslate"><span class="pre">train_model</span></code>’s summary. We also set <code class="docutils literal notranslate"><span class="pre">autoscale=FALSE</span></code> so that it doesn’t try to standardize these values.</p>
+<p>We were somewhat certain about the true population parameter going into this analysis, but not strongly certain: the posterior interval had an SD of 0.329. Now, when we update our beliefs even further with additional data, we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#test_model$stan_summary</span>
+<span class="c1">#posterior_interval(test_model, pars=&quot;Height&quot;, prob=0.95)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 12 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>   4.6375049</td><td>0.208373956</td><td>12.7921717</td><td> -20.0962339</td><td> -11.6577815</td><td>  -4.2497842</td><td>   4.4762769</td><td>  13.3094962</td><td>  21.120590</td><td>  29.564246</td><td>3768.788</td><td>0.9991862</td></tr>
+	<tr><th scope=row>Height</th><td>   0.8549039</td><td>0.003137588</td><td> 0.1925590</td><td>   0.4848782</td><td>   0.6053641</td><td>   0.7237485</td><td>   0.8566698</td><td>   0.9880999</td><td>   1.098267</td><td>   1.230610</td><td>3766.483</td><td>0.9991456</td></tr>
+	<tr><th scope=row>sigma</th><td>   8.3518713</td><td>0.011945809</td><td> 0.7103247</td><td>   7.1206905</td><td>   7.4771297</td><td>   7.8433383</td><td>   8.3037170</td><td>   8.8067068</td><td>   9.291568</td><td>   9.903278</td><td>3535.759</td><td>1.0007942</td></tr>
+	<tr><th scope=row>mean_PPD</th><td>  61.2945637</td><td>0.022862277</td><td> 1.3362293</td><td>  58.6180491</td><td>  59.5768440</td><td>  60.4183886</td><td>  61.2846735</td><td>  62.1941600</td><td>  63.003024</td><td>  63.873986</td><td>3416.040</td><td>1.0000511</td></tr>
+	<tr><th scope=row>log-posterior</th><td>-281.8265374</td><td>0.031458831</td><td> 1.2629381</td><td>-285.0552559</td><td>-283.5236709</td><td>-282.3626505</td><td>-281.4893959</td><td>-280.9246960</td><td>-280.590247</td><td>-280.392028</td><td>1611.681</td><td>1.0019231</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table class="dataframe">
+<caption>A matrix: 1 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>2.5%</th><th scope=col>97.5%</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>Height</th><td>0.4848782</td><td>1.23061</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Now, our posterior distribution is even narrower. Its SD is only 0.193. We can compare visualizations of the prior and posterior distributions again to see how our beliefs changed based on the second set of data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#height_prior &lt;- as.matrix(train_model, pars = &quot;Height&quot;)</span>
+<span class="c1">#height_posterior &lt;- as.matrix(test_model, pars = &quot;Height&quot;)</span>
+<span class="c1">#gf_density(~height_prior, fill=&quot;red&quot;, alpha=0.5) %&gt;%</span>
+<span class="c1">#    gf_density(~height_posterior, fill=&quot;blue&quot;, alpha=0.5)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eaae1926fa46a17bd99363192ae15774fc6efec0df2fd88e4094bcb9db3d913b.png" src="_images/eaae1926fa46a17bd99363192ae15774fc6efec0df2fd88e4094bcb9db3d913b.png" />
+</div>
+</div>
+<p>The red distribution is our prior, and the blue distribution is our posterior. We see that considering data from the second dataset didn’t really shift the mean of our beliefs, but it did make our beliefs more precise.</p>
+<p>If we had instead ignored the beliefs we collected in the train data and used a weakly informative prior again for <code class="docutils literal notranslate"><span class="pre">test_model</span></code>, our posterior would be less precise.</p>
+<p>This is actually another version of Bayesian power planning, called <strong>optional stopping</strong>. Rather than knowing ahead of time how many datapoints to collect, you can collect in batches of smaller numbers (e.g., 20). After each batch, you fit a Bayesian model, refining the beliefs of the prior model. You keep adding new batches until the posterior distribution is narrow enough for your liking. At that point, you choose to stop collecting new data.</p>
+<p>If you wanted to control the priors for a multivariable model, you would likely want to make different priors for each predictor in the model. For instance, if we regress Thumb length on the effect of Height AND Sex:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
+<span class="c1">#multi_train_model &lt;- stan_glm(Thumb ~ Height + Sex, data = studentdata_train, refresh=0)</span>
+<span class="c1">#multi_train_model$stan_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 12 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>  15.4700487</td><td>0.505662270</td><td>25.8065990</td><td> -33.8037685</td><td> -17.5401910</td><td>  -1.6283338</td><td>  15.2479085</td><td>  32.9346435</td><td>  47.820103</td><td>  66.196967</td><td>2604.596</td><td>1.0000436</td></tr>
+	<tr><th scope=row>Height</th><td>   0.6596192</td><td>0.007886865</td><td> 0.3996948</td><td>  -0.1316833</td><td>   0.1593453</td><td>   0.3866986</td><td>   0.6640607</td><td>   0.9192827</td><td>   1.176633</td><td>   1.416916</td><td>2568.314</td><td>1.0000875</td></tr>
+	<tr><th scope=row>SexMale</th><td>   2.1311507</td><td>0.055507660</td><td> 2.8052245</td><td>  -3.4818051</td><td>  -1.5401919</td><td>   0.2606087</td><td>   2.1818990</td><td>   4.0217527</td><td>   5.688029</td><td>   7.609936</td><td>2554.050</td><td>1.0006644</td></tr>
+	<tr><th scope=row>sigma</th><td>   9.0757203</td><td>0.013202740</td><td> 0.7633733</td><td>   7.7383638</td><td>   8.1307912</td><td>   8.5459136</td><td>   9.0142206</td><td>   9.5563946</td><td>  10.081693</td><td>  10.750277</td><td>3343.072</td><td>1.0004809</td></tr>
+	<tr><th scope=row>mean_PPD</th><td>  59.4535339</td><td>0.024553999</td><td> 1.4534441</td><td>  56.5815813</td><td>  57.6018839</td><td>  58.4946055</td><td>  59.4577557</td><td>  60.4294197</td><td>  61.288848</td><td>  62.350043</td><td>3503.904</td><td>0.9994331</td></tr>
+	<tr><th scope=row>log-posterior</th><td>-293.0344073</td><td>0.039859950</td><td> 1.4600681</td><td>-296.6786564</td><td>-294.9279904</td><td>-293.7257827</td><td>-292.7263461</td><td>-291.9769903</td><td>-291.510515</td><td>-291.211616</td><td>1341.753</td><td>1.0014460</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>We find that in the train data, the mean and SD of the posterior for Height are 0.660/0.400 respectively, while the mean and SD of the posterior for Sex is 2.13/2.805. To pass these different numbers to the <code class="docutils literal notranslate"><span class="pre">prior=</span></code> argument of <code class="docutils literal notranslate"><span class="pre">stan_glm()</span></code>, we use vectors containing all the numbers instead of one number at a time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set.seed(10)</span>
+<span class="c1">#multi_test_model &lt;- stan_glm(Thumb ~ Height + Sex, data = studentdata_test, refresh=0, </span>
+<span class="c1">#                       prior = normal(c(0.66,0.4), c(2.13,2.805), autoscale=FALSE)) </span>
+<span class="c1">#multi_test_model$stan_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 12 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>mean</th><th scope=col>se_mean</th><th scope=col>sd</th><th scope=col>2.5%</th><th scope=col>10%</th><th scope=col>25%</th><th scope=col>50%</th><th scope=col>75%</th><th scope=col>90%</th><th scope=col>97.5%</th><th scope=col>n_eff</th><th scope=col>Rhat</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>  15.1565166</td><td>0.335348356</td><td>17.8850034</td><td> -20.6686647</td><td>  -7.80415221</td><td>   3.4186584</td><td>  15.1290071</td><td>  27.1363918</td><td>  38.819744</td><td>  50.195437</td><td>2844.367</td><td>1.0012341</td></tr>
+	<tr><th scope=row>Height</th><td>   0.6850605</td><td>0.005171017</td><td> 0.2732294</td><td>   0.1511931</td><td>   0.32677472</td><td>   0.5005703</td><td>   0.6868776</td><td>   0.8660016</td><td>   1.038026</td><td>   1.230023</td><td>2791.920</td><td>1.0013078</td></tr>
+	<tr><th scope=row>SexMale</th><td>   2.4749256</td><td>0.034864572</td><td> 1.9156339</td><td>  -1.2545057</td><td>   0.06510903</td><td>   1.1997414</td><td>   2.4821041</td><td>   3.7357448</td><td>   4.954452</td><td>   6.292054</td><td>3018.953</td><td>1.0006349</td></tr>
+	<tr><th scope=row>sigma</th><td>   8.2645608</td><td>0.011345666</td><td> 0.6800380</td><td>   7.0722883</td><td>   7.43260040</td><td>   7.7808148</td><td>   8.2195536</td><td>   8.6886044</td><td>   9.141680</td><td>   9.754752</td><td>3592.579</td><td>0.9997700</td></tr>
+	<tr><th scope=row>mean_PPD</th><td>  61.2596499</td><td>0.022547406</td><td> 1.3522868</td><td>  58.5532743</td><td>  59.50938767</td><td>  60.3456034</td><td>  61.2618505</td><td>  62.1807183</td><td>  62.978935</td><td>  63.854951</td><td>3597.033</td><td>0.9999024</td></tr>
+	<tr><th scope=row>log-posterior</th><td>-282.3924334</td><td>0.034674749</td><td> 1.4439696</td><td>-285.9617983</td><td>-284.31038264</td><td>-283.1375634</td><td>-282.0566167</td><td>-281.3387526</td><td>-280.873514</td><td>-280.566298</td><td>1734.161</td><td>1.0028886</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="bayes-factors">
+<h2>21.10 Bayes factors<a class="headerlink" href="#bayes-factors" title="Permalink to this heading">#</a></h2>
+<p>The above use cases describe how to apply Bayesian philosophy to evaluation of individual parameters in a model. We can estimate the likely value of each population parameter in a model, say how precise that estimate is, make sample size decisions for attaining precision, and update beliefs about population parameters based on new data.</p>
+<p>There is also a Bayesian method to compare entire models to each other. The method for that involves what are called <strong>Bayes factors</strong>.</p>
+<p>Bayesian estimation tells you the probability that the population parameter equals a particular value, given some data. A Bayes factor is a ratio of the probability that the parameter equals some number I, compared to the probability that the parameters equals some other number J, given the same data:</p>
+<div class="math notranslate nohighlight">
+\[Bayes factor = \frac{P(\beta=I|b)}{P(\beta=J|b)}\]</div>
+<p>If I has a much higher probability (the Bayes factor ratio is large), then we would say the evidence strongly favors the parameter equalling I instead of J.</p>
+<p>We can extend this logic up to many sets of parameters for comparing models. What is the probability that all the parameters in a model are equal to a set of values, compared to the probability they equal a different set of values?</p>
+<p>Frequently, this question is asked about a null hypothesis where all <span class="math notranslate nohighlight">\(\beta = 0\)</span> vs. some alternative hypothesis where at least some <span class="math notranslate nohighlight">\(\beta \neq 0\)</span>. It uses Bayesian methods to answer the Frequentist concern about the null hypothesis. The plus side to doing this instead of Frequentist model comparison is that it lets you build support for the null hypothesis itself, and allows you to use optional stopping once you’ve accumulated enough evidence for either hypothesis.</p>
+<p>The package <code class="docutils literal notranslate"><span class="pre">BayesFactor</span></code> is an easy way of doing this. All you have to do is fit a model the normal way with the function <code class="docutils literal notranslate"><span class="pre">BFlm()</span></code>, and it will tell you the Bayes factor in favor of that model having non-zero parameters compared to the null model where all <span class="math notranslate nohighlight">\(\beta = 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;BayesFactor&quot;)</span>
+<span class="c1">#library(BayesFactor)</span>
+
+<span class="c1">#lmBF(Thumb ~ Sex, data = studentdata)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing package into ‘/Library/Frameworks/R.framework/Versions/4.2-arm64’
+(as ‘lib’ is unspecified)
+
+also installing the dependencies ‘elliptic’, ‘contfrac’, ‘deSolve’, ‘pbapply’, ‘hypergeo’
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
+	/var/folders/mg/1wy1xcls587_h0tqnj42l5740000gn/T//RtmphHZCYv/downloaded_packages
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: coda
+
+Loading required package: Matrix
+
+************
+Welcome to BayesFactor 0.9.12-4.5. If you have questions, please contact Richard Morey (richarddmorey@gmail.com).
+
+Type BFManual() to open the manual.
+************
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bayes factor analysis
+--------------
+[1] Sex : 191.4395 ±0%
+
+Against denominator:
+  Intercept only 
+---
+Bayes factor type: BFlinearModel, JZS
+</pre></div>
+</div>
+</div>
+</div>
+<p>The output of this function is a table telling you which model is being compared to the null, and what the Bayes factor is in favor of that model. In this case, we are considering a model with just Sex as a predictor, and the corresponding Bayes factor is 191.4395.</p>
+<p>Is that good or bad evidence in favor of the sex model? This number means that the probability at least one predictor parameter in the model is non-zero is about 191x higher than the probability all parameters are zero. Seems like pretty good evidence in favor of the sex model!</p>
+<p>In case you get smaller numbers, the stats community has arrived at some rules of thumb for what counts as strong vs. weak evidence in favor of a model. Those can be seen in the table below.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Bayes Factor</p></th>
+<th class="head text-center"><p>Evidence in favor of model</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>&lt;0.007</p></td>
+<td class="text-center"><p>Very strong evidence in favor of null</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0.01-0.05</p></td>
+<td class="text-center"><p>Strong evidence in favor of null</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>0.05-0.3</p></td>
+<td class="text-center"><p>Weak evidence in favor of null</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0.3-3</p></td>
+<td class="text-center"><p>Inconclusive evidence either way</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3-20</p></td>
+<td class="text-center"><p>Weak evidence in favor of full model</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>20-150</p></td>
+<td class="text-center"><p>Strong evidence in favor of full model</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>&gt;150</p></td>
+<td class="text-center"><p>Very strong evidence in favor of full model</p></td>
+</tr>
+</tbody>
+</table>
+<p>To compare full models to simpler ones, consider the fact that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{A}{C}}{\frac{B}{C}} = \frac{A}{B}\]</div>
+<p>So if the Bayes factor of a model represents the ratio of model/null evidence, dividing the Bayes factor for one model by the Bayes factor for another model will tell you the amount of evidence in favor of a particular model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#bf1 &lt;- lmBF(Thumb ~ Height*Sex, data=studentdata)   #model option with an interaction</span>
+<span class="c1">#bf2 &lt;- lmBF(Thumb ~ Height + Sex, data=studentdata) #model option with no interaction</span>
+
+<span class="c1">#bf1/bf2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bayes factor analysis
+--------------
+[1] Height * Sex : 0.2654386 ±1.52%
+
+Against denominator:
+  Thumb ~ Height + Sex 
+---
+Bayes factor type: BFlinearModel, JZS
+</pre></div>
+</div>
+</div>
+</div>
+<p>The Bayes factor of 0.265 in this model comparison suggests there is weak evidence in favor of the denominator model, the one with only main effects.</p>
+</section>
+<section id="chapter-summary">
+<h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
+<p>After reading this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Explain the difference between Frequentist and Bayesian definitions of probability</p></li>
+<li><p>Understand a conditional probability</p></li>
+<li><p>Use Bayes’ rule to reverse a conditional probability</p></li>
+<li><p>Define a prior vs. posterior probability</p></li>
+<li><p>Use stan_glm() in the rstanarm package to estimate posterior probabilities of model parameters</p></li>
+<li><p>Find the credible interval of a model parameter</p></li>
+<li><p>Calculate the probability that a parameter is at least as large as a smallest effect size of interest</p></li>
+<li><p>Understand power planning for precision</p></li>
+<li><p>Update priors in stan_glm()</p></li>
+<li><p>Explain and use Bayes factors for model comparison</p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Next: Chapter 22 - Lying with Statistics</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "smburns47/Psyc158",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-vs-bayesian-statistics">21.1 Frequentist vs. Bayesian statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">21.2 Conditional probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversing-a-conditional-probability-bayes-rule">21.3 Reversing a conditional probability: Bayes’ rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-hypothesis-testing">21.4 Bayesian hypothesis testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-parameter-estimation">21.5 Bayesian parameter estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-set-the-prior">Step 1 - Set the prior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-estimate-model">Step 2 - Estimate model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-interpret-posterior-probability">Step 3 - Interpret posterior probability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credible-intervals">21.6 Credible intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smallest-effect-size-of-interest">21.7 Smallest effect size of interest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-planning-in-bayesian-stats">21.8 Power planning in Bayesian stats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-priors">21.9 Updating priors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-factors">21.10 Bayes factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon Burns
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

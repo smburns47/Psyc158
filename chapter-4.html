@@ -180,10 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -434,6 +433,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data">4.6 Saving data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -525,7 +525,7 @@ document.write(`
 </section>
 <section id="filtering-bad-data">
 <h2>4.2 Filtering bad data<a class="headerlink" href="#filtering-bad-data" title="Permalink to this heading">#</a></h2>
-<p>Filtering is very useful for removing data points we don’t want, such as the bad outliers and missing values discussed in chapter 2. To remove outliers, we need to decide what counts as realistic values for a variable. There are different opinions on this among researchers. Some believe you should remove any data points that are sufficiently far away from the average of a variable (chapter 5 will discuss ways to calculate this). Other researchers are more conservative and think you should only remove data points if the value is clearly incorrect, like someone mistyping their age as 211 instead of 21. This is an example of a situation where statistics aren’t completely objective, and different decisions lead to different analysis outcomes. You will have to develop domain knowledge in the topic you are studying in order to be confident that the decision you made on outlier classification is the best decision for your data.</p>
+<p>Filtering is very useful for removing data points we don’t want, such as the bad outliers and missing values discussed in chapter 2. To remove outliers, we need to decide what counts as realistic values for a variable. There are different opinions on this among researchers. Some believe you should remove any data points that are sufficiently far away from the average of a variable (chapter 5 will discuss ways to calculate this). Other researchers are more conservative and think you should only remove data points if the value is clearly incorrect, like someone mistyping their age as 211 instead of 21. This is an example of a situation where statistics aren’t completely objective, and different decisions lead to different analysis outcomes. If you leave outliers in, will your data be too noisy? If you remove many outliers, are you choosing a cut off based on what helps your hypothesis the most? You will have to develop domain knowledge in the topic you are studying in order to be confident that the decision you made on outlier classification is the best decision for your data.</p>
 <p>Let’s say for our purposes that it wouldn’t be realistic for anyone to have more than 100 intrusive memories during the tetris study (that would be at least 10 per day). Thus if an observation has a value of &gt;100 in <code class="docutils literal notranslate"><span class="pre">instrusive_memories</span></code>, we want to exclude it as bad data. Write code below to create a new data frame that excludes anyone with more than 100 reported intrusive memories.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,7 +557,7 @@ document.write(`
 </div>
 </div>
 <p>Using this approach, we removed 12 participants for poor complaince.</p>
-<p>Another reason to exclude observations from a dataset is because of missing values. It is very common in psychology to have at least a few missing values somewhere. In a data file, this would likely look like a blank cell where a value should otherwise be. When loaded into R, blank cells are represented with the value NA (“not available”). If your data set represents missing data in some other way (e.g., some people put a nonsense value like -999), you should recode the values as NA when working in R (recoding will be discussed later in this chapter).</p>
+<p>Another reason to exclude observations from a dataset is because of missing values. It is very common in psychology to have at least a few missing values somewhere. In a data file, this would likely look like a blank cell where a value should otherwise be. When loaded into R, blank cells are represented with the value NA (“not available”). If your dataset represents missing data in some other way (e.g., some people put a nonsense value like -999), you should recode the values as NA when working in R (recoding will be discussed later in this chapter).</p>
 <p>Let’s consider the <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">tetrismemories</span></code> data frame. First, a function called <code class="docutils literal notranslate"><span class="pre">is.na()</span></code> can be used to tell you whether a datapoint is NA or not (it will return <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> or <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>). If we apply that to an entire vector, it will return a vector of falses and trues corresponding to what indices in the vector have an NA value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,12 +572,20 @@ document.write(`
 <p>Now that you can find missing data, the big question is - what to do about it? Again, there are different opinions. Most commonly, researchers just remove observations with values missing on important variables. There’s also something called imputation, which involves figuring out what the missing value most likely is and inserting that value into the dataset. For this exercise, we will use the exclusion method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">tetris_total_score</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;NA&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">tetris_total_score</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Can you remember what the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator does? This code returns a data frame that includes only cases for which the variable <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> is <em>not</em> equal to NA.</p>
+<p>Can you remember what the <code class="docutils literal notranslate"><span class="pre">!</span></code> operator does? This code returns a data frame that includes only cases for which the variable <code class="docutils literal notranslate"><span class="pre">tetris_total_score</span></code> is <em>not</em> equal to NA.</p>
+<p>If you have multiple filtering steps to do, note that you can include multiple logic statements in <code class="docutils literal notranslate"><span class="pre">filter()</span></code> as separate arguments separated by commas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">tetrismemories</span><span class="p">,</span><span class="w"> </span><span class="n">diary_compliance</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">tetris_total_score</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="creating-new-variables">
 <h2>4.3 Creating new variables<a class="headerlink" href="#creating-new-variables" title="Permalink to this heading">#</a></h2>
@@ -635,6 +643,7 @@ task.</p></li>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tetrismemories_recoded</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tetrismemories</span><span class="w"> </span><span class="c1">#avoiding destructive editing by making a new copy of data frame</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
 
+<span class="c1">#base R method</span>
 <span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">tetrismemories</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">tetrismemories_recoded</span><span class="o">$</span><span class="n">condition</span><span class="p">)</span>
 
@@ -787,6 +796,20 @@ task.</p></li>
 <li><p><strong>destructive editing</strong>: An editing practice where the original copy of a file is overwritten by an edited copy, destroying the original.</p></li>
 <li><p><strong>pipe</strong>: An operator in R that allows a coder to pass the output of one function immediately as an argument in another.</p></li>
 </ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dplyr.tidyverse.org/reference/select.html">dplyr::select()</a></p></li>
+<li><p><a class="reference external" href="https://dplyr.tidyverse.org/reference/filter.html">dplyr::filter()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/NA">is.na()</a></p></li>
+<li><p><a class="reference external" href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/dollar-sign-in-r/">$ operator</a></p></li>
+<li><p><a class="reference external" href="https://dplyr.tidyverse.org/reference/case_match.html">dplyr::case_match()</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/r/r_functions_nested.asp">nested functions</a></p></li>
+<li><p><a class="reference external" href="https://www.datacamp.com/tutorial/pipe-r-tutorial">%&gt;% pipe</a></p></li>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/writing-to-csv-files-in-r/">write.csv()</a></p></li>
+</ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Next: Chapter 5 - Describing Data</a></p>
 </section>
 </section>
@@ -848,6 +871,7 @@ task.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data">4.6 Saving data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 

@@ -182,10 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -428,16 +427,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-models">9.1 Deterministic models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-models">9.2 Conceptual models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-models">9.3 Statistical models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-model">9.4 The null model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatically-building-a-model">9.5 Automatically building a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-about-error">9.6 Thinking about error</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-mathematical-notation-of-a-statistical-model">9.7 More on mathematical notation of a statistical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-for-the-general-linear-model">9.8 Notation for the General Linear Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models">9.1 Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-using-models">9.2 Creating data using models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-models">9.3 Conceptual models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-models-from-data">9.4 Creating models from data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-model">9.5 The null model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatically-building-a-model">9.6 Automatically building a model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-about-error">9.7 Thinking about error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-mathematical-notation-of-a-statistical-model">9.8 More on mathematical notation of a statistical model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-and-parameters">9.9 Statistics and parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -465,25 +466,90 @@ document.write(`
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-9-modeling-the-data-generation-process">
 <h1>Chapter 9 - Modeling the Data Generation Process<a class="headerlink" href="#chapter-9-modeling-the-data-generation-process" title="Permalink to this heading">#</a></h1>
-<p>In the prior chapter we began to talk about the data generation process. To understand the data generation process is to break down what other factors create the distribution of an outcome variable, and can therefor explain variation in the outcome variable. If anything, this is <em>the</em> idea underlying the use of statistics in psychology. The majority of this field is dedicated to studying the data generation process for the how the human mind works. Anytime we form a hypothesis about how variables are related to each other (e.g., “how does income relate to sleep quality?” or “are stressed teachers more punative than non-stressed teachers?”), we are proposing a data generation process. So this is a concept to pay attention to!</p>
-<p>The framework we use to describe the data generation process is called a <strong>model</strong>. A model captures:</p>
+<p>In the prior chapter we discussed why a sample of data looks the way it does. One reason is because of the sampling process used and the level of randomness involved, while another reason is the data generation process that led to the shape of the population from which the data came.</p>
+<p>To understand the data generation process is to break down what factors create the distribution of a population, and can therefor explain the shape and variation in that population. If we know the data generation process, we can explain why things happen the way they do and anticipate what new data will look like. Because of this, trying to understand the data generation process is perhaps <em>the</em> main reason for using statistics in psychology. The majority of this field is dedicated to studying the data generation process for how the human mind works. Anytime we form a hypothesis about how variables are related to each other (e.g., “how does income relate to sleep quality?” or “are stressed parents more punative than non-stressed parents?”), we are proposing a data generation process. So this is a concept to pay attention to! In this chapter we will discuss how data analysts build ideas about the data generation process using data.</p>
+<section id="models">
+<h2>9.1 Models<a class="headerlink" href="#models" title="Permalink to this heading">#</a></h2>
+<p>There is how the world works (the data generation process), and there is our idea of it. Our current understanding of the data generation process for some outcome is called a <strong>model</strong>. A model describes:</p>
 <ol class="arabic simple">
 <li><p>The inputs that go into creating the output</p></li>
 <li><p>The relationships among all variables in the process</p></li>
 </ol>
-<p>While a model contains these pieces of information, you can represent a model in different ways. Below are some types of models.</p>
-<section id="deterministic-models">
-<h2>9.1 Deterministic models<a class="headerlink" href="#deterministic-models" title="Permalink to this heading">#</a></h2>
-<p>Sometimes we understand a data generation process really well. This means we are able to build a detailed model of it. We know exactly what inputs matter, and exactly how they relate to each other and to the outcome.</p>
-<p>Consider a concept like gravity: more than 300 years ago, Isaac Newton described an equation for the gravitational force between two objects.</p>
+<p>Ideally, our model of the data generation process accurately captures the truth. Consider a concept like gravity. More than 300 years ago, Isaac Newton described an equation for the gravitational force between two objects:</p>
 <div class="math notranslate nohighlight">
 \[gravitational force = G\frac{m_1*m_2}{r^2}\]</div>
 <p>This equation is a model because it describes both the inputs that determine the value of gravitational force (object masses, the distance between them, and a force parameter G), and it describes the relationships between these inputs and the output (multiply the masses together, divide by the square of the distance, multiply all by G).</p>
-<p>This model is very accurate. For essentially any two bodies of mass, plugging in the appropriate input values to this model will creat a prediction of gravitational force that matches what actually occurs. Highly accurate models like this, where we fully understand the data generation process and can accurately make predictions of outcomes, are called <strong>deterministic models</strong>. We can <em>determine</em> what any output will be just by knowing the input values.</p>
+<p>This model is very accurate. For any two bodies of mass, plugging in the appropriate input values to this model will creat a prediction of gravitational force that matches what actually occurs. Highly accurate models like this, where we fully understand the data generation process and can accurately make predictions of outcomes, are called <strong>deterministic models</strong>. We can <em>determine</em> what any output will be just by knowing the input values.</p>
+</section>
+<section id="creating-data-using-models">
+<h2>9.2 Creating data using models<a class="headerlink" href="#creating-data-using-models" title="Permalink to this heading">#</a></h2>
+<p>Deterministic models can be really useful for making predictions. Say you have a good model of how disease spreads through a population, such as the influential <a class="reference external" href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology">SIR model</a> used in epidemiology. This model outputs the number of people likely to contract a disease as a function of the number of susceptible people (S), infectious people (I), people already recovered (R), and rates for infection and recovery. Using this model, public health officials can predict the trajectory of a disease over time. Based on this prediction, they can then make other decisions like whether or not the government should institute more stringent disease avoidance protocols. This SIR model was the basis for the <a class="reference external" href="https://en.wikipedia.org/wiki/Flattening_the_curve">“flatten the curve”</a> messaging at the beginning of the COVID-19 pandemic. It predicted that with social distancing practices, the pandemic would be longer but the number of people sick at any one time would be lower and hospitals wouldn’t be overwhelmed.</p>
+<p>If we have a good model of the data generation process of sick people, we can use the simulation skills we developed in the previous chapter to make these predictions. By writing the model equations into code for the computer to execute, along with some instructions for what the input values should be, this simulation will generate a predicted number of people who are sick at any one time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#simulation using the SIR model of disease transmission - from https://rpubs.com/choisy/sir</span>
+
+<span class="c1">#functions to solve differential calculus equations</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;deSolve&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">deSolve</span><span class="p">)</span>
+
+<span class="c1">#SIR model equations</span>
+<span class="n">sir_equations</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">variables</span><span class="p">,</span><span class="w"> </span><span class="n">parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">with</span><span class="p">(</span><span class="nf">as.list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span><span class="w"> </span><span class="n">parameters</span><span class="p">)),</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">dS</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">-</span><span class="n">beta</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">S</span>
+<span class="w">    </span><span class="n">dI</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">beta</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gamma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span>
+<span class="w">    </span><span class="n">dR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">gamma</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">dS</span><span class="p">,</span><span class="w"> </span><span class="n">dI</span><span class="p">,</span><span class="w"> </span><span class="n">dR</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">#parameters within the model </span>
+<span class="n">parameters_values</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">  </span><span class="n">beta</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">0.004</span><span class="p">,</span><span class="w"> </span><span class="c1"># infectious contact rate (/person/day)</span>
+<span class="w">  </span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="w">    </span><span class="c1"># recovery rate (/day)</span>
+<span class="p">)</span>
+
+<span class="c1">#intial population conditions</span>
+<span class="n">initial_values</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">  </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">999</span><span class="p">,</span><span class="w">  </span><span class="c1"># number of susceptibles at time = 0</span>
+<span class="w">  </span><span class="n">I</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">1</span><span class="p">,</span><span class="w">  </span><span class="c1"># number of infectious at time = 0</span>
+<span class="w">  </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="c1"># number of recovered (and immune) at time = 0</span>
+<span class="p">)</span>
+
+<span class="c1">#points in time to calculate values for </span>
+<span class="n">time_values</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="c1"># days</span>
+
+<span class="c1">#running the model calculations</span>
+<span class="n">sir_output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ode</span><span class="p">(</span>
+<span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">initial_values</span><span class="p">,</span>
+<span class="w">  </span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time_values</span><span class="p">,</span>
+<span class="w">  </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sir_equations</span><span class="p">,</span>
+<span class="w">  </span><span class="n">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parameters_values</span><span class="w"> </span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Looking at the results</span>
+<span class="n">sir_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">sir_output</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">sir_df</span><span class="p">)</span>
+
+<span class="nf">gf_line</span><span class="p">(</span><span class="n">S</span><span class="o">~</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sir_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;blue&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">gf_line</span><span class="p">(</span><span class="n">I</span><span class="o">~</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sir_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;red&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">gf_line</span><span class="p">(</span><span class="n">R</span><span class="o">~</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sir_df</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;green&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">gf_labs</span><span class="p">(</span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;blue = susceptible; red = infected; green = recovered&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to the predictions of this simulation, based on the infection and recovery rate we provided, this version of a pandemic would go pretty quick - half our population would be sick within three days, but recover quickly. If we were government officials, this would likely inform what public health strategy we chose.</p>
+<p>Take a look back at the code used for this simulation. Where did we define the model inputs, and where did we define how they were related to each other (e.g. the model equation)? Try changing these values and rerunning the simulation to see what would happen with different input values. Would we have been able to simulate the progression of disease without about these variables?</p>
 </section>
 <section id="conceptual-models">
-<h2>9.2 Conceptual models<a class="headerlink" href="#conceptual-models" title="Permalink to this heading">#</a></h2>
-<p>Unfortunately for us as psychologists (and also much of the life sciences), we rarely get to work with deterministic models. As complex as the math seems in many physics problems, it is only possible to come up with that math in the first place because the data generation processes are relatively simple. When it comes to human thought and behavior, there are so many inputs and relationships among them that we have only begun to scratch the surface of the data generation process.</p>
+<h2>9.3 Conceptual models<a class="headerlink" href="#conceptual-models" title="Permalink to this heading">#</a></h2>
+<p>Unfortunately for us as psychologists (and also much of the social and life sciences), we rarely get to work with deterministic models. As complex as the math seems in many physics problems or the SIR model above, it is only possible to come up with that math in the first place because the data generation processes are relatively simple. When it comes to human thought and behavior, there are so many inputs and relationships among them that we have only begun to scratch the surface of the data generation process.</p>
 <p>Consider a well-studied psychological phenomenon, like the <a class="reference external" href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop Effect</a>. This effect is highly replicable and strong - switching up the color in which a color-word is written in greatly slows down how fast people process the word and choose the right answer. Word-color congruence is a variable that explains variation in reaction time. But even if this effect is well-documented, it’s only one part of the data generation process of the outcome variable. What else goes into determining exactly how fast someone will select a word from a list? Their reading speed? Font size? Hand-eye coordination? How big of an effect is the Stroop Effect relative to these other inputs, and how do they relate to each other? Could you build an equation for reaction time?</p>
 <p>From this example, you can see how we don’t actually know that much about what exactly determines a fairly basic behavior - selecting a word quickly. Just imagine how much additional work we’d have to do to deterministically model something more complex, like political behaviors.</p>
 <p>However, this doesn’t mean we can’t model psychological processes at all. But it does mean we have to relax our standards a bit of what a model is. In this case, we can build a <strong>conceptual model</strong>. In a conceptual model, we don’t know the perfect equation for determining an output. But we have 1) some idea of what some of the inputs are, and 2) an idea about what variables are related to each other, in some way.</p>
@@ -494,14 +560,14 @@ document.write(`
 <img src="images/ch9-stroopmodel2.png" width="600">
 <p>If you are doing research on some variable, you likely have at least some idea about the data generation process behind it. That’s probably why you’re doing research in the first place - to see if your idea is correct about what input(s) is important for the output. This means you already have a conceptual model! Your model could be very basic (one input related to an output) or highly detailed, but it’s important to make your model explicit so you understand what you’re trying to study.</p>
 </section>
-<section id="statistical-models">
-<h2>9.3 Statistical models<a class="headerlink" href="#statistical-models" title="Permalink to this heading">#</a></h2>
-<p>Our goal in research is often to take a conceptual model and try to move it closer to being a deterministic model - to learn more information about the data generation process so we can use it to make better predictions and inferences about the population.</p>
-<p>Enter a third type of model, a <strong>statistical model</strong>. A deterministic model is built by knowing the full population of an output and all relevant information about the inputs and relationships among variables. A conceptual model has no real world information about those things, just some guesses. A statistical model is an attempt to bridge the gap - to come up with a simplified equation that describes part of the data generation process, or at least what it looks like within a subsample of data we are able to collect. A statistical model of the Stroop Effect might look like:</p>
+<section id="creating-models-from-data">
+<h2>9.4 Creating models from data<a class="headerlink" href="#creating-models-from-data" title="Permalink to this heading">#</a></h2>
+<p>Our goal in research is often to take a conceptual model and try to move it closer to being a deterministic model - to learn more information about the data generation process so we can use it to make better predictions and inferences about the population. While a deterministic model is built by knowing all relevant information about the inputs and relationships among them, a conceptual model has no concrete information about those things, just some guesses. To bridge the gap, we could come up with a simplified equation that describes part of the data generation process, or at least what it looks like within a subsample of data we are able to collect. For example, an attempt at an equation for the Stroop Effect might look like:</p>
 <div class="math notranslate nohighlight">
 \[reaction time_i = \beta_1congruence_i + \beta_2speed_i + \beta_3font_i + \beta_4coordination_i\]</div>
-<p>where each input is included, and the strength of the effect for each input is a numeric value encoded as a <span class="math notranslate nohighlight">\(\beta\)</span> parameter. Once we have a model like this, if we have a congruence, speed, font, and coordination value for some data point i, we can predict a reaction time value that is hopefully pretty close to what that value would really be.</p>
-<p>The heart of inferential statistics is building these sorts of models, so we will now spend the rest of the semester creating them and evaluating the ones we’ve build. However, before we start, there is something really important to keep in mind about statistical models: all statistical models are wrong! At least, wrong by some amount. These are <em>simplfied</em> equations, that contain some (but unlikely all) of the inputs and basic (but probably overly basic) relationships among all the variables. This is an attempt to approximate what the true data generation process is in the population, but we are very unlikely to get it exactly right since we almost always have only a sample of data. If we use the above equation to predict values of reaction time, our predictions will probably be different from true reaction times values by a bit. Therefor, if we wanted to write the equation for the true data generation process, we could write something like this:</p>
+<p>Here, each input is included and the strength of the effect for each input is a numeric value encoded as a <span class="math notranslate nohighlight">\(\beta\)</span> parameter. Once we have a model like this, if we have a congruence, speed, font, and coordination value for some data point i, we can predict a reaction time value that is hopefully pretty close to what that value would really be.</p>
+<p>This is another way models are useful. If we have multiple ideas of what the data generation process may be (i.e., hypotheses), we can generate some data based on them. Afterwards, we can compare to real data we collected to see how well our predictions match reality. We can even tweak our model to figure out which values of the inputs will produce the most accurate predictions. A simple model developed this way, based on fitting to real-world data, is called a <strong>statistical model</strong>.</p>
+<p>The heart of inferential statistics is building statistical models, so we will now spend the rest of the semester creating them and evaluating the ones we’ve build. However, before we start, there is something really important to keep in mind about statistical models: all statistical models are wrong! At least, wrong by some amount. These are <em>simplfied</em> equations, that contain some (but unlikely all) of the inputs and basic (but probably overly basic) relationships among all the variables. This is an attempt to approximate what the true data generation process is in the population, but we are very unlikely to get it exactly right since we almost always have only a sample of data to compare it to. If we use the above equation to predict values of reaction time, our predictions will probably be different from true reaction times values by a bit. Therefor, if we wanted to write the equation for the true data generation process, we could write something like this:</p>
 <div class="math notranslate nohighlight">
 \[reaction time_i = \beta_1congruence_i + \beta_2speed_i + \beta_3font_i + \beta_4coordination_i + error_i\]</div>
 <p>where the “error” term accounts for all the parts of the data generation process we don’t know about, but if we did, would make our predictions of reaction time accurate. We can thus simplify the form a statistical model as follows:</p>
@@ -510,9 +576,9 @@ document.write(`
 <p>Building a statistical model is the process of choosing what variables should go into the MODEL portion of that equation. Building a <em>good</em> statistical model is the process of minimizing how much error is unaccounted for by our model. Whether we are using statistics to predict new data or to infer what the true data generation process is in the population, having a good statistical model will help you.</p>
 </section>
 <section id="the-null-model">
-<h2>9.4 The null model<a class="headerlink" href="#the-null-model" title="Permalink to this heading">#</a></h2>
-<p>Let’s now dive into building our own statistical models! But rather than a big long equation like the proposed model above, let’s start with the simplest kind a statistical model we can build. At its most basic level, a statistical model can be thought of as an equation that produces a predicted score for each observation in a data distribution. What is the simplest possible equation you could write?</p>
-<p>The simplest models we could consider generates the same predicted score for every observation in a distribution, no matter its real value. In other words, there is just one number on the right side of the equation, and we are always predicting that the outcome variable has that value. Something like:</p>
+<h2>9.5 The null model<a class="headerlink" href="#the-null-model" title="Permalink to this heading">#</a></h2>
+<p>Let’s now dive into building our own statistical models! But rather than a big long equation like the proposed model above, let’s start with the simplest kind a statistical model we can build. At its most basic level, a statistical model can be thought of as an equation that produces a predicted score for each observation in a dataset. What is the simplest possible equation you could write?</p>
+<p>The simplest models we could consider generates the same predicted score for every observation in a variable, no matter its real value. In other words, there is just one number on the right side of the equation, and we are always predicting that the outcome variable has that value. Something like:</p>
 <div class="math notranslate nohighlight">
 \[reaction time_i = 50\]</div>
 <p>Obviously, this model for the data generation process is wrong. For one thing, reaction time is a distribution, but there is no variability in the number 50. However, this kind of super basic statistical model is actually very useful because it serves as a baseline to compare our later statistical models to. This baseline model that always makes the same prediction is called the <strong>null model</strong> or the <strong>empty model</strong>. This is because there are no predictor variables in it.</p>
@@ -522,7 +588,7 @@ document.write(`
 <img src="images/ch9-2dist.png" width="700">
 <p>A single number, even a well-chosen number, is not a very good model. It may be a better model for variable 1 than variable 2 above, but it’s still not very good at predicting what any one value on the distribution will be. Most scores are not the same as the number we choose as the model.</p>
 <p>This is where the “error” term of a model comes in: once we choose a number to model a distribution, we can think of the variation around that number as error. It is the stuff we’re missing that would be needed to adjust what we’re predicting into what the actual value is. As we can see above, a one-number model for a distribution with less spread seems to have less error, and thus a better fit, than a one-number model for a distribution with more spread. The reason for this is that the error around the model is greater for the distribution with more spread.</p>
-<p>Our null model always predicts the same outcome value because it always uses the same value as an input (the mean of the outcome variable’s distribution). If the mean is our model, then using the model to explain our data simply means calculating the mean of the data distribution.</p>
+<p>Our null model always predicts the same outcome value because it always uses the same value as an input (the mean of the outcome variable’s distribution). If the mean is our model, then developing the model we will use to explain our data simply means calculating the mean of the outcome variable distribution.</p>
 <p>Let’s think this through in the context of students’ thumb lengths. We will use a tiny dataset, which we’ll put in a data frame called <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,7 +614,7 @@ document.write(`
 <p>Remember that our model is not the actual <code class="docutils literal notranslate"><span class="pre">thumb</span></code> values in <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code>, but our guess at what they will be. In this case, we’re always guessing the mean (the blue line). Always guessing the same number for every data point is easy, but later you will learn to fit more complex models to your data.</p>
 </section>
 <section id="automatically-building-a-model">
-<h2>9.5 Automatically building a model<a class="headerlink" href="#automatically-building-a-model" title="Permalink to this heading">#</a></h2>
+<h2>9.6 Automatically building a model<a class="headerlink" href="#automatically-building-a-model" title="Permalink to this heading">#</a></h2>
 <p>In the example above, we chose our model ahead of time: thumb = 62. To do this, we had to calculate that value ourselves. But usually you don’t know what exact numbers to use in the equation of a statistical model. In R, there is a function you can use to automatically build a model that will be the best description of your data, given a model format that you specify.</p>
 <p>The R function we are going to use is <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, which stands for “linear model.” (We’ll say more about why it’s called that in a later chapter.) For <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to work, you need to pass it a <strong>formula</strong>, rather than an equation.</p>
 <p>What’s the difference? Remember when we were graphing things with <code class="docutils literal notranslate"><span class="pre">ggformula</span></code>, we needed to give the function a formula to tell R which variable should be on the y-axis and which should be on the x-axis: e.g., <code class="docutils literal notranslate"><span class="pre">Thumb</span> <span class="pre">~</span> <span class="pre">Sex</span></code>. Because we’re using a ~ instead of a = here, this is not the same thing as saying “The value of Thumb is exactly proportional to the value of Sex.” Instead, it is saying a more general statement “Thumb <em>varies by</em> Sex.” Passing a formula like this to <code class="docutils literal notranslate"><span class="pre">lm()</span></code> tells the function to build an exact statistical equation that would best fit the type of relationship the formula describes.</p>
@@ -556,7 +622,7 @@ document.write(`
 <p>Here’s the code we use to fit the empty model, followed by the output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -564,10 +630,10 @@ document.write(`
 <p>The output of this command may seem a little strange right now with words like “Coefficients” and “Intercept.” We’ll cover what those mean a little later. But it does give you back the mean of the distribution (62), as expected. Thus, this function finds the best-fitting number to use as our model, given a more general formula we specified. To then make a more specific statistical model in equation format, we’d simply slot that value in on the right side of the equation:</p>
 <div class="math notranslate nohighlight">
 \[ thumb_i = 62 \]</div>
-<p>Automatically finding a solution to which number best represents the distribution of the outcome variable is called “fitting the model”. It will be helpful to save the results of this fitted model in an R object. Here’s code that uses <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to fit the null model, then saves the results in an R object called <code class="docutils literal notranslate"><span class="pre">tiny_empty_model</span></code>:</p>
+<p>Automatically finding values to use in a statistical model that best fits the data is called “fitting the model”. It will be helpful to save the results of this fitted model in an R object. Here’s code that uses <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to fit the null model, then saves the results in an R object called <code class="docutils literal notranslate"><span class="pre">tiny_empty_model</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_empty_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tiny_empty_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -588,7 +654,7 @@ document.write(`
 <span class="c1"># modify this to fit the empty model of Thumb</span>
 <span class="n">empty_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="c1">#YOUR CODE HERE</span>
 
-<span class="c1"># this prints the best-fitting number</span>
+<span class="c1"># this prints the best-fitting model value</span>
 <span class="n">empty_model</span>
 
 <span class="c1"># make a histogram of Thumb and draw the line for the mean</span>
@@ -600,8 +666,9 @@ document.write(`
 </div>
 </section>
 <section id="thinking-about-error">
-<h2>9.6 Thinking about error<a class="headerlink" href="#thinking-about-error" title="Permalink to this heading">#</a></h2>
-<p>Using our tiny data set, we found the mean thumb length to be 62mm. Sticking that value into the equation of a statistical model, if we were predicting what a seventh observation might be, we’d go with 62mm. But if we take the mean and look backwards at the data we have already collected, we could also generate a “predicted” thumb length for each of the data points we already have. This prediction answers the question: what would our model have predicted this thumb length to be if we hadn’t collected the data?</p>
+<h2>9.7 Thinking about error<a class="headerlink" href="#thinking-about-error" title="Permalink to this heading">#</a></h2>
+<p>Models are our idea of the data generation process. We often use that idea to make predictions about data, either to help us make future decisions or to compare with real data.</p>
+<p>Using our tiny data set, we found a statistical model that used 62mm as the best-fitting single number to characterize thumb lengths. Thus to use that model, if we were predicting what a seventh observation might be, we’d go with 62mm. But if we take this model and look backwards at the data we have already collected, we can also generate a “predicted” thumb length for each of the data points we already have. This prediction answers the question: what would our model have predicted this thumb length to be if we hadn’t collected the data?</p>
 <p>When we create a model and fit it in R, we aren’t just printing out the results of the fitting procedure. We are creating a model object. This object has properties we can access with the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol, just as you access variables in a data frame object. When a model object is created, one of its properties <code class="docutils literal notranslate"><span class="pre">fitted.values</span></code> is the predictions that model would make for every data point in the dataset.</p>
 <p>There’s an R function that will actually do this for you. Here’s how we can use it to generate the predicted thumb lengths for each of the six students in the tiny dataset. Remember, we already fit the model and saved the results in  tiny_empty_model:</p>
 <div class="cell docutils container">
@@ -611,7 +678,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>If you forget about that model object property, there’s also an R function <code class="docutils literal notranslate"><span class="pre">predict()</span></code> to access them and return them to you. Remember, there are often multiple ways to do the same thing in R, so pick whichever way you want to “speak” it!</p>
+<p>If you forget about that model object property, there’s also an R function <code class="docutils literal notranslate"><span class="pre">predict()</span></code> to access them and return them to you. There are often multiple ways to do the same thing in R, so pick whichever way you want to “speak” it!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">predict</span><span class="p">(</span><span class="n">tiny_empty_model</span><span class="p">)</span>
@@ -619,7 +686,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Why would we want to create predicted thumb lengths for these six students when we already know their actual thumb lengths? We will go into this a lot more in the next chapter, but for now, the reason is so we can get a sense of just how wrong our automatically generated statistical model is. The value of everyone’s thumb lengths isn’t actually 62, so we want to know how far each of our data points are from the prediction that our model would have made. It gives us a rough idea of how well our model fits our current data and how big the <strong>error</strong> is. That’s important if we’re ultimately trying to build a model that gets us close to the true data generation process.</p>
+<p>Why would we want to create predicted thumb lengths for these six students when we already know their actual thumb lengths? We will go into this a lot more in the next chapter, but for now, the reason is so we can get a sense of just how wrong our automatically generated statistical model is. The value of everyone’s thumb lengths isn’t actually 62, so we want to know how far each of our data points are from the prediction that our model would have made. It gives us a rough idea of how well our model could predict new data and how big the <strong>error</strong> is. That’s important if we’re ultimately trying to build a model that gets us close to the true data generation process.</p>
 <p>In order to use these predicted scores as a way of seeing error, we first need to save the prediction for each student in the dataset. When there is only one prediction for everyone, as with the null model, it seems like overkill to save the predictions but just go with it for now. Later you will see how useful it is to save the individual predicted scores. For example, if we save the predicted score for each student in a new variable called <code class="docutils literal notranslate"><span class="pre">predicted</span></code>, we can then subtract each student’s actual thumb length from their predicted thumb length to see how far off our predictions were.</p>
 <p>Use the function <code class="docutils literal notranslate"><span class="pre">predict()</span></code> and save the predicted thumb lengths for each of the six students as a new variable in the <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code>  dataset. Then, print the new contents of <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code>.</p>
 <div class="cell docutils container">
@@ -633,11 +700,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We have developed the idea of a general statistical model to take the form DATA = MODEL. However, since all statistical models are wrong, plugging in a value (like the mean) for the MODEL spot will not perfectly calculate what the value should be in the DATA spot. To do a better job at guessing DATA we’d probably need to add more stuff to the model side of the equation. However, right now we don’t know anything else besides the mean of DATA. So in order to recognize how unperfect our model is, we rewrite the equation as:</p>
+<p>We have developed the idea of a general statistical model that takes the form DATA = MODEL. However, since all statistical models are wrong, plugging in a value (like the mean) for the MODEL spot will not perfectly calculate what the value should be in the DATA spot. To do a better job at guessing DATA we’d probably need to add more stuff to the model side of the equation. However, right now we don’t know anything else besides the mean of DATA. So in order to recognize how unperfect our model is, we rewrite the equation as:</p>
 <div class="math notranslate nohighlight">
 \[ data_i = mean(data) + error_i \]</div>
 <p>Even if we don’t know what causes error in a model, so long as we recognize how much it is (how much the model misses the mark for each value of data), we can technically recompute each actual data value perfectly.</p>
-<p>Therefore, we can calculate error in our data set by just shuffling this equation around to get the formula:</p>
+<p>Therefore, we can calculate error in our data set by just shuffling this equation around to get:</p>
 <div class="math notranslate nohighlight">
 \[ error_i = data_i - mean(data) \]</div>
 <p>Using this equation, if someone has a thumb length larger than the mean (e.g., 68), then their error in our model is +6. If they have a thumb length lower than the mean (e.g., 61) then we can calculate their error as -1.</p>
@@ -650,7 +717,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The numbers in the output indicate, for each student in the data frame, what their residual is after subtracting out the model (which is the mean in this case).</p>
+<p>The numbers in the output indicate, for each student in the data frame, what their residual is after subtracting out the model prediction.</p>
 <p>Modify the following code to save these residuals in a new variable in <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code> called <code class="docutils literal notranslate"><span class="pre">residual</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -690,8 +757,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that the variables <code class="docutils literal notranslate"><span class="pre">residual</span></code> and <code class="docutils literal notranslate"><span class="pre">easy_residual</span></code> should be identical. You only used different methods to get the same residuals.</p>
-<p>Now that you have looked in detail at the tiny set of data, explore the predictions and residuals from the <code class="docutils literal notranslate"><span class="pre">empty_model</span></code> fit earlier from the full set of <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> data. Add them as new variables (<code class="docutils literal notranslate"><span class="pre">Predicted</span></code> and <code class="docutils literal notranslate"><span class="pre">Residual</span></code>) to the <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> data frame.</p>
+<p>Note that the variables <code class="docutils literal notranslate"><span class="pre">residual</span></code> and <code class="docutils literal notranslate"><span class="pre">easy_residual</span></code> should be identical. You only used different methods to get the same result.</p>
+<p>Now that you have looked in detail at the tiny set of data, explore the predictions and residuals from the <code class="docutils literal notranslate"><span class="pre">null_model</span></code> fit earlier from the full set of <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> data. Add them as new variables (<code class="docutils literal notranslate"><span class="pre">Predicted</span></code> and <code class="docutils literal notranslate"><span class="pre">Residual</span></code>) to the <code class="docutils literal notranslate"><span class="pre">studentdata</span></code> data frame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># this code from before fits the empty model for Fingers</span>
@@ -711,25 +778,22 @@ document.write(`
 </div>
 </section>
 <section id="more-on-mathematical-notation-of-a-statistical-model">
-<h2>9.7 More on mathematical notation of a statistical model<a class="headerlink" href="#more-on-mathematical-notation-of-a-statistical-model" title="Permalink to this heading">#</a></h2>
-<p>The way we’ve used so far for writing a statistical model, outcome<sub>i</sub> = model + error<sub>i</sub>, uses mathematical structure to show how to calculate some value i based on a model and that item’s residual. Let’s now go all the way to writing out a model in formal mathematical notation, without using words:</p>
+<h2>9.8 More on mathematical notation of a statistical model<a class="headerlink" href="#more-on-mathematical-notation-of-a-statistical-model" title="Permalink to this heading">#</a></h2>
+<p>The way we’ve used so far for writing a statistical model, <span class="math notranslate nohighlight">\(outcome_i = model + error_i\)</span>, uses mathematical structure to show how to calculate some value <span class="math notranslate nohighlight">\(outcome_i\)</span> based on a model and that item’s residual. Let’s now go all the way to writing out a model in formal mathematical notation, without using words:</p>
 <div class="math notranslate nohighlight">
 \[ Y_i = \bar{Y} + e_i \]</div>
-<p>Here, “e<sub>i</sub>” stands for the ith error or residual. And as you may recall from chapter 5, putting a line above Y in this equation, making it “Y-bar”, indicates the mean value of Y. Thus this equation means “the ith value of Y is equal to the mean of Y plus the ith residual.”</p>
+<p>Here, <span class="math notranslate nohighlight">\(e_i\)</span> stands for the ith error or residual. And as you may recall from chapter 5, putting a line above Y in this equation, making it “Y-bar”, indicates the mean value of Y. Thus this equation means “the ith value of Y is equal to the mean of Y plus the ith residual.”</p>
 <p>Another way you could write this is:</p>
 <div class="math notranslate nohighlight">
 \[ Y_i = \hat{Y}_i + e_i \]</div>
-<p>The Y<sub>i</sub> with an arrow on top, pronounced “Y-hat”, means “the <em>predicted</em> value of Y<sub>i</sub>.” So, this equation simply states that each value of Y<sub>i</sub> can be calculated as the sum of its predicted value based on the model, and its deviation from that predicted value.</p>
-<p>In our tiny dataset, for example, student 1 had a thumb length of 56. So, Y<sub>1</sub> = 56. Under our simple model we used the mean as the predicted value for all students, so Y^<sub>1</sub> = Y¯ = 62. Therefore, e<sub>1</sub> would have to be -6 to make the equation true — the exact value of the residual we calculated for student 1.</p>
-<p>As we develop more complex models, we still will end up with a single predicted value of Y^<sub>i</sub> for each score based on our model. But we will predict this value using more than just the mean.</p>
-</section>
-<section id="notation-for-the-general-linear-model">
-<h2>9.8 Notation for the General Linear Model<a class="headerlink" href="#notation-for-the-general-linear-model" title="Permalink to this heading">#</a></h2>
-<p>Finally, we will complicate things a little more and introduce one more form of our DATA = MODEL + ERROR formulation called the General Linear Model (GLM) notation. The GLM is a generic equation that can be used to represent many different models with only simple adjustments. The GLM notation for our null model would be:</p>
+<p>The <span class="math notranslate nohighlight">\(\hat{Y}_i\)</span> with an arrow on top, pronounced “Y-hat”, means “the <em>predicted</em> value of <span class="math notranslate nohighlight">\(Y_i\)</span>.” So, this equation simply states that each value of <span class="math notranslate nohighlight">\(Y_i\)</span> can be calculated as the sum of its predicted value based on the model, and its deviation from that predicted value.</p>
+<p>In our tiny dataset, for example, student 1 had a thumb length of 56. So, <span class="math notranslate nohighlight">\(Y_1\)</span> = 56. In our simple null model we used the mean as the predicted value for all students, so <span class="math notranslate nohighlight">\(\hat{Y}_1 = \bar{Y} = 62\)</span>. Therefore, <span class="math notranslate nohighlight">\(e_1\)</span> would have to be -6 to make the equation true — the exact value of the residual we calculated for student 1.</p>
+<p>As we develop more complex models, we still will end up with a single predicted value of <span class="math notranslate nohighlight">\(\hat{Y}_i\)</span> for each score based on our model. But we will predict this value using more than just the mean.</p>
+<p>Finally, we will complicate things a little more and introduce one more form of our DATA = MODEL + ERROR formulation called the <strong>General Linear Model</strong> (GLM) notation. The GLM is a generic equation that can be used to represent many different models with only simple adjustments. The GLM notation for our null model would be:</p>
 <div class="math notranslate nohighlight">
 \[ Y_i = b_0 + e_i \]</div>
-<p>This is a more abstract version of the equation above; we have substituted b<sub>0</sub> (we read this as “b sub 0”) for the mean, Y¯. Don’t be concerned if it doesn’t make complete sense why we’re replacing perfectly useful words with mathematical symbols. This is one of those things that will take time to understand. The main thing to know for now is that b<sub>0</sub> can represent the mean, but it doesn’t have to.</p>
-<p>For our simple model (the null model) it does represents the mean. But for other models, and other situations, it can represent other values. For example, if our outcome variable were categorical, the interpretation of b<sub>0</sub> would need to be adjusted to be the mode, which is the best single predictor of the next observation’s value on a categorical variable.</p>
+<p>This is a more abstract version of the equation above; we have substituted <span class="math notranslate nohighlight">\(b_0\)</span> (we read this as “b sub 0”) for the mean, <span class="math notranslate nohighlight">\(\bar{Y}\)</span>. Don’t be concerned if it doesn’t make complete sense why we’re replacing perfectly useful words with mathematical symbols. This is one of those things that will take time to understand. The main thing to know for now is that <span class="math notranslate nohighlight">\(b_0\)</span> can represent the mean, but it doesn’t have to.</p>
+<p>For our simple model (the null model) it does represents the mean. But for other models, and other situations, it can represent other values. For example, if our outcome variable were categorical, the interpretation of <span class="math notranslate nohighlight">\(b_0\)</span> would need to be adjusted to be the mode, which is the best single predictor of the next observation’s value on a categorical variable.</p>
 <p>Indeed, this flexibility is what makes the General Linear Model general. Whenever you see a GLM model statement, you should think carefully about what, in the particular situation, each symbol represents.</p>
 </section>
 <section id="statistics-and-parameters">
@@ -738,26 +802,27 @@ document.write(`
 <p>However our approximations are unlikely to match the true data generation process - there will always be some error in our models. This is because we’re likely not including all pieces of the puzzle that is the data generation process. In addition, like when we simulated data last chapter, sometimes a sample of data can look different from the population from which it came because of the forces of randomness.</p>
 <p>Within our data sample, we can calculate the exact mean of the distribution, and the exact size of the errors. When we do this, we are calculating a <strong>statistic</strong>. A statistic is anything you can compute to summarize something about your data; the mean is one example of a statistic, the standard deviation is another.</p>
 <p>But we can’t calculate the mean of the <em>population</em>; the population distribution is unknown. Instead we use the mean we calculate from our data as an <em>estimate</em> of the mean of the population.</p>
-<p>The mean of the population is an example of what’s called a <strong>parameter</strong>. A parameter is a number that summarizes something about a population. Whereas statistics are computed, parameters are estimated (since the population distribution is unknown). We use statistics as estimates because we don’t generally know what the true parameter is.</p>
-<p>Notation is one way we keep our thinking straight about what we are trying to calculate, and what the results of our calculations mean. Because the distinction between statistics (or estimates) and parameters is so critical, we use different notation to distinguish them.</p>
-<p>If we want to represent the mean calculated from data, we typically use the notation Y¯ (or sometimes other letters, like X¯). To represent the mean of the <em>population</em>, the parameter we are trying to estimate, we typically use the Greek letter <strong>μ</strong> (pronounced “mew”).</p>
+<p>The mean of the population is an example of what’s called a <strong>parameter</strong>. A parameter is a number that summarizes something about a population. In a deterministic model we know what the value of the parameters are. In most cases though, the population distribution and true parameters are unknown, so we use statistics as estimates of these parameters.</p>
+<p>Notation is one way we keep our thinking straight about what we are trying to calculate, and what the results of our calculations mean. Because the distinction between statistical estimates and parameters is so critical, we use different notation to distinguish them.</p>
+<p>If we want to represent the mean calculated from data, we typically use the notation <span class="math notranslate nohighlight">\(\bar{Y}\)</span> (or sometimes other letters, like <span class="math notranslate nohighlight">\(\bar{X}\)</span>). To represent the mean of the <em>population</em>, the parameter we are trying to estimate, we typically use the Greek letter <strong>μ</strong> (pronounced “mew”).</p>
 <p>The same distinction shows up in the notation of the General Linear Model. The null model we have discussed so far, which is calculated from data, is written like this (as you know):</p>
 <div class="math notranslate nohighlight">
 \[ Y_i = b_0 + e_i \]</div>
 <p>The model of the data generation process that we are <em>trying to estimate</em> when we fit the empty model is represented like this:</p>
 <div class="math notranslate nohighlight">
 \[ Y_i = \beta_0 + \epsilon_i \]</div>
-<p>Note that in this model of the population we have replaced the estimators b<sub>0</sub> and e<sub>i</sub> with the Greek letters β<sub>0</sub> (pronounced “beta sub 0”) and ε<sub>i</sub> (pronounced “epsilon sub i”). b<sub>0</sub> is an <em>estimate</em> for β<sub>0</sub>, which represents the mean of the population; and e<sub>i</sub> is an <em>estimate</em> of ε<sub>i</sub>.</p>
-<p>The differences in notation may seem subtle and nitpicky. But it is really, really important in statistics to distinguish between your <em>data sample</em> and <em>the population it is trying to estimate</em>, and keep those separate in your mind. As a general rule, whenever you see Greek letters you can be pretty sure we are talking about parameters of the population. Latin letters are generally used to represent estimates calculated from data.</p>
+<p>Note that in this model of the population we have replaced the estimators <span class="math notranslate nohighlight">\(b_0\)</span> and <span class="math notranslate nohighlight">\(e_i\)</span> with the Greek letters <span class="math notranslate nohighlight">\(\beta_0\)</span> (pronounced “beta sub 0”) and <span class="math notranslate nohighlight">\(\epsilon_i\)</span> (pronounced “epsilon sub i”). <span class="math notranslate nohighlight">\(b_0\)</span> is an <em>estimate</em> for <span class="math notranslate nohighlight">\(\beta_0\)</span>, the mean of the population; and <span class="math notranslate nohighlight">\(e_i\)</span> is an <em>estimate</em> of <span class="math notranslate nohighlight">\(\epsilon_i\)</span>.</p>
+<p>The differences in notation may seem subtle and nitpicky. But it is really, really important in statistics to distinguish between your <em>data sample</em> and <em>the population you are trying to estimate</em>, and to keep those separate in your mind. As a general rule, whenever you see Greek letters in models you can assume we are talking about parameters of the population. Latin letters are generally used to represent estimates calculated from data.</p>
 <p>Let’s go back to using <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to fit a model to the values <code class="docutils literal notranslate"><span class="pre">thumb</span></code> in <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#if the formula comes first, don&#39;t need to name the argument</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tiny_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>When a model is fit, it calculates <strong>coefficients</strong>, or numbers that should be used in a statistical model equation. In the empty model with one coefficient, this is the number that should be used as the value of b<sub>0</sub> for our data. That number, in turn, is our <em>estimate</em> of the <em>parameter</em> β<sub>0</sub>.</p>
+<p>When a model is fit, it calculates <strong>coefficients</strong>, or numbers that should be used in a statistical model equation. In the empty model with one coefficient, this is the number that should be used as the value of <span class="math notranslate nohighlight">\(b_0\)</span> for our data. That number, in turn, is our <em>estimate</em> of the <em>parameter</em> <span class="math notranslate nohighlight">\(\beta_0\)</span>.</p>
 </section>
 <section id="chapter-summary">
 <h2>Chapter summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
@@ -769,6 +834,32 @@ document.write(`
 <li><p>Automatically generate a statistical model in R using lm()</p></li>
 <li><p>Define what a residual is</p></li>
 <li><p>Describe the difference between a statistic and a parameter</p></li>
+</ul>
+</section>
+<section id="new-concepts">
+<h2>New concepts<a class="headerlink" href="#new-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>model</strong>: an idea meant to stand in for something in reality. In statistics, it is our idea of the data generation process of an outcome variable.</p></li>
+<li><p><strong>deterministic model</strong>: An accurate mathematical expression of a data generation process that can predict the exact outcome of a system or process without randomness.</p></li>
+<li><p><strong>conceptual model</strong>: A general idea of a data generation process that involves some predictors and their relationships with the outcome, but without formal mathematical specification.</p></li>
+<li><p><strong>path diagram</strong>: A way of visualizing a conceptual model with squares and arrows represent the “path” of influence from predictor to outcome variables.</p></li>
+<li><p><strong>statistical model</strong>: An attempt at a mathematical representation of a conceptual model, often with values derived from what best explains a set of data.</p></li>
+<li><p><strong>null model/empty model</strong>: The most basic statistical model; does not include any predictors, so predicts the outcome variable will always have one particular value (usually the mean).</p></li>
+<li><p><strong>formula</strong>: An expression of a general model form (what predictors and what outcome).</p></li>
+<li><p><strong>error</strong>: The variation in an outcome variable that a model does not explain.</p></li>
+<li><p><strong>residual</strong>: The difference between the prediction of a model and the true value.</p></li>
+<li><p><strong>General Linear Model</strong>: A specific type of statistical model where predictors are combined linearly and their relative contributions are weighted with coefficients. Can be generalized to many ideas of the data generation process.</p></li>
+<li><p><strong>statistic</strong>: A summary number meant to represent a distribution in a dataset.</p></li>
+<li><p><strong>parameter</strong>: A summary number that represents a distribution in the entire population.</p></li>
+<li><p><strong>coefficient</strong>: The specific numbers included in a statistical model to weight each predictor by in order to best predict the outcome variable.</p></li>
+</ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm">lm()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/predict">predict()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/residuals">resid()</a></p></li>
 </ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-10.ipynb">Next: Chapter 10 - Quantifying Model Error</a></p>
 </section>
@@ -823,16 +914,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-models">9.1 Deterministic models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-models">9.2 Conceptual models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-models">9.3 Statistical models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-model">9.4 The null model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatically-building-a-model">9.5 Automatically building a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-about-error">9.6 Thinking about error</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-mathematical-notation-of-a-statistical-model">9.7 More on mathematical notation of a statistical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-for-the-general-linear-model">9.8 Notation for the General Linear Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models">9.1 Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-using-models">9.2 Creating data using models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-models">9.3 Conceptual models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-models-from-data">9.4 Creating models from data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-model">9.5 The null model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatically-building-a-model">9.6 Automatically building a model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-about-error">9.7 Thinking about error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-mathematical-notation-of-a-statistical-model">9.8 More on mathematical notation of a statistical model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-and-parameters">9.9 Statistics and parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 
