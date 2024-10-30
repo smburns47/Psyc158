@@ -156,10 +156,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit 1 Describing Data</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Intro to Doing Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - Statistical Reasoning</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - What are Data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-1.ipynb">Chapter 1 - Introduction to Statistical Thinking</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Chapter 2 - What are Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-3.ipynb">Chapter 3 - Organizing Data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-4.ipynb">Chapter 4 - Cleaning Data</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-5.ipynb">Chapter 5 - Describing Data</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-6.ipynb">Chapter 6 - Variation in Multiple Variables</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-7.ipynb">Chapter 7 - Principles of Data Visualization</a></li>
@@ -179,11 +179,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-15.ipynb">Chapter 15 - Estimating Populations</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -457,6 +456,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -654,7 +654,7 @@ document.write(`
 <p>You can name your objects almost anything. There are just a few rules to follow:</p>
 <ul class="simple">
 <li><p>R is case-sensitive. Any little change in the name of an object will be considered a separate object (e.g., <code class="docutils literal notranslate"><span class="pre">step1</span></code> vs. <code class="docutils literal notranslate"><span class="pre">Step1</span></code>).</p></li>
-<li><p>You can use letters, numbers, underscores, and hyphens for your names, but they must always start with a letter.</p></li>
+<li><p>You can use letters, numbers, underscores, and periods for your names, but they must always start with a letter.</p></li>
 <li><p>Names need to be all one word (no spaces).</p></li>
 </ul>
 <p>In addition to these requirements by the language, the R user community has decided on preferred naming conventions, called a <a class="reference external" href="http://adv-r.had.co.nz/Style.html">style guide</a>, in order to make code easier to read and consistent across people. You don’t have to follow this style guide for this course, but it would be a good idea to make these naming conventions into habit.</p>
@@ -781,6 +781,18 @@ document.write(`
 <li><p><strong>package</strong>: Sets of functions written by other people that can be downloaded and added to one’s coding project.</p></li>
 <li><p><strong>library</strong>: The computer directory where a downloaded package is stored and from where it can be loaded for use in an R session.</p></li>
 </ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/r/r_operators.asp">math operators</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/r/r_comments.asp">commenting</a> with <code class="docutils literal notranslate"><span class="pre">#</span></code></p></li>
+<li><p>declaring an object with <a class="reference external" href="https://rpubs.com/aephidayatuloh/basicr01-assignment">an assignment operator</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/print">print()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sum">sum()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages">install.packages()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library">library()</a></p></li>
+</ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-2.ipynb">Next: Chapter 2 - What are Data</a></p>
 </section>
 </section>
@@ -865,6 +877,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 

@@ -182,10 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -439,7 +438,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-regression-line-to-make-predictions">12.6 Using the regression line to make predictions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-regression-model-fit">12.7 Examining regression model fit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-full-models">12.8 Comparing different full models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">12.9 Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-note-correlation">12.9 Historical note - Correlation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-limitations">12.10 Regression limitations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-does-not-imply-causation">Correlation does not imply causation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-all-regressions-straight">Are all regressions straight?</a></li>
@@ -447,6 +446,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -463,8 +464,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this first so it&#39;s ready by the time you need it</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;supernova&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggformula&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">supernova</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggformula</span><span class="p">)</span>
 </pre></div>
@@ -479,8 +482,7 @@ document.write(`
 <p>There are some problems with this approach, however. First, remember that the definition of a categorical variable is one where there is no quantitative relationship between the different categories. That holds true for a variable like Sex - it doesn’t make sense to say the “female” level is any more or less than the “male” level. But for categories like “short” and “tall”, there is an inherent quantitative relationship between them. “Short” means less than “tall” by definition. So forcing Height to be a categorical variable is mispecifying the meaning of Height.</p>
 <p>The other problem is that by forcing all values in Height to be in one category or another, we are inherently throwing away information that that variable can give us for the purposes of modeling the data generation process. Less information means less flexible models and worse predictions. We’ll explore this is greater detail later in the chapter.</p>
 <p>So instead of using height in inches to divide students into groups (e.g., short or tall), let’s just model height as a continuous interval variable. Earlier in the course we learned how to visualize interval data in a scatterplot. In this chapter we will figure out how to extend our models to accommodate quantitative explanatory variables.</p>
-<p>The models we develop in this chapter are a special type usually called <strong>regression models</strong>. Before we start, though, note that the core ideas behind these new models are exactly the same as those we have developed for group-based models. A model still yields a single predicted score for each observation, based on some mathematical function that includes the explanatory variable.</p>
-<p>Further, in regression models, we still use residuals (the difference between the predicted and observed score) to measure error around the model. We also still use the sum of squared deviations from the model predictions as a measure of model fit. And we still use PRE to indicate the proportion reduction in error of the regression model compared with the null model.</p>
+<p>The models we develop in this chapter are a special type usually called <strong>regression models</strong>. Before we start, though, note that the core ideas behind these new models are exactly the same as those we have developed for group-based models. A model still yields a single predicted score for each observation, based on some mathematical function that includes the explanatory variable. Further, in regression models, we still use residuals (the difference between the predicted and observed score) to measure error around the model. We also still use the sum of squared deviations from the model predictions as a measure of model fit. And we still use PRE to indicate the proportion reduction in error of the regression model compared with the null model. It’s almost all the same!</p>
 <section id="the-two-group-model-review">
 <h2>12.1 The two-group model review<a class="headerlink" href="#the-two-group-model-review" title="Permalink to this heading">#</a></h2>
 <p>Let’s return to our <code class="docutils literal notranslate"><span class="pre">tiny_data</span></code> data set, but this time add <code class="docutils literal notranslate"><span class="pre">Height</span></code> as an explanatory variable for predicting <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> lengths.</p>
@@ -499,12 +501,11 @@ document.write(`
 <p>Now, let’s make a new variable that recodes <code class="docutils literal notranslate"><span class="pre">Height</span></code> as groups, <code class="docutils literal notranslate"><span class="pre">HeightGroup</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Boolean variable, 0 = less than avg height 1 = greater than or equal to avg height</span>
-<span class="n">tiny_data</span><span class="o">$</span><span class="n">HeightGroup</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tiny_data</span><span class="o">$</span><span class="n">Height</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">tiny_data</span><span class="o">$</span><span class="n">Height</span><span class="p">)</span><span class="w"> </span>
-
-<span class="c1">#Recode to meaningful labels</span>
-<span class="n">tiny_data</span><span class="o">$</span><span class="n">HeightGroup</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">tiny_data</span><span class="o">$</span><span class="n">HeightGroup</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">),</span><span class="w"> </span>
-<span class="w">                                    </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;short&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tall&quot;</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Make Boolean variable, 0 = less than avg height 1 = greater than or equal to avg height</span>
+<span class="c1">#Then recode to meaningful labels</span>
+<span class="n">tiny_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">tiny_data</span><span class="p">,</span><span class="w"> </span><span class="n">HeightGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Height</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">Height</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">HeightGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_match</span><span class="p">(</span><span class="n">HeightGroup</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;short&quot;</span><span class="p">,</span>
+<span class="w">                                                    </span><span class="m">1</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;tall&quot;</span><span class="p">))</span>
 
 <span class="n">tiny_data</span>
 </pre></div>
@@ -514,7 +515,8 @@ document.write(`
 <p>In the graph below, we illustrate the two-group approach to modeling this data. Just as a reminder, we would specify this model — the  HeightGroup  model — as a two-parameter model, with one parameter being the mean thumb length for short people, the other, the difference in group means for short and tall people.</p>
 <img src="images/ch12-heightgroup.png" width="600">
 <p>We can fit a model to this data and compare it to the null model, which is represented in the graph above with the blue horizontal line. The predicted score for everyone in the null model is the Grand Mean.</p>
-<p>We can also generate an ANOVA table for the HeightGroup model to compare errors between it and the null model. The <span class="math notranslate nohighlight">\(SS_{total}\)</span> is the sum of squared deviations in the null model. The <span class="math notranslate nohighlight">\(SS_{error}\)</span> is the deviation of each score from its group mean (<code class="docutils literal notranslate"><span class="pre">short</span></code> or <code class="docutils literal notranslate"><span class="pre">tall</span></code>).</p>
+<p>We can see just by inspecting the graph above, without even making an ANOVA table, that the two-group model will yield better predictions than the null model. Knowing whether someone is short or tall would help us make a more accurate prediction of their thumb length than if we didn’t know which group they were in and made predictions with the Grand Mean only.</p>
+<p>But we can also generate an ANOVA table for the HeightGroup model to compare errors between it and the null model. The <span class="math notranslate nohighlight">\(SS_{total}\)</span> is the sum of squared deviations in the null model. The <span class="math notranslate nohighlight">\(SS_{error}\)</span> is the deviation of each score from its group mean (<code class="docutils literal notranslate"><span class="pre">short</span></code> or <code class="docutils literal notranslate"><span class="pre">tall</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">height_group_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Thumb</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">HeightGroup</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">tiny_data</span><span class="p">)</span>
@@ -526,7 +528,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We can see just by inspecting the graph above, without even making an ANOVA table, that the two-group model will yield better predictions than the null model. Knowing whether someone is short or tall would help us make a more accurate prediction of their thumb length than if we didn’t know which group they were in and made predictions with the Grand Mean only.</p>
 <section id="the-continous-variable-model">
 <h3>The continous variable model<a class="headerlink" href="#the-continous-variable-model" title="Permalink to this heading">#</a></h3>
 <p>Now let’s compare what happens when we plot <code class="docutils literal notranslate"><span class="pre">Height</span></code> as a quantitative variable instead of as a grouping variable.</p>
@@ -536,12 +537,12 @@ document.write(`
 <img src="images/ch12-groupvscont2.png" width ="800">
 <p>The empty model of the outcome variable is exactly the same no matter how you code the explanatory variable: it is just the mean of the six data points in the outcome variable. It is the baseline model performance we start with before taking any explanatory variables into account.</p>
 <p>However, we get a sense from the scatterplot that knowing someone’s exact height would help us make a better prediction of their thumb length than just knowing whether they are short or tall. But where, in the scatterplot, is the model? What are the groups to make means for?</p>
-<p>When the explanatory variable is categorical, as with <code class="docutils literal notranslate"><span class="pre">HeightGroup</span></code>, we can use the group means as our model (as reviewed above). But when the explanatory variable is quantitative, as with <code class="docutils literal notranslate"><span class="pre">Height</span></code> in inches, we can’t use the group means to predict new scores because there are no groups!</p>
+<p>When the explanatory variable is categorical, as with <code class="docutils literal notranslate"><span class="pre">HeightGroup</span></code>, we can use the group means as our model (as reviewed above). But when the explanatory variable is quantitative, as with <code class="docutils literal notranslate"><span class="pre">Height</span></code> in inches, we can’t use the group means to predict new scores because there are no groups.</p>
 </section>
 </section>
 <section id="the-regression-line-as-a-model">
 <h2>12.2 The regression line as a model<a class="headerlink" href="#the-regression-line-as-a-model" title="Permalink to this heading">#</a></h2>
-<p>When both the outcome and explanatory variables are quantitative, we need a different kind of model. We can’t use the group mean as a model, because we don’t have groups. Instead we use a line, the <strong>regression line</strong>.</p>
+<p>When both the outcome and explanatory variables are quantitative, we need to use the model differently. We can’t use the group mean as a model, because we don’t have groups. Instead we use a line, the <strong>regression line</strong>.</p>
 <p>The regression line has a lot more in common with the mean as a model than you might at first think. Recall last chapter when we learned how the general linear model is a lot like the equation for a line, <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code>. It’s like describing the intercept and slope of a line that connects the mean of one group to the mean of the other group. Where the line overlaps with the group values is the prediction we would make for a new data point with that group label.</p>
 <img src="images/ch11-glmeq.png" width="500">
 <img src="images/ch11-glmeq2.png" width="500">
@@ -722,9 +723,9 @@ document.write(`
 <p>Actually, we’re being a little too simplistic right now. You can’t <em>always</em> directly compare PRE scores between models to decide which is better. You can only do that in the case of models that have the same number of parameters (which these models do). This is because PRE will always increase when you add more predictors, whether or not those predictors are actually helpful. When you start making more complex models with more parameters and comparing them to simpler models, we have to use a different statistic to see if that difference is meaningful. But more on that next chapter.</p>
 <p>The reason the Height model did a better job is because, as we mentioned before, by shoving all the datapoints from <code class="docutils literal notranslate"><span class="pre">Height</span></code> into one of two categories, we removed information that this variable was providing. There are now only two unique values instead of many. With less information, we have less predictive ability.</p>
 </section>
-<section id="correlation">
-<h2>12.9 Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h2>
-<p>You might have heard of Pearson’s <em>r</em>, often referred to as a “correlation coefficient.” It’s again another historical tool, usually taught separately from other concepts, but which is actually just a special case of regression in which both the outcome and explanatory variables are transformed into z-scores prior to analysis.</p>
+<section id="historical-note-correlation">
+<h2>12.9 Historical note - Correlation<a class="headerlink" href="#historical-note-correlation" title="Permalink to this heading">#</a></h2>
+<p>You might have heard of Pearson’s <em>r</em>, more commonly referred to as a <strong>correlation coefficient</strong>. It’s again another historical tool, usually taught separately from other concepts, but which is actually just a special case of regression in which both the outcome and explanatory variables are standardized as z-scores prior to analysis.</p>
 <p>Let’s see what happens when we transform the two variables we have been working with: <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and <code class="docutils literal notranslate"><span class="pre">Height</span></code>. Because both variables are transformed into z-scores, the mean of each distribution will be 0, and the standard deviation will be 1. The function <code class="docutils literal notranslate"><span class="pre">scale()</span></code> will convert all the values in a variable to z-scores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -775,7 +776,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>It seems like a lot of work to transform variables into z-scores and then fit a regression line. Fortunately, R provides an easy way to directly calculate the correlation coefficient (Pearson’s <em>r</em>): the <code class="docutils literal notranslate"><span class="pre">cor()</span></code> function.</p>
+<p>It seems like a lot of work to transform variables into z-scores and then fit a regression line. Fortunately, R provides an easy way to directly calculate the correlation coefficient <em>r</em>: the <code class="docutils literal notranslate"><span class="pre">cor()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># this calculates the correlation of Thumb and Height</span>
@@ -784,7 +785,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">cor()</span></code> is one of those functions that is sensitive to NAs in the data, although it doesn’t handle them in the same way as <code class="docutils literal notranslate"><span class="pre">mean()</span></code> or <code class="docutils literal notranslate"><span class="pre">sd()</span></code> does. To ignore NAs, you need to use the <code class="docutils literal notranslate"><span class="pre">use=&quot;pairwise.complete.obs&quot;</span></code> name-value argument to tell R to skip over any observations that are missing a value in at least one of the variables. This flag tells R to only use observations that are “pairwise complete” - having values (complete) on both variables (pairwise). Note that it’s okay if there are NAs in <em>other</em> variables of a dataset for a particular observation, so long as they aren’t in the variables we’re making a correlation with right now.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cor()</span></code> is one of those functions that is sensitive to NAs in the data, although it doesn’t handle them in the same way as <code class="docutils literal notranslate"><span class="pre">mean()</span></code> or <code class="docutils literal notranslate"><span class="pre">sd()</span></code> does. To ignore NAs, you need to add the <code class="docutils literal notranslate"><span class="pre">use=&quot;pairwise.complete.obs&quot;</span></code> name-value argument to tell R to skip over any observations that are missing a value in at least one of the variables. This flag tells R to only use observations that are “pairwise complete” - having values (complete) on both variables (pairwise). Note that it’s okay if there are NAs in <em>other</em> variables of a dataset for a particular observation, so long as they aren’t in the variables we’re making a correlation with right now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">height_w_NA</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">studentdata</span><span class="o">$</span><span class="n">Height</span>
@@ -801,13 +802,13 @@ document.write(`
 </div>
 <p>When <em>r</em> = 0.34, the slope of the regression line when both variables are standardized is 0.34. This means that an observation that is one standard deviation above the mean on the explanatory variable (x-axis) is predicted to be 0.34 standard deviations above the mean on the outcome variable (y-axis).</p>
 <p>Remember, the best-fitting regression model for <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> by <code class="docutils literal notranslate"><span class="pre">Height</span></code> was <span class="math notranslate nohighlight">\(Y_i = 2.84 + 0.87X_i\)</span>. The slope of 0.87 indicates an increment of 0.87 mm of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> length for every one inch increase in <code class="docutils literal notranslate"><span class="pre">Height</span></code>. We will call this slope the <em>unstandardized slope</em>.</p>
-<p>While the slope of the standardized regression line is Pearson’s <em>r</em>, the slope of the unstandardized regression line is not directly related to <em>r</em>. However, there is a way to see the strength of the relationship in an unstandardized regression plot; it’s just not the slope coefficient!</p>
-<p>In an unstandardized scatterplot we can “see” the strength of a relationship between two quantitative variables by looking at the closeness of the points to the regression line. Pearson’s <em>r</em> is directly related to how closely the points adhere to the regression line. If they cluster tightly, it indicates a strong relationship; if they don’t, it indicates a weak or nonexistent one.</p>
+<p>While the slope of the standardized regression line is <em>r</em>, the slope of the unstandardized regression line is not directly related to <em>r</em>. However, there is a way to see the strength of the relationship in an unstandardized regression plot; it’s just not the slope coefficient!</p>
+<p>In an unstandardized scatterplot we can “see” the strength of a relationship between two quantitative variables by looking at the closeness of the points to the regression line. Correlation <em>r</em> is directly related to how closely the points adhere to the regression line. If they cluster tightly, it indicates a strong relationship; if they don’t, it indicates a weak or nonexistent one.</p>
 <p>Just as z-scores let us compare scores from different distributions, the correlation coefficient gives us a way to compare the strength of a relationship between two variables with that of other relationships between pairs of variables measured in different units.</p>
 <p>For example, compare the scatterplots below for <code class="docutils literal notranslate"><span class="pre">Height</span></code> predicting <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> (on the left) and <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> predicting <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> (on the right).</p>
 <img src="images/ch12-heightxpinkie.png" width="850">
 <p>Correlation measures tightness of the data around the line — the strength of the linear relationship. Judging from the scatterplots, we would say that the relationship between <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> is stronger because the linear  Pinkie model would probably produce better predictions. Another way to say that is this: there is less error around the Pinkie regression line.</p>
-<p>Try calculating Pearson’s <em>r</em> for each relationship. Are our intuitions confirmed by the correlation coefficients?</p>
+<p>Try calculating <em>r</em> for each relationship. Are our intuitions confirmed by the correlation coefficients?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># this calculates the correlation of Thumb and Height</span>
@@ -819,27 +820,17 @@ document.write(`
 </div>
 </div>
 <p>The correlation coefficients confirm that pinkie finger length has a stronger relationship with thumb length than height. This makes sense because the points in the scatterplot of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> by <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> are more tightly clustered around the regression line than in the scatter of <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> by <code class="docutils literal notranslate"><span class="pre">Height</span></code>.</p>
-<p>Just as the slope of a regression line can be positive or negative, so can a correlation coefficient. Pearson’s <em>r</em> can range from +1 to -1. A correlation coefficient of +1 means that score of an observation on the outcome variable can be perfectly predicted by the observation’s score on the explanatory variable, and that the higher the score on one, the higher on the other.</p>
+<p>Just as the slope of a regression line can be positive or negative, so can a correlation coefficient. Correlation <em>r</em> can range from +1 to -1. A correlation coefficient of +1 means that score of an observation on the outcome variable can be perfectly predicted by the observation’s score on the explanatory variable, and that the higher the score on one, the higher on the other.</p>
 <p>A correlation coefficient of -1 means the outcome score is just as predictable, but in the opposite direction. With a negative correlation, the higher the score on the explanatory variable, the lower the score on the outcome variable. The image below shows what scatterplots would look like for a perfect correlation of +1, no correlation, and a perfect correlation of -1.</p>
 <img src="images/ch12-correlations.png" width="900"><p>As you get more familiar with statistics you will be able to look at a scatterplot and guess the correlation between the two variables, without even knowing what the variables are! Here’s a game that lets you practice your guessing. Try it, and see what your best score is!</p>
 <p><a class="reference external" href="http://www.rossmanchance.com/applets/GuessCorrelation.html">http://www.rossmanchance.com/applets/GuessCorrelation.html</a></p>
-<p>The unstandardized slope measures steepness of the best-fitting line. Correlation measures the strength of the linear relationship, which is indicated by how close the data points are to the regression line, regardless of slope.</p>
+<p>The unstandardized slope represents steepness of the best-fitting line. Correlation represents the strength of the linear relationship, which is indicated by how close the data points are to the regression line, regardless of slope.</p>
 <p>Let’s think this through more carefully with the two scatterplots and best-fitting regression lines presented in the table below. For a brief moment, let’s give up on <code class="docutils literal notranslate"><span class="pre">Thumb</span></code> and try instead to predict the length of middle and pinkie fingers. On the left, we have tried to explain variation in <code class="docutils literal notranslate"><span class="pre">Middle</span></code> (outcome variable) with <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> (explanatory variable). On the right, we have simply reversed the two variables, explaining variation in <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> (outcome) with <code class="docutils literal notranslate"><span class="pre">Middle</span></code> (explanatory variable).</p>
 <img src="images/ch12-pinkiexmiddle.png" width="900">
-<p>The slopes of these two lines are different. The one on the left is steeper (0.92), the one on the right more gradual in its ascent (0.61). Despite this difference, however, we know that the strength of the relationship, as is measured by Pearson’s <em>r</em>, is the same in both cases: they are the same two variables.</p>
+<p>The slopes of these two lines are different. The one on the left is steeper (0.92), the one on the right more gradual in its ascent (0.61). Despite this difference, however, we know that the strength of the relationship, as captured by <em>r</em>, is the same in both cases: they are the same two variables.</p>
 <p>The slope difference in this case is due to the fact that middle fingers are a bit longer than pinkies. So, a millimeter difference in <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> is a bigger deal than a millimeter difference in <code class="docutils literal notranslate"><span class="pre">Middle</span></code>. When the pinkie is a millimeter longer, the middle finger is 0.92 millimeters longer, on average; but when the middle finger is a millimeter longer, the pinkie is only up by 0.61 millimeters on average.</p>
-<p>The unstandardized effect estimate (the <span class="math notranslate nohighlight">\(b_1\)</span> coefficient) must always be interpreted in context. It will depend on the units of measurement of the two variables, as well as on the meaning that a change in each unit has in the scheme of things. There’s a lot going on in a slope! The advantage of unstandardized slopes is that they keep your theorizing grounded in context, and the predictions you make are in the actual units on which the outcome variable is measured.</p>
-<p>However, the advantage of the standardized effect estimate (Pearson’s <em>r</em>) is that it gives you a sense of the strength of the relationship. By the way, is Pearson’s <em>r</em> really the same in both the <code class="docutils literal notranslate"><span class="pre">Middle</span></code> by <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> and <code class="docutils literal notranslate"><span class="pre">Pinkie</span></code> by <code class="docutils literal notranslate"><span class="pre">Middle</span></code> situations? Try it out here.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">studentdata</span><span class="o">$</span><span class="n">Middle</span><span class="p">,</span><span class="w"> </span><span class="n">studentdata</span><span class="o">$</span><span class="n">Pinkie</span><span class="p">)</span>
-<span class="nf">cor</span><span class="p">(</span><span class="n">studentdata</span><span class="o">$</span><span class="n">Pinkie</span><span class="p">,</span><span class="w"> </span><span class="n">studentdata</span><span class="o">$</span><span class="n">Middle</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The standardized slope is the same because now the original units do not matter. Both variables are now in units of standard deviation. Correlations are an excellent way to gauge the strength of a relationship. But the tradeoff is this: predictions based on correlation are difficult to interpret in regards to the original variables (e.g., “a one SD increase in variable X produces a 0.75 SD increase in variable Y”).</p>
-<p>If you want to stay more grounded in your measures and what they actually mean, then the unstandardized coefficient estimate is useful. Regression models give you predictions you can understand. If you want to be able to compare effect estimates to those generated by other models in other studies, use the standardized coefficient or correlation value.</p>
+<p>The unstandardized effect estimate (the <span class="math notranslate nohighlight">\(b_1\)</span> coefficient) must always be interpreted in context. It will depend on the units of measurement of the two variables, as well as on the meaning that a change in each unit has in the scheme of things. There’s a lot going on in a slope! The advantage of unstandardized slopes is that they keep your theorizing grounded in context, and the predictions you make are in the actual units on which the outcome variable is measured. If you want to stay more grounded in your measures and what they actually mean, then the unstandardized coefficient estimate is useful. Regression models give you predictions you can understand.</p>
+<p>However, the advantage of the standardized effect estimate <em>r</em> is that it gives you a sense of the strength of the relationship regardless of the units of the variables. If you want to be able to compare effect estimates to those generated by other models in other studies, use the standardized coefficient or correlation value.</p>
 </section>
 <section id="regression-limitations">
 <h2>12.10 Regression limitations<a class="headerlink" href="#regression-limitations" title="Permalink to this heading">#</a></h2>
@@ -847,7 +838,7 @@ document.write(`
 <section id="correlation-does-not-imply-causation">
 <h3>Correlation does not imply causation<a class="headerlink" href="#correlation-does-not-imply-causation" title="Permalink to this heading">#</a></h3>
 <p>Most important to bear in mind is that correlation does not imply causation, something you no doubt have heard before. Just the fact that two variables are correlated does not necessarily mean we understand something about what <em>created</em> either of them. In this sense, regression is no different from correlation.</p>
-<p>There are many examples of this: children’s shoe size is correlated with scores on an achievement test; the tendency to wear skimpy clothing is correlated with higher temperatures. In the case of shoe size, we can see that the correlation is spurious; age is a confounding variable, causing increases in both shoe size and achievement. In the case of skimpy clothing, the relationship is real, but the causal direction must be sensibly interpreted. Hiking up the temperature might indeed cause people to shed their clothing. But taking off clothes is not going to cause the temperatures to go up, no matter how many times you try.</p>
+<p>There are many examples of this: children’s shoe size is correlated with scores on an achievement test; the tendency to wear less clothing is correlated with higher temperatures. In the case of shoe size, we can see that the correlation is spurious; age is a confounding variable, causing increases in both shoe size and achievement. In the case of skimpy clothing, the relationship is real, but the causal direction must be sensibly interpreted. Hiking up the temperature might indeed cause people to shed their clothing. But taking off clothes is not going to cause the temperatures to go up, no matter how many times you try.</p>
 <img src="images/ch12-xkcd.png" width="700">
 <p>Disambiguating causal relationships and controlling for possible confounds is not achievable through statistical analysis alone. Statistics can help, and correlation can certainly provide evidence in support of a causal theory. But research design is a necessary tool. Random assignment or information about the temporal order of effect and outcome are required to figure out whether a particular relationship is causal or not.</p>
 </section>
@@ -858,7 +849,7 @@ document.write(`
 <p>Take this graph from a study of the relationship of body weight to risk of death (from McGee DL, 2005, Ann Epidemiol 15:87 and Adams KF, 2006, N Engl J Med 355:763). Being underweight and being overweight both increase the risk of death, whereas being in the middle reduces that risk.</p>
 <img src="images/ch12-weightrisk.png" width="650">
 <p>If you ignored the shape of the relationship and overlaid a straight regression line, the line would probably be close to flat, indicating no relationship. But if you did that you would be missing an important <em>curvilinear</em> relationship. This is like the opposite of “correlation does not imply causation” - causation doesn’t necessarily imply linear correlation!</p>
-<p>Before fitting a linear regression model, look at the scatterplot and see if a linear association makes sense. If it doesn’t, take another stats class that teaches you about different models! Statisticians have lots of models to offer beyond just the simple straight line.</p>
+<p>Before fitting a linear regression model, look at the scatterplot and see if a linear association makes sense. If it doesn’t, well… take an advanced stats class that teaches you about different models! Statisticians have lots of models to offer beyond just the simple straight line.</p>
 </section>
 <section id="do-regression-lines-go-on-forever">
 <h3>Do regression lines go on forever?<a class="headerlink" href="#do-regression-lines-go-on-forever" title="Permalink to this heading">#</a></h3>
@@ -877,6 +868,21 @@ document.write(`
 <li><p>Compare the fit of a regression model to empty model and two-group model</p></li>
 <li><p>Calculate a correlation</p></li>
 <li><p>Describe the limitations of using regression</p></li>
+</ul>
+</section>
+<section id="new-concepts">
+<h2>New concepts<a class="headerlink" href="#new-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>regression models</strong>: General Linear Models with quantitative predictors and a quantitative outcome.</p></li>
+<li><p><strong>regression line</strong>: The line of best fit through a scatter plot. Represents the prediction on the outcome variable that a regression model would make for each value of a predictor.</p></li>
+<li><p><strong>correlation coefficient</strong>: Represents the strength of linear association between two quantitative variables. Derived from a regression model with standardized variables.</p></li>
+</ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/ggformula/versions/0.10.1/topics/gf_smooth">ggformula::gf_lm()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor">cor()</a></p></li>
 </ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-13.ipynb">Next: Chapter 13 - Multivariable Models</a></p>
 </section>
@@ -942,7 +948,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-regression-line-to-make-predictions">12.6 Using the regression line to make predictions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examining-regression-model-fit">12.7 Examining regression model fit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-full-models">12.8 Comparing different full models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">12.9 Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-note-correlation">12.9 Historical note - Correlation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-limitations">12.10 Regression limitations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-does-not-imply-causation">Correlation does not imply causation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#are-all-regressions-straight">Are all regressions straight?</a></li>
@@ -950,6 +956,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 

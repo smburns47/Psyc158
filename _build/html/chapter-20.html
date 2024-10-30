@@ -182,10 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-16.ipynb">Chapter 16 - Significance Testing</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb">Chapter 17 - Significance Testing Whole Models</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-18.ipynb">Chapter 18 - Effect Sizes &amp; Statistical Power</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Bias due to Improper Model Building</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-19.ipynb">Chapter 19 - Model Bias</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-20.ipynb">Chapter 20 - Alternate Approaches - Traditional Statistical Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Alternative Approaches - Bayesian Statistics</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-22.ipynb">Chapter 22 - Lying with Statistics</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Chapter 21 - Lying with Statistics</a></li>
 </ul>
 
     </div>
@@ -433,10 +432,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-way-anova">20.3 One-way ANOVA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-anova">20.4 Factorial ANOVA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-multiple-regression">20.5 Correlation &amp; multiple regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-square">20.6 Chi-square</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measures-tests">20.7 Repeated measures tests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tests">20.8 Summary of tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-traditional-tools">20.6 Other traditional tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-interval-outcome-variable">Non-interval outcome variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measures-tests">Repeated measures tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tests">20.7 Summary of tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
             </nav>
         </div>
@@ -477,10 +481,10 @@ document.write(`
 <li><p><strong>Traditional tools require learning how to do hypothesis testing first</strong> - Traditional methods fundamentally depend on Null Hypothesis Significance Testing. They start with defining a null hypothesis and cannot be interpreted without computing a t/F score and finding a p-value. This means to learn how to use these tools, students first have to learn about sampling distributions and significance testing. This is a rather abstract thing to learn first in one’s statistics journey and impedes understanding for many people. This leads them to using intellectual short cuts like “only care about p &lt; 0.05” despite the dangers of overrelying on that number.</p></li>
 <li><p><strong>Traditional tools are more variable, harder to remember</strong> - When first starting out, the list of all the common statistical tools is often daunting. They are calculated all different ways, with different names, applied to different situations, and it’s hard to remember what goes where. In contrast, the GLM is ultimatly one tool: <span class="math notranslate nohighlight">\(Y_i = b_0 + b_1X_i + e_i\)</span>. How many predictors you add to the equation and how you interpret the coefficients varies depending on your use situation, but just knowing about this one equation gets you 80% of the way there. This makes it a better starting point to build conceptual understanding.</p></li>
 </ol>
-<p>Despite the advantages of the GLM however, many people still use the traditional tools. Thus, it is good for you to be able to identify them and understand how they map onto what you have learned with the GLM. Ultimately, the GLM and these tools will give you the same answer and you can choose which you prefer in your own research. Knowing both will enable you to read and understand research reports no matter what method the authors used. You may even find that most of these tools build on concepts you’ve already learned. They’re just a different way of showing that information.</p>
+<p>Despite the advantages of the GLM however, many people still use the traditional tools. Thus, it is good for you to be able to identify them and understand how they map onto what you have learned with the GLM. Ultimately, the GLM and these tools will give you the same answer and you can choose which you prefer in your own research. Knowing both will enable you to read and understand research reports no matter what method the authors used.</p>
 <section id="one-sample-t-test">
 <h2>20.1 One-sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h2>
-<p>Previously in chapter 11, we were introduced to the idea of a t-test. To explain it in more depth, let’s start with the <strong>one-sample t-test</strong>.</p>
+<p>Previously in chapter 11, we encountered the idea of a t-test. To explain it in more depth, let’s start with the <strong>one-sample t-test</strong>.</p>
 <p>Let’s say you are a track coach and you’re assessing the progress of your runners’ training. They all recorded their best times for running the 400m when they initially joined the team. Now after a month of training with track drills, you want to know if they, as a group, have improved.</p>
 <p>Here is some data from your team. We will filter it down to just those scores at tryouts and 1 month later at the first meet, then calculate their change in running times. Negative scores mean they got faster (less time to complete the 100m), positive scores mean they ran slower.</p>
 <div class="cell docutils container">
@@ -506,22 +510,12 @@ document.write(`
 </div>
 <p>Great! This number means that, on average, our team ran faster than before after training for a month. If we only care about evaluating our current team, we can stop here and don’t need to use any more statistics.</p>
 <p>But let’s say our question goes beyond just our team. If we were to recruit new runners the following year, would they also improve their scores with this training regimen? Is it good enough to use for everyone? Now we are hypothesizing about data we don’t have. At this point we need inferential statistics, and a one-sample t-test can help.</p>
-<p>A one-sample t-test answers a particular kind of question: is the mean of some data <span class="math notranslate nohighlight">\(\bar{X}\)</span> likely or unlikely to be from a population with a specific <span class="math notranslate nohighlight">\(\mu\)</span>? In other words, if we think the population <span class="math notranslate nohighlight">\(\mu\)</span> is a particular value and our data sample is drawn from that population, is it reasonable or surprising to find that our sample’s mean is the value we measured?</p>
+<p>A one-sample t-test answers a particular kind of question: is the mean of some data <span class="math notranslate nohighlight">\(\bar{X}\)</span> likely or unlikely to be from a population with a specific <span class="math notranslate nohighlight">\(\mu\)</span>? In other words, if we think our data sample is drawn from a population with a mean of <span class="math notranslate nohighlight">\(\mu\)</span>, is it reasonable or surprising to find that our sample’s mean is the value we measured?</p>
 <p>In the case of our specific example: is our data sample likely to happen even in a population of runners who on average didn’t improve?</p>
 <p>In order to do a one-sample t-test to answer this question, we first need to set down our idea about what <span class="math notranslate nohighlight">\(\mu\)</span> should be. This is specifying the null hypothesis. For our particular example, the data we are evaluating are improvements in running time. We want to know if these data came from a population of scores where there’s no improvement. In such a population some people might run a bit faster than their initial time, some a bit slower, but on average there’s no change. Thus, to set our null hypothesis:</p>
 <div class="math notranslate nohighlight">
 \[H_0: \mu = 0\]</div>
-<p>When we calculated our data sample earlier, it was -0.349, not 0. Does that mean we can conclude these runners did not come from a population of no improvement? Not necessarily. Remember, due to random sampling, it is frequently possible to get a sample mean that is not the same value as the population mean:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">sim_sample</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1">#random sample of 10 scores from population with mean 0</span>
-<span class="nf">mean</span><span class="p">(</span><span class="n">sim_sample</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Thus we need a way of refining our question: given a population <span class="math notranslate nohighlight">\(\mu\)</span> <em>and</em> an expected variation among samples from that population, is our sample really surprising or not?</p>
+<p>When we calculated our data sample earlier, it was -0.349, not 0. Does that mean we can conclude these runners did not come from a population of no improvement? Not necessarily. Remember, due to random sampling, it is frequently possible to get a sample mean that is not the same value as the population mean. Thus we need a way of refining our question: given a population <span class="math notranslate nohighlight">\(\mu\)</span> <em>and</em> an expected variation among samples from that population, is our sample really surprising or not?</p>
 <p>Enter the t-value. It is a way of scaling the difference between a sample and hypothesized population mean by the standard error of that population. For a one-sample t-test, this is calculated as:</p>
 <div class="math notranslate nohighlight">
 \[t = \frac{\bar{X} - \mu}{SEM}\]</div>
@@ -531,8 +525,8 @@ document.write(`
 <p>All this together means that a t-value will be larger when there’s a bigger difference between our sample mean and the hypothesized population mean, or when the standard error is smaller.</p>
 <p>The type of t-score we can get falls somewhere in the t distribution that we first encountered in chapter 16:</p>
 <img src="images/ch16-tdist.png" width="600">
-<p>The cumulative probability outside of our t-value is the corresponding p-value for that t-score. The smaller the p-value, the more surprising it is to get a t-value like ours when the true t in the population is 0. If the associated p-value is &lt;0.05, we would decide it’s so surprising that our sample probably came from a different sort of population instead - one with some alternative <span class="math notranslate nohighlight">\(\mu\)</span> that is not 0.</p>
-<p>R provides us with a built-in function to quickly compute a one sample t-test:</p>
+<p>The cumulative probability outside of our t-value is the corresponding p-value for that t-score. The smaller the p-value, the more surprising it is to get a sample mean like ours when the true <span class="math notranslate nohighlight">\(\mu\)</span> in the population is 0. If the associated p-value is &lt;0.05, we would decide it’s so surprising that our sample probably came from a different sort of population instead - one with some alternative <span class="math notranslate nohighlight">\(\mu\)</span> that is not 0.</p>
+<p>R provides us with a built-in function <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> to quickly compute a one sample t-test:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">change_scores</span><span class="p">)</span>
@@ -595,17 +589,17 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(s_p\)</span> stands for the <em>pooled</em> standard deviation, a way of combining the standard deviations of two samples:</p>
 <div class="math notranslate nohighlight">
 \[s_p = \sqrt{\frac{(n_1 - 1)s^2_1 + (n_2 - 1)s^2_2}{n_1 + n_2 + 2}} \]</div>
-<p>While this equation is more complicated, in general this t-score gets larger based on the same factors as the one-sample t-test. You will get a larger t-score, and thus more likely to reject the null hypothesis, if there is a large difference between the group means <em>or</em> if the sample sizes are large.</p>
+<p>While this equation is more complicated, in general this t-score gets larger based on the same factors as the one-sample t-test. You will get a larger t-score, and thus more likely to reject the null hypothesis, if there is a large difference between the group means <em>or</em> there is small within-group variation.</p>
 <p>In R we can use the same <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> function to do an independent-samples t-test. We just need to include more arguments. Specifically, we need to pass the separate groups to compare as separate vectors, and then add a <code class="docutils literal notranslate"><span class="pre">var.equal=</span></code> flag to tell this function to use the pooled variance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">track_training</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">weight_training</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">weight_training</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">track_training</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Based on this result, what would you conclude about which populations each group likely came from?</p>
-<p>Again, it is possible to get this same result using the GLM approach we already know. However we have to reshape our data a bit in order to make this possible. In the <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> command above we wanted to compare values on the outcome variable for the two different groups, so we needed to divide the data in this variable into two separate vectors. To use <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, we don’t separate our data into different datasets. We merely include another variable that stores information about which group is which.</p>
+<p>Again, it is possible to get this same result using the GLM approach we already know. In the <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> command above we wanted to compare values on the outcome variable for the two different groups, so we divided the data in this variable into two separate vectors. To use <code class="docutils literal notranslate"><span class="pre">lm()</span></code>, we don’t separate our data into different datasets. We merely include another variable that stores information about which group is which.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#filtering to every time score during meet1, for track-training or weight-training athletes</span>
@@ -622,16 +616,25 @@ document.write(`
 </div>
 </div>
 </div>
+<p>As you can see, this result is again the same. The model parameter <span class="math notranslate nohighlight">\(b_1\)</span> estimates the difference in group means and is significantly larger than 0 (p=0.0483). It seems like the weight-training-only regimen resulted in significantly faster running times than the drill-training-only regimen. This is the same answer as testing whether the t-test for the group difference was significant.</p>
+<p>In fact, because it’s the same question in the end, you can also use the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> model formula syntax as an alternate way of using the <code class="docutils literal notranslate"><span class="pre">t.test()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="one-way-anova">
 <h2>20.3 One-way ANOVA<a class="headerlink" href="#one-way-anova" title="Permalink to this heading">#</a></h2>
-<p>T-tests allow you to investigate differences in means between a population and one group of data, or two separate groups. Beyond that, you might encounter a situation where you want to investigate differences between more than two groups. E.g., instead of comparing just the athletes who did track training vs. weight training, you also have athletes who did neither type or both types of training.</p>
+<p>T-tests allow you to investigate differences in means between a population and one group of data, or two separate groups. Beyond that, you might encounter situations where you want to investigate differences between more than two groups. E.g., instead of comparing just the athletes who did track training vs. weight training, you also have athletes who did neither type or both types of training.</p>
 <p>There’s no t-test that helps you analyze more than two groups. Instead, we need to expand into a different kind of test known as a <strong>one-way ANOVA</strong>.</p>
 <p>To start, we recognize that we’re interested in comparing the average 400m running time for the 4 different training conditions. In that sense, we’re still hypothesizing about differences in means, but between several groups. Specifically, it would be pretty uninteresting if no type of training made any difference in running time and all athletes were from the same population. Thus, our null hypothesis is:</p>
 <div class="math notranslate nohighlight">
 \[H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4\]</div>
 <p>Where each <span class="math notranslate nohighlight">\(\mu\)</span> is the population from which that group number came. In contrast, the alternative hypothesis is that <em>at least one</em> of the four different training conditions results in different running times. We’re not trying to predict which group(s) is different from which other group(s), just that at least one of those equal signs in the null hypothesis is not true.</p>
-<p>Because there are many different ways the null hypothesis could be false (1 =/= 3, 2 =/=3 &amp; 4, etc.), this null hypothesis isn’t possible to test in the t-test framework. There isn’t one group difference to compare to one population parameter. Instead we use an ANOVA procedure, which stands for Analysis of Variance.</p>
+<p>Because there are many different ways the null hypothesis could be false (1 <span class="math notranslate nohighlight">\(\neq\)</span> 3, 2 <span class="math notranslate nohighlight">\(\neq\)</span> 3 &amp; 4, etc.), this null hypothesis isn’t possible to test in the t-test framework. There isn’t one group difference to compare to one population parameter. Instead we use an ANOVA procedure, which stands for Analysis of Variance.</p>
 <p>The way this works is by looking at variation in data and figuring out how much variation is within a group of data, vs. between different groups.</p>
 <img src="images/ch20-btwn-within.png" width="800">
 <p>To quantify variation, we’ve used the idea of sum of squares before. We can use it again here to calculate new* kinds of sum of squares to represent, instead of deviations between data and model predictions, deviations between groups or within groups. We’ll denote this as <span class="math notranslate nohighlight">\(SS_w\)</span> for the within-group variation, where <span class="math notranslate nohighlight">\(\bar{Y}_g\)</span> is the mean of some group G:</p>
@@ -651,7 +654,7 @@ document.write(`
 <p>The ratio of mean squared differences then is:</p>
 <div class="math notranslate nohighlight">
 \[\frac{SS_b / df_b}{SS_w / df_w} = \frac{MS_b}{MS_w}\]</div>
-<p>This ratio has a specific name: it is the <strong>F-ratio</strong> or the <strong>F-statistic</strong> (<a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb#scrollTo=509057e3">sound familiar?</a>).</p>
+<p>This ratio has a specific name: it is the F-ratio or the F-statistic (<a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-17.ipynb#scrollTo=509057e3">sound familiar?</a>).</p>
 <p>That’s all a one-way ANOVA does: it calculates an F-statistic to compare between to within-group variation. If the value of this F-statistic is sufficiently large, that means the differences in the group means are so large that we’d be very surprised to hear they were actually sampled from the same population. We’d reject the null hypothesis in favor of an alternative, that at least one came from a different population.</p>
 <p>That brings us to doing a one-way ANOVA test in R. There are a couple different implementations of ANOVA tests in R. The most basic is built into base R, called <code class="docutils literal notranslate"><span class="pre">aov()</span></code>. To use this one, you no longer need to save the data for the different groups into different vectors - we can keep it in one dataset like with a GLM model and simply pass a formula to ask how the outcome variable varies as a function of group.</p>
 <div class="cell docutils container">
@@ -679,7 +682,7 @@ document.write(`
 </div>
 </div>
 <p>Since this p-value is &lt;0.05, we’d reject the null hypothesis that all groups of athletes come from the same population. At least one of the group means is sufficiently different from at least one other that we decide there are different populations involved here - meaning, type of training matters for running time. In APA format, we’d write this as “there was a significant effect of training type on running time <em>F</em>(3,36) = 7.035, <em>p</em> &lt; 0.001.”</p>
-<p>Now, at this moment we should pause so I can let you know that I actually lied to you earlier. <span class="math notranslate nohighlight">\(SS_b\)</span> and <span class="math notranslate nohighlight">\(SS_w\)</span> aren’t new kinds of sum of squares at all. To see what I mean, here’s the <span class="math notranslate nohighlight">\(SS_{model}\)</span> and <span class="math notranslate nohighlight">\(SS_{error}\)</span> from a GLM with the same formula:</p>
+<p>Now, at this moment we should pause so to clarify that there was a lie earlier. <span class="math notranslate nohighlight">\(SS_b\)</span> and <span class="math notranslate nohighlight">\(SS_w\)</span> aren’t new kinds of sum of squares at all. To see what I mean, here’s the <span class="math notranslate nohighlight">\(SS_{model}\)</span> and <span class="math notranslate nohighlight">\(SS_{error}\)</span> from a GLM with the same formula:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">glm_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meet1</span><span class="p">)</span>
@@ -688,7 +691,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><span class="math notranslate nohighlight">\(SS_b\)</span> is the exact same value as <span class="math notranslate nohighlight">\(SS_{model}\)</span>, just with a different name. Both refer to the amount of variation explained by this grouping variable. Likewise, <span class="math notranslate nohighlight">\(SS_w\)</span> is the same as <span class="math notranslate nohighlight">\(SS_{error}\)</span>, the amount of variation left unexplained. The F-statistic and p-value are also the same. That’s why this is called an ANOVA table - it’s the results of an ANOVA test. If we output the summary of a GLM model with <code class="docutils literal notranslate"><span class="pre">condition</span></code> predicting <code class="docutils literal notranslate"><span class="pre">time</span></code>:</p>
+<p><span class="math notranslate nohighlight">\(SS_b\)</span> is the exact same value as <span class="math notranslate nohighlight">\(SS_{model}\)</span>, just with a different name. Both refer to the amount of variation explained by this grouping variable. Likewise, <span class="math notranslate nohighlight">\(SS_w\)</span> is the same as <span class="math notranslate nohighlight">\(SS_{error}\)</span>, the amount of variation left unexplained. The F-statistic and p-value are also the same. That’s why this is called an ANOVA table - <code class="docutils literal notranslate"><span class="pre">supernova()</span></code> is another implementation of an ANOVA test in R. If we output the summary of a GLM model with <code class="docutils literal notranslate"><span class="pre">condition</span></code> predicting <code class="docutils literal notranslate"><span class="pre">time</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">glm_results</span><span class="p">)</span>
@@ -696,7 +699,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>That F-statistic and p-value for the significance of the whole model is also the same. Thus, a one-way ANOVA test is the exact same as testing a whole GLM model with multiple categorical predictors.</p>
+<p>That F-statistic and p-value for the significance of the whole model are also the same. Thus, a one-way ANOVA test is the exact same as testing a whole GLM model with multiple categorical predictors.</p>
 <p>Now there are some differences between a one-way ANOVA and GLM on the other kinds of information you get from the model. Specifically, the significance of differences between <em>particular</em> pairs of groups. At baseline, an ANOVA test can’t tell you anything about this. It only tests the null hypothesis that all groups are the same. Any one pair being different results in rejecting the null hypothesis, but you don’t know which pair(s) of groups were different. To get this answer, you need to perform an independent-samples t-test on each unique pair. Because this involves many tests, you also have to correct for multiple comparisons.</p>
 <p>In R, you can do this with the function <code class="docutils literal notranslate"><span class="pre">pairwise()</span></code> in the <code class="docutils literal notranslate"><span class="pre">supernova</span></code> package, which takes an object holding the results of an ANOVA test and returns the significance of the difference between every possible pair of groups:</p>
 <div class="cell docutils container">
@@ -709,7 +712,7 @@ document.write(`
 <p>The method of multiple comparison correction that <code class="docutils literal notranslate"><span class="pre">pairwise()</span></code> is using is called Tukey’s Honestly Significance Differences, which adjusts the calculated p-values up rather than pulling down the critical p-value.</p>
 <p>Now compare these numbers to those in the summary report of the GLM model (where “both-training” is the reference group because it is first in the alphabet). For instance, look at the difference between the “no-training” and “both-training” conditions here, and then look at the estimate of the effect of “no-training” in the GLM output. Both of these numbers are the same (2.038), indicating that both methods are finding the difference in means between the “both-training” condition and the “no-training” condition. However, the p-values for these lines are different.</p>
 <p>Why is that? The reason is, with the GLM model you don’t need to do multiple comparisons correction. This is because a multiple regression is just one test. It calculates the standard error of each coefficient at once, in the context of the other predictors. This means it’s essentially already correcting for the fact that there are other coefficients to test. Further, it is only doing this correction for 3 comparisons with the reference group (“both-training” against the other three).</p>
-<p>In contrast, with the pairwise tests after the ANOVA, these are all done independently on separate subgroups of data. In addition, all 6 possible pairwise comparisons are done. With more comparisons, that means you have to correct the p-value by more in order to keep the family-wise error rate at <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>. With more correction, it is harder to find any one comparison as significant. This is why the comparison between “both-training” and “track-training” is significant in the GLM (effect of “track-training”, p = 0.0133) but not significant in the pairwise table of the ANOVA results (p = 0.0614). However, this is also why the pairwise table has comparisons for conditions like “weight-training” and “track-training”, while the GLM doesn’t. To get that result with a GLM approach, one of those conditions would need to be treated as the reference group.</p>
+<p>In contrast, with the pairwise tests after the ANOVA, these are all done independently on separate subgroups of data. In addition, all 6 possible pairwise comparisons are done. With more comparisons, that means you have to correct the p-value by more in order to keep the family-wise error rate at <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>. With more correction, it is harder to find any one comparison as significant. This is why the comparison between “both-training” and “track-training” is significant in the GLM (effect of “track-training”, p = 0.0133) but not significant in the pairwise table of the ANOVA results (p = 0.0614). However, this is also why the pairwise table has comparisons for conditions like “weight-training” and “track-training”, while the GLM doesn’t. To get that result with a GLM approach, one of those conditions would need to be recoded as the reference group.</p>
 <p>For this multiple comparisons reason, it is often better to use a GLM than a one-way ANOVA.</p>
 </section>
 <section id="factorial-anova">
@@ -717,7 +720,6 @@ document.write(`
 <p>Of the traditional tools we’ve covered so far in this chapter, you can probably detect a general trend. So far we’ve looked at a fairly simple experimental design: each person falls into only one of several groups, and we want to know whether these groups have different means on some outcome variable. This assumes that there is only one variable that matters for differences in the outcome value - which of these groups someone is in.</p>
 <p>But in the multiple regression version of the GLM framework, we learned that multiple different predictor variables can have separate effects on an outcome. They can even interact with each other, such that the effect of one predictor changes as a function of the value of another predictor. This might be a better way of understanding our athlete data - instead of four different categories of training regimens, maybe there is a more general effect of track-training and of weight-training that combine in order to produce someone’s running time. Being in the “both-training” condition just means being a part of both of these general groups, instead of its own unique category.</p>
 <p>In the ANOVA approach to statistics, taking into account the effect of multiple grouping variables is called <strong>factorial ANOVA</strong>. Sometimes it is also called something like two-way ANOVA (which means two separate predictor variables) or 2x2 ANOVA (meaning there are two levels in the first predictor and two levels in the second). Like the one-way ANOVA, factorial ANOVA is a method of comparing group means to see if they come from the same population. So a sensible place to start would be to be explicit about a null hypothesis for these means. However, the fact that the different training groups are made of combinations of multiple variables means there are several different means that one might be interested. To see this, let’s start by thinking about all the different sample means that we can calculate for this kind of design:</p>
-<p>Firstly, there’s the obvious idea that we might be interested in this table of group means for our athletes at their first meet:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p></p></th>
@@ -744,7 +746,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>In this table, the number in each cell stands for the group mean with that combination of track training type (row) and weight training type (column). The values in the last row are the means of each weight training group regardless of what type of track training they did. The values in the last column are the means of each track training group regardless of what type of weight training they did - aka the <strong>marginal means</strong>. The bottom right cell holds the Grand Mean, or the mean running time of everyone regardless of their value on any training variable.</p>
+<p>In this table, the number in each cell stands for the group mean with that combination of track training type (row) and weight training type (column). The values in the last row are the means of each weight training group regardless of what type of track training they did. The values in the last column are the means of each track training group regardless of what type of weight training they did - aka the marginal means. The bottom right cell holds the Grand Mean, or the mean running time of everyone regardless of their value on any training variable.</p>
 <p>These are all group means, which are statistical estimates. That means there are population parameter versions of these values that our estimates came from. We can express our table above with those values instead:</p>
 <table class="table">
 <thead>
@@ -788,7 +790,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>In this table, remember we’re getting <span class="math notranslate nohighlight">\(SS_b\)</span> for the effect of each predictor (in the Sum Sq column) as well as <span class="math notranslate nohighlight">\(SS_w\)</span> for the between group variation (that which is not explained by the grouping variables). We also get a corresponding F and p value for each separate predictor that tells us whether there is a significant difference in group means for different levels of that predictor.</p>
+<p>In this table, remember we’re getting <span class="math notranslate nohighlight">\(SS_b\)</span> for the effect of each predictor (in the Sum Sq column) as well as <span class="math notranslate nohighlight">\(SS_w\)</span> for the within group variation (that which is not explained by the grouping variables). We also get a corresponding F and p value for each separate predictor that tells us whether there is a significant difference in group means for different levels of that predictor.</p>
 <p>That’s how to run a factorial ANOVA to test the differences in marginal means. However, that might not be the full story with our data. We may decide that <span class="math notranslate nohighlight">\(\mu_{.1}\)</span> and <span class="math notranslate nohighlight">\(\mu_{.2}\)</span> are different from each other, but what about <span class="math notranslate nohighlight">\(\mu_{11}\)</span> and <span class="math notranslate nohighlight">\(\mu_{12}\)</span> or <span class="math notranslate nohighlight">\(\mu_{21}\)</span> and <span class="math notranslate nohighlight">\(\mu_{22}\)</span>? Is there always going to be the same difference in running time for different levels of weight training regardless of the value of track training, or might there be an interaction between these two variables?</p>
 <p>It is possible to include an interaction in a factorial ANOVA as well. However, since ANOVAs are all about sum of squares, we need to be able to compute a sum of squares for the interaction term as well as the main effects. We won’t deal with the math of how to do this in the ANOVA framework, as you can easily run this factorial ANOVA in R:</p>
 <div class="cell docutils container">
@@ -828,7 +830,7 @@ document.write(`
 <h2>20.5 Correlation &amp; multiple regression<a class="headerlink" href="#correlation-multiple-regression" title="Permalink to this heading">#</a></h2>
 <p>So far we are seeing how we can get similar results with traditional statistical tools as we do with the GLM, and thus use them interchangeably. However, we’ve also learned some situations where GLMs are more flexible and thus a better default to use (e.g., when using unbalanced data and/or multiple pairwise comparisons).</p>
 <p>There’s another big limitation to know about for t-tests and ANOVAs - they can only ever handle categorical predictors. These tests were developed to compare group means for classic experimental designs, but they aren’t helpful if you don’t have separate conditions or groups as your manipulation.</p>
-<p>To accommodate this, <strong>correlation</strong> was developed. We’ve already learned about this traditional tool, but to review, a correlation expresses the strength of covariance between two quantitative variables. It is calculated as:</p>
+<p>To accommodate this, correlation was developed. We’ve already learned about this traditional tool, but to review, a correlation expresses the strength of covariance between two quantitative variables. It is calculated as:</p>
 <div class="math notranslate nohighlight">
 \[r = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum(X_i - \bar{X})^2 \sum(Y_i - \bar{Y})^2}} \]</div>
 <p>In R, we can extract this value easily with the <code class="docutils literal notranslate"><span class="pre">cor()</span></code> function applied to two separate vectors that hold the X and Y variables. For instance, if we are interested in the correlation between an athlete’s height and how fast they run the 400m:</p>
@@ -873,13 +875,17 @@ document.write(`
 </div>
 </div>
 </div>
-<p>A correlation can only handle relationships between two variables - one predictor and one outcome. To be able to integrate the effects of multiple quantitative predictors, that is what <strong>multiple regression</strong> and the general linear model was developed to do. Only at that point did people realize all the prior tests can also be answered with this same framework. All hail the GLM!</p>
+<p>But a correlation can only handle relationships between two variables - one predictor and one outcome. To be able to integrate the effects of multiple quantitative predictors, that is what multiple regression and the general linear model was developed to do. Only at that point did people realize all the prior tests can also be answered with this same framework. All hail the GLM!</p>
 </section>
-<section id="chi-square">
-<h2>20.6 Chi-square<a class="headerlink" href="#chi-square" title="Permalink to this heading">#</a></h2>
+<section id="other-traditional-tools">
+<h2>20.6 Other traditional tools<a class="headerlink" href="#other-traditional-tools" title="Permalink to this heading">#</a></h2>
 <p>You now know about a great many ways to analyze data - categorical or quantitative predictors, one or multiple, with main effects or interactions. You also now know multiple versions for each of these kinds of analysis, using either the GLM or traditional statistical tools. You’ve done a lot of work to get this far!</p>
-<p>But this is an <em>Intro</em> to Psychological Statistics course, which means there’s still a lot of stuff we haven’t even touched on. So much to learn, so little time. We won’t learn these additional analyses in detail, but there are two categories of analyses we haven’t covered that are still fairly common in psychology research. So you should at least know about them and why they are different. We’ll do an overview of those here.</p>
-<p>Firstly: across all the types of models and tests we’ve learned so far, one thing has been constant - we’ve always been predicting a <em>quantitative</em> outcome variable. But there are research questions concerning categorical outcome variables as well. What political party is someone likely to join, whether or not someone is admitted to college, etc. For this example, let’s load in a dataset of hospital patients and see how their levels of anemia relate to their appetite:</p>
+<p>But this is an <em>Intro</em> to Psychological Statistics course, which means there’s still a lot of stuff we haven’t even touched on. So much to learn, so little time. We won’t learn these additional analyses in detail, but there are two categories of analyses we haven’t covered that are still fairly common in psychology research. So you should at least know about them and why they are different.</p>
+<section id="non-interval-outcome-variable">
+<h3>Non-interval outcome variable<a class="headerlink" href="#non-interval-outcome-variable" title="Permalink to this heading">#</a></h3>
+<p>Firstly: across all the types of models and tests we’ve learned so far, one thing has been constant - we’ve always been predicting a <em>quantitative</em> outcome variable. But there are research questions concerning categorical outcome variables as well. What political party is someone likely to join, whether or not someone is admitted to college, etc. As we learned last chapter, using a regression, t-test, ANOVA, etc. to predict a categorical outcome variable is not appropriate.</p>
+<p>Thus we need a different approach. We mentioned how <a class="reference external" href="https://stats.oarc.ucla.edu/r/dae/logit-regression/">logistic regression</a> or <a class="reference external" href="https://stats.oarc.ucla.edu/r/dae/ordinal-logistic-regression/">ordinal regression</a> can handle this case. The traditional version of this approach, when you have both a categorical predictor and outcome, is called a <strong>chi-square test</strong>.</p>
+<p>Consider a dataset of hospital patients and see how their levels of anemia relate to their appetite:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">patient_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/smburns47/Psyc158/main/ckd.csv&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -890,9 +896,7 @@ document.write(`
 </div>
 </div>
 <p>In these data, values for both of these variables were stored categorically. One <em>could</em> imagine recording severity of anemia and strength of appetite as quantitative, but that’s not the data we have here. Patients were only coded as having anemia or not, and a good or poor appetite. Thus, we don’t have any information about the quantitative difference between these variable levels. They are categorical.</p>
-<p>Using a regression, t-test, ANOVA, etc. to predict a categorical outcome variable is not appropriate. This is because these models require numeric variation in outcome score values to calculate means, predictions, and residuals. If we built a model for a categorical outcome variable in the same way, our residuals would only ever have two values - correct prediction, or incorrect. The equations for sum of squares would break over this.</p>
-<p>Thus, we need a different approach. For situations where you have a categorical predictor and categorical outcome, traditional statisticians developed a tool called the <strong>chi-square test</strong>. This test solves our problem of categorical data by reasoning about <em>probabilities</em> of certain values, rather than the values themselves.</p>
-<p>Let’s break down how to do this. First, we can see that each person falls into one of four groups - either they have anemia or not, and they have a good appetite or not. We can put the number of people in each of these groups in a table like so, called a <strong>contingency table</strong>:</p>
+<p>A chi-square test handles this problem by reasoning about <em>probabilities</em> of certain values, rather than the values themselves. Let’s break down how to do this. First, we can see that each person falls into one of four groups - either they have anemia or not, and they have a good appetite or not. We can put the number of people in each of these groups in a table like so, called a contingency table:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p></p></th>
@@ -936,11 +940,10 @@ document.write(`
 </div>
 </div>
 <p>We’d report this result in APA format as: “there is a significant association between patient anemia and their appetite, <span class="math notranslate nohighlight">\(\chi^2\)</span>(1) = 37.728, <em>p</em> &lt; 0.001.”</p>
-<p>There is a way to generalize this and perform the same test with the general linear model. Doing so is called a <strong>logistic regression</strong> which you can learn more about <a class="reference external" href="http://localhost:8888/notebooks/adv-logistic.ipynb">here</a>.</p>
 </section>
 <section id="repeated-measures-tests">
-<h2>20.7 Repeated measures tests<a class="headerlink" href="#repeated-measures-tests" title="Permalink to this heading">#</a></h2>
-<p>There’s another broad category of analyses that we’ve also ignored in this class. Recall last chapter when we discussed the assumptions of the general linear model. These assumptions hold for the above set of tools as well. This means we need a different approach if our data has <strong>repeated measures</strong>, or data points that are not completely independent of each other.</p>
+<h3>Repeated measures tests<a class="headerlink" href="#repeated-measures-tests" title="Permalink to this heading">#</a></h3>
+<p>Another broad category of analyses that we’ve also ignored in this class has to do with repeated measures, or data points that are not completely independent of each other.</p>
 <p>This simplest version of this situation is when you have two scores per person - you did a within-subjects experiment where you measured something about them before treatment, and then again on the same variable after treatment. You want to know if scores on average changed from before to after. For example, going back to our track training data, we may wonder if our athletes continued to improve between meet 1 and meet 2.</p>
 <p>Your first instinct might be to do an independent samples t-test for the scores during meet 1 and the scores during meet 2:</p>
 <div class="cell docutils container">
@@ -948,8 +951,7 @@ document.write(`
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">meet1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;meet1&#39;</span><span class="p">)</span>
 <span class="n">meet2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">trackscores</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;meet2&#39;</span><span class="p">)</span>
 
-<span class="c1">#use t.test() to compare the mean of meet1$time with the mean of meet2$time</span>
-<span class="nf">t.test</span><span class="p">(</span><span class="c1">#YOUR CODE HERE)</span>
+<span class="nf">t.test</span><span class="p">(</span><span class="n">meet1</span><span class="o">$</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">meet2</span><span class="o">$</span><span class="n">time</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -975,11 +977,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>An extension of a paired-samples t-test is when you have some predictor variables that may be influencing the size of the score difference within a person. If that predictor variable(s) is categorical, we can use a <strong>repeated measures ANOVA</strong>. If the predictor variable(s) is quantitative, we can use a version of multiple regression known as <strong>mixed-effects modeling</strong>.</p>
-<p>Entire classes can be taught on these last two sections (categorical outcomes and repeated measures). Maybe some day you will take an advanced stats class and learn more about them. For now, just know why we need to use different tools for these situations.</p>
+<p>An extension of a paired-samples t-test is when you have some predictor variables that may be influencing the size of the score difference within a person. If that predictor variable(s) is categorical, we can use a <a class="reference external" href="https://www.datanovia.com/en/lessons/repeated-measures-anova-in-r/">repeated measures ANOVA</a>. If the predictor variable(s) is quantitative, we can use a version of multiple regression known as <a class="reference external" href="https://m-clark.github.io/mixed-models-with-R/random_intercepts.html">mixed-effects modeling</a>.</p>
+</section>
 </section>
 <section id="summary-of-tests">
-<h2>20.8 Summary of tests<a class="headerlink" href="#summary-of-tests" title="Permalink to this heading">#</a></h2>
+<h2>20.7 Summary of tests<a class="headerlink" href="#summary-of-tests" title="Permalink to this heading">#</a></h2>
 <p>Altogether, the purpose of this chapter is to acquaint you with the most common statistical tools used in psychology, and help you understand how they map onto the GLM framework that you already know. This way if you encounter these tests in published research, you’ll know what sort of hypothesis is being tested and you’ll know how to replicate it yourself, either with that same test or the GLM. You should also now have an appreciation of why we learned the GLM in this class first: it doesn’t rely solely on hypothesis testing, and it is more flexible for various situations than these more rigid tools.</p>
 <p>For ease of memory, here is all the important information of this chapter stored in one table. It tells you when to use various tests and what the comparable GLM version is. This would make a great reference sheet for you to keep for the rest of this class and beyond.</p>
 <img src="images/ch20-testreference.png" width="800"></section>
@@ -992,7 +994,29 @@ document.write(`
 <li><p>Identify which tests to use when the outcome variable is categorical</p></li>
 <li><p>Identify which tests to use when there are repeated measures</p></li>
 </ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Next: Chapter 21 - Alternate Approaches - Bayesian Statistics</a></p>
+</section>
+<section id="new-concepts">
+<h2>New concepts<a class="headerlink" href="#new-concepts" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>one-sample t-test</strong>: A traditional statistical tool that asks whether a sample of data likely came from a population with some mean value <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+<li><p><strong>independent samples t-test</strong>: A traditional statistical tool that asks whether two samples of data likely came from the same underlying population.</p></li>
+<li><p><strong>one-way ANOVA</strong>: A traditional statistical tool that finds how much between-group vs. within-group variation is in a dataset, and if that is expected under the null hypothesis of no group differences.</p></li>
+<li><p><strong>factorial ANOVA</strong>: A traditional statistical tool that identifies between-group vs. within-group variance among multiple intersecting categorical variables.</p></li>
+<li><p><strong>unbalanced data</strong>: A dataset composed of multiple groups, but the number of observations per group is different.</p></li>
+<li><p><strong>chi-square test</strong>: A traditional statistical tool that identifies whether the probability of data membership in some categorical output variable changes as a function of membership in some categorical predictor variable.</p></li>
+<li><p><strong>paired-samples t-test</strong>: A version of a t-test that manages repeated measures data by analyzing pre-post change scores.</p></li>
+</ul>
+</section>
+<section id="new-r-functionality">
+<h2>New R functionality<a class="headerlink" href="#new-r-functionality" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/t.test">t.test()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/aov">aov()</a></p></li>
+<li><p><a class="reference external" href="https://search.r-project.org/CRAN/refmans/supernova/html/pairwise.html">supernova::pairwise()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor.test">cor.test()</a></p></li>
+<li><p><a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test">chisq.test()</a></p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/smburns47/Psyc158/blob/main/chapter-21.ipynb">Next: Chapter 21 - Lying with Statistics</a></p>
 </section>
 </section>
 
@@ -1050,10 +1074,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-way-anova">20.3 One-way ANOVA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-anova">20.4 Factorial ANOVA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-multiple-regression">20.5 Correlation &amp; multiple regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-square">20.6 Chi-square</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measures-tests">20.7 Repeated measures tests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tests">20.8 Summary of tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-traditional-tools">20.6 Other traditional tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-interval-outcome-variable">Non-interval outcome variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measures-tests">Repeated measures tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-tests">20.7 Summary of tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts">New concepts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-r-functionality">New R functionality</a></li>
 </ul>
   </nav></div>
 
